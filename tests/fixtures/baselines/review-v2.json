@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 2,
+  "minReaderVersion": 2,
+  "id": "00000000-0000-4000-8000-000000000008",
+  "planId": "00000000-0000-4000-8000-000000000007",
+  "version": 2,
+  "hash": "b5445f95f0b1e9c1357782d1378d2b93f63f03b38f32821d503baa8a9828bc39",
+  "startedFrom": "11111111-1111-4111-8111-111111111111",
+  "instruction": 2,
+  "reviewer": {
+    "sessionId": "55555555-5555-4555-8555-555555555555",
+    "providerId": "codex",
+    "instanceId": "00000000-0000-4000-8000-000000000001",
+    "model": "gpt-5.5",
+    "effort": "high"
+  },
+  "startedAt": 1583323241000,
+  "endedAt": 1583323249000,
+  "state": "closed",
+  "failure": null,
+  "staleBy": 3,
+  "closed": "handed",
+  "turns": [
+    {
+      "turnId": "review-turn-1",
+      "promptId": "review-prompt-1",
+      "kind": "review",
+      "at": 1583323241000,
+      "answerId": "review-answer-1",
+      "outcome": "round",
+      "reason": null,
+      "continues": null,
+      "card": null,
+      "notes": null
+    },
+    {
+      "turnId": "review-turn-2",
+      "promptId": "review-prompt-2",
+      "kind": "notes",
+      "at": 1583323244000,
+      "answerId": "review-answer-2",
+      "outcome": "round",
+      "reason": null,
+      "continues": null,
+      "card": null,
+      "notes": {
+        "T2.1": "Is the second file in scope?"
+      }
+    }
+  ],
+  "rounds": [
+    {
+      "turnId": "review-turn-1",
+      "answerId": "review-answer-1",
+      "appraisal": "Sound, with two gaps.",
+      "findings": [
+        {
+          "id": "T1.1",
+          "tier": 1,
+          "category": "PROD",
+          "title": "The module boundary",
+          "example": "An example.",
+          "description": "A description.",
+          "correction": "A correction.",
+          "anchor": {
+            "heading": "Steps",
+            "quote": "add it"
+          }
+        },
+        {
+          "id": "T2.1",
+          "tier": 2,
+          "category": "PROD",
+          "title": "The second file",
+          "example": "An example.",
+          "description": "A description.",
+          "correction": "A correction.",
+          "anchor": {
+            "heading": "Steps",
+            "quote": "add it"
+          }
+        }
+      ],
+      "revised": [],
+      "marks": {
+        "T1.1": "accepted",
+        "T2.1": "open"
+      },
+      "notes": {
+        "T2.1": "Is the second file in scope?"
+      }
+    },
+    {
+      "turnId": "review-turn-2",
+      "answerId": "review-answer-2",
+      "appraisal": "The second gap stands; one more.",
+      "findings": [
+        {
+          "id": "T1.1",
+          "tier": 1,
+          "category": "PROD",
+          "title": "The module boundary",
+          "example": "An example.",
+          "description": "A description.",
+          "correction": "A correction.",
+          "anchor": {
+            "heading": "Steps",
+            "quote": "add it"
+          }
+        },
+        {
+          "id": "T2.1",
+          "tier": 2,
+          "category": "PROD",
+          "title": "The second file, in scope",
+          "example": "An example.",
+          "description": "A description.",
+          "correction": "A correction.",
+          "anchor": {
+            "heading": "Steps",
+            "quote": "add it"
+          }
+        },
+        {
+          "id": "T3.1",
+          "tier": 3,
+          "category": "PROD",
+          "title": "A naming nit",
+          "example": "An example.",
+          "description": "A description.",
+          "correction": "A correction.",
+          "anchor": {
+            "heading": "Steps",
+            "quote": "add it"
+          }
+        }
+      ],
+      "revised": [
+        "T2.1"
+      ],
+      "marks": null,
+      "notes": null
+    }
+  ],
+  "marks": {
+    "T1.1": {
+      "mark": "accepted",
+      "note": "",
+      "revised": false
+    },
+    "T2.1": {
+      "mark": "accepted",
+      "note": "Agreed.",
+      "revised": true
+    },
+    "T3.1": {
+      "mark": "rejected",
+      "note": "Out of scope.",
+      "revised": false
+    }
+  },
+  "integrations": [
+    {
+      "id": "00000000-0000-4000-8000-000000000009",
+      "version": 2,
+      "hash": "b5445f95f0b1e9c1357782d1378d2b93f63f03b38f32821d503baa8a9828bc39",
+      "round": "review-turn-2",
+      "accepted": [
+        "T1.1",
+        "T2.1"
+      ],
+      "notes": {
+        "T2.1": "Agreed."
+      },
+      "instruction": 2,
+      "sessionId": "11111111-1111-4111-8111-111111111111",
+      "route": "plan-turn",
+      "planItem": null,
+      "turns": [
+        "turn-7"
+      ],
+      "card": null,
+      "state": "integrated",
+      "reason": null,
+      "produced": 3,
+      "at": 1583323248000,
+      "settledAt": 1583323250000
+    }
+  ]
+}

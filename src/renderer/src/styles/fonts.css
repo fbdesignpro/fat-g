@@ -1,0 +1,40 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* Inter 4.1, the packaged font (decision 0012): the vendor's hinted WOFF2 files, unmodified, from
+   src/renderer/public/fonts/inter/. An absolute URL to a public file is left alone by the bundler,
+   so the files keep the vendor's names and bytes (the package audit checks both). Local files only:
+   the CSP's font-src is 'self'. `block` so text never flashes in a fallback face first. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('/fonts/inter/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url('/fonts/inter/Inter-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url('/fonts/inter/Inter-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url('/fonts/inter/Inter-Bold.woff2') format('woff2');
+}

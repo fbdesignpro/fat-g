@@ -1,0 +1,115 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The frame of the Main window's modal dialogs besides Settings: the project dialog and every
+   confirmation (M12, C37, C41, C66). The same rules as Settings (src/renderer/src/settings): below the
+   title strip, never taller than the window under it, scrolling inside itself, and its text
+   selectable (M11, C30). The backdrop leaves the title strip and the OS's window buttons alone. */
+.dialog {
+  composes: scale from './ControlTypography.module.css';
+  top: calc(env(titlebar-area-height, var(--title-bar-height)) + var(--title-strip-clearance));
+  width: min(1200px, calc(100vw - 2 * var(--space-3)));
+  max-width: none;
+  max-height: min(880px, calc(100vh - var(--title-bar-height) - var(--title-strip-clearance) - 2 * var(--space-2)));
+  padding: 0;
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+  user-select: text;
+}
+
+/* A confirmation asks one question, so it is narrower. */
+.narrow {
+  width: min(520px, calc(100vw - 2 * var(--space-6)));
+}
+
+.dialog[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+.dialog::backdrop {
+  top: calc(env(titlebar-area-height, var(--title-bar-height)) + var(--title-strip-clearance));
+  background: var(--color-backdrop);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-6);
+  border-bottom: var(--rule);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-16);
+  font-weight: var(--weight-semibold);
+  overflow-wrap: anywhere;
+}
+
+.closeButton {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.body {
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+  padding: var(--space-4) var(--space-6);
+}
+
+.body p {
+  margin: 0 0 var(--space-3);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-top: var(--rule);
+}
+
+.button {
+  padding: var(--space-1) var(--space-4);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.button:hover:enabled,
+.primary {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  opacity: 0.5;
+}
+
+.error {
+  margin: 0 0 var(--space-3);
+  color: var(--color-critical);
+}

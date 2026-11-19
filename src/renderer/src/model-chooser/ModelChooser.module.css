@@ -1,0 +1,243 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The model chooser (docs/planning/_archive/M14.md, Design 8): the providers' model capsules, under
+   their names, and the chosen model's effort levels. It never scrolls: it is as large as its capsules
+   need, and chooser-shape.ts gives it more rows, then more columns, then narrower columns (C119).
+   Nothing here sets `overflow` to anything but hidden; the styles test keeps it so. */
+.grids {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* The capsules, with the account buttons placed over the band the shape keeps under the names. */
+.modelsArea {
+  position: relative;
+  min-width: 0;
+}
+
+.models {
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+/* A provider's accounts (M14b, C45): a row of buttons that wraps within its provider's columns. */
+.accounts {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+/* One line, by its label, with an ellipsis; the chosen one has a frame, as a level has. */
+.account {
+  display: flex;
+  align-items: center;
+  flex: none;
+  min-width: 0;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--color-rule-soft);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-11);
+  text-align: left;
+  cursor: pointer;
+}
+
+.account:hover {
+  background: var(--color-surface);
+}
+
+.account[aria-checked='true'] {
+  border-color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
+
+.account:focus-visible {
+  outline-offset: -2px;
+}
+
+/* An account whose CLI has not reported its models: dimmed, and said in words by its tooltip (C70). */
+.account[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.account[aria-disabled='true']:hover {
+  background: transparent;
+}
+
+/* A long account label ends in an ellipsis; the DOM keeps it whole. */
+.accountName {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.column {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+}
+
+/* A column's capsules, one under the other, the shape's gap between them. */
+.tiles {
+  display: flex;
+  flex-direction: column;
+}
+
+.showMore {
+  min-height: 32px;
+  margin-top: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  cursor: pointer;
+}
+
+.showMore:hover {
+  background: var(--color-surface);
+}
+
+/* A provider's name over its capsules, and Effort over the levels: read at a glance, in the text's colour. */
+.heading {
+  height: 24px;
+  margin-bottom: var(--space-2);
+  overflow: hidden;
+  color: var(--color-text);
+  font-size: var(--text-16);
+  font-weight: var(--weight-semibold);
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* A level: one line, by its label. */
+.level {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-width: 0;
+  min-height: 28px;
+  padding: 0 var(--space-2);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  text-align: left;
+  cursor: pointer;
+}
+
+.level:hover:not([aria-checked='true']) {
+  background: var(--color-surface);
+}
+
+/* Match the selected capsule's frame at a smaller scale; aria-checked also marks the choice. */
+.level[aria-checked='true'] {
+  border-color: var(--selection-color, var(--color-attention));
+  box-shadow: 0 0 0 2px var(--selection-color, var(--color-attention)), 0 0 0 3px var(--color-status-black);
+  font-weight: var(--weight-semibold);
+}
+
+.level:focus-visible {
+  outline-offset: -2px;
+}
+
+.levels {
+  position: relative;
+  flex: none;
+  padding-left: var(--space-3);
+  border-left: 2px solid transparent;
+}
+
+.levels::before {
+  position: absolute;
+  top: calc(-1 * var(--space-2));
+  bottom: calc(-1 * var(--space-2));
+  left: -2px;
+  width: 2px;
+  background: var(--color-model-divider);
+  content: '';
+  pointer-events: none;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.actions > button {
+  min-height: 32px;
+}
+
+.efforts {
+  display: flex;
+  flex-direction: column;
+  /* Clear the selected row's 3px frame before the next row's hover background begins. */
+  gap: var(--space-1);
+}
+
+/* The speed tiers under the levels (decision 0016): a checkbox for one, a radio row for several. */
+.speed {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-rule-soft);
+}
+
+.speedRows {
+  display: flex;
+  flex-direction: column;
+}
+
+.speedHeading {
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  line-height: 24px;
+}
+
+.speedRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 28px;
+  padding: 0 var(--space-2);
+  font-size: var(--text-14);
+  cursor: pointer;
+}
+
+.speedRow:has(input:disabled) {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.speedNote {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  line-height: 1.35;
+}
+
+.none,
+.empty {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  line-height: 28px;
+}
+
+.empty {
+  max-width: 320px;
+  line-height: 1.4;
+}

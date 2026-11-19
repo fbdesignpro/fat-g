@@ -1,0 +1,59 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The row of usage blocks in the usage box (C34, C56; M100, C54), as tall as the box. It never
+   scrolls by itself or shows a scrollbar: when the blocks do not fit, an arrow appears on each side
+   with blocks hidden, and the row slides — instantly under reduced motion, which zeroes
+   --duration-fast. */
+.strip {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  min-width: 0;
+  height: 100%;
+}
+
+.viewport {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Right-aligned: anything that does not fit is hidden on the left first. */
+.track {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  height: 100%;
+  transition: transform var(--duration-fast) ease;
+}
+
+/* ARROW_WIDTH in strip-scroll.ts. */
+.arrow,
+.arrowSpace {
+  flex: none;
+  width: 19px;
+  height: 100%;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}

@@ -1,0 +1,1790 @@
+{
+  "_fixture": {
+    "source": "M15 spike m15-resume.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "token-level deltas (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":1,\"turn\":1,\"item\":4,\"mcp-server\":4}. Aliases are shared with the other captures of the family \"m15-saved-thread\"."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-10T21:07:07.471Z",
+  "scenario": {
+    "id": "m15-saved",
+    "title": "A saved thread with one turn",
+    "successCondition": "A saved thread's first turn, sent with a model, an effort and a client message id, to its end"
+  },
+  "run": {
+    "id": "codex-m15-saved-14",
+    "number": 2,
+    "attempt": 2,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 35,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 2801,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-8>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-8>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "endStatus": "completed",
+      "startedEphemeral": false,
+      "startReplyEffort": "high",
+      "sentEffort": "low",
+      "startReplyKeys": [
+        "activePermissionProfile",
+        "approvalPolicy",
+        "approvalsReviewer",
+        "cwd",
+        "instructionSources",
+        "model",
+        "modelProvider",
+        "multiAgentMode",
+        "reasoningEffort",
+        "runtimeWorkspaceRoots",
+        "sandbox",
+        "serviceTier",
+        "thread"
+      ],
+      "threadKeys": [
+        "agentNickname",
+        "agentRole",
+        "canAcceptDirectInput",
+        "cliVersion",
+        "createdAt",
+        "cwd",
+        "daybreakEnabled",
+        "environments",
+        "ephemeral",
+        "extra",
+        "forkedFromId",
+        "gitInfo",
+        "historyMode",
+        "id",
+        "model",
+        "modelProvider",
+        "name",
+        "originator",
+        "parentThreadId",
+        "path",
+        "preview",
+        "projectId",
+        "reasoningEffort",
+        "recencyAt",
+        "section",
+        "sectionEnteredAt",
+        "sessionId",
+        "source",
+        "status",
+        "threadSource",
+        "turns",
+        "updatedAt"
+      ],
+      "echo": {
+        "echoed": true,
+        "keys": [
+          "clientId",
+          "content",
+          "id",
+          "type"
+        ],
+        "carriesClientId": true,
+        "startedCarriesClientId": true
+      },
+      "items": [
+        {
+          "type": "userMessage",
+          "phase": null
+        },
+        {
+          "type": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "phase": null
+        },
+        {
+          "type": "agentMessage",
+          "phase": "final_answer"
+        }
+      ],
+      "outline": [
+        {
+          "index": 10,
+          "ms": 2922,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 11,
+          "ms": 2922,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 12,
+          "ms": 2922,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 13,
+          "ms": 2922,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 14,
+          "ms": 2931,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 15,
+          "ms": 2933,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 17,
+          "ms": 2947,
+          "method": "skills/changed"
+        },
+        {
+          "index": 18,
+          "ms": 2974,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 19,
+          "ms": 2974,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 20,
+          "ms": 2984,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 21,
+          "ms": 3694,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 22,
+          "ms": 4412,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 23,
+          "ms": 4460,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 24,
+          "ms": 6386,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 25,
+          "ms": 7153,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 26,
+          "ms": 14878,
+          "method": "item/started",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "inProgress"
+        },
+        {
+          "index": 27,
+          "ms": 14939,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "completed"
+        },
+        {
+          "index": 28,
+          "ms": 15026,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 29,
+          "ms": 15028,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 30,
+          "ms": 17987,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 31,
+          "ms": 18781,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 32,
+          "ms": 18885,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 33,
+          "ms": 18885,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 34,
+          "ms": 18913,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 35,
+          "ms": 18913,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "model": "gpt-6-astra"
+    },
+    "replyIndex": 7,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {},
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/agentMessage/delta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1406,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/agentMessage/delta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1410,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "recv",
+      "ms": 1410,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 3,
+      "dir": "send",
+      "ms": 1410,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 2753,
+      "frame": {
+        "method": "model/list",
+        "id": 2,
+        "params": {
+          "limit": 100
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 2755,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "gpt-6-astra",
+              "model": "gpt-6-astra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Astra",
+              "description": "Frontier intelligence for the most demanding work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "2x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": true
+            },
+            {
+              "id": "gpt-6-sol",
+              "model": "gpt-6-sol",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Sol",
+              "description": "Previous generation workhorse model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-6-luna",
+              "model": "gpt-6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Luna",
+              "description": "Fast and affordable model for easier tasks.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-sol",
+              "model": "gpt-5.6-sol",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Sol",
+              "description": "Older generation workhorse model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "low",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-terra",
+              "model": "gpt-5.6-terra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Terra",
+              "description": "Older balanced model for straightforward work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-luna",
+              "model": "gpt-5.6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Luna",
+              "description": "Older fast and efficient model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.5",
+              "model": "gpt-5.5",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.5",
+              "description": "Legacy coding model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": null,
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            }
+          ],
+          "nextCursor": null
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 2755,
+      "frame": {
+        "method": "thread/start",
+        "id": 3,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "model": "gpt-6-astra"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 2917,
+      "frame": {
+        "id": 3,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "high",
+            "createdAt": 1578690408,
+            "updatedAt": 1578690408,
+            "recencyAt": 1578690408,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\10\\rollout-2020-01-10T17-06-48-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-astra",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": "high",
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 2917,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "high",
+            "createdAt": 1578690408,
+            "updatedAt": 1578690408,
+            "recencyAt": 1578690408,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\10\\rollout-2020-01-10T17-06-48-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578690408652
+      }
+    },
+    {
+      "index": 9,
+      "dir": "send",
+      "ms": 2921,
+      "frame": {
+        "method": "turn/start",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-astra",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-2>"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 2922,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690408652
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 2922,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690408652
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 2922,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-11>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690408652
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 2922,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-8>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690408652
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 2931,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-8>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690408666
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 2933,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-11>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690408668
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 2944,
+      "frame": {
+        "id": 4,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 2947,
+      "frame": {
+        "method": "skills/changed",
+        "params": {},
+        "emittedAtMs": 1578690408682
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 2974,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578690408709
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 2974,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578690408,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578690408709
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 2984,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690408719
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 3694,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690409429
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 4412,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578690410147
+        },
+        "emittedAtMs": 1578690410147
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 4460,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578690410147
+        },
+        "emittedAtMs": 1578690410195
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 6386,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578690412121
+        },
+        "emittedAtMs": 1578690412121
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 7153,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "I’ll read sample.txt.",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578690412854
+        },
+        "emittedAtMs": 1578690412888
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 14878,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-6>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+            "cwd": "<scratch>",
+            "processId": "97630",
+            "source": "unifiedExecStartup",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "read",
+                "command": "Get-Content -LiteralPath sample.txt",
+                "name": "sample.txt",
+                "path": "<scratch>\\sample.txt"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578690420612
+        },
+        "emittedAtMs": 1578690420612
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 14939,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-6>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+            "cwd": "<scratch>",
+            "processId": "97630",
+            "source": "unifiedExecStartup",
+            "status": "completed",
+            "commandActions": [
+              {
+                "type": "read",
+                "command": "Get-Content -LiteralPath sample.txt",
+                "name": "sample.txt",
+                "path": "<scratch>\\sample.txt"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": 0,
+            "durationMs": 3
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578690420615
+        },
+        "emittedAtMs": 1578690420674
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 15026,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 17001,
+              "inputTokens": 16954,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 47,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 17001,
+              "inputTokens": 16954,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 47,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578690420761
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 15028,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 17987,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-7>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578690423722
+        },
+        "emittedAtMs": 1578690423722
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 18781,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-7>",
+            "text": "The cat sleeps on the warm lamp housing.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578690424466
+        },
+        "emittedAtMs": 1578690424516
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 18885,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 34091,
+              "inputTokens": 34031,
+              "cachedInputTokens": 16768,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 60,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 17090,
+              "inputTokens": 17077,
+              "cachedInputTokens": 16768,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 13,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578690424620
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 18885,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 18913,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578690424648
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 18913,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-7>",
+                "text": "The cat sleeps on the warm lamp housing.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578690408,
+            "completedAt": 1578690424,
+            "durationMs": 15971
+          }
+        },
+        "emittedAtMs": 1578690424648
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1405,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2753,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 20301,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "<mcp-server-8>.exe",
+        "node.exe",
+        "<mcp-server-8>.exe",
+        "codex-code-mode-host.exe"
+      ],
+      "alive": 8
+    }
+  ],
+  "family": "m15-saved-thread",
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 7205
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1495
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1100
+      },
+      {
+        "method": "item/started",
+        "item": "commandExecution",
+        "bytes": 818
+      },
+      {
+        "method": "item/completed",
+        "item": "commandExecution",
+        "bytes": 815
+      }
+    ],
+    "longStringsCut": []
+  }
+}

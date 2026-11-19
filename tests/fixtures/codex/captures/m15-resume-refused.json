@@ -1,0 +1,489 @@
+{
+  "_fixture": {
+    "source": "M15 spike m15-resume.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "token-level deltas (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"worker\":3}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-10T20:30:20.527Z",
+  "scenario": {
+    "id": "m15-refusals",
+    "title": "The refusals of a resume: an id that does not exist, and one that is not well formed",
+    "successCondition": "Both resumes refused, each with its code, message and data kept in the raw capture (C129)"
+  },
+  "run": {
+    "id": "codex-m15-refusals-1",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 7,
+    "turnsSpent": 0,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 2754,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "missing": {
+        "code": -32600,
+        "hasMessage": true,
+        "messageChars": 67,
+        "hasData": false
+      },
+      "malformed": {
+        "code": -32600,
+        "hasMessage": true,
+        "messageChars": 122,
+        "hasData": false
+      },
+      "missingHistoryRead": {
+        "code": -32600,
+        "hasMessage": true,
+        "messageChars": 55,
+        "hasData": false
+      },
+      "sameCode": true,
+      "sameMessage": false
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "excludeTurns": true
+    },
+    "replyIndex": 5,
+    "ok": false,
+    "check": null
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {},
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/agentMessage/delta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1400,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/agentMessage/delta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1401,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1401,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 1407,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 2745,
+      "frame": {
+        "method": "thread/resume",
+        "id": 2,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "excludeTurns": true,
+          "threadId": "<worker-1>"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 2845,
+      "frame": {
+        "error": {
+          "code": -32600,
+          "message": "no rollout found for thread id <worker-1>"
+        },
+        "id": 2
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 2845,
+      "frame": {
+        "method": "thread/resume",
+        "id": 3,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "excludeTurns": true,
+          "threadId": "<worker-2>"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 2846,
+      "frame": {
+        "error": {
+          "code": -32600,
+          "message": "invalid session id: invalid character: expected an optional prefix of `urn:uuid:` followed by [0-9a-fA-F-], found `n` at 1"
+        },
+        "id": 3
+      }
+    },
+    {
+      "index": 8,
+      "dir": "send",
+      "ms": 2846,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 4,
+        "params": {
+          "threadId": "<worker-3>",
+          "limit": 1
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 2994,
+      "frame": {
+        "error": {
+          "code": -32600,
+          "message": "thread not loaded: <worker-3>"
+        },
+        "id": 4
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1399,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2745,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 4331,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "remoteControl/status/changed",
+        "item": null,
+        "bytes": 201
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 195
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 167
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 112
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 100
+      }
+    ],
+    "longStringsCut": []
+  }
+}

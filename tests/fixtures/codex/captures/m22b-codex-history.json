@@ -1,0 +1,880 @@
+{
+  "_fixture": {
+    "source": "M22b spike m22b-k2.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the nine delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"turn\":6,\"item\":16,\"client-message\":6,\"cursor\":1}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.163.0",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-12T00:11:52.607Z",
+  "scenario": {
+    "id": "m22b-history",
+    "title": "K2: the saved thread's turns read from a process that never resumed it, as the app's history check reads them (C28)",
+    "successCondition": "Whether the plan items are in the read, with their text, and what the user messages hold"
+  },
+  "run": {
+    "id": "codex-m22b-history-21",
+    "number": 2,
+    "attempt": 2,
+    "variant": "default",
+    "process": "history",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 6,
+    "turnsSpent": 0,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 2682,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "turns": 6,
+      "replyKeys": [
+        "backwardsCursor",
+        "data",
+        "nextCursor"
+      ],
+      "perTurn": [
+        {
+          "keys": [
+            "completedAt",
+            "durationMs",
+            "error",
+            "id",
+            "items",
+            "itemsView",
+            "rootTurnId",
+            "startedAt",
+            "status"
+          ],
+          "status": "completed",
+          "itemTypes": [
+            "userMessage",
+            "agentMessage",
+            "agentMessage"
+          ],
+          "plans": [],
+          "userMessages": [
+            {
+              "keys": [
+                "clientId",
+                "content",
+                "id",
+                "type"
+              ],
+              "isOneOfTheSpikesPrompts": true,
+              "units": 148
+            }
+          ]
+        },
+        {
+          "keys": [
+            "completedAt",
+            "durationMs",
+            "error",
+            "id",
+            "items",
+            "itemsView",
+            "rootTurnId",
+            "startedAt",
+            "status"
+          ],
+          "status": "completed",
+          "itemTypes": [
+            "userMessage",
+            "plan"
+          ],
+          "plans": [
+            {
+              "keys": [
+                "id",
+                "text",
+                "type"
+              ],
+              "text": {
+                "units": 210,
+                "lines": 7,
+                "opensWithAHeading": true
+              }
+            }
+          ],
+          "userMessages": [
+            {
+              "keys": [
+                "clientId",
+                "content",
+                "id",
+                "type"
+              ],
+              "isOneOfTheSpikesPrompts": true,
+              "units": 193
+            }
+          ]
+        },
+        {
+          "keys": [
+            "completedAt",
+            "durationMs",
+            "error",
+            "id",
+            "items",
+            "itemsView",
+            "rootTurnId",
+            "startedAt",
+            "status"
+          ],
+          "status": "completed",
+          "itemTypes": [
+            "userMessage",
+            "agentMessage",
+            "agentMessage"
+          ],
+          "plans": [],
+          "userMessages": [
+            {
+              "keys": [
+                "clientId",
+                "content",
+                "id",
+                "type"
+              ],
+              "isOneOfTheSpikesPrompts": true,
+              "units": 32
+            }
+          ]
+        },
+        {
+          "keys": [
+            "completedAt",
+            "durationMs",
+            "error",
+            "id",
+            "items",
+            "itemsView",
+            "rootTurnId",
+            "startedAt",
+            "status"
+          ],
+          "status": "completed",
+          "itemTypes": [
+            "userMessage",
+            "agentMessage",
+            "agentMessage"
+          ],
+          "plans": [],
+          "userMessages": [
+            {
+              "keys": [
+                "clientId",
+                "content",
+                "id",
+                "type"
+              ],
+              "isOneOfTheSpikesPrompts": true,
+              "units": 152
+            }
+          ]
+        },
+        {
+          "keys": [
+            "completedAt",
+            "durationMs",
+            "error",
+            "id",
+            "items",
+            "itemsView",
+            "rootTurnId",
+            "startedAt",
+            "status"
+          ],
+          "status": "completed",
+          "itemTypes": [
+            "userMessage",
+            "agentMessage"
+          ],
+          "plans": [],
+          "userMessages": [
+            {
+              "keys": [
+                "clientId",
+                "content",
+                "id",
+                "type"
+              ],
+              "isOneOfTheSpikesPrompts": true,
+              "units": 71
+            }
+          ]
+        },
+        {
+          "keys": [
+            "completedAt",
+            "durationMs",
+            "error",
+            "id",
+            "items",
+            "itemsView",
+            "rootTurnId",
+            "startedAt",
+            "status"
+          ],
+          "status": "completed",
+          "itemTypes": [
+            "userMessage",
+            "agentMessage",
+            "agentMessage"
+          ],
+          "plans": [],
+          "userMessages": [
+            {
+              "keys": [
+                "clientId",
+                "content",
+                "id",
+                "type"
+              ],
+              "isOneOfTheSpikesPrompts": true,
+              "units": 197
+            }
+          ]
+        }
+      ],
+      "typeCounts": {
+        "response": 1
+      }
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": null,
+  "toolPermissions": {
+    "readTools": "reads inside the sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "per thread/start, as each scenario names it",
+    "approvalPolicy": "per thread/start",
+    "reviewer": "user",
+    "policy": "a file change whose every path is in the scratch working folder is accepted outside a plan turn; a command is declined; every request during a plan turn is declined; a request for more permissions is granted nothing; a question is answered as the scenario says"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_STARTUP_FAILURE_RESULTS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta",
+      "item/plan/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1500,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ],
+            "experimentalApi": true
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1501,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.163.0 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "recv",
+      "ms": 1502,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 3,
+      "dir": "send",
+      "ms": 1502,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 1509,
+      "frame": {
+        "method": "account/updated",
+        "params": {
+          "authMode": "chatgpt",
+          "planType": "free"
+        },
+        "emittedAtMs": 1578787908590
+      }
+    },
+    {
+      "index": 5,
+      "dir": "send",
+      "ms": 2814,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 2,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 20,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2831,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-2>",
+              "rootTurnId": "<turn-2>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-3>",
+                  "clientId": "<client-message-4>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Create the file after-resume.txt in the current folder, containing the single word hello. Then tell me in one short sentence whether it was created.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll create `after-resume.txt` with `hello` and verify the file.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-6>",
+                  "text": "`after-resume.txt` was not created because the shell command was rejected.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578787779,
+              "completedAt": 1578787783,
+              "durationMs": 3937
+            },
+            {
+              "id": "<turn-7>",
+              "rootTurnId": "<turn-7>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-8>",
+                  "clientId": "<client-message-9>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Make a short plan, two steps at most, for this change to the project in the current folder: append the line \"second\" to the end of notes-2.txt. Do not ask me any question: I have no preference.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "plan",
+                  "id": "<item-10>",
+                  "text": "## Append `second` to `notes-2.txt`\n\n1. Append `second` as a new line at the end of `notes-2.txt`.\n2. Read the file back and confirm the line is present.\n\n**Assumption:** Preserve the file’s existing contents.\n"
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578787769,
+              "completedAt": 1578787771,
+              "durationMs": 2179
+            },
+            {
+              "id": "<turn-11>",
+              "rootTurnId": "<turn-11>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-12>",
+                  "clientId": "<client-message-13>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Implement the plan you proposed.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-14>",
+                  "text": "I’ll create `plain-after-plan.txt` with exactly `hello` and read it back to verify.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-15>",
+                  "text": "I couldn’t create the file because the shell command was rejected again.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578787578,
+              "completedAt": 1578787581,
+              "durationMs": 3073
+            },
+            {
+              "id": "<turn-16>",
+              "rootTurnId": "<turn-16>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-17>",
+                  "clientId": "<client-message-18>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Create the file plain-after-plan.txt in the current folder, containing the single word hello. Then tell me in one short sentence whether it was created.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "I’ll create the requested one-word file in the current folder, then verify its contents.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-20>",
+                  "text": "I couldn’t create `plain-after-plan.txt` because the shell command was rejected.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578787574,
+              "completedAt": 1578787576,
+              "durationMs": 2653
+            },
+            {
+              "id": "<turn-21>",
+              "rootTurnId": "<turn-21>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-22>",
+                  "clientId": "<client-message-23>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Add a final step that reads the file back to confirm the line is there.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-24>",
+                  "text": "1. Check `notes-1.txt` and any project instructions.\n2. Append `reviewed` as a new line at the end of the file.\n3. Read the file back and confirm the line is there.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578787571,
+              "completedAt": 1578787572,
+              "durationMs": 1258
+            },
+            {
+              "id": "<turn-25>",
+              "rootTurnId": "<turn-25>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-26>",
+                  "clientId": "<client-message-27>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Make a short plan, three steps at most, for this change to the project in the current folder: append the line \"reviewed\" to the end of notes-1.txt. Do not ask me any question: I have no preference.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-28>",
+                  "text": "I’ll check the project instructions and the current file so the plan matches the repository’s state.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-29>",
+                  "text": "I couldn’t inspect the folder because the shell command was rejected. Here’s a short plan:\n\n1. Check `notes-1.txt` and any project instructions.\n2. Append `reviewed` as a new line at the end of the file.\n3. Confirm the line was added.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578787566,
+              "completedAt": 1578787569,
+              "durationMs": 3599
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-30>"
+        }
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1499,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2813,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 4090,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    }
+  ],
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 6244
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 217
+      },
+      {
+        "method": "remoteControl/status/changed",
+        "item": null,
+        "bytes": 201
+      },
+      {
+        "method": "account/updated",
+        "item": null,
+        "bytes": 106
+      }
+    ],
+    "longStringsCut": []
+  }
+}

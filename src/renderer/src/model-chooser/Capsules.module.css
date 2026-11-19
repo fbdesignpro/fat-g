@@ -1,0 +1,78 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The capsules a model is chosen by: Recents, Presets, and the model chooser's own, which share one
+   look — the 60 px avatar in a thin frame, then the name and a smaller line beside it. */
+.section { margin-top: var(--space-6); }
+.section h2 { margin: 0 0 var(--space-2); font-size: var(--capsule-heading-size, var(--text-20)); }
+.editLink { margin-left: var(--space-1); padding: 0; border: 0; background: transparent; color: var(--color-text-muted); font: inherit; font-size: var(--text-12); font-weight: var(--weight-regular); text-decoration: underline; cursor: pointer; }
+.editLink:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.columnSection { min-width: 0; }
+.columnSection h2 { margin: 0 0 var(--space-3); font-size: var(--text-20); }
+.columnList { display: flex; flex: 1; flex-direction: column; gap: 12px; min-width: 0; }
+.columnList .capsule { height: 62px; flex: none; }
+.showMore { width: 100%; min-height: 32px; margin-top: var(--space-3); padding: var(--space-1) var(--space-2); border: var(--rule); background: transparent; color: var(--color-text); font: inherit; cursor: pointer; }
+.showMore:hover:enabled { background: var(--color-surface); }
+.showMore:disabled { opacity: 0.5; cursor: default; }
+.carousel { display: flex; align-items: stretch; min-width: 0; }
+.grid { display: grid; flex: 1; gap: 12px; min-width: 0; }
+.capsule {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: 0;
+  border: 1px solid var(--color-rule-mid);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+/* Fixed-height capsules must fill their border's inner height: at 150% a 1px border rounds down,
+   leaving a device-pixel seam around a centred 60px avatar. Content-sized capsules keep their square. */
+.columnList .capsule > [data-avatar], .capsule.tile > [data-avatar], .capsule.preview > [data-avatar] { align-self: stretch; height: auto; }
+button.capsule:hover:not([aria-pressed='true']):not([aria-checked='true']), .capsule:focus-visible { outline: 2px solid var(--color-attention); outline-offset: 1px; }
+/* The chosen one: a thick provider-coloured frame with a thin black outer edge,
+   and `aria-pressed` or `aria-checked`, never colour alone (C86). */
+.capsule[aria-pressed='true'], .capsule[aria-checked='true'] {
+  border-color: var(--selection-color, var(--color-attention));
+  box-shadow: 0 0 0 4px var(--selection-color, var(--color-attention)), 0 0 0 5px var(--color-status-black);
+}
+.capsule[aria-pressed='true']:focus-visible,
+.capsule[aria-checked='true']:focus-visible { outline-offset: 6px; }
+.capsule[aria-disabled='true'] { opacity: 0.6; cursor: default; }
+.preview { flex: none; cursor: default; }
+.preview .capsuleText { flex: 1; gap: 1px; line-height: 1.25; }
+.preview .capsuleText h3 { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.preview .capsuleText small { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.preview:has(.unavailable) .capsuleText small { -webkit-line-clamp: 1; }
+.capsuleText { display: flex; flex-direction: column; gap: var(--capsule-text-gap, 3px); min-width: 0; padding: var(--space-1) var(--space-2) var(--space-1) 0; }
+.capsuleText strong, .capsuleText h3 { margin: 0; font-size: var(--capsule-name-size, var(--text-14)); overflow-wrap: anywhere; }
+.capsuleText small { font-size: var(--text-12); overflow-wrap: anywhere; }
+.capsuleText strong + small, .capsuleText h3 + small { transform: translateY(var(--capsule-detail-offset, 0px)); }
+/* A model's capsule in the chooser is one height, its avatar's: its name keeps one line, and its CLI's
+   description wraps to two, the most that height holds. Past them each ends in an ellipsis; the DOM,
+   the tooltip and the description for assistive technology keep them whole. */
+.tile { flex: none; width: 100%; }
+.tile .capsuleText { padding-block: 2px; }
+.tile .capsuleText strong {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tile .capsuleText small {
+  font-size: var(--text-11);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.25;
+  color: var(--color-text-muted);
+}
+.unavailable { color: var(--color-critical); }
+.arrow, .arrowSpace { flex: none; width: 19px; }
+.arrow { display: grid; place-items: center; padding: 0; border: 0; background: transparent; color: var(--color-text); cursor: pointer; }
+.arrow:hover { background: var(--color-text); color: var(--color-bg); }

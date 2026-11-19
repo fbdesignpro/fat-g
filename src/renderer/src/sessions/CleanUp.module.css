@@ -1,0 +1,50 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* Clean up done (CleanUpButton.tsx): the same compact size as Add project (Shell.module.css). */
+.cleanUp {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 24px;
+  padding: 0 var(--space-2);
+  border: var(--rule);
+  border-color: var(--color-done-rule);
+  background: var(--color-done);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* While the mode is on: pressed, in Done's colours. */
+.cleanUp[aria-pressed='true'] {
+  border-color: var(--color-done-rule);
+  background: var(--color-done);
+  color: var(--color-text);
+}
+
+.cleanUp:hover,
+.cleanUp[aria-pressed='true']:hover {
+  background: var(--color-done-hover);
+  color: var(--color-on-done);
+}
+
+.cleanUp[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.cleanUp[aria-disabled='true']:hover {
+  background: var(--color-done);
+  color: var(--color-text);
+}
+
+/* The mode's pointer over the whole window: every element takes the one clean-up.ts sets on the
+   page's root, drawn there from the tokens, so no stylesheet names an image (S6) or a colour. */
+:global(:root[data-clean-up] *) {
+  cursor: inherit !important;
+}

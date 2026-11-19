@@ -1,0 +1,23 @@
+{
+  "_fixture": {
+    "source": "synthetic",
+    "note": "rate_limits.limits[] with several model-scoped rows: surfaces, a model id, a duplicate identity, an unnamed model, provider severities (warning, critical, error, unknown), is_active, bad percentages, an offset-less ISO time and an unknown kind. The named windows present here must be ignored because limits[] is authoritative."
+  },
+  "subscription_type": "max",
+  "rate_limits_available": true,
+  "rate_limits": {
+    "five_hour": { "utilization": 1, "resets_at": "2020-01-12T17:50:00+00:00" },
+    "model_scoped": [{ "display_name": "Ignored", "utilization": 1, "resets_at": null }],
+    "limits": [
+      { "kind": "weekly_all", "percent": 91, "severity": "critical", "resets_at": "2020-01-17T07:00:00+00:00", "scope": null, "is_active": true },
+      { "kind": "session", "percent": 140, "severity": "mystery", "resets_at": "2020-01-12T17:50:00", "scope": null, "is_active": false },
+      { "kind": "weekly_scoped", "percent": 77, "severity": "warning", "resets_at": "2020-01-17T07:00:00Z", "scope": { "model": { "id": null, "display_name": "Fable" }, "surface": null } },
+      { "kind": "weekly_scoped", "percent": 20, "severity": "error", "resets_at": "not a time", "scope": { "model": { "id": "claude-fable-5", "display_name": "Fable" }, "surface": "Claude Code" } },
+      { "kind": "weekly_scoped", "percent": 30, "severity": "normal", "resets_at": null, "scope": { "model": { "id": null, "display_name": "Fable" }, "surface": null } },
+      { "kind": "weekly_scoped", "percent": 5, "severity": "normal", "resets_at": null, "scope": { "model": { "id": null, "display_name": null }, "surface": null } },
+      { "kind": "weekly_scoped", "percent": "12", "resets_at": null, "scope": { "model": { "display_name": "Opus" } } },
+      { "kind": "tangelo", "percent": 50 },
+      "not a row"
+    ]
+  }
+}

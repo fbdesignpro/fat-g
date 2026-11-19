@@ -1,0 +1,13 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+.dialog { width: min(360px, calc(100vw - 2 * var(--space-3))); }
+.form { display: contents; }
+.preview { display: flex; justify-content: center; }
+.name { width: 100%; min-width: 0; padding: 0; border: 0; border-bottom: var(--rule); background: transparent; color: inherit; font: inherit; }
+/* Override the global text-field focus rule's high specificity for this compact inline field. */
+.name:focus-visible { outline-width: 1px !important; outline-offset: 0 !important; border-bottom-color: transparent; }
+.preview strong + small { margin-top: 2px; }
+.problem { margin: var(--space-3) 0 0; color: var(--color-critical); font-size: var(--text-12); }

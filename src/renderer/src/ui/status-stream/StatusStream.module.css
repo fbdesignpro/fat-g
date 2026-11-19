@@ -1,0 +1,140 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* Shared by full-size and compact status bars. Dimensions below are relative to the host. */
+.surface {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  --light-cycle: 0.96s;
+  --light-fade: 600ms;
+  --light-width: 1;
+}
+
+/* The rectangles run past the bar's top and bottom, clipped at the edges, so the field reads as a
+   stream passing behind the words rather than a centred row of bars with air above and below. The container
+   query lets them travel in the bar's own width below, so each crosses at the same speed whatever its size. */
+.field {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  container-type: inline-size;
+  transition: opacity var(--light-fade) ease;
+  /* Keep the lights blended together as one isolated field, with no fade at either edge. */
+  mask-image: linear-gradient(var(--color-status-black), var(--color-status-black));
+}
+
+/* Shown only while a turn runs; the rectangles are paused and off the bar the rest of the time, so an
+   idle bar is a black field that costs a frame nothing. A whole opacity draws no group of its own, so
+   the rectangles still add onto the bar's own ground, as they must. */
+.field[data-active] {
+  opacity: 1;
+}
+
+/* One cycle for every rectangle, each started a twelfth of it after the one before: the stream's rate is
+   fixed, and their spacing cannot drift the way a mix of durations beat against each other into clumps
+   over a minute or two. Each one still has its own speed, from its reach — how far right its travel
+   ends — since a longer travel in the one cycle is a faster crossing; they overtake each other a little
+   and enter a little unevenly, and the whole field is still exactly as periodic as one rectangle. The
+   rest of the variation is in each one's size and tone, and in the shift, which steps it to another
+   height for each pass — five passes long, so the field repeats every five cycles rather than every one.
+   Travel and shift are composited properties: a frame of this costs the main thread nothing, which is
+   what lets useLightStream.ts ease the whole field's playback rate without a layout.
+
+   Each light uses its provider's glow image, or its six tones when no image is supplied.
+   The span still measures the bright rectangle, so its sizes and height steps stay as before. */
+.light {
+  position: absolute;
+  --light-reach: 100cqw;
+  top: 14%;
+  left: 0;
+  width: 72.8cqw;
+  height: 70%;
+  /* Display test: another 25% thinner than the previous 0.75 height; widths are 40% longer. */
+  scale: 1 0.5625;
+  mix-blend-mode: plus-lighter;
+  /* Backwards, so a rectangle set back to wait its turn holds off the bar's left edge until it sets
+     off, where it would otherwise stand at the edge in its own base place (useLightStream.ts). */
+  animation:
+    status-light-travel var(--light-cycle) linear infinite backwards,
+    status-light-shift calc(var(--light-cycle) * 5) step-end infinite backwards;
+}
+
+/* Width follows the speed ramp. Only the paint scales, about its leading (right) edge;
+   the parent keeps its original travel, spacing and vertical scale. */
+.beam {
+  position: absolute;
+  inset: 0;
+  background: var(--stream-fill, var(--light-tone));
+  transform-origin: right center;
+  scale: var(--light-width) 1;
+}
+
+/* The 512 × 256 image's bright core is 290 × 40. Stretch that core to the span's rectangle and let
+   its surrounding glow spill out; the status bar clips the result and the whole light adds to it. */
+.beam::before {
+  content: '';
+  position: absolute;
+  width: 176.55%;
+  height: 640%;
+  left: -38.275%;
+  top: -270%;
+  background: var(--stream-glow, none) center / 100% 100% no-repeat;
+}
+
+.light:nth-child(1) { --light-reach: 100cqw; top: 14%; height: 70%; width: 71.4cqw; --light-tone: var(--stream-1); animation-delay: 0s, 0s; }
+.light:nth-child(2) { --light-reach: 121cqw; top: -10%; height: 65%; width: 64.4cqw; --light-tone: var(--stream-4); animation-delay: calc(var(--light-cycle) * -1/12), calc(var(--light-cycle) * (-1/12 - 3)); }
+.light:nth-child(3) { --light-reach: 108cqw; top: 44%; height: 73%; width: 82.6cqw; --light-tone: var(--stream-2); animation-delay: calc(var(--light-cycle) * -2/12), calc(var(--light-cycle) * (-2/12 - 1)); }
+.light:nth-child(4) { --light-reach: 128cqw; top: 22%; height: 62%; width: 68.6cqw; --light-tone: var(--stream-6); animation-delay: calc(var(--light-cycle) * -3/12), calc(var(--light-cycle) * (-3/12 - 4)); }
+.light:nth-child(5) { --light-reach: 103cqw; top: -2%; height: 76%; width: 77cqw; --light-tone: var(--stream-3); animation-delay: calc(var(--light-cycle) * -4/12), calc(var(--light-cycle) * (-4/12 - 2)); }
+.light:nth-child(6) { --light-reach: 116cqw; top: 34%; height: 68%; width: 84cqw; --light-tone: var(--stream-5); animation-delay: calc(var(--light-cycle) * -5/12), calc(var(--light-cycle) * -5/12); }
+.light:nth-child(7) { --light-reach: 124cqw; top: 8%; height: 59%; width: 63cqw; --light-tone: var(--stream-4); animation-delay: calc(var(--light-cycle) * -6/12), calc(var(--light-cycle) * (-6/12 - 3)); }
+.light:nth-child(8) { --light-reach: 106cqw; top: 50%; height: 70%; width: 75.6cqw; --light-tone: var(--stream-1); animation-delay: calc(var(--light-cycle) * -7/12), calc(var(--light-cycle) * (-7/12 - 1)); }
+.light:nth-child(9) { --light-reach: 113cqw; top: -14%; height: 78%; width: 70cqw; --light-tone: var(--stream-6); animation-delay: calc(var(--light-cycle) * -8/12), calc(var(--light-cycle) * (-8/12 - 4)); }
+.light:nth-child(10) { --light-reach: 127cqw; top: 28%; height: 61%; width: 81.2cqw; --light-tone: var(--stream-2); animation-delay: calc(var(--light-cycle) * -9/12), calc(var(--light-cycle) * (-9/12 - 2)); }
+.light:nth-child(11) { --light-reach: 110cqw; top: 2%; height: 68%; width: 65.8cqw; --light-tone: var(--stream-5); animation-delay: calc(var(--light-cycle) * -10/12), calc(var(--light-cycle) * -10/12); }
+.light:nth-child(12) { --light-reach: 119cqw; top: 40%; height: 74%; width: 79.8cqw; --light-tone: var(--stream-3); animation-delay: calc(var(--light-cycle) * -11/12), calc(var(--light-cycle) * (-11/12 - 3)); }
+
+/* Still, the stream stands as an even row across the bar. */
+@media (prefers-reduced-motion: reduce) {
+  .surface.surface, .field { transition: none; }
+  .light { animation: none; }
+  .beam { scale: 1 1; }
+  .light:nth-child(1) { transform: translateX(-35cqw); }
+  .light:nth-child(2) { transform: translateX(-23cqw); }
+  .light:nth-child(3) { transform: translateX(-11cqw); }
+  .light:nth-child(4) { transform: translateX(1cqw); }
+  .light:nth-child(5) { transform: translateX(13cqw); }
+  .light:nth-child(6) { transform: translateX(25cqw); }
+  .light:nth-child(7) { transform: translateX(37cqw); }
+  .light:nth-child(8) { transform: translateX(49cqw); }
+  .light:nth-child(9) { transform: translateX(61cqw); }
+  .light:nth-child(10) { transform: translateX(73cqw); }
+  .light:nth-child(11) { transform: translateX(85cqw); }
+  .light:nth-child(12) { transform: translateX(97cqw); }
+}
+
+/* Attention replaces the stream immediately, including during its exit fade. */
+.field[data-immediate] {
+  opacity: 0;
+  transition: none;
+}
+
+@keyframes status-light-travel {
+  /* Include the glow around the widest (84cqw) core so it enters and resets off the bar. */
+  from { transform: translateX(-118cqw); }
+  to { transform: translateX(calc(var(--light-reach) + 34cqw)); }
+}
+
+/* A step falls at each cycle's turn, where the rectangle stands off the bar's left edge and is unseen. */
+@keyframes status-light-shift {
+  0%, 100% { translate: 0 0; }
+  20% { translate: 0 -28%; }
+  40% { translate: 0 18%; }
+  60% { translate: 0 -12%; }
+  80% { translate: 0 32%; }
+}

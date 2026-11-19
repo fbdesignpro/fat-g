@@ -1,0 +1,1427 @@
+{
+  "_fixture": {
+    "source": "M16 spike m16-trace.mjs, run against the installed CLI on the maintainer's machine, in a scratch configuration folder",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "get_settings documents (key names only)"
+    ],
+    "omitted": [
+      "token-level deltas (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"uuid\":10,\"message\":3,\"mcp-server\":5}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "claude",
+    "version": "2.1.268",
+    "launchKind": "native"
+  },
+  "date": "2020-01-11T16:55:03.890Z",
+  "scenario": {
+    "id": "m16-commands-disabled",
+    "title": "K19: the same prompts under `--disable-slash-commands`",
+    "successCondition": "Three prompts naming a command, a skill and /clear, with whether the CLI still runs them or sends them to the model as text"
+  },
+  "run": {
+    "id": "claude-m16-commands-disabled-27",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "p1",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": null,
+    "turnsSpent": 3,
+    "exit": {
+      "code": 0,
+      "ms": 8563
+    },
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 3565,
+      "recorded": [
+        {
+          "name": "claude.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "otherFoldersUnchanged": {
+      "other": true,
+      "third": true,
+      "outside": true
+    },
+    "notes": {
+      "commandsInTheInitializeReply": 0,
+      "steps": [
+        {
+          "label": "/model",
+          "gotAResult": true,
+          "types": [
+            [
+              "system/init",
+              1
+            ],
+            [
+              "assistant",
+              1
+            ],
+            [
+              "result",
+              1
+            ],
+            [
+              "rate_limit_event",
+              1
+            ]
+          ],
+          "init": {
+            "model": "claude-sonnet-5",
+            "sameSessionAsTheFirst": true,
+            "slashCommands": 0,
+            "skills": 0
+          },
+          "result": {
+            "subtype": "success",
+            "isError": false,
+            "numTurns": 0,
+            "apiMs": 0
+          },
+          "answeredByTheCliItself": true,
+          "answeredByTheModel": false
+        },
+        {
+          "label": "a skill's name",
+          "gotAResult": true,
+          "types": [
+            [
+              "system/init",
+              1
+            ],
+            [
+              "assistant",
+              1
+            ],
+            [
+              "result",
+              1
+            ]
+          ],
+          "init": {
+            "model": "claude-sonnet-5",
+            "sameSessionAsTheFirst": true,
+            "slashCommands": 0,
+            "skills": 0
+          },
+          "result": {
+            "subtype": "success",
+            "isError": false,
+            "numTurns": 0,
+            "apiMs": 0
+          },
+          "answeredByTheCliItself": true,
+          "answeredByTheModel": false
+        },
+        {
+          "label": "/clear",
+          "gotAResult": true,
+          "types": [
+            [
+              "system/init",
+              1
+            ],
+            [
+              "assistant",
+              1
+            ],
+            [
+              "result",
+              1
+            ]
+          ],
+          "init": {
+            "model": "claude-sonnet-5",
+            "sameSessionAsTheFirst": true,
+            "slashCommands": 0,
+            "skills": 0
+          },
+          "result": {
+            "subtype": "success",
+            "isError": false,
+            "numTurns": 0,
+            "apiMs": 0
+          },
+          "answeredByTheCliItself": true,
+          "answeredByTheModel": false
+        }
+      ],
+      "theSkillRan": false,
+      "sessionIdsSeen": 1,
+      "conversationResets": 0,
+      "outline": [
+        {
+          "index": 0,
+          "ms": 15,
+          "send": "control_request/initialize"
+        },
+        {
+          "index": 1,
+          "ms": 434,
+          "recv": "control_response",
+          "bytes": 3830,
+          "ok": true
+        },
+        {
+          "index": 2,
+          "ms": 2059,
+          "send": "user",
+          "uuid": false
+        },
+        {
+          "index": 3,
+          "ms": 2088,
+          "recv": "system/init",
+          "bytes": 1570,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-15>__batch",
+            "mcp__<mcp-server-15>__create",
+            "mcp__<mcp-server-15>__delete",
+            "mcp__<mcp-server-15>__export",
+            "mcp__<mcp-server-15>__guide",
+            "mcp__<mcp-server-15>__query",
+            "mcp__<mcp-server-15>__read",
+            "mcp__<mcp-server-15>__update"
+          ]
+        },
+        {
+          "index": 4,
+          "ms": 2088,
+          "recv": "assistant",
+          "bytes": 972,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": "end_turn",
+          "textChars": 43
+        },
+        {
+          "index": 5,
+          "ms": 2089,
+          "recv": "result",
+          "bytes": 1117,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": null,
+          "numTurns": 0,
+          "resultIndex": 0,
+          "queuedTurnCount": 0,
+          "resultChars": 43
+        },
+        {
+          "index": 6,
+          "ms": 2616,
+          "recv": "rate_limit_event",
+          "bytes": 434,
+          "session": "s1"
+        },
+        {
+          "index": 7,
+          "ms": 3594,
+          "send": "user",
+          "uuid": false
+        },
+        {
+          "index": 8,
+          "ms": 3600,
+          "recv": "system/init",
+          "bytes": 1570,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-15>__batch",
+            "mcp__<mcp-server-15>__create",
+            "mcp__<mcp-server-15>__delete",
+            "mcp__<mcp-server-15>__export",
+            "mcp__<mcp-server-15>__guide",
+            "mcp__<mcp-server-15>__query",
+            "mcp__<mcp-server-15>__read",
+            "mcp__<mcp-server-15>__update"
+          ]
+        },
+        {
+          "index": 9,
+          "ms": 3600,
+          "recv": "assistant",
+          "bytes": 954,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": "end_turn",
+          "textChars": 34
+        },
+        {
+          "index": 10,
+          "ms": 3600,
+          "recv": "result",
+          "bytes": 1419,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": null,
+          "numTurns": 0,
+          "resultIndex": 1,
+          "queuedTurnCount": 0,
+          "resultChars": 34
+        },
+        {
+          "index": 11,
+          "ms": 5115,
+          "send": "user",
+          "uuid": false
+        },
+        {
+          "index": 12,
+          "ms": 5121,
+          "recv": "system/init",
+          "bytes": 1570,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-15>__batch",
+            "mcp__<mcp-server-15>__create",
+            "mcp__<mcp-server-15>__delete",
+            "mcp__<mcp-server-15>__export",
+            "mcp__<mcp-server-15>__guide",
+            "mcp__<mcp-server-15>__query",
+            "mcp__<mcp-server-15>__read",
+            "mcp__<mcp-server-15>__update"
+          ]
+        },
+        {
+          "index": 13,
+          "ms": 5121,
+          "recv": "assistant",
+          "bytes": 972,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": "end_turn",
+          "textChars": 43
+        },
+        {
+          "index": 14,
+          "ms": 5121,
+          "recv": "result",
+          "bytes": 1428,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": null,
+          "numTurns": 0,
+          "resultIndex": 2,
+          "queuedTurnCount": 0,
+          "resultChars": 43
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--input-format",
+      "stream-json",
+      "--setting-sources",
+      "user,project,local",
+      "--permission-mode",
+      "default",
+      "--permission-prompt-tool",
+      "stdio",
+      "--tools",
+      "Read,Glob,Grep,Agent",
+      "--model",
+      "sonnet",
+      "--effort",
+      "low",
+      "--disable-slash-commands"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "subtype": "initialize"
+    },
+    "replyIndex": 1,
+    "ok": true
+  },
+  "toolPermissions": {
+    "readTools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "scenarioTools": [
+      "Agent"
+    ],
+    "preApproved": [],
+    "permissionMode": "default",
+    "permissionRequestsTo": "the spike (--permission-prompt-tool stdio)",
+    "policy": "every can_use_tool request is denied, as the app will deny it (M16, C22); any other request gets an error reply"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": false
+      }
+    ],
+    "set": [
+      "CLAUDE_CONFIG_DIR"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {}
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 15,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-1",
+        "request": {
+          "subtype": "initialize"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 434,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-1",
+          "response": {
+            "commands": [],
+            "agents": [
+              {
+                "name": "claude",
+                "description": "Catch-all for any task that doesn't fit a more specific agent. FleetView's default when no agent name is typed."
+              },
+              {
+                "name": "Explore",
+                "description": "Fast read-only search agent for locating code. Use it to find files by pattern (eg. \"src/components/**/*.tsx\"), grep for symbols or keywords (eg. \"API endpoints\"), or answer \"where is X defined / which files reference Y.\" Do NOT use it for code review, design-doc auditing, cross-file consistency checks, or open-ended analysis — it reads excerpts rather than whole files and will miss content past its read window. When calling, specify search breadth: \"quick\" for a single targeted lookup, \"medium\" for moderate exploration, or \"very thorough\" to search across multiple locations and naming conventions.",
+                "model": "inherit"
+              },
+              {
+                "name": "general-purpose",
+                "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you."
+              },
+              {
+                "name": "Plan",
+                "description": "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs.",
+                "model": "inherit"
+              },
+              {
+                "name": "statusline-setup",
+                "description": "Use this agent to configure the user's Claude Code status line setting.",
+                "model": "sonnet"
+              }
+            ],
+            "output_style": "default",
+            "available_output_styles": [
+              "default",
+              "Proactive",
+              "Concise",
+              "Explanatory",
+              "Learning"
+            ],
+            "user_output_styles_dir": "<scratch>\\output-styles",
+            "models": [
+              {
+                "value": "default",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Default (recommended)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "opus[1m]",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Opus (1M context)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "claude-fable-5-1[1m]",
+                "resolvedModel": "claude-fable-5-1",
+                "displayName": "Fable",
+                "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "sonnet",
+                "resolvedModel": "claude-sonnet-5",
+                "displayName": "Sonnet",
+                "description": "Sonnet 5 · Efficient for routine tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "haiku",
+                "resolvedModel": "claude-haiku-4-5-20251001",
+                "displayName": "Haiku",
+                "description": "Haiku 4.5 · Fastest for quick answers"
+              }
+            ],
+            "account": "<account>",
+            "pid": 97524,
+            "current_permission_mode": "default",
+            "analytics_disabled": false,
+            "remote_control_auto_enable": false,
+            "remote_control_available": true,
+            "remote_control_auto_on_by_default": false,
+            "ide_rc_auto_enable_gate": true,
+            "fast_mode_state": "off",
+            "fast_mode_disabled_reason": "sdk_opt_in_required",
+            "session_state": "idle"
+          },
+          "pending_permission_requests": [],
+          "pending_user_dialog_requests": []
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 2059,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "/model haiku"
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 2088,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read",
+          "mcp__<mcp-server-15>__batch",
+          "mcp__<mcp-server-15>__create",
+          "mcp__<mcp-server-15>__delete",
+          "mcp__<mcp-server-15>__export",
+          "mcp__<mcp-server-15>__guide",
+          "mcp__<mcp-server-15>__query",
+          "mcp__<mcp-server-15>__read",
+          "mcp__<mcp-server-15>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-16>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-17>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-18>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-19>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "slash_commands": [],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-2>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 2088,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "diagnostics": null,
+          "id": "<message-3>",
+          "container": null,
+          "model": "<synthetic>",
+          "role": "assistant",
+          "stop_details": null,
+          "stop_reason": "end_turn",
+          "stop_sequence": null,
+          "type": "message",
+          "usage": {
+            "output_tokens_details": null,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": null,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": null,
+            "iterations": null,
+            "speed": null
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "/model isn't available in this environment."
+            }
+          ],
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "local_command_source": "<local-command-stdout>/model isn't available in this environment.</local-command-stdout>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-4>",
+        "timestamp": "2020-01-11T16:54:55.772Z"
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 2089,
+      "frame": {
+        "is_error": false,
+        "duration_api_ms": 0,
+        "num_turns": 0,
+        "stop_reason": null,
+        "session_id": "<session-1>",
+        "total_cost_usd": 0,
+        "usage": {
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "input_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 0,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "modelUsage": {},
+        "permission_denials": [],
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 0,
+          "requested": {
+            "background": 0,
+            "foreground": 0,
+            "unset": 0
+          },
+          "started_in_background": 0,
+          "max_depth": 0,
+          "spawned_by_subagents": 0,
+          "completed": 0,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {}
+        },
+        "subtype": "success",
+        "result": "/model isn't available in this environment.",
+        "type": "result",
+        "duration_ms": 19,
+        "uuid": "<uuid-5>",
+        "queued_turn_count": 0,
+        "result_index": 0
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2616,
+      "frame": {
+        "type": "rate_limit_event",
+        "rate_limit_info": {
+          "_keys": [
+            "isUsingOverage",
+            "overageDisabledReason",
+            "overageStatus",
+            "rateLimitType",
+            "resetsAt",
+            "status",
+            "unifiedWindows"
+          ]
+        },
+        "uuid": "<uuid-6>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 7,
+      "dir": "send",
+      "ms": 3594,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "/fatg-spike-skill"
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 3600,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read",
+          "mcp__<mcp-server-15>__batch",
+          "mcp__<mcp-server-15>__create",
+          "mcp__<mcp-server-15>__delete",
+          "mcp__<mcp-server-15>__export",
+          "mcp__<mcp-server-15>__guide",
+          "mcp__<mcp-server-15>__query",
+          "mcp__<mcp-server-15>__read",
+          "mcp__<mcp-server-15>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-16>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-17>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-18>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-19>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "slash_commands": [],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-7>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 3600,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "diagnostics": null,
+          "id": "<message-8>",
+          "container": null,
+          "model": "<synthetic>",
+          "role": "assistant",
+          "stop_details": null,
+          "stop_reason": "end_turn",
+          "stop_sequence": null,
+          "type": "message",
+          "usage": {
+            "output_tokens_details": null,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": null,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": null,
+            "iterations": null,
+            "speed": null
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Unknown command: /fatg-spike-skill"
+            }
+          ],
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "local_command_source": "<local-command-stdout>Unknown command: /fatg-spike-skill</local-command-stdout>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-9>",
+        "timestamp": "2020-01-11T16:54:57.291Z"
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 3600,
+      "frame": {
+        "is_error": false,
+        "duration_api_ms": 0,
+        "num_turns": 0,
+        "stop_reason": null,
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.000951,
+        "usage": {
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "input_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 0,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 896,
+            "outputTokens": 11,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000951,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [],
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 0,
+          "requested": {
+            "background": 0,
+            "foreground": 0,
+            "unset": 0
+          },
+          "started_in_background": 0,
+          "max_depth": 0,
+          "spawned_by_subagents": 0,
+          "completed": 0,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {}
+        },
+        "subtype": "success",
+        "result": "Unknown command: /fatg-spike-skill",
+        "type": "result",
+        "duration_ms": 4,
+        "uuid": "<uuid-10>",
+        "queued_turn_count": 0,
+        "result_index": 1
+      }
+    },
+    {
+      "index": 11,
+      "dir": "send",
+      "ms": 5115,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "/clear"
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 5121,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read",
+          "mcp__<mcp-server-15>__batch",
+          "mcp__<mcp-server-15>__create",
+          "mcp__<mcp-server-15>__delete",
+          "mcp__<mcp-server-15>__export",
+          "mcp__<mcp-server-15>__guide",
+          "mcp__<mcp-server-15>__query",
+          "mcp__<mcp-server-15>__read",
+          "mcp__<mcp-server-15>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-16>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-17>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-18>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-19>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "slash_commands": [],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-11>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 5121,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "diagnostics": null,
+          "id": "<message-12>",
+          "container": null,
+          "model": "<synthetic>",
+          "role": "assistant",
+          "stop_details": null,
+          "stop_reason": "end_turn",
+          "stop_sequence": null,
+          "type": "message",
+          "usage": {
+            "output_tokens_details": null,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": null,
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": null,
+            "iterations": null,
+            "speed": null
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "/clear isn't available in this environment."
+            }
+          ],
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "local_command_source": "<local-command-stdout>/clear isn't available in this environment.</local-command-stdout>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-13>",
+        "timestamp": "2020-01-11T16:54:58.812Z"
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 5121,
+      "frame": {
+        "is_error": false,
+        "duration_api_ms": 0,
+        "num_turns": 0,
+        "stop_reason": null,
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.000951,
+        "usage": {
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "input_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 0,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 896,
+            "outputTokens": 11,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000951,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [],
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 0,
+          "requested": {
+            "background": 0,
+            "foreground": 0,
+            "unset": 0
+          },
+          "started_in_background": 0,
+          "max_depth": 0,
+          "spawned_by_subagents": 0,
+          "completed": 0,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {}
+        },
+        "subtype": "success",
+        "result": "/clear isn't available in this environment.",
+        "type": "result",
+        "duration_ms": 4,
+        "uuid": "<uuid-14>",
+        "queued_turn_count": 0,
+        "result_index": 2
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1739,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2058,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "before-close",
+      "atMs": 8260,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    }
+  ],
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "configuration": {
+    "folder": "a scratch configuration folder (CLAUDE_CONFIG_DIR), signed in by the maintainer",
+    "written": [
+      "skills/fatg-spike-skill/SKILL.md"
+    ]
+  },
+  "frameSizes": {
+    "largest": [
+      {
+        "type": "control_response",
+        "bytes": 3830
+      },
+      {
+        "type": "system/init",
+        "bytes": 1570
+      },
+      {
+        "type": "system/init",
+        "bytes": 1570
+      },
+      {
+        "type": "system/init",
+        "bytes": 1570
+      },
+      {
+        "type": "result",
+        "bytes": 1428
+      }
+    ],
+    "longStringsCut": []
+  }
+}

@@ -1,0 +1,1830 @@
+{
+  "_fixture": {
+    "source": "M21 spike m21-k2.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":1,\"turn\":1,\"item\":3,\"mcp-server\":4}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-10T10:24:32.593Z",
+  "scenario": {
+    "id": "m21-plan",
+    "title": "K2: a plan turn whose prompt invites a question, the request answered with `answers` (C23)",
+    "successCondition": "The request's fields, the reply taken, `serverRequest/resolved`, and the turn's end with its plan"
+  },
+  "run": {
+    "id": "codex-m21-plan-8",
+    "number": 2,
+    "attempt": 2,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 36,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1721,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-7>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-7>.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "experimentalApiAskedFor": true,
+      "model": {
+        "model": "gpt-6-astra",
+        "effort": "low"
+      },
+      "endStatus": "completed",
+      "requests": [
+        {
+          "index": 24,
+          "msAfterTheTurnStart": null,
+          "keys": [
+            "autoResolutionMs",
+            "isBlocking",
+            "itemId",
+            "questions",
+            "threadId",
+            "turnId"
+          ],
+          "isBlocking": true,
+          "autoResolutionMs": null,
+          "itemIdNamed": true,
+          "turnIdNamed": true,
+          "threadIdNamed": true,
+          "questions": [
+            {
+              "keys": [
+                "header",
+                "id",
+                "isOther",
+                "isSecret",
+                "options",
+                "question"
+              ],
+              "options": 2,
+              "optionKeys": [
+                "description",
+                "label"
+              ],
+              "isOther": true,
+              "isSecret": false,
+              "idUnits": 10,
+              "headerUnits": 11,
+              "questionUnits": 36
+            }
+          ],
+          "reply": {
+            "msAfterTheRequest": 0,
+            "answers": {
+              "notes_file": {
+                "answers": [
+                  "notes-2.txt"
+                ]
+              }
+            }
+          },
+          "resolved": [
+            {
+              "index": 26,
+              "msAfterTheReply": 3,
+              "paramKeys": [
+                "requestId",
+                "threadId"
+              ],
+              "namesTheRequest": true
+            }
+          ],
+          "statuses": [
+            {
+              "index": 17,
+              "whilePending": false,
+              "keys": [
+                "status",
+                "threadId"
+              ],
+              "type": "active",
+              "activeFlags": []
+            },
+            {
+              "index": 23,
+              "whilePending": false,
+              "keys": [
+                "status",
+                "threadId"
+              ],
+              "type": "active",
+              "activeFlags": [
+                "waitingOnUserInput"
+              ]
+            },
+            {
+              "index": 27,
+              "whilePending": false,
+              "keys": [
+                "status",
+                "threadId"
+              ],
+              "type": "active",
+              "activeFlags": []
+            },
+            {
+              "index": 35,
+              "whilePending": false,
+              "keys": [
+                "status",
+                "threadId"
+              ],
+              "type": "idle",
+              "activeFlags": null
+            }
+          ]
+        }
+      ],
+      "methods": {
+        "mcpServer/startupStatus/updated": 8,
+        "thread/settings/updated": 1,
+        "thread/status/changed": 4,
+        "turn/started": 1,
+        "item/started": 2,
+        "item/completed": 2,
+        "item/tool/requestUserInput": 1,
+        "serverRequest/resolved": 1,
+        "thread/tokenUsage/updated": 2,
+        "turn/completed": 1
+      },
+      "itemsStarted": [
+        "userMessage",
+        "plan"
+      ],
+      "answers": [],
+      "planItems": [
+        {
+          "keys": [
+            "id",
+            "text",
+            "type"
+          ],
+          "units": 117
+        }
+      ],
+      "commands": [],
+      "sleeps": 0,
+      "end": {
+        "ms": 12228,
+        "index": 36,
+        "status": "completed",
+        "error": null
+      },
+      "answerNamesTheWord": false,
+      "typeCounts": {
+        "thread/started": 1,
+        "mcpServer/startupStatus/updated": 8,
+        "thread/settings/updated": 1,
+        "response": 1,
+        "thread/status/changed": 4,
+        "turn/started": 1,
+        "item/started": 2,
+        "item/completed": 2,
+        "item/tool/requestUserInput": 1,
+        "serverRequest/resolved": 1,
+        "thread/tokenUsage/updated": 2,
+        "account/rateLimits/updated": 2,
+        "turn/completed": 1
+      },
+      "outline": [
+        {
+          "index": 9,
+          "ms": 1791,
+          "method": "thread/started"
+        },
+        {
+          "index": 10,
+          "ms": 1791,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 11,
+          "ms": 1791,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 12,
+          "ms": 1791,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 13,
+          "ms": 1791,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 14,
+          "ms": 1804,
+          "method": "thread/settings/updated",
+          "thread": "session"
+        },
+        {
+          "index": 16,
+          "ms": 1811,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 17,
+          "ms": 1834,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 18,
+          "ms": 1834,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 19,
+          "ms": 1853,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 20,
+          "ms": 2395,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 21,
+          "ms": 4091,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 22,
+          "ms": 4101,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 23,
+          "ms": 7207,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 24,
+          "ms": 7208,
+          "method": "item/tool/requestUserInput",
+          "thread": "session",
+          "request": true
+        },
+        {
+          "index": 26,
+          "ms": 7211,
+          "method": "serverRequest/resolved",
+          "thread": "session"
+        },
+        {
+          "index": 27,
+          "ms": 7213,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 28,
+          "ms": 7282,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 29,
+          "ms": 7283,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 30,
+          "ms": 9111,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 31,
+          "ms": 11306,
+          "method": "item/started",
+          "thread": "session",
+          "item": "plan"
+        },
+        {
+          "index": 32,
+          "ms": 12091,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "plan"
+        },
+        {
+          "index": 33,
+          "ms": 12156,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 34,
+          "ms": 12156,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 35,
+          "ms": 12228,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 36,
+          "ms": 12228,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "model": "gpt-6-astra"
+    },
+    "replyIndex": 7,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_AUTOUPDATER_DISABLED_BY_HOST",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 804,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ],
+            "experimentalApi": true
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 806,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) unknown (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 806,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 809,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 1623,
+      "frame": {
+        "method": "model/list",
+        "id": 2,
+        "params": {
+          "limit": 100
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1625,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "gpt-6-astra",
+              "model": "gpt-6-astra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Astra",
+              "description": "Frontier intelligence for the most demanding work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "2x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": true
+            },
+            {
+              "id": "gpt-6-sol",
+              "model": "gpt-6-sol",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Sol",
+              "description": "Previous generation workhorse model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-6-luna",
+              "model": "gpt-6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Luna",
+              "description": "Fast and affordable model for easier tasks.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-sol",
+              "model": "gpt-5.6-sol",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Sol",
+              "description": "Older generation workhorse model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "low",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-terra",
+              "model": "gpt-5.6-terra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Terra",
+              "description": "Older balanced model for straightforward work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-luna",
+              "model": "gpt-5.6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Luna",
+              "description": "Older fast and efficient model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            }
+          ],
+          "nextCursor": null
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 1625,
+      "frame": {
+        "method": "thread/start",
+        "id": 3,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "model": "gpt-6-astra"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 1789,
+      "frame": {
+        "id": 3,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "max",
+            "createdAt": 1578651858,
+            "updatedAt": 1578651858,
+            "recencyAt": 1578651858,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\10\\rollout-2020-01-10T06-24-18-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-astra",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": "max",
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "send",
+      "ms": 1791,
+      "frame": {
+        "method": "turn/start",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Before you plan anything, ask me with your request_user_input tool which of notes-1.txt and notes-2.txt the plan should be about, offering those two as the options, and wait for my answer. Then write a two-line plan for summarising the file I pick.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-astra",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-2>",
+          "collaborationMode": {
+            "mode": "plan",
+            "settings": {
+              "model": "gpt-6-astra",
+              "reasoning_effort": "low",
+              "developer_instructions": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 1791,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "max",
+            "createdAt": 1578651858,
+            "updatedAt": 1578651858,
+            "recencyAt": 1578651858,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\10\\rollout-2020-01-10T06-24-18-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578651858417
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 1791,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651858417
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 1791,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-8>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651858417
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 1791,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651858417
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 1791,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651858417
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 1804,
+      "frame": {
+        "method": "thread/settings/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "threadSettings": {
+            "cwd": "<scratch>",
+            "approvalPolicy": "never",
+            "approvalsReviewer": "user",
+            "sandboxPolicy": {
+              "type": "readOnly",
+              "networkAccess": false
+            },
+            "activePermissionProfile": null,
+            "model": "gpt-6-astra",
+            "modelProvider": "openai",
+            "serviceTier": "default",
+            "effort": "low",
+            "summary": null,
+            "collaborationMode": {
+              "mode": "plan",
+              "settings": {
+                "model": "gpt-6-astra",
+                "reasoning_effort": "low",
+                "developer_instructions": "# Plan Mode (Conversational)\r\n\r\nYou work in 3 phases, and you should *chat your way* to a great plan before finalizing it. A great plan is very detailed—intent- and implementation-wise—so that it can be handed to another engineer or agent to be implemented right away. It must be **decision complete**, where the implementer does not need to make any decisions.\r\n\r\n## Mode rules (strict)\r\n\r\nYou are in **Plan Mode** until a developer message explicitly ends it.\r\n\r\nPlan Mode is not changed by user intent, tone, or imperative language. If a user asks for execution while still in Plan Mode, treat it as a request to **plan the execution**, not perform it.\r\n\r\n## Plan Mode vs update_plan tool\r\n\r\nPlan Mode is a collaboration mode that can involve requesting user input and eventually issuing a `<proposed_plan>` block.\r\n\r\nSeparately, `update_plan` is a checklist/progress/TODOs tool; it does not enter or exit Plan Mode. Do not confuse it with Plan mode or try to use it while in Plan mode. If you try to use `update_plan` in Plan mode, it will return an error.\r\n\r\n## Execution vs. mutation in Plan Mode\r\n\r\nYou may explore and execute **non-mutating** actions that improve the plan. You must not perform **mutating** actions.\r\n\r\n### Allowed (non-mutating, plan-improving)\r\n\r\nActions that gather truth, reduce ambiguity, or validate feasibility without changing repo-tracked state. Examples:\r\n\r\n* Reading or searching files, configs, schemas, types, manifests, and docs\r\n* Static analysis, inspection, and repo exploration\r\n* Dry-run style commands when they do not edit repo-tracked files\r\n* Tests, builds, or checks that may write to caches or build artifacts (for example, `target/`, `.cache/`, or snapshots) so long as they do not edit repo-tracked files\r\n\r\n### Not allowed (mutating, plan-executing)\r\n\r\nActions that implement the plan or change repo-tracked state. Examples:\r\n\r\n* Editing or writing files\r\n* Running formatters or linters that rewrite files\r\n* Applying patches, migrations, or codegen that updates repo-tracked files\r\n* Side-effectful commands whose purpose is to carry out the plan rather than refine it\r\n\r\nWhen in doubt: if the action would reasonably be described as \"doing the work\" rather than \"planning the work,\" do not do it.\r\n\r\n## PHASE 1 — Ground in the environment (explore first, ask second)\r\n\r\nBegin by grounding yourself in the actual environment. Eliminate unknowns in the prompt by discovering facts, not by asking the user. Resolve all questions that can be answered through exploration or inspection. Identify missing or ambiguous details only if they cannot be derived from the environment. Silent exploration between turns is allowed and encouraged.\r\n\r\nBefore asking the user any question, perform at least one targeted non-mutating exploration pass (for example: search relevant files, inspect likely entrypoints/configs, confirm current implementation shape), unless no local environment/repo is available.\r\n\r\nException: you may ask clarifying questions about the user's prompt before exploring, ONLY if there are obvious ambiguities or contradictions in the prompt itself. However, if ambiguity might be resolved by exploring, always prefer exploring first.\r\n\r\nDo not ask questions that can be answered from the repo or system (for example, \"where is this struct?\" or \"which UI component should we use?\" when exploration can make it clear). Only ask once you have exhausted reasonable non-mutating exploration.\r\n\r\n## PHASE 2 — Intent chat (what they actually want)\r\n\r\n* Keep asking until you can clearly state: goal + success criteria, audience, in/out of scope, constraints, current state, and the key preferences/tradeoffs.\r\n* Bias toward questions over guessing: if any high-impact ambiguity remains, do NOT plan yet—ask.\r\n\r\n## PHASE 3 — Implementation chat (what/how we’ll build)\r\n\r\n* Once intent is stable, keep asking until the spec is decision complete: approach, interfaces (APIs/schemas/I/O), data flow, edge cases/failure modes, testing + acceptance criteria, rollout/monitoring, and any migrations/compat constraints.\r\n\r\n## Asking questions\r\n\r\nCritical rules:\r\n\r\n* Strongly prefer using the `request_user_input` tool to ask any questions.\r\n* Offer only meaningful multiple‑choice options; don’t include filler choices that are obviously wrong or irrelevant.\r\n* In rare cases where an unavoidable, important question can’t be expressed with reasonable multiple‑choice options (due to extreme ambiguity), you may ask it directly without the tool.\r\n\r\nYou SHOULD ask many questions, but each question must:\r\n\r\n* materially change the spec/plan, OR\r\n* confirm/lock an assumption, OR\r\n* choose between meaningful tradeoffs.\r\n* not be answerable by non-mutating commands.\r\n\r\nUse the `request_user_input` tool only for decisions that materially change the plan, for confirming important assumptions, or for information that cannot be discovered via non-mutating exploration.\r\n\r\n## Two kinds of unknowns (treat differently)\r\n\r\n1. **Discoverable facts** (repo/system truth): explore first.\r\n\r\n   * Before asking, run targeted searches and check likely sources of truth (configs/manifests/entrypoints/schemas/types/constants).\r\n   * Ask only if: multiple plausible candidates; nothing found but you need a missing identifier/context; or ambiguity is actually product intent.\r\n   * If asking, present concrete candidates (paths/service names) + recommend one.\r\n   * Never ask questions you can answer from your environment (e.g., “where is this struct”).\r\n\r\n2. **Preferences/tradeoffs** (not discoverable): ask early.\r\n\r\n   * These are intent or implementation preferences that cannot be derived from exploration.\r\n   * Provide 2–4 mutually exclusive options + a recommended default.\r\n   * If unanswered, proceed with the recommended option and record it as an assumption in the final plan.\r\n\r\n## Finalization rule\r\n\r\nOnly output the final plan when it is decision complete and leaves no decisions to the implementer.\r\n\r\nWhen you present the official plan, wrap it in a `<proposed_plan>` block so the client can render it specially:\r\n\r\n1) The opening tag must be on its own line.\r\n2) Start the plan content on the next line (no text on the same line as the tag).\r\n3) The closing tag must be on its own line.\r\n4) Use Markdown inside the block.\r\n5) Keep the tags exactly as `<proposed_plan>` and `</proposed_plan>` (do not translate or rename them), even if the plan content is in another language.\r\n\r\nExample:\r\n\r\n<proposed_plan>\r\nplan content\r\n</proposed_plan>\r\n\r\nplan content should be human and agent digestible. The final plan must be plan-only, concise by default, and include:\r\n\r\n* A clear title\r\n* A brief summary section\r\n* Important changes or additions to public APIs/interfaces/types\r\n* Test cases and scenarios\r\n* Explicit assumptions and defaults chosen where needed\r\n\r\nWhen possible, prefer a compact structure with 3-5 short sections, usually: Summary, Key Changes or Implementation Changes, Test Plan, and Assumptions. Do not include a separate Scope section unless scope boundaries are genuinely important to avoid mistakes.\r\n\r\nPrefer grouped implementation bullets by subsystem or behavior over file-by-file inventories. Mention files only when needed to disambiguate a non-obvious change, and avoid naming more than 3 paths unless extra specificity is necessary to prevent mistakes. Prefer behavior-level descriptions over symbol-by-symbol removal lists. For v1 feature-addition plans, do not invent detailed schema, validation, precedence, fallback, or wire-shape policy unless the request establishes it or it is needed to prevent a concrete implementation mistake; prefer the intended capability and minimum interface/behavior changes.\r\n\r\nKeep bullets short and avoid explanatory sub-bullets unless they are needed to prevent ambiguity. Prefer the minimum detail needed for implementation safety, not exhaustive coverage. Within each section, compress related changes into a few high-signal bullets and omit branch-by-branch logic, repeated invariants, and long lists of unaffected behavior unless they are necessary to prevent a likely implementation mistake. Avoid repeated repo facts and irrelevant edge-case or rollout detail. For straightforward refactors, keep the plan to a compact summary, key edits, tests, and assumptions. If the user asks for more detail, then expand.\r\n\r\nDo not ask \"should I proceed?\" in the final output. The user can easily switch out of Plan mode and request implementation if you have included a `<proposed_plan>` block in your response. Alternatively, they can decide to stay in Plan mode and continue refining the plan.\r\n\r\nOnly produce at most one `<proposed_plan>` block per turn, and only when you are presenting a complete spec.\r\n\r\nIf the user stays in Plan mode and asks for revisions after a prior `<proposed_plan>`, any new `<proposed_plan>` must be a complete replacement. If the user indicates that the prior plan is not acceptable but does not provide enough information to produce a complete replacement, address the concern and continue planning without producing a `<proposed_plan>` block. If the follow-up neither requires changes nor calls the plan into question (e.g. clarifying question), answer it before the block, then reproduce the prior `<proposed_plan>` unchanged.\r\n"
+              }
+            },
+            "multiAgentMode": "explicitRequestOnly",
+            "personality": "pragmatic"
+          }
+        },
+        "emittedAtMs": 1578651858431
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 1804,
+      "frame": {
+        "id": 4,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 1811,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651858439
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 1834,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578651858462
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 1834,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578651858,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578651858462
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 1853,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651858481
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 2395,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651859024
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 4091,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Before you plan anything, ask me with your request_user_input tool which of notes-1.txt and notes-2.txt the plan should be about, offering those two as the options, and wait for my answer. Then write a two-line plan for summarising the file I pick.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578651860720
+        },
+        "emittedAtMs": 1578651860720
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 4101,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Before you plan anything, ask me with your request_user_input tool which of notes-1.txt and notes-2.txt the plan should be about, offering those two as the options, and wait for my answer. Then write a two-line plan for summarising the file I pick.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578651860720
+        },
+        "emittedAtMs": 1578651860729
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 7207,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": [
+              "waitingOnUserInput"
+            ]
+          }
+        },
+        "emittedAtMs": 1578651863835
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 7208,
+      "frame": {
+        "method": "item/tool/requestUserInput",
+        "id": 0,
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "questions": [
+            {
+              "id": "notes_file",
+              "header": "Choose file",
+              "question": "Which file should the plan be about?",
+              "isOther": true,
+              "isSecret": false,
+              "options": [
+                {
+                  "label": "notes-1.txt",
+                  "description": "Plan to summarise notes-1.txt."
+                },
+                {
+                  "label": "notes-2.txt",
+                  "description": "Plan to summarise notes-2.txt."
+                }
+              ]
+            }
+          ],
+          "isBlocking": true,
+          "autoResolutionMs": null
+        }
+      }
+    },
+    {
+      "index": 25,
+      "dir": "send",
+      "ms": 7208,
+      "frame": {
+        "id": 0,
+        "result": {
+          "answers": {
+            "notes_file": {
+              "answers": [
+                "notes-2.txt"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 7211,
+      "frame": {
+        "method": "serverRequest/resolved",
+        "params": {
+          "threadId": "<session-1>",
+          "requestId": 0
+        },
+        "emittedAtMs": 1578651863839
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 7213,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578651863841
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 7282,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 18537,
+              "inputTokens": 18455,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 82,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 18537,
+              "inputTokens": 18455,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 82,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578651863911
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 7283,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 9111,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-8>",
+          "status": "failed",
+          "error": "MCP client for `<mcp-server-8>` failed to start: MCP startup failed: handshaking with MCP server failed: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request",
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651865739
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 11306,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "plan",
+            "id": "<item-6>",
+            "text": ""
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578651867934
+        },
+        "emittedAtMs": 1578651867935
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 12091,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "plan",
+            "id": "<item-6>",
+            "text": "1. Read notes-2.txt and identify its main points.\n2. Write a concise summary preserving key details and conclusions.\n"
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578651868709
+        },
+        "emittedAtMs": 1578651868719
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 12156,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 37140,
+              "inputTokens": 37019,
+              "cachedInputTokens": 18304,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 121,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 18603,
+              "inputTokens": 18564,
+              "cachedInputTokens": 18304,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 39,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578651868784
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 12156,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 12228,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578651868856
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 12228,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578651858,
+            "completedAt": 1578651868,
+            "durationMs": 10416
+          }
+        },
+        "emittedAtMs": 1578651868856
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 687,
+    "tail": "2020-01-10T10:24:20.435991Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n2020-01-10T10:24:22.709314Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n2020-01-10T10:24:25.739274Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n"
+  },
+  "requestsAnswered": [
+    {
+      "kind": "item/tool/requestUserInput",
+      "requestKind": "question",
+      "answer": "answers"
+    }
+  ],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 804,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1623,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 15102,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "node.exe",
+        "<mcp-server-7>.exe",
+        "<mcp-server-7>.exe"
+      ],
+      "alive": 7
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "thread/settings/updated",
+        "item": null,
+        "bytes": 10217
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 6335
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1493
+      },
+      {
+        "method": "mcpServer/startupStatus/updated",
+        "item": null,
+        "bytes": 1174
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1099
+      }
+    ],
+    "longStringsCut": []
+  }
+}

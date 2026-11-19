@@ -1,0 +1,1158 @@
+{
+  "_fixture": {
+    "source": "M10 spike discover.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "token-level deltas (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-08T01:08:58.681Z",
+  "scenario": {
+    "id": "discovery",
+    "title": "Codex discovery",
+    "successCondition": "Replies to initialize, model/list and config/read (reduced); no turn frame"
+  },
+  "run": {
+    "outcome": "happened",
+    "turnsSpent": 0,
+    "turnFrames": 0,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": null,
+  "toolPermissions": {
+    "note": "no thread, no turn"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {},
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/agentMessage/delta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1218,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/agentMessage/delta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1219,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1219,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "send",
+      "ms": 1219,
+      "frame": {
+        "method": "model/list",
+        "id": 2,
+        "params": {
+          "includeHidden": true
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 1219,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1220,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "gpt-6-astra",
+              "model": "gpt-6-astra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Astra",
+              "description": "Frontier intelligence for the most demanding work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "2x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": true
+            },
+            {
+              "id": "gpt-6-sol",
+              "model": "gpt-6-sol",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Sol",
+              "description": "Previous generation workhorse model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-6-luna",
+              "model": "gpt-6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Luna",
+              "description": "Fast and affordable model for easier tasks.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-reserve",
+              "model": "gpt-reserve",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-Reserve",
+              "description": "Fast and affordable agentic coding model.",
+              "modelSpecialty": null,
+              "hidden": true,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-sol",
+              "model": "gpt-5.6-sol",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Sol",
+              "description": "Older generation workhorse model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "low",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-terra",
+              "model": "gpt-5.6-terra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Terra",
+              "description": "Older balanced model for straightforward work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-luna",
+              "model": "gpt-5.6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Luna",
+              "description": "Older fast and efficient model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.5",
+              "model": "gpt-5.5",
+              "upgrade": "gpt-5.6-sol",
+              "upgradeInfo": {
+                "model": "gpt-5.6-sol",
+                "upgradeCopy": null,
+                "modelLink": null,
+                "migrationMarkdown": "GPT-5.5 retires on October 14, 2026. Switch to GPT-5.6 Sol to continue working in Codex.",
+                "retirementAt": 1792004400
+              },
+              "availabilityNux": null,
+              "displayName": "GPT-5.5",
+              "description": "Legacy coding model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": null,
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "codex-auto-review",
+              "model": "codex-auto-review",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "Codex Auto Review",
+              "description": "Automatic approval review model for Codex.",
+              "modelSpecialty": null,
+              "hidden": true,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            }
+          ],
+          "nextCursor": null
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 1221,
+      "frame": {
+        "method": "config/read",
+        "id": 3,
+        "params": {
+          "includeLayers": false
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 1227,
+      "frame": {
+        "id": 3,
+        "result": {
+          "_reduced": "config/read reply (C53, C69): two levels of key names, types and counts",
+          "reply": {
+            "config": {
+              "type": "object",
+              "count": 101
+            },
+            "origins": {
+              "type": "object",
+              "count": 121
+            }
+          },
+          "config": {
+            "model": {
+              "type": "string"
+            },
+            "review_model": {
+              "type": "null"
+            },
+            "model_context_window": {
+              "type": "null"
+            },
+            "model_auto_compact_token_limit": {
+              "type": "null"
+            },
+            "model_auto_compact_token_limit_scope": {
+              "type": "null"
+            },
+            "model_provider": {
+              "type": "null"
+            },
+            "approval_policy": {
+              "type": "null"
+            },
+            "approvals_reviewer": {
+              "type": "null"
+            },
+            "sandbox_mode": {
+              "type": "null"
+            },
+            "sandbox_workspace_write": {
+              "type": "null"
+            },
+            "forced_chatgpt_workspace_id": {
+              "type": "null"
+            },
+            "forced_login_method": {
+              "type": "null"
+            },
+            "web_search": {
+              "type": "null"
+            },
+            "tools": {
+              "type": "null"
+            },
+            "instructions": {
+              "type": "null"
+            },
+            "developer_instructions": {
+              "type": "null"
+            },
+            "compact_prompt": {
+              "type": "null"
+            },
+            "model_reasoning_effort": {
+              "type": "string"
+            },
+            "model_reasoning_summary": {
+              "type": "null"
+            },
+            "model_verbosity": {
+              "type": "null"
+            },
+            "service_tier": {
+              "type": "string"
+            },
+            "analytics": {
+              "type": "null"
+            },
+            "apps": {
+              "type": "object",
+              "count": 5
+            },
+            "browser_use": {
+              "type": "null"
+            },
+            "computer_use": {
+              "type": "null"
+            },
+            "desktop": {
+              "type": "object",
+              "count": 11
+            },
+            "include_apps_instructions": {
+              "type": "boolean"
+            },
+            "mcp_optional_startup_grace_ms": {
+              "type": "null"
+            },
+            "tool_output_token_limit": {
+              "type": "null"
+            },
+            "thread_unload_delay_secs": {
+              "type": "null"
+            },
+            "project_doc_max_bytes": {
+              "type": "number"
+            },
+            "chatgpt_base_url": {
+              "type": "string"
+            },
+            "sqlite_home": {
+              "type": "null"
+            },
+            "experimental_realtime_start_instructions": {
+              "type": "null"
+            },
+            "experimental_thread_store": {
+              "type": "null"
+            },
+            "model_providers": {
+              "type": "object",
+              "count": 0
+            },
+            "hooks": {
+              "type": "null"
+            },
+            "project_doc_fallback_filenames": {
+              "type": "array",
+              "count": 0
+            },
+            "mcp_oauth_callback_url": {
+              "type": "null"
+            },
+            "ghost_snapshot": {
+              "type": "null"
+            },
+            "check_for_update_on_startup": {
+              "type": "null"
+            },
+            "profiles": {
+              "type": "object",
+              "count": 0
+            },
+            "log_dir": {
+              "type": "null"
+            },
+            "disable_paste_burst": {
+              "type": "null"
+            },
+            "features": {
+              "type": "object",
+              "count": 15
+            },
+            "permissions": {
+              "type": "null"
+            },
+            "show_raw_agent_reasoning": {
+              "type": "null"
+            },
+            "experimental_use_unified_exec_tool": {
+              "type": "null"
+            },
+            "oss_provider": {
+              "type": "null"
+            },
+            "goals": {
+              "type": "null"
+            },
+            "mcp_servers": {
+              "type": "object",
+              "count": 3
+            },
+            "responses_api_metadata": {
+              "type": "null"
+            },
+            "notice": {
+              "type": "null"
+            },
+            "experimental_realtime_ws_model": {
+              "type": "null"
+            },
+            "notify": {
+              "type": "array",
+              "count": 2
+            },
+            "experimental_compact_prompt_file": {
+              "type": "null"
+            },
+            "marketplaces": {
+              "type": "object",
+              "count": 2
+            },
+            "mcp_oauth_callback_port": {
+              "type": "null"
+            },
+            "js_repl_node_module_dirs": {
+              "type": "null"
+            },
+            "allow_login_shell": {
+              "type": "boolean"
+            },
+            "allow_symlinked_codex_home": {
+              "type": "null"
+            },
+            "tui": {
+              "type": "null"
+            },
+            "model_catalog_json": {
+              "type": "null"
+            },
+            "hide_agent_reasoning": {
+              "type": "boolean"
+            },
+            "apps_mcp_product_sku": {
+              "type": "null"
+            },
+            "realtime": {
+              "type": "null"
+            },
+            "tool_suggest": {
+              "type": "null"
+            },
+            "js_repl_node_path": {
+              "type": "null"
+            },
+            "memories": {
+              "type": "object",
+              "count": 14
+            },
+            "skills": {
+              "type": "object",
+              "count": 1
+            },
+            "plugins": {
+              "type": "object",
+              "count": 11
+            },
+            "project_root_markers": {
+              "type": "array",
+              "count": 1
+            },
+            "experimental_realtime_ws_base_url": {
+              "type": "null"
+            },
+            "profile": {
+              "type": "null"
+            },
+            "agents": {
+              "type": "null"
+            },
+            "model_instructions_file": {
+              "type": "null"
+            },
+            "file_opener": {
+              "type": "string"
+            },
+            "experimental_thread_store_endpoint": {
+              "type": "null"
+            },
+            "shell_environment_policy": {
+              "type": "object",
+              "count": 7
+            },
+            "mcp_oauth_credentials_store": {
+              "type": "string"
+            },
+            "background_terminal_max_timeout": {
+              "type": "number"
+            },
+            "include_environment_context": {
+              "type": "boolean"
+            },
+            "experimental_realtime_webrtc_call_base_url": {
+              "type": "null"
+            },
+            "include_collaboration_mode_instructions": {
+              "type": "boolean"
+            },
+            "openai_base_url": {
+              "type": "null"
+            },
+            "experimental_realtime_ws_startup_context": {
+              "type": "null"
+            },
+            "suppress_unstable_features_warning": {
+              "type": "null"
+            },
+            "projects": {
+              "type": "object",
+              "count": 21
+            },
+            "feedback": {
+              "type": "null"
+            },
+            "otel": {
+              "type": "null"
+            },
+            "include_permissions_instructions": {
+              "type": "boolean"
+            },
+            "cli_auth_credentials_store": {
+              "type": "string"
+            },
+            "default_permissions": {
+              "type": "null"
+            },
+            "auto_review": {
+              "type": "null"
+            },
+            "experimental_realtime_ws_backend_prompt": {
+              "type": "null"
+            },
+            "orchestrator": {
+              "type": "null"
+            },
+            "history": {
+              "type": "object",
+              "count": 2
+            },
+            "windows": {
+              "type": "object",
+              "count": 2
+            },
+            "audio": {
+              "type": "null"
+            },
+            "personality": {
+              "type": "string"
+            },
+            "plan_mode_reasoning_effort": {
+              "type": "null"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1217,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 2377,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    }
+  ]
+}

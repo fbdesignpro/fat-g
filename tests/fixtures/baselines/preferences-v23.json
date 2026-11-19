@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 23,
+  "minReaderVersion": 23,
+  "windows": {
+    "main": {
+      "bounds": {
+        "x": 120,
+        "y": 80,
+        "width": 1600,
+        "height": 900
+      },
+      "maximized": false
+    },
+    "pet": {
+      "visible": true,
+      "autoHideOnMainFocus": false,
+      "bounds": {
+        "x": 1740,
+        "y": 80,
+        "width": 180,
+        "height": 420
+      },
+      "size": "capsule"
+    }
+  },
+  "providers": {
+    "claude": {
+      "enabled": true,
+      "executablePath": "D:\\Tools\\claude\\claude.cmd",
+      "permissionMode": "ask-first",
+      "label": "Personal"
+    },
+    "codex": {
+      "enabled": false,
+      "executablePath": null,
+      "permissionMode": "read-only",
+      "instances": [
+        {
+          "id": "00000000-0000-4000-8000-000000000001",
+          "label": "Work",
+          "folder": "D:\\Accounts\\codex-work",
+          "enabled": true
+        }
+      ]
+    }
+  },
+  "usage": {
+    "pollIntervalSec": 600
+  },
+  "privacy": {
+    "maskEmail": false
+  },
+  "audio": {
+    "muted": false,
+    "volume": 0.25,
+    "sounds": {
+      "rollover": "button.wav",
+      "turnStart": "Launch-1.mp3",
+      "turnFinished": "notification-done.wav",
+      "done": "done.wav",
+      "shelve": "BagOpen.mp3",
+      "restore": "BagClose.mp3",
+      "click": null,
+      "rightClick": "right-click.wav",
+      "question": "question.wav",
+      "approval": "approval.wav",
+      "planReady": "plan-ready.wav",
+      "reviewReady": "review-ready.wav",
+      "error": "error.wav"
+    }
+  },
+  "appearance": {
+    "theme": "light",
+    "flash": {
+      "enabled": true,
+      "speed": "slow",
+      "seconds": 5
+    },
+    "doneAnimation": "animation-only",
+    "creationAnimation": "none"
+  },
+  "layout": {
+    "projectColumn": "right"
+  },
+  "chat": {
+    "messageTimes": true,
+    "hoverMessageTimes": false,
+    "answerTimes": false,
+    "username": "Harbour master"
+  },
+  "titles": {
+    "generated": false,
+    "models": {
+      "claude": "haiku",
+      "codex": "$session"
+    }
+  },
+  "composer": {
+    "busyEnter": "queue"
+  },
+  "avatars": {
+    "assignments": {
+      "claude": {
+        "sonnet": {
+          "origin": "built-in",
+          "family": "Claude Lightning",
+          "avatar": "Sonnet"
+        },
+        "opus": {
+          "origin": "user",
+          "family": "Harbour",
+          "avatar": "Navigator"
+        }
+      }
+    },
+    "active": {
+      "codex": {
+        "origin": "built-in",
+        "family": "Codex Lightning"
+      }
+    }
+  },
+  "presets": {
+    "00000000-0000-4000-8000-000000000004": {
+      "providerId": "codex",
+      "instanceId": "default",
+      "model": "gpt-5.5",
+      "effort": "low",
+      "speed": "fast",
+      "name": "Quick notes"
+    }
+  },
+  "presetRecency": [
+    "00000000-0000-4000-8000-000000000004"
+  ],
+  "recentModels": [
+    {
+      "providerId": "codex",
+      "instanceId": "00000000-0000-4000-8000-000000000001",
+      "model": "gpt-5.5",
+      "effort": "low",
+      "speed": "fast"
+    },
+    {
+      "providerId": "claude",
+      "instanceId": "default",
+      "model": "opus",
+      "effort": "high",
+      "speed": null
+    }
+  ]
+}

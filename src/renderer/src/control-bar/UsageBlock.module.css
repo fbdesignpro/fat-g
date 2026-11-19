@@ -1,0 +1,232 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* One provider's usage in the usage box (M11 Design 5; M100, C55, C69, C84–C86): its logo, and
+   2 px from it one bar per usage window, three at most — or, with nothing to show, one track
+   holding a short status. The fill and the marks are the provider's colour (--bar-color, set inline
+   from its catalog entry); its words are in the muted colour, as "Usage remaining" above the box.
+   Its sizes are four fifths of what they were (the maintainer: the box read better at
+   80 % zoom), rounded to whole pixels; its words' sizes are the box's own (shell/Shell.module.css).
+   The logo's column is 76 px and the bars' 201 px (their 41 px label, which "Monthly" fills at 40.4 px — the longest word a window
+   is given, measured in the box's own type — the 6 px gap, the 116 px track, the gap,
+   the 32 px countdown, which "23h59" fills): the usage box's width counts them (shell/Shell.module.css). */
+.block {
+  display: grid;
+  grid-template-columns: 76px 201px;
+  column-gap: 2px;
+  align-items: center;
+  flex: none;
+  padding: 3px 6px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.block:hover {
+  background: var(--color-surface);
+}
+
+/* The mark is the block's one focusable part; the ring goes round the whole block. */
+.block:has(.markButton:focus-visible) {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+/* 76 × 36 px, the height of three bars, however many the provider has (C69, C72); the account's
+   label goes below it and the bars. The logo is placed in it, so the image's own size never
+   changes the button's. */
+.markButton {
+  position: relative;
+  display: block;
+  width: 76px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.markButton:focus-visible {
+  outline: none;
+}
+
+.logo,
+.logoStandIn {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* No native drag of the image (projects and capsules are dragged with pointer events); the button takes the press. */
+.logo {
+  object-fit: contain;
+  object-position: left center;
+  pointer-events: none;
+}
+
+.logoStandIn {
+  display: grid;
+  place-items: center;
+  background: var(--bar-color);
+}
+
+/* An account's label (M14b, C40): one line below the logo and bars, aligned with the logo's left edge
+   and cut with an ellipsis. Its colour is the
+   text's: an account has no colour of its own (C43). It is nudged 2 px down from its line, off the
+   logo's foot (the maintainer: too tight); an offset rather than padding, so its row keeps
+   its height and the logo, centred in the rows the block stretches, stays where it is. */
+.accountLabel {
+  grid-column: 1 / -1;
+  position: relative;
+  top: 2px;
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--text-10);
+  font-weight: var(--weight-bold);
+  line-height: var(--usage-label-height);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Three bars of 10 px, 3 px apart: 36 px, the logo's height with three (C69). As tall as that row
+   whatever their number, with the bars centred in it as before, so the caption under them lands on
+   the same line in every block. */
+.bars {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+  gap: 3px;
+}
+
+/* The reason for historical readings: on the line the box reserves under the
+   bars — "the usage box has room for three bars and an account's label line, whether a block shows
+   one or not" (styles/tokens.css) — left-aligned with the bars, while they show what was read
+   earlier. Out of the flow: the bars never move for it, and a block's width, which the
+   strip measures, never changes. */
+.statusCaption {
+  position: absolute;
+  /* The bars fill their row, so this is the row below: the account label's own line, to the pixel
+     (measured in the trial, both at y = the bars' foot). */
+  top: 100%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  font-size: var(--text-10);
+  font-weight: var(--weight-bold);
+  line-height: var(--usage-label-height);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* An account's label shares that line: it keeps the logo's column, the caption the bars'. */
+.block[data-historical] .accountLabel {
+  grid-column: 1 / 2;
+}
+
+/* The label, the track, and after it how long until the window resets (C85). */
+.bar {
+  display: grid;
+  grid-template-columns: 41px 116px 32px;
+  column-gap: 6px;
+  align-items: center;
+  height: 10px;
+}
+
+.label,
+.countdown {
+  overflow: hidden;
+  font-size: var(--text-10);
+  font-weight: var(--weight-bold);
+  /* The font's descenders extend below a 1em line box (Weekly / Monthly). The bar permits this
+     taller text line to extend past its own 10px height without clipping the glyphs. */
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.label {
+  text-align: right;
+  text-overflow: ellipsis;
+}
+
+/* "5d5h", "3h32", or nothing where the bar above says the same: no wider than its column, its digits of one width so it holds still as it counts. */
+.countdown {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* A mark at each end of the track, at 0 % and at 100 % (C61; M100, C55, C69), 3 px wide in the
+   provider's colour and as tall as the fill, which is the track's whole height. The fill covers the
+   0 % mark from its first pixel and meets the 100 % one at full, so an empty bar shows the 0 % mark
+   alone and a bar that is not full shows the 100 % one. */
+.track {
+  position: relative;
+  height: 10px;
+}
+
+.track::before,
+.track::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--bar-color);
+  content: '';
+}
+
+.track::before {
+  left: 0;
+}
+
+.track::after {
+  right: 0;
+}
+
+.fillArea {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  background: var(--bar-color);
+  transition: width var(--duration-fast) ease;
+}
+
+/* Readings kept while the latest checks fail: drawn as an outline (C66). */
+.fill[data-hollow] {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--bar-color);
+}
+
+/* "No data" (C62), or a status when there is no usage at all (C39): between the two marks. */
+.message {
+  position: absolute;
+  inset: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: var(--text-10);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.statusTrack {
+  height: 10px;
+}
+
+/* Its words in the block's colour, like a bar's label (C86). */
+.statusTrack .message {
+  font-size: var(--text-11);
+  font-weight: var(--weight-bold);
+  color: inherit;
+}

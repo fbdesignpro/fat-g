@@ -1,0 +1,1250 @@
+{
+  "_fixture": {
+    "source": "M23 spike m23-k1.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":1,\"turn\":1,\"item\":2,\"cursor\":1,\"mcp-server\":1}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.163.0",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-11T21:27:05.412Z",
+  "scenario": {
+    "id": "m23-big-image",
+    "title": "K1: a prompt with a localImage of noise at the sheet's 5 MiB bound (C2, C24)",
+    "successCondition": "Whether Codex takes the image at the bound, and what it says when it does not"
+  },
+  "run": {
+    "id": "codex-m23-big-image-2",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 27,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 3244,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "model": {
+        "model": "gpt-6-luna",
+        "effort": "low"
+      },
+      "thread": {
+        "ok": true,
+        "error": null,
+        "matchesWhatWasAsked": true
+      },
+      "image": {
+        "name": "noise-at-the-bound.png",
+        "bytes": 5241261,
+        "width": 1320,
+        "height": 1323,
+        "sha256": "a1348a1d526f7dc1",
+        "base64Units": 6988348
+      },
+      "turn": {
+        "refused": false,
+        "inputTypes": [
+          "text",
+          "localImage"
+        ],
+        "endIndex": 27,
+        "itemTypes": [
+          "userMessage",
+          "agentMessage"
+        ],
+        "userMessages": [
+          {
+            "keys": [
+              "clientId",
+              "content",
+              "id",
+              "type"
+            ],
+            "parts": [
+              {
+                "type": "text",
+                "units": 120
+              },
+              {
+                "type": "localImage",
+                "path": "images folder"
+              }
+            ]
+          }
+        ],
+        "agentMessages": [
+          {
+            "index": 23,
+            "phase": "final_answer",
+            "delivery": null,
+            "units": 27,
+            "deltaUnits": 27,
+            "questions": null,
+            "holds": {
+              "noise": true
+            }
+          }
+        ],
+        "otherItems": [],
+        "errors": [],
+        "end": {
+          "index": 27,
+          "status": "completed",
+          "error": null
+        },
+        "anyAgentMessageHolds": {
+          "noise": true
+        },
+        "methods": {
+          "mcpServer/startupStatus/updated": 2,
+          "thread/status/changed": 2,
+          "turn/started": 1,
+          "item/started": 2,
+          "item/completed": 2,
+          "account/rateLimits/updated": 1,
+          "turn/completed": 1
+        },
+        "outline": [
+          {
+            "index": 11,
+            "ms": 3196,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "active"
+          },
+          {
+            "index": 12,
+            "ms": 3197,
+            "method": "turn/started",
+            "thread": "session",
+            "status": "inProgress"
+          },
+          {
+            "index": 14,
+            "ms": 4095,
+            "method": "item/started",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 15,
+            "ms": 4105,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 16,
+            "ms": 6561,
+            "method": "item/started",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 23,
+            "ms": 6643,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 25,
+            "ms": 6671,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 26,
+            "ms": 6688,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "idle"
+          },
+          {
+            "index": 27,
+            "ms": 6688,
+            "method": "turn/completed",
+            "thread": "session",
+            "status": "completed"
+          }
+        ]
+      },
+      "history": {
+        "ok": true,
+        "turns": 1,
+        "perTurn": [
+          {
+            "status": "completed",
+            "itemTypes": [
+              "userMessage",
+              "agentMessage"
+            ],
+            "userMessages": [
+              {
+                "keys": [
+                  "clientId",
+                  "content",
+                  "id",
+                  "type"
+                ],
+                "parts": [
+                  {
+                    "type": "text",
+                    "units": 120
+                  },
+                  {
+                    "type": "localImage",
+                    "path": "images folder"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "typeCounts": {
+        "response": 4,
+        "remoteControl/status/changed": 1,
+        "account/updated": 1,
+        "thread/started": 1,
+        "mcpServer/startupStatus/updated": 2,
+        "thread/status/changed": 2,
+        "turn/started": 1,
+        "item/started": 2,
+        "item/completed": 2,
+        "item/agentMessage/delta": 6,
+        "thread/tokenUsage/updated": 1,
+        "account/rateLimits/updated": 1,
+        "turn/completed": 1
+      }
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "model": "gpt-6-luna"
+    },
+    "replyIndex": 6,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined; a question asked in a message is answered by a steer in fat-g's words, or by the next prompt"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_STARTUP_FAILURE_RESULTS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1548,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1549,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.163.0 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1549,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 1555,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 1555,
+      "frame": {
+        "method": "account/updated",
+        "params": {
+          "authMode": "chatgpt",
+          "planType": "free"
+        },
+        "emittedAtMs": 1578778015504
+      }
+    },
+    {
+      "index": 5,
+      "dir": "send",
+      "ms": 3083,
+      "frame": {
+        "method": "thread/start",
+        "id": 2,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "model": "gpt-6-luna"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 3151,
+      "frame": {
+        "id": 2,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578778017,
+            "updatedAt": 1578778017,
+            "recencyAt": 1578778017,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\11\\rollout-2020-01-11T17-26-57-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.163.0",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "disabledPluginIds": [],
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 3151,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578778017,
+            "updatedAt": 1578778017,
+            "recencyAt": 1578778017,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\11\\rollout-2020-01-11T17-26-57-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.163.0",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578778017104
+      }
+    },
+    {
+      "index": 8,
+      "dir": "send",
+      "ms": 3153,
+      "frame": {
+        "method": "turn/start",
+        "id": 3,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "A large image is attached. Say in one short sentence whether it looks like random noise or like a drawing. Use no tools.",
+              "text_elements": []
+            },
+            {
+              "type": "localImage",
+              "path": "<scratch>\\noise-at-the-bound.png"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-2>"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 3153,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578778017104
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 3169,
+      "frame": {
+        "id": 3,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 3196,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578778017150
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 3197,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578778017,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578778017150
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 3764,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578778017718
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 4095,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "A large image is attached. Say in one short sentence whether it looks like random noise or like a drawing. Use no tools.",
+                "text_elements": []
+              },
+              {
+                "type": "localImage",
+                "detail": null,
+                "path": "<scratch>\\noise-at-the-bound.png"
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578778018048
+        },
+        "emittedAtMs": 1578778018049
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 4105,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "A large image is attached. Say in one short sentence whether it looks like random noise or like a drawing. Use no tools.",
+                "text_elements": []
+              },
+              {
+                "type": "localImage",
+                "detail": null,
+                "path": "<scratch>\\noise-at-the-bound.png"
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578778018048
+        },
+        "emittedAtMs": 1578778018059
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 6561,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578778020514
+        },
+        "emittedAtMs": 1578778020514
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 6561,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "It"
+        },
+        "emittedAtMs": 1578778020514
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 6561,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " looks"
+        },
+        "emittedAtMs": 1578778020515
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 6561,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " like"
+        },
+        "emittedAtMs": 1578778020515
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 6561,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " random"
+        },
+        "emittedAtMs": 1578778020515
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 6561,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " noise"
+        },
+        "emittedAtMs": 1578778020515
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 6561,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578778020515
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 6643,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "It looks like random noise.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578778020581
+        },
+        "emittedAtMs": 1578778020597
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 6671,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 15673,
+              "inputTokens": 15663,
+              "cachedInputTokens": 11264,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 10,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 15673,
+              "inputTokens": 15663,
+              "cachedInputTokens": 11264,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 10,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578778020625
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 6671,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 6688,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578778020642
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 6688,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-5>",
+                "text": "It looks like random noise.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578778017,
+            "completedAt": 1578778020,
+            "durationMs": 3516
+          }
+        },
+        "emittedAtMs": 1578778020642
+      }
+    },
+    {
+      "index": 28,
+      "dir": "send",
+      "ms": 8203,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 20,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 8205,
+      "frame": {
+        "id": 4,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "rootTurnId": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "A large image is attached. Say in one short sentence whether it looks like random noise or like a drawing. Use no tools.",
+                      "text_elements": []
+                    },
+                    {
+                      "type": "localImage",
+                      "detail": null,
+                      "path": "<scratch>\\noise-at-the-bound.png"
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "It looks like random noise.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578778017,
+              "completedAt": 1578778020,
+              "durationMs": 3516
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-6>"
+        }
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1547,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 3083,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 9782,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1529
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1119
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1044
+      },
+      {
+        "method": "item/completed",
+        "item": "userMessage",
+        "bytes": 611
+      },
+      {
+        "method": "item/started",
+        "item": "userMessage",
+        "bytes": 607
+      }
+    ],
+    "longStringsCut": []
+  }
+}

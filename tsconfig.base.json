@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+
+    // Typechecking runs as `tsc -b` (incremental project references). Bundling is done by
+    // electron-vite, so tsc only emits throwaway declarations into a cache folder.
+    "composite": true,
+    "emitDeclarationOnly": true,
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // Forces `import type` for type-only imports. Load-bearing for the sandboxed preload,
+    // which may import shared *types* but must not pull runtime code (e.g. Zod) into its bundle.
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "paths": {
+      "@shared/*": ["./src/shared/*"]
+    }
+  }
+}

@@ -1,0 +1,3746 @@
+{
+  "_fixture": {
+    "source": "M20a spike m20a-k3.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":1,\"turn\":2,\"item\":12,\"worker\":1,\"cursor\":1,\"mcp-server\":4}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-09T14:22:55.395Z",
+  "scenario": {
+    "id": "m20a-collab-spawn",
+    "title": "K3: a sub-agent started and waited for, on gpt-5.6-luna at medium",
+    "successCondition": "A collab tool call that starts a sub-agent, the sub-agent's own turn ending, then the session's turn ending"
+  },
+  "run": {
+    "id": "codex-m20a-collab-spawn-8",
+    "number": 2,
+    "attempt": 2,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 136,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1488,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-19>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-19>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "model": {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "effortsListed": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ]
+      },
+      "endStatus": "completed",
+      "prompt": "spawn",
+      "spawnCalls": 1,
+      "subAgentActivity": [],
+      "collab": [
+        {
+          "index": 50,
+          "ms": 15123,
+          "frame": "item/started",
+          "onThread": "session",
+          "id": "exec-a",
+          "tool": "spawnAgent",
+          "status": "inProgress",
+          "keys": [
+            "agentsStates",
+            "id",
+            "model",
+            "prompt",
+            "reasoningEffort",
+            "receiverThreadIds",
+            "senderThreadId",
+            "status",
+            "tool",
+            "type"
+          ],
+          "sender": "session",
+          "receivers": [],
+          "agentsStates": {},
+          "promptUnits": 176,
+          "modelNamed": true,
+          "effortNamed": true
+        },
+        {
+          "index": 54,
+          "ms": 15229,
+          "frame": "item/completed",
+          "onThread": "session",
+          "id": "exec-a",
+          "tool": "spawnAgent",
+          "status": "completed",
+          "keys": [
+            "agentsStates",
+            "id",
+            "model",
+            "prompt",
+            "reasoningEffort",
+            "receiverThreadIds",
+            "senderThreadId",
+            "status",
+            "tool",
+            "type"
+          ],
+          "sender": "session",
+          "receivers": [
+            "worker-1"
+          ],
+          "agentsStates": {
+            "worker-1": {
+              "status": "pendingInit",
+              "message": null,
+              "keys": [
+                "message",
+                "status"
+              ]
+            }
+          },
+          "promptUnits": 176,
+          "modelNamed": true,
+          "effortNamed": true
+        },
+        {
+          "index": 63,
+          "ms": 21668,
+          "frame": "item/started",
+          "onThread": "session",
+          "id": "exec-b",
+          "tool": "wait",
+          "status": "inProgress",
+          "keys": [
+            "agentsStates",
+            "id",
+            "model",
+            "prompt",
+            "reasoningEffort",
+            "receiverThreadIds",
+            "senderThreadId",
+            "status",
+            "tool",
+            "type"
+          ],
+          "sender": "session",
+          "receivers": [
+            "worker-1"
+          ],
+          "agentsStates": {},
+          "promptUnits": null,
+          "modelNamed": false,
+          "effortNamed": false
+        },
+        {
+          "index": 111,
+          "ms": 35927,
+          "frame": "item/completed",
+          "onThread": "session",
+          "id": "exec-b",
+          "tool": "wait",
+          "status": "completed",
+          "keys": [
+            "agentsStates",
+            "id",
+            "model",
+            "prompt",
+            "reasoningEffort",
+            "receiverThreadIds",
+            "senderThreadId",
+            "status",
+            "tool",
+            "type"
+          ],
+          "sender": "session",
+          "receivers": [
+            "worker-1"
+          ],
+          "agentsStates": {
+            "worker-1": {
+              "status": "completed",
+              "message": 74,
+              "keys": [
+                "message",
+                "status"
+              ]
+            }
+          },
+          "promptUnits": null,
+          "modelNamed": false,
+          "effortNamed": false
+        }
+      ],
+      "workerTurnEnded": true,
+      "workerTurnEndIndexes": [
+        110
+      ],
+      "sessionTurnEndIndex": 136,
+      "methodsFromWorkers": [
+        "item/agentMessage/delta",
+        "item/completed",
+        "item/started",
+        "mcpServer/startupStatus/updated",
+        "thread/status/changed",
+        "thread/tokenUsage/updated",
+        "turn/completed",
+        "turn/started"
+      ],
+      "workerFrames": [
+        {
+          "index": 9,
+          "ms": 1782,
+          "method": "thread/started",
+          "thread": "session",
+          "threadKeys": "agentNickname,agentRole,canAcceptDirectInput,cliVersion,createdAt,cwd,daybreakEnabled,environments,ephemeral,extra,forkedFromId,gitInfo,historyMode,id,model,modelProvider,name,originator,parentThreadId,path,preview,projectId,reasoningEffort,recencyAt,section,sectionEnteredAt,sessionId,source,status,threadSource,turns,updatedAt"
+        },
+        {
+          "index": 17,
+          "ms": 1823,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 50,
+          "ms": 15123,
+          "method": "item/started",
+          "thread": "session",
+          "item": "collabAgentToolCall",
+          "tool": "spawnAgent",
+          "status": "inProgress"
+        },
+        {
+          "index": 51,
+          "ms": 15216,
+          "method": "thread/status/changed",
+          "thread": "worker-1",
+          "status": "idle"
+        },
+        {
+          "index": 52,
+          "ms": 15217,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 53,
+          "ms": 15217,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 54,
+          "ms": 15229,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "collabAgentToolCall",
+          "tool": "spawnAgent",
+          "status": "completed"
+        },
+        {
+          "index": 55,
+          "ms": 15238,
+          "method": "thread/status/changed",
+          "thread": "worker-1",
+          "status": "active"
+        },
+        {
+          "index": 56,
+          "ms": 15238,
+          "method": "turn/started",
+          "thread": "worker-1",
+          "status": "inProgress"
+        },
+        {
+          "index": 59,
+          "ms": 15836,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 60,
+          "ms": 16346,
+          "method": "item/started",
+          "thread": "worker-1",
+          "item": "userMessage"
+        },
+        {
+          "index": 61,
+          "ms": 16368,
+          "method": "item/completed",
+          "thread": "worker-1",
+          "item": "userMessage"
+        },
+        {
+          "index": 63,
+          "ms": 21668,
+          "method": "item/started",
+          "thread": "session",
+          "item": "collabAgentToolCall",
+          "tool": "wait",
+          "status": "inProgress"
+        },
+        {
+          "index": 64,
+          "ms": 22317,
+          "method": "item/started",
+          "thread": "worker-1",
+          "item": "reasoning"
+        },
+        {
+          "index": 65,
+          "ms": 22365,
+          "method": "item/completed",
+          "thread": "worker-1",
+          "item": "reasoning"
+        },
+        {
+          "index": 66,
+          "ms": 22372,
+          "method": "item/started",
+          "thread": "worker-1",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 82,
+          "ms": 22542,
+          "method": "item/completed",
+          "thread": "worker-1",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 83,
+          "ms": 22591,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 85,
+          "ms": 30060,
+          "method": "item/started",
+          "thread": "worker-1",
+          "item": "commandExecution",
+          "status": "inProgress"
+        },
+        {
+          "index": 86,
+          "ms": 30122,
+          "method": "item/completed",
+          "thread": "worker-1",
+          "item": "commandExecution",
+          "status": "completed"
+        },
+        {
+          "index": 87,
+          "ms": 30207,
+          "method": "thread/tokenUsage/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 89,
+          "ms": 35485,
+          "method": "item/started",
+          "thread": "worker-1",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 106,
+          "ms": 35832,
+          "method": "item/completed",
+          "thread": "worker-1",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 107,
+          "ms": 35897,
+          "method": "thread/tokenUsage/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 109,
+          "ms": 35916,
+          "method": "thread/status/changed",
+          "thread": "worker-1",
+          "status": "idle"
+        },
+        {
+          "index": 110,
+          "ms": 35916,
+          "method": "turn/completed",
+          "thread": "worker-1",
+          "status": "completed"
+        },
+        {
+          "index": 111,
+          "ms": 35927,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "collabAgentToolCall",
+          "tool": "wait",
+          "status": "completed"
+        },
+        {
+          "index": 136,
+          "ms": 41153,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ],
+      "history": {
+        "ok": true,
+        "itemTypes": [
+          "userMessage",
+          "reasoning",
+          "agentMessage:commentary",
+          "reasoning",
+          "collabAgentToolCall:spawnAgent:completed",
+          "collabAgentToolCall:wait:completed",
+          "agentMessage:final_answer"
+        ]
+      }
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "model": "gpt-5.6-luna"
+    },
+    "replyIndex": 7,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [
+      "sub-agent"
+    ],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 836,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 837,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 837,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 843,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 1599,
+      "frame": {
+        "method": "model/list",
+        "id": 2,
+        "params": {
+          "limit": 100
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1600,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "gpt-6-astra",
+              "model": "gpt-6-astra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Astra",
+              "description": "Frontier intelligence for the most demanding work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "2x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": true
+            },
+            {
+              "id": "gpt-6-sol",
+              "model": "gpt-6-sol",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Sol",
+              "description": "Previous generation workhorse model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-6-luna",
+              "model": "gpt-6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Luna",
+              "description": "Fast and affordable model for easier tasks.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-sol",
+              "model": "gpt-5.6-sol",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Sol",
+              "description": "Older generation workhorse model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "low",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-terra",
+              "model": "gpt-5.6-terra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Terra",
+              "description": "Older balanced model for straightforward work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-luna",
+              "model": "gpt-5.6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Luna",
+              "description": "Older fast and efficient model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            }
+          ],
+          "nextCursor": null
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 1600,
+      "frame": {
+        "method": "thread/start",
+        "id": 3,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "model": "gpt-5.6-luna"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 1779,
+      "frame": {
+        "id": 3,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoningEffort": "xhigh",
+            "createdAt": 1578579730,
+            "updatedAt": 1578579730,
+            "recencyAt": 1578579730,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\09\\rollout-2020-01-09T10-22-10-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-5.6-luna",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": "xhigh",
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "send",
+      "ms": 1781,
+      "frame": {
+        "method": "turn/start",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Spawn a sub-agent and give it this small task: read notes-2.txt and report its contents. Do not read the file yourself. When the sub-agent is done, tell me in one sentence what it found.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-5.6-luna",
+          "effort": "medium",
+          "clientUserMessageId": "<client-message-2>"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 1782,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoningEffort": "xhigh",
+            "createdAt": 1578579730,
+            "updatedAt": 1578579730,
+            "recencyAt": 1578579730,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\09\\rollout-2020-01-09T10-22-10-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578579730525
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 1782,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-20>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579730525
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 1782,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-21>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579730525
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 1782,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-19>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579730525
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 1782,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-22>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579730525
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 1789,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-19>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579730535
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 1799,
+      "frame": {
+        "id": 4,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 1823,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578579730569
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 1823,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578579730,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578579730569
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 1834,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-20>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579730580
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 2392,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-21>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579731138
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 3869,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Spawn a sub-agent and give it this small task: read notes-2.txt and report its contents. Do not read the file yourself. When the sub-agent is done, tell me in one sentence what it found.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578579732615
+        },
+        "emittedAtMs": 1578579732615
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 3901,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Spawn a sub-agent and give it this small task: read notes-2.txt and report its contents. Do not read the file yourself. When the sub-agent is done, tell me in one sentence what it found.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578579732615
+        },
+        "emittedAtMs": 1578579732647
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 8887,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-5>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578579737633
+        },
+        "emittedAtMs": 1578579737633
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 8932,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-5>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578579737633
+        },
+        "emittedAtMs": 1578579737678
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 8940,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-6>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578579737686
+        },
+        "emittedAtMs": 1578579737686
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 8940,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578579737686
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "’ll"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " delegate"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "-reading"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " task"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " won"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "’t"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " inspect"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "notes"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "-"
+        },
+        "emittedAtMs": 1578579737711
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 8966,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "2"
+        },
+        "emittedAtMs": 1578579737712
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 8966,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ".txt"
+        },
+        "emittedAtMs": 1578579737712
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 8966,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578579737712
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 8966,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " myself"
+        },
+        "emittedAtMs": 1578579737712
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 8966,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578579737712
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 8983,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-6>",
+            "text": "I’ll delegate the file-reading task and won’t inspect `notes-2.txt` myself.",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578579737720
+        },
+        "emittedAtMs": 1578579737729
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 9139,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-22>",
+          "status": "failed",
+          "error": "MCP client for `<mcp-server-22>` failed to start: MCP startup failed: handshaking with MCP server failed: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request",
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579737885
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 9398,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 14497,
+              "inputTokens": 14384,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 113,
+              "reasoningOutputTokens": 45
+            },
+            "last": {
+              "totalTokens": 14497,
+              "inputTokens": 14384,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 113,
+              "reasoningOutputTokens": 45
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578579738144
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 9398,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 14567,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-7>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578579743313
+        },
+        "emittedAtMs": 1578579743313
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 14579,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-7>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578579743313
+        },
+        "emittedAtMs": 1578579743325
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 15123,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "collabAgentToolCall",
+            "id": "<item-8>",
+            "tool": "spawnAgent",
+            "status": "inProgress",
+            "senderThreadId": "<session-1>",
+            "receiverThreadIds": [],
+            "prompt": "Read <scratch>\\notes-2.txt and report its contents verbatim or as a concise faithful summary. Do not modify the file or any other files.",
+            "model": "",
+            "reasoningEffort": "medium",
+            "agentsStates": {}
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578579743869
+        },
+        "emittedAtMs": 1578579743869
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 15216,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<worker-9>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578579743960
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 15217,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-9>",
+          "name": "<mcp-server-22>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579743963
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 15217,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-9>",
+          "name": "<mcp-server-21>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579743963
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 15229,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "collabAgentToolCall",
+            "id": "<item-8>",
+            "tool": "spawnAgent",
+            "status": "completed",
+            "senderThreadId": "<session-1>",
+            "receiverThreadIds": [
+              "<worker-9>"
+            ],
+            "prompt": "Read <scratch>\\notes-2.txt and report its contents verbatim or as a concise faithful summary. Do not modify the file or any other files.",
+            "model": "gpt-5.6-luna",
+            "reasoningEffort": "medium",
+            "agentsStates": {
+              "<worker-9>": {
+                "status": "pendingInit",
+                "message": null
+              }
+            }
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578579743969
+        },
+        "emittedAtMs": 1578579743975
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 15238,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<worker-9>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578579743984
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 15238,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<worker-9>",
+          "turn": {
+            "id": "<turn-10>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578579743,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578579743984
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 15250,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 38499,
+              "inputTokens": 38295,
+              "cachedInputTokens": 14080,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 204,
+              "reasoningOutputTokens": 54
+            },
+            "last": {
+              "totalTokens": 24002,
+              "inputTokens": 23911,
+              "cachedInputTokens": 14080,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 91,
+              "reasoningOutputTokens": 9
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578579743996
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 15250,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 15836,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-9>",
+          "name": "<mcp-server-21>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579744582
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 16346,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-11>",
+            "clientId": null,
+            "content": [
+              {
+                "type": "text",
+                "text": "Read <scratch>\\notes-2.txt and report its contents verbatim or as a concise faithful summary. Do not modify the file or any other files.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "startedAtMs": 1578579745092
+        },
+        "emittedAtMs": 1578579745092
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 16368,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-11>",
+            "clientId": null,
+            "content": [
+              {
+                "type": "text",
+                "text": "Read <scratch>\\notes-2.txt and report its contents verbatim or as a concise faithful summary. Do not modify the file or any other files.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "completedAtMs": 1578579745092
+        },
+        "emittedAtMs": 1578579745114
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 18563,
+      "frame": {
+        "method": "skills/changed",
+        "params": {},
+        "emittedAtMs": 1578579747309
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 21668,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "collabAgentToolCall",
+            "id": "<item-12>",
+            "tool": "wait",
+            "status": "inProgress",
+            "senderThreadId": "<session-1>",
+            "receiverThreadIds": [
+              "<worker-9>"
+            ],
+            "prompt": null,
+            "model": null,
+            "reasoningEffort": null,
+            "agentsStates": {}
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578579750414
+        },
+        "emittedAtMs": 1578579750414
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 22317,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-13>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "startedAtMs": 1578579751063
+        },
+        "emittedAtMs": 1578579751063
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 22365,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-13>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "completedAtMs": 1578579751063
+        },
+        "emittedAtMs": 1578579751111
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 22372,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-14>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "startedAtMs": 1578579751118
+        },
+        "emittedAtMs": 1578579751118
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 22372,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578579751118
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 22474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": "’ll"
+        },
+        "emittedAtMs": 1578579751220
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 22474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " read"
+        },
+        "emittedAtMs": 1578579751220
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 22474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578579751220
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 22474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " specified"
+        },
+        "emittedAtMs": 1578579751220
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 22474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578579751220
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 22474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " without"
+        },
+        "emittedAtMs": 1578579751220
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 22474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " changing"
+        },
+        "emittedAtMs": 1578579751220
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 22474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " anything"
+        },
+        "emittedAtMs": 1578579751220
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 22474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578579751220
+      }
+    },
+    {
+      "index": 77,
+      "dir": "recv",
+      "ms": 22536,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " provide"
+        },
+        "emittedAtMs": 1578579751282
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 22536,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " a"
+        },
+        "emittedAtMs": 1578579751282
+      }
+    },
+    {
+      "index": 79,
+      "dir": "recv",
+      "ms": 22536,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " faithful"
+        },
+        "emittedAtMs": 1578579751282
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 22536,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": " summary"
+        },
+        "emittedAtMs": 1578579751282
+      }
+    },
+    {
+      "index": 81,
+      "dir": "recv",
+      "ms": 22536,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-14>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578579751282
+      }
+    },
+    {
+      "index": 82,
+      "dir": "recv",
+      "ms": 22542,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-14>",
+            "text": "I’ll read the specified file without changing anything and provide a faithful summary.",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "completedAtMs": 1578579751282
+        },
+        "emittedAtMs": 1578579751288
+      }
+    },
+    {
+      "index": 83,
+      "dir": "recv",
+      "ms": 22591,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-9>",
+          "name": "<mcp-server-22>",
+          "status": "failed",
+          "error": "MCP client for `<mcp-server-22>` failed to start: MCP startup failed: handshaking with MCP server failed: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request",
+          "failureReason": null
+        },
+        "emittedAtMs": 1578579751337
+      }
+    },
+    {
+      "index": 84,
+      "dir": "recv",
+      "ms": 28578,
+      "frame": {
+        "method": "skills/changed",
+        "params": {},
+        "emittedAtMs": 1578579757324
+      }
+    },
+    {
+      "index": 85,
+      "dir": "recv",
+      "ms": 30060,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-15>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command \"Get-Content -LiteralPath '<scratch>\\\\notes-2.txt' -Raw\"",
+            "cwd": "<scratch>",
+            "processId": "52425",
+            "source": "unifiedExecStartup",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "read",
+                "command": "Get-Content -LiteralPath '<scratch>\\notes-2.txt' -Raw",
+                "name": "notes-2.txt",
+                "path": "<scratch>\\notes-2.txt"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "startedAtMs": 1578579758804
+        },
+        "emittedAtMs": 1578579758806
+      }
+    },
+    {
+      "index": 86,
+      "dir": "recv",
+      "ms": 30122,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-15>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command \"Get-Content -LiteralPath '<scratch>\\\\notes-2.txt' -Raw\"",
+            "cwd": "<scratch>",
+            "processId": "52425",
+            "source": "unifiedExecStartup",
+            "status": "completed",
+            "commandActions": [
+              {
+                "type": "read",
+                "command": "Get-Content -LiteralPath '<scratch>\\notes-2.txt' -Raw",
+                "name": "notes-2.txt",
+                "path": "<scratch>\\notes-2.txt"
+              }
+            ],
+            "aggregatedOutput": "Note two: the kettle whistles twice before it boils.\n\r\n",
+            "exitCode": 0,
+            "durationMs": 33
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "completedAtMs": 1578579758838
+        },
+        "emittedAtMs": 1578579758868
+      }
+    },
+    {
+      "index": 87,
+      "dir": "recv",
+      "ms": 30207,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 14530,
+              "inputTokens": 14387,
+              "cachedInputTokens": 13056,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 143,
+              "reasoningOutputTokens": 22
+            },
+            "last": {
+              "totalTokens": 14530,
+              "inputTokens": 14387,
+              "cachedInputTokens": 13056,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 143,
+              "reasoningOutputTokens": 22
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578579758953
+      }
+    },
+    {
+      "index": 88,
+      "dir": "recv",
+      "ms": 30208,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 89,
+      "dir": "recv",
+      "ms": 35485,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-16>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "startedAtMs": 1578579764231
+        },
+        "emittedAtMs": 1578579764231
+      }
+    },
+    {
+      "index": 90,
+      "dir": "recv",
+      "ms": 35486,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": "The"
+        },
+        "emittedAtMs": 1578579764232
+      }
+    },
+    {
+      "index": 91,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 92,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": " contains"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 93,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": ":\n\n"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 94,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": "“"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 95,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": "Note"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 96,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": " two"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 97,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": ":"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 98,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 99,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": " kettle"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 100,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": " whistles"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 101,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": " twice"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 102,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": " before"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 103,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": " it"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 104,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": " boils"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 105,
+      "dir": "recv",
+      "ms": 35794,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-16>",
+          "delta": ".”"
+        },
+        "emittedAtMs": 1578579764540
+      }
+    },
+    {
+      "index": 106,
+      "dir": "recv",
+      "ms": 35832,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-16>",
+            "text": "The file contains:\n\n“Note two: the kettle whistles twice before it boils.”",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "completedAtMs": 1578579764540
+        },
+        "emittedAtMs": 1578579764578
+      }
+    },
+    {
+      "index": 107,
+      "dir": "recv",
+      "ms": 35897,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 29115,
+              "inputTokens": 28952,
+              "cachedInputTokens": 27136,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 163,
+              "reasoningOutputTokens": 22
+            },
+            "last": {
+              "totalTokens": 14585,
+              "inputTokens": 14565,
+              "cachedInputTokens": 14080,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 20,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578579764642
+      }
+    },
+    {
+      "index": 108,
+      "dir": "recv",
+      "ms": 35897,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 109,
+      "dir": "recv",
+      "ms": 35916,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<worker-9>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578579764662
+      }
+    },
+    {
+      "index": 110,
+      "dir": "recv",
+      "ms": 35916,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<worker-9>",
+          "turn": {
+            "id": "<turn-10>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-16>",
+                "text": "The file contains:\n\n“Note two: the kettle whistles twice before it boils.”",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578579743,
+            "completedAt": 1578579764,
+            "durationMs": 20683
+          }
+        },
+        "emittedAtMs": 1578579764662
+      }
+    },
+    {
+      "index": 111,
+      "dir": "recv",
+      "ms": 35927,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "collabAgentToolCall",
+            "id": "<item-12>",
+            "tool": "wait",
+            "status": "completed",
+            "senderThreadId": "<session-1>",
+            "receiverThreadIds": [
+              "<worker-9>"
+            ],
+            "prompt": null,
+            "model": null,
+            "reasoningEffort": null,
+            "agentsStates": {
+              "<worker-9>": {
+                "status": "completed",
+                "message": "The file contains:\n\n“Note two: the kettle whistles twice before it boils.”"
+              }
+            }
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578579764662
+        },
+        "emittedAtMs": 1578579764673
+      }
+    },
+    {
+      "index": 112,
+      "dir": "recv",
+      "ms": 35951,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 62625,
+              "inputTokens": 62355,
+              "cachedInputTokens": 37376,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 270,
+              "reasoningOutputTokens": 54
+            },
+            "last": {
+              "totalTokens": 24126,
+              "inputTokens": 24060,
+              "cachedInputTokens": 23296,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 66,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578579764696
+      }
+    },
+    {
+      "index": 113,
+      "dir": "recv",
+      "ms": 35951,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 114,
+      "dir": "recv",
+      "ms": 38580,
+      "frame": {
+        "method": "skills/changed",
+        "params": {},
+        "emittedAtMs": 1578579767325
+      }
+    },
+    {
+      "index": 115,
+      "dir": "recv",
+      "ms": 40964,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-17>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578579769710
+        },
+        "emittedAtMs": 1578579769710
+      }
+    },
+    {
+      "index": 116,
+      "dir": "recv",
+      "ms": 40964,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": "The"
+        },
+        "emittedAtMs": 1578579769710
+      }
+    },
+    {
+      "index": 117,
+      "dir": "recv",
+      "ms": 40964,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578579769710
+      }
+    },
+    {
+      "index": 118,
+      "dir": "recv",
+      "ms": 40964,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": " contains"
+        },
+        "emittedAtMs": 1578579769710
+      }
+    },
+    {
+      "index": 119,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": ":"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 120,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": " “"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 121,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": "Note"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 122,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": " two"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 123,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": ":"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 124,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 125,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": " kettle"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 126,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": " whistles"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 127,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": " twice"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 128,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": " before"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 129,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": " it"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 130,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": " boils"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 131,
+      "dir": "recv",
+      "ms": 41039,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-17>",
+          "delta": ".”"
+        },
+        "emittedAtMs": 1578579769785
+      }
+    },
+    {
+      "index": 132,
+      "dir": "recv",
+      "ms": 41053,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-17>",
+            "text": "The file contains: “Note two: the kettle whistles twice before it boils.”",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578579769785
+        },
+        "emittedAtMs": 1578579769799
+      }
+    },
+    {
+      "index": 133,
+      "dir": "recv",
+      "ms": 41131,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 86919,
+              "inputTokens": 86629,
+              "cachedInputTokens": 60672,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 290,
+              "reasoningOutputTokens": 54
+            },
+            "last": {
+              "totalTokens": 24294,
+              "inputTokens": 24274,
+              "cachedInputTokens": 23296,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 20,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578579769877
+      }
+    },
+    {
+      "index": 134,
+      "dir": "recv",
+      "ms": 41131,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 135,
+      "dir": "recv",
+      "ms": 41153,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578579769899
+      }
+    },
+    {
+      "index": 136,
+      "dir": "recv",
+      "ms": 41153,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-17>",
+                "text": "The file contains: “Note two: the kettle whistles twice before it boils.”",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578579730,
+            "completedAt": 1578579769,
+            "durationMs": 39354
+          }
+        },
+        "emittedAtMs": 1578579769899
+      }
+    },
+    {
+      "index": 137,
+      "dir": "send",
+      "ms": 45155,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 5,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 138,
+      "dir": "recv",
+      "ms": 45157,
+      "frame": {
+        "id": 5,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Spawn a sub-agent and give it this small task: read notes-2.txt and report its contents. Do not read the file yourself. When the sub-agent is done, tell me in one sentence what it found.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "reasoning",
+                  "id": "<item-5>",
+                  "summary": [],
+                  "content": []
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-6>",
+                  "text": "I’ll delegate the file-reading task and won’t inspect `notes-2.txt` myself.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "reasoning",
+                  "id": "<item-7>",
+                  "summary": [],
+                  "content": []
+                },
+                {
+                  "type": "collabAgentToolCall",
+                  "id": "<item-8>",
+                  "tool": "spawnAgent",
+                  "status": "completed",
+                  "senderThreadId": "<session-1>",
+                  "receiverThreadIds": [
+                    "<worker-9>"
+                  ],
+                  "prompt": "Read <scratch>\\notes-2.txt and report its contents verbatim or as a concise faithful summary. Do not modify the file or any other files.",
+                  "model": "gpt-5.6-luna",
+                  "reasoningEffort": "medium",
+                  "agentsStates": {
+                    "<worker-9>": {
+                      "status": "pendingInit",
+                      "message": null
+                    }
+                  }
+                },
+                {
+                  "type": "collabAgentToolCall",
+                  "id": "<item-12>",
+                  "tool": "wait",
+                  "status": "completed",
+                  "senderThreadId": "<session-1>",
+                  "receiverThreadIds": [
+                    "<worker-9>"
+                  ],
+                  "prompt": null,
+                  "model": null,
+                  "reasoningEffort": null,
+                  "agentsStates": {
+                    "<worker-9>": {
+                      "status": "completed",
+                      "message": "The file contains:\n\n“Note two: the kettle whistles twice before it boils.”"
+                    }
+                  }
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "The file contains: “Note two: the kettle whistles twice before it boils.”",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578579730,
+              "completedAt": 1578579769,
+              "durationMs": 39354
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-18>"
+        }
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 1572,
+    "tail": "\u001b[2m2020-01-09T14:22:12.556167Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T14:22:14.848212Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T14:22:17.885051Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T14:22:26.006877Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T14:22:28.304898Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T14:22:31.336844Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n"
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 835,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1599,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 45880,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "node.exe",
+        "<mcp-server-19>.exe",
+        "<mcp-server-19>.exe",
+        "codex-code-mode-host.exe"
+      ],
+      "alive": 8
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 6335
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 2493
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1499
+      },
+      {
+        "method": "mcpServer/startupStatus/updated",
+        "item": null,
+        "bytes": 1174
+      },
+      {
+        "method": "mcpServer/startupStatus/updated",
+        "item": null,
+        "bytes": 1174
+      }
+    ],
+    "longStringsCut": []
+  }
+}

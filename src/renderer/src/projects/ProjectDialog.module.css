@@ -1,0 +1,171 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The project dialog's fields (M12, C36). Its frame — size, backdrop, scrolling and selectable text —
+   is src/renderer/src/ui/Dialog.module.css, shared with the confirmations. */
+.field {
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  border: 0;
+}
+
+.label {
+  display: block;
+  margin: 0 0 var(--space-2);
+  padding: 0;
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.text {
+  width: 100%;
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.text[aria-invalid='true'] {
+  border-color: var(--color-critical);
+}
+
+.fault {
+  margin: var(--space-1) 0 0;
+  color: var(--color-critical);
+  font-size: var(--text-13);
+}
+
+.hint {
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}
+
+.colors,
+.providers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+}
+
+.colorChoice,
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* The name says which colour; the swatch shows it (C43). */
+.swatch {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: var(--project-grey);
+}
+
+.swatch[data-color='red'] {
+  background: var(--project-red);
+}
+
+.swatch[data-color='orange'] {
+  background: var(--project-orange);
+}
+
+.swatch[data-color='green'] {
+  background: var(--project-green);
+}
+
+.swatch[data-color='teal'] {
+  background: var(--project-teal);
+}
+
+.swatch[data-color='blue'] {
+  background: var(--project-blue);
+}
+
+.swatch[data-color='purple'] {
+  background: var(--project-purple);
+}
+
+.swatch[data-color='pink'] {
+  background: var(--project-pink);
+}
+
+.roots {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.root {
+  padding: var(--space-3);
+  border: 1px solid var(--color-rule-soft);
+}
+
+.rootLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.path {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-13);
+  overflow-wrap: anywhere;
+}
+
+.flag {
+  flex: none;
+  padding: 0 var(--space-1);
+  border: 1px solid var(--color-text-muted);
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+.trust {
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.question {
+  padding: 0;
+  font-weight: var(--weight-semibold);
+}
+
+.explanation {
+  margin: var(--space-1) 0 var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}
+
+.trust .choice + .choice {
+  margin-left: var(--space-4);
+}
+
+.smallButton {
+  padding: var(--space-1) var(--space-3);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.smallButton:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}

@@ -1,0 +1,7086 @@
+{
+  "_fixture": {
+    "source": "M22b spike m22b-k2.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the nine delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":4,\"turn\":4,\"item\":13,\"mcp-server\":1}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-10T20:35:05.057Z",
+  "scenario": {
+    "id": "m22b-chain",
+    "title": "K2: under Ask first, a plan turn, feedback as a second plan turn, then on the same process a plain prompt with no collaborationMode and Execute naming default (C13–C15, C55)",
+    "successCondition": "Each plan item's deltas and completed text, whether the plain prompt plans or writes, and whether Execute implements"
+  },
+  "run": {
+    "id": "codex-m22b-chain-2",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 317,
+    "turnsSpent": 4,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 2881,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "model": {
+        "model": "gpt-6-luna",
+        "effort": "low"
+      },
+      "thread": {
+        "ok": true,
+        "error": null,
+        "asked": {
+          "sandbox": "workspace-write",
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user"
+        },
+        "matchesWhatWasAsked": true,
+        "collaborationMode": null
+      },
+      "plan": {
+        "asked": "plan",
+        "refused": false,
+        "endIndex": 131,
+        "planItems": [
+          {
+            "startedIndex": 71,
+            "startedKeys": [
+              "id",
+              "text",
+              "type"
+            ],
+            "textAtStart": {
+              "units": 0,
+              "lines": 1,
+              "opensWithAHeading": false
+            },
+            "deltas": 53,
+            "deltaParamKeys": [
+              "delta",
+              "itemId",
+              "threadId",
+              "turnId"
+            ],
+            "firstDeltaMs": 0,
+            "completed": {
+              "index": 126,
+              "keys": [
+                "id",
+                "text",
+                "type"
+              ],
+              "text": {
+                "units": 204,
+                "lines": 6,
+                "opensWithAHeading": true
+              },
+              "msAfterTheLastDelta": 121
+            },
+            "deltasEqualTheCompletedText": true,
+            "deltaUnits": 204
+          }
+        ],
+        "approvals": [
+          {
+            "method": "item/commandExecution/requestApproval",
+            "result": {
+              "decision": "decline"
+            },
+            "inPlanTurn": true
+          }
+        ],
+        "questions": [],
+        "messages": [
+          {
+            "phase": "commentary",
+            "units": 82,
+            "questions": null
+          },
+          {
+            "phase": "final_answer",
+            "units": 123,
+            "questions": null
+          }
+        ],
+        "fileChanges": [],
+        "commands": [
+          {
+            "status": "declined",
+            "actions": [
+              "unknown"
+            ]
+          }
+        ],
+        "otherItems": [],
+        "settings": [
+          {
+            "index": 11,
+            "keys": [
+              "activePermissionProfile",
+              "approvalPolicy",
+              "approvalsReviewer",
+              "collaborationMode",
+              "cwd",
+              "effort",
+              "model",
+              "modelProvider",
+              "multiAgentMode",
+              "personality",
+              "sandboxPolicy",
+              "serviceTier",
+              "summary"
+            ],
+            "collaborationMode": {
+              "at": "threadSettings.collaborationMode",
+              "mode": "plan",
+              "settingsKeys": [
+                "developer_instructions",
+                "model",
+                "reasoning_effort"
+              ]
+            }
+          }
+        ],
+        "errors": [],
+        "end": {
+          "index": 131,
+          "status": "completed",
+          "error": null
+        },
+        "methods": {
+          "thread/started": 1,
+          "mcpServer/startupStatus/updated": 2,
+          "thread/settings/updated": 1,
+          "thread/status/changed": 4,
+          "turn/started": 1,
+          "item/started": 5,
+          "item/completed": 5,
+          "item/commandExecution/requestApproval": 1,
+          "serverRequest/resolved": 1,
+          "turn/moderationMetadata": 2,
+          "thread/tokenUsage/updated": 2,
+          "account/rateLimits/updated": 2,
+          "turn/completed": 1
+        },
+        "outline": [
+          {
+            "index": 9,
+            "ms": 3698,
+            "method": "thread/started"
+          },
+          {
+            "index": 11,
+            "ms": 3753,
+            "method": "thread/settings/updated",
+            "thread": "session"
+          },
+          {
+            "index": 13,
+            "ms": 3847,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "active"
+          },
+          {
+            "index": 14,
+            "ms": 3847,
+            "method": "turn/started",
+            "thread": "session",
+            "status": "inProgress"
+          },
+          {
+            "index": 16,
+            "ms": 5697,
+            "method": "item/started",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 17,
+            "ms": 5717,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 18,
+            "ms": 6968,
+            "method": "item/started",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "commentary"
+          },
+          {
+            "index": 35,
+            "ms": 7170,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "commentary"
+          },
+          {
+            "index": 36,
+            "ms": 7835,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "active"
+          },
+          {
+            "index": 37,
+            "ms": 7835,
+            "method": "item/started",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "inProgress"
+          },
+          {
+            "index": 38,
+            "ms": 7835,
+            "method": "item/commandExecution/requestApproval",
+            "thread": "session",
+            "request": true
+          },
+          {
+            "index": 40,
+            "ms": 7835,
+            "method": "serverRequest/resolved",
+            "thread": "session"
+          },
+          {
+            "index": 41,
+            "ms": 7835,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "declined"
+          },
+          {
+            "index": 42,
+            "ms": 7835,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "active"
+          },
+          {
+            "index": 43,
+            "ms": 7991,
+            "method": "turn/moderationMetadata",
+            "thread": "session"
+          },
+          {
+            "index": 45,
+            "ms": 8133,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 46,
+            "ms": 8761,
+            "method": "item/started",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 71,
+            "ms": 9075,
+            "method": "item/started",
+            "thread": "session",
+            "item": "plan"
+          },
+          {
+            "index": 125,
+            "ms": 9358,
+            "method": "turn/moderationMetadata",
+            "thread": "session"
+          },
+          {
+            "index": 126,
+            "ms": 9407,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "plan"
+          },
+          {
+            "index": 127,
+            "ms": 9456,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 129,
+            "ms": 9501,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 130,
+            "ms": 9518,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "idle"
+          },
+          {
+            "index": 131,
+            "ms": 9518,
+            "method": "turn/completed",
+            "thread": "session",
+            "status": "completed"
+          }
+        ],
+        "filesAfter": {
+          "plain-after-plan.txt": false,
+          "after-resume.txt": false,
+          "notes-1.txt took the line": false,
+          "notes-2.txt changed": false
+        }
+      },
+      "feedback": {
+        "asked": "plan",
+        "refused": false,
+        "endIndex": 201,
+        "planItems": [
+          {
+            "startedIndex": 138,
+            "startedKeys": [
+              "id",
+              "text",
+              "type"
+            ],
+            "textAtStart": {
+              "units": 0,
+              "lines": 1,
+              "opensWithAHeading": false
+            },
+            "deltas": 57,
+            "deltaParamKeys": [
+              "delta",
+              "itemId",
+              "threadId",
+              "turnId"
+            ],
+            "firstDeltaMs": 0,
+            "completed": {
+              "index": 197,
+              "keys": [
+                "id",
+                "text",
+                "type"
+              ],
+              "text": {
+                "units": 217,
+                "lines": 6,
+                "opensWithAHeading": true
+              },
+              "msAfterTheLastDelta": 112
+            },
+            "deltasEqualTheCompletedText": true,
+            "deltaUnits": 217
+          }
+        ],
+        "approvals": [],
+        "questions": [],
+        "messages": [],
+        "fileChanges": [],
+        "commands": [],
+        "otherItems": [],
+        "settings": [],
+        "errors": [],
+        "end": {
+          "index": 201,
+          "status": "completed",
+          "error": null
+        },
+        "methods": {
+          "thread/status/changed": 2,
+          "turn/started": 1,
+          "item/started": 2,
+          "item/completed": 2,
+          "turn/moderationMetadata": 1,
+          "thread/tokenUsage/updated": 1,
+          "account/rateLimits/updated": 1,
+          "turn/completed": 1
+        },
+        "outline": [
+          {
+            "index": 134,
+            "ms": 11064,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "active"
+          },
+          {
+            "index": 135,
+            "ms": 11064,
+            "method": "turn/started",
+            "thread": "session",
+            "status": "inProgress"
+          },
+          {
+            "index": 136,
+            "ms": 11112,
+            "method": "item/started",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 137,
+            "ms": 11123,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 138,
+            "ms": 12001,
+            "method": "item/started",
+            "thread": "session",
+            "item": "plan"
+          },
+          {
+            "index": 196,
+            "ms": 12285,
+            "method": "turn/moderationMetadata",
+            "thread": "session"
+          },
+          {
+            "index": 197,
+            "ms": 12299,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "plan"
+          },
+          {
+            "index": 199,
+            "ms": 12335,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 200,
+            "ms": 12346,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "idle"
+          },
+          {
+            "index": 201,
+            "ms": 12346,
+            "method": "turn/completed",
+            "thread": "session",
+            "status": "completed"
+          }
+        ],
+        "filesAfter": {
+          "plain-after-plan.txt": false,
+          "after-resume.txt": false,
+          "notes-1.txt took the line": false,
+          "notes-2.txt changed": false
+        }
+      },
+      "plainAfterPlan": {
+        "asked": "none",
+        "refused": false,
+        "endIndex": 242,
+        "planItems": [],
+        "approvals": [],
+        "questions": [],
+        "messages": [
+          {
+            "phase": "final_answer",
+            "units": 132,
+            "questions": null
+          }
+        ],
+        "fileChanges": [],
+        "commands": [],
+        "otherItems": [],
+        "settings": [],
+        "errors": [],
+        "end": {
+          "index": 242,
+          "status": "completed",
+          "error": null
+        },
+        "methods": {
+          "thread/status/changed": 2,
+          "turn/started": 1,
+          "item/started": 2,
+          "item/completed": 2,
+          "turn/moderationMetadata": 1,
+          "thread/tokenUsage/updated": 1,
+          "account/rateLimits/updated": 1,
+          "turn/completed": 1
+        },
+        "outline": [
+          {
+            "index": 204,
+            "ms": 13883,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "active"
+          },
+          {
+            "index": 205,
+            "ms": 13883,
+            "method": "turn/started",
+            "thread": "session",
+            "status": "inProgress"
+          },
+          {
+            "index": 206,
+            "ms": 13936,
+            "method": "item/started",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 207,
+            "ms": 13947,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 208,
+            "ms": 14775,
+            "method": "item/started",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 237,
+            "ms": 15026,
+            "method": "turn/moderationMetadata",
+            "thread": "session"
+          },
+          {
+            "index": 238,
+            "ms": 15040,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 240,
+            "ms": 15078,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 241,
+            "ms": 15092,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "idle"
+          },
+          {
+            "index": 242,
+            "ms": 15092,
+            "method": "turn/completed",
+            "thread": "session",
+            "status": "completed"
+          }
+        ],
+        "filesAfter": {
+          "plain-after-plan.txt": false,
+          "after-resume.txt": false,
+          "notes-1.txt took the line": false,
+          "notes-2.txt changed": false
+        }
+      },
+      "execute": {
+        "asked": "default",
+        "refused": false,
+        "endIndex": 317,
+        "planItems": [],
+        "approvals": [
+          {
+            "method": "item/commandExecution/requestApproval",
+            "result": {
+              "decision": "decline"
+            },
+            "inPlanTurn": false
+          }
+        ],
+        "questions": [],
+        "messages": [
+          {
+            "phase": "commentary",
+            "units": 70,
+            "questions": null
+          },
+          {
+            "phase": "final_answer",
+            "units": 121,
+            "questions": null
+          }
+        ],
+        "fileChanges": [],
+        "commands": [
+          {
+            "status": "declined",
+            "actions": [
+              "unknown"
+            ]
+          }
+        ],
+        "otherItems": [],
+        "settings": [
+          {
+            "index": 244,
+            "keys": [
+              "activePermissionProfile",
+              "approvalPolicy",
+              "approvalsReviewer",
+              "collaborationMode",
+              "cwd",
+              "effort",
+              "model",
+              "modelProvider",
+              "multiAgentMode",
+              "personality",
+              "sandboxPolicy",
+              "serviceTier",
+              "summary"
+            ],
+            "collaborationMode": {
+              "at": "threadSettings.collaborationMode",
+              "mode": "default",
+              "settingsKeys": [
+                "developer_instructions",
+                "model",
+                "reasoning_effort"
+              ]
+            }
+          }
+        ],
+        "errors": [],
+        "end": {
+          "index": 317,
+          "status": "completed",
+          "error": null
+        },
+        "methods": {
+          "thread/settings/updated": 1,
+          "thread/status/changed": 4,
+          "turn/started": 1,
+          "item/started": 4,
+          "item/completed": 4,
+          "turn/moderationMetadata": 2,
+          "item/commandExecution/requestApproval": 1,
+          "serverRequest/resolved": 1,
+          "thread/tokenUsage/updated": 2,
+          "account/rateLimits/updated": 2,
+          "turn/completed": 1
+        },
+        "outline": [
+          {
+            "index": 244,
+            "ms": 16622,
+            "method": "thread/settings/updated",
+            "thread": "session"
+          },
+          {
+            "index": 246,
+            "ms": 16636,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "active"
+          },
+          {
+            "index": 247,
+            "ms": 16636,
+            "method": "turn/started",
+            "thread": "session",
+            "status": "inProgress"
+          },
+          {
+            "index": 248,
+            "ms": 16713,
+            "method": "item/started",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 249,
+            "ms": 16726,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 250,
+            "ms": 17985,
+            "method": "item/started",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "commentary"
+          },
+          {
+            "index": 272,
+            "ms": 18209,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "commentary"
+          },
+          {
+            "index": 273,
+            "ms": 18496,
+            "method": "turn/moderationMetadata",
+            "thread": "session"
+          },
+          {
+            "index": 274,
+            "ms": 18552,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "active"
+          },
+          {
+            "index": 275,
+            "ms": 18552,
+            "method": "item/started",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "inProgress"
+          },
+          {
+            "index": 276,
+            "ms": 18552,
+            "method": "item/commandExecution/requestApproval",
+            "thread": "session",
+            "request": true
+          },
+          {
+            "index": 278,
+            "ms": 18553,
+            "method": "serverRequest/resolved",
+            "thread": "session"
+          },
+          {
+            "index": 279,
+            "ms": 18553,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "declined"
+          },
+          {
+            "index": 280,
+            "ms": 18553,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "active"
+          },
+          {
+            "index": 282,
+            "ms": 18666,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 283,
+            "ms": 19350,
+            "method": "item/started",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 312,
+            "ms": 19564,
+            "method": "turn/moderationMetadata",
+            "thread": "session"
+          },
+          {
+            "index": 313,
+            "ms": 19609,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 315,
+            "ms": 19701,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 316,
+            "ms": 19717,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "idle"
+          },
+          {
+            "index": 317,
+            "ms": 19717,
+            "method": "turn/completed",
+            "thread": "session",
+            "status": "completed"
+          }
+        ],
+        "filesAfter": {
+          "plain-after-plan.txt": false,
+          "after-resume.txt": false,
+          "notes-1.txt took the line": false,
+          "notes-2.txt changed": false
+        }
+      },
+      "typeCounts": {
+        "response": 7,
+        "remoteControl/status/changed": 1,
+        "thread/started": 1,
+        "mcpServer/startupStatus/updated": 2,
+        "thread/settings/updated": 2,
+        "thread/status/changed": 12,
+        "turn/started": 4,
+        "item/started": 13,
+        "item/completed": 13,
+        "item/agentMessage/delta": 117,
+        "item/commandExecution/requestApproval": 2,
+        "serverRequest/resolved": 2,
+        "turn/moderationMetadata": 6,
+        "thread/tokenUsage/updated": 6,
+        "account/rateLimits/updated": 6,
+        "item/plan/delta": 110,
+        "turn/completed": 4
+      }
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "workspace-write",
+      "approvalPolicy": "untrusted",
+      "approvalsReviewer": "user",
+      "model": "gpt-6-luna"
+    },
+    "replyIndex": 7,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "workspace-write",
+          "reported": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "untrusted",
+          "reported": "untrusted",
+          "match": true
+        },
+        {
+          "field": "approvalsReviewer",
+          "requested": "user",
+          "reported": "user",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "ask-first",
+    "approvalPolicy": "per thread/start",
+    "reviewer": "user",
+    "policy": "a file change whose every path is in the scratch working folder is accepted outside a plan turn; a command is declined; every request during a plan turn is declined; a request for more permissions is granted nothing; a question is answered as the scenario says"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_STARTUP_FAILURE_RESULTS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta",
+      "item/plan/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1607,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ],
+            "experimentalApi": true
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1612,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "recv",
+      "ms": 1613,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 3,
+      "dir": "send",
+      "ms": 1613,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 3267,
+      "frame": {
+        "method": "model/list",
+        "id": 2,
+        "params": {
+          "limit": 100
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 3279,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "gpt-6-luna",
+              "model": "gpt-6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Luna",
+              "description": "Fast and affordable model for easier tasks.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [],
+              "serviceTiers": [],
+              "defaultServiceTier": null,
+              "isDefault": true
+            },
+            {
+              "id": "gpt-5.6-terra",
+              "model": "gpt-5.6-terra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Terra",
+              "description": "Older balanced model for straightforward work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [],
+              "serviceTiers": [],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-luna",
+              "model": "gpt-5.6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Luna",
+              "description": "Older fast and efficient model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [],
+              "serviceTiers": [],
+              "defaultServiceTier": null,
+              "isDefault": false
+            }
+          ],
+          "nextCursor": null
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 3279,
+      "frame": {
+        "method": "thread/start",
+        "id": 3,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "workspace-write",
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "model": "gpt-6-luna"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 3695,
+      "frame": {
+        "id": 3,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578688484,
+            "updatedAt": 1578688484,
+            "recencyAt": 1578688484,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\10\\rollout-2020-01-10T16-34-44-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "send",
+      "ms": 3698,
+      "frame": {
+        "method": "turn/start",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Make a short plan, three steps at most, for this change to the project in the current folder: append the line \"reviewed\" to the end of notes-1.txt. Do not ask me any question: I have no preference.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-2>",
+          "collaborationMode": {
+            "mode": "plan",
+            "settings": {
+              "model": "gpt-6-luna",
+              "reasoning_effort": "low",
+              "developer_instructions": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 3698,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578688484,
+            "updatedAt": 1578688484,
+            "recencyAt": 1578688484,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\10\\rollout-2020-01-10T16-34-44-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578688484622
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 3698,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-23>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578688484622
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 3753,
+      "frame": {
+        "method": "thread/settings/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "threadSettings": {
+            "cwd": "<scratch>",
+            "approvalPolicy": "untrusted",
+            "approvalsReviewer": "user",
+            "sandboxPolicy": {
+              "type": "workspaceWrite",
+              "writableRoots": [],
+              "networkAccess": false,
+              "excludeTmpdirEnvVar": false,
+              "excludeSlashTmp": false
+            },
+            "activePermissionProfile": null,
+            "model": "gpt-6-luna",
+            "modelProvider": "openai",
+            "serviceTier": null,
+            "effort": "low",
+            "summary": null,
+            "collaborationMode": {
+              "mode": "plan",
+              "settings": {
+                "model": "gpt-6-luna",
+                "reasoning_effort": "low",
+                "developer_instructions": "# Plan Mode (Conversational)\r\n\r\nYou work in 3 phases, and you should *chat your way* to a great plan before finalizing it. A great plan is very detailed—intent- and implementation-wise—so that it can be handed to another engineer or agent to be implemented right away. It must be **decision complete**, where the implementer does not need to make any decisions.\r\n\r\n## Mode rules (strict)\r\n\r\nYou are in **Plan Mode** until a developer message explicitly ends it.\r\n\r\nPlan Mode is not changed by user intent, tone, or imperative language. If a user asks for execution while still in Plan Mode, treat it as a request to **plan the execution**, not perform it.\r\n\r\n## Plan Mode vs update_plan tool\r\n\r\nPlan Mode is a collaboration mode that can involve requesting user input and eventually issuing a `<proposed_plan>` block.\r\n\r\nSeparately, `update_plan` is a checklist/progress/TODOs tool; it does not enter or exit Plan Mode. Do not confuse it with Plan mode or try to use it while in Plan mode. If you try to use `update_plan` in Plan mode, it will return an error.\r\n\r\n## Execution vs. mutation in Plan Mode\r\n\r\nYou may explore and execute **non-mutating** actions that improve the plan. You must not perform **mutating** actions.\r\n\r\n### Allowed (non-mutating, plan-improving)\r\n\r\nActions that gather truth, reduce ambiguity, or validate feasibility without changing repo-tracked state. Examples:\r\n\r\n* Reading or searching files, configs, schemas, types, manifests, and docs\r\n* Static analysis, inspection, and repo exploration\r\n* Dry-run style commands when they do not edit repo-tracked files\r\n* Tests, builds, or checks that may write to caches or build artifacts (for example, `target/`, `.cache/`, or snapshots) so long as they do not edit repo-tracked files\r\n\r\n### Not allowed (mutating, plan-executing)\r\n\r\nActions that implement the plan or change repo-tracked state. Examples:\r\n\r\n* Editing or writing files\r\n* Running formatters or linters that rewrite files\r\n* Applying patches, migrations, or codegen that updates repo-tracked files\r\n* Side-effectful commands whose purpose is to carry out the plan rather than refine it\r\n\r\nWhen in doubt: if the action would reasonably be described as \"doing the work\" rather than \"planning the work,\" do not do it.\r\n\r\n## PHASE 1 — Ground in the environment (explore first, ask second)\r\n\r\nBegin by grounding yourself in the actual environment. Eliminate unknowns in the prompt by discovering facts, not by asking the user. Resolve all questions that can be answered through exploration or inspection. Identify missing or ambiguous details only if they cannot be derived from the environment. Silent exploration between turns is allowed and encouraged.\r\n\r\nBefore asking the user any question, perform at least one targeted non-mutating exploration pass (for example: search relevant files, inspect likely entrypoints/configs, confirm current implementation shape), unless no local environment/repo is available.\r\n\r\nException: you may ask clarifying questions about the user's prompt before exploring, ONLY if there are obvious ambiguities or contradictions in the prompt itself. However, if ambiguity might be resolved by exploring, always prefer exploring first.\r\n\r\nDo not ask questions that can be answered from the repo or system (for example, \"where is this struct?\" or \"which UI component should we use?\" when exploration can make it clear). Only ask once you have exhausted reasonable non-mutating exploration.\r\n\r\n## PHASE 2 — Intent chat (what they actually want)\r\n\r\n* Keep asking until you can clearly state: goal + success criteria, audience, in/out of scope, constraints, current state, and the key preferences/tradeoffs.\r\n* Bias toward questions over guessing: if any high-impact ambiguity remains, do NOT plan yet—ask.\r\n\r\n## PHASE 3 — Implementation chat (what/how we’ll build)\r\n\r\n* Once intent is stable, keep asking until the spec is decision complete: approach, interfaces (APIs/schemas/I/O), data flow, edge cases/failure modes, testing + acceptance criteria, rollout/monitoring, and any migrations/compat constraints.\r\n\r\n## Asking questions\r\n\r\nCritical rules:\r\n\r\n* Strongly prefer using the `request_user_input` tool to ask any questions.\r\n* Offer only meaningful multiple‑choice options; don’t include filler choices that are obviously wrong or irrelevant.\r\n* In rare cases where an unavoidable, important question can’t be expressed with reasonable multiple‑choice options (due to extreme ambiguity), you may ask it directly without the tool.\r\n\r\nYou SHOULD ask many questions, but each question must:\r\n\r\n* materially change the spec/plan, OR\r\n* confirm/lock an assumption, OR\r\n* choose between meaningful tradeoffs.\r\n* not be answerable by non-mutating commands.\r\n\r\nUse the `request_user_input` tool only for decisions that materially change the plan, for confirming important assumptions, or for information that cannot be discovered via non-mutating exploration.\r\n\r\n## Two kinds of unknowns (treat differently)\r\n\r\n1. **Discoverable facts** (repo/system truth): explore first.\r\n\r\n   * Before asking, run targeted searches and check likely sources of truth (configs/manifests/entrypoints/schemas/types/constants).\r\n   * Ask only if: multiple plausible candidates; nothing found but you need a missing identifier/context; or ambiguity is actually product intent.\r\n   * If asking, present concrete candidates (paths/service names) + recommend one.\r\n   * Never ask questions you can answer from your environment (e.g., “where is this struct”).\r\n\r\n2. **Preferences/tradeoffs** (not discoverable): ask early.\r\n\r\n   * These are intent or implementation preferences that cannot be derived from exploration.\r\n   * Provide 2–4 mutually exclusive options + a recommended default.\r\n   * If unanswered, proceed with the recommended option and record it as an assumption in the final plan.\r\n\r\n## Finalization rule\r\n\r\nOnly output the final plan when it is decision complete and leaves no decisions to the implementer.\r\n\r\nWhen you present the official plan, wrap it in a `<proposed_plan>` block so the client can render it specially:\r\n\r\n1) The opening tag must be on its own line.\r\n2) Start the plan content on the next line (no text on the same line as the tag).\r\n3) The closing tag must be on its own line.\r\n4) Use Markdown inside the block.\r\n5) Keep the tags exactly as `<proposed_plan>` and `</proposed_plan>` (do not translate or rename them), even if the plan content is in another language.\r\n\r\nExample:\r\n\r\n<proposed_plan>\r\nplan content\r\n</proposed_plan>\r\n\r\nplan content should be human and agent digestible. The final plan must be plan-only, concise by default, and include:\r\n\r\n* A clear title\r\n* A brief summary section\r\n* Important changes or additions to public APIs/interfaces/types\r\n* Test cases and scenarios\r\n* Explicit assumptions and defaults chosen where needed\r\n\r\nWhen possible, prefer a compact structure with 3-5 short sections, usually: Summary, Key Changes or Implementation Changes, Test Plan, and Assumptions. Do not include a separate Scope section unless scope boundaries are genuinely important to avoid mistakes.\r\n\r\nPrefer grouped implementation bullets by subsystem or behavior over file-by-file inventories. Mention files only when needed to disambiguate a non-obvious change, and avoid naming more than 3 paths unless extra specificity is necessary to prevent mistakes. Prefer behavior-level descriptions over symbol-by-symbol removal lists. For v1 feature-addition plans, do not invent detailed schema, validation, precedence, fallback, or wire-shape policy unless the request establishes it or it is needed to prevent a concrete implementation mistake; prefer the intended capability and minimum interface/behavior changes.\r\n\r\nKeep bullets short and avoid explanatory sub-bullets unless they are needed to prevent ambiguity. Prefer the minimum detail needed for implementation safety, not exhaustive coverage. Within each section, compress related changes into a few high-signal bullets and omit branch-by-branch logic, repeated invariants, and long lists of unaffected behavior unless they are necessary to prevent a likely implementation mistake. Avoid repeated repo facts and irrelevant edge-case or rollout detail. For straightforward refactors, keep the plan to a compact summary, key edits, tests, and assumptions. If the user asks for more detail, then expand.\r\n\r\nDo not ask \"should I proceed?\" in the final output. The user can easily switch out of Plan mode and request implementation if you have included a `<proposed_plan>` block in your response. Alternatively, they can decide to stay in Plan mode and continue refining the plan.\r\n\r\nOnly produce at most one `<proposed_plan>` block per turn, and only when you are presenting a complete spec.\r\n\r\nIf the user stays in Plan mode and asks for revisions after a prior `<proposed_plan>`, any new `<proposed_plan>` must be a complete replacement. If the user indicates that the prior plan is not acceptable but does not provide enough information to produce a complete replacement, address the concern and continue planning without producing a `<proposed_plan>` block. If the follow-up neither requires changes nor calls the plan into question (e.g. clarifying question), answer it before the block, then reproduce the prior `<proposed_plan>` unchanged.\r\n"
+              }
+            },
+            "multiAgentMode": "explicitRequestOnly",
+            "personality": "pragmatic"
+          }
+        },
+        "emittedAtMs": 1578688484681
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 3754,
+      "frame": {
+        "id": 4,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 3847,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578688484775
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 3847,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578688484,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578688484775
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 4298,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-23>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578688485227
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 5697,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Make a short plan, three steps at most, for this change to the project in the current folder: append the line \"reviewed\" to the end of notes-1.txt. Do not ask me any question: I have no preference.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578688486624
+        },
+        "emittedAtMs": 1578688486625
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 5717,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Make a short plan, three steps at most, for this change to the project in the current folder: append the line \"reviewed\" to the end of notes-1.txt. Do not ask me any question: I have no preference.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578688486624
+        },
+        "emittedAtMs": 1578688486645
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 6968,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578688487896
+        },
+        "emittedAtMs": 1578688487896
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 6969,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578688487896
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 6969,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "’ll"
+        },
+        "emittedAtMs": 1578688487896
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 7071,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " check"
+        },
+        "emittedAtMs": 1578688487999
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 7072,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688488000
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 7072,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578688488000
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 7072,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578688488000
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 7072,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " repository"
+        },
+        "emittedAtMs": 1578688488000
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 7072,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " state"
+        },
+        "emittedAtMs": 1578688488000
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 7072,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " so"
+        },
+        "emittedAtMs": 1578688488000
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 7072,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688488000
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 7072,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " plan"
+        },
+        "emittedAtMs": 1578688488000
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 7072,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " reflects"
+        },
+        "emittedAtMs": 1578688488001
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 7073,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688488001
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 7073,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " current"
+        },
+        "emittedAtMs": 1578688488001
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 7075,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " project"
+        },
+        "emittedAtMs": 1578688488004
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 7080,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578688488008
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 7170,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "I’ll check the file and repository state so the plan reflects the current project.",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578688488084
+        },
+        "emittedAtMs": 1578688488098
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 7835,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          }
+        },
+        "emittedAtMs": 1578688488760
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 7835,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-6>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'Get-Location; Get-ChildItem -Force | Select-Object -First 30 Name,Mode; if (Test-Path -LiteralPath notes-1.txt) { Get-Content -LiteralPath notes-1.txt -Tail 5 }'",
+            "cwd": "<scratch>",
+            "processId": null,
+            "source": "agent",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "Get-Location; Get-ChildItem -Force | Select-Object -First 30 Name,Mode; if (Test-Path -LiteralPath notes-1.txt) { Get-Content -LiteralPath notes-1.txt -Tail 5 }"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578688488763
+        },
+        "emittedAtMs": 1578688488763
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 7835,
+      "frame": {
+        "method": "item/commandExecution/requestApproval",
+        "id": 0,
+        "params": {
+          "kind": "command",
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "startedAtMs": 1578688488760,
+          "environmentId": "local",
+          "command": "\"<path>\" -Command 'Get-Location; Get-ChildItem -Force | Select-Object -First 30 Name,Mode; if (Test-Path -LiteralPath notes-1.txt) { Get-Content -LiteralPath notes-1.txt -Tail 5 }'",
+          "cwd": "<scratch>",
+          "commandActions": [
+            {
+              "type": "unknown",
+              "command": "Get-Location; Get-ChildItem -Force | Select-Object -First 30 Name,Mode; if (Test-Path -LiteralPath notes-1.txt) { Get-Content -LiteralPath notes-1.txt -Tail 5 }"
+            }
+          ],
+          "proposedExecpolicyAmendment": [
+            "<path>",
+            "-Command",
+            "Get-Location; Get-ChildItem -Force | Select-Object -First 30 Name,Mode; if (Test-Path -LiteralPath notes-1.txt) { Get-Content -LiteralPath notes-1.txt -Tail 5 }"
+          ],
+          "availableDecisions": [
+            "accept",
+            {
+              "acceptWithExecpolicyAmendment": {
+                "execpolicy_amendment": [
+                  "<path>",
+                  "-Command",
+                  "Get-Location; Get-ChildItem -Force | Select-Object -First 30 Name,Mode; if (Test-Path -LiteralPath notes-1.txt) { Get-Content -LiteralPath notes-1.txt -Tail 5 }"
+                ]
+              }
+            },
+            "cancel"
+          ]
+        }
+      }
+    },
+    {
+      "index": 39,
+      "dir": "send",
+      "ms": 7835,
+      "frame": {
+        "id": 0,
+        "result": {
+          "decision": "decline"
+        }
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 7835,
+      "frame": {
+        "method": "serverRequest/resolved",
+        "params": {
+          "threadId": "<session-1>",
+          "requestId": 0
+        },
+        "emittedAtMs": 1578688488763
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 7835,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-6>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'Get-Location; Get-ChildItem -Force | Select-Object -First 30 Name,Mode; if (Test-Path -LiteralPath notes-1.txt) { Get-Content -LiteralPath notes-1.txt -Tail 5 }'",
+            "cwd": "<scratch>",
+            "processId": null,
+            "source": "agent",
+            "status": "declined",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "Get-Location; Get-ChildItem -Force | Select-Object -First 30 Name,Mode; if (Test-Path -LiteralPath notes-1.txt) { Get-Content -LiteralPath notes-1.txt -Tail 5 }"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578688488764
+        },
+        "emittedAtMs": 1578688488764
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 7835,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578688488764
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 7991,
+      "frame": {
+        "method": "turn/moderationMetadata",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "metadata": {
+            "prompt": {
+              "omnimod": {
+                "protection_type": "omnimod",
+                "outputs": [
+                  {
+                    "results": [
+                      {
+                        "category_flags": {
+                          "A1": false,
+                          "A2": false,
+                          "A3": false,
+                          "C1": false,
+                          "C11": false,
+                          "C2": false,
+                          "E1": false,
+                          "E2": false,
+                          "E3": false,
+                          "H1": false,
+                          "H2": false,
+                          "H3": false,
+                          "JB1": false,
+                          "K1": false,
+                          "K2": false,
+                          "K3": false,
+                          "K4": false,
+                          "P1": false,
+                          "P2": false,
+                          "P3": false,
+                          "P4": false,
+                          "PD1": false,
+                          "PD4": false,
+                          "S1": false,
+                          "S3+": false,
+                          "S4": false,
+                          "SH": false,
+                          "TXT-C3": false,
+                          "TXT-C4": false,
+                          "V1": false,
+                          "V2+": false,
+                          "V4+": false,
+                          "REFUSED": false,
+                          "CBRN-B1+": false,
+                          "IMG-C1": false,
+                          "IMG-C11": false,
+                          "IMG-C2": false,
+                          "IMG-S1": false,
+                          "IMG-SH": false,
+                          "IMG-V1": false,
+                          "IMG-V2+": false,
+                          "IMG-V4+": false
+                        }
+                      }
+                    ],
+                    "is_blocked": false
+                  }
+                ]
+              }
+            },
+            "generation": {},
+            "tool_call": {},
+            "tool_response": {}
+          }
+        },
+        "emittedAtMs": 1578688488919
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 8132,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 15574,
+              "inputTokens": 15461,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 113,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 15574,
+              "inputTokens": 15461,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 113,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578688489059
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 8133,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 8761,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-7>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578688489689
+        },
+        "emittedAtMs": 1578688489689
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 8761,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578688489689
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 8761,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " couldn"
+        },
+        "emittedAtMs": 1578688489689
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 8761,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "’t"
+        },
+        "emittedAtMs": 1578688489689
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " inspect"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " project"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " because"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " environment"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " rejected"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " read"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " command"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " Based"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " on"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " your"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " request"
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 8865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578688489793
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 9074,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " here"
+        },
+        "emittedAtMs": 1578688490002
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 9074,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "’s"
+        },
+        "emittedAtMs": 1578688490002
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 9074,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688490002
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 9074,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " plan"
+        },
+        "emittedAtMs": 1578688490002
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 9074,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ":\n\n"
+        },
+        "emittedAtMs": 1578688490002
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 9075,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "plan",
+            "id": "<item-8>",
+            "text": ""
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578688490004
+        },
+        "emittedAtMs": 1578688490004
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 9075,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "##"
+        },
+        "emittedAtMs": 1578688490004
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 9075,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " Append"
+        },
+        "emittedAtMs": 1578688490004
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 9075,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " “"
+        },
+        "emittedAtMs": 1578688490004
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 9076,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "review"
+        },
+        "emittedAtMs": 1578688490004
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "ed"
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 77,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "”"
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " to"
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 79,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "notes"
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 81,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "-"
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 82,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 83,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": ".txt"
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 84,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "`\n\n"
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 85,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 86,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 87,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " Check"
+        },
+        "emittedAtMs": 1578688490031
+      }
+    },
+    {
+      "index": 88,
+      "dir": "recv",
+      "ms": 9104,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688490032
+      }
+    },
+    {
+      "index": 89,
+      "dir": "recv",
+      "ms": 9104,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578688490032
+      }
+    },
+    {
+      "index": 90,
+      "dir": "recv",
+      "ms": 9104,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "’s"
+        },
+        "emittedAtMs": 1578688490032
+      }
+    },
+    {
+      "index": 91,
+      "dir": "recv",
+      "ms": 9104,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " current"
+        },
+        "emittedAtMs": 1578688490032
+      }
+    },
+    {
+      "index": 92,
+      "dir": "recv",
+      "ms": 9104,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " ending"
+        },
+        "emittedAtMs": 1578688490032
+      }
+    },
+    {
+      "index": 93,
+      "dir": "recv",
+      "ms": 9104,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578688490032
+      }
+    },
+    {
+      "index": 94,
+      "dir": "recv",
+      "ms": 9104,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " preserve"
+        },
+        "emittedAtMs": 1578688490032
+      }
+    },
+    {
+      "index": 95,
+      "dir": "recv",
+      "ms": 9202,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " its"
+        },
+        "emittedAtMs": 1578688490130
+      }
+    },
+    {
+      "index": 96,
+      "dir": "recv",
+      "ms": 9202,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " existing"
+        },
+        "emittedAtMs": 1578688490130
+      }
+    },
+    {
+      "index": 97,
+      "dir": "recv",
+      "ms": 9202,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " contents"
+        },
+        "emittedAtMs": 1578688490130
+      }
+    },
+    {
+      "index": 98,
+      "dir": "recv",
+      "ms": 9202,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": ".\n"
+        },
+        "emittedAtMs": 1578688490130
+      }
+    },
+    {
+      "index": 99,
+      "dir": "recv",
+      "ms": 9203,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "2"
+        },
+        "emittedAtMs": 1578688490131
+      }
+    },
+    {
+      "index": 100,
+      "dir": "recv",
+      "ms": 9203,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578688490131
+      }
+    },
+    {
+      "index": 101,
+      "dir": "recv",
+      "ms": 9203,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " Append"
+        },
+        "emittedAtMs": 1578688490131
+      }
+    },
+    {
+      "index": 102,
+      "dir": "recv",
+      "ms": 9203,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578688490131
+      }
+    },
+    {
+      "index": 103,
+      "dir": "recv",
+      "ms": 9204,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "review"
+        },
+        "emittedAtMs": 1578688490131
+      }
+    },
+    {
+      "index": 104,
+      "dir": "recv",
+      "ms": 9205,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "ed"
+        },
+        "emittedAtMs": 1578688490131
+      }
+    },
+    {
+      "index": 105,
+      "dir": "recv",
+      "ms": 9205,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578688490131
+      }
+    },
+    {
+      "index": 106,
+      "dir": "recv",
+      "ms": 9206,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " as"
+        },
+        "emittedAtMs": 1578688490132
+      }
+    },
+    {
+      "index": 107,
+      "dir": "recv",
+      "ms": 9206,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " a"
+        },
+        "emittedAtMs": 1578688490132
+      }
+    },
+    {
+      "index": 108,
+      "dir": "recv",
+      "ms": 9206,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " new"
+        },
+        "emittedAtMs": 1578688490132
+      }
+    },
+    {
+      "index": 109,
+      "dir": "recv",
+      "ms": 9206,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " final"
+        },
+        "emittedAtMs": 1578688490132
+      }
+    },
+    {
+      "index": 110,
+      "dir": "recv",
+      "ms": 9207,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " line"
+        },
+        "emittedAtMs": 1578688490132
+      }
+    },
+    {
+      "index": 111,
+      "dir": "recv",
+      "ms": 9208,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": ".\n"
+        },
+        "emittedAtMs": 1578688490132
+      }
+    },
+    {
+      "index": 112,
+      "dir": "recv",
+      "ms": 9209,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "3"
+        },
+        "emittedAtMs": 1578688490132
+      }
+    },
+    {
+      "index": 113,
+      "dir": "recv",
+      "ms": 9209,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578688490134
+      }
+    },
+    {
+      "index": 114,
+      "dir": "recv",
+      "ms": 9209,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " Confirm"
+        },
+        "emittedAtMs": 1578688490134
+      }
+    },
+    {
+      "index": 115,
+      "dir": "recv",
+      "ms": 9210,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688490134
+      }
+    },
+    {
+      "index": 116,
+      "dir": "recv",
+      "ms": 9210,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " line"
+        },
+        "emittedAtMs": 1578688490134
+      }
+    },
+    {
+      "index": 117,
+      "dir": "recv",
+      "ms": 9210,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " appears"
+        },
+        "emittedAtMs": 1578688490134
+      }
+    },
+    {
+      "index": 118,
+      "dir": "recv",
+      "ms": 9285,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " at"
+        },
+        "emittedAtMs": 1578688490213
+      }
+    },
+    {
+      "index": 119,
+      "dir": "recv",
+      "ms": 9285,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688490213
+      }
+    },
+    {
+      "index": 120,
+      "dir": "recv",
+      "ms": 9285,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " end"
+        },
+        "emittedAtMs": 1578688490213
+      }
+    },
+    {
+      "index": 121,
+      "dir": "recv",
+      "ms": 9285,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " of"
+        },
+        "emittedAtMs": 1578688490213
+      }
+    },
+    {
+      "index": 122,
+      "dir": "recv",
+      "ms": 9285,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688490213
+      }
+    },
+    {
+      "index": 123,
+      "dir": "recv",
+      "ms": 9286,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578688490214
+      }
+    },
+    {
+      "index": 124,
+      "dir": "recv",
+      "ms": 9286,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": ".\n"
+        },
+        "emittedAtMs": 1578688490214
+      }
+    },
+    {
+      "index": 125,
+      "dir": "recv",
+      "ms": 9358,
+      "frame": {
+        "method": "turn/moderationMetadata",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "metadata": {
+            "prompt": {},
+            "generation": {},
+            "tool_call": {},
+            "tool_response": {}
+          }
+        },
+        "emittedAtMs": 1578688490287
+      }
+    },
+    {
+      "index": 126,
+      "dir": "recv",
+      "ms": 9407,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "plan",
+            "id": "<item-8>",
+            "text": "## Append “reviewed” to `notes-1.txt`\n\n1. Check the file’s current ending and preserve its existing contents.\n2. Append `reviewed` as a new final line.\n3. Confirm the line appears at the end of the file.\n"
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578688490287
+        },
+        "emittedAtMs": 1578688490335
+      }
+    },
+    {
+      "index": 127,
+      "dir": "recv",
+      "ms": 9456,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-7>",
+            "text": "I couldn’t inspect the project because the environment rejected the read command. Based on your request, here’s the plan:\n\n",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578688490335
+        },
+        "emittedAtMs": 1578688490384
+      }
+    },
+    {
+      "index": 128,
+      "dir": "recv",
+      "ms": 9501,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 31284,
+              "inputTokens": 31080,
+              "cachedInputTokens": 15232,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 204,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 15710,
+              "inputTokens": 15619,
+              "cachedInputTokens": 15232,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 91,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578688490429
+      }
+    },
+    {
+      "index": 129,
+      "dir": "recv",
+      "ms": 9501,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 130,
+      "dir": "recv",
+      "ms": 9518,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578688490446
+      }
+    },
+    {
+      "index": 131,
+      "dir": "recv",
+      "ms": 9518,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-7>",
+                "text": "I couldn’t inspect the project because the environment rejected the read command. Based on your request, here’s the plan:\n\n",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578688484,
+            "completedAt": 1578688490,
+            "durationMs": 5755
+          }
+        },
+        "emittedAtMs": 1578688490446
+      }
+    },
+    {
+      "index": 132,
+      "dir": "send",
+      "ms": 11026,
+      "frame": {
+        "method": "turn/start",
+        "id": 5,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Add a final step that reads the file back to confirm the line is there.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-9>",
+          "collaborationMode": {
+            "mode": "plan",
+            "settings": {
+              "model": "gpt-6-luna",
+              "reasoning_effort": "low",
+              "developer_instructions": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "index": 133,
+      "dir": "recv",
+      "ms": 11045,
+      "frame": {
+        "id": 5,
+        "result": {
+          "turn": {
+            "id": "<turn-10>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 134,
+      "dir": "recv",
+      "ms": 11064,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578688491992
+      }
+    },
+    {
+      "index": 135,
+      "dir": "recv",
+      "ms": 11064,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-10>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578688491,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578688491992
+      }
+    },
+    {
+      "index": 136,
+      "dir": "recv",
+      "ms": 11112,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-11>",
+            "clientId": "<client-message-9>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Add a final step that reads the file back to confirm the line is there.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "startedAtMs": 1578688492040
+        },
+        "emittedAtMs": 1578688492040
+      }
+    },
+    {
+      "index": 137,
+      "dir": "recv",
+      "ms": 11123,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-11>",
+            "clientId": "<client-message-9>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Add a final step that reads the file back to confirm the line is there.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "completedAtMs": 1578688492040
+        },
+        "emittedAtMs": 1578688492052
+      }
+    },
+    {
+      "index": 138,
+      "dir": "recv",
+      "ms": 12001,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "plan",
+            "id": "<item-12>",
+            "text": ""
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "startedAtMs": 1578688492929
+        },
+        "emittedAtMs": 1578688492929
+      }
+    },
+    {
+      "index": 139,
+      "dir": "recv",
+      "ms": 12001,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "##"
+        },
+        "emittedAtMs": 1578688492930
+      }
+    },
+    {
+      "index": 140,
+      "dir": "recv",
+      "ms": 12002,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " Append"
+        },
+        "emittedAtMs": 1578688492930
+      }
+    },
+    {
+      "index": 141,
+      "dir": "recv",
+      "ms": 12002,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " “"
+        },
+        "emittedAtMs": 1578688492930
+      }
+    },
+    {
+      "index": 142,
+      "dir": "recv",
+      "ms": 12002,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "review"
+        },
+        "emittedAtMs": 1578688492930
+      }
+    },
+    {
+      "index": 143,
+      "dir": "recv",
+      "ms": 12002,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "ed"
+        },
+        "emittedAtMs": 1578688492930
+      }
+    },
+    {
+      "index": 144,
+      "dir": "recv",
+      "ms": 12002,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "”"
+        },
+        "emittedAtMs": 1578688492931
+      }
+    },
+    {
+      "index": 145,
+      "dir": "recv",
+      "ms": 12002,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " to"
+        },
+        "emittedAtMs": 1578688492931
+      }
+    },
+    {
+      "index": 146,
+      "dir": "recv",
+      "ms": 12003,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578688492931
+      }
+    },
+    {
+      "index": 147,
+      "dir": "recv",
+      "ms": 12003,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "notes"
+        },
+        "emittedAtMs": 1578688492931
+      }
+    },
+    {
+      "index": 148,
+      "dir": "recv",
+      "ms": 12003,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "-"
+        },
+        "emittedAtMs": 1578688492932
+      }
+    },
+    {
+      "index": 149,
+      "dir": "recv",
+      "ms": 12003,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578688492932
+      }
+    },
+    {
+      "index": 150,
+      "dir": "recv",
+      "ms": 12004,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": ".txt"
+        },
+        "emittedAtMs": 1578688492932
+      }
+    },
+    {
+      "index": 151,
+      "dir": "recv",
+      "ms": 12021,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "`\n\n"
+        },
+        "emittedAtMs": 1578688492949
+      }
+    },
+    {
+      "index": 152,
+      "dir": "recv",
+      "ms": 12021,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578688492949
+      }
+    },
+    {
+      "index": 153,
+      "dir": "recv",
+      "ms": 12021,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578688492949
+      }
+    },
+    {
+      "index": 154,
+      "dir": "recv",
+      "ms": 12021,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " Check"
+        },
+        "emittedAtMs": 1578688492949
+      }
+    },
+    {
+      "index": 155,
+      "dir": "recv",
+      "ms": 12021,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688492949
+      }
+    },
+    {
+      "index": 156,
+      "dir": "recv",
+      "ms": 12021,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578688492949
+      }
+    },
+    {
+      "index": 157,
+      "dir": "recv",
+      "ms": 12124,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "’s"
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 158,
+      "dir": "recv",
+      "ms": 12124,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " current"
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 159,
+      "dir": "recv",
+      "ms": 12124,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " ending"
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 160,
+      "dir": "recv",
+      "ms": 12124,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 161,
+      "dir": "recv",
+      "ms": 12124,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " preserve"
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 162,
+      "dir": "recv",
+      "ms": 12124,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " its"
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 163,
+      "dir": "recv",
+      "ms": 12124,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " existing"
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 164,
+      "dir": "recv",
+      "ms": 12125,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " contents"
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 165,
+      "dir": "recv",
+      "ms": 12125,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": ".\n"
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 166,
+      "dir": "recv",
+      "ms": 12125,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "2"
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 167,
+      "dir": "recv",
+      "ms": 12125,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 168,
+      "dir": "recv",
+      "ms": 12125,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " Append"
+        },
+        "emittedAtMs": 1578688493052
+      }
+    },
+    {
+      "index": 169,
+      "dir": "recv",
+      "ms": 12125,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578688493053
+      }
+    },
+    {
+      "index": 170,
+      "dir": "recv",
+      "ms": 12126,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "review"
+        },
+        "emittedAtMs": 1578688493054
+      }
+    },
+    {
+      "index": 171,
+      "dir": "recv",
+      "ms": 12126,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "ed"
+        },
+        "emittedAtMs": 1578688493054
+      }
+    },
+    {
+      "index": 172,
+      "dir": "recv",
+      "ms": 12126,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578688493054
+      }
+    },
+    {
+      "index": 173,
+      "dir": "recv",
+      "ms": 12126,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " as"
+        },
+        "emittedAtMs": 1578688493054
+      }
+    },
+    {
+      "index": 174,
+      "dir": "recv",
+      "ms": 12126,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " a"
+        },
+        "emittedAtMs": 1578688493054
+      }
+    },
+    {
+      "index": 175,
+      "dir": "recv",
+      "ms": 12126,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " new"
+        },
+        "emittedAtMs": 1578688493054
+      }
+    },
+    {
+      "index": 176,
+      "dir": "recv",
+      "ms": 12126,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " final"
+        },
+        "emittedAtMs": 1578688493054
+      }
+    },
+    {
+      "index": 177,
+      "dir": "recv",
+      "ms": 12185,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " line"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 178,
+      "dir": "recv",
+      "ms": 12185,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": ".\n"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 179,
+      "dir": "recv",
+      "ms": 12185,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "3"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 180,
+      "dir": "recv",
+      "ms": 12185,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 181,
+      "dir": "recv",
+      "ms": 12185,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " Read"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 182,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 183,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 184,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " back"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 185,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 186,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " confirm"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 187,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 188,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "review"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 189,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "ed"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 190,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 191,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " appears"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 192,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " at"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 193,
+      "dir": "recv",
+      "ms": 12186,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 194,
+      "dir": "recv",
+      "ms": 12187,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": " end"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 195,
+      "dir": "recv",
+      "ms": 12187,
+      "frame": {
+        "method": "item/plan/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-12>",
+          "delta": ".\n"
+        },
+        "emittedAtMs": 1578688493113
+      }
+    },
+    {
+      "index": 196,
+      "dir": "recv",
+      "ms": 12285,
+      "frame": {
+        "method": "turn/moderationMetadata",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "metadata": {
+            "prompt": {
+              "omnimod": {
+                "protection_type": "omnimod",
+                "outputs": [
+                  {
+                    "results": [
+                      {
+                        "category_flags": {
+                          "A1": false,
+                          "A2": false,
+                          "A3": false,
+                          "C1": false,
+                          "C11": false,
+                          "C2": false,
+                          "E1": false,
+                          "E2": false,
+                          "E3": false,
+                          "H1": false,
+                          "H2": false,
+                          "H3": false,
+                          "JB1": false,
+                          "K1": false,
+                          "K2": false,
+                          "K3": false,
+                          "K4": false,
+                          "P1": false,
+                          "P2": false,
+                          "P3": false,
+                          "P4": false,
+                          "PD1": false,
+                          "PD4": false,
+                          "S1": false,
+                          "S3+": false,
+                          "S4": false,
+                          "SH": false,
+                          "TXT-C3": false,
+                          "TXT-C4": false,
+                          "V1": false,
+                          "V2+": false,
+                          "V4+": false,
+                          "REFUSED": false,
+                          "CBRN-B1+": false,
+                          "IMG-C1": false,
+                          "IMG-C11": false,
+                          "IMG-C2": false,
+                          "IMG-S1": false,
+                          "IMG-SH": false,
+                          "IMG-V1": false,
+                          "IMG-V2+": false,
+                          "IMG-V4+": false
+                        }
+                      }
+                    ],
+                    "is_blocked": false
+                  }
+                ]
+              }
+            },
+            "generation": {},
+            "tool_call": {},
+            "tool_response": {}
+          }
+        },
+        "emittedAtMs": 1578688493213
+      }
+    },
+    {
+      "index": 197,
+      "dir": "recv",
+      "ms": 12299,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "plan",
+            "id": "<item-12>",
+            "text": "## Append “reviewed” to `notes-1.txt`\n\n1. Check the file’s current ending and preserve its existing contents.\n2. Append `reviewed` as a new final line.\n3. Read the file back and confirm `reviewed` appears at the end.\n"
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "completedAtMs": 1578688493213
+        },
+        "emittedAtMs": 1578688493227
+      }
+    },
+    {
+      "index": 198,
+      "dir": "recv",
+      "ms": 12334,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-10>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 47087,
+              "inputTokens": 46812,
+              "cachedInputTokens": 30720,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 275,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 15803,
+              "inputTokens": 15732,
+              "cachedInputTokens": 15488,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 71,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578688493263
+      }
+    },
+    {
+      "index": 199,
+      "dir": "recv",
+      "ms": 12335,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 200,
+      "dir": "recv",
+      "ms": 12346,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578688493274
+      }
+    },
+    {
+      "index": 201,
+      "dir": "recv",
+      "ms": 12346,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-10>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578688491,
+            "completedAt": 1578688493,
+            "durationMs": 1291
+          }
+        },
+        "emittedAtMs": 1578688493274
+      }
+    },
+    {
+      "index": 202,
+      "dir": "send",
+      "ms": 13858,
+      "frame": {
+        "method": "turn/start",
+        "id": 6,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Create the file plain-after-plan.txt in the current folder, containing the single word hello. Then tell me in one short sentence whether it was created.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-13>"
+        }
+      }
+    },
+    {
+      "index": 203,
+      "dir": "recv",
+      "ms": 13871,
+      "frame": {
+        "id": 6,
+        "result": {
+          "turn": {
+            "id": "<turn-14>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 204,
+      "dir": "recv",
+      "ms": 13883,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578688494811
+      }
+    },
+    {
+      "index": 205,
+      "dir": "recv",
+      "ms": 13883,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-14>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578688494,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578688494811
+      }
+    },
+    {
+      "index": 206,
+      "dir": "recv",
+      "ms": 13936,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-15>",
+            "clientId": "<client-message-13>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Create the file plain-after-plan.txt in the current folder, containing the single word hello. Then tell me in one short sentence whether it was created.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "startedAtMs": 1578688494864
+        },
+        "emittedAtMs": 1578688494864
+      }
+    },
+    {
+      "index": 207,
+      "dir": "recv",
+      "ms": 13947,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-15>",
+            "clientId": "<client-message-13>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Create the file plain-after-plan.txt in the current folder, containing the single word hello. Then tell me in one short sentence whether it was created.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "completedAtMs": 1578688494864
+        },
+        "emittedAtMs": 1578688494875
+      }
+    },
+    {
+      "index": 208,
+      "dir": "recv",
+      "ms": 14775,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-16>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "startedAtMs": 1578688495703
+        },
+        "emittedAtMs": 1578688495703
+      }
+    },
+    {
+      "index": 209,
+      "dir": "recv",
+      "ms": 14775,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578688495704
+      }
+    },
+    {
+      "index": 210,
+      "dir": "recv",
+      "ms": 14775,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " can"
+        },
+        "emittedAtMs": 1578688495704
+      }
+    },
+    {
+      "index": 211,
+      "dir": "recv",
+      "ms": 14775,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": "’t"
+        },
+        "emittedAtMs": 1578688495704
+      }
+    },
+    {
+      "index": 212,
+      "dir": "recv",
+      "ms": 14886,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " create"
+        },
+        "emittedAtMs": 1578688495815
+      }
+    },
+    {
+      "index": 213,
+      "dir": "recv",
+      "ms": 14886,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578688495815
+      }
+    },
+    {
+      "index": 214,
+      "dir": "recv",
+      "ms": 14886,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": "plain"
+        },
+        "emittedAtMs": 1578688495815
+      }
+    },
+    {
+      "index": 215,
+      "dir": "recv",
+      "ms": 14887,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": "-after"
+        },
+        "emittedAtMs": 1578688495815
+      }
+    },
+    {
+      "index": 216,
+      "dir": "recv",
+      "ms": 14887,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": "-plan"
+        },
+        "emittedAtMs": 1578688495815
+      }
+    },
+    {
+      "index": 217,
+      "dir": "recv",
+      "ms": 14888,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": ".txt"
+        },
+        "emittedAtMs": 1578688495816
+      }
+    },
+    {
+      "index": 218,
+      "dir": "recv",
+      "ms": 14888,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578688495816
+      }
+    },
+    {
+      "index": 219,
+      "dir": "recv",
+      "ms": 14889,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " because"
+        },
+        "emittedAtMs": 1578688495818
+      }
+    },
+    {
+      "index": 220,
+      "dir": "recv",
+      "ms": 14891,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " this"
+        },
+        "emittedAtMs": 1578688495818
+      }
+    },
+    {
+      "index": 221,
+      "dir": "recv",
+      "ms": 14891,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " session"
+        },
+        "emittedAtMs": 1578688495818
+      }
+    },
+    {
+      "index": 222,
+      "dir": "recv",
+      "ms": 14891,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " is"
+        },
+        "emittedAtMs": 1578688495818
+      }
+    },
+    {
+      "index": 223,
+      "dir": "recv",
+      "ms": 14891,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " still"
+        },
+        "emittedAtMs": 1578688495818
+      }
+    },
+    {
+      "index": 224,
+      "dir": "recv",
+      "ms": 14891,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " in"
+        },
+        "emittedAtMs": 1578688495818
+      }
+    },
+    {
+      "index": 225,
+      "dir": "recv",
+      "ms": 14891,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " Plan"
+        },
+        "emittedAtMs": 1578688495818
+      }
+    },
+    {
+      "index": 226,
+      "dir": "recv",
+      "ms": 14892,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " Mode"
+        },
+        "emittedAtMs": 1578688495818
+      }
+    },
+    {
+      "index": 227,
+      "dir": "recv",
+      "ms": 14892,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578688495819
+      }
+    },
+    {
+      "index": 228,
+      "dir": "recv",
+      "ms": 14892,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " which"
+        },
+        "emittedAtMs": 1578688495819
+      }
+    },
+    {
+      "index": 229,
+      "dir": "recv",
+      "ms": 14892,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " permits"
+        },
+        "emittedAtMs": 1578688495819
+      }
+    },
+    {
+      "index": 230,
+      "dir": "recv",
+      "ms": 14948,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " inspection"
+        },
+        "emittedAtMs": 1578688495876
+      }
+    },
+    {
+      "index": 231,
+      "dir": "recv",
+      "ms": 14948,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " but"
+        },
+        "emittedAtMs": 1578688495876
+      }
+    },
+    {
+      "index": 232,
+      "dir": "recv",
+      "ms": 14948,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " forb"
+        },
+        "emittedAtMs": 1578688495876
+      }
+    },
+    {
+      "index": 233,
+      "dir": "recv",
+      "ms": 14948,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": "ids"
+        },
+        "emittedAtMs": 1578688495876
+      }
+    },
+    {
+      "index": 234,
+      "dir": "recv",
+      "ms": 14949,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578688495877
+      }
+    },
+    {
+      "index": 235,
+      "dir": "recv",
+      "ms": 14949,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": " changes"
+        },
+        "emittedAtMs": 1578688495877
+      }
+    },
+    {
+      "index": 236,
+      "dir": "recv",
+      "ms": 14950,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "itemId": "<item-16>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578688495877
+      }
+    },
+    {
+      "index": 237,
+      "dir": "recv",
+      "ms": 15026,
+      "frame": {
+        "method": "turn/moderationMetadata",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "metadata": {
+            "prompt": {
+              "omnimod": {
+                "protection_type": "omnimod",
+                "outputs": [
+                  {
+                    "results": [
+                      {
+                        "category_flags": {
+                          "A1": false,
+                          "A2": false,
+                          "A3": false,
+                          "C1": false,
+                          "C11": false,
+                          "C2": false,
+                          "E1": false,
+                          "E2": false,
+                          "E3": false,
+                          "H1": false,
+                          "H2": false,
+                          "H3": false,
+                          "JB1": false,
+                          "K1": false,
+                          "K2": false,
+                          "K3": false,
+                          "K4": false,
+                          "P1": false,
+                          "P2": false,
+                          "P3": false,
+                          "P4": false,
+                          "PD1": false,
+                          "PD4": false,
+                          "S1": false,
+                          "S3+": false,
+                          "S4": false,
+                          "SH": false,
+                          "TXT-C3": false,
+                          "TXT-C4": false,
+                          "V1": false,
+                          "V2+": false,
+                          "V4+": false,
+                          "REFUSED": false,
+                          "CBRN-B1+": false,
+                          "IMG-C1": false,
+                          "IMG-C11": false,
+                          "IMG-C2": false,
+                          "IMG-S1": false,
+                          "IMG-SH": false,
+                          "IMG-V1": false,
+                          "IMG-V2+": false,
+                          "IMG-V4+": false
+                        }
+                      }
+                    ],
+                    "is_blocked": false
+                  }
+                ]
+              }
+            },
+            "generation": {},
+            "tool_call": {},
+            "tool_response": {}
+          }
+        },
+        "emittedAtMs": 1578688495954
+      }
+    },
+    {
+      "index": 238,
+      "dir": "recv",
+      "ms": 15040,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-16>",
+            "text": "I can’t create `plain-after-plan.txt` because this session is still in Plan Mode, which permits inspection but forbids file changes.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "completedAtMs": 1578688495955
+        },
+        "emittedAtMs": 1578688495968
+      }
+    },
+    {
+      "index": 239,
+      "dir": "recv",
+      "ms": 15077,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-14>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 62958,
+              "inputTokens": 62651,
+              "cachedInputTokens": 46336,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 307,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 15871,
+              "inputTokens": 15839,
+              "cachedInputTokens": 15616,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 32,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578688496006
+      }
+    },
+    {
+      "index": 240,
+      "dir": "recv",
+      "ms": 15078,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 241,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578688496020
+      }
+    },
+    {
+      "index": 242,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-14>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-16>",
+                "text": "I can’t create `plain-after-plan.txt` because this session is still in Plan Mode, which permits inspection but forbids file changes.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578688494,
+            "completedAt": 1578688496,
+            "durationMs": 1208
+          }
+        },
+        "emittedAtMs": 1578688496020
+      }
+    },
+    {
+      "index": 243,
+      "dir": "send",
+      "ms": 16602,
+      "frame": {
+        "method": "turn/start",
+        "id": 7,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Implement the plan you proposed.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-17>",
+          "collaborationMode": {
+            "mode": "default",
+            "settings": {
+              "model": "gpt-6-luna",
+              "reasoning_effort": "low",
+              "developer_instructions": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "index": 244,
+      "dir": "recv",
+      "ms": 16622,
+      "frame": {
+        "method": "thread/settings/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "threadSettings": {
+            "cwd": "<scratch>",
+            "approvalPolicy": "untrusted",
+            "approvalsReviewer": "user",
+            "sandboxPolicy": {
+              "type": "workspaceWrite",
+              "writableRoots": [],
+              "networkAccess": false,
+              "excludeTmpdirEnvVar": false,
+              "excludeSlashTmp": false
+            },
+            "activePermissionProfile": null,
+            "model": "gpt-6-luna",
+            "modelProvider": "openai",
+            "serviceTier": null,
+            "effort": "low",
+            "summary": null,
+            "collaborationMode": {
+              "mode": "default",
+              "settings": {
+                "model": "gpt-6-luna",
+                "reasoning_effort": "low",
+                "developer_instructions": "# Collaboration Mode: Default\r\n\r\nYou are now in Default mode. Any previous instructions for other modes (e.g. Plan mode) are no longer active.\r\n\r\nYour active mode changes only when new developer instructions with a different `<collaboration_mode>...</collaboration_mode>` change it; user requests or tool descriptions do not change mode by themselves. Known mode names are Default and Plan.\r\n\r\n## request_user_input availability\r\n\r\nUse the `request_user_input` tool only when it is listed in the available tools for this turn.\r\n\r\nIn Default mode, strongly prefer making reasonable assumptions and executing the user's request rather than stopping to ask questions.\r\n\r\nUse the `request_user_input` tool only for optional questions where the answer would materially improve the quality of the work.\r\n\r\nIf `request_user_input` returns no answers, continue with best judgment instead of asking again or treating the turn as blocked.\r\n\r\nNever use the `request_user_input` tool for permission requests or permission-related escalations.\r\n\r\nIf explicit user input is required for another reason before progress can safely continue, do not use the `request_user_input` tool. Ask the user directly with one concise plain-text question instead. Never write a multiple choice question as a textual assistant message.\r\n"
+              }
+            },
+            "multiAgentMode": "explicitRequestOnly",
+            "personality": "pragmatic"
+          }
+        },
+        "emittedAtMs": 1578688497550
+      }
+    },
+    {
+      "index": 245,
+      "dir": "recv",
+      "ms": 16622,
+      "frame": {
+        "id": 7,
+        "result": {
+          "turn": {
+            "id": "<turn-18>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 246,
+      "dir": "recv",
+      "ms": 16636,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578688497564
+      }
+    },
+    {
+      "index": 247,
+      "dir": "recv",
+      "ms": 16636,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-18>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578688497,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578688497564
+      }
+    },
+    {
+      "index": 248,
+      "dir": "recv",
+      "ms": 16713,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-19>",
+            "clientId": "<client-message-17>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Implement the plan you proposed.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "startedAtMs": 1578688497641
+        },
+        "emittedAtMs": 1578688497641
+      }
+    },
+    {
+      "index": 249,
+      "dir": "recv",
+      "ms": 16726,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-19>",
+            "clientId": "<client-message-17>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Implement the plan you proposed.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "completedAtMs": 1578688497641
+        },
+        "emittedAtMs": 1578688497654
+      }
+    },
+    {
+      "index": 250,
+      "dir": "recv",
+      "ms": 17985,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-20>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "startedAtMs": 1578688498913
+        },
+        "emittedAtMs": 1578688498914
+      }
+    },
+    {
+      "index": 251,
+      "dir": "recv",
+      "ms": 18000,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578688498928
+      }
+    },
+    {
+      "index": 252,
+      "dir": "recv",
+      "ms": 18172,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": "’ll"
+        },
+        "emittedAtMs": 1578688499101
+      }
+    },
+    {
+      "index": 253,
+      "dir": "recv",
+      "ms": 18172,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": " append"
+        },
+        "emittedAtMs": 1578688499101
+      }
+    },
+    {
+      "index": 254,
+      "dir": "recv",
+      "ms": 18173,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578688499102
+      }
+    },
+    {
+      "index": 255,
+      "dir": "recv",
+      "ms": 18173,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": "review"
+        },
+        "emittedAtMs": 1578688499102
+      }
+    },
+    {
+      "index": 256,
+      "dir": "recv",
+      "ms": 18173,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": "ed"
+        },
+        "emittedAtMs": 1578688499102
+      }
+    },
+    {
+      "index": 257,
+      "dir": "recv",
+      "ms": 18173,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578688499102
+      }
+    },
+    {
+      "index": 258,
+      "dir": "recv",
+      "ms": 18174,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": " to"
+        },
+        "emittedAtMs": 1578688499102
+      }
+    },
+    {
+      "index": 259,
+      "dir": "recv",
+      "ms": 18174,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578688499102
+      }
+    },
+    {
+      "index": 260,
+      "dir": "recv",
+      "ms": 18176,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": "notes"
+        },
+        "emittedAtMs": 1578688499104
+      }
+    },
+    {
+      "index": 261,
+      "dir": "recv",
+      "ms": 18176,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": "-"
+        },
+        "emittedAtMs": 1578688499105
+      }
+    },
+    {
+      "index": 262,
+      "dir": "recv",
+      "ms": 18176,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578688499105
+      }
+    },
+    {
+      "index": 263,
+      "dir": "recv",
+      "ms": 18176,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": ".txt"
+        },
+        "emittedAtMs": 1578688499105
+      }
+    },
+    {
+      "index": 264,
+      "dir": "recv",
+      "ms": 18176,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": "`,"
+        },
+        "emittedAtMs": 1578688499105
+      }
+    },
+    {
+      "index": 265,
+      "dir": "recv",
+      "ms": 18176,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": " then"
+        },
+        "emittedAtMs": 1578688499105
+      }
+    },
+    {
+      "index": 266,
+      "dir": "recv",
+      "ms": 18176,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": " read"
+        },
+        "emittedAtMs": 1578688499105
+      }
+    },
+    {
+      "index": 267,
+      "dir": "recv",
+      "ms": 18176,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": " it"
+        },
+        "emittedAtMs": 1578688499105
+      }
+    },
+    {
+      "index": 268,
+      "dir": "recv",
+      "ms": 18176,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": " back"
+        },
+        "emittedAtMs": 1578688499105
+      }
+    },
+    {
+      "index": 269,
+      "dir": "recv",
+      "ms": 18176,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": " to"
+        },
+        "emittedAtMs": 1578688499105
+      }
+    },
+    {
+      "index": 270,
+      "dir": "recv",
+      "ms": 18176,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": " confirm"
+        },
+        "emittedAtMs": 1578688499105
+      }
+    },
+    {
+      "index": 271,
+      "dir": "recv",
+      "ms": 18194,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-20>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578688499122
+      }
+    },
+    {
+      "index": 272,
+      "dir": "recv",
+      "ms": 18209,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-20>",
+            "text": "I’ll append `reviewed` to `notes-1.txt`, then read it back to confirm.",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "completedAtMs": 1578688499124
+        },
+        "emittedAtMs": 1578688499137
+      }
+    },
+    {
+      "index": 273,
+      "dir": "recv",
+      "ms": 18496,
+      "frame": {
+        "method": "turn/moderationMetadata",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "metadata": {
+            "prompt": {
+              "omnimod": {
+                "protection_type": "omnimod",
+                "outputs": [
+                  {
+                    "results": [
+                      {
+                        "category_flags": {
+                          "A1": false,
+                          "A2": false,
+                          "A3": false,
+                          "C1": false,
+                          "C11": false,
+                          "C2": false,
+                          "E1": false,
+                          "E2": false,
+                          "E3": false,
+                          "H1": false,
+                          "H2": false,
+                          "H3": false,
+                          "JB1": false,
+                          "K1": false,
+                          "K2": false,
+                          "K3": false,
+                          "K4": false,
+                          "P1": false,
+                          "P2": false,
+                          "P3": false,
+                          "P4": false,
+                          "PD1": false,
+                          "PD4": false,
+                          "S1": false,
+                          "S3+": false,
+                          "S4": false,
+                          "SH": false,
+                          "TXT-C3": false,
+                          "TXT-C4": false,
+                          "V1": false,
+                          "V2+": false,
+                          "V4+": false,
+                          "REFUSED": false,
+                          "CBRN-B1+": false,
+                          "IMG-C1": false,
+                          "IMG-C11": false,
+                          "IMG-C2": false,
+                          "IMG-S1": false,
+                          "IMG-SH": false,
+                          "IMG-V1": false,
+                          "IMG-V2+": false,
+                          "IMG-V4+": false
+                        }
+                      }
+                    ],
+                    "is_blocked": false
+                  }
+                ]
+              }
+            },
+            "generation": {},
+            "tool_call": {},
+            "tool_response": {}
+          }
+        },
+        "emittedAtMs": 1578688499424
+      }
+    },
+    {
+      "index": 274,
+      "dir": "recv",
+      "ms": 18552,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          }
+        },
+        "emittedAtMs": 1578688499480
+      }
+    },
+    {
+      "index": 275,
+      "dir": "recv",
+      "ms": 18552,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-21>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command '$path = Join-Path (Get-Location) '\"'notes-1.txt'; Add-Content -LiteralPath \"'$path -Value '\"'reviewed'; Get-Content -LiteralPath \"'$path -Tail 3'",
+            "cwd": "<scratch>",
+            "processId": null,
+            "source": "agent",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "$path = Join-Path (Get-Location) 'notes-1.txt'; Add-Content -LiteralPath $path -Value 'reviewed'; Get-Content -LiteralPath $path -Tail 3"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "startedAtMs": 1578688499480
+        },
+        "emittedAtMs": 1578688499480
+      }
+    },
+    {
+      "index": 276,
+      "dir": "recv",
+      "ms": 18552,
+      "frame": {
+        "method": "item/commandExecution/requestApproval",
+        "id": 1,
+        "params": {
+          "kind": "command",
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-21>",
+          "startedAtMs": 1578688499480,
+          "environmentId": "local",
+          "command": "\"<path>\" -Command '$path = Join-Path (Get-Location) '\"'notes-1.txt'; Add-Content -LiteralPath \"'$path -Value '\"'reviewed'; Get-Content -LiteralPath \"'$path -Tail 3'",
+          "cwd": "<scratch>",
+          "commandActions": [
+            {
+              "type": "unknown",
+              "command": "$path = Join-Path (Get-Location) 'notes-1.txt'; Add-Content -LiteralPath $path -Value 'reviewed'; Get-Content -LiteralPath $path -Tail 3"
+            }
+          ],
+          "proposedExecpolicyAmendment": [
+            "<path>",
+            "-Command",
+            "$path = Join-Path (Get-Location) 'notes-1.txt'; Add-Content -LiteralPath $path -Value 'reviewed'; Get-Content -LiteralPath $path -Tail 3"
+          ],
+          "availableDecisions": [
+            "accept",
+            {
+              "acceptWithExecpolicyAmendment": {
+                "execpolicy_amendment": [
+                  "<path>",
+                  "-Command",
+                  "$path = Join-Path (Get-Location) 'notes-1.txt'; Add-Content -LiteralPath $path -Value 'reviewed'; Get-Content -LiteralPath $path -Tail 3"
+                ]
+              }
+            },
+            "cancel"
+          ]
+        }
+      }
+    },
+    {
+      "index": 277,
+      "dir": "send",
+      "ms": 18552,
+      "frame": {
+        "id": 1,
+        "result": {
+          "decision": "decline"
+        }
+      }
+    },
+    {
+      "index": 278,
+      "dir": "recv",
+      "ms": 18553,
+      "frame": {
+        "method": "serverRequest/resolved",
+        "params": {
+          "threadId": "<session-1>",
+          "requestId": 1
+        },
+        "emittedAtMs": 1578688499481
+      }
+    },
+    {
+      "index": 279,
+      "dir": "recv",
+      "ms": 18553,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-21>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command '$path = Join-Path (Get-Location) '\"'notes-1.txt'; Add-Content -LiteralPath \"'$path -Value '\"'reviewed'; Get-Content -LiteralPath \"'$path -Tail 3'",
+            "cwd": "<scratch>",
+            "processId": null,
+            "source": "agent",
+            "status": "declined",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "$path = Join-Path (Get-Location) 'notes-1.txt'; Add-Content -LiteralPath $path -Value 'reviewed'; Get-Content -LiteralPath $path -Tail 3"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "completedAtMs": 1578688499481
+        },
+        "emittedAtMs": 1578688499481
+      }
+    },
+    {
+      "index": 280,
+      "dir": "recv",
+      "ms": 18553,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578688499481
+      }
+    },
+    {
+      "index": 281,
+      "dir": "recv",
+      "ms": 18666,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 79155,
+              "inputTokens": 78738,
+              "cachedInputTokens": 61952,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 417,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 16197,
+              "inputTokens": 16087,
+              "cachedInputTokens": 15616,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 110,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578688499594
+      }
+    },
+    {
+      "index": 282,
+      "dir": "recv",
+      "ms": 18666,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 283,
+      "dir": "recv",
+      "ms": 19350,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-22>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "startedAtMs": 1578688500278
+        },
+        "emittedAtMs": 1578688500279
+      }
+    },
+    {
+      "index": 284,
+      "dir": "recv",
+      "ms": 19351,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578688500279
+      }
+    },
+    {
+      "index": 285,
+      "dir": "recv",
+      "ms": 19351,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " couldn"
+        },
+        "emittedAtMs": 1578688500279
+      }
+    },
+    {
+      "index": 286,
+      "dir": "recv",
+      "ms": 19467,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": "’t"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 287,
+      "dir": "recv",
+      "ms": 19467,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " update"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 288,
+      "dir": "recv",
+      "ms": 19467,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 289,
+      "dir": "recv",
+      "ms": 19467,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": "notes"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 290,
+      "dir": "recv",
+      "ms": 19467,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": "-"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 291,
+      "dir": "recv",
+      "ms": 19467,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 292,
+      "dir": "recv",
+      "ms": 19467,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": ".txt"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 293,
+      "dir": "recv",
+      "ms": 19467,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 294,
+      "dir": "recv",
+      "ms": 19467,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " because"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 295,
+      "dir": "recv",
+      "ms": 19468,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 296,
+      "dir": "recv",
+      "ms": 19468,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " environment"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 297,
+      "dir": "recv",
+      "ms": 19468,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " rejected"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 298,
+      "dir": "recv",
+      "ms": 19468,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 299,
+      "dir": "recv",
+      "ms": 19468,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 300,
+      "dir": "recv",
+      "ms": 19468,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " command"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 301,
+      "dir": "recv",
+      "ms": 19468,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 302,
+      "dir": "recv",
+      "ms": 19468,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " so"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 303,
+      "dir": "recv",
+      "ms": 19468,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " I"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 304,
+      "dir": "recv",
+      "ms": 19468,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " can"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 305,
+      "dir": "recv",
+      "ms": 19468,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": "’t"
+        },
+        "emittedAtMs": 1578688500396
+      }
+    },
+    {
+      "index": 306,
+      "dir": "recv",
+      "ms": 19517,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " confirm"
+        },
+        "emittedAtMs": 1578688500445
+      }
+    },
+    {
+      "index": 307,
+      "dir": "recv",
+      "ms": 19517,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578688500445
+      }
+    },
+    {
+      "index": 308,
+      "dir": "recv",
+      "ms": 19517,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " line"
+        },
+        "emittedAtMs": 1578688500445
+      }
+    },
+    {
+      "index": 309,
+      "dir": "recv",
+      "ms": 19517,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " was"
+        },
+        "emittedAtMs": 1578688500445
+      }
+    },
+    {
+      "index": 310,
+      "dir": "recv",
+      "ms": 19517,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": " added"
+        },
+        "emittedAtMs": 1578688500445
+      }
+    },
+    {
+      "index": 311,
+      "dir": "recv",
+      "ms": 19517,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "itemId": "<item-22>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578688500445
+      }
+    },
+    {
+      "index": 312,
+      "dir": "recv",
+      "ms": 19564,
+      "frame": {
+        "method": "turn/moderationMetadata",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "metadata": {
+            "prompt": {},
+            "generation": {},
+            "tool_call": {},
+            "tool_response": {}
+          }
+        },
+        "emittedAtMs": 1578688500492
+      }
+    },
+    {
+      "index": 313,
+      "dir": "recv",
+      "ms": 19609,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-22>",
+            "text": "I couldn’t update `notes-1.txt` because the environment rejected the file command, so I can’t confirm the line was added.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "completedAtMs": 1578688500492
+        },
+        "emittedAtMs": 1578688500537
+      }
+    },
+    {
+      "index": 314,
+      "dir": "recv",
+      "ms": 19700,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-18>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 95429,
+              "inputTokens": 94980,
+              "cachedInputTokens": 77824,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 449,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 16274,
+              "inputTokens": 16242,
+              "cachedInputTokens": 15872,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 32,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578688500629
+      }
+    },
+    {
+      "index": 315,
+      "dir": "recv",
+      "ms": 19701,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 316,
+      "dir": "recv",
+      "ms": 19717,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578688500645
+      }
+    },
+    {
+      "index": 317,
+      "dir": "recv",
+      "ms": 19717,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-18>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-22>",
+                "text": "I couldn’t update `notes-1.txt` because the environment rejected the file command, so I can’t confirm the line was added.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578688497,
+            "completedAt": 1578688500,
+            "durationMs": 3080
+          }
+        },
+        "emittedAtMs": 1578688500645
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 394,
+    "tail": "\u001b[2m2020-01-10T20:34:48.764446Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mexec_command failed: CreateProcess { message: \"Rejected(\\\"rejected by user\\\")\" }\n\u001b[2m2020-01-10T20:34:59.481784Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mexec_command failed: CreateProcess { message: \"Rejected(\\\"rejected by user\\\")\" }\n"
+  },
+  "requestsAnswered": [
+    {
+      "kind": "item/commandExecution/requestApproval",
+      "requestKind": "approval",
+      "answer": "{\"decision\":\"decline\"}"
+    },
+    {
+      "kind": "item/commandExecution/requestApproval",
+      "requestKind": "approval",
+      "answer": "{\"decision\":\"decline\"}"
+    }
+  ],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1606,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 3267,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 22629,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "codex-code-mode-host.exe"
+      ],
+      "alive": 5
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "thread/settings/updated",
+        "item": null,
+        "bytes": 10291
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 2880
+      },
+      {
+        "method": "thread/settings/updated",
+        "item": null,
+        "bytes": 2061
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1587
+      },
+      {
+        "method": "item/commandExecution/requestApproval",
+        "item": null,
+        "bytes": 1436
+      }
+    ],
+    "longStringsCut": []
+  }
+}

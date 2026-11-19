@@ -1,0 +1,108 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The artifact pane (docs/planning/_archive/M19b.md, Design 3; C9, C13, C14): rows of buttons that act as
+   tabs, over the body of the one that is selected. Its own tokens only: no colour and no text size
+   outside tokens.css. Two parts scroll, each within itself: the rows past three, and the body as its
+   kind has it (the `file` kind's text). The pane itself never scrolls, and its buttons are no part
+   of a selection: the shell is unselectable, and only a body's text says otherwise. */
+.pane {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Text tabs stand on the grid and wrap; three rows at most, then the rows scroll (C9). Wider
+   titles take the next row rather than shrinking to fit beside another tab. */
+.rows {
+  /* Local trial: half a pixel above the original size, to widen hinted lettering
+     with less growth than 14px. Pixel-height steps still vary with the title and zoom. */
+  --text-13: 13.5px;
+  --tab-height: 20px;
+  --tab-max-width: 280px;
+  --tab-row-gap: 2px;
+
+  position: relative;
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--tab-row-gap) var(--space-1);
+  max-height: calc(3 * var(--tab-height) + 2 * var(--tab-row-gap) + 2 * var(--space-2));
+  padding: var(--space-2);
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+}
+
+/* As wide as its title up to its most width; past that the title is cut, and whole in the tooltip. */
+.tab {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-1);
+  max-width: min(var(--tab-max-width), 100%);
+  height: var(--tab-height);
+  padding: 0 var(--space-1) 0 var(--space-2);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--text-13);
+  cursor: pointer;
+}
+
+.tab:hover .tabTitle,
+.tab[aria-selected='true'] .tabTitle {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+.tabTitle {
+  min-width: 0;
+  font-weight: var(--weight-bold);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.close {
+  flex: none;
+  opacity: 0;
+  padding: 0 var(--space-1);
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.tab:hover .close,
+.tab:focus-within .close {
+  opacity: 1;
+}
+
+/* It does not scroll: what its kind draws in it does. */
+.body {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-rule-mid);
+  background: var(--color-bg);
+}
+
+.body[data-frameless] {
+  border: 0;
+  background: transparent;
+}

@@ -1,0 +1,78 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* An image's tab (docs/planning/_archive/M23.md, Design 4; C27): the image fitted to the pane's width, or at its
+   actual size with the tab scrolling; drawn from the theme's tokens. */
+.tab {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1 1 0;
+  min-height: 0;
+  min-width: 0;
+  margin-top: var(--space-1);
+  overflow: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+}
+
+.fit,
+.actual {
+  flex: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.actual {
+  display: block;
+  cursor: zoom-out;
+}
+
+.fit {
+  display: block;
+  width: 100%;
+}
+
+.fit img,
+.actual img {
+  box-sizing: border-box;
+  border: 1px solid var(--color-image-border);
+}
+
+.fit img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.actual img {
+  display: block;
+  max-width: none;
+}
+
+.fit:focus-visible,
+.actual:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+.unavailable {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.meta {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}

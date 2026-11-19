@@ -1,0 +1,2202 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The chat area (docs/planning/_archive/M15.md, Design 14; C58–C69): the message list over the input row.
+   The list is the third part of the shell that scrolls (C61), and the first whose text can be
+   selected (C60); the input row's button stays unselectable, as the shell is. Its own tokens only:
+   no new colour and no new size (C69). */
+/* TRIAL (not settled): the whole chat area's text at about nine tenths, the type scale redeclared
+   for this subtree alone — what one step of zooming out does to the chat column, without the
+   window's zoom. The list and the prompt area both, so the input's text and Send stand at the size
+   of the conversation they belong to. Artifact content shares the scale: a plan, a file, a
+   sub-agent's thread and an aside's conversation and follow-up. The usage box, the control bar
+   and the session's own band keep their sizes.
+
+   The sizes are not a plain nine tenths: each one is the nearest size whose letters stay square.
+   Chromium rounds a face's x-height to whole device pixels while the advances scale smoothly, so at
+   some sizes the letters are as tall as at a larger size but narrower — they read as stretched. At
+   this display's scale the square sizes run 9.0–9.3, 10.7–11.1, 12.5–12.9, 14.2–14.5 (measured: the
+   ink of "nnnn", width ÷ x-height = 4.00 in each, 12.9 the widest of all at 4.14). Nine tenths
+   lands in those bands everywhere but three rungs — 13 → 11.7 and 11 → 9.9 both read narrow — so
+   those take 11 and 9.2 instead. 16 is a rung of its own: a word with a capital and an ascender,
+   which is what the buttons carry, rasterizes by its ascender and not by its x-height, and its
+   bands are its own — "Plan" measures 2.46 wide per unit of height at 14.4px against 2.50 at the
+   16px it stood at and 2.64 at 15px, the squarest of its band. So 16 takes 15. 13 and 12 then share a band, there being no square size between
+   them, so a group's words and a speaker's name stand at one height, apart by their weight alone.
+   Figures are not letters: four of them run about 3.1 wide per unit of height where
+   four letters run 4.0, so a time reads narrower than the words whatever its size.
+   The chat area and artifact content compose it so the same text reads at the same size in both.
+   Delete this rule's tokens and its font-size to go back. */
+.scale {
+  --text-10: 9px;
+  --text-11: 9.2px;
+  --text-12: 10.8px;
+  --text-13: 11px;
+  --text-14: 12.9px;
+  --text-16: 15px;
+  --text-20: 18px;
+  --text-24: 21.6px;
+  --text-28: 25.2px;
+  --text-36: 32.4px;
+  /* The base this subtree's text inherits: body's 14px is computed outside it, so it is re-resolved
+     here for the trial's scale to reach a message's text, the input's and Send's at all. */
+  font-size: var(--text-14);
+}
+
+.area {
+  composes: scale;
+  /* Compact and fixed-height, so a state change never moves the prompt below. */
+  --status-bar-height: 36px;
+  /* Two rows across the whole chat content (M100, round 8; C76): the list, then the prompt area — or a
+     chat without a session's foot — as tall as it is, the avatar inside it included. */
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+}
+
+/* The list's frame (M19, C46): the list fills it, and the control that goes to its end stands at its foot.
+   A column of one, and never a grid (C67): a grid sizes its track from what the list holds, so every
+   update of a message that is being written measured the whole list again — over 100 ms for a row
+   added to a long table, where this takes 4. */
+.listFrame {
+  grid-row: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.list {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+  padding: var(--space-3) var(--space-4);
+  user-select: text;
+}
+
+/* A list as tall as what it holds, up to what its owner bounds, past which it scrolls: a sub-agent's thread (M106, C40). */
+.fitList {
+  flex: 0 1 auto;
+}
+
+/* One stop in the tab order (M19, C50): the ring is the list's, and its current message is marked while it has the keyboard. */
+.list:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+.list:focus-visible .message[data-current] {
+  outline: 1px solid var(--color-focus);
+  outline-offset: var(--space-1);
+}
+
+.message {
+  position: relative;
+  margin: 0 0 var(--space-3);
+}
+
+/* A prompt's and an answer's right margin (the maintainer): what stands beside its text
+   stands there, never over it — its Copy button, at its top, and an answer's Explain this beside
+   each of its blocks (markdown/Markdown.module.css). A notice has neither. */
+.message:not([data-role='notice']) {
+  padding-right: var(--space-6);
+}
+
+/* System messages share the selected session's pale provider tint, inside a compact box. */
+.message[data-role='notice'] {
+  box-sizing: border-box;
+  width: 80%;
+  margin-inline: auto;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-speaker-ink);
+  background: color-mix(in srgb, var(--bar-color, var(--color-bg)) 8%, var(--color-bg));
+}
+
+/* A message's head (M19, C40): its label, its time where times are shown, and its Copy button, in one row. */
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+/* Its Copy button stands out of the row, in the margin at the message's top — beside its label, or
+   with none beside its first line — and over the strip a block lays across the margin
+   (markdown/Markdown.module.css), which would take its press. A head with nothing else to show
+   (round 9, C82) then holds nothing in the flow, so the message's text follows what came before it
+   with no empty line between. */
+.head [data-copy] {
+  position: absolute;
+  top: calc((var(--space-4) - var(--space-3)) / 2);
+  right: 0;
+  z-index: 1;
+}
+
+/* With no head row, an answer's first block has Explain this at the same line: its Copy button then
+   stands above it, in the space before the message, which is a step taller than it, so it never
+   touches what stands before — a speaker's bar above all — and Explain this stands a step lower, so
+   the two never touch (the maintainer). The margins collapse: the space is this margin,
+   or what the entry before leaves below it where that is more. An answer's one part has no Copy
+   button of its own (its foot's copies it, MessageList.tsx), and none of this. */
+.message:has(> .head[data-head='bare'] [data-copy]):has([data-md-control]:first-child:has(> :not([data-time-source]))) {
+  --md-first-control-drop: var(--space-1);
+  margin-top: calc(var(--space-3) + var(--space-1));
+}
+
+.message:has(> .head[data-head='bare']):has([data-md-control]:first-child:has(> :not([data-time-source]))) .head [data-copy] {
+  top: calc(-1 * var(--space-3));
+}
+
+.label {
+  margin: 0;
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+}
+
+.time {
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+  /* TRIAL: tabular figures, wider at the same height than the proportional ones — four of them 3.14
+     wide per unit of height against 3.00 — so a time reads less narrow; and a time holds still as
+     its digits change, as a duration in an activity row already does. */
+  font-variant-numeric: tabular-nums;
+}
+
+/* The Copy button is there at all times, for the keyboard and for assistive technology, and shows
+   while the pointer is over its message, the focus is in it, or it has just been pressed (C40). */
+.head [data-copy] {
+  opacity: 0;
+}
+
+/* Zero-size sources share Copy's and the block controls' reveal predicates. The gutter host
+   reads the immediate custom property, independently of an interactive control's fade. */
+[data-time-source] {
+  display: block;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  --hover-time-visible: 0;
+}
+
+/* The fallback source lives in the existing head, outside its flex flow. Its anchor is the
+   following body element, keeping the message's established head/body DOM structure intact. */
+[data-time-source='message'] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.message:hover .head [data-copy],
+.message:focus-within .head [data-copy],
+.list:focus-visible .message[data-current] .head [data-copy],
+.message:not(:has([data-time-source='block'])):hover [data-time-source='message'],
+.message:not(:has([data-time-source='block'])):focus-within [data-time-source='message'],
+.list:focus-visible .message[data-current]:not(:has([data-time-source='block'])) [data-time-source='message'],
+.head [data-copy='copied'],
+.head [data-copy='failed'] {
+  opacity: 1;
+  --hover-time-visible: 1;
+}
+
+/* An answer's foot (RunFoot.tsx; the maintainer): one small row, drawn up into the space
+   its answer's last entry leaves below it, so the answer grows by less than a line — at the left,
+   where the answer's text begins, its time and then its Copy button, whose name shows to its right in
+   the row's empty space — with a step of clearance before the next speaker's bar. Chrome: never part
+   of a selection. */
+.runFoot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  height: var(--space-3);
+  margin: calc(var(--space-1) - var(--space-3)) 0 var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+  line-height: var(--space-3);
+  user-select: none;
+  opacity: 0;
+  transition: opacity var(--duration-scene) linear;
+}
+
+.runTime {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-variant-numeric: tabular-nums;
+}
+
+/* It shows while the pointer is anywhere over its answer, from its speaker's bar to the foot, the
+   space between its parts included (RunFoot.tsx, useRunOver); while the keyboard's current entry is
+   in its answer; and for a moment after a press. It fades as Explain this does. */
+.runFoot[data-run-over],
+.list:focus-visible > .runFoot[data-current-run],
+.list:has(:focus-visible) > .runFoot[data-current-run],
+.runFoot:has([data-copy='copied'], [data-copy='failed']) {
+  opacity: 1;
+}
+
+/* An assistant's message, drawn as Markdown (M19, C29): its blocks keep their own breaks. */
+.body {
+  min-width: 0;
+}
+
+/* Commentary is drawn as any message of a session's and set apart by nothing (the maintainer's
+   review): what it reports of its own work as it goes reads as its words, at the size
+   and in the colour of its answers, since that is what it is. M100 round 11 had it a step smaller;
+   at the sizes the chat now stands at, a step below the conversation's own size is below what reads
+   as content. The muted colour is still left to what is not the conversation's own words — a group
+   of activity, fat-g's lines. */
+
+/* As text: line breaks and spaces kept, long words wrapped (C59). */
+.text,
+.option,
+.detail {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.detail {
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}
+
+.questions {
+  margin-top: var(--space-1);
+}
+
+.question + .question {
+  margin-top: var(--space-1);
+}
+
+.option {
+  padding-left: var(--space-3);
+}
+
+/* A question the session asks, as a card (M21, C37, C47): one entry of the list, set apart by a rule
+   as a note is, with its own tokens only. Its outcome is told by its words, never by a colour. */
+.card {
+  margin: 0 0 var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  min-width: 0;
+}
+
+.list:focus-visible .card[data-current] {
+  outline: 1px solid var(--color-focus);
+  outline-offset: var(--space-1);
+}
+
+/* A question: a group labelled by it, its controls drawn as the app's other forms draw theirs. */
+.cardQuestion {
+  min-width: 0;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.cardHeader {
+  display: block;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+  overflow-wrap: anywhere;
+}
+
+.cardDescription {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  white-space: pre-wrap;
+}
+
+.cardField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+.cardFieldName {
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+/* The field for something else: the input row's own, as wide as its card (C37). */
+.cardInput {
+  flex: none;
+}
+
+.cardSecret {
+  min-width: 0;
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.cardWaits,
+.cardReason {
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}
+
+.cardWaits {
+  font-variant-numeric: tabular-nums;
+}
+
+.cardActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  user-select: none;
+}
+
+.cardReason {
+  flex: 1;
+  margin: 0;
+}
+
+/* What became of it, in words (C39). */
+.cardOutcome {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-13);
+  font-weight: var(--weight-semibold);
+}
+
+.card .line {
+  margin: var(--space-2) 0 0;
+}
+
+/* A question's card, redrawn as a panel (M100b, C2, C3, C9–C11, C41, C43, C48–C53, C55–C64): a header
+   that counts the request's questions, on the attention colour while it waits and in the
+   acknowledged pair once settled; one question, its options as numbered rows between heavy rules,
+   a picked one on the picked mint; Decline, the stepper and Submit in one row at its foot. */
+.card[data-kind='question'] {
+  padding: 0;
+  background: var(--color-bg);
+}
+
+.qHeader {
+  margin: 0;
+  padding: var(--space-1) var(--space-3);
+  border-bottom: var(--rule);
+  background: var(--color-acknowledged);
+  color: var(--color-on-acknowledged);
+  font-size: var(--text-20);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.qHeader[data-waiting] {
+  background: var(--color-attention);
+  color: var(--color-on-attention);
+}
+
+.qHeader[data-foldable] {
+  position: relative;
+  padding-inline: calc(var(--space-3) + var(--space-6));
+}
+
+.qHeader[data-folded] {
+  border-bottom: 0;
+}
+
+.qHeader .qFold {
+  position: absolute;
+  inset-inline-start: var(--space-2);
+  top: 0;
+  width: var(--space-6);
+  height: 100%;
+}
+
+/* Every question in one cell, the shown one alone seen (C48): the card is as tall as its tallest question. */
+.qStack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  /* Room between the question and the foot's row (C56). */
+  margin-bottom: var(--space-3);
+}
+
+.qStack > .qQuestion {
+  grid-area: 1 / 1;
+}
+
+.qQuestion:not([data-shown]) {
+  visibility: hidden;
+}
+
+.qHint {
+  display: block;
+  margin-top: 2px;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+.qQuestion {
+  min-width: 0;
+  margin: 0;
+  padding: 0 var(--space-3);
+  border: 0;
+}
+
+/* A fieldset's top padding falls below its legend; put the upper gap on the legend itself. */
+.qLegend {
+  max-width: 100%;
+  margin-bottom: var(--space-2);
+  padding: var(--space-2) 0 0;
+}
+
+/* "Choose one or more" stands close over the rows' rule, as a field's name over its field (C56). */
+.qLegend:has(.qHint) {
+  margin-bottom: var(--space-1);
+}
+
+.qText {
+  display: block;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* The rows between their two heavy rules, a soft one between each (C9). */
+.qRows {
+  border-top: 2px solid var(--color-rule);
+  border-bottom: 2px solid var(--color-rule);
+}
+
+.qRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid transparent;
+  border-bottom-color: var(--color-rule-soft);
+  cursor: pointer;
+}
+
+.qRow:last-child {
+  border-bottom-color: transparent;
+}
+
+.qRow:hover {
+  background: var(--color-surface);
+}
+
+.qRow[data-picked] {
+  border-color: var(--color-picked-rule);
+  background: var(--color-picked);
+}
+
+/* The row carries its input's focus ring: the input is out of sight, and not out of the keyboard's reach (C11). */
+.qRow:has(.qInput:focus-visible) {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+.qInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.qNumber {
+  flex: none;
+  min-width: 1.2em;
+  font-size: var(--text-36);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.qOption {
+  min-width: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Something else, inside its row: its name over its field (C13). */
+.qElse {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+/* Its field has no edge, only a very light ground (C62); the text fields' thicker edge still says when it has the focus. */
+.qElse .input {
+  border: 0;
+  background: var(--color-field);
+}
+
+/* A field alone, or a secret's: no heavy rule, which is the numbered rows' alone (C43). */
+.qFields > .cardField {
+  margin: 0;
+  padding: 0 0 var(--space-1);
+}
+
+/* Decline, the stepper and Submit in one row, the stepper centred between them (C51). */
+.qFoot {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  user-select: none;
+}
+
+.qStepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* A box for each question, a little smaller than Previous and Next (C51): dotted and lighter while
+   not yet seen, a plain edge once seen, a check mark once answered; the shown one's edge thicker. */
+.qBoxes {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* A button that shows its question (C52), drawn as its box alone. */
+.qBox {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid var(--color-rule);
+  background: var(--color-bg);
+  cursor: pointer;
+}
+
+.qBox:hover {
+  background: var(--color-surface);
+}
+
+.qBox[data-box='unseen'] {
+  border-style: dotted;
+  border-color: var(--color-rule-mid);
+}
+
+.qBox[data-current] {
+  border-width: 2px;
+  cursor: default;
+}
+
+.qBox[data-box='answered']::after {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 6px;
+  height: 11px;
+  border: solid var(--color-text);
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+  content: '';
+}
+
+.qDecline,
+.qSubmit,
+.qStep {
+  min-width: 80px;
+  min-height: 32px;
+  padding: 0 var(--space-4);
+  border: 1px solid;
+  font: inherit;
+  font-size: var(--text-13);
+  /* Semibold, not bold (the maintainer's review): at this size 700 closes the letters up
+     — the near-white part of a bold word's box is 35% against 38% at 600 — and a button's word is
+     short enough that the weight alone has to carry it. A card's heading and its numerals keep 700:
+     they stand large enough for it. */
+  font-weight: var(--weight-semibold);
+  cursor: pointer;
+}
+
+/* Previous, Next and the places they leave are one width, so the boxes between them never move (C55). */
+.qStep,
+.qStepGap {
+  width: 96px;
+  padding: 0;
+}
+
+/* Previous and Next in the app's plain button look, inverted under the pointer. */
+.qStep {
+  border-color: var(--color-rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.qStep:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Keep the label readable against both shades of the decline button. */
+.qDecline {
+  border-color: var(--color-question-decline-text);
+  background: var(--color-decline-soft);
+  color: var(--color-question-decline-text);
+}
+
+.qDecline:hover {
+  background: var(--color-decline);
+  color: var(--color-question-decline-text);
+}
+
+/* Green text matches the edge once every question has been shown; otherwise it is disabled (C58). */
+.qSubmit {
+  border-color: var(--color-done-rule);
+  background: var(--color-done);
+  color: var(--color-done-rule);
+}
+
+/* Under the pointer, while it takes a press: its word turns green on a deeper mint (C57). */
+.qSubmit:not(:disabled):hover {
+  border-color: var(--color-submit-hover-rule);
+  background: var(--color-submit-hover);
+  color: var(--color-on-submit-hover);
+}
+
+.qSubmit:disabled {
+  border-color: var(--color-disabled-rule);
+  background: var(--color-disabled);
+  color: var(--color-on-disabled);
+  cursor: default;
+}
+
+.qDecline[aria-disabled='true'],
+.qSubmit[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.qWaiting > .cardReason,
+.qWaiting > .problem {
+  margin: 0;
+  padding: 0 var(--space-3) var(--space-2);
+}
+
+.qSettled {
+  padding: 0 var(--space-3) var(--space-2);
+}
+
+.card[data-kind='question'] .line {
+  margin: var(--space-2) var(--space-3) 0;
+}
+
+.card[data-kind='question'] .cardOutcome {
+  margin: 0;
+  padding: 0 var(--space-3) var(--space-2);
+}
+
+/* An action the session asks leave for, as a card (M22, C9, C14, C36, C48): the question's card's
+   frame and its own tokens, with the action's parts. What the CLI and the model gave — the line
+   that names the action, a path, the whole action — is in the monospace font; what fat-g says of it
+   is muted. An outcome is a word, as a question's is, and the whole action is drawn only once its
+   disclosure is opened. */
+.approvalSummary,
+.approvalTargets {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-13);
+  overflow-wrap: anywhere;
+}
+
+.approvalSummary {
+  white-space: pre-wrap;
+}
+
+.approvalTargets {
+  padding: 0;
+  list-style: none;
+}
+
+.approvalMeta {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+  overflow-wrap: anywhere;
+}
+
+.approvalPath {
+  color: var(--color-text);
+  font-family: var(--font-mono);
+}
+
+/* Said in words, set apart by weight and never by a colour. */
+.approvalOutside {
+  margin: var(--space-1) 0 0;
+  font-size: var(--text-13);
+  font-weight: var(--weight-semibold);
+}
+
+.approvalReason {
+  margin-top: var(--space-2);
+}
+
+/* The disclosure is a group's summary line by its looks, at the size of the card's other lines. */
+.card .approvalDetailHead {
+  margin-top: var(--space-2);
+  font-size: var(--text-13);
+}
+
+.approvalDetail {
+  min-width: 0;
+  margin: var(--space-1) 0 0 var(--space-4);
+}
+
+/* The session grant's choice names what it covers, which may be long: it wraps within its card. */
+.approvalGrant {
+  max-width: 100%;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+/* What is not a message: a line in fat-g's words. */
+.line {
+  margin: 0 0 var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}
+
+/* Match the prompt area's right inset so the native scrollbar aligns with the status and input.
+   Compensate on the list's right, and keep its text flush with the avatar's left edge. */
+.listCell {
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  padding-right: var(--space-2);
+}
+
+.listCell > .listFrame {
+  flex: 1 1 0;
+}
+
+.listCell > .listFrame > .list {
+  padding-left: 0;
+  padding-right: var(--space-2);
+}
+
+/* At the foot of the list, over a decision panel or a block, the row stands one pixel above the
+   status bar, so the context meter and the mode tab do not touch PLAN READY (the maintainer). */
+.modeRow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-2);
+  padding-top: var(--space-1);
+  padding-bottom: 1px;
+}
+
+/* A provider that declares no mode draws no control, and the row goes. */
+.modeRow:empty {
+  display: none;
+}
+
+/* A smaller model block, separated from the prompt. These dimensions are local: other avatars
+   keep their existing sizes. The portrait and its 18px/22px strips set the empty prompt's height. */
+.promptArea {
+  --avatar-column-width: 152px;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: var(--avatar-column-width) minmax(0, 1fr);
+  column-gap: var(--space-2);
+  min-width: 0;
+  padding: 0 var(--space-2) var(--space-2) 0;
+}
+
+.promptMain {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: calc(var(--avatar-column-width) + 40px);
+}
+
+/* The first visit is a composer on the shell's grid, without a conversation above it. */
+.area[data-start-screen] { display: block; }
+.area[data-start-screen] .promptArea {
+  --avatar-column-width: 176px;
+  /* The same input width as normal chat, with 24px more room for this larger portrait.
+     Its 16px gap replaces normal chat's 8px gap and 8px right inset. */
+  width: min(100%, calc(var(--chat-content-width) + 24px));
+  padding: 0;
+  column-gap: var(--space-4);
+}
+.area[data-no-start-model] .promptArea { grid-template-columns: minmax(0, 1fr); }
+.area[data-no-start-model] .promptMain { max-width: calc(var(--chat-content-width) - 152px - 2 * var(--space-2)); }
+.area[data-start-screen] [data-action-prefix] { display: none; }
+/* Keep the light start screen's white input treatment; dark inherits the graphite composer. */
+:global(:root:not([data-theme='dark'])) .area[data-start-screen] .composer {
+  --color-bg: var(--color-status-white);
+  --color-text: var(--color-status-black);
+  --color-text-muted: var(--color-status-black);
+  --color-rule: var(--color-status-black);
+  color-scheme: light;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-color: var(--color-rule);
+}
+
+@container (max-width: 560px) {
+  .area[data-start-screen] .promptArea { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-3); }
+}
+
+.composerSection {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Centre the standalone mode button with the text actions, clear of the input below. */
+.promptControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.promptControls > .modeRow {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 50%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.reason {
+  padding: var(--space-2) var(--space-3);
+}
+
+/* A chat without a session's foot (M18, C35): its name, Remove and Close, under a rule (M100, C44). */
+.detachedFoot {
+  grid-row: 2;
+  border-top: var(--rule);
+}
+
+/* Only the normal composer gets this frame. The panels' shared inputBox/input rules stay as they
+   were, so their feedback fields and buttons await their own layout pass. */
+.composer {
+  /* The command menu stands over it (M23, C58). */
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-1) var(--space-3);
+  border: var(--rule);
+  background: var(--color-composer);
+}
+
+/* The whole input frame carries focus, without an extra outline around its textarea. */
+:global(:root[data-theme='dark']) .composer:has(.input:focus-visible) {
+  outline: 2px solid var(--color-field-focus);
+  outline-offset: -1px;
+}
+
+.inputBox {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  resize: none;
+  /* Sized by what it holds (M20b, C68): a line that wraps is a line, as one a break ends is. Two
+     lines at its smallest, never clipped, and eight at its tallest; past that it scrolls within
+     itself, as a text area does with no rule saying so. An aside's field is drawn by this rule too. */
+  field-sizing: content;
+  box-sizing: content-box;
+  min-height: 2lh;
+  max-height: 8lh;
+}
+
+/* In the section the text area has no rule of its own, and grows into the room the section has. */
+.inputBox .input {
+  flex: 1 1 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.inputBox .input::placeholder {
+  color: var(--color-prompt-hint);
+  opacity: 1;
+}
+
+/* The prompt keeps its appearance on focus: the blinking caret says where typing goes. */
+.inputBox .input:focus-visible {
+  outline: none;
+}
+
+/* Send and Stop stand at the size of the controls round them and not of the conversation (the
+   maintainer's review): a word of two or four letters, light on dark, reads smaller than
+   the same word in a paragraph, and at the chat's content size it read too small to be the thing
+   the prompt is sent with. The microphone beside them keeps its own size. */
+.inputFoot .button {
+  font-size: var(--text-16);
+}
+
+.inputFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-1);
+}
+
+/* Reclaim space for a third line in the normal composer, including its busy actions. Keep the
+   controls' sizes and the decision panels' shared inputFoot spacing unchanged. */
+.composer .inputFoot {
+  padding-top: 0;
+}
+
+/* Text actions between the status and composer, with the mode sharing their row. */
+.promptTypes {
+  user-select: none;
+}
+
+.toolbar {
+  display: flex;
+  flex: 1 1 0;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  min-width: 0;
+  overflow-x: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+}
+
+.toolButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 28px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-16);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.toolButton:hover,
+.toolButton[aria-expanded='true'],
+.toolButton[aria-pressed='true'] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Drawn and not wired (C38, C41): in place, in the muted colour, still focusable; its tooltip says why. */
+.toolButton[aria-disabled='true'],
+.iconButton[aria-disabled='true'] {
+  color: var(--color-text-muted);
+  cursor: default;
+}
+
+.toolButton[aria-disabled='true']:hover {
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.toolButton:focus-visible {
+  outline-offset: -2px;
+}
+
+.toolButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Separate from toolButton: the prompt's own text actions. */
+.promptToolButton {
+  flex: none;
+  min-height: 28px;
+  padding: 0 var(--space-2);
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-16);
+  font-weight: var(--weight-bold);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.promptToolButton:hover,
+.promptToolButton[aria-expanded='true'],
+.promptToolButton[data-tool='plan'][aria-pressed='true']:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.promptToolButton[data-tool='plan'][aria-pressed='true'] {
+  background: var(--color-attention);
+  color: var(--color-on-attention);
+  text-decoration: none;
+}
+
+.promptToolButton[aria-disabled='true'] {
+  color: var(--color-text-muted);
+  cursor: default;
+  text-decoration: none;
+}
+
+.promptToolButton:focus-visible {
+  outline-offset: -2px;
+}
+
+/* The microphone at the foot's left (C41). */
+.iconButton {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.iconButton svg { opacity: 0.4; }
+
+/* A list of asides by title (M20b, C53, C74): a session may keep many, so it scrolls within itself, and a long title is cut. */
+.asideMenu {
+  max-width: min(360px, 80vw);
+  max-height: 50vh;
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+}
+
+.asideMenu > * {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Explain this, beside a block (M20b, C46), and the marker of a block, a prompt or an activity's
+   text that has an aside (C74). In the DOM at all times, for the keyboard and for assistive
+   technology; the control shows while the pointer is over ITS OWN block — not its message, which
+   lit every block of a turn at once (the maintainer) — or over the control itself, or
+   the keyboard's focus is in the message, or the message is the keyboard's current one. The
+   keyboard's: `:focus-visible`, not `:focus-within`, since a control pressed by the pointer keeps
+   the focus and would light the whole turn again. The block is the
+   element after the control's own (markdown/MarkdownText.tsx), so `:has(+ :hover)` is what "the
+   block beside me is under the pointer" says. It fades in and out over --duration-scene, slow
+   enough to be seen for what it is (the maintainer: --duration-fast going in reads as a switch),
+   and slow enough that the pointer crossing the margin on its way to the control does not blink
+   it. A marker is filled, and shows always. Its glyph is the style sheet's own: the button holds no element and no text. */
+.explain {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-4);
+  height: var(--space-4);
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-11);
+  font-weight: var(--weight-semibold);
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+.explain::before {
+  content: '?';
+}
+
+.explain[data-explain] {
+  opacity: 0;
+  transition: opacity var(--duration-scene) linear;
+}
+
+[data-md-control]:has(+ :hover) .explain[data-explain],
+[data-md-control]:hover .explain[data-explain],
+.message:has(:focus-visible) .explain[data-explain],
+.list:focus-visible .message[data-current] .explain[data-explain],
+[data-md-control]:has(+ :hover) [data-time-source='block'],
+[data-md-control]:hover [data-time-source='block'],
+.message:has(:focus-visible) [data-time-source='block'],
+.list:focus-visible .message[data-current] [data-time-source='block'],
+.explain[data-explain]:focus-visible {
+  opacity: 1;
+  --hover-time-visible: 1;
+  transition: opacity var(--duration-scene) linear;
+}
+
+.explain[data-aside-marker] {
+  background: var(--color-highlight);
+  color: var(--color-text);
+}
+
+.explain:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+/* Over a painted passage the pointer shows it can be pressed, as over a link (M20b, C74). */
+[data-aside-over] {
+  cursor: pointer;
+}
+
+.button,
+.inlineButton {
+  padding: var(--space-1) var(--space-4);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.inlineButton {
+  padding: 0 var(--space-2);
+  font-size: var(--text-13);
+}
+
+/* At the list's foot, while the reader is away from its end (M19, C46). */
+.toEnd {
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toEnd[data-arrived] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.button[data-primary] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* A card's button whose press is on its way is said unavailable and not disabled: it keeps the focus. */
+.button:disabled,
+.button[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.reason {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* The words keep a line's length of their own: where the buttons beside them leave less, the
+   buttons go under them (M22: two remedies stand beside a mode's reason). */
+.reasonText {
+  flex: 1 1 220px;
+  margin: 0;
+}
+
+.status,
+.problem {
+  margin: var(--space-1) 0 0;
+  font-size: var(--text-13);
+}
+
+.status {
+  color: var(--color-text-muted);
+}
+
+.problem {
+  flex-basis: 100%;
+  color: var(--color-critical);
+}
+
+/* In place of the list and the input while the conversation store is refused (M18, C33): the note
+   the project column shows for its records file, with Start fresh. */
+.note {
+  align-self: start;
+  margin: var(--space-3);
+  padding: var(--space-3);
+  border-left: 3px solid var(--color-warn);
+  background: var(--color-surface);
+}
+
+.note p {
+  margin: 0 0 var(--space-2);
+}
+
+.noteActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* A chat without a session (M18, C35): its name, over the line that says it takes no prompt. Cut
+   with an ellipsis; the DOM keeps the whole name. */
+.detachedName {
+  flex-basis: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* What a session did between two of its messages (M20a, C36, C37, C45): one entry of the list, a
+   summary line that opens to a row an item. Dense: a row is one line, and its detail is drawn only
+   once opened. A status is told by its word; the muted colour marks what is not the conversation's
+   own words, and nothing is told by colour alone. It stands at the size of the messages round it
+   (the maintainer's review), the colour setting it apart on its own: it says no size at
+   all, so the chat's one reaches it. */
+.group {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.list:focus-visible .group[data-current] {
+  outline: 1px solid var(--color-focus);
+  outline-offset: var(--space-1);
+}
+
+/* The summary line is the control that opens the group. */
+.groupHead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.groupHead:focus-visible,
+.disclosure:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+.groupWords {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.groupSpan {
+  flex: none;
+  white-space: nowrap;
+}
+
+/* A disclosure's mark: two sides of a small square, turned to point right, and down while open. */
+.chevronMark {
+  flex: none;
+  align-self: center;
+  width: 6px;
+  height: 6px;
+  margin: 0 var(--space-1);
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.chevronMark[data-open] {
+  transform: rotate(45deg);
+}
+
+.activityRows,
+.activityFiles,
+.activitySteps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.activityRows {
+  margin-top: var(--space-1);
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--color-rule-soft);
+}
+
+.activityRow + .activityRow {
+  margin-top: var(--space-1);
+}
+
+/* One line a row: its word, what it is said of, its duration and its status. A long name wraps
+   within the row rather than widening the list. */
+.activityHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--space-2);
+  min-width: 0;
+}
+
+.disclosure,
+.disclosureGap {
+  flex: none;
+  align-self: center;
+  width: var(--space-4);
+  height: var(--space-4);
+}
+
+.disclosure {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* The row's words as one run of text: its parts apart by spaces and a margin, wrapping between them. */
+.activityLine {
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+.activityLine > * {
+  margin-inline-end: var(--space-1);
+}
+
+.activityWord {
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
+
+.activityText {
+  min-width: 0;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+.activityMore,
+.activityTime,
+.activityStatus {
+  white-space: nowrap;
+}
+
+.activityTime {
+  font-variant-numeric: tabular-nums;
+}
+
+.activityRow[data-status='failed'] .activityStatus,
+.activityRow[data-status='unfinished'] .activityStatus,
+.activityRow[data-status='declined'] .activityStatus {
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
+
+.activityDetail {
+  margin: var(--space-1) 0 var(--space-2) var(--space-4);
+  color: var(--color-text);
+}
+
+.activityFiles,
+.activitySteps {
+  margin-bottom: var(--space-2);
+  overflow-wrap: anywhere;
+}
+
+.activityFiles {
+  font-family: var(--font-mono);
+}
+
+.stepState {
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+.activitySteps [data-step='completed'] .stepState {
+  font-weight: var(--weight-semibold);
+}
+
+.activityChange {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+/* fat-g's line between an output's two halves (C5): in the text, and not of it. */
+.cutLine {
+  display: block;
+  margin: var(--space-1) 0;
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+}
+
+/* A plan's line (M22b, C23): one row of the list, slightly indented (the maintainer) — its
+   box, when it was made, "brought", and what became of its decision — an entry the keyboard stops at. */
+.planLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-3);
+  padding-left: var(--space-4);
+}
+
+/* A plan's box, in its line and atop its panel (the maintainer's reference): a light bulb
+   and its name, inverted, a button that opens its tab. While Codex writes the plan it is dashed in
+   the page's own colours, as a review's block is while its turn waits. */
+.planBox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 100%;
+  min-height: 28px;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-text);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font: inherit;
+  font-size: var(--text-14);
+  font-weight: var(--weight-semibold);
+  text-align: left;
+  cursor: pointer;
+}
+
+.planBox[data-writing] {
+  border: 1px dashed var(--color-rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.planBox > svg {
+  flex: none;
+}
+
+.planBoxName {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.planBox:not(:disabled):hover .planBoxName {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.planBoxWriting {
+  color: var(--color-text-muted);
+  font-weight: var(--weight-regular);
+}
+
+.planBox:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.planMeta,
+.planOutcome {
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+.planOutcome {
+  color: var(--color-text);
+}
+
+/* The decision on a plan (M22b, C24), in the prompt-type bar's and the input's place: two columns
+   under the status bar, as the maintainer's reference has them — the plan's box over the
+   feedback field, and beside them the decisions, Execute at their foot. Where the area is too narrow
+   for both, the decisions go under. */
+.planPanel {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+}
+
+/* Its basis keeps both columns side by side in a chat narrowed by an open tab (about 400px). */
+.planPanelMain {
+  display: flex;
+  flex: 1 1 200px;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.planPanelMain > .planBox {
+  display: flex;
+  width: 100%;
+  margin-bottom: var(--space-1);
+  line-height: 1.2;
+}
+
+.planPanelSide {
+  display: flex;
+  flex: 0 0 168px;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.planPanelSideTop {
+  display: flex;
+  flex: 0 0 28px;
+  gap: var(--space-2);
+}
+
+/* The decisions are ruled boxes, their words centred, each in its own colour (tokens.css): Leave, the
+   trash and Execute edged in a darker shade of their own ground (the maintainer). */
+.planLeave,
+.planDiscard,
+.planReview,
+.planExecute {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.planLeave {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 0 var(--space-1);
+  border-color: var(--color-plan-leave-rule);
+  background: var(--color-plan-leave);
+  font-size: var(--text-11);
+  line-height: 1.15;
+}
+
+.planLeave:not([aria-disabled='true']):hover {
+  background: var(--color-plan-leave-hover);
+}
+
+.planDiscard {
+  flex: none;
+  width: 36px;
+  padding: 0;
+  border-color: var(--color-plan-discard-rule);
+  background: var(--color-plan-discard);
+  color: var(--color-on-plan-discard);
+}
+
+.planDiscard:not([aria-disabled='true']):hover {
+  background: var(--color-plan-discard-hover);
+}
+
+.planReview {
+  min-height: 44px;
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-16);
+  font-weight: var(--weight-bold);
+}
+
+.planReview:not([aria-disabled='true']):hover,
+.planReview[aria-expanded='true'] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.planExecute {
+  flex: 1 1 auto;
+  min-height: 56px;
+  padding: var(--space-1) var(--space-2);
+  border-color: var(--color-plan-execute-rule);
+  background: var(--color-plan-execute);
+  font-size: var(--text-20);
+  font-weight: var(--weight-bold);
+}
+
+/* Under the pointer, while it takes a press: its word turns green on a deeper mint, as Submit's does. */
+.planExecute:not(:disabled):not([aria-disabled='true']):hover {
+  border-color: var(--color-submit-hover-rule);
+  background: var(--color-submit-hover);
+  color: var(--color-on-submit-hover);
+}
+
+.planFeedbackLabel {
+  font-size: var(--text-12);
+}
+
+/* The feedback field stands under the panel's buttons, not across the whole foot as the composer does: its box is ruled, so that it is seen to be a field. */
+.planFeedbackBox {
+  min-height: 4.5em;
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+}
+
+/* Review existing plan's list (M22b, C67): a project may keep many plans, so it scrolls within itself. */
+.planList {
+  max-width: min(460px, 85vw);
+  max-height: 50vh;
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+}
+
+.planList > [role='menuitem'] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* A prompt fat-g composed for a plan (M22b, C69): its words, and its block as one folded line. */
+.planPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+}
+
+.planBlock > summary {
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  cursor: pointer;
+}
+
+.planBlockText {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-12);
+  white-space: pre-wrap;
+}
+
+/* A review's first prompt (M22e, C53): one line, unfolding to the prompt as sent. */
+.reviewPrompt > summary {
+  cursor: pointer;
+}
+
+.reviewPrompt[open] > summary {
+  margin-bottom: var(--space-1);
+}
+
+/* ── A review (M22e, Design 5–7; C7, C8, C21, C28, C30, C33) ───────────────────────────────── */
+
+/* A round's list, where its block was in the reviewer's answer: the appraisal, then a box per tier. */
+.findings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-2) 0;
+}
+
+/* A round's block while its turn waits: a small dashed panel in the block's place. */
+.reviewPending {
+  align-self: flex-start;
+  margin: var(--space-2) 0 0;
+  padding: var(--space-1) var(--space-2);
+  border: 1px dashed var(--color-rule);
+  font-size: var(--text-13);
+  color: var(--color-text-muted);
+}
+
+.findingsHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: var(--text-13);
+  color: var(--color-text-muted);
+}
+
+.appraisal {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* What the answer set aside, in fat-g's words under the appraisal: dim, as the list's head is. */
+.setAside {
+  margin: 0;
+  font-size: var(--text-13);
+  color: var(--color-text-muted);
+}
+
+/* A tier's box, in dashed lines as every line of a review is but one: its header, a box of its own in
+   a solid line laid over the box's edge, tinted in the tier's colour. */
+.tier {
+  border: 1px dashed var(--color-rule);
+}
+
+.tierHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: -1px -1px 0;
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule);
+}
+
+.tier[data-tier='1'] .tierHead { background: var(--color-tier-1); }
+.tier[data-tier='2'] .tierHead { background: var(--color-tier-2); }
+.tier[data-tier='3'] .tierHead { background: var(--color-tier-3); }
+.tier[data-tier='4'] .tierHead { background: var(--color-tier-4); }
+.tier[data-tier='5'] .tierHead { background: var(--color-tier-5); }
+
+.tierName {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: var(--text-13);
+  font-weight: 600;
+}
+
+.tierActions {
+  display: flex;
+  gap: var(--space-1);
+  user-select: none;
+}
+
+.tierButton {
+  padding: 0 var(--space-2);
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  cursor: pointer;
+}
+
+.findingRows {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A finding: two columns in dashed lines — its four controls stacked, the cell under them taking the
+   height the finding leaves — and the whole finding beside them. */
+.findingRow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border-top: 1px dashed var(--color-rule-mid);
+  outline-offset: -2px;
+}
+
+.findingRow:first-child {
+  border-top: none;
+}
+
+.findings[data-live] .findingRow {
+  cursor: pointer;
+}
+
+.findings[data-live] .findingRow:hover {
+  background: var(--color-review-hover);
+}
+
+.findingRow[data-mark='accepted'] {
+  background: var(--color-review-accepted);
+  outline: 2px solid var(--color-review-accepted-rule);
+}
+
+.findings[data-live] .findingRow[data-mark='accepted']:hover {
+  background: var(--color-review-accepted);
+}
+
+/* Refused: the accepted look's negative, in orange; its title struck through, so that it is told without its colour. */
+.findingRow[data-mark='rejected'] {
+  background: var(--color-review-refused);
+  outline: 2px solid var(--color-review-refused-rule);
+}
+
+.findings[data-live] .findingRow[data-mark='rejected']:hover {
+  background: var(--color-review-refused);
+}
+
+.findingRow[data-mark='rejected'] .findingTitle {
+  text-decoration: line-through;
+}
+
+.findingRow:focus-visible {
+  outline: 2px solid var(--color-focus);
+}
+
+/* Accept, Refuse, Explain and Note, one above the other, each a cell of the column, shown at all times (C21). */
+.findingControls {
+  display: grid;
+  grid-template-columns: 28px;
+  grid-template-rows: repeat(4, 28px) 1fr;
+  border-right: 1px dashed var(--color-rule-mid);
+  user-select: none;
+}
+
+.findingControl {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-bottom: 1px dashed var(--color-rule-mid);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-13);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.findingControl[aria-pressed='true'] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* The column's last cell, under the four: empty, as tall as the finding beside it leaves. */
+.findingControlsRest {
+  min-height: 0;
+}
+
+.findingControl:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+.tierButton:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+/* The finding's column: its words, its anchor's link and its note. */
+.findingBody {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+  padding: var(--space-2);
+}
+
+.findingHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-1);
+}
+
+.findingId,
+.findingTag {
+  font-size: var(--text-12);
+  color: var(--color-text-muted);
+}
+
+.findingTag {
+  font-family: var(--font-mono);
+}
+
+.findingRevised {
+  padding: 0 var(--space-1);
+  border: 1px dashed var(--color-rule);
+  font-size: var(--text-11);
+}
+
+.findingField > * {
+  margin-top: 0;
+}
+
+.findingAnchor,
+.findingNote,
+.noteBox {
+  margin: 0;
+}
+
+.findingNote {
+  padding-left: var(--space-2);
+  border-left: 2px dashed var(--color-rule-mid);
+  white-space: pre-wrap;
+  font-size: var(--text-13);
+}
+
+.noteBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.noteLabel {
+  font-size: var(--text-12);
+  color: var(--color-text-muted);
+}
+
+.noteField {
+  min-height: 3.5em;
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule);
+  background: var(--color-field);
+  color: var(--color-text);
+  font: inherit;
+  resize: vertical;
+}
+
+/* The triage panel, in the toolbar's and the input's place (C8). */
+.reviewPanel {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+}
+
+/* How many findings are accepted, refused and undecided, and how many notes are written: above the panel's action. */
+.reviewCounts {
+  margin: 0;
+  font-size: var(--text-13);
+}
+
+/* A review that found nothing: one big green way back to its plan, readable on both themes. */
+.reviewBack {
+  padding: var(--space-2) var(--space-6);
+  border-color: var(--color-submit-hover-rule);
+  background: var(--color-submit-hover);
+  color: var(--color-on-submit-hover);
+  font-size: var(--text-16);
+  font-weight: 700;
+}
+
+.reviewBack:not([aria-disabled='true']):hover {
+  border-color: var(--color-done-rule);
+  background: var(--color-done);
+}
+
+/* The Review popup and the target popup (C1, C9). */
+.reviewPopup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: min(460px, 85vw);
+  padding: var(--space-3);
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.reviewPopupTitle {
+  margin: 0;
+  font-weight: 600;
+}
+
+.reviewPopupLine,
+.reviewPopupNote {
+  margin: 0;
+}
+
+.reviewPopupNote {
+  font-size: var(--text-13);
+  color: var(--color-text-muted);
+}
+
+.reviewPopupActions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.targetRows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.targetRow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 var(--space-2);
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.targetRoute {
+  grid-column: 2;
+  color: var(--color-text-muted);
+}
+
+.targetRow:has(input:disabled) {
+  cursor: default;
+}
+
+/* A message sent into a running turn (M23, C38): its delivery under it, small and muted, as a time is. */
+.delivery {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+}
+
+.delivery[data-delivery='not-sent'],
+.delivery[data-delivery='not-confirmed'] {
+  color: var(--color-text);
+}
+
+.deliveryDetail {
+  color: var(--color-text-muted);
+}
+
+/* A user's message's images (M23, C26): under its text, in a row that wraps, each at most 240 px wide
+   with its name or its size under it; a press opens it in the artifact pane. */
+.sentImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-1) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sentImage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-width: 240px;
+}
+
+.sentImageButton {
+  display: block;
+  /* The image's own width: a longer name below it does not widen its frame. */
+  align-self: flex-start;
+  padding: 0;
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.sentImageButton img {
+  display: block;
+  max-width: 238px;
+  max-height: 240px;
+  height: auto;
+}
+
+.sentImageButton:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.sentImageMissing {
+  display: grid;
+  place-items: center;
+  width: 160px;
+  height: 90px;
+  border: var(--rule);
+  border-style: dashed;
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}
+
+.sentImageCaption {
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.imageFileMissing {
+  display: grid;
+  place-items: center;
+  width: 220px;
+  min-height: 90px;
+  padding: var(--space-2);
+  border: var(--rule);
+  border-style: dashed;
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+  text-align: center;
+}
+
+.imageFileNote {
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+/* Image files (decision 0022, item 15): the images an activity group's agent read, under its line, and
+   those a finished message names, under its text, drawn as a sent image is. A row whose images are
+   still being asked for, or that a message's text named in vain, takes no room. */
+.sentImages[data-image-files]:empty {
+  display: none;
+}
+
+.group > .sentImages {
+  margin-top: var(--space-1);
+}
+
+/* A plan's informational line (decision 0029): above the composer of a chat whose plan is being
+   carried out, was interrupted, or was implemented. One line, with its chat's link and, where the
+   plan can still be discarded, Discard plan. Its own class and data attribute stand for the
+   graphic the maintainer means to draw for it. */
+.planStatus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-1) var(--space-3);
+  border-left: 3px solid var(--color-plan-status-rule);
+  font-size: var(--text-13);
+}
+
+.planStatusText {
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+/* What holds a chat's plan, in the composer's place (decision 0029): a review, another chat's
+   revision, or a discard under way. The list above stays readable, selectable and copyable. */
+.planLock {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+}
+
+.planLockText {
+  flex: 1 1 220px;
+  margin: 0;
+  font-weight: 600;
+}

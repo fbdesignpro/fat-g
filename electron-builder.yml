@@ -1,0 +1,113 @@
+# SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+# SPDX-License-Identifier: MIT
+
+# Packaging (docs/planning/_archive/phase-1/phase-1-m9.md, decision 0007). Always build through scripts/package.mjs —
+# `npm run package`, `package:dir`, `package:smoke` — which builds the right flavor first, generates
+# the third-party notices, sets the output folder and never publishes. `node scripts/verify-package.mjs`
+# then audits the result against the rules written here.
+
+# = APP_ID and PRODUCT_NAME in src/main/app/identity.ts (a test keeps them equal). The app ID is the
+# Windows AppUserModelID and macOS bundle ID; the product name is also the userData folder name.
+appId: io.github.fbdesignpro.fatg
+productName: fat-g
+copyright: Copyright © 2026 Francois Bertrand and the fat-g contributors
+
+directories:
+  buildResources: build
+
+# An ALLOWLIST: the built app and its package.json. electron-builder adds the production
+# node_modules closure (package.json `dependencies`) by itself. Never widen this to the project
+# folder: a working copy can hold unredacted account captures (spikes/output), fixtures and settings.
+files:
+  - package.json
+  - out/main/**
+  - out/preload/**
+  - out/renderer/**
+
+asar: true
+# No native modules, so nothing to rebuild — and no dependency install scripts ever run.
+npmRebuild: false
+# No auto-update and no release channel: builds are never uploaded anywhere (decision 0007).
+publish: null
+
+# Electron fuses, flipped in the binary at package time (decision 0007). They close code execution
+# through the app's own executable by environment variable or launch flag. Cookie encryption stays off:
+# fat-g stores no cookies, and on an unsigned Mac it can prompt for keychain access.
+electronFuses:
+  runAsNode: false
+  enableCookieEncryption: false
+  enableNodeOptionsEnvironmentVariable: false
+  enableNodeCliInspectArguments: false
+  enableEmbeddedAsarIntegrityValidation: true
+  onlyLoadAppFromAsar: true
+  loadBrowserProcessSpecificV8Snapshot: false
+  grantFileProtocolExtraPrivileges: false
+
+# Beside Electron's own LICENSE.electron.txt and LICENSES.chromium.html. And the built-in avatar art
+# (M102, C69), outside app.asar, where main's scanner and media route read it with plain fs as they
+# read the user's avatars folder; scripts/verify-package.mjs audits it (C70).
+extraResources:
+  - from: assets/audio
+    to: audio
+  - from: LICENSE
+    to: LICENSE.fat-g.txt
+  - from: release/.staging/THIRD_PARTY_NOTICES.txt
+    to: THIRD_PARTY_NOTICES.txt
+  - from: assets/avatars
+    to: avatars
+
+# Unsigned in M9: SmartScreen asks once ("More info" → "Run anyway"). No signing certificate is read.
+win:
+  icon: build/icon.ico
+  target:
+    - target: nsis
+      arch: [x64]
+
+# Per-user, no administrator rights; proposes %LOCALAPPDATA%\Programs\fat-g. Uninstalling keeps
+# the user's preferences in %APPDATA%\fat-g (the README says so).
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  # Show the finish-page launch choice, checked by default.
+  runAfterFinish: true
+  include: build/installer.nsh
+  createDesktopShortcut: false
+  createStartMenuShortcut: true
+  shortcutName: fat-g
+  deleteAppDataOnUninstall: false
+  artifactName: ${productName}-${version}-${arch}-setup.${ext}
+  # Both exist only for electron-updater, which fat-g does not use: no .blockmap for differential
+  # downloads, and no elevate.exe helper inside the app.
+  differentialPackage: false
+  packElevateHelper: false
+
+# The package script lets Electron reapply the ad hoc signature after changing the fuses.
+# Skip certificate-based signing and keychain identity searches in electron-builder.
+mac:
+  icon: build/icon.icns
+  target: dmg
+  category: public.app-category.developer-tools
+  identity: null
+  notarize: false
+  # Electron leaves these outside its macOS app; include them inside the distributed bundle.
+  extraResources:
+    - from: node_modules/electron/dist/LICENSE
+      to: LICENSE.electron.txt
+    - from: node_modules/electron/dist/LICENSES.chromium.html
+      to: LICENSES.chromium.html
+
+# No update metadata beside the dmg either (the first macOS CI build wrote a .blockmap there).
+dmg:
+  artifactName: ${productName}-${version}-${arch}.${ext}
+  sign: false
+  writeUpdateInfo: false
+
+# Never add --no-sandbox: distributions that restrict unprivileged user namespaces may refuse to start
+# Electron's sandbox from an AppImage, and that is recorded rather than worked around.
+linux:
+  icon: build/icon.png
+  target: AppImage
+  category: Development
+  executableName: fat-g

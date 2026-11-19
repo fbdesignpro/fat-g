@@ -1,0 +1,72 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* A menu's popup (M12, C44; M14, C60, C61, C91). Portalled to the page, out of the shell, so it says
+   it is unselectable itself, like the usage panel (M11, C30). */
+.popup {
+  composes: scale from './ControlTypography.module.css';
+  position: fixed;
+  z-index: 20;
+  user-select: none;
+}
+
+.menu {
+  min-width: 160px;
+  padding: var(--space-1) 0;
+  border: var(--rule);
+  background: var(--color-popup);
+  outline: none;
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  padding: var(--space-2) var(--space-4);
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* One item is marked, the one that has the focus: the pointer over an item gives it the focus, as an
+   arrow key does (ui/useMenu.ts), so nothing is marked for the pointer being over it. A menu opened
+   by the pointer has the focus itself, and marks none until the pointer is over an item. */
+.menuItem:focus {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* The item in force, in a menu of choices (M14, C60, C61): marked by weight and a check, never by
+   colour alone. */
+.menuItem[aria-checked='true'] {
+  font-weight: var(--weight-semibold);
+}
+
+.menuItem[aria-checked='true']::before {
+  content: '✓ ';
+}
+
+/* A line of words at the head of a menu, not an item: the effort menu's while its session runs (M15, C45). */
+.menuNote {
+  max-width: 240px;
+  margin: 0;
+  padding: var(--space-1) var(--space-4) var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+/* A line between a menu's groups of items: a capsule's flags and its actions. */
+.menuRule {
+  margin: var(--space-1) 0;
+  border-top: var(--rule);
+}
+
+/* What a caution level says of itself, in words (M14, C60, C82). */
+.itemNote {
+  color: inherit;
+  font-size: var(--text-12);
+}

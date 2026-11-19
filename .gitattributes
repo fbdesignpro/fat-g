@@ -1,0 +1,30 @@
+# Normalize line endings to LF in the repo and working tree on every OS.
+# Windows is the dev platform; macOS/Linux follow — mixed endings break
+# shell scripts, snapshot tests, and produce noisy diffs.
+* text=auto eol=lf
+
+# Windows-only scripts must keep CRLF to run correctly.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary assets (artwork, audio, video, fonts) — never touch line endings.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.icns binary
+*.mp3 binary
+*.ogg binary
+*.wav binary
+*.mp4 binary
+*.webm binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+
+# Vendor files that ship byte-identical and are checked by hash (scripts/lib/package-audit.mjs).
+src/renderer/public/fonts/** binary

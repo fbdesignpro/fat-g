@@ -1,0 +1,9 @@
+// SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+// SPDX-License-Identifier: MIT
+
+export function deferred<T>() {
+  let resolve!: (value: T | PromiseLike<T>) => void;
+  let reject!: (reason?: unknown) => void;
+  const promise = new Promise<T>((yes, no) => { resolve = yes; reject = no; });
+  return { promise, resolve, reject };
+}

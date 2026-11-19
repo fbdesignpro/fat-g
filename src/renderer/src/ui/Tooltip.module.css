@@ -1,0 +1,36 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* A tooltip (M14, C54). Fixed to the window, like the usage panel: the column it belongs to scrolls
+   and clips. Closed, it is in the page for the control it describes and hidden from sight; open, it
+   holds no control and lets the pointer through. Chrome: not selectable (M11, C30). */
+.tooltip {
+  /* Rich tooltip content uses the same readable pair as the tooltip's own surface. */
+  --color-text: var(--color-on-tooltip);
+  --color-text-muted: var(--color-tooltip-muted);
+  position: fixed;
+  /* Above the New session popup, whose account buttons it may describe (M14b, C70). */
+  z-index: 30;
+  max-width: 280px;
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule);
+  background: var(--color-tooltip);
+  color: var(--color-text);
+  font-size: var(--text-12);
+  line-height: 1.4;
+  pointer-events: none;
+  user-select: none;
+  visibility: hidden;
+}
+
+.tooltip[data-open] {
+  visibility: visible;
+}
+
+/* A control's name (NameTip) stays on one line: it is measured before it has its place, and a tip
+   still at the window's edge measured narrow, wrapped, and stood taller than the Pet's small window. */
+.tooltip[data-name-tip] {
+  white-space: nowrap;
+}

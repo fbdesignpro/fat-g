@@ -1,0 +1,1334 @@
+{
+  "_fixture": {
+    "source": "M15 spike m15-resume.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "token-level deltas (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":2,\"turn\":2,\"item\":8,\"mcp-server\":4,\"cursor\":2}. Aliases are shared with the other captures of the family \"m15-saved-thread\"."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-10T21:07:36.157Z",
+  "scenario": {
+    "id": "m15-resume",
+    "title": "thread/resume from a second process, then a turn",
+    "successCondition": "The saved thread resumed with excludeTurns in a new process, its reply checked, then a turn to its end"
+  },
+  "run": {
+    "id": "codex-m15-resume-15",
+    "number": 2,
+    "attempt": 2,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 34,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 2737,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-8>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-8>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "endStatus": "completed",
+      "resumeMs": 153,
+      "spawnToHandshakeMs": 2732,
+      "spawnToResumeReplyMs": 2885,
+      "replyKeys": [
+        "activePermissionProfile",
+        "approvalPolicy",
+        "approvalsReviewer",
+        "cwd",
+        "initialTurnsPage",
+        "instructionSources",
+        "itemsBackwardsCursor",
+        "model",
+        "modelProvider",
+        "multiAgentMode",
+        "reasoningEffort",
+        "runtimeWorkspaceRoots",
+        "sandbox",
+        "serviceTier",
+        "thread",
+        "turnsBackwardsCursor"
+      ],
+      "turnsInReply": 0,
+      "hasTurnsCursor": true,
+      "hasItemsCursor": true,
+      "sameThreadId": true,
+      "replyEffort": "low",
+      "sentEffort": "low",
+      "echo": {
+        "echoed": true,
+        "keys": [
+          "clientId",
+          "content",
+          "id",
+          "type"
+        ],
+        "carriesClientId": true,
+        "startedCarriesClientId": true
+      },
+      "items": [
+        {
+          "type": "userMessage",
+          "phase": null
+        },
+        {
+          "type": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "type": "commandExecution",
+          "phase": null
+        },
+        {
+          "type": "agentMessage",
+          "phase": "final_answer"
+        }
+      ],
+      "outline": [
+        {
+          "index": 14,
+          "ms": 2888,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 15,
+          "ms": 2888,
+          "method": "thread/goal/cleared",
+          "thread": "session"
+        },
+        {
+          "index": 16,
+          "ms": 2903,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 18,
+          "ms": 2932,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 19,
+          "ms": 2932,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 20,
+          "ms": 3944,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 21,
+          "ms": 4528,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 22,
+          "ms": 4540,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 23,
+          "ms": 7332,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 24,
+          "ms": 8105,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 25,
+          "ms": 15952,
+          "method": "item/started",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "inProgress"
+        },
+        {
+          "index": 26,
+          "ms": 16057,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "completed"
+        },
+        {
+          "index": 27,
+          "ms": 16103,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 28,
+          "ms": 16103,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 29,
+          "ms": 19453,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 30,
+          "ms": 20017,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 31,
+          "ms": 20122,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 32,
+          "ms": 20122,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 33,
+          "ms": 20150,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 34,
+          "ms": 20150,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "threadId": "<session-1>",
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "excludeTurns": true
+    },
+    "replyIndex": 12,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {},
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/agentMessage/delta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1342,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/agentMessage/delta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1344,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "recv",
+      "ms": 1345,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 3,
+      "dir": "send",
+      "ms": 1345,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 2732,
+      "frame": {
+        "method": "thread/resume",
+        "id": 2,
+        "params": {
+          "threadId": "<session-1>",
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "excludeTurns": true
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 2882,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-8>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690436136
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2882,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690436136
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 2882,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-11>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690436136
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 2882,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690436136
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 2882,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-8>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690436136
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 2883,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-11>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690436136
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 2883,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578690436137
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 2885,
+      "frame": {
+        "id": 2,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "low",
+            "createdAt": 1578690408,
+            "updatedAt": 1578690436,
+            "recencyAt": 1578690408,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\10\\rollout-2020-01-10T17-06-48-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-astra",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": "low",
+          "multiAgentMode": "explicitRequestOnly",
+          "initialTurnsPage": null,
+          "turnsBackwardsCursor": "<cursor-12>",
+          "itemsBackwardsCursor": "<cursor-13>"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "dir": "send",
+      "ms": 2888,
+      "frame": {
+        "method": "turn/start",
+        "id": 3,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-astra",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-14>"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 2888,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 34091,
+              "inputTokens": 34031,
+              "cachedInputTokens": 16768,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 60,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 17090,
+              "inputTokens": 17077,
+              "cachedInputTokens": 16768,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 13,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578690436139
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 2888,
+      "frame": {
+        "method": "thread/goal/cleared",
+        "params": {
+          "threadId": "<session-1>"
+        },
+        "emittedAtMs": 1578690436139
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 2903,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690436157
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 2924,
+      "frame": {
+        "id": 3,
+        "result": {
+          "turn": {
+            "id": "<turn-15>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 2932,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578690436186
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 2932,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-15>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578690436,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578690436186
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 3944,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690437198
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 4528,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-16>",
+            "clientId": "<client-message-14>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "startedAtMs": 1578690437782
+        },
+        "emittedAtMs": 1578690437782
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 4540,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-16>",
+            "clientId": "<client-message-14>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "completedAtMs": 1578690437782
+        },
+        "emittedAtMs": 1578690437794
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 7332,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-17>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "startedAtMs": 1578690440585
+        },
+        "emittedAtMs": 1578690440585
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 8105,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-17>",
+            "text": "I’ll read notes-2.txt.",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "completedAtMs": 1578690441343
+        },
+        "emittedAtMs": 1578690441358
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 15952,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-18>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+            "cwd": "<scratch>",
+            "processId": "33894",
+            "source": "unifiedExecStartup",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "read",
+                "command": "Get-Content -LiteralPath notes-2.txt",
+                "name": "notes-2.txt",
+                "path": "<scratch>\\notes-2.txt"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "startedAtMs": 1578690449205
+        },
+        "emittedAtMs": 1578690449206
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 16057,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-18>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+            "cwd": "<scratch>",
+            "processId": "33894",
+            "source": "unifiedExecStartup",
+            "status": "completed",
+            "commandActions": [
+              {
+                "type": "read",
+                "command": "Get-Content -LiteralPath notes-2.txt",
+                "name": "notes-2.txt",
+                "path": "<scratch>\\notes-2.txt"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": 0,
+            "durationMs": 15
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "completedAtMs": 1578690449221
+        },
+        "emittedAtMs": 1578690449311
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 16103,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 51258,
+              "inputTokens": 51147,
+              "cachedInputTokens": 33664,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 111,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 17167,
+              "inputTokens": 17116,
+              "cachedInputTokens": 16896,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 51,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578690449357
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 16103,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 19453,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-19>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "startedAtMs": 1578690452707
+        },
+        "emittedAtMs": 1578690452707
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 20017,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-19>",
+            "text": "It says the kettle whistles twice before it boils.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "completedAtMs": 1578690453225
+        },
+        "emittedAtMs": 1578690453271
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 20122,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 68509,
+              "inputTokens": 68384,
+              "cachedInputTokens": 50560,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 125,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 17251,
+              "inputTokens": 17237,
+              "cachedInputTokens": 16896,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 14,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578690453376
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 20122,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 20150,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578690453404
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 20150,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-15>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-19>",
+                "text": "It says the kettle whistles twice before it boils.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578690436,
+            "completedAt": 1578690453,
+            "durationMs": 17216
+          }
+        },
+        "emittedAtMs": 1578690453404
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1341,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2732,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 21474,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "<mcp-server-8>.exe",
+        "node.exe",
+        "<mcp-server-8>.exe",
+        "codex-code-mode-host.exe"
+      ],
+      "alive": 8
+    }
+  ],
+  "family": "m15-saved-thread",
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1964
+      },
+      {
+        "method": "item/started",
+        "item": "commandExecution",
+        "bytes": 822
+      },
+      {
+        "method": "item/completed",
+        "item": "commandExecution",
+        "bytes": 820
+      },
+      {
+        "method": "turn/completed",
+        "item": null,
+        "bytes": 526
+      },
+      {
+        "method": "thread/tokenUsage/updated",
+        "item": null,
+        "bytes": 510
+      }
+    ],
+    "longStringsCut": []
+  }
+}

@@ -1,0 +1,57 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* A plan's tab (docs/planning/_archive/M22b.md, Design 7; C25, C60): the shared bar above the text,
+   with its version, information, Copy and Remove; a line where a
+   decision waits on another version, and the text, which alone scrolls. The tokens only. */
+.plan {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.button {
+  font: inherit;
+  font-size: var(--text-12);
+}
+
+.waits {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-1) var(--space-2);
+  border-bottom: 1px solid var(--color-rule-soft);
+  font-size: var(--text-12);
+}
+
+.note {
+  margin: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+/* Plan content shares the chat's type scale, including Markdown headings, tables and code. */
+.text {
+  composes: scale from '../../chat/Chat.module.css';
+  flex: 1;
+  min-height: 0;
+  padding: var(--space-2) var(--space-3);
+  overflow: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+  user-select: text;
+}
+
+/* A finding's passage (M22e, C33): the block that holds its line, marked as a file's referenced line is (M19b, C40). */
+.text [data-line-mark] {
+  background: var(--color-surface);
+}
+
+.section {
+  display: flow-root;
+}

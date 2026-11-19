@@ -1,0 +1,1310 @@
+{
+  "_fixture": {
+    "source": "M22 spike m22-k1.mjs, run against the installed CLI on the maintainer's machine",
+    "outcome": "this run's scenario did not happen: published for what its frames do show (M15, C5)",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"worker\":4,\"mcp-server\":1}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-06T17:36:14.447Z",
+  "scenario": {
+    "id": "m22-codex-setup",
+    "title": "K1, no prompt, run by the maintainer: Codex's own sandbox setup asked for on the scratch configuration, and what a workspace-write thread reports after it (C4)",
+    "successCondition": "The setup request's reply and its completion, the readiness before and after, and each thread/start reply's sandbox once it is done"
+  },
+  "run": {
+    "id": "codex-m22-codex-setup-29",
+    "number": 3,
+    "attempt": 4,
+    "variant": "default",
+    "process": "main",
+    "outcome": "did-not-happen",
+    "expiredWait": null,
+    "successIndex": null,
+    "turnsSpent": 0,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1663,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "why": "the setup did not report success",
+      "mode": "elevated",
+      "readinessBefore": "notConfigured",
+      "configBefore": {
+        "exists": false,
+        "projects": [],
+        "otherTables": []
+      },
+      "setupStart": {
+        "reply": {
+          "started": true
+        }
+      },
+      "setupCompleted": {
+        "came": true,
+        "afterMs": 6176,
+        "keys": [
+          "error",
+          "mode",
+          "success"
+        ],
+        "mode": "elevated",
+        "success": false,
+        "error": "orchestrator_helper_launch_canceled: ShellExecuteExW failed to launch setup helper: 1223"
+      },
+      "framesDuringSetup": [
+        {
+          "method": "windowsSandbox/setupCompleted"
+        }
+      ],
+      "readinessAfter": "notConfigured",
+      "configAfterSetup": {
+        "exists": false,
+        "projects": [],
+        "otherTables": []
+      },
+      "starts": [
+        {
+          "label": "workspace-write, on-request",
+          "asked": {
+            "sandbox": "workspace-write",
+            "approvalPolicy": "on-request"
+          },
+          "ok": true,
+          "error": null,
+          "reported": {
+            "sandbox": {
+              "type": "readOnly",
+              "keys": [
+                "networkAccess",
+                "type"
+              ],
+              "networkAccess": false,
+              "writableRoots": null,
+              "excludeTmpdirEnvVar": null,
+              "excludeSlashTmp": null
+            },
+            "approvalPolicy": "on-request",
+            "approvalsReviewer": "user",
+            "activePermissionProfile": null,
+            "runtimeWorkspaceRoots": [
+              "working folder"
+            ],
+            "cwd": "working folder"
+          },
+          "replyKeys": [
+            "activePermissionProfile",
+            "approvalPolicy",
+            "approvalsReviewer",
+            "cwd",
+            "instructionSources",
+            "model",
+            "modelProvider",
+            "multiAgentMode",
+            "reasoningEffort",
+            "runtimeWorkspaceRoots",
+            "sandbox",
+            "serviceTier",
+            "thread"
+          ],
+          "notifications": [
+            "thread/started",
+            "mcpServer/startupStatus/updated"
+          ]
+        },
+        {
+          "label": "workspace-write, untrusted",
+          "asked": {
+            "sandbox": "workspace-write",
+            "approvalPolicy": "untrusted"
+          },
+          "ok": true,
+          "error": null,
+          "reported": {
+            "sandbox": {
+              "type": "readOnly",
+              "keys": [
+                "networkAccess",
+                "type"
+              ],
+              "networkAccess": false,
+              "writableRoots": null,
+              "excludeTmpdirEnvVar": null,
+              "excludeSlashTmp": null
+            },
+            "approvalPolicy": "untrusted",
+            "approvalsReviewer": "user",
+            "activePermissionProfile": null,
+            "runtimeWorkspaceRoots": [
+              "working folder"
+            ],
+            "cwd": "working folder"
+          },
+          "replyKeys": [
+            "activePermissionProfile",
+            "approvalPolicy",
+            "approvalsReviewer",
+            "cwd",
+            "instructionSources",
+            "model",
+            "modelProvider",
+            "multiAgentMode",
+            "reasoningEffort",
+            "runtimeWorkspaceRoots",
+            "sandbox",
+            "serviceTier",
+            "thread"
+          ],
+          "notifications": [
+            "thread/started",
+            "mcpServer/startupStatus/updated"
+          ]
+        },
+        {
+          "label": "read-only, untrusted",
+          "asked": {
+            "sandbox": "read-only",
+            "approvalPolicy": "untrusted"
+          },
+          "ok": true,
+          "error": null,
+          "reported": {
+            "sandbox": {
+              "type": "readOnly",
+              "keys": [
+                "networkAccess",
+                "type"
+              ],
+              "networkAccess": false,
+              "writableRoots": null,
+              "excludeTmpdirEnvVar": null,
+              "excludeSlashTmp": null
+            },
+            "approvalPolicy": "untrusted",
+            "approvalsReviewer": "user",
+            "activePermissionProfile": null,
+            "runtimeWorkspaceRoots": [
+              "working folder"
+            ],
+            "cwd": "working folder"
+          },
+          "replyKeys": [
+            "activePermissionProfile",
+            "approvalPolicy",
+            "approvalsReviewer",
+            "cwd",
+            "instructionSources",
+            "model",
+            "modelProvider",
+            "multiAgentMode",
+            "reasoningEffort",
+            "runtimeWorkspaceRoots",
+            "sandbox",
+            "serviceTier",
+            "thread"
+          ],
+          "notifications": [
+            "mcpServer/startupStatus/updated",
+            "thread/started"
+          ]
+        },
+        {
+          "label": "no policy named",
+          "asked": {},
+          "ok": true,
+          "error": null,
+          "reported": {
+            "sandbox": {
+              "type": "readOnly",
+              "keys": [
+                "networkAccess",
+                "type"
+              ],
+              "networkAccess": false,
+              "writableRoots": null,
+              "excludeTmpdirEnvVar": null,
+              "excludeSlashTmp": null
+            },
+            "approvalPolicy": "on-request",
+            "approvalsReviewer": "user",
+            "activePermissionProfile": {
+              "id": ":read-only",
+              "extends": null
+            },
+            "runtimeWorkspaceRoots": [
+              "working folder"
+            ],
+            "cwd": "working folder"
+          },
+          "replyKeys": [
+            "activePermissionProfile",
+            "approvalPolicy",
+            "approvalsReviewer",
+            "cwd",
+            "instructionSources",
+            "model",
+            "modelProvider",
+            "multiAgentMode",
+            "reasoningEffort",
+            "runtimeWorkspaceRoots",
+            "sandbox",
+            "serviceTier",
+            "thread"
+          ],
+          "notifications": [
+            "thread/started",
+            "mcpServer/startupStatus/updated"
+          ]
+        }
+      ],
+      "configAfterTheStarts": {
+        "exists": false,
+        "projects": [],
+        "otherTables": []
+      },
+      "configurationFolderAdded": [
+        ".sandbox_migration",
+        "cache/<mcp-server-5>_server_info/",
+        "cache/<mcp-server-5>_tools/",
+        "goals_1.sqlite",
+        "goals_1.sqlite-shm",
+        "goals_1.sqlite-wal",
+        "installation_id",
+        "logs_2.sqlite",
+        "logs_2.sqlite-shm",
+        "logs_2.sqlite-wal",
+        "memories_1.sqlite",
+        "memories_1.sqlite-shm",
+        "memories_1.sqlite-wal",
+        "models_cache.json",
+        "plugins/.remote-plugin-install-staging/",
+        "plugins/cache/",
+        "queue_1.sqlite",
+        "queue_1.sqlite-shm",
+        "queue_1.sqlite-wal",
+        "skills/.system/",
+        "state_5.sqlite",
+        "state_5.sqlite-shm",
+        "state_5.sqlite-wal"
+      ],
+      "turnFrames": 0
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": null,
+  "toolPermissions": {
+    "readTools": "reads inside the sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "per thread/start, as each scenario names it",
+    "approvalPolicy": "per thread/start",
+    "reviewer": "user",
+    "policy": "an approval request for what the prompt dictated — a command that holds the prompt's own and no other, in a scratch folder, or a file change whose paths are all in scratch folders — is answered as the scenario says; any other is declined, and a request for more permissions is granted nothing"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 870,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 871,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) claude-desktop (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 871,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 874,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 1726,
+      "frame": {
+        "method": "windowsSandbox/readiness",
+        "id": 2
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1727,
+      "frame": {
+        "id": 2,
+        "result": {
+          "status": "notConfigured"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 1727,
+      "frame": {
+        "method": "windowsSandbox/setupStart",
+        "id": 3,
+        "params": {
+          "mode": "elevated",
+          "cwd": "<scratch>"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 1729,
+      "frame": {
+        "id": 3,
+        "result": {
+          "started": true
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 7903,
+      "frame": {
+        "method": "windowsSandbox/setupCompleted",
+        "params": {
+          "mode": "elevated",
+          "success": false,
+          "error": "orchestrator_helper_launch_canceled: ShellExecuteExW failed to launch setup helper: 1223"
+        },
+        "emittedAtMs": 1578332169063
+      }
+    },
+    {
+      "index": 9,
+      "dir": "send",
+      "ms": 8915,
+      "frame": {
+        "method": "windowsSandbox/readiness",
+        "id": 4
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 8915,
+      "frame": {
+        "id": 4,
+        "result": {
+          "status": "notConfigured"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "dir": "send",
+      "ms": 8915,
+      "frame": {
+        "method": "thread/start",
+        "id": 5,
+        "params": {
+          "cwd": "<scratch>",
+          "ephemeral": true,
+          "sandbox": "workspace-write",
+          "approvalPolicy": "on-request"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 8966,
+      "frame": {
+        "id": 5,
+        "result": {
+          "thread": {
+            "id": "<worker-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578332170,
+            "updatedAt": 1578332170,
+            "recencyAt": 1578332170,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 8966,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578332170,
+            "updatedAt": 1578332170,
+            "recencyAt": 1578332170,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578332170126
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 8966,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-1>",
+          "name": "<mcp-server-5>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578332170126
+      }
+    },
+    {
+      "index": 15,
+      "dir": "send",
+      "ms": 9366,
+      "frame": {
+        "method": "thread/start",
+        "id": 6,
+        "params": {
+          "cwd": "<scratch>",
+          "ephemeral": true,
+          "sandbox": "workspace-write",
+          "approvalPolicy": "untrusted"
+        }
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 9380,
+      "frame": {
+        "id": 6,
+        "result": {
+          "thread": {
+            "id": "<worker-2>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-2>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578332170,
+            "updatedAt": 1578332170,
+            "recencyAt": 1578332170,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 9380,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-2>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-2>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578332170,
+            "updatedAt": 1578332170,
+            "recencyAt": 1578332170,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578332170540
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 9380,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-2>",
+          "name": "<mcp-server-5>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578332170540
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 9419,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-1>",
+          "name": "<mcp-server-5>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578332170579
+      }
+    },
+    {
+      "index": 20,
+      "dir": "send",
+      "ms": 9781,
+      "frame": {
+        "method": "thread/start",
+        "id": 7,
+        "params": {
+          "cwd": "<scratch>",
+          "ephemeral": true,
+          "sandbox": "read-only",
+          "approvalPolicy": "untrusted"
+        }
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 9783,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-2>",
+          "name": "<mcp-server-5>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578332170943
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 9795,
+      "frame": {
+        "id": 7,
+        "result": {
+          "thread": {
+            "id": "<worker-3>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-3>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578332170,
+            "updatedAt": 1578332170,
+            "recencyAt": 1578332170,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 9795,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-3>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-3>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578332170,
+            "updatedAt": 1578332170,
+            "recencyAt": 1578332170,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578332170955
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 9795,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-3>",
+          "name": "<mcp-server-5>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578332170955
+      }
+    },
+    {
+      "index": 25,
+      "dir": "send",
+      "ms": 10202,
+      "frame": {
+        "method": "thread/start",
+        "id": 8,
+        "params": {
+          "cwd": "<scratch>",
+          "ephemeral": true
+        }
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 10215,
+      "frame": {
+        "id": 8,
+        "result": {
+          "thread": {
+            "id": "<worker-4>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-4>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578332171,
+            "updatedAt": 1578332171,
+            "recencyAt": 1578332171,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": {
+            "id": ":read-only",
+            "extends": null
+          },
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 10216,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-4>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-4>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578332171,
+            "updatedAt": 1578332171,
+            "recencyAt": 1578332171,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578332171376
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 10216,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-4>",
+          "name": "<mcp-server-5>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578332171376
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 10278,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-3>",
+          "name": "<mcp-server-5>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578332171438
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 10617,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-4>",
+          "name": "<mcp-server-5>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578332171777
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 870,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1726,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 12444,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1397
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1367
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1366
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1366
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 975
+      }
+    ],
+    "longStringsCut": []
+  }
+}

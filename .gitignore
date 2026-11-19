@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build output (electron-vite → out/, electron-builder → dist/)
+out/
+dist/
+release/
+
+# Test / coverage
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment / secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Spike output may contain unredacted account data (emails, plan names).
+# Only hand-redacted fixtures under tests/fixtures/ are committed.
+spikes/output/
+
+# Per-user agent/tool settings
+.claude/settings.local.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+
+# Raw artwork kept on the maintainer's machine, not in the repository
+raw_assets/

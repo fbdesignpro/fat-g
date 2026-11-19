@@ -1,0 +1,3395 @@
+{
+  "_fixture": {
+    "source": "M22b spike m22b-k1.mjs, run against the installed CLI on the maintainer's machine, in a scratch configuration folder",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "get_settings documents (key names only)"
+    ],
+    "omitted": [
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"uuid\":85,\"message\":2,\"request\":3,\"tool-use\":2,\"mcp-server\":5}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "claude",
+    "version": "2.1.268",
+    "launchKind": "native"
+  },
+  "date": "2020-01-10T20:38:50.136Z",
+  "scenario": {
+    "id": "m22b-berserk",
+    "title": "K1: a plan turn under Berserk: the request held, then a Stop (C5, C6)",
+    "successCondition": "Whether the model calls ExitPlanMode, where the plan's text comes, what each answer brings, and the mode the frames report before and after"
+  },
+  "run": {
+    "id": "claude-m22b-berserk-7",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "p1",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 90,
+    "turnsSpent": 1,
+    "exit": {
+      "code": 0,
+      "ms": 15250
+    },
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 3066,
+      "recorded": [
+        {
+          "name": "claude.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "otherFoldersUnchanged": {
+      "other": true,
+      "third": true,
+      "outside": true
+    },
+    "notes": {
+      "mode": "berserk",
+      "launchedWith": "bypassPermissions",
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Agent",
+        "AskUserQuestion",
+        "Bash",
+        "Write",
+        "Edit",
+        "ExitPlanMode"
+      ],
+      "answersPlanned": [
+        "hold"
+      ],
+      "initialize": {
+        "currentPermissionMode": "bypassPermissions",
+        "pendingPermissionRequests": "absent"
+      },
+      "setPlan": {
+        "asked": "plan",
+        "ok": true,
+        "ms": 2,
+        "replyKeys": [
+          "mode"
+        ],
+        "replyMode": "plan",
+        "error": null,
+        "framesAfter": [
+          {
+            "type": "system/status",
+            "permissionMode": "plan"
+          }
+        ]
+      },
+      "stop": {
+        "heldForMs": 2005,
+        "interruptReply": {
+          "ok": true,
+          "keys": [
+            "still_queued"
+          ]
+        },
+        "cancels": [
+          {
+            "index": 86,
+            "msAfterTheStop": 4,
+            "keys": [
+              "request_id",
+              "type"
+            ],
+            "namesTheRequest": true
+          }
+        ],
+        "framesAfterTheStop": [
+          {
+            "type": "control_cancel_request",
+            "msAfterTheStop": 4
+          },
+          {
+            "type": "control_response",
+            "msAfterTheStop": 4
+          },
+          {
+            "type": "user",
+            "msAfterTheStop": 7
+          },
+          {
+            "type": "user",
+            "msAfterTheStop": 8
+          },
+          {
+            "type": "result",
+            "msAfterTheStop": 9
+          },
+          {
+            "type": "command_lifecycle",
+            "msAfterTheStop": 10
+          }
+        ]
+      },
+      "endStatus": "error_during_execution",
+      "isError": true,
+      "terminal": "aborted_tools",
+      "init": {
+        "permissionMode": "plan",
+        "model": "claude-sonnet-5",
+        "tools": [
+          "Task",
+          "AskUserQuestion",
+          "Bash",
+          "Edit",
+          "ExitPlanMode",
+          "Glob",
+          "Grep",
+          "Read",
+          "Write"
+        ],
+        "planToolListed": true,
+        "enterPlanToolListed": false
+      },
+      "planRequests": [
+        {
+          "index": 81,
+          "requestKeys": [
+            "display_name",
+            "input",
+            "requires_user_interaction",
+            "subtype",
+            "tool_name",
+            "tool_use_id"
+          ],
+          "inputKeys": [
+            "plan",
+            "planFilePath"
+          ],
+          "planInInput": {
+            "units": 363,
+            "lines": 10,
+            "opensWithAHeading": true
+          },
+          "otherInput": {
+            "planFilePath": "plans folder"
+          },
+          "suggestions": "absent",
+          "blockedPath": null,
+          "decisionReason": null,
+          "worker": false,
+          "answer": "held",
+          "toolResult": {
+            "index": 88,
+            "msAfterTheAnswer": null,
+            "isError": true,
+            "contentUnits": 225,
+            "words": "The user doesn't want to proceed with this tool use. The tool use was rejected (eg. if it was a file edit, the new_string was NOT written to the file). STOP what you are doing and wait for the user to tell you how to proceed.",
+            "holdsThePlan": false,
+            "toolUseResult": {
+              "string": true,
+              "units": 22
+            }
+          }
+        }
+      ],
+      "otherRequests": [],
+      "toolCalls": [
+        {
+          "tool": "Write",
+          "file": "plans folder",
+          "asked": false,
+          "result": "ok"
+        },
+        {
+          "tool": "ExitPlanMode",
+          "file": null,
+          "asked": true,
+          "result": "error"
+        }
+      ],
+      "modeFrames": [
+        {
+          "index": 8,
+          "type": "system/init",
+          "permissionMode": "plan"
+        }
+      ],
+      "permissionDenied": [],
+      "cancels": 1,
+      "result": {
+        "subtype": "error_during_execution",
+        "isError": true,
+        "terminal": "aborted_tools",
+        "numTurns": 4,
+        "permissionDenials": [
+          "ExitPlanMode"
+        ],
+        "permissionModeNamed": "absent"
+      },
+      "plansFolder": {
+        "where": "the scratch configuration folder",
+        "filesAdded": 1,
+        "removedAfterTheRun": true
+      },
+      "theChangeMade": false,
+      "setBack": {
+        "asked": "bypassPermissions",
+        "ok": true,
+        "ms": 2,
+        "replyKeys": [
+          "mode"
+        ],
+        "replyMode": "bypassPermissions",
+        "error": null,
+        "framesAfter": [
+          {
+            "type": "system/status",
+            "permissionMode": "bypassPermissions"
+          }
+        ]
+      },
+      "sessionId": "<session-1>",
+      "typeCounts": {
+        "command_lifecycle": 3,
+        "system/init": 1,
+        "system/status": 3,
+        "rate_limit_event": 1,
+        "stream_event": 68,
+        "assistant": 3,
+        "user": 3,
+        "control_request/can_use_tool": 1,
+        "control_cancel_request": 1,
+        "control_response": 2,
+        "result": 1
+      },
+      "outline": [
+        {
+          "index": 5,
+          "ms": 2518,
+          "send": "user",
+          "uuid": true
+        },
+        {
+          "index": 6,
+          "ms": 2522,
+          "recv": "command_lifecycle",
+          "bytes": 197,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "queued"
+        },
+        {
+          "index": 7,
+          "ms": 2529,
+          "recv": "command_lifecycle",
+          "bytes": 198,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "started"
+        },
+        {
+          "index": 8,
+          "ms": 2557,
+          "recv": "system/init",
+          "bytes": 2558,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "plan",
+          "tools": [
+            "Task",
+            "AskUserQuestion",
+            "Bash",
+            "Edit",
+            "ExitPlanMode",
+            "Glob",
+            "Grep",
+            "Read",
+            "Write",
+            "mcp__<mcp-server-94>__batch",
+            "mcp__<mcp-server-94>__create",
+            "mcp__<mcp-server-94>__delete",
+            "mcp__<mcp-server-94>__export",
+            "mcp__<mcp-server-94>__guide",
+            "mcp__<mcp-server-94>__query",
+            "mcp__<mcp-server-94>__read",
+            "mcp__<mcp-server-94>__update"
+          ]
+        },
+        {
+          "index": 9,
+          "ms": 2560,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 10,
+          "ms": 3407,
+          "recv": "rate_limit_event",
+          "bytes": 434,
+          "session": "s1"
+        },
+        {
+          "index": 21,
+          "ms": 4373,
+          "recv": "assistant",
+          "bytes": 856,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 95
+        },
+        {
+          "index": 71,
+          "ms": 6843,
+          "recv": "assistant",
+          "bytes": 1939,
+          "session": "s1",
+          "blocks": [
+            "tool_use:Write"
+          ],
+          "stop": null
+        },
+        {
+          "index": 75,
+          "ms": 6922,
+          "recv": "user",
+          "bytes": 1130,
+          "session": "s1",
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 76,
+          "ms": 6926,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 80,
+          "ms": 8335,
+          "recv": "assistant",
+          "bytes": 1427,
+          "session": "s1",
+          "blocks": [
+            "tool_use:ExitPlanMode"
+          ],
+          "stop": null
+        },
+        {
+          "index": 81,
+          "ms": 8337,
+          "recv": "control_request/can_use_tool",
+          "bytes": 781,
+          "tool": "ExitPlanMode",
+          "worker": false,
+          "keys": [
+            "display_name",
+            "input",
+            "requires_user_interaction",
+            "subtype",
+            "tool_name",
+            "tool_use_id"
+          ]
+        },
+        {
+          "index": 85,
+          "ms": 10342,
+          "send": "control_request/interrupt"
+        },
+        {
+          "index": 86,
+          "ms": 10346,
+          "recv": "control_cancel_request",
+          "bytes": 85,
+          "keys": [
+            "request_id",
+            "type"
+          ]
+        },
+        {
+          "index": 87,
+          "ms": 10346,
+          "recv": "control_response",
+          "bytes": 112,
+          "ok": true
+        },
+        {
+          "index": 88,
+          "ms": 10349,
+          "recv": "user",
+          "bytes": 681,
+          "session": "s1",
+          "content": [
+            "tool_result:error"
+          ]
+        },
+        {
+          "index": 89,
+          "ms": 10350,
+          "recv": "user",
+          "bytes": 284,
+          "session": "s1",
+          "content": [
+            "text"
+          ]
+        },
+        {
+          "index": 90,
+          "ms": 10351,
+          "recv": "result",
+          "bytes": 2776,
+          "session": "s1",
+          "subtype": "error_during_execution",
+          "isError": true,
+          "terminal": "aborted_tools",
+          "numTurns": 4,
+          "resultIndex": 0,
+          "queuedTurnCount": 0,
+          "resultChars": null
+        },
+        {
+          "index": 91,
+          "ms": 10352,
+          "recv": "command_lifecycle",
+          "bytes": 200,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "cancelled"
+        },
+        {
+          "index": 92,
+          "ms": 12866,
+          "send": "control_request/set_permission_mode"
+        },
+        {
+          "index": 93,
+          "ms": 12868,
+          "recv": "control_response",
+          "bytes": 121,
+          "ok": true
+        },
+        {
+          "index": 94,
+          "ms": 12868,
+          "recv": "system/status",
+          "bytes": 185,
+          "session": "s1",
+          "keys": [
+            "permissionMode",
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ]
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--input-format",
+      "stream-json",
+      "--setting-sources",
+      "user,project,local",
+      "--permission-mode",
+      "bypassPermissions",
+      "--permission-prompt-tool",
+      "stdio",
+      "--tools",
+      "Read,Glob,Grep,Agent,AskUserQuestion,Bash,Write,Edit,ExitPlanMode",
+      "--model",
+      "sonnet",
+      "--effort",
+      "low",
+      "--include-partial-messages"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "subtype": "initialize"
+    },
+    "replyIndex": 1,
+    "ok": true
+  },
+  "toolPermissions": {
+    "readTools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "scenarioTools": [
+      "Agent",
+      "AskUserQuestion",
+      "Bash",
+      "Write",
+      "Edit",
+      "ExitPlanMode"
+    ],
+    "preApproved": [],
+    "permissionMode": "bypassPermissions",
+    "permissionRequestsTo": "the spike (--permission-prompt-tool stdio)",
+    "policy": "ExitPlanMode answered as the scenario says (feedback: deny with the spike's words; Execute: a plain allow; Cancel: deny with interrupt and fat-g's words; or held for a Stop); a Write of the plan file inside the scratch configuration's plans folder, and a Write or an Edit in the scratch project, allowed; any other request denied"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_STARTUP_FAILURE_RESULTS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": false
+      }
+    ],
+    "set": [
+      "CLAUDE_CONFIG_DIR",
+      "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "stream_event"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 38,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-1",
+        "request": {
+          "subtype": "initialize"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 453,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-1",
+          "response": {
+            "commands": [
+              {
+                "name": "deep-research",
+                "description": "Deep research harness — fan-out web searches, fetch sources, adversarially verify claims, synthesize a cited report. (dynamic workflow)",
+                "argumentHint": ""
+              },
+              {
+                "name": "design",
+                "description": "Grant or revoke Claude agent access to your Design projects",
+                "argumentHint": "consent | revoke"
+              },
+              {
+                "name": "design-sync",
+                "description": "Push a React design system to claude.ai/design. This runs a converter that bundles the real component code (from Storybook or a bare package) and uploads it. Use when the user runs /design-sync or says \"sync my design system to Claude Design\".",
+                "argumentHint": "[<project hint, e.g. \"Acme DS\">]"
+              },
+              {
+                "name": "dataviz",
+                "description": "Use this skill whenever you are about to create ANY chart, graph, plot, dashboard, or data visualization, in ANY output medium — an HTML or React artifact, inline SVG, plotting code in any library (matplotlib, plotly, d3, Recharts, …), an image/PNG you will render and upload, or a chart shared into Slack. Read it BEFORE writing the first line of chart code, choosing chart colors, building a stat tile / meter / KPI row, or laying out a dashboard. When the destination is a first-party document connector (host-designated, never self-described) that renders live charts, hand it the rows (inline, or as an uploaded data file the chart cites) rather than a rendered PNG/SVG — a picture of a chart loses hover, data inspection and per-value comments. Produces visualizations that read as one system — elegant, accessible, consistent in light and dark — using a brand-neutral placeholder palette you swap for your own. Teaches a design-system-agnostic method: a form heuristic, a color formula with a runnable validator, mark specs, and interaction rules. A validated default palette is documented in `references/palette.md` — swap that file's values for your brand's. Triggers on: \"chart\", \"graph\", \"plot\", \"data viz\", \"visualization\", \"dashboard\", \"analytics\", \"visualize data\", \"categorical colors\", \"sequential / diverging palette\", \"stat tile\", \"sparkline\", \"heatmap\", \"legend\", \"axis\", \"tooltip\", \"chart colors\", \"color by series\".",
+                "argumentHint": ""
+              },
+              {
+                "name": "update-config",
+                "description": "Use this skill to configure the Claude Code harness via settings.json. Automated behaviors (\"from now on when X\", \"each time X\", \"whenever X\", \"before/after X\") require hooks configured in settings.json - the harness executes these, not Claude, so memory/preferences cannot fulfill them. Also use for: permissions (\"allow X\", \"add permission\", \"move permission to\"), env vars (\"set X=Y\"), hook troubleshooting, or any changes to settings.json/settings.local.json files. Examples: \"allow npm commands\", \"add bq permission to global settings\", \"move permission to user settings\", \"set DEBUG=true\", \"when claude stops show X\". For simple settings like theme/model, suggest the /config command.",
+                "argumentHint": ""
+              },
+              {
+                "name": "verify",
+                "description": "Verify that a code change actually does what it's supposed to by exercising it end-to-end and observing behavior — drive the affected flow, not just tests or typecheck. Run before committing nontrivial changes; bootstraps this repo's project verify skill if none exists yet. Don't invoke it on a diff that only touches tests, docs, or other code with no runtime surface to drive (a change to product source always has one) — there's nothing to observe.",
+                "argumentHint": ""
+              },
+              {
+                "name": "debug",
+                "description": "Enable debug logging for this session and help diagnose issues",
+                "argumentHint": "[issue description]"
+              },
+              {
+                "name": "code-review",
+                "description": "Review the current diff, or a PR number/branch/path target, for correctness bugs and reuse/simplification/efficiency cleanups at the given effort level (low/medium: fewer, high-confidence findings; high→max: broader coverage, may include uncertain findings; ultra: deep multi-agent review in the cloud); with no level given, it reuses the level you typed last. Pass --comment to post findings as inline PR comments, or --fix to apply the findings to the working tree after the review. For ultra on a GitHub.com PR target, --post asks to post the finished review’s findings to the PR as a single comment from the user’s GitHub account (not a review; the launch dialog still confirms in interactive sessions, while non-interactive mode posts on the flag alone) and --no-post hides that option.",
+                "argumentHint": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [<pr#>|<branch>|<path>]",
+                "aliases": [
+                  "review"
+                ]
+              },
+              {
+                "name": "simplify",
+                "description": "Review the changed code for reuse, simplification, efficiency, and altitude cleanups, then apply the fixes. Quality only — it does not hunt for bugs; use /code-review for that.",
+                "argumentHint": "[<target>]"
+              },
+              {
+                "name": "batch",
+                "description": "Research and plan a large-scale change, then execute it in parallel across 5–30 isolated worktree agents that each open a PR.",
+                "argumentHint": "<instruction>"
+              },
+              {
+                "name": "fewer-permission-prompts",
+                "description": "Scan your transcripts for common read-only Bash and MCP tool calls, then add a prioritized allowlist to project .claude/settings.json to reduce permission prompts.",
+                "argumentHint": ""
+              },
+              {
+                "name": "doctor",
+                "description": "Health-check the user's Claude Code setup and fix issues: diagnose installation health — what the `claude doctor` terminal diagnostics cover — from local data (duplicate or leftover installs, PATH, unparseable settings files, broken or colliding agent definitions, skills whose frontmatter fails to parse); find unused skills, MCP servers, and plugins versus their context cost and disable dead weight; deduplicate local CLAUDE.md files against checked-in ones; trim checked-in CLAUDE.md files by cutting content a session could derive from the codebase (directory layouts, tech-stack lists, architecture overviews) while keeping gotchas, rationale, and non-standard conventions; migrate always-loaded CLAUDE.md guidance into lazy skills and nested CLAUDE.md files; flag slow hooks and context-heavy extensions; check the installed version is current; make auto mode the default permission mode; and pre-approve frequently denied read-only commands. Use when the user asks for a doctor run, checkup, audit, tune-up, or cleanup of their Claude Code setup or configuration.",
+                "argumentHint": "",
+                "aliases": [
+                  "checkup"
+                ]
+              },
+              {
+                "name": "loop",
+                "description": "Run a prompt or slash command on a recurring interval (e.g. /loop 5m /foo). Omit the interval to let the model self-pace.",
+                "argumentHint": "[interval] [prompt]",
+                "aliases": [
+                  "proactive"
+                ]
+              },
+              {
+                "name": "schedule",
+                "description": "Create, update, list, or run scheduled cloud agents (routines) that execute on a cron schedule.",
+                "argumentHint": "",
+                "aliases": [
+                  "routines"
+                ]
+              },
+              {
+                "name": "claude-api",
+                "description": "Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.\nTRIGGER — read BEFORE opening the target file; don't skip because it \"looks like a one-liner\" — whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) — never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens).\nSKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named — don't Read the file).",
+                "argumentHint": ""
+              },
+              {
+                "name": "workflow-authoring",
+                "description": "Reference for writing a Workflow tool script (script API and gotchas, resume, quality patterns, worked examples). Load before authoring a script for a workflow the user already opted into; it does not itself authorize running one.",
+                "argumentHint": ""
+              },
+              {
+                "name": "run",
+                "description": "Launch and drive this project's app to see a change working. Use when asked to run, start, or screenshot the app, or to confirm a change works in the real app (not just tests). First looks for a project skill that already covers launching the app; otherwise falls back to built-in patterns per project type (CLI, server, TUI, Electron, browser-driven, library).",
+                "argumentHint": ""
+              },
+              {
+                "name": "run-skill-generator",
+                "description": "Author or improve the run-<unit> skill - a per-project skill that tells agents how to build, launch, and drive this project's app. Use when the user asks to set up the project, get it running, write run instructions, or verify build/run steps work from a clean environment.",
+                "argumentHint": ""
+              },
+              {
+                "name": "advisor",
+                "description": "Let Claude consult a stronger model at key moments",
+                "argumentHint": "[fable|opus|sonnet|off]"
+              },
+              {
+                "name": "agents",
+                "description": "(removed) Ask Claude to create/manage subagents, or edit .claude/agents/",
+                "argumentHint": ""
+              },
+              {
+                "name": "auto-mode-setup",
+                "description": "Teach auto mode about your environment, plus optional rule tweaks",
+                "argumentHint": "[--request-id <uuid>] (--wizard posture=… scope=… depth=… --propose | --expect-sha256 <64-hex> --apply-file <path>)"
+              },
+              {
+                "name": "autocompact",
+                "description": "Configure the auto-compact window size",
+                "argumentHint": "[auto|<tokens>]"
+              },
+              {
+                "name": "clear",
+                "description": "Start a new session with empty context; previous session stays on disk (resumable with /resume)",
+                "argumentHint": "[name]",
+                "aliases": [
+                  "reset",
+                  "new"
+                ]
+              },
+              {
+                "name": "color",
+                "description": "Set the prompt bar color for this session",
+                "argumentHint": "[red|blue|green|yellow|purple|orange|pink|cyan|default]"
+              },
+              {
+                "name": "compact",
+                "description": "Free up context by summarizing the conversation so far",
+                "argumentHint": "<optional custom summarization instructions>"
+              },
+              {
+                "name": "config",
+                "description": "Set a setting by key",
+                "argumentHint": "key=value",
+                "aliases": [
+                  "settings"
+                ]
+              },
+              {
+                "name": "context",
+                "description": "Show current context usage",
+                "argumentHint": ""
+              },
+              {
+                "name": "effort",
+                "description": "Set effort level for model usage",
+                "argumentHint": "<low|medium|high|xhigh|max|ultracode|auto>"
+              },
+              {
+                "name": "fast",
+                "description": "Toggle fast mode (Opus 5)",
+                "argumentHint": "[on|off]"
+              },
+              {
+                "name": "heapdump",
+                "description": "Dump the JS heap to ~/Desktop",
+                "argumentHint": ""
+              },
+              {
+                "name": "init",
+                "description": "Initialize a new CLAUDE.md file with codebase documentation",
+                "argumentHint": ""
+              },
+              {
+                "name": "mcp",
+                "description": "Manage MCP servers",
+                "argumentHint": "[reconnect|enable|disable [<server>|all]]"
+              },
+              {
+                "name": "import",
+                "description": "Import config from another AI coding agent",
+                "argumentHint": ""
+              },
+              {
+                "name": "model",
+                "description": "Set the AI model for Claude Code",
+                "argumentHint": "<model>"
+              },
+              {
+                "name": "__remote-workflow",
+                "description": "Run the workflow script delivered in this session environment (server-launched sessions only)",
+                "argumentHint": ""
+              },
+              {
+                "name": "workflow-launch-exec",
+                "description": "Execute a server-launched workflow handoff (workflow_launch event sessions only)",
+                "argumentHint": ""
+              },
+              {
+                "name": "reload-plugins",
+                "description": "Activate pending plugin changes in the current session",
+                "argumentHint": "[--force]"
+              },
+              {
+                "name": "reload-skills",
+                "description": "Pick up skills added or changed on disk during this session",
+                "argumentHint": ""
+              },
+              {
+                "name": "rename",
+                "description": "Rename the current conversation",
+                "argumentHint": "[name]",
+                "aliases": [
+                  "name"
+                ]
+              },
+              {
+                "name": "ultrareview",
+                "description": "Start a cloud agent that finds and verifies bugs in your branch (~15-25 min, $5-$25 USD) · Runs in Claude Code on the web. See https://code.claude.com/docs/en/claude-code-on-the-web",
+                "argumentHint": ""
+              },
+              {
+                "name": "security-review",
+                "description": "Complete a security review of the pending changes on the current branch",
+                "argumentHint": ""
+              },
+              {
+                "name": "usage-credits",
+                "description": "Configure usage credits or request them from your admin when you hit a limit",
+                "argumentHint": ""
+              },
+              {
+                "name": "extra-usage",
+                "description": "Renamed to /usage-credits",
+                "argumentHint": ""
+              },
+              {
+                "name": "usage",
+                "description": "Show session cost, plan usage, and what's contributing to your limits",
+                "argumentHint": "",
+                "aliases": [
+                  "cost",
+                  "stats"
+                ]
+              },
+              {
+                "name": "insights",
+                "description": "Generate a report analyzing your Claude Code sessions",
+                "argumentHint": ""
+              },
+              {
+                "name": "recap",
+                "description": "Generate a one-line session recap now",
+                "argumentHint": ""
+              },
+              {
+                "name": "skill-doctor",
+                "description": "Show which loaded skills are unused and costing context",
+                "argumentHint": ""
+              },
+              {
+                "name": "goal",
+                "description": "Set a goal — keep working until the condition is met",
+                "argumentHint": ""
+              },
+              {
+                "name": "design-consent",
+                "description": "Grant Claude agent access to your Design projects",
+                "argumentHint": ""
+              },
+              {
+                "name": "design-revoke",
+                "description": "Revoke Claude agent access to your Design projects",
+                "argumentHint": ""
+              },
+              {
+                "name": "list-agents",
+                "description": "List subagents, teammates, and other Claude sessions you can message",
+                "argumentHint": "",
+                "aliases": [
+                  "peers"
+                ]
+              },
+              {
+                "name": "team-onboarding",
+                "description": "Help teammates ramp on Claude Code with a guide from your usage",
+                "argumentHint": ""
+              }
+            ],
+            "agents": [
+              {
+                "name": "claude",
+                "description": "Catch-all for any task that doesn't fit a more specific agent. FleetView's default when no agent name is typed."
+              },
+              {
+                "name": "Explore",
+                "description": "Fast read-only search agent for locating code. Use it to find files by pattern (eg. \"src/components/**/*.tsx\"), grep for symbols or keywords (eg. \"API endpoints\"), or answer \"where is X defined / which files reference Y.\" Do NOT use it for code review, design-doc auditing, cross-file consistency checks, or open-ended analysis — it reads excerpts rather than whole files and will miss content past its read window. When calling, specify search breadth: \"quick\" for a single targeted lookup, \"medium\" for moderate exploration, or \"very thorough\" to search across multiple locations and naming conventions.",
+                "model": "inherit"
+              },
+              {
+                "name": "general-purpose",
+                "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you."
+              },
+              {
+                "name": "Plan",
+                "description": "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs.",
+                "model": "inherit"
+              },
+              {
+                "name": "statusline-setup",
+                "description": "Use this agent to configure the user's Claude Code status line setting.",
+                "model": "sonnet"
+              }
+            ],
+            "output_style": "default",
+            "available_output_styles": [
+              "default",
+              "Proactive",
+              "Concise",
+              "Explanatory",
+              "Learning"
+            ],
+            "user_output_styles_dir": "<scratch>\\output-styles",
+            "models": [
+              {
+                "value": "default",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Default (recommended)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "opus[1m]",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Opus (1M context)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "claude-fable-5-1[1m]",
+                "resolvedModel": "claude-fable-5-1",
+                "displayName": "Fable",
+                "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "sonnet",
+                "resolvedModel": "claude-sonnet-5",
+                "displayName": "Sonnet",
+                "description": "Sonnet 5 · Efficient for routine tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "haiku",
+                "resolvedModel": "claude-haiku-4-5-20251001",
+                "displayName": "Haiku",
+                "description": "Haiku 4.5 · Fastest for quick answers"
+              }
+            ],
+            "account": "<account>",
+            "pid": 102956,
+            "current_permission_mode": "bypassPermissions",
+            "analytics_disabled": false,
+            "remote_control_auto_enable": false,
+            "remote_control_available": true,
+            "remote_control_auto_on_by_default": false,
+            "ide_rc_auto_enable_gate": true,
+            "fast_mode_state": "off",
+            "fast_mode_disabled_reason": "sdk_opt_in_required",
+            "session_state": "idle"
+          },
+          "pending_permission_requests": [],
+          "pending_user_dialog_requests": []
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1810,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-2",
+        "request": {
+          "subtype": "set_permission_mode",
+          "mode": "plan"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 1812,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-2",
+          "response": {
+            "mode": "plan"
+          }
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 1812,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": null,
+        "permissionMode": "plan",
+        "uuid": "<uuid-2>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 5,
+      "dir": "send",
+      "ms": 2518,
+      "frame": {
+        "type": "user",
+        "uuid": "<uuid-3>",
+        "message": {
+          "role": "user",
+          "content": "Make a short plan, three steps at most, for this change to the project in the current folder: append the line \"reviewed\" to the end of notes-1.txt. Do not ask me any question."
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2522,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-3>",
+        "state": "queued",
+        "uuid": "<uuid-4>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 2529,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-3>",
+        "state": "started",
+        "uuid": "<uuid-5>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 2557,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "AskUserQuestion",
+          "Bash",
+          "Edit",
+          "ExitPlanMode",
+          "Glob",
+          "Grep",
+          "Read",
+          "Write",
+          "mcp__<mcp-server-94>__batch",
+          "mcp__<mcp-server-94>__create",
+          "mcp__<mcp-server-94>__delete",
+          "mcp__<mcp-server-94>__export",
+          "mcp__<mcp-server-94>__guide",
+          "mcp__<mcp-server-94>__query",
+          "mcp__<mcp-server-94>__read",
+          "mcp__<mcp-server-94>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-95>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-96>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-97>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-98>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "plan",
+        "slash_commands": [
+          "deep-research",
+          "design",
+          "design-sync",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "schedule",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator",
+          "advisor",
+          "agents",
+          "auto-mode-setup",
+          "autocompact",
+          "clear",
+          "color",
+          "compact",
+          "config",
+          "context",
+          "effort",
+          "fast",
+          "heapdump",
+          "init",
+          "mcp",
+          "import",
+          "model",
+          "__remote-workflow",
+          "workflow-launch-exec",
+          "reload-plugins",
+          "reload-skills",
+          "rename",
+          "ultrareview",
+          "security-review",
+          "usage-credits",
+          "extra-usage",
+          "usage",
+          "insights",
+          "recap",
+          "skill-doctor",
+          "goal",
+          "design-consent",
+          "design-revoke",
+          "list-agents",
+          "team-onboarding"
+        ],
+        "terminal_slash_commands": [
+          "doctor",
+          "color",
+          "reload-plugins"
+        ],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [
+          "deep-research",
+          "design",
+          "design-sync",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "schedule",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator"
+        ],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-6>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 2560,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-7>"
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 3407,
+      "frame": {
+        "type": "rate_limit_event",
+        "rate_limit_info": {
+          "_keys": [
+            "isUsingOverage",
+            "overageDisabledReason",
+            "overageStatus",
+            "rateLimitType",
+            "resetsAt",
+            "status",
+            "unifiedWindows"
+          ]
+        },
+        "uuid": "<uuid-8>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 3910,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-9>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 3960,
+              "cache_read_input_tokens": 23203,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 3960
+              },
+              "output_tokens": 1,
+              "service_tier": "standard",
+              "inference_geo": "global",
+              "speed": "standard"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-10>",
+        "ttft_ms": 1341,
+        "user_message_uuid": "<uuid-3>",
+        "user_message_uuids": [
+          "<uuid-3>"
+        ]
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 3910,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "text",
+            "text": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-11>"
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 3910,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "This"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-12>"
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 4358,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " is a tr"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-13>"
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 4358,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ivial one-line change"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-14>"
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 4358,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ", so I'll sk"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-15>"
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 4358,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ip ex"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-16>"
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 4358,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ploration ag"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-17>"
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 4358,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ents and write the plan directly"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-18>"
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 4358,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-19>"
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 4373,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-9>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "This is a trivial one-line change, so I'll skip exploration agents and write the plan directly."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 3960,
+            "cache_read_input_tokens": 23203,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3960
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "global",
+            "speed": "standard"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-20>",
+        "timestamp": "2020-01-10T20:38:37.821Z",
+        "request_id": "<request-21>"
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 4373,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-22>"
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 4373,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 1,
+          "content_block": {
+            "type": "tool_use",
+            "id": "<tool-use-23>",
+            "name": "Write",
+            "input": {},
+            "caller": {
+              "type": "direct"
+            }
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-24>"
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 4374,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-25>"
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 4444,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "{\"file_path\": \"<scratch>"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-26>"
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 4489,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-27>"
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 4807,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-28>"
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 4807,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-29>"
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 4807,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-30>"
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 4807,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-31>"
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 4807,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-32>"
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 4807,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-33>"
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 4808,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-34>"
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 4851,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-35>"
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 4898,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-36>"
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 4942,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-37>"
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 4987,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\\\plans"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-38>"
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 5068,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\\\make-a"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-39>"
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 5306,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "-short"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-40>"
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 5306,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "-plan-c"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-41>"
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 5306,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ryptic-sn"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-42>"
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 5306,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "owgl"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-43>"
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 5306,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ob"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-44>"
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 5306,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "e.md"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-45>"
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 5488,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\", \"content\": \"# Append"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-46>"
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 5533,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " \\\"reviewed\\\" to not"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-47>"
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 5581,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "es-1.txt\\n\\n##"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-48>"
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 5807,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " Context\\nUser"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-49>"
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 5808,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " wants a sim"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-50>"
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 5808,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ple mar"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-51>"
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 5808,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ker appended to not"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-52>"
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 5808,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "es-1.txt to ind"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-53>"
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 5851,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "icate it has"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-54>"
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 5897,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " been reviewed.\\n\\n##"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-55>"
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 5943,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " Ste"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-56>"
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 5989,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ps\\n1. Locate `"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-57>"
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 6034,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "notes-1.txt`"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-58>"
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 6082,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " in the current working directory."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-59>"
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 6141,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\n2. Append"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-60>"
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 6835,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " a new line contain"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-61>"
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 6835,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ing `reviewed` to"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-62>"
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 6835,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " the end of the file ("
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-63>"
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 6835,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "preserving exist"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-64>"
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 6835,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ing content).\\n3. Ver"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-65>"
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 6835,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ify the file's"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-66>"
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 6835,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " final l"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-67>"
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 6835,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ines to confirm the append"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-68>"
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 6835,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " succeeded."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-69>"
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 6835,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\n"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-70>"
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 6842,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\"}"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-71>"
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 6843,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-9>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-23>",
+              "name": "Write",
+              "input": {
+                "file_path": "<scratch>\\plans\\make-a-short-plan-cryptic-snowglobe.md",
+                "content": "# Append \"reviewed\" to notes-1.txt\n\n## Context\nUser wants a simple marker appended to notes-1.txt to indicate it has been reviewed.\n\n## Steps\n1. Locate `notes-1.txt` in the current working directory.\n2. Append a new line containing `reviewed` to the end of the file (preserving existing content).\n3. Verify the file's final lines to confirm the append succeeded.\n"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 3960,
+            "cache_read_input_tokens": 23203,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3960
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "global",
+            "speed": "standard"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-72>",
+        "timestamp": "2020-01-10T20:38:40.305Z",
+        "request_id": "<request-21>",
+        "wire_tool_inputs": {
+          "<tool-use-23>": {
+            "file_path": "<scratch>\\plans\\make-a-short-plan-cryptic-snowglobe.md",
+            "content": "# Append \"reviewed\" to notes-1.txt\n\n## Context\nUser wants a simple marker appended to notes-1.txt to indicate it has been reviewed.\n\n## Steps\n1. Locate `notes-1.txt` in the current working directory.\n2. Append a new line containing `reviewed` to the end of the file (preserving existing content).\n3. Verify the file's final lines to confirm the append succeeded.\n"
+          }
+        }
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 6847,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 1
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-73>"
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 6861,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "tool_use",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 3960,
+            "cache_read_input_tokens": 23203,
+            "output_tokens": 293,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 293,
+                "cache_read_input_tokens": 23203,
+                "cache_creation_input_tokens": 3960,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 3960
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-74>"
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 6861,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-75>"
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 6922,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-23>",
+              "type": "tool_result",
+              "content": "File created successfully at: <scratch>\\plans\\make-a-short-plan-cryptic-snowglobe.md (file state is current in your context — no need to Read it back)"
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-76>",
+        "timestamp": "2020-01-10T20:38:40.384Z",
+        "tool_use_result": {
+          "type": "create",
+          "filePath": "<scratch>\\plans\\make-a-short-plan-cryptic-snowglobe.md",
+          "content": "# Append \"reviewed\" to notes-1.txt\n\n## Context\nUser wants a simple marker appended to notes-1.txt to indicate it has been reviewed.\n\n## Steps\n1. Locate `notes-1.txt` in the current working directory.\n2. Append a new line containing `reviewed` to the end of the file (preserving existing content).\n3. Verify the file's final lines to confirm the append succeeded.\n",
+          "structuredPatch": [],
+          "originalFile": null,
+          "userModified": false
+        }
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 6926,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-77>"
+      }
+    },
+    {
+      "index": 77,
+      "dir": "recv",
+      "ms": 8294,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-78>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 424,
+              "cache_read_input_tokens": 27163,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 424
+              },
+              "output_tokens": 25,
+              "service_tier": "standard",
+              "inference_geo": "global",
+              "speed": "standard"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-79>",
+        "ttft_ms": 1354
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 8294,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "tool_use",
+            "id": "<tool-use-80>",
+            "name": "ExitPlanMode",
+            "input": {},
+            "caller": {
+              "type": "direct"
+            }
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-81>"
+      }
+    },
+    {
+      "index": 79,
+      "dir": "recv",
+      "ms": 8294,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-82>"
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 8335,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-78>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-80>",
+              "name": "ExitPlanMode",
+              "input": {
+                "plan": "# Append \"reviewed\" to notes-1.txt\n\n## Context\nUser wants a simple marker appended to notes-1.txt to indicate it has been reviewed.\n\n## Steps\n1. Locate `notes-1.txt` in the current working directory.\n2. Append a new line containing `reviewed` to the end of the file (preserving existing content).\n3. Verify the file's final lines to confirm the append succeeded.\n",
+                "planFilePath": "<scratch>\\plans\\make-a-short-plan-cryptic-snowglobe.md"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 424,
+            "cache_read_input_tokens": 27163,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 424
+            },
+            "output_tokens": 25,
+            "service_tier": "standard",
+            "inference_geo": "global",
+            "speed": "standard"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-83>",
+        "timestamp": "2020-01-10T20:38:41.796Z",
+        "request_id": "<request-84>",
+        "wire_tool_inputs": {
+          "<tool-use-80>": {}
+        }
+      }
+    },
+    {
+      "index": 81,
+      "dir": "recv",
+      "ms": 8337,
+      "frame": {
+        "type": "control_request",
+        "request_id": "<request-85>",
+        "request": {
+          "subtype": "can_use_tool",
+          "tool_name": "ExitPlanMode",
+          "display_name": "ExitPlanMode",
+          "input": {
+            "plan": "# Append \"reviewed\" to notes-1.txt\n\n## Context\nUser wants a simple marker appended to notes-1.txt to indicate it has been reviewed.\n\n## Steps\n1. Locate `notes-1.txt` in the current working directory.\n2. Append a new line containing `reviewed` to the end of the file (preserving existing content).\n3. Verify the file's final lines to confirm the append succeeded.\n",
+            "planFilePath": "<scratch>\\plans\\make-a-short-plan-cryptic-snowglobe.md"
+          },
+          "tool_use_id": "<tool-use-80>",
+          "requires_user_interaction": true
+        }
+      }
+    },
+    {
+      "index": 82,
+      "dir": "recv",
+      "ms": 8337,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-86>"
+      }
+    },
+    {
+      "index": 83,
+      "dir": "recv",
+      "ms": 8346,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "tool_use",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 424,
+            "cache_read_input_tokens": 27163,
+            "output_tokens": 31,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 31,
+                "cache_read_input_tokens": 27163,
+                "cache_creation_input_tokens": 424,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 424
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-87>"
+      }
+    },
+    {
+      "index": 84,
+      "dir": "recv",
+      "ms": 8346,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-88>"
+      }
+    },
+    {
+      "index": 85,
+      "dir": "send",
+      "ms": 10342,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-3",
+        "request": {
+          "subtype": "interrupt"
+        }
+      }
+    },
+    {
+      "index": 86,
+      "dir": "recv",
+      "ms": 10346,
+      "frame": {
+        "type": "control_cancel_request",
+        "request_id": "<request-85>"
+      }
+    },
+    {
+      "index": 87,
+      "dir": "recv",
+      "ms": 10346,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-3",
+          "response": {
+            "still_queued": []
+          }
+        }
+      }
+    },
+    {
+      "index": 88,
+      "dir": "recv",
+      "ms": 10349,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "content": "The user doesn't want to proceed with this tool use. The tool use was rejected (eg. if it was a file edit, the new_string was NOT written to the file). STOP what you are doing and wait for the user to tell you how to proceed.",
+              "is_error": true,
+              "tool_use_id": "<tool-use-80>"
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-89>",
+        "timestamp": "2020-01-10T20:38:43.811Z",
+        "tool_use_result": "User rejected tool use",
+        "tool_result_meta": [
+          {
+            "id": "<tool-use-80>",
+            "non_execution_kind": "user-rejected"
+          }
+        ]
+      }
+    },
+    {
+      "index": 89,
+      "dir": "recv",
+      "ms": 10350,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "[Request interrupted by user for tool use]"
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-90>",
+        "timestamp": "2020-01-10T20:38:43.812Z"
+      }
+    },
+    {
+      "index": 90,
+      "dir": "recv",
+      "ms": 10351,
+      "frame": {
+        "duration_api_ms": 6609,
+        "stop_reason": "tool_use",
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.0318782,
+        "usage": {
+          "input_tokens": 4,
+          "cache_creation_input_tokens": 4384,
+          "cache_read_input_tokens": 50366,
+          "output_tokens": 324,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 4384,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 31,
+              "cache_read_input_tokens": 27163,
+              "cache_creation_input_tokens": 424,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 424
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 936,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001021,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 4,
+            "outputTokens": 324,
+            "cacheReadInputTokens": 50366,
+            "cacheCreationInputTokens": 4384,
+            "webSearchRequests": 0,
+            "costUSD": 0.0308572,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [
+          {
+            "tool_name": "ExitPlanMode",
+            "tool_use_id": "<tool-use-80>",
+            "tool_input": {
+              "plan": "# Append \"reviewed\" to notes-1.txt\n\n## Context\nUser wants a simple marker appended to notes-1.txt to indicate it has been reviewed.\n\n## Steps\n1. Locate `notes-1.txt` in the current working directory.\n2. Append a new line containing `reviewed` to the end of the file (preserving existing content).\n3. Verify the file's final lines to confirm the append succeeded.\n",
+              "planFilePath": "<scratch>\\plans\\make-a-short-plan-cryptic-snowglobe.md"
+            }
+          }
+        ],
+        "terminal_reason": "aborted_tools",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 0,
+          "requested": {
+            "background": 0,
+            "foreground": 0,
+            "unset": 0
+          },
+          "started_in_background": 0,
+          "max_depth": 0,
+          "spawned_by_subagents": 0,
+          "completed": 0,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {}
+        },
+        "is_error": true,
+        "num_turns": 4,
+        "subtype": "error_during_execution",
+        "errors": [
+          "[ede_diagnostic] result_type=user last_content_type=n/a stop_reason=tool_use"
+        ],
+        "user_message_uuid": "<uuid-3>",
+        "type": "result",
+        "duration_ms": 7820,
+        "uuid": "<uuid-91>",
+        "user_message_uuids": [
+          "<uuid-3>"
+        ],
+        "queued_turn_count": 0,
+        "result_index": 0
+      }
+    },
+    {
+      "index": 91,
+      "dir": "recv",
+      "ms": 10352,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-3>",
+        "state": "cancelled",
+        "uuid": "<uuid-92>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 92,
+      "dir": "send",
+      "ms": 12866,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-4",
+        "request": {
+          "subtype": "set_permission_mode",
+          "mode": "bypassPermissions"
+        }
+      }
+    },
+    {
+      "index": 93,
+      "dir": "recv",
+      "ms": 12868,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-4",
+          "response": {
+            "mode": "bypassPermissions"
+          }
+        }
+      }
+    },
+    {
+      "index": 94,
+      "dir": "recv",
+      "ms": 12868,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": null,
+        "permissionMode": "bypassPermissions",
+        "uuid": "<uuid-93>",
+        "session_id": "<session-1>"
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [
+    {
+      "kind": "can_use_tool",
+      "tool": "ExitPlanMode",
+      "worker": false,
+      "answer": "held"
+    }
+  ],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1413,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1809,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "before-close",
+      "atMs": 14905,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    }
+  ],
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "configuration": {
+    "folder": "a scratch configuration folder (CLAUDE_CONFIG_DIR), signed in by the maintainer",
+    "written": [
+      "plans\\make-a-short-plan-cryptic-snowglobe.md"
+    ]
+  },
+  "frameSizes": {
+    "largest": [
+      {
+        "type": "control_response",
+        "bytes": 17080
+      },
+      {
+        "type": "result",
+        "bytes": 2776
+      },
+      {
+        "type": "system/init",
+        "bytes": 2558
+      },
+      {
+        "type": "assistant",
+        "bytes": 1939
+      },
+      {
+        "type": "assistant",
+        "bytes": 1427
+      }
+    ],
+    "longStringsCut": []
+  }
+}

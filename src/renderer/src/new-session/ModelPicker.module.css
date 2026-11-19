@@ -1,0 +1,53 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The model picker's frame (docs/planning/_archive/M14.md, Design 8): portalled to the page and fixed
+   beside the button it came from, so it says it is unselectable itself (M11, C30). It never scrolls:
+   it is as large as its chooser needs. Nothing here sets `overflow` to anything but hidden; the styles
+   test keeps it so. */
+.popup {
+  composes: scale from '../ui/ControlTypography.module.css';
+  position: fixed;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3);
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+  box-shadow: 0 4px 12px var(--color-backdrop);
+  user-select: none;
+}
+
+.title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-14);
+  font-weight: var(--weight-semibold);
+  line-height: 20px;
+}
+
+.refusal {
+  margin: var(--space-2) 0 0;
+  color: var(--color-critical);
+  font-size: var(--text-12);
+}
+
+.apply {
+  padding: var(--space-1) var(--space-4);
+  border: var(--rule);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font: inherit;
+  cursor: pointer;
+}
+
+.apply:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.savePreset { padding: var(--space-1) var(--space-4); border: var(--rule); background: var(--color-bg); color: var(--color-text); font: inherit; cursor: pointer; }
+.savePreset:hover:enabled { background: var(--color-surface); }
+.savePreset:disabled { opacity: 0.5; cursor: default; }

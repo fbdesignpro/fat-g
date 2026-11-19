@@ -1,0 +1,2922 @@
+{
+  "_fixture": {
+    "source": "M106 spike m106-k2.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":1,\"turn\":2,\"item\":9,\"worker\":3,\"cursor\":1,\"mcp-server\":1}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.163.0",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-15T23:52:44.648Z",
+  "scenario": {
+    "id": "m106-spawn",
+    "title": "K2: one sub-agent on a model that announces it by the spawnAgent collab tool, asked for on gpt-5.6-terra (C15)",
+    "successCondition": "The collab call's model field at its start and its completion, the worker thread's frames, and what thread/read and thread/list say of the worker's model"
+  },
+  "run": {
+    "id": "codex-m106-spawn-4",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 84,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1911,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "model": {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "workerModelListed": true
+      },
+      "workerModelAsked": "gpt-5.6-terra",
+      "thread": {
+        "ok": true,
+        "error": null,
+        "matchesWhatWasAsked": true,
+        "threadModel": "gpt-5.6-luna"
+      },
+      "turn": {
+        "ok": true,
+        "error": null
+      },
+      "end": {
+        "index": 84,
+        "status": "completed"
+      },
+      "announcements": {
+        "collabCalls": [
+          {
+            "index": 42,
+            "method": "item/started",
+            "tool": "spawnAgent",
+            "status": "inProgress",
+            "keys": [
+              "agentsStates",
+              "id",
+              "model",
+              "prompt",
+              "reasoningEffort",
+              "receiverThreadIds",
+              "senderThreadId",
+              "status",
+              "tool",
+              "type"
+            ],
+            "model": "gpt-5.6-terra",
+            "reasoningEffort": "medium",
+            "receivers": 0,
+            "promptHoldsTheMarker": [
+              "spawn"
+            ],
+            "agentsStates": []
+          },
+          {
+            "index": 47,
+            "method": "item/completed",
+            "tool": "spawnAgent",
+            "status": "completed",
+            "keys": [
+              "agentsStates",
+              "id",
+              "model",
+              "prompt",
+              "reasoningEffort",
+              "receiverThreadIds",
+              "senderThreadId",
+              "status",
+              "tool",
+              "type"
+            ],
+            "model": "gpt-5.6-terra",
+            "reasoningEffort": "medium",
+            "receivers": 1,
+            "promptHoldsTheMarker": [
+              "spawn"
+            ],
+            "agentsStates": [
+              {
+                "keys": [
+                  "message",
+                  "status"
+                ],
+                "status": "pendingInit",
+                "named": []
+              }
+            ]
+          },
+          {
+            "index": 48,
+            "method": "item/started",
+            "tool": "wait",
+            "status": "inProgress",
+            "keys": [
+              "agentsStates",
+              "id",
+              "model",
+              "prompt",
+              "reasoningEffort",
+              "receiverThreadIds",
+              "senderThreadId",
+              "status",
+              "tool",
+              "type"
+            ],
+            "model": null,
+            "reasoningEffort": null,
+            "receivers": 1,
+            "promptHoldsTheMarker": [],
+            "agentsStates": []
+          },
+          {
+            "index": 65,
+            "method": "item/completed",
+            "tool": "wait",
+            "status": "completed",
+            "keys": [
+              "agentsStates",
+              "id",
+              "model",
+              "prompt",
+              "reasoningEffort",
+              "receiverThreadIds",
+              "senderThreadId",
+              "status",
+              "tool",
+              "type"
+            ],
+            "model": null,
+            "reasoningEffort": null,
+            "receivers": 1,
+            "promptHoldsTheMarker": [],
+            "agentsStates": [
+              {
+                "keys": [
+                  "message",
+                  "status"
+                ],
+                "status": "completed",
+                "named": []
+              }
+            ]
+          }
+        ],
+        "activities": []
+      },
+      "workerThreads": 1,
+      "workerFrames": {
+        "count": 19,
+        "methods": [
+          "thread/status/changed",
+          "mcpServer/startupStatus/updated",
+          "turn/started",
+          "item/started",
+          "item/completed",
+          "item/agentMessage/delta",
+          "thread/tokenUsage/updated",
+          "turn/completed"
+        ],
+        "threadStarted": [],
+        "turnStarted": [
+          {
+            "index": 46,
+            "keys": [
+              "threadId",
+              "turn"
+            ],
+            "turnKeys": [
+              "completedAt",
+              "durationMs",
+              "error",
+              "id",
+              "items",
+              "itemsView",
+              "rootTurnId",
+              "startedAt",
+              "status"
+            ],
+            "named": []
+          }
+        ],
+        "namedAnywhere": [],
+        "agentMessages": [
+          {
+            "index": 60,
+            "phase": "final_answer",
+            "holdsTheMarker": [
+              "spawn"
+            ]
+          }
+        ]
+      },
+      "reads": {
+        "reads": [
+          {
+            "ok": true,
+            "keys": [
+              "agentNickname",
+              "agentRole",
+              "canAcceptDirectInput",
+              "cliVersion",
+              "createdAt",
+              "cwd",
+              "daybreakEnabled",
+              "environments",
+              "ephemeral",
+              "extra",
+              "forkedFromId",
+              "gitInfo",
+              "historyMode",
+              "id",
+              "model",
+              "modelProvider",
+              "name",
+              "originator",
+              "parentThreadId",
+              "path",
+              "preview",
+              "projectId",
+              "reasoningEffort",
+              "recencyAt",
+              "section",
+              "sectionEnteredAt",
+              "sessionId",
+              "source",
+              "status",
+              "threadSource",
+              "turns",
+              "updatedAt"
+            ],
+            "model": "gpt-5.6-terra",
+            "reasoningEffort": "medium",
+            "agentNickname": "Meitner",
+            "agentRole": null,
+            "parentIsTheSession": true,
+            "source": {
+              "subAgent": {
+                "thread_spawn": {
+                  "parent_thread_id": "<session-1>",
+                  "depth": 1,
+                  "agent_path": null,
+                  "agent_nickname": "Meitner",
+                  "agent_role": null
+                }
+              }
+            },
+            "threadSource": "subagent",
+            "ephemeral": false,
+            "status": {
+              "type": "idle"
+            }
+          }
+        ],
+        "list": {
+          "count": 2,
+          "holdsTheWorker": true,
+          "workers": [
+            {
+              "model": "gpt-5.6-terra",
+              "agentNickname": "Meitner",
+              "agentRole": null,
+              "parentIsTheSession": true,
+              "source": {
+                "subAgent": {
+                  "thread_spawn": {
+                    "parent_thread_id": "<session-1>",
+                    "depth": 1,
+                    "agent_path": null,
+                    "agent_nickname": "Meitner",
+                    "agent_role": null
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "answerHoldsTheMarker": true,
+      "typeCounts": {
+        "thread/started": 1,
+        "mcpServer/startupStatus/updated": 4,
+        "response": 3,
+        "thread/status/changed": 5,
+        "turn/started": 2,
+        "item/started": 9,
+        "item/completed": 9,
+        "item/agentMessage/delta": 34,
+        "thread/tokenUsage/updated": 4,
+        "account/rateLimits/updated": 4,
+        "turn/completed": 2
+      },
+      "outline": [
+        {
+          "index": 10,
+          "ms": 2032,
+          "method": "thread/started"
+        },
+        {
+          "index": 13,
+          "ms": 2084,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 14,
+          "ms": 2084,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 16,
+          "ms": 3057,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 17,
+          "ms": 3068,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 18,
+          "ms": 3948,
+          "method": "item/started",
+          "thread": "session",
+          "item": "reasoning"
+        },
+        {
+          "index": 19,
+          "ms": 3961,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "reasoning"
+        },
+        {
+          "index": 20,
+          "ms": 4018,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 37,
+          "ms": 4225,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 39,
+          "ms": 4405,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 40,
+          "ms": 5506,
+          "method": "item/started",
+          "thread": "session",
+          "item": "reasoning"
+        },
+        {
+          "index": 41,
+          "ms": 5521,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "reasoning"
+        },
+        {
+          "index": 42,
+          "ms": 6791,
+          "method": "item/started",
+          "thread": "session",
+          "item": "collabAgentToolCall",
+          "tool": "spawnAgent",
+          "status": "inProgress"
+        },
+        {
+          "index": 43,
+          "ms": 6858,
+          "method": "thread/status/changed",
+          "thread": "worker-1",
+          "status": "idle"
+        },
+        {
+          "index": 45,
+          "ms": 6868,
+          "method": "thread/status/changed",
+          "thread": "worker-1",
+          "status": "active"
+        },
+        {
+          "index": 46,
+          "ms": 6868,
+          "method": "turn/started",
+          "thread": "worker-1",
+          "status": "inProgress"
+        },
+        {
+          "index": 47,
+          "ms": 6869,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "collabAgentToolCall",
+          "tool": "spawnAgent",
+          "status": "completed"
+        },
+        {
+          "index": 48,
+          "ms": 6874,
+          "method": "item/started",
+          "thread": "session",
+          "item": "collabAgentToolCall",
+          "tool": "wait",
+          "status": "inProgress"
+        },
+        {
+          "index": 49,
+          "ms": 7755,
+          "method": "item/started",
+          "thread": "worker-1",
+          "item": "userMessage"
+        },
+        {
+          "index": 50,
+          "ms": 7765,
+          "method": "item/completed",
+          "thread": "worker-1",
+          "item": "userMessage"
+        },
+        {
+          "index": 52,
+          "ms": 8546,
+          "method": "item/started",
+          "thread": "worker-1",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 60,
+          "ms": 8683,
+          "method": "item/completed",
+          "thread": "worker-1",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 62,
+          "ms": 8712,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 63,
+          "ms": 8722,
+          "method": "thread/status/changed",
+          "thread": "worker-1",
+          "status": "idle"
+        },
+        {
+          "index": 64,
+          "ms": 8722,
+          "method": "turn/completed",
+          "thread": "worker-1",
+          "status": "completed"
+        },
+        {
+          "index": 65,
+          "ms": 8732,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "collabAgentToolCall",
+          "tool": "wait",
+          "status": "completed"
+        },
+        {
+          "index": 67,
+          "ms": 8757,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 68,
+          "ms": 9525,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 80,
+          "ms": 9757,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 82,
+          "ms": 9791,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 83,
+          "ms": 9805,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 84,
+          "ms": 9805,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "model": "gpt-5.6-luna"
+    },
+    "replyIndex": 8,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined; the sub-agent is told to use no tool"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_STARTUP_TIMING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT_ON_REQUESTS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_STARTUP_FAILURE_RESULTS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 360000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 915,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 918,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.163.0 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 919,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 925,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 1812,
+      "frame": {
+        "method": "account/updated",
+        "params": {
+          "authMode": "chatgpt",
+          "planType": "free"
+        },
+        "emittedAtMs": 1579132352465
+      }
+    },
+    {
+      "index": 5,
+      "dir": "send",
+      "ms": 1910,
+      "frame": {
+        "method": "model/list",
+        "id": 2,
+        "params": {
+          "limit": 100
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 1912,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "gpt-6-luna",
+              "model": "gpt-6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Luna",
+              "description": "Fast and affordable model for easier tasks.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [],
+              "serviceTiers": [],
+              "defaultServiceTier": null,
+              "availableAccessPrograms": {
+                "cyber": [
+                  "standard"
+                ]
+              },
+              "isDefault": true
+            },
+            {
+              "id": "gpt-5.6-terra",
+              "model": "gpt-5.6-terra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Terra",
+              "description": "Older balanced model for straightforward work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [],
+              "serviceTiers": [],
+              "defaultServiceTier": null,
+              "availableAccessPrograms": {
+                "cyber": [
+                  "standard"
+                ]
+              },
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-luna",
+              "model": "gpt-5.6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Luna",
+              "description": "Older fast and efficient model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [],
+              "serviceTiers": [],
+              "defaultServiceTier": null,
+              "availableAccessPrograms": {
+                "cyber": [
+                  "standard"
+                ]
+              },
+              "isDefault": false
+            }
+          ],
+          "nextCursor": null
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "send",
+      "ms": 1912,
+      "frame": {
+        "method": "thread/start",
+        "id": 3,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "model": "gpt-5.6-luna"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 2031,
+      "frame": {
+        "id": 3,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1579132352,
+            "updatedAt": 1579132352,
+            "recencyAt": 1579132352,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\15\\rollout-2020-01-15T19-52-32-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.163.0",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-5.6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "disabledPluginIds": [],
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "send",
+      "ms": 2032,
+      "frame": {
+        "method": "turn/start",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Spawn exactly one sub-agent with your agent-spawning tool and hand it this task; do not do it yourself: it must reply with only the word SPAWNED-7703 and use no tool. If the tool lets you choose the sub-agent's model, choose gpt-5.6-terra. Wait for it, then tell me in one sentence which word it reported.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-5.6-luna",
+          "effort": "medium",
+          "clientUserMessageId": "<client-message-2>"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 2032,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1579132352,
+            "updatedAt": 1579132352,
+            "recencyAt": 1579132352,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\15\\rollout-2020-01-15T19-52-32-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.163.0",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1579132352684
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 2032,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-18>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1579132352684
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 2047,
+      "frame": {
+        "id": 4,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 2084,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1579132352737
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 2084,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1579132352,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1579132352737
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 2638,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-18>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1579132353290
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 3057,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Spawn exactly one sub-agent with your agent-spawning tool and hand it this task; do not do it yourself: it must reply with only the word SPAWNED-7703 and use no tool. If the tool lets you choose the sub-agent's model, choose gpt-5.6-terra. Wait for it, then tell me in one sentence which word it reported.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1579132353710
+        },
+        "emittedAtMs": 1579132353710
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 3068,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Spawn exactly one sub-agent with your agent-spawning tool and hand it this task; do not do it yourself: it must reply with only the word SPAWNED-7703 and use no tool. If the tool lets you choose the sub-agent's model, choose gpt-5.6-terra. Wait for it, then tell me in one sentence which word it reported.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1579132353710
+        },
+        "emittedAtMs": 1579132353721
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 3948,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-5>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1579132354600
+        },
+        "emittedAtMs": 1579132354601
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 3961,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-5>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1579132354601
+        },
+        "emittedAtMs": 1579132354614
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 4018,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-6>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1579132354671
+        },
+        "emittedAtMs": 1579132354671
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 4018,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1579132354671
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 4018,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "’ll"
+        },
+        "emittedAtMs": 1579132354671
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 4018,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " hand"
+        },
+        "emittedAtMs": 1579132354671
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 4081,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " this"
+        },
+        "emittedAtMs": 1579132354734
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 4081,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " off"
+        },
+        "emittedAtMs": 1579132354734
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 4081,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " to"
+        },
+        "emittedAtMs": 1579132354734
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 4081,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " exactly"
+        },
+        "emittedAtMs": 1579132354734
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 4081,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " one"
+        },
+        "emittedAtMs": 1579132354735
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 4081,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " sub"
+        },
+        "emittedAtMs": 1579132354735
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 4081,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "-agent"
+        },
+        "emittedAtMs": 1579132354735
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 4082,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1579132354735
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 4082,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " wait"
+        },
+        "emittedAtMs": 1579132354735
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 4082,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " for"
+        },
+        "emittedAtMs": 1579132354735
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 4082,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " its"
+        },
+        "emittedAtMs": 1579132354735
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 4082,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " response"
+        },
+        "emittedAtMs": 1579132354735
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 4083,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "."
+        },
+        "emittedAtMs": 1579132354736
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 4225,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-6>",
+            "text": "I’ll hand this off to exactly one sub-agent and wait for its response.",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1579132354869
+        },
+        "emittedAtMs": 1579132354878
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 4405,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 11987,
+              "inputTokens": 11884,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 103,
+              "reasoningOutputTokens": 41
+            },
+            "last": {
+              "totalTokens": 11987,
+              "inputTokens": 11884,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 103,
+              "reasoningOutputTokens": 41
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1579132355058
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 4405,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 5506,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-7>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1579132356159
+        },
+        "emittedAtMs": 1579132356159
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 5521,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-7>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1579132356159
+        },
+        "emittedAtMs": 1579132356174
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 6791,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "collabAgentToolCall",
+            "id": "<item-8>",
+            "tool": "spawnAgent",
+            "status": "inProgress",
+            "senderThreadId": "<session-1>",
+            "receiverThreadIds": [],
+            "prompt": "Reply with only the word SPAWNED-7703. Use no tools.",
+            "model": "gpt-5.6-terra",
+            "reasoningEffort": "medium",
+            "agentsStates": {}
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1579132357442
+        },
+        "emittedAtMs": 1579132357444
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 6858,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<worker-9>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1579132357510
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 6858,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-9>",
+          "name": "<mcp-server-18>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1579132357511
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 6868,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<worker-9>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1579132357521
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 6868,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<worker-9>",
+          "turn": {
+            "id": "<turn-10>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1579132357,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1579132357521
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 6869,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "collabAgentToolCall",
+            "id": "<item-8>",
+            "tool": "spawnAgent",
+            "status": "completed",
+            "senderThreadId": "<session-1>",
+            "receiverThreadIds": [
+              "<worker-9>"
+            ],
+            "prompt": "Reply with only the word SPAWNED-7703. Use no tools.",
+            "model": "gpt-5.6-terra",
+            "reasoningEffort": "medium",
+            "agentsStates": {
+              "<worker-9>": {
+                "status": "pendingInit",
+                "message": null
+              }
+            }
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1579132357510
+        },
+        "emittedAtMs": 1579132357521
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 6874,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "collabAgentToolCall",
+            "id": "<item-11>",
+            "tool": "wait",
+            "status": "inProgress",
+            "senderThreadId": "<session-1>",
+            "receiverThreadIds": [
+              "<worker-9>"
+            ],
+            "prompt": null,
+            "model": null,
+            "reasoningEffort": null,
+            "agentsStates": {}
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1579132357527
+        },
+        "emittedAtMs": 1579132357527
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 7755,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-12>",
+            "clientId": null,
+            "content": [
+              {
+                "type": "text",
+                "text": "Reply with only the word SPAWNED-7703. Use no tools.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "startedAtMs": 1579132358408
+        },
+        "emittedAtMs": 1579132358408
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 7765,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-12>",
+            "clientId": null,
+            "content": [
+              {
+                "type": "text",
+                "text": "Reply with only the word SPAWNED-7703. Use no tools.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "completedAtMs": 1579132358408
+        },
+        "emittedAtMs": 1579132358418
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 7947,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-9>",
+          "name": "<mcp-server-18>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1579132358600
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 8546,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-13>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "startedAtMs": 1579132359199
+        },
+        "emittedAtMs": 1579132359199
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 8548,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": "SP"
+        },
+        "emittedAtMs": 1579132359201
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 8548,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": "AW"
+        },
+        "emittedAtMs": 1579132359201
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 8548,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": "N"
+        },
+        "emittedAtMs": 1579132359201
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 8548,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": "ED"
+        },
+        "emittedAtMs": 1579132359201
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 8548,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": "-"
+        },
+        "emittedAtMs": 1579132359201
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 8549,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": "770"
+        },
+        "emittedAtMs": 1579132359202
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 8600,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": "3"
+        },
+        "emittedAtMs": 1579132359253
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 8683,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-13>",
+            "text": "SPAWNED-7703",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "completedAtMs": 1579132359327
+        },
+        "emittedAtMs": 1579132359336
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 8712,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<worker-9>",
+          "turnId": "<turn-10>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 11833,
+              "inputTokens": 11822,
+              "cachedInputTokens": 5888,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 11,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 11833,
+              "inputTokens": 11822,
+              "cachedInputTokens": 5888,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 11,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1579132359365
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 8712,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 8722,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<worker-9>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1579132359375
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 8722,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<worker-9>",
+          "turn": {
+            "id": "<turn-10>",
+            "rootTurnId": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-13>",
+                "text": "SPAWNED-7703",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1579132357,
+            "completedAt": 1579132359,
+            "durationMs": 1857
+          }
+        },
+        "emittedAtMs": 1579132359375
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 8732,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "collabAgentToolCall",
+            "id": "<item-11>",
+            "tool": "wait",
+            "status": "completed",
+            "senderThreadId": "<session-1>",
+            "receiverThreadIds": [
+              "<worker-9>"
+            ],
+            "prompt": null,
+            "model": null,
+            "reasoningEffort": null,
+            "agentsStates": {
+              "<worker-9>": {
+                "status": "completed",
+                "message": "SPAWNED-7703"
+              }
+            }
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1579132359375
+        },
+        "emittedAtMs": 1579132359385
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 8757,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 26887,
+              "inputTokens": 26660,
+              "cachedInputTokens": 11648,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 227,
+              "reasoningOutputTokens": 65
+            },
+            "last": {
+              "totalTokens": 14900,
+              "inputTokens": 14776,
+              "cachedInputTokens": 11648,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 124,
+              "reasoningOutputTokens": 24
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1579132359410
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 8757,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 9525,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-14>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1579132360178
+        },
+        "emittedAtMs": 1579132360178
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 9525,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-14>",
+          "delta": "The"
+        },
+        "emittedAtMs": 1579132360178
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 9647,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-14>",
+          "delta": " reported"
+        },
+        "emittedAtMs": 1579132360300
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 9650,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-14>",
+          "delta": " word"
+        },
+        "emittedAtMs": 1579132360303
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 9650,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-14>",
+          "delta": " was"
+        },
+        "emittedAtMs": 1579132360303
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 9650,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-14>",
+          "delta": " SPA"
+        },
+        "emittedAtMs": 1579132360303
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 9650,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-14>",
+          "delta": "WN"
+        },
+        "emittedAtMs": 1579132360303
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 9651,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-14>",
+          "delta": "ED"
+        },
+        "emittedAtMs": 1579132360303
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 9651,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-14>",
+          "delta": "-"
+        },
+        "emittedAtMs": 1579132360303
+      }
+    },
+    {
+      "index": 77,
+      "dir": "recv",
+      "ms": 9651,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-14>",
+          "delta": "770"
+        },
+        "emittedAtMs": 1579132360303
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 9651,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-14>",
+          "delta": "3"
+        },
+        "emittedAtMs": 1579132360303
+      }
+    },
+    {
+      "index": 79,
+      "dir": "recv",
+      "ms": 9651,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-14>",
+          "delta": "."
+        },
+        "emittedAtMs": 1579132360303
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 9757,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-14>",
+            "text": "The reported word was SPAWNED-7703.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1579132360390
+        },
+        "emittedAtMs": 1579132360410
+      }
+    },
+    {
+      "index": 81,
+      "dir": "recv",
+      "ms": 9791,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 41967,
+              "inputTokens": 41725,
+              "cachedInputTokens": 26240,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 242,
+              "reasoningOutputTokens": 65
+            },
+            "last": {
+              "totalTokens": 15080,
+              "inputTokens": 15065,
+              "cachedInputTokens": 14592,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 15,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1579132360444
+      }
+    },
+    {
+      "index": 82,
+      "dir": "recv",
+      "ms": 9791,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 83,
+      "dir": "recv",
+      "ms": 9805,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1579132360458
+      }
+    },
+    {
+      "index": 84,
+      "dir": "recv",
+      "ms": 9805,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-14>",
+                "text": "The reported word was SPAWNED-7703.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1579132352,
+            "completedAt": 1579132360,
+            "durationMs": 7751
+          }
+        },
+        "emittedAtMs": 1579132360458
+      }
+    },
+    {
+      "index": 85,
+      "dir": "send",
+      "ms": 11812,
+      "frame": {
+        "method": "thread/read",
+        "id": 5,
+        "params": {
+          "threadId": "<worker-9>",
+          "includeTurns": false
+        }
+      }
+    },
+    {
+      "index": 86,
+      "dir": "recv",
+      "ms": 11817,
+      "frame": {
+        "id": 5,
+        "result": {
+          "thread": {
+            "id": "<worker-9>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": "<session-1>",
+            "preview": "Reply with only the word SPAWNED-7703. Use no tools.",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-5.6-terra",
+            "reasoningEffort": "medium",
+            "createdAt": 1579132357,
+            "updatedAt": 1579132359,
+            "recencyAt": 1579132357,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\15\\rollout-2020-01-15T19-52-37-<worker-9>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.163.0",
+            "originator": "fat_g",
+            "source": {
+              "subAgent": {
+                "thread_spawn": {
+                  "parent_thread_id": "<session-1>",
+                  "depth": 1,
+                  "agent_path": null,
+                  "agent_nickname": "Meitner",
+                  "agent_role": null
+                }
+              }
+            },
+            "canAcceptDirectInput": true,
+            "threadSource": "subagent",
+            "agentNickname": "Meitner",
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "readState": null
+        }
+      }
+    },
+    {
+      "index": 87,
+      "dir": "send",
+      "ms": 11817,
+      "frame": {
+        "method": "thread/list",
+        "id": 6,
+        "params": {
+          "limit": 20,
+          "cwd": "<scratch>",
+          "sourceKinds": [
+            "subAgentThreadSpawn",
+            "subAgent",
+            "subAgentOther"
+          ]
+        }
+      }
+    },
+    {
+      "index": 88,
+      "dir": "recv",
+      "ms": 12079,
+      "frame": {
+        "id": 6,
+        "result": {
+          "data": [
+            {
+              "id": "<worker-9>",
+              "environments": [
+                {
+                  "environmentId": "local",
+                  "cwd": "<scratch>",
+                  "runtimeWorkspaceRoots": [
+                    "<scratch>"
+                  ]
+                }
+              ],
+              "extra": null,
+              "sessionId": "<worker-9>",
+              "forkedFromId": null,
+              "parentThreadId": "<session-1>",
+              "preview": "Reply with only the word SPAWNED-7703. Use no tools.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-5.6-terra",
+              "reasoningEffort": "medium",
+              "createdAt": 1579132357,
+              "updatedAt": 1579132357,
+              "recencyAt": 1579132357,
+              "status": {
+                "type": "idle"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\15\\rollout-2020-01-15T19-52-37-<worker-9>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.163.0",
+              "originator": "fat_g",
+              "source": {
+                "subAgent": {
+                  "thread_spawn": {
+                    "parent_thread_id": "<session-1>",
+                    "depth": 1,
+                    "agent_path": null,
+                    "agent_nickname": "Meitner",
+                    "agent_role": null
+                  }
+                }
+              },
+              "canAcceptDirectInput": true,
+              "threadSource": null,
+              "agentNickname": "Meitner",
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            },
+            {
+              "id": "<worker-15>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-15>",
+              "forkedFromId": null,
+              "parentThreadId": "<worker-16>",
+              "preview": "Approval review",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "legacy",
+              "modelProvider": "openai",
+              "model": "codex-auto-review",
+              "reasoningEffort": "low",
+              "createdAt": 1578422162,
+              "updatedAt": 1578422162,
+              "recencyAt": 1578422162,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\07\\rollout-2020-01-07T14-36-02-<worker-15>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": {
+                "subAgent": {
+                  "other": "guardian"
+                }
+              },
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": "Guardian review",
+              "daybreakEnabled": null,
+              "turns": []
+            }
+          ],
+          "readStates": {},
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-17>"
+        }
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 915,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1910,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 13035,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "codex-code-mode-host.exe",
+        "conhost.exe"
+      ],
+      "alive": 6
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 3027
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 2373
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1533
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1347
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1121
+      }
+    ],
+    "longStringsCut": []
+  }
+}

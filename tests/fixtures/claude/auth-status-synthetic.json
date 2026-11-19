@@ -1,0 +1,32 @@
+{
+  "_fixture": {
+    "source": "synthetic",
+    "note": "One `claude auth status` case per authentication discriminator observed in the CLI bundled with Agent SDK 0.3.278, plus logged-out, contradictory and unknown combinations. Written by hand from the observed field set of auth-status-logged-in.json; not captured vendor output."
+  },
+  "cases": [
+    { "name": "claude.ai subscription", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "claude.ai", "apiProvider": "firstParty", "subscriptionType": "pro", "email": "user@example.com", "orgName": "Example Org", "orgId": "00000000-0000-0000-0000-000000000000", "configDirectory": "C:\\Users\\user\\.claude" }, "expected": { "kind": "account", "account": { "authKind": "subscription", "plan": "pro", "email": "user@example.com", "organization": "Example Org" } } },
+    { "name": "long-lived oauth_token", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "oauth_token", "apiProvider": "firstParty", "subscriptionType": "max" }, "expected": { "kind": "account", "account": { "authKind": "subscription", "plan": "max" } } },
+    { "name": "logged out by exit status", "exitCode": 1, "payload": { "loggedIn": false, "authMethod": "none", "apiProvider": "firstParty" }, "expected": { "kind": "not-logged-in" } },
+    { "name": "logged out, text output", "exitCode": 1, "payload": "Not logged in. Run claude auth login.", "expected": { "kind": "not-logged-in" } },
+    { "name": "authMethod none while claiming loggedIn", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "none", "apiProvider": "firstParty" }, "expected": { "kind": "not-logged-in" } },
+    { "name": "loggedIn false with exit 0", "exitCode": 0, "payload": { "loggedIn": false, "authMethod": "claude.ai", "apiProvider": "firstParty" }, "expected": { "kind": "not-logged-in" } },
+    { "name": "api_key", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "api_key", "apiProvider": "firstParty" }, "expected": { "kind": "not-applicable", "reason": "api-key" } },
+    { "name": "api_key_helper", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "api_key_helper", "apiProvider": "firstParty" }, "expected": { "kind": "not-applicable", "reason": "api-key" } },
+    { "name": "api_key on the documented status exit", "exitCode": 1, "payload": { "loggedIn": false, "authMethod": "api_key", "apiProvider": "firstParty" }, "expected": { "kind": "not-applicable", "reason": "api-key" } },
+    { "name": "third_party", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "third_party", "apiProvider": "bedrock" }, "expected": { "kind": "not-applicable", "reason": "cloud-provider" } },
+    { "name": "bedrock", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "claude.ai", "apiProvider": "bedrock" }, "expected": { "kind": "not-applicable", "reason": "cloud-provider" } },
+    { "name": "vertex", "exitCode": 0, "payload": { "loggedIn": true, "apiProvider": "vertex" }, "expected": { "kind": "not-applicable", "reason": "cloud-provider" } },
+    { "name": "foundry", "exitCode": 0, "payload": { "loggedIn": true, "apiProvider": "foundry" }, "expected": { "kind": "not-applicable", "reason": "cloud-provider" } },
+    { "name": "anthropicAws", "exitCode": 0, "payload": { "loggedIn": true, "apiProvider": "anthropicAws" }, "expected": { "kind": "not-applicable", "reason": "cloud-provider" } },
+    { "name": "anthropicGoogleCloud", "exitCode": 0, "payload": { "loggedIn": true, "apiProvider": "anthropicGoogleCloud" }, "expected": { "kind": "not-applicable", "reason": "cloud-provider" } },
+    { "name": "mantle", "exitCode": 0, "payload": { "loggedIn": true, "apiProvider": "mantle" }, "expected": { "kind": "not-applicable", "reason": "cloud-provider" } },
+    { "name": "gateway", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "claude.ai", "apiProvider": "gateway" }, "expected": { "kind": "not-applicable", "reason": "cloud-provider" } },
+    { "name": "api key wins over first party", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "api_key", "apiProvider": "firstParty", "subscriptionType": "max" }, "expected": { "kind": "not-applicable", "reason": "api-key" } },
+    { "name": "subscription method without a provider", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "claude.ai" }, "expected": { "kind": "error", "reason": "unsupported-data" } },
+    { "name": "unknown auth method", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "passkey", "apiProvider": "firstParty" }, "expected": { "kind": "error", "reason": "unsupported-data" } },
+    { "name": "unknown api provider", "exitCode": 0, "payload": { "loggedIn": true, "authMethod": "claude.ai", "apiProvider": "orbital" }, "expected": { "kind": "error", "reason": "unsupported-data" } },
+    { "name": "loggedIn missing", "exitCode": 0, "payload": { "authMethod": "claude.ai", "apiProvider": "firstParty" }, "expected": { "kind": "error", "reason": "unsupported-data" } },
+    { "name": "crash exit", "exitCode": 3, "payload": { "loggedIn": true, "authMethod": "claude.ai", "apiProvider": "firstParty" }, "expected": { "kind": "error", "reason": "temporarily-unavailable" } },
+    { "name": "killed by signal", "exitCode": null, "payload": "", "expected": { "kind": "error", "reason": "temporarily-unavailable" } }
+  ]
+}

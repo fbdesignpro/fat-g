@@ -1,0 +1,341 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The composer's parts (docs/planning/_archive/M23.md, Design 4, 7, 8, 9; C16, C19, C20, C35, C37, C48, C58, C74):
+   the image strip over the text area, the busy actions in Send's place, the queue's rows under the
+   input and the command menu over it. Drawn from the theme's tokens, dense, as M100 draws rows. */
+
+/* The chosen preset reverses the text and background, on a light grey. */
+.presetName {
+  align-self: flex-start;
+  margin-left: -2px;
+  margin-bottom: 2px;
+  padding-inline: var(--space-1);
+  background: var(--color-preset-label);
+  color: var(--color-bg);
+  overflow-wrap: anywhere;
+}
+
+/* The strip, inside the input box over the text area (C16): a row of 48 px thumbnails that wraps. */
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  padding-bottom: var(--space-1);
+}
+
+.thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.thumb {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.thumbImage,
+.thumbPending {
+  display: block;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.thumbImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbImage:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+/* A placeholder while an image is kept: the strip's shape, with nothing drawn in it. */
+.thumbPending {
+  border-style: dashed;
+}
+
+/* Remove: in the DOM at all times, seen while the pointer is over its thumbnail or the focus in it. */
+.thumbRemove {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: var(--rule);
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  opacity: 0;
+  cursor: pointer;
+}
+
+.thumb:hover .thumbRemove,
+.thumb:focus-within .thumbRemove {
+  opacity: 1;
+}
+
+.count {
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}
+
+/* The chat column while a drag carries files over it (C15). */
+.dropping {
+  outline: 2px dashed var(--color-focus);
+  outline-offset: -4px;
+}
+
+/* A refusal's line, and the formats' line after it (C14, C20). */
+.formats {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}
+
+/* The busy actions in Send's place (C35, C37): the alternate action, the primary, then Stop,
+   all full buttons. A reason for withholding Send now stays above the row. */
+.busyActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 0;
+  gap: 2px;
+}
+
+.busyRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 100%;
+  gap: var(--space-1);
+}
+
+.busyRow button:disabled {
+  opacity: 0.3;
+}
+
+.secondaryAction {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Outside the action row, so appearing never moves the buttons. Only the button reveals it. */
+.shortcutHint {
+  position: absolute;
+  inset-inline-end: calc(100% + var(--space-2));
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-size: var(--text-10);
+  font-weight: var(--weight-regular);
+  white-space: nowrap;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.secondaryAction > button:hover + .shortcutHint {
+  visibility: visible;
+}
+
+/* Why Queue stands alone, above it for as long as Send now is withheld. */
+.withheld {
+  max-width: 52ch;
+  margin: 0;
+  padding: 0 var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+  text-align: end;
+}
+
+/* The queue's rows under the input (C48): one line each, newest last, Edit and Remove seen on hover or focus. */
+.queue {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--space-1);
+}
+
+/* Three rows and half of a fourth, then they scroll (C47): ten queued at the smallest window leave the chat's
+   messages in view. */
+.queueRows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: calc(3.5 * (24px + 2px));
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+  list-style: none;
+}
+
+.queueRow {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 24px;
+  padding: 0 var(--space-2);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-size: var(--text-13);
+}
+
+/* Inside its border: the rows' scroll would cut a ring drawn outside it. */
+.queueRow:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+.queueRow:not([data-sending]):not([data-held]) {
+  cursor: grab;
+}
+
+.queueRow[data-dragged] {
+  opacity: 0.6;
+}
+
+.queueText {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.queueImages,
+.queueSending {
+  flex: none;
+  color: var(--color-text-muted);
+}
+
+/* A held Send now: its tag before its text. */
+.queueHeld {
+  flex: none;
+  padding: 0 var(--space-1);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+}
+
+.queueActions {
+  display: flex;
+  flex: none;
+  gap: var(--space-1);
+  opacity: 0;
+}
+
+.queueRow:hover .queueActions,
+.queueRow:focus-within .queueActions {
+  opacity: 1;
+}
+
+.queueButton {
+  padding: 0 var(--space-1);
+  border: none;
+  background: none;
+  color: var(--color-text);
+  font-size: var(--text-13);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.queuePaused {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-13);
+}
+
+.queuePaused p {
+  margin: 0;
+}
+
+/* The command menu over the input (C58, C65): dense rows, the name, its hint, then its description
+   clipped. Its foot at the input box's top: opening it moves nothing, the input holding still (V14). */
+.menu {
+  position: absolute;
+  right: var(--space-3);
+  bottom: calc(100% - var(--space-2));
+  left: var(--space-3);
+  z-index: 2;
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  max-height: 40vh;
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+}
+
+.menuRows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menuRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding: 2px var(--space-2);
+  font-size: var(--text-13);
+  cursor: pointer;
+}
+
+.menuRow[data-active] {
+  background: var(--color-bg);
+  outline: 1px solid var(--color-focus);
+  outline-offset: -1px;
+}
+
+.menuHeading {
+  flex-basis: 100%;
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+}
+
+.menuName {
+  font-family: var(--font-mono, monospace);
+}
+
+.menuHint,
+.menuDescription {
+  color: var(--color-text-muted);
+}
+
+.menuDescription {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.menuNote {
+  margin: 0;
+  padding: 2px var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}

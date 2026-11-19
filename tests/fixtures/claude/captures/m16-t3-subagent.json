@@ -1,0 +1,1458 @@
+{
+  "_fixture": {
+    "source": "M16 spike m16-trace.mjs, run against the installed CLI on the maintainer's machine, in a scratch configuration folder",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "get_settings documents (key names only)"
+    ],
+    "omitted": [
+      "token-level deltas (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"uuid\":18,\"message\":3,\"request\":3,\"tool-use\":2,\"worker\":1,\"mcp-server\":5}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "claude",
+    "version": "2.1.268",
+    "launchKind": "native"
+  },
+  "date": "2020-01-11T19:14:35.817Z",
+  "scenario": {
+    "id": "m16-t3",
+    "title": "K20: T3, a sub-agent, under a chat session's arguments",
+    "successCondition": "A worker's start and end, then the turn's end"
+  },
+  "run": {
+    "id": "claude-m16-t3-31",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "p1",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 18,
+    "turnsSpent": 1,
+    "exit": {
+      "code": 0,
+      "ms": 13169
+    },
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 3476,
+      "recorded": [
+        {
+          "name": "claude.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "otherFoldersUnchanged": {
+      "other": true,
+      "third": true,
+      "outside": true
+    },
+    "notes": {
+      "endStatus": "success",
+      "workerBackgrounded": [
+        false
+      ],
+      "workerEvents": [
+        {
+          "kind": "worker-start",
+          "source": null,
+          "status": null
+        },
+        {
+          "kind": "worker-end",
+          "source": "task_updated",
+          "status": "completed"
+        },
+        {
+          "kind": "worker-end",
+          "source": null,
+          "status": "completed"
+        }
+      ],
+      "toolCalls": [
+        {
+          "name": "Agent",
+          "worker": false
+        },
+        {
+          "name": "Read",
+          "worker": true
+        }
+      ],
+      "init": {
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read"
+        ],
+        "mcpTools": 8,
+        "slashCommands": 0,
+        "skills": 0
+      },
+      "result": {
+        "subtype": "success",
+        "isError": false,
+        "terminal": "completed",
+        "apiErrorStatus": null,
+        "numTurns": 2,
+        "hasOrigin": false
+      },
+      "lifecycle": [
+        {
+          "index": 3,
+          "state": "queued",
+          "namesOurId": true,
+          "beforeInit": true,
+          "afterResult": false
+        },
+        {
+          "index": 4,
+          "state": "started",
+          "namesOurId": true,
+          "beforeInit": true,
+          "afterResult": false
+        },
+        {
+          "index": 19,
+          "state": "completed",
+          "namesOurId": true,
+          "beforeInit": false,
+          "afterResult": true
+        }
+      ],
+      "textWaits": [
+        {
+          "index": 7,
+          "settledBy": "tool_use:Agent",
+          "waitMs": 1595
+        },
+        {
+          "index": 17,
+          "settledBy": "result",
+          "waitMs": 23
+        }
+      ],
+      "requests": 0,
+      "outline": [
+        {
+          "index": 2,
+          "ms": 2108,
+          "send": "user",
+          "uuid": true
+        },
+        {
+          "index": 3,
+          "ms": 2112,
+          "recv": "command_lifecycle",
+          "bytes": 197,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "queued"
+        },
+        {
+          "index": 4,
+          "ms": 2118,
+          "recv": "command_lifecycle",
+          "bytes": 198,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "started"
+        },
+        {
+          "index": 5,
+          "ms": 2139,
+          "recv": "system/init",
+          "bytes": 1570,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-29>__batch",
+            "mcp__<mcp-server-29>__create",
+            "mcp__<mcp-server-29>__delete",
+            "mcp__<mcp-server-29>__export",
+            "mcp__<mcp-server-29>__guide",
+            "mcp__<mcp-server-29>__query",
+            "mcp__<mcp-server-29>__read",
+            "mcp__<mcp-server-29>__update"
+          ]
+        },
+        {
+          "index": 6,
+          "ms": 2661,
+          "recv": "rate_limit_event",
+          "bytes": 434,
+          "session": "s1"
+        },
+        {
+          "index": 7,
+          "ms": 3704,
+          "recv": "assistant",
+          "bytes": 921,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 51
+        },
+        {
+          "index": 8,
+          "ms": 5299,
+          "recv": "assistant",
+          "bytes": 1401,
+          "session": "s1",
+          "blocks": [
+            "tool_use:Agent"
+          ],
+          "stop": null
+        },
+        {
+          "index": 9,
+          "ms": 5306,
+          "recv": "system/task_started",
+          "bytes": 539,
+          "session": "s1",
+          "task": "w1",
+          "backgrounded": false,
+          "taskType": "local_agent",
+          "agent": "general-purpose"
+        },
+        {
+          "index": 10,
+          "ms": 5309,
+          "recv": "user",
+          "bytes": 519,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "text"
+          ]
+        },
+        {
+          "index": 11,
+          "ms": 7367,
+          "recv": "system/task_progress",
+          "bytes": 375,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 12,
+          "ms": 7378,
+          "recv": "assistant",
+          "bytes": 1021,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 13,
+          "ms": 7386,
+          "recv": "user",
+          "bytes": 467,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 14,
+          "ms": 8872,
+          "recv": "system/task_updated",
+          "bytes": 226,
+          "session": "s1",
+          "task": "w1",
+          "status": "completed",
+          "patchKeys": [
+            "end_time",
+            "status"
+          ]
+        },
+        {
+          "index": 15,
+          "ms": 8872,
+          "recv": "system/task_notification",
+          "bytes": 598,
+          "session": "s1",
+          "task": "w1",
+          "status": "completed",
+          "hasSummary": true
+        },
+        {
+          "index": 16,
+          "ms": 8875,
+          "recv": "user",
+          "bytes": 1963,
+          "session": "s1",
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 17,
+          "ms": 10221,
+          "recv": "assistant",
+          "bytes": 849,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 100
+        },
+        {
+          "index": 18,
+          "ms": 10244,
+          "recv": "result",
+          "bytes": 2362,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 2,
+          "resultIndex": 0,
+          "queuedTurnCount": 0,
+          "resultChars": 100
+        },
+        {
+          "index": 19,
+          "ms": 10245,
+          "recv": "command_lifecycle",
+          "bytes": 200,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "completed"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--input-format",
+      "stream-json",
+      "--setting-sources",
+      "user,project,local",
+      "--permission-mode",
+      "default",
+      "--permission-prompt-tool",
+      "stdio",
+      "--tools",
+      "Read,Glob,Grep,Agent",
+      "--model",
+      "sonnet",
+      "--effort",
+      "low",
+      "--disable-slash-commands"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "subtype": "initialize"
+    },
+    "replyIndex": 1,
+    "ok": true
+  },
+  "toolPermissions": {
+    "readTools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "scenarioTools": [
+      "Agent"
+    ],
+    "preApproved": [],
+    "permissionMode": "default",
+    "permissionRequestsTo": "the spike (--permission-prompt-tool stdio)",
+    "policy": "every can_use_tool request is denied, as the app will deny it (M16, C22); any other request gets an error reply"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": false
+      }
+    ],
+    "set": [
+      "CLAUDE_CONFIG_DIR",
+      "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {}
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 15,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-1",
+        "request": {
+          "subtype": "initialize"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 447,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-1",
+          "response": {
+            "commands": [],
+            "agents": [
+              {
+                "name": "claude",
+                "description": "Catch-all for any task that doesn't fit a more specific agent. FleetView's default when no agent name is typed."
+              },
+              {
+                "name": "Explore",
+                "description": "Fast read-only search agent for locating code. Use it to find files by pattern (eg. \"src/components/**/*.tsx\"), grep for symbols or keywords (eg. \"API endpoints\"), or answer \"where is X defined / which files reference Y.\" Do NOT use it for code review, design-doc auditing, cross-file consistency checks, or open-ended analysis — it reads excerpts rather than whole files and will miss content past its read window. When calling, specify search breadth: \"quick\" for a single targeted lookup, \"medium\" for moderate exploration, or \"very thorough\" to search across multiple locations and naming conventions.",
+                "model": "inherit"
+              },
+              {
+                "name": "general-purpose",
+                "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you."
+              },
+              {
+                "name": "Plan",
+                "description": "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs.",
+                "model": "inherit"
+              },
+              {
+                "name": "statusline-setup",
+                "description": "Use this agent to configure the user's Claude Code status line setting.",
+                "model": "sonnet"
+              }
+            ],
+            "output_style": "default",
+            "available_output_styles": [
+              "default",
+              "Proactive",
+              "Concise",
+              "Explanatory",
+              "Learning"
+            ],
+            "user_output_styles_dir": "<scratch>\\output-styles",
+            "models": [
+              {
+                "value": "default",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Default (recommended)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "opus[1m]",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Opus (1M context)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "claude-fable-5-1[1m]",
+                "resolvedModel": "claude-fable-5-1",
+                "displayName": "Fable",
+                "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "sonnet",
+                "resolvedModel": "claude-sonnet-5",
+                "displayName": "Sonnet",
+                "description": "Sonnet 5 · Efficient for routine tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "haiku",
+                "resolvedModel": "claude-haiku-4-5-20251001",
+                "displayName": "Haiku",
+                "description": "Haiku 4.5 · Fastest for quick answers"
+              }
+            ],
+            "account": "<account>",
+            "pid": 149112,
+            "current_permission_mode": "default",
+            "analytics_disabled": false,
+            "remote_control_auto_enable": false,
+            "remote_control_available": true,
+            "remote_control_auto_on_by_default": false,
+            "ide_rc_auto_enable_gate": true,
+            "fast_mode_state": "off",
+            "fast_mode_disabled_reason": "sdk_opt_in_required",
+            "session_state": "idle"
+          },
+          "pending_permission_requests": [],
+          "pending_user_dialog_requests": []
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 2108,
+      "frame": {
+        "type": "user",
+        "uuid": "<uuid-2>",
+        "message": {
+          "role": "user",
+          "content": "Use the Agent tool to hand this small task to a sub-agent: read notes-3.txt and report its contents. Do not read the file yourself. When the sub-agent is done, tell me in one sentence what it found."
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 2112,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "queued",
+        "uuid": "<uuid-3>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 2118,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "started",
+        "uuid": "<uuid-4>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 2139,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read",
+          "mcp__<mcp-server-29>__batch",
+          "mcp__<mcp-server-29>__create",
+          "mcp__<mcp-server-29>__delete",
+          "mcp__<mcp-server-29>__export",
+          "mcp__<mcp-server-29>__guide",
+          "mcp__<mcp-server-29>__query",
+          "mcp__<mcp-server-29>__read",
+          "mcp__<mcp-server-29>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-30>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-31>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-32>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-33>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "slash_commands": [],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-5>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2661,
+      "frame": {
+        "type": "rate_limit_event",
+        "rate_limit_info": {
+          "_keys": [
+            "isUsingOverage",
+            "overageDisabledReason",
+            "overageStatus",
+            "rateLimitType",
+            "resetsAt",
+            "status",
+            "unifiedWindows"
+          ]
+        },
+        "uuid": "<uuid-6>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 3704,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-7>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "I'll delegate this to a sub-agent to read the file."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 2029,
+            "cache_read_input_tokens": 16090,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2029
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-8>",
+        "timestamp": "2020-01-11T19:14:24.771Z",
+        "request_id": "<request-9>",
+        "user_message_uuid": "<uuid-2>",
+        "user_message_uuids": [
+          "<uuid-2>"
+        ]
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 5299,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-7>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-10>",
+              "name": "Agent",
+              "input": {
+                "description": "Read notes-3.txt contents",
+                "prompt": "Read the file notes-3.txt located in <scratch> (the current working directory) and report back its full contents verbatim.",
+                "subagent_type": "general-purpose"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 2029,
+            "cache_read_input_tokens": 16090,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2029
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-11>",
+        "timestamp": "2020-01-11T19:14:26.380Z",
+        "request_id": "<request-9>",
+        "wire_tool_inputs": {
+          "<tool-use-10>": {
+            "description": "Read notes-3.txt contents",
+            "prompt": "Read the file notes-3.txt located in <scratch> (the current working directory) and report back its full contents verbatim.",
+            "subagent_type": "general-purpose"
+          }
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 5306,
+      "frame": {
+        "type": "system",
+        "subtype": "task_started",
+        "task_id": "<worker-12>",
+        "tool_use_id": "<tool-use-10>",
+        "description": "Read notes-3.txt contents",
+        "subagent_type": "general-purpose",
+        "is_backgrounded": false,
+        "spawn_depth": 1,
+        "task_type": "local_agent",
+        "prompt": "Read the file notes-3.txt located in <scratch> (the current working directory) and report back its full contents verbatim.",
+        "uuid": "<uuid-13>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 5309,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Read the file notes-3.txt located in <scratch> (the current working directory) and report back its full contents verbatim."
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-10>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-14>",
+        "timestamp": "2020-01-11T19:14:26.384Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes-3.txt contents"
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 7367,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-12>",
+        "tool_use_id": "<tool-use-10>",
+        "description": "Reading notes-3.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 8898,
+          "tool_uses": 1,
+          "duration_ms": 2066
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-15>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 7378,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-16>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-17>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\notes-3.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 8873,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 8873,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 17,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-10>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-18>",
+        "timestamp": "2020-01-11T19:14:28.449Z",
+        "request_id": "<request-19>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes-3.txt contents"
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 7386,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-17>",
+              "type": "tool_result",
+              "content": "1\tNote three: the logbook is kept in the blue drawer.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-10>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-20>",
+        "timestamp": "2020-01-11T19:14:28.467Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes-3.txt contents"
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 8872,
+      "frame": {
+        "type": "system",
+        "subtype": "task_updated",
+        "task_id": "<worker-12>",
+        "patch": {
+          "status": "completed",
+          "end_time": 1578770069955
+        },
+        "uuid": "<uuid-21>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 8872,
+      "frame": {
+        "type": "system",
+        "subtype": "task_notification",
+        "task_id": "<worker-12>",
+        "tool_use_id": "<tool-use-10>",
+        "status": "completed",
+        "output_file": "<path>\\AppData\\Local\\Temp\\claude\\<scratch>\\<session-1>\\tasks\\<worker-12>.output",
+        "summary": "The contents of notes-3.txt:\n\n```\nNote three: the logbook is kept in the blue drawer.\n```",
+        "usage": {
+          "total_tokens": 10488,
+          "tool_uses": 1,
+          "duration_ms": 3572
+        },
+        "uuid": "<uuid-22>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 8875,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-10>",
+              "type": "tool_result",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "The contents of notes-3.txt:\n\n```\nNote three: the logbook is kept in the blue drawer.\n```"
+                },
+                {
+                  "type": "text",
+                  "text": "agentId: <worker-12> (use SendMessage with to: '<worker-12>', summary: '<5-10 word recap>' to continue this agent)\n<usage>subagent_tokens: 10486\ntool_uses: 1\nduration_ms: 3572</usage>"
+                }
+              ]
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-23>",
+        "timestamp": "2020-01-11T19:14:29.957Z",
+        "tool_use_result": {
+          "status": "completed",
+          "prompt": "Read the file notes-3.txt located in <scratch> (the current working directory) and report back its full contents verbatim.",
+          "agentId": "<worker-12>",
+          "agentType": "general-purpose",
+          "harnessNoteCount": 0,
+          "harnessTailCount": 0,
+          "harnessSectionHash": "741ec1911ff04202",
+          "content": [
+            {
+              "type": "text",
+              "text": "The contents of notes-3.txt:\n\n```\nNote three: the logbook is kept in the blue drawer.\n```"
+            }
+          ],
+          "resolvedModel": "claude-sonnet-5",
+          "totalDurationMs": 3572,
+          "totalTokens": 10486,
+          "totalToolUseCount": 1,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 1573,
+            "cache_read_input_tokens": 8873,
+            "output_tokens": 38,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 1573
+            },
+            "inference_geo": "not_available",
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 38,
+                "cache_read_input_tokens": 8873,
+                "cache_creation_input_tokens": 1573,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 1573,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "type": "message"
+              }
+            ],
+            "speed": "standard"
+          },
+          "toolStats": {
+            "readCount": 1,
+            "searchCount": 0,
+            "bashCount": 0,
+            "editFileCount": 0,
+            "linesAdded": 0,
+            "linesRemoved": 0,
+            "otherToolCount": 0
+          }
+        }
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 10221,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-24>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "The sub-agent found that notes-3.txt contains: \"Note three: the logbook is kept in the blue drawer.\""
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 369,
+            "cache_read_input_tokens": 18119,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 369
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-25>",
+        "timestamp": "2020-01-11T19:14:31.303Z",
+        "request_id": "<request-26>"
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 10244,
+      "frame": {
+        "duration_api_ms": 8624,
+        "stop_reason": "end_turn",
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.0489314,
+        "usage": {
+          "input_tokens": 4,
+          "cache_creation_input_tokens": 2398,
+          "cache_read_input_tokens": 34209,
+          "output_tokens": 232,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 2398,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 40,
+              "cache_read_input_tokens": 18119,
+              "cache_creation_input_tokens": 369,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 369
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 942,
+            "outputTokens": 18,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001032,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 8,
+            "outputTokens": 356,
+            "cacheReadInputTokens": 43082,
+            "cacheCreationInputTokens": 12844,
+            "webSearchRequests": 0,
+            "costUSD": 0.04789940000000001,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [],
+        "terminal_reason": "completed",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 1,
+          "requested": {
+            "background": 0,
+            "foreground": 0,
+            "unset": 1
+          },
+          "started_in_background": 0,
+          "max_depth": 1,
+          "spawned_by_subagents": 0,
+          "completed": 1,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {
+            "general-purpose": 1
+          }
+        },
+        "is_error": false,
+        "num_turns": 2,
+        "subtype": "success",
+        "api_error_status": null,
+        "result": "The sub-agent found that notes-3.txt contains: \"Note three: the logbook is kept in the blue drawer.\"",
+        "ttft_ms": 1569,
+        "type": "result",
+        "duration_ms": 8124,
+        "uuid": "<uuid-27>",
+        "ttft_stream_ms": 1081,
+        "time_to_request_ms": 29,
+        "first_content_frame_ms": 1081,
+        "user_message_uuid": "<uuid-2>",
+        "user_message_uuids": [
+          "<uuid-2>"
+        ],
+        "request_sent_wall_ms": 1578770063231,
+        "queued_turn_count": 0,
+        "result_index": 0
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 10245,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "completed",
+        "uuid": "<uuid-28>",
+        "session_id": "<session-1>"
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1598,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2107,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "before-close",
+      "atMs": 12868,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    }
+  ],
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "configuration": {
+    "folder": "a scratch configuration folder (CLAUDE_CONFIG_DIR), signed in by the maintainer",
+    "written": []
+  },
+  "frameSizes": {
+    "largest": [
+      {
+        "type": "control_response",
+        "bytes": 3831
+      },
+      {
+        "type": "result",
+        "bytes": 2362
+      },
+      {
+        "type": "user",
+        "bytes": 1963
+      },
+      {
+        "type": "system/init",
+        "bytes": 1570
+      },
+      {
+        "type": "assistant",
+        "bytes": 1401
+      }
+    ],
+    "longStringsCut": []
+  }
+}

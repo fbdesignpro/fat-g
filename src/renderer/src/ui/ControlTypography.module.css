@@ -1,0 +1,41 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* Inter's hinted outlines change ink height in steps while advances scale continuously.
+   Integer CSS sizes alone do not keep the letters in proportion: 13px is particularly narrow.
+   These nearby sizes were checked in Chromium with the shipped 400/500/600/700 faces, both
+   lowercase and mixed-case labels, at 100/125/150/200% pixel scales. Prefer a good compromise
+   across those scales; a different display scale or zoom can still change the hinting.
+
+   Keep this local to controls and their dialogs, like the chat's separate type scale. Composing
+   it on a nested dialog sets the same sizes again, rather than shrinking inherited text twice.
+   The inherited base must be resolved here: body's computed font-size does not follow a local
+   token override. Sizes above 24px keep the original scale. */
+.sizes {
+  --text-10: 10.25px;
+  --text-12: 11.85px;
+  --text-13: 12.4px;
+  --text-14: 14.4px;
+  --text-16: 15.8px;
+  --text-20: 19.2px;
+  --text-24: 23.5px;
+}
+
+.scale {
+  composes: sizes;
+  font-size: var(--text-14);
+}
+
+/* Native fields otherwise fall back to the browser's UI font/size. Zero specificity lets every
+   component keep its explicit size, weight or monospace face regardless of CSS bundle order. */
+:where(.scale) :where(button, input, select, textarea) {
+  font: inherit;
+}
+
+/* The browser's smaller percentage would turn a 14.4px label into an unsnapped 12px note.
+   Components with an explicit small-text size still take precedence. */
+:where(.scale) :where(small) {
+  font-size: var(--text-12);
+}

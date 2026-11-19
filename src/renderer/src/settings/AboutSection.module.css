@@ -1,0 +1,58 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 72ch;
+  overflow-wrap: anywhere;
+}
+
+.about h3 {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-20);
+  font-weight: var(--weight-semibold);
+}
+
+.about p {
+  margin: 0;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-1) var(--space-4);
+  margin: 0;
+}
+
+.facts dt {
+  color: var(--color-text-muted);
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.license {
+  padding: var(--space-3);
+  border: 1px solid var(--color-rule-soft);
+  background: var(--color-surface);
+}
+
+.license summary {
+  cursor: pointer;
+}
+
+.license summary:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.license pre {
+  margin: var(--space-3) 0 0;
+  white-space: pre-wrap;
+  font: inherit;
+}

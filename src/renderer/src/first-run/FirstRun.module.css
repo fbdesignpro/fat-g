@@ -1,0 +1,131 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* Drawn on the grid, with no box, from the session window's top, as a new chat is
+   (new-session/NewChat.module.css): the same insets and the same heavy rule under the title. */
+.screen {
+  composes: scale from '../ui/ControlTypography.module.css';
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  overflow: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+  padding: 0 var(--space-8) var(--space-4);
+}
+
+/* The title follows the window's width; the arrow's screen has no container, since a container
+   would hold its fixed arrow inside the session window. */
+.noProvider { container-type: inline-size; }
+
+.title {
+  --text-120: clamp(32px, 6.5cqw, 90px);
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-120);
+  line-height: 1.1;
+  font-weight: var(--weight-bold);
+  text-wrap: balance;
+}
+
+.rule { width: 100%; margin: 0 0 var(--space-6); border: 0; border-top: 6px solid var(--color-rule); }
+
+.body {
+  max-width: var(--chat-content-width);
+  user-select: text;
+}
+
+.body p { margin: 0 0 var(--space-4); }
+
+.providers {
+  display: grid;
+  grid-template-columns: max-content minmax(0, max-content) max-content;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+/* Each provider is one row of the list's grid: its name, what discovery found, its guide. A subgrid
+   rather than display: contents, which can take the list item's role away. */
+.providers > li {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  align-items: center;
+}
+
+.actions { display: flex; gap: var(--space-2); margin-bottom: var(--space-4); }
+
+.button {
+  padding: var(--space-1) var(--space-4);
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button:hover:enabled { background: var(--color-text); color: var(--color-bg); }
+.button:disabled { opacity: 0.5; cursor: default; }
+
+/* The project column's side: the line stands nearest it, and the arrow leaves from that end. */
+.addProject {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Low enough under the band for the arrow to rise into Add project. */
+  padding-top: calc(2 * var(--space-8));
+}
+
+.addProject[data-side='right'] { align-items: flex-end; text-align: right; }
+
+.hint {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-32);
+  line-height: 1.2;
+  font-weight: var(--weight-bold);
+  text-wrap: balance;
+}
+
+.detail { margin: 0; color: var(--color-text-muted); }
+
+/* Fixed over the whole window, so the arrow reaches Add project in the top band; it takes no
+   pointer. It draws itself in once, over --duration-scene, so reduced motion shows it at once. */
+.arrow {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes arrow-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes arrow-head {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.arrowLine {
+  stroke-dasharray: 1;
+  animation: arrow-draw calc(var(--duration-scene) * 2) ease-out both;
+}
+
+.arrowHead {
+  /* A sharp point: the round join of the line would blunt it. */
+  stroke-linejoin: miter;
+  animation: arrow-head var(--duration-scene) linear calc(var(--duration-scene) * 2) both;
+}

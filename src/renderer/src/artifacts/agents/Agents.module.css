@@ -1,0 +1,307 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* A session's Sub-agents tab (docs/planning/_archive/M100.md, round 8; C78; docs/planning/_archive/M106.md, Design
+   7; C6–C11, C40–C44): its sub-agents stacked as the session list stacks its capsules, a thread
+   unfolding under its row, then the grants fat-g sent (M22, C57, C92). The tab is the one part of it
+   that scrolls, as a whole; an unfolded thread's list scrolls within its bound, by the chat's own
+   rules, and its text alone can be selected. The rest is the shell's, unselectable. The tokens only. */
+.tab {
+  flex: 1 1 0;
+  /* The thread's bound is the tab's height (C40). */
+  container-type: size;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+}
+
+.stack {
+  min-width: 0;
+}
+
+/* The session's tab opened for a grant, and none has run (C11): said in the muted colour. */
+.none {
+  margin: 0;
+  padding: var(--space-1) var(--space-2) var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+/* A sub-agent's box: its row, and its thread once unfolded. Rows touch, a soft rule under each, and
+   have no background of their own (C44). */
+.box {
+  min-width: 0;
+  border-bottom: 1px solid var(--color-rule-soft);
+}
+
+/* The unfolded one and its thread are one box, framed as a selected capsule is, inside its edges, so
+   the frame never crosses a neighbour; its rule goes inside the frame (C44). A shadow, so it never
+   meets the focus ring, which is an outline. */
+.open {
+  border-bottom-color: transparent;
+  box-shadow: inset 0 0 0 2px var(--color-text);
+}
+
+/* A running sub-agent (C6): a capsule's height, the avatar at its full height, then the body. */
+.row {
+  display: grid;
+  grid-template-columns: var(--capsule-height) minmax(0, 1fr);
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.row:focus-visible,
+.thinRow:focus-visible,
+.head:focus-visible,
+.fold:focus-visible {
+  outline-offset: -2px;
+}
+
+/* The open box's frame stands two pixels inside its edges: the row's content keeps clear of it. */
+.open .row {
+  padding: 2px 2px 0;
+}
+
+.open .thinRow {
+  padding: 2px var(--space-2) 0 2px;
+}
+
+.open .head {
+  padding: calc(var(--space-1) + 2px) calc(var(--space-2) + 2px) var(--space-1);
+}
+
+/* As tall as the avatar: the label over the status row (C6). */
+.body {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 16px;
+  min-width: 0;
+  height: var(--capsule-height);
+}
+
+/* The number and the label, on at most two lines, cut after the second; whole in the tooltip (C6, C7). */
+.name {
+  display: -webkit-box;
+  align-self: start;
+  overflow: hidden;
+  padding: var(--space-1) var(--space-1) 0;
+  font-size: var(--text-14);
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* The same continuous 16px footer as a session capsule, touching the avatar and the right edge. */
+.status {
+  composes: status from '../../sessions/Sessions.module.css';
+}
+
+.statusText {
+  composes: statusText from '../../sessions/Sessions.module.css';
+}
+
+.time {
+  composes: time from '../../sessions/Sessions.module.css';
+}
+
+/* A finished sub-agent (C9): half a capsule's height, its number and label on one line in the muted
+   colour, then how it ended and its duration. */
+.thinRow {
+  display: grid;
+  grid-template-columns: calc(var(--capsule-height) / 2) minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--space-2);
+  width: 100%;
+  height: calc(var(--capsule-height) / 2);
+  min-width: 0;
+  padding: 0 var(--space-2) 0 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-12);
+  text-align: left;
+  cursor: pointer;
+}
+
+.open .thinRow {
+  height: calc(var(--capsule-height) / 2 + 2px);
+}
+
+.thinName {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.thinState {
+  font-size: var(--text-11);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* A thread opened for a sub-agent the list no longer holds (C24): its head in its row's place — its
+   label, its status and how long it ran. */
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  width: 100%;
+  min-width: 0;
+  min-height: calc(var(--capsule-height) / 2);
+  padding: var(--space-1) var(--space-2);
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  text-align: left;
+  cursor: pointer;
+}
+
+.headLabel {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.headStatus,
+.headDuration {
+  flex: none;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.headDuration {
+  font-variant-numeric: tabular-nums;
+}
+
+/* The unfolded thread, under its row: as tall as what it holds, up to the tab's height less a row and a
+   fold line, so its row stays in view above it and a fold line below (C40), and never bounded under
+   120 pixels. The frame's two pixels stand clear at its sides and its foot. Its text at the chat's
+   own scale, since it is the same conversation (Chat.module.css, .scale). */
+.thread {
+  composes: scale from '../../chat/Chat.module.css';
+  --thread-bound: max(120px, calc(100cqh - var(--capsule-height) - 24px));
+  display: flex;
+  flex-direction: column;
+  max-height: var(--thread-bound);
+  min-height: 0;
+  min-width: 0;
+  margin: 0 2px 2px;
+  border-top: 1px solid var(--color-rule-soft);
+}
+
+/* A line in fat-g's words, where nothing of the sub-agent can be shown, or nothing is there yet. */
+.state {
+  flex: none;
+  margin: 0;
+  padding: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}
+
+/* The list's place: as tall as the chat's list, which scrolls inside it once the thread's bound is reached. */
+.items {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* A thread whose list filled its bound is framed at it, the chat's list filling what is left and
+   scrolling within it: a list sized from what it holds costs its layout at every change (M19, C67). */
+.full {
+  height: var(--thread-bound);
+}
+
+.full .items {
+  display: grid;
+  flex: 1 1 0;
+  grid-template-rows: minmax(0, 1fr);
+}
+
+/* "n completed sub-agents" and "n grants": dim, and each unfolds what it counts (C9, C31). */
+.fold {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 24px;
+  padding: 0 var(--space-2);
+  border: 0;
+  border-bottom: 1px solid var(--color-rule-soft);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-12);
+  text-align: left;
+  cursor: pointer;
+}
+
+.fold:hover {
+  color: var(--color-text);
+}
+
+/* The grants fat-g sent, unfolded (M22, C57, C92; M106, C31): a row a grant — what it covers, on two
+   lines at most, and what is known of it. */
+.grants {
+  min-width: 0;
+}
+
+.grantGroup {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grant {
+  display: flex;
+  flex-direction: column;
+  padding: 2px var(--space-2);
+  border-bottom: 1px solid var(--color-rule-soft);
+}
+
+.grantCovers {
+  display: -webkit-box;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: var(--text-12);
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.grantState {
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+}
+
+.grantsNote {
+  margin: 0;
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+}

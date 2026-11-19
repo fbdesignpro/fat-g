@@ -1,0 +1,1452 @@
+{
+  "_fixture": {
+    "source": "Codex MCP spike codex-mcp-k1.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":1,\"turn\":1,\"item\":3,\"mcp-server\":2}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.164.0",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-07T14:23:00.576Z",
+  "scenario": {
+    "id": "codex-mcp-form",
+    "title": "K1: a server's own form request, refused as fat-g refuses every elicitation that is not an approval",
+    "successCondition": "One elicitation with no approval kind, answered with the method-not-found error; what Codex then tells the server"
+  },
+  "run": {
+    "id": "codex-codex-mcp-form-5",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 41,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 2716,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "profile": {
+        "sandbox": "workspace-write",
+        "approvalPolicy": "untrusted",
+        "approvalsReviewer": "user"
+      },
+      "thread": {
+        "approvalPolicy": "untrusted",
+        "sandbox": "workspaceWrite",
+        "reviewer": "user"
+      },
+      "end": {
+        "index": 41,
+        "status": "completed"
+      },
+      "elicitations": [
+        {
+          "index": 22,
+          "atMs": 13593,
+          "answer": "refuse",
+          "keys": [
+            "_meta",
+            "message",
+            "mode",
+            "requestedSchema",
+            "serverName",
+            "threadId",
+            "turnId"
+          ],
+          "mode": "form",
+          "turnIdNamed": true,
+          "serverIsTheSpikes": true,
+          "metaKeys": null,
+          "approvalKind": null,
+          "persist": null,
+          "toolParams": null,
+          "displayKeys": null,
+          "schemaKeys": [
+            "color"
+          ],
+          "messageLength": 30,
+          "reply": {
+            "error": -32601
+          }
+        }
+      ],
+      "mcpItems": [
+        {
+          "index": 20,
+          "method": "item/started",
+          "tool": "ask_color",
+          "status": "inProgress",
+          "arguments": {},
+          "error": null
+        },
+        {
+          "index": 26,
+          "method": "item/completed",
+          "tool": "ask_color",
+          "status": "completed",
+          "arguments": {},
+          "error": null
+        }
+      ],
+      "resolved": [
+        {
+          "index": 24,
+          "requestId": 0
+        }
+      ],
+      "written": [],
+      "server": {
+        "initializeCount": 1,
+        "clientCapabilities": {
+          "experimental": {
+            "codex/auth-change": {}
+          },
+          "elicitation": {
+            "form": {},
+            "url": {}
+          }
+        },
+        "calls": [
+          "ask_color"
+        ],
+        "elicitationReplies": [
+          {
+            "action": "decline"
+          }
+        ]
+      },
+      "outline": [
+        {
+          "index": 8,
+          "ms": 2603,
+          "method": "thread/started"
+        },
+        {
+          "index": 12,
+          "ms": 2637,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 13,
+          "ms": 2637,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 16,
+          "ms": 3427,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 17,
+          "ms": 3439,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 19,
+          "ms": 8793,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 20,
+          "ms": 13592,
+          "method": "item/started",
+          "thread": "session",
+          "item": "mcpToolCall",
+          "tool": "ask_color",
+          "status": "inProgress"
+        },
+        {
+          "index": 21,
+          "ms": 13593,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 22,
+          "ms": 13593,
+          "method": "mcpServer/elicitation/request",
+          "thread": "session",
+          "request": true
+        },
+        {
+          "index": 24,
+          "ms": 13593,
+          "method": "serverRequest/resolved",
+          "thread": "session"
+        },
+        {
+          "index": 25,
+          "ms": 13593,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 26,
+          "ms": 13600,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "mcpToolCall",
+          "tool": "ask_color",
+          "status": "completed"
+        },
+        {
+          "index": 28,
+          "ms": 13629,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 29,
+          "ms": 17256,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 37,
+          "ms": 17416,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 39,
+          "ms": 17448,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 40,
+          "ms": 17457,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 41,
+          "ms": 17457,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "workspace-write",
+      "approvalPolicy": "untrusted",
+      "approvalsReviewer": "user",
+      "model": "gpt-6-luna",
+      "serviceTier": "default"
+    },
+    "replyIndex": 6,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "workspace-write",
+          "reported": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "untrusted",
+          "reported": "untrusted",
+          "match": true
+        },
+        {
+          "field": "approvalsReviewer",
+          "requested": "user",
+          "reported": "user",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the sandbox",
+    "scenarioTools": [
+      "the spike's own MCP server"
+    ],
+    "preApproved": [],
+    "sandbox": "workspace-write",
+    "approvalPolicy": "untrusted",
+    "reviewer": "user",
+    "policy": "an elicitation is answered as the scenario says; every other request is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1304,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1305,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.164.0 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "recv",
+      "ms": 1305,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 3,
+      "dir": "send",
+      "ms": 1306,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 1308,
+      "frame": {
+        "method": "account/updated",
+        "params": {
+          "authMode": "chatgpt",
+          "planType": "free"
+        },
+        "emittedAtMs": 1578406959687
+      }
+    },
+    {
+      "index": 5,
+      "dir": "send",
+      "ms": 2570,
+      "frame": {
+        "method": "thread/start",
+        "id": 2,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "workspace-write",
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "model": "gpt-6-luna",
+          "serviceTier": "default"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2602,
+      "frame": {
+        "id": 2,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578406960,
+            "updatedAt": 1578406960,
+            "recencyAt": 1578406960,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\07\\rollout-2020-01-07T09-22-40-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.164.0",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "disabledPluginIds": [],
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "send",
+      "ms": 2603,
+      "frame": {
+        "method": "turn/start",
+        "id": 3,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Spike K1 (form). Call the <mcp-server-7> MCP server's ask_color tool once. Then say in one short line what it returned. Use no other tool.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low",
+          "serviceTier": "default",
+          "clientUserMessageId": "<client-message-2>"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 2603,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578406960,
+            "updatedAt": 1578406960,
+            "recencyAt": 1578406960,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\07\\rollout-2020-01-07T09-22-40-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.164.0",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578406960983
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 2603,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-8>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578406960983
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 2603,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578406960983
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 2615,
+      "frame": {
+        "id": 3,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 2637,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578406961018
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 2637,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578406960,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578406961018
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 2646,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578406961027
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 3020,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-8>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578406961400
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 3427,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Spike K1 (form). Call the <mcp-server-7> MCP server's ask_color tool once. Then say in one short line what it returned. Use no other tool.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578406961808
+        },
+        "emittedAtMs": 1578406961808
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 3439,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Spike K1 (form). Call the <mcp-server-7> MCP server's ask_color tool once. Then say in one short line what it returned. Use no other tool.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578406961808
+        },
+        "emittedAtMs": 1578406961820
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 8793,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 13749,
+              "inputTokens": 13710,
+              "cachedInputTokens": 11136,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 39,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 13749,
+              "inputTokens": 13710,
+              "cachedInputTokens": 11136,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 39,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578406967173
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 8793,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 13592,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "mcpToolCall",
+            "id": "<item-5>",
+            "server": "<mcp-server-7>",
+            "tool": "ask_color",
+            "status": "inProgress",
+            "arguments": {},
+            "appContext": null,
+            "mcpAppUi": null,
+            "pluginId": null,
+            "readOnlyHint": true,
+            "result": null,
+            "error": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578406971972
+        },
+        "emittedAtMs": 1578406971972
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 13593,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          }
+        },
+        "emittedAtMs": 1578406971973
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 13593,
+      "frame": {
+        "method": "mcpServer/elicitation/request",
+        "id": 0,
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "serverName": "<mcp-server-7>",
+          "mode": "form",
+          "_meta": null,
+          "message": "Spike question: pick a colour.",
+          "requestedSchema": {
+            "type": "object",
+            "properties": {
+              "color": {
+                "type": "string",
+                "enum": [
+                  "red",
+                  "green",
+                  "blue"
+                ]
+              }
+            },
+            "required": [
+              "color"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 23,
+      "dir": "send",
+      "ms": 13593,
+      "frame": {
+        "id": 0,
+        "error": {
+          "code": -32601,
+          "message": "Method not found"
+        }
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 13593,
+      "frame": {
+        "method": "serverRequest/resolved",
+        "params": {
+          "threadId": "<session-1>",
+          "requestId": 0
+        },
+        "emittedAtMs": 1578406971974
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 13593,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578406971974
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 13600,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "mcpToolCall",
+            "id": "<item-5>",
+            "server": "<mcp-server-7>",
+            "tool": "ask_color",
+            "status": "completed",
+            "arguments": {},
+            "appContext": null,
+            "mcpAppUi": null,
+            "pluginId": null,
+            "readOnlyHint": true,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "ask_color: the client answered {\"action\":\"decline\"}"
+                }
+              ],
+              "structuredContent": null,
+              "_meta": null
+            },
+            "error": null,
+            "durationMs": 2
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578406971975
+        },
+        "emittedAtMs": 1578406971981
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 13629,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 27638,
+              "inputTokens": 27570,
+              "cachedInputTokens": 24704,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 68,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 13889,
+              "inputTokens": 13860,
+              "cachedInputTokens": 13568,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 29,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578406972010
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 13629,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 17256,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-6>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578406975637
+        },
+        "emittedAtMs": 1578406975637
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 17257,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "The"
+        },
+        "emittedAtMs": 1578406975637
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 17257,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " client"
+        },
+        "emittedAtMs": 1578406975637
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 17330,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " declined"
+        },
+        "emittedAtMs": 1578406975710
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 17330,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578406975710
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 17330,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " color"
+        },
+        "emittedAtMs": 1578406975710
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 17330,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " prompt"
+        },
+        "emittedAtMs": 1578406975710
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 17330,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578406975710
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 17416,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-6>",
+            "text": "The client declined the color prompt.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578406975787
+        },
+        "emittedAtMs": 1578406975797
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 17448,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 41587,
+              "inputTokens": 41508,
+              "cachedInputTokens": 38400,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 79,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 13949,
+              "inputTokens": 13938,
+              "cachedInputTokens": 13696,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 11,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578406975829
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 17448,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 17457,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578406975838
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 17457,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-6>",
+                "text": "The client declined the color prompt.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578406960,
+            "completedAt": 1578406975,
+            "durationMs": 14840
+          }
+        },
+        "emittedAtMs": 1578406975838
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 219,
+    "tail": "\u001b[2m2020-01-07T14:22:51.974482Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_app_server::bespoke_event_handling\u001b[0m\u001b[2m:\u001b[0m request failed with client error: JSONRPCErrorError { code: -32601, data: None, message: \"Method not found\" }\n"
+  },
+  "requestsAnswered": [
+    {
+      "kind": "mcpServer/elicitation/request",
+      "requestKind": "elicitation",
+      "answer": "refuse"
+    }
+  ],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1304,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2570,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 20807,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "node.exe",
+        "conhost.exe",
+        "codex-code-mode-host.exe",
+        "conhost.exe"
+      ],
+      "alive": 8
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1615
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1119
+      },
+      {
+        "method": "item/completed",
+        "item": "mcpToolCall",
+        "bytes": 590
+      },
+      {
+        "method": "turn/completed",
+        "item": null,
+        "bytes": 565
+      },
+      {
+        "method": "item/completed",
+        "item": "userMessage",
+        "bytes": 509
+      }
+    ],
+    "longStringsCut": []
+  }
+}

@@ -1,0 +1,93 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The recent sessions switcher (docs/planning/_archive/M100.md, Design 5; C93): a box over the window while
+   Ctrl is held, a row per session. Portalled to the page, out of the shell, so it says it is
+   unselectable itself, as a menu's popup does (M11, C30). */
+.switcher {
+  /* Match search's near-13px size, below Inter's jump to taller ink at 13px. The caption,
+     project and status keep their already square 11px text. */
+  --text-13: 12.9px;
+  position: fixed;
+  z-index: 20;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  width: min(480px, calc(100vw - 2 * var(--space-4)));
+  max-height: 70vh;
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+  user-select: none;
+}
+
+.caption {
+  margin: 0;
+  padding: var(--space-1) var(--space-2);
+  border-bottom: var(--rule);
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+}
+
+/* Past the window's height the rows scroll, the highlighted one kept in view. */
+.list {
+  min-height: 0;
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+  padding: var(--space-1);
+}
+
+/* One row a session: the thin avatar, the name over its project's, the status at the right. */
+.row {
+  display: grid;
+  grid-template-columns: calc(var(--capsule-height) / 2) minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--space-2);
+  padding-right: var(--space-2);
+  cursor: pointer;
+}
+
+.row:hover {
+  background: var(--color-surface);
+}
+
+/* The highlight is the selected capsule's frame, drawn inside the row so the list does not clip it,
+   and over the avatar, as an outline is drawn over what it surrounds. */
+.row[aria-selected='true'] {
+  outline: 2px solid var(--color-text);
+  outline-offset: -2px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.name,
+.project,
+.status {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.name {
+  font-size: var(--text-13);
+}
+
+/* The shown session, the first row. */
+.row[aria-current='true'] .name {
+  font-weight: var(--weight-semibold);
+}
+
+.project,
+.status {
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+}

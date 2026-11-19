@@ -1,0 +1,1868 @@
+{
+  "_fixture": {
+    "source": "M22 spike m22-k1.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":1,\"turn\":1,\"item\":3,\"mcp-server\":1,\"cursor\":2,\"worker\":7}. Aliases are shared with the other captures of the family \"m22-codex-reviewer\"."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-07T01:58:39.123Z",
+  "scenario": {
+    "id": "m22-codex-reviewer",
+    "title": "K4, no prompt: a reviewer written into the scratch configuration's config.toml against the one a thread/start or a thread/resume names, and the thread of 'reviewer-turn' moved to Codex's own reviewer and back by resumes in fresh processes (C70)",
+    "successCondition": "Each reply's `approvalsReviewer` against what was named: under `approvals_reviewer = \"auto_review\"` in the configuration, once the line is taken out, and from one resume to the next"
+  },
+  "run": {
+    "id": "codex-m22-codex-reviewer-38",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "p1",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": null,
+    "turnsSpent": 0,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1997,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "configBefore": {
+        "exists": true,
+        "projects": [
+          {
+            "folder": "working folder",
+            "trustLevel": "trusted"
+          }
+        ],
+        "otherTables": [
+          "windows"
+        ],
+        "windows": {
+          "sandbox": "elevated"
+        }
+      },
+      "steps": [
+        {
+          "label": "with approvals_reviewer = \"auto_review\" in config.toml: starts",
+          "starts": [
+            {
+              "label": "no policy named",
+              "asked": {},
+              "ok": true,
+              "error": null,
+              "sandbox": "workspaceWrite",
+              "approvalPolicy": "on-request",
+              "approvalsReviewer": "auto_review"
+            },
+            {
+              "label": "read-only, never, as the app starts a thread today",
+              "asked": {
+                "sandbox": "read-only",
+                "approvalPolicy": "never"
+              },
+              "ok": true,
+              "error": null,
+              "sandbox": "readOnly",
+              "approvalPolicy": "never",
+              "approvalsReviewer": "auto_review"
+            },
+            {
+              "label": "read-only, never, reviewer user",
+              "asked": {
+                "sandbox": "read-only",
+                "approvalPolicy": "never",
+                "approvalsReviewer": "user"
+              },
+              "ok": true,
+              "error": null,
+              "sandbox": "readOnly",
+              "approvalPolicy": "never",
+              "approvalsReviewer": "user"
+            },
+            {
+              "label": "workspace-write, untrusted, no reviewer named",
+              "asked": {
+                "sandbox": "workspace-write",
+                "approvalPolicy": "untrusted"
+              },
+              "ok": true,
+              "error": null,
+              "sandbox": "workspaceWrite",
+              "approvalPolicy": "untrusted",
+              "approvalsReviewer": "auto_review"
+            },
+            {
+              "label": "workspace-write, untrusted, reviewer user",
+              "asked": {
+                "sandbox": "workspace-write",
+                "approvalPolicy": "untrusted",
+                "approvalsReviewer": "user"
+              },
+              "ok": true,
+              "error": null,
+              "sandbox": "workspaceWrite",
+              "approvalPolicy": "untrusted",
+              "approvalsReviewer": "user"
+            },
+            {
+              "label": "workspace-write, on-request, no reviewer named",
+              "asked": {
+                "sandbox": "workspace-write",
+                "approvalPolicy": "on-request"
+              },
+              "ok": true,
+              "error": null,
+              "sandbox": "workspaceWrite",
+              "approvalPolicy": "on-request",
+              "approvalsReviewer": "auto_review"
+            },
+            {
+              "label": "workspace-write, on-request, reviewer user",
+              "asked": {
+                "sandbox": "workspace-write",
+                "approvalPolicy": "on-request",
+                "approvalsReviewer": "user"
+              },
+              "ok": true,
+              "error": null,
+              "sandbox": "workspaceWrite",
+              "approvalPolicy": "on-request",
+              "approvalsReviewer": "user"
+            }
+          ],
+          "configWarnings": 0,
+          "settingsFrames": 0
+        },
+        {
+          "label": "with it: the saved thread resumed, no policy named",
+          "resume": {
+            "asked": {},
+            "ok": true,
+            "error": null,
+            "sandbox": "workspaceWrite",
+            "approvalPolicy": "on-request",
+            "approvalsReviewer": "user"
+          },
+          "configWarnings": 0,
+          "settingsFrames": 0
+        },
+        {
+          "label": "with it: the saved thread resumed, workspace-write, on-request, reviewer user",
+          "resume": {
+            "asked": {
+              "sandbox": "workspace-write",
+              "approvalPolicy": "on-request",
+              "approvalsReviewer": "user"
+            },
+            "ok": true,
+            "error": null,
+            "sandbox": "workspaceWrite",
+            "approvalPolicy": "on-request",
+            "approvalsReviewer": "user"
+          },
+          "configWarnings": 0,
+          "settingsFrames": 0
+        },
+        {
+          "label": "with the line taken out again: starts",
+          "starts": [
+            {
+              "label": "no policy named",
+              "asked": {},
+              "ok": true,
+              "error": null,
+              "sandbox": "workspaceWrite",
+              "approvalPolicy": "on-request",
+              "approvalsReviewer": "user"
+            },
+            {
+              "label": "workspace-write, on-request, no reviewer named",
+              "asked": {
+                "sandbox": "workspace-write",
+                "approvalPolicy": "on-request"
+              },
+              "ok": true,
+              "error": null,
+              "sandbox": "workspaceWrite",
+              "approvalPolicy": "on-request",
+              "approvalsReviewer": "user"
+            }
+          ],
+          "configWarnings": 0,
+          "settingsFrames": 0
+        },
+        {
+          "label": "the saved thread resumed, workspace-write, on-request, reviewer auto_review",
+          "resume": {
+            "asked": {
+              "sandbox": "workspace-write",
+              "approvalPolicy": "on-request",
+              "approvalsReviewer": "auto_review"
+            },
+            "ok": true,
+            "error": null,
+            "sandbox": "workspaceWrite",
+            "approvalPolicy": "on-request",
+            "approvalsReviewer": "auto_review"
+          },
+          "configWarnings": 0,
+          "settingsFrames": 0
+        },
+        {
+          "label": "resumed after it, no policy named",
+          "resume": {
+            "asked": {},
+            "ok": true,
+            "error": null,
+            "sandbox": "workspaceWrite",
+            "approvalPolicy": "on-request",
+            "approvalsReviewer": "auto_review"
+          },
+          "configWarnings": 0,
+          "settingsFrames": 0
+        },
+        {
+          "label": "resumed, workspace-write, on-request, reviewer user",
+          "resume": {
+            "asked": {
+              "sandbox": "workspace-write",
+              "approvalPolicy": "on-request",
+              "approvalsReviewer": "user"
+            },
+            "ok": true,
+            "error": null,
+            "sandbox": "workspaceWrite",
+            "approvalPolicy": "on-request",
+            "approvalsReviewer": "user"
+          },
+          "configWarnings": 0,
+          "settingsFrames": 0
+        },
+        {
+          "label": "resumed after it, no policy named",
+          "resume": {
+            "asked": {},
+            "ok": true,
+            "error": null,
+            "sandbox": "workspaceWrite",
+            "approvalPolicy": "on-request",
+            "approvalsReviewer": "user"
+          },
+          "configWarnings": 0,
+          "settingsFrames": 0
+        }
+      ],
+      "configAfter": {
+        "exists": true,
+        "projects": [
+          {
+            "folder": "working folder",
+            "trustLevel": "trusted"
+          }
+        ],
+        "otherTables": [
+          "windows"
+        ],
+        "windows": {
+          "sandbox": "elevated"
+        }
+      }
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": null,
+  "toolPermissions": {
+    "readTools": "reads inside the sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "per thread/start, as each scenario names it",
+    "approvalPolicy": "per thread/start",
+    "reviewer": "user",
+    "policy": "an approval request for what the prompt dictated — a command that holds the prompt's own and no other, in a scratch folder, or a file change whose paths are all in scratch folders — is answered as the scenario says; any other is declined, and a request for more permissions is granted nothing"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 968,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 969,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 970,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 975,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 1880,
+      "frame": {
+        "method": "thread/start",
+        "id": 2,
+        "params": {
+          "cwd": "<scratch>",
+          "ephemeral": true
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1940,
+      "frame": {
+        "id": 2,
+        "result": {
+          "thread": {
+            "id": "<worker-10>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-10>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362275,
+            "updatedAt": 1578362275,
+            "recencyAt": 1578362275,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "auto_review",
+          "sandbox": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "activePermissionProfile": {
+            "id": ":workspace",
+            "extends": null
+          },
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 1940,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-10>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-10>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362275,
+            "updatedAt": 1578362275,
+            "recencyAt": 1578362275,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578362275914
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 1940,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-10>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362275914
+      }
+    },
+    {
+      "index": 8,
+      "dir": "send",
+      "ms": 2353,
+      "frame": {
+        "method": "thread/start",
+        "id": 3,
+        "params": {
+          "cwd": "<scratch>",
+          "ephemeral": true,
+          "sandbox": "read-only",
+          "approvalPolicy": "never"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 2402,
+      "frame": {
+        "id": 3,
+        "result": {
+          "thread": {
+            "id": "<worker-11>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-11>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362276,
+            "updatedAt": 1578362276,
+            "recencyAt": 1578362276,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "auto_review",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 2402,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-11>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-11>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362276,
+            "updatedAt": 1578362276,
+            "recencyAt": 1578362276,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578362276376
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 2402,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-11>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362276376
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 2405,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-10>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362276379
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 2797,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-11>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362276769
+      }
+    },
+    {
+      "index": 14,
+      "dir": "send",
+      "ms": 2807,
+      "frame": {
+        "method": "thread/start",
+        "id": 4,
+        "params": {
+          "cwd": "<scratch>",
+          "ephemeral": true,
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 2856,
+      "frame": {
+        "id": 4,
+        "result": {
+          "thread": {
+            "id": "<worker-12>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-12>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362276,
+            "updatedAt": 1578362276,
+            "recencyAt": 1578362276,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 2856,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-12>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-12>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362276,
+            "updatedAt": 1578362276,
+            "recencyAt": 1578362276,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578362276830
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 2856,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-12>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362276830
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 3261,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-12>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362277235
+      }
+    },
+    {
+      "index": 19,
+      "dir": "send",
+      "ms": 3262,
+      "frame": {
+        "method": "thread/start",
+        "id": 5,
+        "params": {
+          "cwd": "<scratch>",
+          "ephemeral": true,
+          "sandbox": "workspace-write",
+          "approvalPolicy": "untrusted"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 3312,
+      "frame": {
+        "id": 5,
+        "result": {
+          "thread": {
+            "id": "<worker-13>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-13>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362277,
+            "updatedAt": 1578362277,
+            "recencyAt": 1578362277,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "auto_review",
+          "sandbox": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 3312,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-13>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-13>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362277,
+            "updatedAt": 1578362277,
+            "recencyAt": 1578362277,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578362277286
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 3312,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-13>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362277286
+      }
+    },
+    {
+      "index": 23,
+      "dir": "send",
+      "ms": 3714,
+      "frame": {
+        "method": "thread/start",
+        "id": 6,
+        "params": {
+          "cwd": "<scratch>",
+          "ephemeral": true,
+          "sandbox": "workspace-write",
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user"
+        }
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 3725,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-13>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362277699
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 3766,
+      "frame": {
+        "id": 6,
+        "result": {
+          "thread": {
+            "id": "<worker-14>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-14>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362277,
+            "updatedAt": 1578362277,
+            "recencyAt": 1578362277,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 3766,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-14>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-14>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362277,
+            "updatedAt": 1578362277,
+            "recencyAt": 1578362277,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578362277739
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 3766,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-14>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362277739
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 4154,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-14>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362278128
+      }
+    },
+    {
+      "index": 29,
+      "dir": "send",
+      "ms": 4166,
+      "frame": {
+        "method": "thread/start",
+        "id": 7,
+        "params": {
+          "cwd": "<scratch>",
+          "ephemeral": true,
+          "sandbox": "workspace-write",
+          "approvalPolicy": "on-request"
+        }
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 4216,
+      "frame": {
+        "id": 7,
+        "result": {
+          "thread": {
+            "id": "<worker-15>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-15>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362278,
+            "updatedAt": 1578362278,
+            "recencyAt": 1578362278,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "auto_review",
+          "sandbox": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 4216,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-15>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-15>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362278,
+            "updatedAt": 1578362278,
+            "recencyAt": 1578362278,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578362278190
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 4216,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-15>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362278190
+      }
+    },
+    {
+      "index": 33,
+      "dir": "send",
+      "ms": 4632,
+      "frame": {
+        "method": "thread/start",
+        "id": 8,
+        "params": {
+          "cwd": "<scratch>",
+          "ephemeral": true,
+          "sandbox": "workspace-write",
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user"
+        }
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 4682,
+      "frame": {
+        "id": 8,
+        "result": {
+          "thread": {
+            "id": "<worker-16>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-16>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362278,
+            "updatedAt": 1578362278,
+            "recencyAt": 1578362278,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 4682,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-16>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-16>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362278,
+            "updatedAt": 1578362278,
+            "recencyAt": 1578362278,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578362278656
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 4682,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-16>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362278656
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 4769,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-15>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362278743
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 5145,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-16>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362279119
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 968,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1879,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 6505,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    }
+  ],
+  "family": "m22-codex-reviewer",
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1481
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1451
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1450
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1444
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1443
+      }
+    ],
+    "longStringsCut": []
+  }
+}

@@ -1,0 +1,38 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+.layer {
+  composes: scale from '../Chat.module.css';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.row {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  white-space: nowrap;
+  transform: translateX(-100%);
+}
+
+.label {
+  composes: time from '../Chat.module.css';
+  font-family: var(--font-ui);
+  font-weight: var(--weight-regular);
+  font-style: normal;
+  line-height: 1.5;
+}
+
+/* The invisible, zero-width text shares the hovered block's font and line height. Native
+   baseline alignment then places the smaller timestamp on that line without a pixel nudge. */
+.baseline {
+  flex: none;
+  width: 0;
+  visibility: hidden;
+}

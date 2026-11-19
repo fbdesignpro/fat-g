@@ -1,0 +1,23 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* K3's page: a column the width of a chat, with the rules a message's Markdown needs to be laid
+   out as it will be — code and tables that scroll sideways within themselves, long words that wrap. */
+html, body, #root { height: 100%; margin: 0; }
+body { font: 14px/1.5 system-ui, 'Segoe UI', sans-serif; color: #111; background: #fff; }
+.list { height: 100%; width: 720px; margin: 0 auto; padding: 0 16px; box-sizing: border-box; overflow-y: auto; }
+article { padding: 8px 0; }
+.label { margin: 0 0 4px; font-size: 12px; font-weight: 600; }
+.text { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.md { overflow-wrap: anywhere; }
+.md pre { margin: 8px 0; padding: 8px; overflow-x: auto; font: 13px/1.45 ui-monospace, Consolas, monospace; background: #f3f3f3; }
+.md code { font-family: ui-monospace, Consolas, monospace; }
+.md-table { margin: 8px 0; overflow-x: auto; }
+.md table { border-collapse: collapse; }
+.md th, .md td { padding: 2px 8px; border: 1px solid #ccc; }
+.md blockquote { margin: 8px 0; padding-left: 12px; border-left: 3px solid #ccc; }
+.md-addr { color: #666; }
+.md-notes { font-size: 12px; }
+.probe { position: absolute; left: -10000px; top: 0; width: 720px; }

@@ -1,0 +1,1580 @@
+{
+  "_fixture": {
+    "source": "M19b spike m19b-k2.mjs, run against the installed CLI on the maintainer's machine, in a scratch configuration folder",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "get_settings documents (key names only)"
+    ],
+    "omitted": [
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"uuid\":32,\"message\":2,\"tool-use\":1,\"request\":2,\"mcp-server\":5}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "claude",
+    "version": "2.1.268",
+    "launchKind": "native"
+  },
+  "date": "2020-01-07T15:24:16.827Z",
+  "scenario": {
+    "id": "m19b-line",
+    "title": "K2: where a named function is, with its line",
+    "successCondition": "An answer that names a file, and the turn's end"
+  },
+  "run": {
+    "id": "claude-m19b-line-4",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "p1",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 32,
+    "turnsSpent": 1,
+    "exit": {
+      "code": 0,
+      "ms": 10486
+    },
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 4184,
+      "recorded": [
+        {
+          "name": "claude.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "otherFoldersUnchanged": {
+      "other": true,
+      "third": true,
+      "outside": true
+    },
+    "notes": {
+      "model": {
+        "model": "claude-sonnet-5",
+        "asked": "sonnet",
+        "effort": "low"
+      },
+      "endStatus": "success",
+      "isError": false,
+      "sessionFolder": "the process's working folder",
+      "toolCalls": [
+        "Grep"
+      ],
+      "streamEvents": 20,
+      "messages": [
+        {
+          "phase": null,
+          "last": true,
+          "units": 47,
+          "mentions": [
+            {
+              "form": "code span",
+              "written": "src/tides.js:12",
+              "pathKind": "relative",
+              "inSessionFolder": null,
+              "names": "src/tides.js",
+              "resolvesFromSessionFolder": true,
+              "bareName": false,
+              "separators": "/",
+              "lineForm": ":N",
+              "line": 12,
+              "space": null,
+              "wholeSpan": true
+            }
+          ],
+          "links": 0,
+          "externalLinks": 0,
+          "codeSpans": 2,
+          "otherCodeSpans": [
+            "nextHighTide"
+          ],
+          "linesInProse": []
+        }
+      ],
+      "summary": {
+        "mentions": 1,
+        "byForm": {
+          "code span": 1
+        },
+        "byPathKind": {
+          "relative": 1
+        },
+        "lineForms": {
+          ":N": 1
+        },
+        "separators": {
+          "/": 1
+        },
+        "space": {
+          "null": 1
+        },
+        "bareNames": 0,
+        "lineRight": [
+          true
+        ]
+      },
+      "outline": [
+        {
+          "index": 2,
+          "ms": 2581,
+          "send": "user",
+          "uuid": true
+        },
+        {
+          "index": 3,
+          "ms": 2592,
+          "recv": "command_lifecycle",
+          "bytes": 197,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "queued"
+        },
+        {
+          "index": 4,
+          "ms": 2604,
+          "recv": "command_lifecycle",
+          "bytes": 198,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "started"
+        },
+        {
+          "index": 5,
+          "ms": 2639,
+          "recv": "system/init",
+          "bytes": 1570,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-39>__batch",
+            "mcp__<mcp-server-39>__create",
+            "mcp__<mcp-server-39>__delete",
+            "mcp__<mcp-server-39>__export",
+            "mcp__<mcp-server-39>__guide",
+            "mcp__<mcp-server-39>__query",
+            "mcp__<mcp-server-39>__read",
+            "mcp__<mcp-server-39>__update"
+          ]
+        },
+        {
+          "index": 6,
+          "ms": 2650,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 7,
+          "ms": 3244,
+          "recv": "rate_limit_event",
+          "bytes": 434,
+          "session": "s1"
+        },
+        {
+          "index": 16,
+          "ms": 5073,
+          "recv": "assistant",
+          "bytes": 1005,
+          "session": "s1",
+          "blocks": [
+            "tool_use:Grep"
+          ],
+          "stop": null
+        },
+        {
+          "index": 20,
+          "ms": 5264,
+          "recv": "user",
+          "bytes": 523,
+          "session": "s1",
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 21,
+          "ms": 5266,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 28,
+          "ms": 6603,
+          "recv": "assistant",
+          "bytes": 794,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 47
+        },
+        {
+          "index": 32,
+          "ms": 6614,
+          "recv": "result",
+          "bytes": 2290,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 2,
+          "resultIndex": 0,
+          "queuedTurnCount": 0,
+          "resultChars": 47
+        },
+        {
+          "index": 33,
+          "ms": 6615,
+          "recv": "command_lifecycle",
+          "bytes": 200,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "completed"
+        }
+      ],
+      "reread": "the mentions were read again from this capture's frames on 2020-01-07"
+    }
+  },
+  "launch": {
+    "args": [
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--input-format",
+      "stream-json",
+      "--setting-sources",
+      "user,project,local",
+      "--permission-mode",
+      "default",
+      "--permission-prompt-tool",
+      "stdio",
+      "--tools",
+      "Read,Glob,Grep,Agent",
+      "--model",
+      "sonnet",
+      "--effort",
+      "low",
+      "--disable-slash-commands",
+      "--include-partial-messages"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "subtype": "initialize"
+    },
+    "replyIndex": 1,
+    "ok": true
+  },
+  "toolPermissions": {
+    "readTools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "scenarioTools": [
+      "Agent"
+    ],
+    "preApproved": [],
+    "permissionMode": "default",
+    "permissionRequestsTo": "the spike (--permission-prompt-tool stdio)",
+    "policy": "every can_use_tool request is denied, as the app will deny it (M16, C22); any other request gets an error reply"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": false
+      }
+    ],
+    "set": [
+      "CLAUDE_CONFIG_DIR",
+      "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "stream_event"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 16,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-1",
+        "request": {
+          "subtype": "initialize"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 565,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-1",
+          "response": {
+            "commands": [],
+            "agents": [
+              {
+                "name": "claude",
+                "description": "Catch-all for any task that doesn't fit a more specific agent. FleetView's default when no agent name is typed."
+              },
+              {
+                "name": "Explore",
+                "description": "Fast read-only search agent for locating code. Use it to find files by pattern (eg. \"src/components/**/*.tsx\"), grep for symbols or keywords (eg. \"API endpoints\"), or answer \"where is X defined / which files reference Y.\" Do NOT use it for code review, design-doc auditing, cross-file consistency checks, or open-ended analysis — it reads excerpts rather than whole files and will miss content past its read window. When calling, specify search breadth: \"quick\" for a single targeted lookup, \"medium\" for moderate exploration, or \"very thorough\" to search across multiple locations and naming conventions.",
+                "model": "inherit"
+              },
+              {
+                "name": "general-purpose",
+                "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you."
+              },
+              {
+                "name": "Plan",
+                "description": "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs.",
+                "model": "inherit"
+              },
+              {
+                "name": "statusline-setup",
+                "description": "Use this agent to configure the user's Claude Code status line setting.",
+                "model": "sonnet"
+              }
+            ],
+            "output_style": "default",
+            "available_output_styles": [
+              "default",
+              "Proactive",
+              "Concise",
+              "Explanatory",
+              "Learning"
+            ],
+            "user_output_styles_dir": "<scratch>\\output-styles",
+            "models": [
+              {
+                "value": "default",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Default (recommended)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "opus[1m]",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Opus (1M context)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "claude-fable-5-1[1m]",
+                "resolvedModel": "claude-fable-5-1",
+                "displayName": "Fable",
+                "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "sonnet",
+                "resolvedModel": "claude-sonnet-5",
+                "displayName": "Sonnet",
+                "description": "Sonnet 5 · Efficient for routine tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "haiku",
+                "resolvedModel": "claude-haiku-4-5-20251001",
+                "displayName": "Haiku",
+                "description": "Haiku 4.5 · Fastest for quick answers"
+              }
+            ],
+            "account": "<account>",
+            "pid": 31040,
+            "current_permission_mode": "default",
+            "analytics_disabled": false,
+            "remote_control_auto_enable": false,
+            "remote_control_available": true,
+            "remote_control_auto_on_by_default": false,
+            "ide_rc_auto_enable_gate": true,
+            "fast_mode_state": "off",
+            "fast_mode_disabled_reason": "sdk_opt_in_required",
+            "session_state": "idle"
+          },
+          "pending_permission_requests": [],
+          "pending_user_dialog_requests": []
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 2581,
+      "frame": {
+        "type": "user",
+        "uuid": "<uuid-2>",
+        "message": {
+          "role": "user",
+          "content": "Where is the function nextHighTide defined in this project? Give me the file and the line."
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 2592,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "queued",
+        "uuid": "<uuid-3>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 2604,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "started",
+        "uuid": "<uuid-4>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 2639,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read",
+          "mcp__<mcp-server-39>__batch",
+          "mcp__<mcp-server-39>__create",
+          "mcp__<mcp-server-39>__delete",
+          "mcp__<mcp-server-39>__export",
+          "mcp__<mcp-server-39>__guide",
+          "mcp__<mcp-server-39>__query",
+          "mcp__<mcp-server-39>__read",
+          "mcp__<mcp-server-39>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-40>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-41>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-42>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-43>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "slash_commands": [],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-5>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2650,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-6>"
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 3244,
+      "frame": {
+        "type": "rate_limit_event",
+        "rate_limit_info": {
+          "_keys": [
+            "isUsingOverage",
+            "overageDisabledReason",
+            "overageStatus",
+            "rateLimitType",
+            "resetsAt",
+            "status",
+            "unifiedWindows"
+          ]
+        },
+        "uuid": "<uuid-7>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 4076,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-8>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 18077,
+              "cache_read_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 18077
+              },
+              "output_tokens": 17,
+              "service_tier": "standard",
+              "inference_geo": "not_available"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-9>",
+        "ttft_ms": 1414,
+        "user_message_uuid": "<uuid-2>",
+        "user_message_uuids": [
+          "<uuid-2>"
+        ]
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 4076,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "tool_use",
+            "id": "<tool-use-10>",
+            "name": "Grep",
+            "input": {},
+            "caller": {
+              "type": "direct"
+            }
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-11>"
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 4076,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-12>"
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 5070,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "{\"pattern\": \"nextHighT"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-13>"
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 5070,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ide"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-14>"
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 5070,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\", \"output_mode\": \"content"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-15>"
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 5070,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\", \"-n\": true"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-16>"
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 5070,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "}"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-17>"
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 5073,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-8>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-10>",
+              "name": "Grep",
+              "input": {
+                "pattern": "nextHighTide",
+                "output_mode": "content",
+                "-n": true
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 18077,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 18077
+            },
+            "output_tokens": 17,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-18>",
+        "timestamp": "2020-01-07T15:24:09.548Z",
+        "request_id": "<request-19>",
+        "wire_tool_inputs": {
+          "<tool-use-10>": {
+            "pattern": "nextHighTide",
+            "output_mode": "content",
+            "-n": true
+          }
+        }
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 5087,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-20>"
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 5088,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "tool_use",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 18077,
+            "cache_read_input_tokens": 0,
+            "output_tokens": 100,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 100,
+                "cache_read_input_tokens": 0,
+                "cache_creation_input_tokens": 18077,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 18077
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-21>"
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 5088,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-22>"
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 5264,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-10>",
+              "type": "tool_result",
+              "content": "src\\tides.js:12:export function nextHighTide(times, now) {"
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-23>",
+        "timestamp": "2020-01-07T15:24:09.741Z",
+        "tool_use_result": {
+          "mode": "content",
+          "numFiles": 0,
+          "filenames": [],
+          "content": "src\\tides.js:12:export function nextHighTide(times, now) {",
+          "numLines": 1,
+          "totalLines": 1
+        }
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 5266,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-24>"
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 6398,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-25>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 168,
+              "cache_read_input_tokens": 18077,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 168
+              },
+              "output_tokens": 1,
+              "service_tier": "standard",
+              "inference_geo": "not_available"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-26>",
+        "ttft_ms": 1127
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 6398,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "text",
+            "text": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-27>"
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 6398,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "`"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-28>"
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 6486,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "nextHighTide` is"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-29>"
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 6538,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " defined in `src/tides"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-30>"
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 6588,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ".js:12`."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-31>"
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 6603,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-25>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "`nextHighTide` is defined in `src/tides.js:12`."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 168,
+            "cache_read_input_tokens": 18077,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 168
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-32>",
+        "timestamp": "2020-01-07T15:24:11.066Z",
+        "request_id": "<request-33>"
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 6603,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-34>"
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 6604,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "end_turn",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 168,
+            "cache_read_input_tokens": 18077,
+            "output_tokens": 25,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 25,
+                "cache_read_input_tokens": 18077,
+                "cache_creation_input_tokens": 168,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 168
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-35>"
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 6604,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-36>"
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 6614,
+      "frame": {
+        "duration_api_ms": 4414,
+        "stop_reason": "end_turn",
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.07883140000000001,
+        "usage": {
+          "input_tokens": 4,
+          "cache_creation_input_tokens": 18245,
+          "cache_read_input_tokens": 18077,
+          "output_tokens": 125,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 18245,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 25,
+              "cache_read_input_tokens": 18077,
+              "cache_creation_input_tokens": 168,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 168
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 913,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000978,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 4,
+            "outputTokens": 125,
+            "cacheReadInputTokens": 18077,
+            "cacheCreationInputTokens": 18245,
+            "webSearchRequests": 0,
+            "costUSD": 0.0778534,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [],
+        "terminal_reason": "completed",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 0,
+          "requested": {
+            "background": 0,
+            "foreground": 0,
+            "unset": 0
+          },
+          "started_in_background": 0,
+          "max_depth": 0,
+          "spawned_by_subagents": 0,
+          "completed": 0,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {}
+        },
+        "is_error": false,
+        "num_turns": 2,
+        "subtype": "success",
+        "api_error_status": null,
+        "result": "`nextHighTide` is defined in `src/tides.js:12`.",
+        "ttft_ms": 2463,
+        "type": "result",
+        "duration_ms": 4005,
+        "uuid": "<uuid-37>",
+        "ttft_stream_ms": 1467,
+        "time_to_request_ms": 53,
+        "first_content_frame_ms": 1468,
+        "user_message_uuid": "<uuid-2>",
+        "user_message_uuids": [
+          "<uuid-2>"
+        ],
+        "request_sent_wall_ms": 1578410647140,
+        "queued_turn_count": 0,
+        "result_index": 0
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 6615,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "completed",
+        "uuid": "<uuid-38>",
+        "session_id": "<session-1>"
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 2023,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2580,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "before-close",
+      "atMs": 10085,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    }
+  ],
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "configuration": {
+    "folder": "a scratch configuration folder (CLAUDE_CONFIG_DIR), signed in by the maintainer",
+    "written": []
+  },
+  "frameSizes": {
+    "largest": [
+      {
+        "type": "control_response",
+        "bytes": 3830
+      },
+      {
+        "type": "result",
+        "bytes": 2290
+      },
+      {
+        "type": "system/init",
+        "bytes": 1570
+      },
+      {
+        "type": "assistant",
+        "bytes": 1005
+      },
+      {
+        "type": "stream_event",
+        "bytes": 812
+      }
+    ],
+    "longStringsCut": []
+  }
+}

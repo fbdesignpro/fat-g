@@ -1,0 +1,5250 @@
+{
+  "_fixture": {
+    "source": "M15 spike m15-history.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "token-level deltas (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":2,\"turn\":2,\"item\":8,\"mcp-server\":4,\"cursor\":12}. Aliases are shared with the other captures of the family \"m15-saved-thread\"."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-10T21:07:47.991Z",
+  "scenario": {
+    "id": "m15-history",
+    "title": "The saved thread's turns read back, before and after a resume",
+    "successCondition": "A paged read returned the turns of the saved thread with their items"
+  },
+  "run": {
+    "id": "codex-m15-history-16",
+    "number": 2,
+    "attempt": 2,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": null,
+    "turnsSpent": 0,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 2869,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-8>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-8>.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "withoutAResume": {
+        "views": {
+          "full": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 3130,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "summary": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 1512,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "notLoaded": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 553,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "notLoaded",
+                "items": []
+              },
+              {
+                "status": "completed",
+                "itemsView": "notLoaded",
+                "items": []
+              }
+            ]
+          },
+          "defaulted": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 1512,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "ascending": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 3129,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          }
+        },
+        "paging": {
+          "sizeOne": {
+            "first": {
+              "ok": true,
+              "turns": 1,
+              "bytes": 1798,
+              "nextCursor": true,
+              "backwardsCursor": true,
+              "perTurn": [
+                {
+                  "status": "completed",
+                  "itemsView": "full",
+                  "items": [
+                    "userMessage",
+                    "agentMessage:commentary",
+                    "commandExecution",
+                    "agentMessage:final_answer"
+                  ]
+                }
+              ]
+            },
+            "second": {
+              "ok": true,
+              "turns": 1,
+              "bytes": 1659,
+              "nextCursor": false,
+              "backwardsCursor": true,
+              "perTurn": [
+                {
+                  "status": "completed",
+                  "itemsView": "full",
+                  "items": [
+                    "userMessage",
+                    "agentMessage:commentary",
+                    "commandExecution",
+                    "agentMessage:final_answer"
+                  ]
+                }
+              ]
+            },
+            "distinctTurns": true,
+            "newestFirst": true
+          },
+          "notLoadedCursor": {
+            "page": {
+              "ok": true,
+              "turns": 1,
+              "bytes": 510,
+              "nextCursor": true,
+              "backwardsCursor": true,
+              "perTurn": [
+                {
+                  "status": "completed",
+                  "itemsView": "notLoaded",
+                  "items": []
+                }
+              ]
+            },
+            "sameCursorAsFullRead": true,
+            "continuedWithItems": {
+              "ok": true,
+              "turns": 1,
+              "bytes": 1659,
+              "nextCursor": false,
+              "backwardsCursor": true,
+              "perTurn": [
+                {
+                  "status": "completed",
+                  "itemsView": "full",
+                  "items": [
+                    "userMessage",
+                    "agentMessage:commentary",
+                    "commandExecution",
+                    "agentMessage:final_answer"
+                  ]
+                }
+              ]
+            },
+            "continuesToTheOlderTurn": true
+          }
+        },
+        "items": {
+          "pagesOfTwo": [
+            {
+              "ok": true,
+              "items": [
+                "userMessage",
+                "agentMessage:commentary"
+              ],
+              "entryKeys": [
+                "item",
+                "turnId"
+              ],
+              "bytes": 944,
+              "nextCursor": true
+            },
+            {
+              "ok": true,
+              "items": [
+                "commandExecution",
+                "agentMessage:final_answer"
+              ],
+              "entryKeys": [
+                "item",
+                "turnId"
+              ],
+              "bytes": 1306,
+              "nextCursor": true
+            },
+            {
+              "ok": true,
+              "items": [
+                "userMessage",
+                "agentMessage:commentary"
+              ],
+              "entryKeys": [
+                "item",
+                "turnId"
+              ],
+              "bytes": 929,
+              "nextCursor": true
+            },
+            {
+              "ok": true,
+              "items": [
+                "commandExecution",
+                "agentMessage:final_answer"
+              ],
+              "entryKeys": [
+                "item",
+                "turnId"
+              ],
+              "bytes": 1164,
+              "nextCursor": false
+            }
+          ],
+          "oneTurn": {
+            "ok": true,
+            "items": [
+              "userMessage",
+              "agentMessage:commentary",
+              "commandExecution",
+              "agentMessage:final_answer"
+            ],
+            "entryKeys": [
+              "item",
+              "turnId"
+            ],
+            "bytes": 1729,
+            "nextCursor": false
+          },
+          "descending": {
+            "ok": true,
+            "items": [
+              "agentMessage:final_answer",
+              "commandExecution",
+              "agentMessage:commentary"
+            ],
+            "entryKeys": [
+              "item",
+              "turnId"
+            ],
+            "bytes": 1574,
+            "nextCursor": true
+          }
+        },
+        "appReads": {
+          "full-8": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 3130,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "full-4": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 3130,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "summary-1": {
+            "ok": true,
+            "turns": 1,
+            "bytes": 986,
+            "nextCursor": true,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "summary-cursor-same": true,
+          "full-8-after-cursor": {
+            "ok": true,
+            "turns": 1,
+            "bytes": 1659,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "summary-1-after-cursor": {
+            "ok": true,
+            "turns": 1,
+            "bytes": 853,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "notLoaded-1-after-cursor": {
+            "ok": true,
+            "turns": 1,
+            "bytes": 370,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "notLoaded",
+                "items": []
+              }
+            ]
+          }
+        }
+      },
+      "resume": {
+        "ok": true
+      },
+      "afterAResume": {
+        "views": {
+          "full": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 3130,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "summary": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 1512,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "notLoaded": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 553,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "notLoaded",
+                "items": []
+              },
+              {
+                "status": "completed",
+                "itemsView": "notLoaded",
+                "items": []
+              }
+            ]
+          },
+          "defaulted": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 1512,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "ascending": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 3129,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          }
+        },
+        "paging": {
+          "sizeOne": {
+            "first": {
+              "ok": true,
+              "turns": 1,
+              "bytes": 1798,
+              "nextCursor": true,
+              "backwardsCursor": true,
+              "perTurn": [
+                {
+                  "status": "completed",
+                  "itemsView": "full",
+                  "items": [
+                    "userMessage",
+                    "agentMessage:commentary",
+                    "commandExecution",
+                    "agentMessage:final_answer"
+                  ]
+                }
+              ]
+            },
+            "second": {
+              "ok": true,
+              "turns": 1,
+              "bytes": 1659,
+              "nextCursor": false,
+              "backwardsCursor": true,
+              "perTurn": [
+                {
+                  "status": "completed",
+                  "itemsView": "full",
+                  "items": [
+                    "userMessage",
+                    "agentMessage:commentary",
+                    "commandExecution",
+                    "agentMessage:final_answer"
+                  ]
+                }
+              ]
+            },
+            "distinctTurns": true,
+            "newestFirst": true
+          },
+          "notLoadedCursor": {
+            "page": {
+              "ok": true,
+              "turns": 1,
+              "bytes": 510,
+              "nextCursor": true,
+              "backwardsCursor": true,
+              "perTurn": [
+                {
+                  "status": "completed",
+                  "itemsView": "notLoaded",
+                  "items": []
+                }
+              ]
+            },
+            "sameCursorAsFullRead": true,
+            "continuedWithItems": {
+              "ok": true,
+              "turns": 1,
+              "bytes": 1659,
+              "nextCursor": false,
+              "backwardsCursor": true,
+              "perTurn": [
+                {
+                  "status": "completed",
+                  "itemsView": "full",
+                  "items": [
+                    "userMessage",
+                    "agentMessage:commentary",
+                    "commandExecution",
+                    "agentMessage:final_answer"
+                  ]
+                }
+              ]
+            },
+            "continuesToTheOlderTurn": true
+          }
+        },
+        "items": {
+          "pagesOfTwo": [
+            {
+              "ok": true,
+              "items": [
+                "userMessage",
+                "agentMessage:commentary"
+              ],
+              "entryKeys": [
+                "item",
+                "turnId"
+              ],
+              "bytes": 944,
+              "nextCursor": true
+            },
+            {
+              "ok": true,
+              "items": [
+                "commandExecution",
+                "agentMessage:final_answer"
+              ],
+              "entryKeys": [
+                "item",
+                "turnId"
+              ],
+              "bytes": 1306,
+              "nextCursor": true
+            },
+            {
+              "ok": true,
+              "items": [
+                "userMessage",
+                "agentMessage:commentary"
+              ],
+              "entryKeys": [
+                "item",
+                "turnId"
+              ],
+              "bytes": 929,
+              "nextCursor": true
+            },
+            {
+              "ok": true,
+              "items": [
+                "commandExecution",
+                "agentMessage:final_answer"
+              ],
+              "entryKeys": [
+                "item",
+                "turnId"
+              ],
+              "bytes": 1164,
+              "nextCursor": false
+            }
+          ],
+          "oneTurn": {
+            "ok": true,
+            "items": [
+              "userMessage",
+              "agentMessage:commentary",
+              "commandExecution",
+              "agentMessage:final_answer"
+            ],
+            "entryKeys": [
+              "item",
+              "turnId"
+            ],
+            "bytes": 1729,
+            "nextCursor": false
+          },
+          "descending": {
+            "ok": true,
+            "items": [
+              "agentMessage:final_answer",
+              "commandExecution",
+              "agentMessage:commentary"
+            ],
+            "entryKeys": [
+              "item",
+              "turnId"
+            ],
+            "bytes": 1574,
+            "nextCursor": true
+          }
+        },
+        "appReads": {
+          "full-8": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 3130,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "full-4": {
+            "ok": true,
+            "turns": 2,
+            "bytes": 3130,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              },
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "summary-1": {
+            "ok": true,
+            "turns": 1,
+            "bytes": 986,
+            "nextCursor": true,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "summary-cursor-same": true,
+          "full-8-after-cursor": {
+            "ok": true,
+            "turns": 1,
+            "bytes": 1659,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "full",
+                "items": [
+                  "userMessage",
+                  "agentMessage:commentary",
+                  "commandExecution",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "summary-1-after-cursor": {
+            "ok": true,
+            "turns": 1,
+            "bytes": 853,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "summary",
+                "items": [
+                  "userMessage",
+                  "agentMessage:final_answer"
+                ]
+              }
+            ]
+          },
+          "notLoaded-1-after-cursor": {
+            "ok": true,
+            "turns": 1,
+            "bytes": 370,
+            "nextCursor": false,
+            "backwardsCursor": true,
+            "perTurn": [
+              {
+                "status": "completed",
+                "itemsView": "notLoaded",
+                "items": []
+              }
+            ]
+          }
+        }
+      },
+      "ids": {
+        "turnIdsMatchLive": true,
+        "items": [
+          {
+            "type": "userMessage",
+            "phase": null,
+            "sameIdInHistory": true,
+            "sameTypeThere": true,
+            "clientIdKept": true
+          },
+          {
+            "type": "agentMessage",
+            "phase": "commentary",
+            "sameIdInHistory": true,
+            "sameTypeThere": true,
+            "clientIdKept": null
+          },
+          {
+            "type": "agentMessage",
+            "phase": "final_answer",
+            "sameIdInHistory": true,
+            "sameTypeThere": true,
+            "clientIdKept": null
+          },
+          {
+            "type": "userMessage",
+            "phase": null,
+            "sameIdInHistory": true,
+            "sameTypeThere": true,
+            "clientIdKept": true
+          },
+          {
+            "type": "agentMessage",
+            "phase": "commentary",
+            "sameIdInHistory": true,
+            "sameTypeThere": true,
+            "clientIdKept": null
+          },
+          {
+            "type": "agentMessage",
+            "phase": "final_answer",
+            "sameIdInHistory": true,
+            "sameTypeThere": true,
+            "clientIdKept": null
+          }
+        ],
+        "everyMessageIdMatches": true,
+        "historyItemTypes": [
+          "agentMessage",
+          "commandExecution",
+          "userMessage"
+        ],
+        "userMessageKeys": [
+          "clientId",
+          "content",
+          "id",
+          "turnId",
+          "type"
+        ],
+        "agentMessageKeys": [
+          "delivery",
+          "id",
+          "memoryCitation",
+          "phase",
+          "questions",
+          "text",
+          "turnId",
+          "type"
+        ]
+      }
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "threadId": "<session-1>",
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "excludeTurns": true
+    },
+    "replyIndex": 54,
+    "ok": true,
+    "check": null
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {},
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/agentMessage/delta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1376,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/agentMessage/delta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1379,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "recv",
+      "ms": 1380,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 3,
+      "dir": "send",
+      "ms": 1380,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 2750,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 2,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 2772,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "I’ll read notes-2.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-18>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "33894",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath notes-2.txt",
+                      "name": "notes-2.txt",
+                      "path": "<scratch>\\notes-2.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 15
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 2772,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 3,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "itemsView": "summary"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 2774,
+      "frame": {
+        "id": 3,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "send",
+      "ms": 2774,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "itemsView": "notLoaded"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 2775,
+      "frame": {
+        "id": 4,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [],
+              "itemsView": "notLoaded",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [],
+              "itemsView": "notLoaded",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "dir": "send",
+      "ms": 2775,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 5,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2
+        }
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 2776,
+      "frame": {
+        "id": 5,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "dir": "send",
+      "ms": 2776,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 6,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "itemsView": "full",
+          "sortDirection": "asc"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 2778,
+      "frame": {
+        "id": 6,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            },
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "I’ll read notes-2.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-18>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "33894",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath notes-2.txt",
+                      "name": "notes-2.txt",
+                      "path": "<scratch>\\notes-2.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 15
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "dir": "send",
+      "ms": 2778,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 7,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 2780,
+      "frame": {
+        "id": 7,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "I’ll read notes-2.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-18>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "33894",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath notes-2.txt",
+                      "name": "notes-2.txt",
+                      "path": "<scratch>\\notes-2.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 15
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            }
+          ],
+          "nextCursor": "<cursor-21>",
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 16,
+      "dir": "send",
+      "ms": 2780,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 8,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "full",
+          "cursor": "<cursor-21>"
+        }
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 2781,
+      "frame": {
+        "id": 8,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 18,
+      "dir": "send",
+      "ms": 2782,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 9,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "notLoaded"
+        }
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 2782,
+      "frame": {
+        "id": 9,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [],
+              "itemsView": "notLoaded",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            }
+          ],
+          "nextCursor": "<cursor-21>",
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "dir": "send",
+      "ms": 2782,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 10,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "full",
+          "cursor": "<cursor-21>"
+        }
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 2784,
+      "frame": {
+        "id": 10,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 22,
+      "dir": "send",
+      "ms": 2784,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 11,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2
+        }
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 2785,
+      "frame": {
+        "id": 11,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-3>",
+              "item": {
+                "type": "userMessage",
+                "id": "<item-4>",
+                "clientId": "<client-message-2>",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                    "text_elements": []
+                  }
+                ]
+              }
+            },
+            {
+              "turnId": "<turn-3>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-5>",
+                "text": "I’ll read sample.txt.",
+                "phase": "commentary",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": "<cursor-22>",
+          "backwardsCursor": "<cursor-23>"
+        }
+      }
+    },
+    {
+      "index": 24,
+      "dir": "send",
+      "ms": 2785,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 12,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "cursor": "<cursor-22>"
+        }
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 2786,
+      "frame": {
+        "id": 12,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-3>",
+              "item": {
+                "type": "commandExecution",
+                "id": "<item-6>",
+                "pluginId": null,
+                "scriptPath": null,
+                "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                "cwd": "<scratch>",
+                "processId": "97630",
+                "source": "unifiedExecStartup",
+                "status": "completed",
+                "commandActions": [
+                  {
+                    "type": "read",
+                    "command": "Get-Content -LiteralPath sample.txt",
+                    "name": "sample.txt",
+                    "path": "<scratch>\\sample.txt"
+                  }
+                ],
+                "aggregatedOutput": null,
+                "exitCode": 0,
+                "durationMs": 3
+              }
+            },
+            {
+              "turnId": "<turn-3>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-7>",
+                "text": "The cat sleeps on the warm lamp housing.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": "<cursor-24>",
+          "backwardsCursor": "<cursor-25>"
+        }
+      }
+    },
+    {
+      "index": 26,
+      "dir": "send",
+      "ms": 2786,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 13,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "cursor": "<cursor-24>"
+        }
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 2787,
+      "frame": {
+        "id": 13,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "userMessage",
+                "id": "<item-16>",
+                "clientId": "<client-message-14>",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                    "text_elements": []
+                  }
+                ]
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-17>",
+                "text": "I’ll read notes-2.txt.",
+                "phase": "commentary",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": "<cursor-26>",
+          "backwardsCursor": "<cursor-27>"
+        }
+      }
+    },
+    {
+      "index": 28,
+      "dir": "send",
+      "ms": 2787,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 14,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "cursor": "<cursor-26>"
+        }
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 2788,
+      "frame": {
+        "id": 14,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "commandExecution",
+                "id": "<item-18>",
+                "pluginId": null,
+                "scriptPath": null,
+                "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                "cwd": "<scratch>",
+                "processId": "33894",
+                "source": "unifiedExecStartup",
+                "status": "completed",
+                "commandActions": [
+                  {
+                    "type": "read",
+                    "command": "Get-Content -LiteralPath notes-2.txt",
+                    "name": "notes-2.txt",
+                    "path": "<scratch>\\notes-2.txt"
+                  }
+                ],
+                "aggregatedOutput": null,
+                "exitCode": 0,
+                "durationMs": 15
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-19>",
+                "text": "It says the kettle whistles twice before it boils.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-28>"
+        }
+      }
+    },
+    {
+      "index": 30,
+      "dir": "send",
+      "ms": 2788,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 15,
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "limit": 50
+        }
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 2789,
+      "frame": {
+        "id": 15,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "userMessage",
+                "id": "<item-16>",
+                "clientId": "<client-message-14>",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                    "text_elements": []
+                  }
+                ]
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-17>",
+                "text": "I’ll read notes-2.txt.",
+                "phase": "commentary",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "commandExecution",
+                "id": "<item-18>",
+                "pluginId": null,
+                "scriptPath": null,
+                "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                "cwd": "<scratch>",
+                "processId": "33894",
+                "source": "unifiedExecStartup",
+                "status": "completed",
+                "commandActions": [
+                  {
+                    "type": "read",
+                    "command": "Get-Content -LiteralPath notes-2.txt",
+                    "name": "notes-2.txt",
+                    "path": "<scratch>\\notes-2.txt"
+                  }
+                ],
+                "aggregatedOutput": null,
+                "exitCode": 0,
+                "durationMs": 15
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-19>",
+                "text": "It says the kettle whistles twice before it boils.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-27>"
+        }
+      }
+    },
+    {
+      "index": 32,
+      "dir": "send",
+      "ms": 2789,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 16,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 3,
+          "sortDirection": "desc"
+        }
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 2789,
+      "frame": {
+        "id": 16,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-19>",
+                "text": "It says the kettle whistles twice before it boils.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "commandExecution",
+                "id": "<item-18>",
+                "pluginId": null,
+                "scriptPath": null,
+                "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                "cwd": "<scratch>",
+                "processId": "33894",
+                "source": "unifiedExecStartup",
+                "status": "completed",
+                "commandActions": [
+                  {
+                    "type": "read",
+                    "command": "Get-Content -LiteralPath notes-2.txt",
+                    "name": "notes-2.txt",
+                    "path": "<scratch>\\notes-2.txt"
+                  }
+                ],
+                "aggregatedOutput": null,
+                "exitCode": 0,
+                "durationMs": 15
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-17>",
+                "text": "I’ll read notes-2.txt.",
+                "phase": "commentary",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": "<cursor-26>",
+          "backwardsCursor": "<cursor-29>"
+        }
+      }
+    },
+    {
+      "index": 34,
+      "dir": "send",
+      "ms": 2789,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 17,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 8,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 2791,
+      "frame": {
+        "id": 17,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "I’ll read notes-2.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-18>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "33894",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath notes-2.txt",
+                      "name": "notes-2.txt",
+                      "path": "<scratch>\\notes-2.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 15
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 36,
+      "dir": "send",
+      "ms": 2791,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 18,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 4,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 2793,
+      "frame": {
+        "id": 18,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "I’ll read notes-2.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-18>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "33894",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath notes-2.txt",
+                      "name": "notes-2.txt",
+                      "path": "<scratch>\\notes-2.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 15
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 38,
+      "dir": "send",
+      "ms": 2793,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 19,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "summary"
+        }
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 2794,
+      "frame": {
+        "id": 19,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            }
+          ],
+          "nextCursor": "<cursor-21>",
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 40,
+      "dir": "send",
+      "ms": 2794,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 20,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 8,
+          "itemsView": "full",
+          "cursor": "<cursor-21>"
+        }
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 2795,
+      "frame": {
+        "id": 20,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 42,
+      "dir": "send",
+      "ms": 2796,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 21,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "summary",
+          "cursor": "<cursor-21>"
+        }
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 2797,
+      "frame": {
+        "id": 21,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 44,
+      "dir": "send",
+      "ms": 2797,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 22,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "notLoaded",
+          "cursor": "<cursor-21>"
+        }
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 2797,
+      "frame": {
+        "id": 22,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [],
+              "itemsView": "notLoaded",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 46,
+      "dir": "send",
+      "ms": 2798,
+      "frame": {
+        "method": "thread/resume",
+        "id": 23,
+        "params": {
+          "threadId": "<session-1>",
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "excludeTurns": true
+        }
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 2926,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690465087
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 2926,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690465087
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 2926,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-8>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690465087
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 2926,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-11>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690465087
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 2926,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-11>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690465087
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 2926,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-8>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690465087
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 2927,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578690465088
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 2929,
+      "frame": {
+        "id": 23,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "low",
+            "createdAt": 1578690408,
+            "updatedAt": 1578690465,
+            "recencyAt": 1578690436,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\10\\rollout-2020-01-10T17-06-48-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-astra",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": "low",
+          "multiAgentMode": "explicitRequestOnly",
+          "initialTurnsPage": null,
+          "turnsBackwardsCursor": "<cursor-20>",
+          "itemsBackwardsCursor": "<cursor-29>"
+        }
+      }
+    },
+    {
+      "index": 55,
+      "dir": "send",
+      "ms": 2929,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 24,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 2929,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 68509,
+              "inputTokens": 68384,
+              "cachedInputTokens": 50560,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 125,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 17251,
+              "inputTokens": 17237,
+              "cachedInputTokens": 16896,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 14,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578690465090
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 2929,
+      "frame": {
+        "method": "thread/goal/cleared",
+        "params": {
+          "threadId": "<session-1>"
+        },
+        "emittedAtMs": 1578690465090
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 2931,
+      "frame": {
+        "id": 24,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "I’ll read notes-2.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-18>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "33894",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath notes-2.txt",
+                      "name": "notes-2.txt",
+                      "path": "<scratch>\\notes-2.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 15
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 59,
+      "dir": "send",
+      "ms": 2931,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 25,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "itemsView": "summary"
+        }
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 2932,
+      "frame": {
+        "id": 25,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 61,
+      "dir": "send",
+      "ms": 2932,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 26,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "itemsView": "notLoaded"
+        }
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 2933,
+      "frame": {
+        "id": 26,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [],
+              "itemsView": "notLoaded",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [],
+              "itemsView": "notLoaded",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 63,
+      "dir": "send",
+      "ms": 2933,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 27,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2
+        }
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 2933,
+      "frame": {
+        "id": 27,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 65,
+      "dir": "send",
+      "ms": 2933,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 28,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "itemsView": "full",
+          "sortDirection": "asc"
+        }
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 2935,
+      "frame": {
+        "id": 28,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            },
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "I’ll read notes-2.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-18>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "33894",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath notes-2.txt",
+                      "name": "notes-2.txt",
+                      "path": "<scratch>\\notes-2.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 15
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 67,
+      "dir": "send",
+      "ms": 2935,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 29,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 2936,
+      "frame": {
+        "id": 29,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "I’ll read notes-2.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-18>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "33894",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath notes-2.txt",
+                      "name": "notes-2.txt",
+                      "path": "<scratch>\\notes-2.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 15
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            }
+          ],
+          "nextCursor": "<cursor-21>",
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 69,
+      "dir": "send",
+      "ms": 2936,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 30,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "full",
+          "cursor": "<cursor-21>"
+        }
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 2938,
+      "frame": {
+        "id": 30,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 71,
+      "dir": "send",
+      "ms": 2938,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 31,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "notLoaded"
+        }
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 2939,
+      "frame": {
+        "id": 31,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [],
+              "itemsView": "notLoaded",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            }
+          ],
+          "nextCursor": "<cursor-21>",
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 73,
+      "dir": "send",
+      "ms": 2939,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 32,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "full",
+          "cursor": "<cursor-21>"
+        }
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 2940,
+      "frame": {
+        "id": 32,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 75,
+      "dir": "send",
+      "ms": 2940,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 33,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2
+        }
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 2940,
+      "frame": {
+        "id": 33,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-3>",
+              "item": {
+                "type": "userMessage",
+                "id": "<item-4>",
+                "clientId": "<client-message-2>",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                    "text_elements": []
+                  }
+                ]
+              }
+            },
+            {
+              "turnId": "<turn-3>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-5>",
+                "text": "I’ll read sample.txt.",
+                "phase": "commentary",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": "<cursor-22>",
+          "backwardsCursor": "<cursor-23>"
+        }
+      }
+    },
+    {
+      "index": 77,
+      "dir": "send",
+      "ms": 2941,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 34,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "cursor": "<cursor-22>"
+        }
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 2941,
+      "frame": {
+        "id": 34,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-3>",
+              "item": {
+                "type": "commandExecution",
+                "id": "<item-6>",
+                "pluginId": null,
+                "scriptPath": null,
+                "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                "cwd": "<scratch>",
+                "processId": "97630",
+                "source": "unifiedExecStartup",
+                "status": "completed",
+                "commandActions": [
+                  {
+                    "type": "read",
+                    "command": "Get-Content -LiteralPath sample.txt",
+                    "name": "sample.txt",
+                    "path": "<scratch>\\sample.txt"
+                  }
+                ],
+                "aggregatedOutput": null,
+                "exitCode": 0,
+                "durationMs": 3
+              }
+            },
+            {
+              "turnId": "<turn-3>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-7>",
+                "text": "The cat sleeps on the warm lamp housing.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": "<cursor-24>",
+          "backwardsCursor": "<cursor-25>"
+        }
+      }
+    },
+    {
+      "index": 79,
+      "dir": "send",
+      "ms": 2941,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 35,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "cursor": "<cursor-24>"
+        }
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 2942,
+      "frame": {
+        "id": 35,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "userMessage",
+                "id": "<item-16>",
+                "clientId": "<client-message-14>",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                    "text_elements": []
+                  }
+                ]
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-17>",
+                "text": "I’ll read notes-2.txt.",
+                "phase": "commentary",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": "<cursor-26>",
+          "backwardsCursor": "<cursor-27>"
+        }
+      }
+    },
+    {
+      "index": 81,
+      "dir": "send",
+      "ms": 2942,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 36,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 2,
+          "cursor": "<cursor-26>"
+        }
+      }
+    },
+    {
+      "index": 82,
+      "dir": "recv",
+      "ms": 2942,
+      "frame": {
+        "id": 36,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "commandExecution",
+                "id": "<item-18>",
+                "pluginId": null,
+                "scriptPath": null,
+                "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                "cwd": "<scratch>",
+                "processId": "33894",
+                "source": "unifiedExecStartup",
+                "status": "completed",
+                "commandActions": [
+                  {
+                    "type": "read",
+                    "command": "Get-Content -LiteralPath notes-2.txt",
+                    "name": "notes-2.txt",
+                    "path": "<scratch>\\notes-2.txt"
+                  }
+                ],
+                "aggregatedOutput": null,
+                "exitCode": 0,
+                "durationMs": 15
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-19>",
+                "text": "It says the kettle whistles twice before it boils.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-28>"
+        }
+      }
+    },
+    {
+      "index": 83,
+      "dir": "send",
+      "ms": 2942,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 37,
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-15>",
+          "limit": 50
+        }
+      }
+    },
+    {
+      "index": 84,
+      "dir": "recv",
+      "ms": 2943,
+      "frame": {
+        "id": 37,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "userMessage",
+                "id": "<item-16>",
+                "clientId": "<client-message-14>",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                    "text_elements": []
+                  }
+                ]
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-17>",
+                "text": "I’ll read notes-2.txt.",
+                "phase": "commentary",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "commandExecution",
+                "id": "<item-18>",
+                "pluginId": null,
+                "scriptPath": null,
+                "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                "cwd": "<scratch>",
+                "processId": "33894",
+                "source": "unifiedExecStartup",
+                "status": "completed",
+                "commandActions": [
+                  {
+                    "type": "read",
+                    "command": "Get-Content -LiteralPath notes-2.txt",
+                    "name": "notes-2.txt",
+                    "path": "<scratch>\\notes-2.txt"
+                  }
+                ],
+                "aggregatedOutput": null,
+                "exitCode": 0,
+                "durationMs": 15
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-19>",
+                "text": "It says the kettle whistles twice before it boils.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-27>"
+        }
+      }
+    },
+    {
+      "index": 85,
+      "dir": "send",
+      "ms": 2943,
+      "frame": {
+        "method": "thread/items/list",
+        "id": 38,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 3,
+          "sortDirection": "desc"
+        }
+      }
+    },
+    {
+      "index": 86,
+      "dir": "recv",
+      "ms": 2944,
+      "frame": {
+        "id": 38,
+        "result": {
+          "data": [
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-19>",
+                "text": "It says the kettle whistles twice before it boils.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "commandExecution",
+                "id": "<item-18>",
+                "pluginId": null,
+                "scriptPath": null,
+                "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                "cwd": "<scratch>",
+                "processId": "33894",
+                "source": "unifiedExecStartup",
+                "status": "completed",
+                "commandActions": [
+                  {
+                    "type": "read",
+                    "command": "Get-Content -LiteralPath notes-2.txt",
+                    "name": "notes-2.txt",
+                    "path": "<scratch>\\notes-2.txt"
+                  }
+                ],
+                "aggregatedOutput": null,
+                "exitCode": 0,
+                "durationMs": 15
+              }
+            },
+            {
+              "turnId": "<turn-15>",
+              "item": {
+                "type": "agentMessage",
+                "id": "<item-17>",
+                "text": "I’ll read notes-2.txt.",
+                "phase": "commentary",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            }
+          ],
+          "nextCursor": "<cursor-26>",
+          "backwardsCursor": "<cursor-29>"
+        }
+      }
+    },
+    {
+      "index": 87,
+      "dir": "send",
+      "ms": 2944,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 39,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 8,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 88,
+      "dir": "recv",
+      "ms": 2946,
+      "frame": {
+        "id": 39,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "I’ll read notes-2.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-18>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "33894",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath notes-2.txt",
+                      "name": "notes-2.txt",
+                      "path": "<scratch>\\notes-2.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 15
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 89,
+      "dir": "send",
+      "ms": 2946,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 40,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 4,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 90,
+      "dir": "recv",
+      "ms": 2948,
+      "frame": {
+        "id": 40,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "I’ll read notes-2.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-18>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "33894",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath notes-2.txt",
+                      "name": "notes-2.txt",
+                      "path": "<scratch>\\notes-2.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 15
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            },
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 91,
+      "dir": "send",
+      "ms": 2948,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 41,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "summary"
+        }
+      }
+    },
+    {
+      "index": 92,
+      "dir": "recv",
+      "ms": 2949,
+      "frame": {
+        "id": 41,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-15>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-16>",
+                  "clientId": "<client-message-14>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Now read notes-2.txt in the same folder and tell me in one sentence what it says.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-19>",
+                  "text": "It says the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690436,
+              "completedAt": 1578690453,
+              "durationMs": 17216
+            }
+          ],
+          "nextCursor": "<cursor-21>",
+          "backwardsCursor": "<cursor-20>"
+        }
+      }
+    },
+    {
+      "index": 93,
+      "dir": "send",
+      "ms": 2949,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 42,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 8,
+          "itemsView": "full",
+          "cursor": "<cursor-21>"
+        }
+      }
+    },
+    {
+      "index": 94,
+      "dir": "recv",
+      "ms": 2951,
+      "frame": {
+        "id": 42,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "I’ll read sample.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-6>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath sample.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "97630",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath sample.txt",
+                      "name": "sample.txt",
+                      "path": "<scratch>\\sample.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 3
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 95,
+      "dir": "send",
+      "ms": 2951,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 43,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "summary",
+          "cursor": "<cursor-21>"
+        }
+      }
+    },
+    {
+      "index": 96,
+      "dir": "recv",
+      "ms": 2952,
+      "frame": {
+        "id": 43,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-4>",
+                  "clientId": "<client-message-2>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-7>",
+                  "text": "The cat sleeps on the warm lamp housing.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "summary",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 97,
+      "dir": "send",
+      "ms": 2952,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 44,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 1,
+          "itemsView": "notLoaded",
+          "cursor": "<cursor-21>"
+        }
+      }
+    },
+    {
+      "index": 98,
+      "dir": "recv",
+      "ms": 2953,
+      "frame": {
+        "id": 44,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-3>",
+              "items": [],
+              "itemsView": "notLoaded",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578690408,
+              "completedAt": 1578690424,
+              "durationMs": 15971
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 99,
+      "dir": "recv",
+      "ms": 2966,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690465127
+      }
+    },
+    {
+      "index": 100,
+      "dir": "recv",
+      "ms": 3703,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578690465864
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1375,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2750,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 4361,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "<mcp-server-8>.exe",
+        "node.exe",
+        "<mcp-server-8>.exe"
+      ],
+      "alive": 7
+    }
+  ],
+  "family": "m15-saved-thread",
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 3149
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 3149
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 3149
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 3149
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 3149
+      }
+    ],
+    "longStringsCut": []
+  }
+}

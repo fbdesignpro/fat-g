@@ -1,0 +1,766 @@
+{
+  "_fixture": {
+    "source": "M22 spike m22-k1.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":2,\"turn\":2,\"item\":4,\"mcp-server\":1,\"cursor\":2}. Aliases are shared with the other captures of the family \"m22-codex-override\"."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-11T14:51:36.040Z",
+  "scenario": {
+    "id": "m22-codex-resume",
+    "title": "K1, no prompt: the thread of 'override' resumed in a fresh process under each policy in turn (C4, C42, C53)",
+    "successCondition": "What each thread/resume reply reports against what it asked, each in a process that had not loaded the thread"
+  },
+  "run": {
+    "id": "codex-m22-codex-resume-20",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "p1",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": null,
+    "turnsSpent": 0,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1602,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "resumes": [
+        {
+          "label": "as the app resumes a thread today",
+          "ok": true,
+          "error": null,
+          "asked": {
+            "sandbox": "read-only",
+            "approvalPolicy": "never"
+          },
+          "reported": {
+            "sandbox": {
+              "type": "readOnly",
+              "keys": [
+                "networkAccess",
+                "type"
+              ],
+              "networkAccess": false,
+              "writableRoots": null,
+              "excludeTmpdirEnvVar": null,
+              "excludeSlashTmp": null
+            },
+            "approvalPolicy": "never",
+            "approvalsReviewer": "user",
+            "activePermissionProfile": null,
+            "runtimeWorkspaceRoots": [
+              "working folder"
+            ],
+            "cwd": "working folder"
+          },
+          "matchesWhatWasAsked": true,
+          "settingsFrames": 0
+        },
+        {
+          "label": "no policy named, after it",
+          "ok": true,
+          "error": null,
+          "asked": {},
+          "reported": {
+            "sandbox": {
+              "type": "readOnly",
+              "keys": [
+                "networkAccess",
+                "type"
+              ],
+              "networkAccess": false,
+              "writableRoots": null,
+              "excludeTmpdirEnvVar": null,
+              "excludeSlashTmp": null
+            },
+            "approvalPolicy": "never",
+            "approvalsReviewer": "user",
+            "activePermissionProfile": {
+              "id": ":read-only",
+              "extends": null
+            },
+            "runtimeWorkspaceRoots": [
+              "working folder"
+            ],
+            "cwd": "working folder"
+          },
+          "matchesWhatWasAsked": true,
+          "settingsFrames": 0
+        },
+        {
+          "label": "workspace-write, untrusted, reviewer user",
+          "ok": true,
+          "error": null,
+          "asked": {
+            "sandbox": "workspace-write",
+            "approvalPolicy": "untrusted",
+            "approvalsReviewer": "user"
+          },
+          "reported": {
+            "sandbox": {
+              "type": "readOnly",
+              "keys": [
+                "networkAccess",
+                "type"
+              ],
+              "networkAccess": false,
+              "writableRoots": null,
+              "excludeTmpdirEnvVar": null,
+              "excludeSlashTmp": null
+            },
+            "approvalPolicy": "untrusted",
+            "approvalsReviewer": "user",
+            "activePermissionProfile": null,
+            "runtimeWorkspaceRoots": [
+              "working folder"
+            ],
+            "cwd": "working folder"
+          },
+          "matchesWhatWasAsked": false,
+          "settingsFrames": 0
+        },
+        {
+          "label": "no policy named, after it",
+          "ok": true,
+          "error": null,
+          "asked": {},
+          "reported": {
+            "sandbox": {
+              "type": "readOnly",
+              "keys": [
+                "networkAccess",
+                "type"
+              ],
+              "networkAccess": false,
+              "writableRoots": null,
+              "excludeTmpdirEnvVar": null,
+              "excludeSlashTmp": null
+            },
+            "approvalPolicy": "untrusted",
+            "approvalsReviewer": "user",
+            "activePermissionProfile": {
+              "id": ":read-only",
+              "extends": null
+            },
+            "runtimeWorkspaceRoots": [
+              "working folder"
+            ],
+            "cwd": "working folder"
+          },
+          "matchesWhatWasAsked": true,
+          "settingsFrames": 0
+        },
+        {
+          "label": "as the app resumes a thread today, again",
+          "ok": true,
+          "error": null,
+          "asked": {
+            "sandbox": "read-only",
+            "approvalPolicy": "never"
+          },
+          "reported": {
+            "sandbox": {
+              "type": "readOnly",
+              "keys": [
+                "networkAccess",
+                "type"
+              ],
+              "networkAccess": false,
+              "writableRoots": null,
+              "excludeTmpdirEnvVar": null,
+              "excludeSlashTmp": null
+            },
+            "approvalPolicy": "never",
+            "approvalsReviewer": "user",
+            "activePermissionProfile": null,
+            "runtimeWorkspaceRoots": [
+              "working folder"
+            ],
+            "cwd": "working folder"
+          },
+          "matchesWhatWasAsked": true,
+          "settingsFrames": 0
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "threadId": "<session-1>",
+      "cwd": "<scratch>",
+      "excludeTurns": true,
+      "sandbox": "read-only",
+      "approvalPolicy": "never"
+    },
+    "replyIndex": 7,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "per thread/start, as each scenario names it",
+    "approvalPolicy": "per thread/start",
+    "reviewer": "user",
+    "policy": "an approval request for what the prompt dictated — a command that holds the prompt's own and no other, in a scratch folder, or a file change whose paths are all in scratch folders — is answered as the scenario says; any other is declined, and a request for more permissions is granted nothing"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 852,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 853,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 854,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 859,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 1709,
+      "frame": {
+        "method": "thread/resume",
+        "id": 2,
+        "params": {
+          "threadId": "<session-1>",
+          "cwd": "<scratch>",
+          "excludeTurns": true,
+          "sandbox": "read-only",
+          "approvalPolicy": "never"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1796,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578754272952
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 1798,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578754272953
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 1799,
+      "frame": {
+        "id": 2,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "Run exactly this shell command, once, and nothing else: echo k1 > k1-override.txt\nThen tell me in one short sentence whether it ran. If it is refused or fails, say so in one sentence and stop: do not try another way.",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": "low",
+            "createdAt": 1578754218,
+            "updatedAt": 1578754272,
+            "recencyAt": 1578754225,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\11\\rollout-2020-01-11T10-50-18-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": "low",
+          "multiAgentMode": "explicitRequestOnly",
+          "initialTurnsPage": null,
+          "turnsBackwardsCursor": "<cursor-11>",
+          "itemsBackwardsCursor": "<cursor-12>"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 1799,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 14013,
+              "inputTokens": 13936,
+              "cachedInputTokens": 6912,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 77,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 14013,
+              "inputTokens": 13936,
+              "cachedInputTokens": 6912,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 77,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578754272954
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 1799,
+      "frame": {
+        "method": "thread/goal/cleared",
+        "params": {
+          "threadId": "<session-1>"
+        },
+        "emittedAtMs": 1578754272955
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 2215,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578754273370
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 852,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1709,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 3139,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    }
+  ],
+  "family": "m22-codex-override",
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 2114
+      },
+      {
+        "method": "thread/tokenUsage/updated",
+        "item": null,
+        "bytes": 507
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 232
+      },
+      {
+        "method": "mcpServer/startupStatus/updated",
+        "item": null,
+        "bytes": 207
+      },
+      {
+        "method": "mcpServer/startupStatus/updated",
+        "item": null,
+        "bytes": 204
+      }
+    ],
+    "longStringsCut": []
+  }
+}

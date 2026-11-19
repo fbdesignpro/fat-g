@@ -1,0 +1,110 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The Pet's list (decision 0010): each project's row, then its sessions' capsules, at the heights main
+   sizes the window by (src/shared/contracts/pet.ts, PET_LAYOUT; PetApp sets them as variables). */
+.projects {
+  /* The session column's own rung for its 12px words (Sessions.module.css, `.sessions`). */
+  --text-12: 11.1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-text);
+}
+
+/* The dividers are the list's own ground, showing in the 1 px between two capsules: at a fractional
+   scale a border would land on half a device pixel and let a capsule's white show beside it. None
+   follows the last capsule, which meets the frame's border. */
+.sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  background: var(--color-capsule-divider);
+  list-style: none;
+}
+
+/* As the Main window's project header: the name on the bar's colour, on one line. */
+.project {
+  height: var(--pet-project);
+  margin: 0;
+  padding: 0 var(--space-2);
+  overflow: hidden;
+  background: var(--color-bar);
+  color: var(--color-on-bar);
+  font-size: var(--text-11);
+  font-weight: var(--weight-semibold);
+  line-height: var(--pet-project);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.row {
+  height: var(--pet-row);
+}
+
+.capsule {
+  display: grid;
+  grid-template-columns: var(--pet-avatar) minmax(0, 1fr);
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--color-bg);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* The Main window's capsule marks its right edge in the provider's colour under the pointer. */
+.capsule:hover {
+  box-shadow: inset -4px 0 0 0 var(--bar-color, var(--color-text-muted));
+}
+
+.capsule:focus-visible {
+  outline-offset: -2px;
+}
+
+.body {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 16px;
+  min-width: 0;
+  height: var(--pet-avatar);
+}
+
+/* Start the status text at the title's left edge in both mini-window sizes. */
+.body > [data-capsule-status] {
+  padding-left: var(--space-1);
+}
+
+/* At the capsule size, the Main window's name: two lines at most. */
+.name {
+  display: -webkit-box;
+  align-self: start;
+  overflow: hidden;
+  padding: var(--space-1) var(--space-2) 0 var(--space-1);
+  font-size: var(--text-14);
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* At the smaller size, one line, centred over the bar, in the bar's own small type so more of it fits.
+   Use the whole line before cutting: a line clamp can drop a whole word and leave unused space. */
+.projects[data-pet-size='compact'] .name {
+  display: block;
+  align-self: center;
+  padding-top: 0;
+  font-size: var(--text-11);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

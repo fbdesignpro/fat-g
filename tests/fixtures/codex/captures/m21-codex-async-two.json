@@ -1,0 +1,1315 @@
+{
+  "_fixture": {
+    "source": "M21 spike m21-k2.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"cursor\":2,\"client-message\":1,\"turn\":2,\"item\":3,\"mcp-server\":4}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-10T10:25:56.322Z",
+  "scenario": {
+    "id": "m21-async-two",
+    "title": "K2: a default-mode prompt that invites two questions at once",
+    "successCondition": "How the two questions come: one message with two, or two messages"
+  },
+  "run": {
+    "id": "codex-m21-async-two-11",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 32,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1658,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-10>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-10>.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "experimentalApiAskedFor": false,
+      "endStatus": "completed",
+      "requestsDuringIt": 0,
+      "methods": {
+        "thread/tokenUsage/updated": 3,
+        "thread/goal/cleared": 1,
+        "mcpServer/startupStatus/updated": 3,
+        "thread/status/changed": 2,
+        "turn/started": 1,
+        "item/started": 3,
+        "item/completed": 3,
+        "turn/completed": 1
+      },
+      "itemsStarted": [
+        "userMessage",
+        "agentMessage",
+        "agentMessage"
+      ],
+      "answers": [
+        {
+          "phase": "final_answer",
+          "units": 125,
+          "delivery": "async",
+          "questions": [
+            {
+              "keys": [
+                "options",
+                "title"
+              ],
+              "options": 2,
+              "titleUnits": 34
+            },
+            {
+              "keys": [
+                "options",
+                "title"
+              ],
+              "options": 2,
+              "titleUnits": 39
+            }
+          ]
+        },
+        {
+          "phase": "final_answer",
+          "units": 0,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "planItems": [],
+      "commands": [],
+      "sleeps": 0,
+      "end": {
+        "ms": 13731,
+        "index": 32,
+        "status": "completed",
+        "error": null
+      },
+      "messagesWithQuestions": 1,
+      "questionsInAll": 2,
+      "typeCounts": {
+        "thread/tokenUsage/updated": 3,
+        "thread/goal/cleared": 1,
+        "mcpServer/startupStatus/updated": 3,
+        "response": 1,
+        "thread/status/changed": 2,
+        "turn/started": 1,
+        "item/started": 3,
+        "item/completed": 3,
+        "account/rateLimits/updated": 2,
+        "turn/completed": 1
+      },
+      "outline": [
+        {
+          "index": 13,
+          "ms": 1792,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 14,
+          "ms": 1792,
+          "method": "thread/goal/cleared",
+          "thread": "session"
+        },
+        {
+          "index": 15,
+          "ms": 1803,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 17,
+          "ms": 1839,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 18,
+          "ms": 1839,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 19,
+          "ms": 2353,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 20,
+          "ms": 5938,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 21,
+          "ms": 5948,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 22,
+          "ms": 9065,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 23,
+          "ms": 11106,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 24,
+          "ms": 11116,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 25,
+          "ms": 11181,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 26,
+          "ms": 11181,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 27,
+          "ms": 13628,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 28,
+          "ms": 13639,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 29,
+          "ms": 13716,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 30,
+          "ms": 13716,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 31,
+          "ms": 13731,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 32,
+          "ms": 13731,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "threadId": "<session-1>",
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "excludeTurns": true
+    },
+    "replyIndex": 11,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_AUTOUPDATER_DISABLED_BY_HOST",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 820,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 821,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) unknown (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 821,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 825,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 1643,
+      "frame": {
+        "method": "thread/resume",
+        "id": 2,
+        "params": {
+          "threadId": "<session-1>",
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "excludeTurns": true
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1788,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-11>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651941209
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 1789,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-12>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651941209
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 1789,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-13>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651941209
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 1789,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651941209
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 1789,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651941209
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 1790,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578651941211
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 1792,
+      "frame": {
+        "id": 2,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "Before you plan anything, ask me with your request_user_input tool which of notes-1.txt and notes-2.txt the plan should be about, offering those two as the options, and wait for my answer. Then write a two-line plan for summarising the file I pick.",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "low",
+            "createdAt": 1578651858,
+            "updatedAt": 1578651941,
+            "recencyAt": 1578651914,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\10\\rollout-2020-01-10T06-24-18-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-astra",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": "low",
+          "multiAgentMode": "explicitRequestOnly",
+          "initialTurnsPage": null,
+          "turnsBackwardsCursor": "<cursor-2>",
+          "itemsBackwardsCursor": "<cursor-3>"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "dir": "send",
+      "ms": 1792,
+      "frame": {
+        "method": "turn/start",
+        "id": 3,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Ask me two questions at once, each with its options: which of notes-1.txt and notes-2.txt I want read, and whether I want it quoted or summarised. Do not read anything until I have answered: end your turn right after asking, without waiting.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-astra",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-4>"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 1792,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-5>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 132560,
+              "inputTokens": 132235,
+              "cachedInputTokens": 111872,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 325,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 19276,
+              "inputTokens": 19254,
+              "cachedInputTokens": 18944,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 22,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578651941213
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 1792,
+      "frame": {
+        "method": "thread/goal/cleared",
+        "params": {
+          "threadId": "<session-1>"
+        },
+        "emittedAtMs": 1578651941213
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 1803,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-12>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651941224
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 1830,
+      "frame": {
+        "id": 3,
+        "result": {
+          "turn": {
+            "id": "<turn-6>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 1839,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578651941260
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 1839,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-6>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578651941,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578651941260
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 2353,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-13>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651941774
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 5938,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-7>",
+            "clientId": "<client-message-4>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Ask me two questions at once, each with its options: which of notes-1.txt and notes-2.txt I want read, and whether I want it quoted or summarised. Do not read anything until I have answered: end your turn right after asking, without waiting.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-6>",
+          "startedAtMs": 1578651945359
+        },
+        "emittedAtMs": 1578651945359
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 5948,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-7>",
+            "clientId": "<client-message-4>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Ask me two questions at once, each with its options: which of notes-1.txt and notes-2.txt I want read, and whether I want it quoted or summarised. Do not read anything until I have answered: end your turn right after asking, without waiting.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-6>",
+          "completedAtMs": 1578651945359
+        },
+        "emittedAtMs": 1578651945369
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 9065,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-11>",
+          "status": "failed",
+          "error": "MCP client for `<mcp-server-11>` failed to start: MCP startup failed: handshaking with MCP server failed: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request",
+          "failureReason": null
+        },
+        "emittedAtMs": 1578651948486
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 11106,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-8>",
+            "text": "Which file do you want me to read?\n- notes-1.txt\n- notes-2.txt\n\nWould you like it quoted or summarised?\n- Quoted\n- Summarised",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": "async",
+            "questions": [
+              {
+                "title": "Which file do you want me to read?",
+                "options": [
+                  "notes-1.txt",
+                  "notes-2.txt"
+                ]
+              },
+              {
+                "title": "Would you like it quoted or summarised?",
+                "options": [
+                  "Quoted",
+                  "Summarised"
+                ]
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-6>",
+          "startedAtMs": 1578651950527
+        },
+        "emittedAtMs": 1578651950527
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 11116,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-8>",
+            "text": "Which file do you want me to read?\n- notes-1.txt\n- notes-2.txt\n\nWould you like it quoted or summarised?\n- Quoted\n- Summarised",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": "async",
+            "questions": [
+              {
+                "title": "Which file do you want me to read?",
+                "options": [
+                  "notes-1.txt",
+                  "notes-2.txt"
+                ]
+              },
+              {
+                "title": "Would you like it quoted or summarised?",
+                "options": [
+                  "Quoted",
+                  "Summarised"
+                ]
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-6>",
+          "completedAtMs": 1578651950527
+        },
+        "emittedAtMs": 1578651950537
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 11181,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-6>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 151964,
+              "inputTokens": 151573,
+              "cachedInputTokens": 130944,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 391,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 19404,
+              "inputTokens": 19338,
+              "cachedInputTokens": 19072,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 66,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578651950602
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 11181,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 13628,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-9>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-6>",
+          "startedAtMs": 1578651953049
+        },
+        "emittedAtMs": 1578651953049
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 13639,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-9>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-6>",
+          "completedAtMs": 1578651953050
+        },
+        "emittedAtMs": 1578651953060
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 13716,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-6>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 171390,
+              "inputTokens": 170995,
+              "cachedInputTokens": 150144,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 395,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 19426,
+              "inputTokens": 19422,
+              "cachedInputTokens": 19200,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 4,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578651953137
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 13716,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 13731,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578651953152
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 13731,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-6>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-8>",
+                "text": "Which file do you want me to read?\n- notes-1.txt\n- notes-2.txt\n\nWould you like it quoted or summarised?\n- Quoted\n- Summarised",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": "async",
+                "questions": [
+                  {
+                    "title": "Which file do you want me to read?",
+                    "options": [
+                      "notes-1.txt",
+                      "notes-2.txt"
+                    ]
+                  },
+                  {
+                    "title": "Would you like it quoted or summarised?",
+                    "options": [
+                      "Quoted",
+                      "Summarised"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578651941,
+            "completedAt": 1578651953,
+            "durationMs": 11894
+          }
+        },
+        "emittedAtMs": 1578651953152
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 687,
+    "tail": "2020-01-10T10:25:43.181375Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n2020-01-10T10:25:45.455718Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n2020-01-10T10:25:48.485895Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n"
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 819,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1643,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 16014,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "node.exe",
+        "<mcp-server-10>.exe",
+        "<mcp-server-10>.exe"
+      ],
+      "alive": 7
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 2115
+      },
+      {
+        "method": "mcpServer/startupStatus/updated",
+        "item": null,
+        "bytes": 1174
+      },
+      {
+        "method": "turn/completed",
+        "item": null,
+        "bytes": 763
+      },
+      {
+        "method": "item/completed",
+        "item": "agentMessage",
+        "bytes": 662
+      },
+      {
+        "method": "item/started",
+        "item": "agentMessage",
+        "bytes": 658
+      }
+    ],
+    "longStringsCut": []
+  }
+}

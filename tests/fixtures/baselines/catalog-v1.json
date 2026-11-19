@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "minReaderVersion": 1,
+  "providers": {
+    "codex": {
+      "efforts": {
+        "xhigh": {
+          "label": "Very high",
+          "caution": true
+        }
+      },
+      "models": {
+        "gpt-5.5": {
+          "name": "GPT-5.5",
+          "description": "The everyday model.",
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh"
+          ],
+          "listedDefaultEffort": "medium",
+          "speedTiers": [
+            "fast",
+            {
+              "id": "priority",
+              "name": "Priority",
+              "description": "Served first."
+            }
+          ],
+          "hidden": false
+        },
+        "gpt-5.5-mini": {
+          "hidden": true
+        },
+        "gpt-6-astra": {
+          "name": "Astra",
+          "resolvedId": "gpt-6-astra-2020-03"
+        }
+      }
+    },
+    "claude": {
+      "models": {
+        "sonnet": {
+          "description": "Described by hand."
+        }
+      }
+    },
+    "gemini": {
+      "models": {
+        "gemini-9": {}
+      }
+    }
+  }
+}

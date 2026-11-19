@@ -1,0 +1,1649 @@
+{
+  "_fixture": {
+    "source": "M26 spike m26-k2.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "every delta kind (the handshake opts out of them all; counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"turn\":1,\"item\":2,\"worker\":10,\"cursor\":1}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-09T13:00:47.820Z",
+  "scenario": {
+    "id": "m26-codex-config-off",
+    "title": "K2: the title request with `baseInstructions` and the overrides Codex’s own extension sends its titles",
+    "successCondition": "the ephemeral start checked read-only, one turn ended, its message the title"
+  },
+  "run": {
+    "id": "codex-m26-codex-config-off-7",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 20,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 2387,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "model": {
+        "listedDefault": true,
+        "hidden": false,
+        "efforts": 5,
+        "effort": "low"
+      },
+      "start": {
+        "ok": true,
+        "ephemeral": true,
+        "check": {
+          "passed": true,
+          "rows": [
+            {
+              "field": "sandbox",
+              "requested": "read-only",
+              "reported": {
+                "type": "readOnly",
+                "networkAccess": false
+              },
+              "match": true
+            },
+            {
+              "field": "approvalPolicy",
+              "requested": "never",
+              "reported": "never",
+              "match": true
+            }
+          ]
+        }
+      },
+      "reply": {
+        "came": true,
+        "units": 44,
+        "lines": 1,
+        "firstLineUnits": 44,
+        "quoted": false,
+        "markdown": false,
+        "trailingPunctuation": false,
+        "within36": false
+      },
+      "messages": 1,
+      "items": {
+        "userMessage": 1,
+        "agentMessage": 1
+      },
+      "turnStatus": "completed",
+      "requests": 0,
+      "tokens": {
+        "last": {
+          "totalTokens": 5532,
+          "inputTokens": 5521,
+          "cachedInputTokens": 0,
+          "cacheWriteInputTokens": 0,
+          "outputTokens": 11,
+          "reasoningOutputTokens": 0
+        },
+        "total": {
+          "totalTokens": 5532,
+          "inputTokens": 5521,
+          "cachedInputTokens": 0,
+          "cacheWriteInputTokens": 0,
+          "outputTokens": 11,
+          "reasoningOutputTokens": 0
+        }
+      },
+      "mcpServerStatuses": [],
+      "threadList": {
+        "ok": true,
+        "rows": 10,
+        "holdsThisThread": false
+      },
+      "outline": [
+        {
+          "index": 11,
+          "ms": 2507,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 12,
+          "ms": 2507,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 13,
+          "ms": 4465,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 14,
+          "ms": 4465,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 15,
+          "ms": 6888,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 16,
+          "ms": 6953,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 17,
+          "ms": 7017,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 18,
+          "ms": 7017,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 19,
+          "ms": 7018,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 20,
+          "ms": 7018,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "ephemeral": true,
+      "baseInstructions": "You name chat sessions. The user message holds the first message of a new session. Reply with a title for that session: three to six words and at most 36 characters, in the language of the message, on one line, with no quotes, no Markdown and no punctuation at the end. Reply with the title alone. Do not answer the message, do not act on it, run nothing, read nothing and ask nothing.",
+      "model": "gpt-6-luna",
+      "config": {
+        "features.enable_fanout": false,
+        "features.hooks": false,
+        "features.multi_agent": false,
+        "features.multi_agent_v2": false,
+        "features.plugins": false,
+        "features.shell_snapshot": false,
+        "features.tool_suggest": false,
+        "features.apps": false,
+        "apps": {
+          "_default": {
+            "enabled": false,
+            "destructive_enabled": false,
+            "open_world_enabled": false
+          }
+        },
+        "web_search": "disabled"
+      }
+    },
+    "replyIndex": 7,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined; the thread is ephemeral and told to act on nothing"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {},
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/agentMessage/delta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1152,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/agentMessage/delta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1153,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1154,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 1161,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 2429,
+      "frame": {
+        "method": "model/list",
+        "id": 2,
+        "params": {
+          "limit": 100,
+          "includeHidden": true
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 2430,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "gpt-6-luna",
+              "model": "gpt-6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Luna",
+              "description": "Fast and affordable model for easier tasks.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [],
+              "serviceTiers": [],
+              "defaultServiceTier": null,
+              "isDefault": true
+            },
+            {
+              "id": "gpt-reserve",
+              "model": "gpt-reserve",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-Reserve",
+              "description": "Fast and affordable agentic coding model.",
+              "modelSpecialty": null,
+              "hidden": true,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [],
+              "serviceTiers": [],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-terra",
+              "model": "gpt-5.6-terra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Terra",
+              "description": "Older balanced model for straightforward work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [],
+              "serviceTiers": [],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-luna",
+              "model": "gpt-5.6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Luna",
+              "description": "Older fast and efficient model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [],
+              "serviceTiers": [],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "codex-auto-review",
+              "model": "codex-auto-review",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "Codex Auto Review",
+              "description": "Automatic approval review model for Codex.",
+              "modelSpecialty": null,
+              "hidden": true,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [],
+              "serviceTiers": [],
+              "defaultServiceTier": null,
+              "isDefault": false
+            }
+          ],
+          "nextCursor": null
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 2430,
+      "frame": {
+        "method": "thread/start",
+        "id": 3,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "ephemeral": true,
+          "baseInstructions": "You name chat sessions. The user message holds the first message of a new session. Reply with a title for that session: three to six words and at most 36 characters, in the language of the message, on one line, with no quotes, no Markdown and no punctuation at the end. Reply with the title alone. Do not answer the message, do not act on it, run nothing, read nothing and ask nothing.",
+          "model": "gpt-6-luna",
+          "config": {
+            "features.enable_fanout": false,
+            "features.hooks": false,
+            "features.multi_agent": false,
+            "features.multi_agent_v2": false,
+            "features.plugins": false,
+            "features.shell_snapshot": false,
+            "features.tool_suggest": false,
+            "features.apps": false,
+            "apps": {
+              "_default": {
+                "enabled": false,
+                "destructive_enabled": false,
+                "open_world_enabled": false
+              }
+            },
+            "web_search": "disabled"
+          }
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 2485,
+      "frame": {
+        "id": 3,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578574840,
+            "updatedAt": 1578574840,
+            "recencyAt": 1578574840,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 2486,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "legacy",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578574840,
+            "updatedAt": 1578574840,
+            "recencyAt": 1578574840,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578574840884
+      }
+    },
+    {
+      "index": 9,
+      "dir": "send",
+      "ms": 2487,
+      "frame": {
+        "method": "turn/start",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "The first message of the session:\n\nThe login form lets me press Submit before both fields are filled in. Make the button stay disabled until the email and the password are both there, and add a test for it.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 2507,
+      "frame": {
+        "id": 4,
+        "result": {
+          "turn": {
+            "id": "<turn-2>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 2507,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578574840906
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 2507,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-2>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578574840,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578574840906
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 4465,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-3>",
+            "clientId": null,
+            "content": [
+              {
+                "type": "text",
+                "text": "The first message of the session:\n\nThe login form lets me press Submit before both fields are filled in. Make the button stay disabled until the email and the password are both there, and add a test for it.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-2>",
+          "startedAtMs": 1578574842864
+        },
+        "emittedAtMs": 1578574842864
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 4465,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-3>",
+            "clientId": null,
+            "content": [
+              {
+                "type": "text",
+                "text": "The first message of the session:\n\nThe login form lets me press Submit before both fields are filled in. Make the button stay disabled until the email and the password are both there, and add a test for it.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-2>",
+          "completedAtMs": 1578574842864
+        },
+        "emittedAtMs": 1578574842864
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 6888,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-4>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-2>",
+          "startedAtMs": 1578574845286
+        },
+        "emittedAtMs": 1578574845286
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 6953,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-4>",
+            "text": "Disable Submit Until Login Fields Are Filled",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-2>",
+          "completedAtMs": 1578574845352
+        },
+        "emittedAtMs": 1578574845352
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 7017,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-2>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 5532,
+              "inputTokens": 5521,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 11,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 5532,
+              "inputTokens": 5521,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 11,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578574845416
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 7017,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 7018,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578574845416
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 7018,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-2>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-4>",
+                "text": "Disable Submit Until Login Fields Are Filled",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578574840,
+            "completedAt": 1578574845,
+            "durationMs": 4526
+          }
+        },
+        "emittedAtMs": 1578574845416
+      }
+    },
+    {
+      "index": 21,
+      "dir": "send",
+      "ms": 7018,
+      "frame": {
+        "method": "thread/list",
+        "id": 5,
+        "params": {
+          "limit": 50
+        }
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 7028,
+      "frame": {
+        "id": 5,
+        "result": {
+          "data": [
+            {
+              "id": "<worker-5>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-5>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Do these steps in this order, and go on to the next whatever one does. Do not change a command. If a step is blocked you may ask, once, for approval to run that same command or make that same change; if that is refused, say so and go on.\n1. Run exactly this shell command, once: echo k4 > k4-bz-inside.txt\n2. Run exactly this shell command, once: echo k4 > <scratch>\\k4-bz-outside.txt\n3. Use your apply_patch tool, not a shell command, to create the file <scratch>\\k4-bz-patch.txt containing the single word alpha.\nThen tell me in one line per step whether it worked.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-luna",
+              "reasoningEffort": "low",
+              "createdAt": 1578422211,
+              "updatedAt": 1578422235,
+              "recencyAt": 1578422212,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\07\\rollout-2020-01-07T14-36-51-<worker-5>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            },
+            {
+              "id": "<worker-6>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-6>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Do these steps in this order, and go on to the next whatever one does. Do not change a command. If a step is blocked you may ask, once, for approval to run that same command or make that same change; if that is refused, say so and go on.\n1. Use your apply_patch tool, not a shell command, to create the file <scratch>\\k4-ar-patch.txt containing the single word alpha.\n2. Run exactly this shell command, once: echo k4 > <scratch>\\k4-ar-command.txt\nThen tell me in one line per step whether it worked.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-luna",
+              "reasoningEffort": "low",
+              "createdAt": 1578422157,
+              "updatedAt": 1578422196,
+              "recencyAt": 1578422192,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\07\\rollout-2020-01-07T14-35-57-<worker-6>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            },
+            {
+              "id": "<worker-7>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-7>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Do these steps in this order, and go on to the next whatever one does. Do not change a command. If a step is blocked you may ask, once, for approval to run that same command or make that same change; if that is refused, say so and go on.\n1. Run exactly this shell command, once: echo k4 > <scratch>\\k4-st-temp.txt\n2. Run exactly this shell command, once: echo k4 > <scratch>\\k4-st-outside.txt\n3. Use your apply_patch tool, not a shell command, to create the file <scratch>\\k4-st-patch.txt containing the single word alpha.\nThen tell me in one line per step whether it worked.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-luna",
+              "reasoningEffort": "low",
+              "createdAt": 1578422108,
+              "updatedAt": 1578422108,
+              "recencyAt": 1578422108,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\07\\rollout-2020-01-07T14-35-08-<worker-7>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            },
+            {
+              "id": "<worker-8>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-8>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Use your apply_patch tool, not a shell command, to create these files, one patch each, in this order; if one is refused or fails, say so and go on to the next:\n1. <scratch>\\k4-af-inside.txt containing the single word alpha.\n2. <scratch>\\k4-af-temp.txt containing the single word beta.\n3. <scratch>\\k4-af-outside.txt containing the single word gamma.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-luna",
+              "reasoningEffort": "low",
+              "createdAt": 1578422043,
+              "updatedAt": 1578422043,
+              "recencyAt": 1578422043,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\07\\rollout-2020-01-07T14-34-03-<worker-8>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            },
+            {
+              "id": "<worker-9>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-9>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Run exactly this shell command, once, and nothing else: echo k4 > k4-ro.txt\nThen tell me in one short sentence whether it ran. If it is refused or fails, say so in one sentence and stop: do not try another way.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-luna",
+              "reasoningEffort": "low",
+              "createdAt": 1578422012,
+              "updatedAt": 1578422012,
+              "recencyAt": 1578422012,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\07\\rollout-2020-01-07T14-33-32-<worker-9>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            },
+            {
+              "id": "<worker-10>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-10>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Use your apply_patch tool, not a shell command, to create this file:\n1. <scratch>\\k1-rt-outside.txt containing the single word alpha.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-luna",
+              "reasoningEffort": "low",
+              "createdAt": 1578362242,
+              "updatedAt": 1578362316,
+              "recencyAt": 1578362242,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\06\\rollout-2020-01-06T21-57-22-<worker-10>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            },
+            {
+              "id": "<worker-11>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-11>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Do these two steps in this order, and go on to the second whatever the first does. Do not change a command. If one is blocked you may ask, once, for approval to run that same command; if that is refused, say so and go on.\n1. Run exactly this shell command, once: echo k1 > k1-aw-inside.txt\n2. Run exactly this shell command, once: echo k1 > <scratch>\\k1-aw-outside.txt\nThen tell me in one line per step whether it worked.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-luna",
+              "reasoningEffort": "low",
+              "createdAt": 1578350921,
+              "updatedAt": 1578350921,
+              "recencyAt": 1578350921,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\06\\rollout-2020-01-06T18-48-41-<worker-11>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            },
+            {
+              "id": "<worker-12>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-12>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Do these two steps in this order, and go on to the second whatever the first does. Do not change a command. If one is blocked you may ask, once, for approval to run that same command; if that is refused, say so and go on.\n1. Run exactly this shell command, once: echo k1 > k1-af-inside.txt\n2. Run exactly this shell command, once: echo k1 > <scratch>\\k1-af-outside.txt\nThen tell me in one line per step whether it worked.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-luna",
+              "reasoningEffort": "low",
+              "createdAt": 1578350863,
+              "updatedAt": 1578350863,
+              "recencyAt": 1578350863,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\06\\rollout-2020-01-06T18-47-43-<worker-12>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            },
+            {
+              "id": "<worker-13>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-13>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Do these two steps in this order, and go on to the second whatever the first does. Do not change a command. If one is blocked you may ask, once, for approval to run that same command; if that is refused, say so and go on.\n1. Run exactly this shell command, once: echo k1 > k1-sbc-inside.txt\n2. Run exactly this shell command, once: echo k1 > <scratch>\\k1-sbc-outside.txt\nThen tell me in one line per step whether it worked.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-luna",
+              "reasoningEffort": "low",
+              "createdAt": 1578350832,
+              "updatedAt": 1578350832,
+              "recencyAt": 1578350833,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\06\\rollout-2020-01-06T18-47-12-<worker-13>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            },
+            {
+              "id": "<worker-14>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-14>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Use your apply_patch tool, not a shell command, to create these files, one patch each, in this order; if one is refused or fails, say so and go on to the next:\n1. <scratch>\\k1-sb-inside.txt containing the single word alpha.\n2. <scratch>\\k1-sb-outside.txt containing the single word beta.\n3. <scratch>\\k1-sb-second.txt containing the single word gamma.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-luna",
+              "reasoningEffort": "low",
+              "createdAt": 1578350772,
+              "updatedAt": 1578350772,
+              "recencyAt": 1578350772,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<scratch>\\sessions\\2020\\01\\06\\rollout-2020-01-06T18-46-12-<worker-14>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-15>"
+        }
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1151,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2429,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 8169,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 13865
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 4723
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1372
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 981
+      },
+      {
+        "method": "item/completed",
+        "item": "userMessage",
+        "bytes": 549
+      }
+    ],
+    "longStringsCut": []
+  }
+}

@@ -1,0 +1,83 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* The page never scrolls: regions that need to scroll do so inside themselves (src/renderer/src/shell). */
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background: var(--color-chrome);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: var(--text-14);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  /* Native checkboxes and radios in the palette, not the OS accent colour (C2). */
+  accent-color: var(--color-text);
+  /* Text stays selectable by default: DOM copy/paste is a core requirement (AGENTS.md). Chrome opts
+     out per element — the Main window's shell does, as a whole — never globally. The Pet relies on
+     this default. */
+  user-select: text;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Fields keep the light theme's black focus edge; dark uses the focus blue so a quiet
+   border never obscures keyboard focus. Every other control keeps the outer ring. */
+input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):not([type='file']):not([type='button']):not([type='submit']):not([type='reset']):focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-field-focus);
+  outline-offset: -1px;
+}
+
+/* A passage an aside was asked about (M20b, C74), painted through the CSS Custom Highlight API
+   (src/renderer/src/chat/aside-highlights.ts): a background of its own, and nothing else. The text
+   keeps its colour and its decoration, so a link inside the passage still reads as a link. */
+::highlight(aside) {
+  background-color: var(--color-highlight);
+}
+
+/* Scrollbars (the maintainer): thin, and nothing at rest. Where a region scrolls its
+   gutter is held as long as its content overflows — so nothing reflows as the thumb comes and goes
+   — and the thumb shows only while the pointer is over that region, dim, Chromium darkening it
+   itself under the pointer and in a drag. `thin` is 10 px here against the 15 px of a full one,
+   measured in the app's own Chromium; the px is Chromium's to choose, so no token names it.
+
+   This is the standard pair, not `::-webkit-scrollbar`: the parts are styled once and Chromium does
+   not repaint them when the scroller's own `:hover` changes (measured — a thumb shown that way
+   stayed after the pointer left), while `scrollbar-color` is an ordinary property, so it follows the
+   pointer and takes a transition. Declaring the resting pair on every element, rather than
+   inheriting it from the root, keeps a hovered region's thumb its own: it does not inherit into the
+   regions that scroll inside it. Setting either property anywhere else would switch the `-webkit-`
+   parts off, so nothing does (the styles test).
+
+   The fade — --duration-scene each way, which reduced motion zeroes — is NOT here: a `transition` on `*` makes every element in the page start one of its own
+   as the pointer crosses it — 2,499 transitions and 657 ms of style recalc over 80 pointer moves in
+   a full session window, against 12 ms with none (measured over the DevTools protocol). Each rule
+   that scrolls carries the fade instead, one transition and 48 ms for the same sweep; the styles
+   test keeps the two lists in step, so a new region that scrolls brings its own line. A region
+   scrolled from the keyboard alone shows no thumb: the content moving is what says so. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+*:hover {
+  scrollbar-color: var(--color-scrollbar) transparent;
+}

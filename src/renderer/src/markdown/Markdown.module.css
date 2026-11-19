@@ -1,0 +1,320 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* A text drawn as Markdown (docs/planning/_archive/M19.md, Design 6; C34, C35). The tokens alone: no colour
+   and no size of its own, and nothing is coloured by what a code block holds. Two parts scroll
+   sideways within themselves, a code block and a table; long words elsewhere wrap, and nothing
+   else in a text scrolls. */
+.markdown {
+  overflow-wrap: anywhere;
+}
+
+.markdown > :first-child,
+.markdown > .blockControl:first-child + * {
+  margin-top: 0;
+}
+
+/* What stands beside a top-level block (M20b, C46): directly before the block's element, of no
+   height of its own, with what it holds set in the right margin at the block's first line — a
+   margin its owner leaves beside the text, as wide as --space-6 (a chat's message,
+   chat/Chat.module.css). It is no part of the text: what it holds says itself that it is not selected. */
+.markdown:has(> .blockControl) {
+  position: relative;
+}
+
+.blockControl {
+  display: block;
+  position: relative;
+  height: 0;
+}
+
+.blockControl > * {
+  position: absolute;
+  top: 0;
+  right: calc(-1 * var(--space-6));
+}
+
+/* The first block's may stand lower by --md-first-control-drop, which its owner sets where something
+   of its own stands in the margin just above it (a message's Copy button, chat/Chat.module.css). */
+.blockControl:first-child > * {
+  top: var(--md-first-control-drop, 0);
+}
+
+/* A heading stands below its own space: what is beside it stands at its first line too. */
+.blockControl:not(:first-child):has(+ .heading) > * {
+  top: var(--space-3);
+}
+
+/* The margin beside a block is the block's to the pointer (the maintainer): a strip over
+   it, drawing nothing, so the pointer going right from the text toward the block's control stays
+   over the block, and the control, lit while its block is under the pointer (chat/Chat.module.css),
+   does not fade on the way. The strip is the block's and not the control's, so a press on it presses
+   nothing. It never lies over the control and takes its press: beside the control's own row, as
+   tall as the control, it is only the space between the text and the control (::before); below
+   that row, the margin's whole width (::after). A table scrolls sideways within itself, and a strip
+   of its own would be overflow it scrolled to: its margin stays the text's. */
+.markdown > .blockControl + :not(.tableScroll) {
+  position: relative;
+}
+
+.markdown > .blockControl + :not(.tableScroll)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: calc(var(--space-6) - var(--space-4));
+  height: var(--space-4);
+}
+
+.markdown > .blockControl + :not(.tableScroll)::after {
+  content: '';
+  position: absolute;
+  top: var(--space-4);
+  bottom: 0;
+  left: 100%;
+  width: var(--space-6);
+}
+
+/* The first block's control row, as low as its control stands. */
+.markdown > .blockControl:first-child + :not(.tableScroll)::before {
+  height: calc(var(--space-4) + var(--md-first-control-drop, 0px));
+}
+
+.markdown > .blockControl:first-child + :not(.tableScroll)::after {
+  top: calc(var(--space-4) + var(--md-first-control-drop, 0px));
+}
+
+.codeControls {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.markdown > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote,
+.markdown hr,
+.code,
+.tableScroll {
+  margin: 0 0 var(--space-2);
+}
+
+/* As text was drawn before M19: line breaks and spaces kept. For a text that could not be read as Markdown. */
+.plain {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Raw HTML, and what is nested too deep to draw: the text it is. */
+.raw {
+  white-space: pre-wrap;
+  font-family: var(--font-mono);
+  font-size: var(--text-13);
+}
+
+/* Bold in a message's words is semibold, not the browser's 700 (the maintainer's review):
+   at the sizes the chat stands at, Inter Bold fills its counters in — measured, the near-white part
+   of a bold word's box falls from 42% at 14px to 35% at 11px — and reads as a smudge rather than as
+   emphasis. 600 keeps the contrast with the text round it (47% of the box inked against 39%) and
+   the letters open. A larger size for bold alone is what this avoids: it would break the line box
+   and leave a paragraph's lines ragged. */
+.markdown strong,
+.markdown b {
+  font-weight: var(--weight-semibold);
+}
+
+.heading {
+  margin: var(--space-3) 0 var(--space-1);
+  font-weight: var(--weight-semibold);
+  line-height: 1.3;
+}
+
+.markdown h1 { font-size: var(--text-20); }
+.markdown h2 { font-size: var(--text-16); }
+.markdown h3 { font-size: var(--text-14); }
+.markdown h4,
+.markdown h5,
+.markdown h6 { font-size: var(--text-13); }
+
+.markdown ul,
+.markdown ol {
+  padding-left: var(--space-6);
+}
+
+.markdown li > ul,
+.markdown li > ol {
+  margin-bottom: 0;
+}
+
+.markdown li > p {
+  margin-bottom: var(--space-1);
+}
+
+/* A task's item: its box stands where the marker would. */
+.taskItem {
+  list-style: none;
+}
+
+.task {
+  margin-right: var(--space-1);
+  margin-left: calc(-1 * var(--space-4));
+}
+
+.markdown blockquote {
+  padding-left: var(--space-3);
+  border-left: 3px solid var(--color-rule-soft);
+  color: var(--color-text-muted);
+}
+
+.rule {
+  height: 0;
+  border: 0;
+  border-top: 1px solid var(--color-rule-soft);
+}
+
+.inlineCode,
+.pre {
+  font-family: var(--font-mono);
+  font-size: var(--text-13);
+}
+
+.inlineCode {
+  padding: 0 var(--space-1);
+  background: var(--color-surface);
+}
+
+.code {
+  border: 1px solid var(--color-rule-soft);
+  background: var(--color-surface);
+}
+
+.codeHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-height: var(--space-6);
+  padding: 0 var(--space-2);
+  border-bottom: 1px solid var(--color-rule-soft);
+}
+
+.language {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-11);
+}
+
+/* The code's own lines are never wrapped: a long one scrolls, within the block (C35). */
+.pre {
+  margin: 0;
+  padding: var(--space-2);
+  overflow-x: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+  white-space: pre;
+  overflow-wrap: normal;
+  tab-size: 4;
+}
+
+.tableScroll {
+  overflow-x: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+}
+
+/* A table is the text's own size (the maintainer's review): its cells hold the same
+   words the paragraphs round it do, and a step down from the text's size reads as too small to be
+   content. Its columns are kept from wrapping within a word instead. */
+.table {
+  border-collapse: collapse;
+  font-size: var(--text-14);
+  overflow-wrap: normal;
+}
+
+.table th,
+.table td {
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-rule-soft);
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  background: var(--color-surface);
+  font-weight: var(--weight-semibold);
+}
+
+.pre:focus-visible,
+.tableScroll:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+/* A link and an image are text (C32, C33): underlined so that they read as what they name, and nothing more. */
+.link {
+  text-decoration: underline;
+  text-decoration-color: var(--color-rule-soft);
+}
+
+.address {
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  text-decoration: none;
+}
+
+/* A reference as a control (M19b, C17, C18): a button that reads as the text it holds — the text's
+   own font, colour and line — underlined in the text's colour so that it reads as something to press. */
+.control {
+  display: inline;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  white-space: normal;
+  cursor: pointer;
+}
+
+.control .link,
+.control .inlineCode,
+.control .name {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+.control:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+/* Why a reference did not open (M19b, C24): beside it, for a moment. */
+.said {
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+.image {
+  font-style: italic;
+}
+
+.noteMark {
+  margin-left: 1px;
+  font-size: var(--text-10);
+}
+
+.notes {
+  margin: var(--space-3) 0 0;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-rule-soft);
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}

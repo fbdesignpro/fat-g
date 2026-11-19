@@ -1,0 +1,1173 @@
+{
+  "_fixture": {
+    "source": "Codex MCP spike codex-mcp-k1.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":1,\"turn\":1,\"item\":2,\"mcp-server\":2}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.164.0",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-07T14:22:32.775Z",
+  "scenario": {
+    "id": "codex-mcp-stop",
+    "title": "K1: a Stop while the approval is pending",
+    "successCondition": "One elicitation left unanswered, turn/interrupt taken, the turn interrupted and the request resolved by Codex"
+  },
+  "run": {
+    "id": "codex-codex-mcp-stop-4",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 28,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 2557,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "profile": {
+        "sandbox": "workspace-write",
+        "approvalPolicy": "untrusted",
+        "approvalsReviewer": "user"
+      },
+      "thread": {
+        "approvalPolicy": "untrusted",
+        "sandbox": "workspaceWrite",
+        "reviewer": "user"
+      },
+      "interrupt": "taken",
+      "end": {
+        "index": 28,
+        "status": "interrupted"
+      },
+      "elicitations": [
+        {
+          "index": 22,
+          "atMs": 12080,
+          "answer": "hold",
+          "keys": [
+            "_meta",
+            "message",
+            "mode",
+            "requestedSchema",
+            "serverName",
+            "threadId",
+            "turnId"
+          ],
+          "mode": "form",
+          "turnIdNamed": true,
+          "serverIsTheSpikes": true,
+          "metaKeys": [
+            "codex_approval_kind",
+            "persist",
+            "tool_description",
+            "tool_params",
+            "tool_params_display"
+          ],
+          "approvalKind": "mcp_tool_call",
+          "persist": [
+            "session",
+            "always"
+          ],
+          "toolParams": {
+            "label": "pending"
+          },
+          "displayKeys": [
+            [
+              "display_name",
+              "name",
+              "value"
+            ]
+          ],
+          "schemaKeys": [],
+          "messageLength": 52
+        }
+      ],
+      "mcpItems": [
+        {
+          "index": 20,
+          "method": "item/started",
+          "tool": "stamp",
+          "status": "inProgress",
+          "arguments": {
+            "label": "pending"
+          },
+          "error": null
+        }
+      ],
+      "resolved": [
+        {
+          "index": 29,
+          "requestId": 0
+        }
+      ],
+      "written": [],
+      "server": {
+        "initializeCount": 1,
+        "clientCapabilities": {
+          "experimental": {
+            "codex/auth-change": {}
+          },
+          "elicitation": {
+            "form": {},
+            "url": {}
+          }
+        },
+        "calls": [],
+        "elicitationReplies": []
+      },
+      "outline": [
+        {
+          "index": 8,
+          "ms": 2575,
+          "method": "thread/started"
+        },
+        {
+          "index": 12,
+          "ms": 2610,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 13,
+          "ms": 2610,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 16,
+          "ms": 3637,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 17,
+          "ms": 3646,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 19,
+          "ms": 9193,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 20,
+          "ms": 12079,
+          "method": "item/started",
+          "thread": "session",
+          "item": "mcpToolCall",
+          "tool": "stamp",
+          "status": "inProgress"
+        },
+        {
+          "index": 21,
+          "ms": 12080,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 22,
+          "ms": 12080,
+          "method": "mcpServer/elicitation/request",
+          "thread": "session",
+          "request": true
+        },
+        {
+          "index": 25,
+          "ms": 12217,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 27,
+          "ms": 12234,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 28,
+          "ms": 12234,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "interrupted"
+        },
+        {
+          "index": 29,
+          "ms": 12235,
+          "method": "serverRequest/resolved",
+          "thread": "session"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "workspace-write",
+      "approvalPolicy": "untrusted",
+      "approvalsReviewer": "user",
+      "model": "gpt-6-luna",
+      "serviceTier": "default"
+    },
+    "replyIndex": 6,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "workspace-write",
+          "reported": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "untrusted",
+          "reported": "untrusted",
+          "match": true
+        },
+        {
+          "field": "approvalsReviewer",
+          "requested": "user",
+          "reported": "user",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the sandbox",
+    "scenarioTools": [
+      "the spike's own MCP server"
+    ],
+    "preApproved": [],
+    "sandbox": "workspace-write",
+    "approvalPolicy": "untrusted",
+    "reviewer": "user",
+    "policy": "an elicitation is answered as the scenario says; every other request is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1231,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1232,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.164.0 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1232,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 1235,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 1235,
+      "frame": {
+        "method": "account/updated",
+        "params": {
+          "authMode": "chatgpt",
+          "planType": "free"
+        },
+        "emittedAtMs": 1578406937202
+      }
+    },
+    {
+      "index": 5,
+      "dir": "send",
+      "ms": 2542,
+      "frame": {
+        "method": "thread/start",
+        "id": 2,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "workspace-write",
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "model": "gpt-6-luna",
+          "serviceTier": "default"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2575,
+      "frame": {
+        "id": 2,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578406938,
+            "updatedAt": 1578406938,
+            "recencyAt": 1578406938,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\07\\rollout-2020-01-07T09-22-18-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.164.0",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "disabledPluginIds": [],
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "send",
+      "ms": 2575,
+      "frame": {
+        "method": "turn/start",
+        "id": 3,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Spike K1 (stop). Call the <mcp-server-6> MCP server's stamp tool once, with label 'pending'. Then say in one short line what happened. Use no other tool.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low",
+          "serviceTier": "default",
+          "clientUserMessageId": "<client-message-2>"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 2575,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578406938,
+            "updatedAt": 1578406938,
+            "recencyAt": 1578406938,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\07\\rollout-2020-01-07T09-22-18-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.164.0",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578406938544
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 2575,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-6>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578406938544
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 2575,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578406938544
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 2587,
+      "frame": {
+        "id": 3,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 2610,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578406938580
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 2610,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578406938,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578406938580
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 2619,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-6>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578406938588
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 3109,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578406939079
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 3637,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Spike K1 (stop). Call the <mcp-server-6> MCP server's stamp tool once, with label 'pending'. Then say in one short line what happened. Use no other tool.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578406939606
+        },
+        "emittedAtMs": 1578406939607
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 3646,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Spike K1 (stop). Call the <mcp-server-6> MCP server's stamp tool once, with label 'pending'. Then say in one short line what happened. Use no other tool.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578406939606
+        },
+        "emittedAtMs": 1578406939615
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 9193,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 13758,
+              "inputTokens": 13713,
+              "cachedInputTokens": 11136,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 45,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 13758,
+              "inputTokens": 13713,
+              "cachedInputTokens": 11136,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 45,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578406945162
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 9193,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 12079,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "mcpToolCall",
+            "id": "<item-5>",
+            "server": "<mcp-server-6>",
+            "tool": "stamp",
+            "status": "inProgress",
+            "arguments": {
+              "label": "pending"
+            },
+            "appContext": null,
+            "mcpAppUi": null,
+            "pluginId": null,
+            "readOnlyHint": null,
+            "result": null,
+            "error": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578406948048
+        },
+        "emittedAtMs": 1578406948049
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 12080,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          }
+        },
+        "emittedAtMs": 1578406948050
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 12080,
+      "frame": {
+        "method": "mcpServer/elicitation/request",
+        "id": 0,
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "serverName": "<mcp-server-6>",
+          "mode": "form",
+          "_meta": {
+            "codex_approval_kind": "mcp_tool_call",
+            "persist": [
+              "session",
+              "always"
+            ],
+            "tool_description": "Writes one stamp file named after `label` into the spike server's own output folder.",
+            "tool_params": {
+              "label": "pending"
+            },
+            "tool_params_display": [
+              {
+                "name": "label",
+                "value": "pending",
+                "display_name": "label"
+              }
+            ]
+          },
+          "message": "Allow the <mcp-server-6> MCP server to run tool \"stamp\"?",
+          "requestedSchema": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      }
+    },
+    {
+      "index": 23,
+      "dir": "send",
+      "ms": 12204,
+      "frame": {
+        "method": "turn/interrupt",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>"
+        }
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 12217,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 27730,
+              "inputTokens": 27652,
+              "cachedInputTokens": 22272,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 78,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 13972,
+              "inputTokens": 13939,
+              "cachedInputTokens": 11136,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 33,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578406948187
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 12217,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 12234,
+      "frame": {
+        "id": 4,
+        "result": {}
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 12234,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578406948204
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 12234,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "interrupted",
+            "error": null,
+            "startedAt": 1578406938,
+            "completedAt": 1578406948,
+            "durationMs": 9646
+          }
+        },
+        "emittedAtMs": 1578406948204
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 12235,
+      "frame": {
+        "method": "serverRequest/resolved",
+        "params": {
+          "threadId": "<session-1>",
+          "requestId": 0
+        },
+        "emittedAtMs": 1578406948204
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [
+    {
+      "kind": "mcpServer/elicitation/request",
+      "requestKind": "elicitation",
+      "answer": "hold"
+    }
+  ],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1231,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2542,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 15513,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "node.exe",
+        "conhost.exe",
+        "codex-code-mode-host.exe",
+        "conhost.exe"
+      ],
+      "alive": 8
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1615
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1119
+      },
+      {
+        "method": "mcpServer/elicitation/request",
+        "item": null,
+        "bytes": 618
+      },
+      {
+        "method": "item/completed",
+        "item": "userMessage",
+        "bytes": 524
+      },
+      {
+        "method": "item/started",
+        "item": "userMessage",
+        "bytes": 520
+      }
+    ],
+    "longStringsCut": []
+  }
+}

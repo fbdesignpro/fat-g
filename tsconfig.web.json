@@ -1,0 +1,20 @@
+{
+  // Renderer (browser context). No Node types on purpose: the renderer is sandboxed and
+  // anything in `src/shared` must stay usable here. `tests/support` holds sample data that
+  // both Vitest projects share, so it must stay browser-safe too.
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "types": ["vite/client"],
+    "outDir": "./node_modules/.cache/tsc/web"
+  },
+  // The fixture summaries are imported as JSON by tests/support/sessions.ts (M14, C30). The
+  // long-conversation fixture and the two providers' captured Markdown answers are what the page's
+  // Markdown tests draw (M19, C52, V28); tests/chat holds the page's full-window test on that fixture.
+  "include": [
+    "package.json",
+    "src/renderer/src/**/*", "src/shared/**/*", "tests/support/**/*", "tests/chat/**/*.tsx", "tests/fixtures/sessions/*.json",
+    "tests/fixtures/conversations/*.d.mts", "tests/fixtures/codex/captures/m19-markdown.json", "tests/fixtures/claude/captures/m19-markdown.json"
+  ]
+}

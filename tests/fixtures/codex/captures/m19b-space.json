@@ -1,0 +1,2792 @@
+{
+  "_fixture": {
+    "source": "M19b spike m19b-k2.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":1,\"turn\":1,\"item\":5,\"mcp-server\":4}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-07T15:23:52.091Z",
+  "scenario": {
+    "id": "m19b-space",
+    "title": "K2: what the Markdown file in the folder with a space holds",
+    "successCondition": "An answer that names a file, and the turn's end"
+  },
+  "run": {
+    "id": "codex-m19b-space-3",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 100,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 3998,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-9>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-9>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "model": {
+        "model": "gpt-6-astra",
+        "effort": "low"
+      },
+      "endStatus": "completed",
+      "sessionFolder": "the thread's `cwd`; the app-server itself runs in another folder",
+      "toolCalls": [
+        "commandExecution",
+        "commandExecution"
+      ],
+      "textDeltas": 62,
+      "messages": [
+        {
+          "phase": "commentary",
+          "last": false,
+          "units": 62,
+          "mentions": [],
+          "links": 0,
+          "externalLinks": 0,
+          "codeSpans": 0,
+          "otherCodeSpans": [],
+          "linesInProse": []
+        },
+        {
+          "phase": "final_answer",
+          "last": true,
+          "units": 205,
+          "mentions": [
+            {
+              "form": "prose",
+              "written": "harbour-log.md",
+              "pathKind": "relative",
+              "inSessionFolder": null,
+              "names": "field notes/harbour-log.md",
+              "resolvesFromSessionFolder": false,
+              "bareName": true,
+              "separators": "none",
+              "lineForm": null,
+              "line": null,
+              "space": null
+            }
+          ],
+          "links": 0,
+          "externalLinks": 0,
+          "codeSpans": 1,
+          "otherCodeSpans": [
+            "field notes"
+          ],
+          "linesInProse": []
+        }
+      ],
+      "summary": {
+        "mentions": 1,
+        "byForm": {
+          "prose": 1
+        },
+        "byPathKind": {
+          "relative": 1
+        },
+        "lineForms": {
+          "null": 1
+        },
+        "separators": {
+          "none": 1
+        },
+        "space": {
+          "null": 1
+        },
+        "bareNames": 1,
+        "lineRight": []
+      },
+      "outline": [
+        {
+          "index": 9,
+          "ms": 3946,
+          "method": "thread/started"
+        },
+        {
+          "index": 10,
+          "ms": 3946,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 11,
+          "ms": 3946,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 12,
+          "ms": 3946,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 13,
+          "ms": 3946,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 14,
+          "ms": 3958,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 15,
+          "ms": 3966,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 17,
+          "ms": 4007,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 18,
+          "ms": 4007,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 19,
+          "ms": 4011,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 20,
+          "ms": 4928,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 21,
+          "ms": 5880,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 22,
+          "ms": 5938,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 23,
+          "ms": 10996,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 37,
+          "ms": 11544,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 38,
+          "ms": 17351,
+          "method": "item/started",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "inProgress"
+        },
+        {
+          "index": 39,
+          "ms": 17381,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "completed"
+        },
+        {
+          "index": 40,
+          "ms": 17400,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 41,
+          "ms": 17400,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 42,
+          "ms": 25130,
+          "method": "item/started",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "inProgress"
+        },
+        {
+          "index": 43,
+          "ms": 25207,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "completed"
+        },
+        {
+          "index": 44,
+          "ms": 25307,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 45,
+          "ms": 25307,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 46,
+          "ms": 28876,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 96,
+          "ms": 30313,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 97,
+          "ms": 30336,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 98,
+          "ms": 30336,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 99,
+          "ms": 30352,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 100,
+          "ms": 30353,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ],
+      "reread": "the mentions were read again from this capture's frames on 2020-01-07"
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "model": "gpt-6-astra"
+    },
+    "replyIndex": 7,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1861,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1863,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1863,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 1868,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 3776,
+      "frame": {
+        "method": "model/list",
+        "id": 2,
+        "params": {
+          "limit": 100
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 3777,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "gpt-6-astra",
+              "model": "gpt-6-astra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Astra",
+              "description": "Frontier intelligence for the most demanding work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "2x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": true
+            },
+            {
+              "id": "gpt-6-sol",
+              "model": "gpt-6-sol",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Sol",
+              "description": "Previous generation workhorse model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-6-luna",
+              "model": "gpt-6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-6-Luna",
+              "description": "Fast and affordable model for easier tasks.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-sol",
+              "model": "gpt-5.6-sol",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Sol",
+              "description": "Older generation workhorse model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "low",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-terra",
+              "model": "gpt-5.6-terra",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Terra",
+              "description": "Older balanced model for straightforward work.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                },
+                {
+                  "reasoningEffort": "ultra",
+                  "description": "Maximum reasoning with automatic task delegation"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v2",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            },
+            {
+              "id": "gpt-5.6-luna",
+              "model": "gpt-5.6-luna",
+              "upgrade": null,
+              "upgradeInfo": null,
+              "availabilityNux": null,
+              "displayName": "GPT-5.6-Luna",
+              "description": "Older fast and efficient model.",
+              "modelSpecialty": null,
+              "hidden": false,
+              "supportedReasoningEfforts": [
+                {
+                  "reasoningEffort": "low",
+                  "description": "Fast responses with lighter reasoning"
+                },
+                {
+                  "reasoningEffort": "medium",
+                  "description": "Balances speed and reasoning depth for everyday tasks"
+                },
+                {
+                  "reasoningEffort": "high",
+                  "description": "Greater reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "xhigh",
+                  "description": "Extra high reasoning depth for complex problems"
+                },
+                {
+                  "reasoningEffort": "max",
+                  "description": "Maximum reasoning depth for the hardest problems"
+                }
+              ],
+              "defaultReasoningEffort": "medium",
+              "inputModalities": [
+                "text",
+                "image"
+              ],
+              "supportsPersonality": false,
+              "multiAgentVersion": "v1",
+              "additionalSpeedTiers": [
+                "fast"
+              ],
+              "serviceTiers": [
+                {
+                  "id": "priority",
+                  "name": "Fast",
+                  "description": "1.5x speed, increased usage"
+                }
+              ],
+              "defaultServiceTier": null,
+              "isDefault": false
+            }
+          ],
+          "nextCursor": null
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 3777,
+      "frame": {
+        "method": "thread/start",
+        "id": 3,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "model": "gpt-6-astra"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 3944,
+      "frame": {
+        "id": 3,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "xhigh",
+            "createdAt": 1578410600,
+            "updatedAt": 1578410600,
+            "recencyAt": 1578410600,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\07\\rollout-2020-01-07T11-23-19-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-astra",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": "xhigh",
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "send",
+      "ms": 3946,
+      "frame": {
+        "method": "turn/start",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Which Markdown file is in the folder called field notes, and what does it hold? Answer in two sentences.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-astra",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-2>"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 3946,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "xhigh",
+            "createdAt": 1578410600,
+            "updatedAt": 1578410600,
+            "recencyAt": 1578410600,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\07\\rollout-2020-01-07T11-23-19-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578410600128
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 3946,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578410600128
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 3946,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578410600128
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 3946,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-11>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578410600128
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 3946,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-12>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578410600128
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 3958,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578410600142
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 3966,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-12>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578410600150
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 3973,
+      "frame": {
+        "id": 4,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 4007,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578410600191
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 4007,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578410600,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578410600191
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 4011,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-11>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578410600195
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 4928,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-10>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578410601112
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 5880,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Which Markdown file is in the folder called field notes, and what does it hold? Answer in two sentences.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578410602063
+        },
+        "emittedAtMs": 1578410602064
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 5938,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Which Markdown file is in the folder called field notes, and what does it hold? Answer in two sentences.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578410602063
+        },
+        "emittedAtMs": 1578410602122
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 10996,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578410607180
+        },
+        "emittedAtMs": 1578410607180
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 10996,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578410607180
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 10996,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "’ll"
+        },
+        "emittedAtMs": 1578410607180
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 10996,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " check"
+        },
+        "emittedAtMs": 1578410607180
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 10996,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578410607180
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 11031,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " field"
+        },
+        "emittedAtMs": 1578410607215
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 11222,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " notes"
+        },
+        "emittedAtMs": 1578410607405
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 11222,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " folder"
+        },
+        "emittedAtMs": 1578410607405
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 11222,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578410607405
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 11222,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " read"
+        },
+        "emittedAtMs": 1578410607405
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 11222,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " its"
+        },
+        "emittedAtMs": 1578410607405
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 11222,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " Markdown"
+        },
+        "emittedAtMs": 1578410607406
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 11222,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578410607406
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 11222,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": ".\n"
+        },
+        "emittedAtMs": 1578410607406
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 11544,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "I’ll check the field notes folder and read its Markdown file.\n",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578410607681
+        },
+        "emittedAtMs": 1578410607728
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 17351,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-6>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command \"rg --files --hidden -g '*.md' -g '\"'!node_modules'\"' -g '\"'!.git'\"'\"",
+            "cwd": "<scratch>",
+            "processId": "64557",
+            "source": "unifiedExecStartup",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "rg --files --hidden -g '*.md' -g '!node_modules' -g '!.git'"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578410613533
+        },
+        "emittedAtMs": 1578410613534
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 17381,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-6>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command \"rg --files --hidden -g '*.md' -g '\"'!node_modules'\"' -g '\"'!.git'\"'\"",
+            "cwd": "<scratch>",
+            "processId": "64557",
+            "source": "unifiedExecStartup",
+            "status": "completed",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "rg --files --hidden -g '*.md' -g '!node_modules' -g '!.git'"
+              }
+            ],
+            "aggregatedOutput": "README.md\nfield notes\\harbour-log.md\n",
+            "exitCode": 0,
+            "durationMs": 22
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578410613556
+        },
+        "emittedAtMs": 1578410613565
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 17400,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 16846,
+              "inputTokens": 16778,
+              "cachedInputTokens": 13184,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 68,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 16846,
+              "inputTokens": 16778,
+              "cachedInputTokens": 13184,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 68,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578410613584
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 17400,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 25130,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-7>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command \"Get-Content -LiteralPath 'field notes\\\\harbour-log.md'\"",
+            "cwd": "<scratch>",
+            "processId": "56549",
+            "source": "unifiedExecStartup",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "read",
+                "command": "Get-Content -LiteralPath 'field notes\\harbour-log.md'",
+                "name": "harbour-log.md",
+                "path": "<scratch>\\field notes\\harbour-log.md"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578410621314
+        },
+        "emittedAtMs": 1578410621314
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 25207,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-7>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command \"Get-Content -LiteralPath 'field notes\\\\harbour-log.md'\"",
+            "cwd": "<scratch>",
+            "processId": "56549",
+            "source": "unifiedExecStartup",
+            "status": "completed",
+            "commandActions": [
+              {
+                "type": "read",
+                "command": "Get-Content -LiteralPath 'field notes\\harbour-log.md'",
+                "name": "harbour-log.md",
+                "path": "<scratch>\\field notes\\harbour-log.md"
+              }
+            ],
+            "aggregatedOutput": "# Harbour log\r\n\r\nUnusual tides, as the keeper wrote them down.\r\n\r\n- **3 March**: the morning tide came forty minutes early and reached the second step of the east stair.\r\n- **19 April**: no high tide was seen before noon; the ferry left from the outer quay.\r\n\r\n## To check\r\n\r\nThe gauge by the green bell reads ten centimetres low since the storm.\r\n",
+            "exitCode": 0,
+            "durationMs": 32
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578410621347
+        },
+        "emittedAtMs": 1578410621390
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 25307,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 33799,
+              "inputTokens": 33690,
+              "cachedInputTokens": 29824,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 109,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 16953,
+              "inputTokens": 16912,
+              "cachedInputTokens": 16640,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 41,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578410621491
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 25307,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 28876,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-8>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578410625060
+        },
+        "emittedAtMs": 1578410625060
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 28881,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "The"
+        },
+        "emittedAtMs": 1578410625065
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 28883,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578410625068
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 28891,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "field"
+        },
+        "emittedAtMs": 1578410625075
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 28891,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " notes"
+        },
+        "emittedAtMs": 1578410625075
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 28897,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578410625081
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 28897,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " folder"
+        },
+        "emittedAtMs": 1578410625081
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 29052,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " contains"
+        },
+        "emittedAtMs": 1578410625236
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 29052,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " **"
+        },
+        "emittedAtMs": 1578410625236
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 29208,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "har"
+        },
+        "emittedAtMs": 1578410625392
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 29208,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "bour"
+        },
+        "emittedAtMs": 1578410625392
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 29208,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "-log"
+        },
+        "emittedAtMs": 1578410625392
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 29208,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": ".md"
+        },
+        "emittedAtMs": 1578410625392
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 29212,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "**"
+        },
+        "emittedAtMs": 1578410625396
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 29212,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578410625396
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 29214,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " It"
+        },
+        "emittedAtMs": 1578410625398
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 29381,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " records"
+        },
+        "emittedAtMs": 1578410625565
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 29381,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " unusual"
+        },
+        "emittedAtMs": 1578410625565
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 29381,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " tides"
+        },
+        "emittedAtMs": 1578410625565
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 29381,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " on"
+        },
+        "emittedAtMs": 1578410625565
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 29397,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " "
+        },
+        "emittedAtMs": 1578410625581
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 29397,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "3"
+        },
+        "emittedAtMs": 1578410625581
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 29397,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " March"
+        },
+        "emittedAtMs": 1578410625581
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 29397,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578410625581
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 29397,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " "
+        },
+        "emittedAtMs": 1578410625581
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 29542,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "19"
+        },
+        "emittedAtMs": 1578410625726
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 29554,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " April"
+        },
+        "emittedAtMs": 1578410625738
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 29554,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578410625738
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 29555,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " plus"
+        },
+        "emittedAtMs": 1578410625738
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 29555,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " a"
+        },
+        "emittedAtMs": 1578410625738
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 29789,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " reminder"
+        },
+        "emittedAtMs": 1578410625973
+      }
+    },
+    {
+      "index": 77,
+      "dir": "recv",
+      "ms": 29789,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " to"
+        },
+        "emittedAtMs": 1578410625973
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 29789,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " check"
+        },
+        "emittedAtMs": 1578410625973
+      }
+    },
+    {
+      "index": 79,
+      "dir": "recv",
+      "ms": 29789,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " a"
+        },
+        "emittedAtMs": 1578410625973
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 29789,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " gauge"
+        },
+        "emittedAtMs": 1578410625973
+      }
+    },
+    {
+      "index": 81,
+      "dir": "recv",
+      "ms": 29865,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " by"
+        },
+        "emittedAtMs": 1578410626049
+      }
+    },
+    {
+      "index": 82,
+      "dir": "recv",
+      "ms": 29876,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578410626060
+      }
+    },
+    {
+      "index": 83,
+      "dir": "recv",
+      "ms": 29881,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " green"
+        },
+        "emittedAtMs": 1578410626065
+      }
+    },
+    {
+      "index": 84,
+      "dir": "recv",
+      "ms": 29892,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " bell"
+        },
+        "emittedAtMs": 1578410626076
+      }
+    },
+    {
+      "index": 85,
+      "dir": "recv",
+      "ms": 29900,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " that"
+        },
+        "emittedAtMs": 1578410626084
+      }
+    },
+    {
+      "index": 86,
+      "dir": "recv",
+      "ms": 30049,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " has"
+        },
+        "emittedAtMs": 1578410626233
+      }
+    },
+    {
+      "index": 87,
+      "dir": "recv",
+      "ms": 30066,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " read"
+        },
+        "emittedAtMs": 1578410626250
+      }
+    },
+    {
+      "index": 88,
+      "dir": "recv",
+      "ms": 30066,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " ten"
+        },
+        "emittedAtMs": 1578410626250
+      }
+    },
+    {
+      "index": 89,
+      "dir": "recv",
+      "ms": 30068,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " centimet"
+        },
+        "emittedAtMs": 1578410626252
+      }
+    },
+    {
+      "index": 90,
+      "dir": "recv",
+      "ms": 30072,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "res"
+        },
+        "emittedAtMs": 1578410626257
+      }
+    },
+    {
+      "index": 91,
+      "dir": "recv",
+      "ms": 30101,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " low"
+        },
+        "emittedAtMs": 1578410626285
+      }
+    },
+    {
+      "index": 92,
+      "dir": "recv",
+      "ms": 30101,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " since"
+        },
+        "emittedAtMs": 1578410626285
+      }
+    },
+    {
+      "index": 93,
+      "dir": "recv",
+      "ms": 30101,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578410626285
+      }
+    },
+    {
+      "index": 94,
+      "dir": "recv",
+      "ms": 30191,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " storm"
+        },
+        "emittedAtMs": 1578410626375
+      }
+    },
+    {
+      "index": 95,
+      "dir": "recv",
+      "ms": 30221,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578410626405
+      }
+    },
+    {
+      "index": 96,
+      "dir": "recv",
+      "ms": 30313,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-8>",
+            "text": "The `field notes` folder contains **harbour-log.md**. It records unusual tides on 3 March and 19 April, plus a reminder to check a gauge by the green bell that has read ten centimetres low since the storm.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578410626449
+        },
+        "emittedAtMs": 1578410626497
+      }
+    },
+    {
+      "index": 97,
+      "dir": "recv",
+      "ms": 30336,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 50958,
+              "inputTokens": 50796,
+              "cachedInputTokens": 46592,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 162,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 17159,
+              "inputTokens": 17106,
+              "cachedInputTokens": 16768,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 53,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578410626519
+      }
+    },
+    {
+      "index": 98,
+      "dir": "recv",
+      "ms": 30336,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 99,
+      "dir": "recv",
+      "ms": 30352,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578410626536
+      }
+    },
+    {
+      "index": 100,
+      "dir": "recv",
+      "ms": 30353,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-8>",
+                "text": "The `field notes` folder contains **harbour-log.md**. It records unusual tides on 3 March and 19 April, plus a reminder to check a gauge by the green bell that has read ten centimetres low since the storm.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578410600,
+            "completedAt": 1578410626,
+            "durationMs": 26387
+          }
+        },
+        "emittedAtMs": 1578410626536
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1861,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 3775,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 33815,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "<mcp-server-9>.exe",
+        "node.exe",
+        "<mcp-server-9>.exe",
+        "codex-code-mode-host.exe"
+      ],
+      "alive": 8
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 6335
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1497
+      },
+      {
+        "method": "item/completed",
+        "item": "commandExecution",
+        "bytes": 1245
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1101
+      },
+      {
+        "method": "item/started",
+        "item": "commandExecution",
+        "bytes": 881
+      }
+    ],
+    "longStringsCut": []
+  }
+}

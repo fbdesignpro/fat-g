@@ -1,0 +1,19 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* K1's page: one pane, as wide as the artifact region is in a default window, whose body alone
+   scrolls (M19b, C13). The tokens, the fonts and the Markdown rules are fat-g's own files; what is
+   here is the pane's box and how a plain text is laid out (C53): monospace, unwrapped, scrolling
+   both ways. */
+.pane { width: 520px; height: 100%; margin: 0 auto; display: flex; flex-direction: column; border-left: var(--rule); border-right: var(--rule); }
+.head { flex: none; padding: var(--space-2) var(--space-3); border-bottom: var(--rule); font-size: var(--text-13); }
+.body { flex: 1; min-height: 0; overflow: auto; padding: var(--space-3); }
+.plain { margin: 0; font-family: var(--font-mono); font-size: var(--text-13); line-height: 1.45; white-space: pre; }
+.plain.wrapped { white-space: pre-wrap; overflow-wrap: anywhere; }
+/* C54 as the maintainer settled it: a line wraps at 2,000 px and not at the pane's width. The text
+   is as wide as its longest line, to that width and no wider, and the body scrolls sideways to it. */
+.plain.capped { white-space: pre-wrap; overflow-wrap: anywhere; width: max-content; max-width: 2000px; }
+.plain .line { min-height: 1.45em; }
+.plain .mark { background: var(--color-rule); }

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 7,
+  "minReaderVersion": 7,
+  "provider": "any",
+  "overlay": {
+    "version": {
+      "effect": "outline",
+      "size": 22,
+      "textColor": "#ffffff",
+      "effectColor": "#000000",
+      "effectOpacity": 100,
+      "glowStrength": 100,
+      "backdrop": "none",
+      "backdropColor": "#000000",
+      "backdropStrength": 75,
+      "position": "top-right",
+      "parts": {
+        "version": true,
+        "name": false
+      }
+    },
+    "effort": {
+      "show": true,
+      "position": "bottom",
+      "fastPosition": "top-left",
+      "size": 7,
+      "spacing": 2,
+      "color": "#ffffff",
+      "effect": "outline",
+      "effectColor": "#000000",
+      "effectOpacity": 100,
+      "glowStrength": 100,
+      "backdrop": "none",
+      "backdropColor": "#000000",
+      "backdropStrength": 60
+    }
+  },
+  "avatars": [
+    {
+      "folder": "Scout"
+    },
+    {
+      "folder": "Harbourmaster"
+    },
+    {
+      "folder": "Navigator",
+      "matches": [
+        "gpt-5.5*",
+        {
+          "provider": "claude",
+          "key": "sonnet"
+        }
+      ],
+      "overlay": {
+        "version": {
+          "size": 14,
+          "textColor": "#ffeeaa"
+        },
+        "effort": {
+          "show": false
+        }
+      }
+    }
+  ],
+  "author": "The harbour",
+  "licence": "CC0-1.0",
+  "defaultFor": [
+    "codex"
+  ]
+}

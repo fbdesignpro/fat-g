@@ -1,0 +1,130 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+.controlBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.iconButton {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-title-text, var(--color-text));
+  cursor: pointer;
+}
+
+/* The zoom while it is not 100%: its percent in a frame of four corners, a step further from the
+   gear than the menu is. */
+.zoomButton {
+  display: grid;
+  place-items: center;
+  flex: none;
+  height: 36px;
+  margin-left: var(--space-1);
+  padding: 0 var(--space-1);
+  border: 0;
+  background: transparent;
+  color: var(--color-title-text, var(--color-text));
+  cursor: pointer;
+}
+
+/* The frame and the percent share one cell, the percent centred in the frame. */
+.zoomButton > * {
+  grid-area: 1 / 1;
+}
+
+.zoomPercent {
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The Pet in the Pet button's screen: filled while the Pet is shown, its outline alone while hidden. */
+.petMark {
+  fill: currentColor;
+}
+
+.iconButton[aria-pressed='false'] .petMark {
+  fill: none;
+}
+
+/* Off stays clearly available: muted rather than the disabled button's reduced opacity. */
+.iconButton[data-pet-button][aria-pressed='false'] {
+  color: var(--color-title-text, var(--color-text-muted));
+}
+
+.iconButton:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+/* Swiss-style: a control answers by inverting. */
+.iconButton:hover,
+.iconButton[data-pet-button][aria-pressed='false']:hover,
+.iconButton[aria-expanded='true'],
+.zoomButton:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* The zoom's tooltip: what a press does, then each key beside what it does. */
+.zoomTip {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0 var(--space-3);
+}
+
+.zoomTipHead {
+  grid-column: 1 / -1;
+  margin-bottom: var(--space-1);
+}
+
+.zoomKey {
+  font: inherit;
+  font-weight: var(--weight-semibold);
+}
+
+.menuAnchor {
+  position: relative;
+  flex: none;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  left: 0;
+  z-index: 10;
+  min-width: 160px;
+  padding: var(--space-1) 0;
+  border: var(--rule);
+  background: var(--color-bg);
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  padding: var(--space-2) var(--space-4);
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* One item is marked, the one that has the focus: the pointer over an item gives it the focus, as an
+   arrow key does (ui/useMenu.ts), so nothing is marked for the pointer being over it. A menu opened
+   by the pointer has the focus itself, and marks none until the pointer is over an item. */
+.menuItem:focus {
+  background: var(--color-text);
+  color: var(--color-bg);
+}

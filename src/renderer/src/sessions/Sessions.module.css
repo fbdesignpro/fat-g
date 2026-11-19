@@ -1,0 +1,891 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* Session capsules touch, with dark-gray dividers. The column owns scrolling. */
+.sessions {
+  /* TRIAL (not settled): the column's 12px rung at the square top of a band (the maintainer's review). Chromium rounds a word's ink height to whole device pixels while the letters widen
+     smoothly with the size, so each band's top is where they stand squarest and its foot is where
+     they read narrowest. These words' bands are 9.4–11.1 at eight pixels tall and 11.2–12.9 at nine:
+     measured, "5 starred" is 45 pixels wide over 8 at 11.1px against 49 over 9 at the 12px this
+     stood at, and "Show more" 57 over 8 against 62 over 9 — smaller than it was and squarer both,
+     since 12px sat at the foot of its band. The rows keep their 24px height, which their text never
+     filled. Nothing else of the column moves: its names stand at 14 and its statuses at 11.
+     Delete this declaration to go back. */
+  --text-12: 11.1px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text);
+}
+
+
+/* A measured row includes its divider, so drag preview and dropped positions agree. */
+.group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0;
+  margin: 0;
+  padding: var(--gap-grid) 0 0;
+  list-style: none;
+}
+
+.capsule {
+  /* The room the side column takes at the right of the name: the `…`, or the row of flag marks above
+     it when that is wider (`--flag-count`, set on an active capsule). */
+  --side-room: max(28px, calc(var(--flag-count, 0) * 22px + 4px));
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  border-bottom: 1px solid var(--color-capsule-divider);
+  background: var(--color-bg);
+}
+
+/* Hover's provider-coloured marking follows the theme's extent. Outset shadows paint
+   behind the capsule, with no vertical extension or layer above the neighbouring session display. */
+.capsule:hover {
+  box-shadow:
+    calc(-1 * var(--capsule-hover-outset)) 0 0 0 var(--bar-color, var(--color-text-muted)),
+    var(--capsule-hover-outset) 0 0 0 var(--bar-color, var(--color-text-muted));
+}
+
+/* Selection extends two grid cells in light, a narrow marker in dark. A 16% provider tint
+   warms the selected capsule's ground; the session window covers any extension where they meet. */
+.capsule[data-selected] {
+  background: color-mix(in srgb, var(--bar-color, var(--color-bg)) 16%, var(--color-bg));
+  box-shadow:
+    calc(-1 * var(--capsule-selection-outset)) 0 0 0 var(--bar-color, var(--color-text-muted)),
+    var(--capsule-selection-outset) 0 0 0 var(--bar-color, var(--color-text-muted));
+}
+
+/* Clean up done's mode (clean-up.ts): a capsule a press would complete is marked in Done's green;
+   any other is not marked by the pointer, the selected one keeping its own. */
+:global(:root[data-clean-up]) .capsule:not([data-selected]):hover { box-shadow: none; }
+:global(:root[data-clean-up]) .capsule[data-clean-up-target]:hover {
+  box-shadow:
+    -4px 0 0 0 var(--color-done-rule),
+    4px 0 0 0 var(--color-done-rule);
+}
+
+.capsule[data-lifted] { visibility: hidden; }
+.group[data-dragging] .capsule { transition: transform var(--duration-fast) ease-out; }
+
+/* One viewport overlay per box (leaving.ts): optionally blink, then add white
+   over the green and fade both together with the centred check. The capsule and panels share
+   the same drawing and timings. */
+@keyframes done-flash {
+  0%, 16.667%, 33.333%, 50%, 66.667%, 83.333% { background-color: var(--color-on-done); outline-color: var(--color-on-done); }
+  8.333%, 25%, 41.667%, 58.333%, 75%, 91.667%, 100% { background-color: var(--color-done); outline-color: var(--color-done-rule); }
+}
+@keyframes done-check {
+  0%, 16.667%, 33.333%, 50%, 66.667%, 83.333% { visibility: hidden; }
+  8.333%, 25%, 41.667%, 58.333%, 75%, 91.667%, 100% { visibility: visible; }
+}
+@keyframes done-fade {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.cover {
+  position: fixed;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  color: var(--color-done-mark);
+  pointer-events: none;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  outline: 1px solid var(--color-done-rule);
+  outline-offset: -1px;
+  background-color: var(--color-done);
+  animation: done-fade var(--done-fade) ease-out forwards;
+}
+.cover[data-animation='animation-flash'][data-phase='flash']::before {
+  animation:
+    done-flash var(--done-white) step-end,
+    done-fade var(--done-fade) ease-out var(--done-white) forwards;
+}
+/* White starts with the green's fade, staying bright longer before clearing to reveal the green. */
+.cover[data-phase='flash']::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  outline: 1px solid var(--color-on-done);
+  outline-offset: -1px;
+  background-color: var(--color-on-done);
+  opacity: 0;
+  animation: done-fade var(--done-white-fade) ease-in forwards;
+}
+.cover[data-animation='animation-flash'][data-phase='flash']::after { animation-delay: var(--done-white); }
+/* The check shows on the flicker's green steps alone. */
+.cover > svg {
+  position: relative;
+  z-index: 1;
+  animation:
+    done-check var(--done-white) step-end,
+    done-fade var(--done-fade) ease-out var(--done-white) forwards;
+}
+.cover[data-animation='animation-only'] > svg { animation: done-fade var(--done-fade) ease-out forwards; }
+
+/* A leaving session's place: its capsule's height, with no divider, so empty places side by side
+   read as one gap; empty under the flash, then closing to nothing, the rows below sliding up. */
+.slot {
+  overflow: hidden;
+  transition: height var(--duration-scene) ease-in-out;
+}
+
+.select {
+  display: grid;
+  grid-template-columns: var(--capsule-height) minmax(0, 1fr);
+  align-items: start;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.select:focus-visible,
+.thinSelect:focus-visible,
+.sideButton:focus-visible,
+.toggle:focus-visible,
+.more:focus-visible { outline-offset: -2px; }
+
+.body {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 16px;
+  min-width: 0;
+  height: var(--capsule-height);
+}
+
+/* Fresh sessions retain their title-only presentation, in regular type at the smaller title size.
+   Use the control scale's 12.4px rung: regular Inter at 13px gains ink height before enough width,
+   making this muted label look vertically stretched. Other session titles keep their own scale. */
+.newSession {
+  composes: sizes from '../ui/ControlTypography.module.css';
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  height: var(--capsule-height);
+  padding: 0 var(--space-2);
+  padding-right: calc(var(--side-room) + var(--space-2));
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+  font-weight: var(--weight-regular);
+}
+
+.newSession > span {
+  display: -webkit-box;
+  overflow: hidden;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.renameField {
+  align-self: center;
+  min-width: 0;
+  margin: 0 calc(var(--side-room) + var(--space-2)) 0 var(--space-2);
+  padding: 2px var(--space-1);
+  border: 1px solid var(--color-text);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-14);
+  font-weight: var(--weight-semibold);
+}
+
+.name {
+  display: -webkit-box;
+  /* Stretching to fill the grid row exposes part of a third line below the clamp. */
+  align-self: start;
+  overflow: hidden;
+  /* Keep two lines fitted by the font, with a little more room on either side of the title. */
+  padding: var(--space-1) calc(var(--side-room) + var(--space-1)) 0 var(--space-1);
+  font-size: var(--text-14);
+  font-weight: var(--weight-session-title);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* The field reaches both edges; padding belongs to its text, never between bar and avatar. */
+.status {
+  display: flex;
+  /* Center the line box in the 16px footer, lowering the text about 1–2px. */
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: 0 var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+}
+
+.status[data-state='running'] {
+  background: var(--bar-color);
+  color: var(--color-on-avatar);
+}
+
+/* Black, as the status bar's (SessionArea.module.css): the stream's black surround covers any ground. */
+.status[data-state='running'][data-stream] {
+  background: var(--color-status-black);
+  color: var(--color-status-black);
+  transition: color 1000ms ease-in-out;
+}
+
+.status[data-state='running'][data-stream]:has([data-status-stream][data-waiting]) {
+  color: var(--color-status-white);
+}
+
+.status[data-attention] {
+  background: var(--color-attention);
+  color: var(--color-on-attention);
+}
+
+.status[data-acknowledged] {
+  background: var(--color-acknowledged);
+  color: var(--color-on-acknowledged);
+}
+
+/* A plan held in another chat (decision 0029): what this one waits on, in the waiting pair. */
+.status[data-state='waiting'] {
+  background: var(--color-waiting);
+  color: var(--color-on-waiting);
+}
+
+/* A Ready once seen — the gray one almost every idle session holds — is not shown in the session
+   list; an unseen one keeps the attention colour. The bar above the chat input is kept as it is. */
+.status[data-attention='ready'][data-acknowledged] {
+  display: none;
+}
+
+/* A bar that has just turned to an attention flashes inverted, yellow on black (the maintainer; CapsuleStatus.tsx), at the speed and for the time Settings → Appearance sets (ThemeRoot
+   sets the three variables): six times a second for three seconds unless changed. The bar is far
+   smaller than the area a flash rate is judged over for photosensitivity. With reduced motion, it
+   holds the inverted pair for the time instead. */
+.status[data-flash][data-attention]:not([data-acknowledged]) {
+  animation: attention-flash var(--attention-flash-cycle, 167ms) step-end var(--attention-flash-count, 18);
+}
+
+@keyframes attention-flash {
+  0% { background: var(--color-on-attention); color: var(--color-attention); }
+  50% { background: var(--color-attention); color: var(--color-on-attention); }
+}
+
+@keyframes attention-hold {
+  0% { background: var(--color-on-attention); color: var(--color-attention); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status[data-state='running'][data-stream] { transition: none; }
+  .status[data-flash][data-attention]:not([data-acknowledged]) { animation: attention-hold var(--attention-flash-duration, 3s) step-end 1; }
+}
+
+.statusText {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Lower the footer's text without moving its background or stream. */
+.statusText, .time, .workers {
+  transform: translateY(1px);
+}
+
+.time {
+  flex: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.workers {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  font-size: inherit;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Two 22px rows fit entirely above the 16px footer: the `…` at the top right, always there, and the
+   flag marks under it (the maintainer). The column lies over the select button, so it
+   takes no press itself: a press on the marks, or on the empty place under the `…`, reaches the
+   capsule, to select it or start a drag. */
+.side {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: calc(var(--capsule-height) - 16px);
+  pointer-events: none;
+}
+
+.side > button { pointer-events: auto; }
+
+/* A session's flags, as marks (flags.tsx): one is centred under the `…`; more stand right-aligned,
+   the row growing to the left. Each is a small disc — a square once --radius-flag is 0 (tokens.css) —
+   inverted, its mark in the ground's colour on the text's, so the marks stand apart from the `…`
+   beside them (the maintainer). */
+.flags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 28px;
+  height: 22px;
+  pointer-events: none;
+}
+
+/* On an active capsule, a pixel up, off the status row under them (the maintainer). */
+.side > .flags {
+  margin-top: -1px;
+}
+
+/* Keep a single flag centred under the menu; inset longer rows from the capsule edge. */
+.side > .flags:has(> .flag + .flag) {
+  margin-right: 4px;
+}
+
+.flag {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-flag);
+  background: var(--color-flag);
+  color: var(--color-on-flag);
+}
+
+
+/* A flag's item in the capsule's menu: a column for its check, its mark, then its word. The check
+   stands in a column of its own, there whether or not the flag is set, so setting one moves nothing
+   (the maintainer); the popup's own check before a set item is not drawn. */
+.flagItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  vertical-align: middle;
+}
+
+.flagCheck {
+  width: 1em;
+  text-align: center;
+}
+
+[role='menuitemcheckbox'][data-flag][aria-checked='true']::before {
+  content: none;
+}
+
+/* The item the focus is on is drawn inverted (Popup.module.css): its mark inverts with it, so it stays seen. */
+[role='menuitemcheckbox'][data-flag]:focus .flag {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.sideButton {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.sideButton:hover,
+.sideButton[aria-expanded='true'] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.thin { grid-template-columns: minmax(0, 1fr) auto; }
+.thin .side {
+  position: static;
+  flex-direction: row;
+  align-items: center;
+  height: auto;
+}
+.thin .sideButton { height: 24px; }
+
+/* On a thin capsule the marks end its line, inside the select button, just before the `…`.
+   Keep their full width when a long name shrinks, so its ellipsis cannot push the marks right. */
+.thinSelect .flags {
+  flex: none;
+  min-width: 0;
+  margin: 0 0 0 auto;
+}
+
+/* A shelved session is not done: its name keeps the text colour. */
+.thin[data-shelved] .thinSelect { color: var(--color-text); }
+
+/* What a shelved session waits on, unseen: its attention's words on the attention colour, as an
+   active capsule's status row draws it. */
+.thinAttention {
+  flex: none;
+  padding: 1px var(--space-1);
+  background: var(--color-attention);
+  color: var(--color-on-attention);
+  font-size: var(--text-11);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+}
+
+.thinSelect {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  height: calc(var(--capsule-height) / 2);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.thinName {
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--text-12);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* An avatar (M102, C31, C32): the placeholder (C59), a square in the provider's bar colour with its
+   mark, under the model's art, which covers it once it loads. */
+.avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: none;
+  overflow: hidden;
+  background: var(--bar-color);
+  color: var(--color-on-avatar);
+}
+
+/* The art over the whole square: decorative, unselectable, and taking no pointer event, so a press
+   and a drag are its capsule's (M102, C34). */
+.avatarImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* A provider this build does not have: a neutral square, with no mark (C108). */
+.avatar[data-neutral] {
+  background: var(--color-text-muted);
+}
+
+/* Its sizes (M100, C28): the agent list's and the New session popup's tile, an active capsule's, a
+   completed one's, the Pet's smaller capsules' (decision 0010), and the model column's. */
+.avatar[data-size='tile'] {
+  width: 16px;
+  height: 16px;
+}
+
+.avatar[data-size='capsule'] {
+  width: var(--capsule-height);
+  height: var(--capsule-height);
+}
+
+.avatar[data-size='thin'] {
+  width: calc(var(--capsule-height) / 2);
+  height: calc(var(--capsule-height) / 2);
+}
+
+.avatar[data-size='compact'] {
+  width: 36px;
+  height: 36px;
+}
+
+.avatar[data-size='column'] {
+  width: var(--avatar-column-width);
+  height: var(--avatar-column-width);
+}
+
+/* The model column's portrait is set in black mortar, as its model's bar is, drawn over the art
+   (the maintainer). Its bottom edge is the joint with the bar, which draws no top. */
+.avatar[data-size='column']::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 2px var(--color-status-black);
+  pointer-events: none;
+}
+
+.avatar svg {
+  width: 62.5%;
+  height: 62.5%;
+}
+
+.avatar .providerLogo {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* The version overlay (decision 0032): the model's short name and version over the art, at the
+   capsule and column sizes alone, in the look main resolved and set inline — a size, three colours and
+   a strength. Measured in the square's own width, so one rule fits the 60, 152 and 176 px squares.
+   Decorative as the art is: unselectable, and taking no pointer event. */
+.avatar[data-size='capsule'],
+.avatar[data-size='column'] {
+  container-type: inline-size;
+}
+
+.avatarOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  /* How far the text stands from the edges it is placed on, in hundredths of the square: a little
+     farther from the side than from the top, where a line of figures has room of its own above them. */
+  --overlay-inset-y: 5;
+  --overlay-inset-x: 6;
+}
+
+/* A chip is drawn to its own edge, with no such room: as near the side as the top, and a little nearer
+   both (the maintainer). */
+.avatarOverlay[data-effect='chip'] {
+  --overlay-inset-y: 4;
+  --overlay-inset-x: 4;
+}
+
+.overlayText {
+  position: absolute;
+  display: flex;
+  gap: 0.25em;
+  align-items: baseline;
+  /* The type scale's one exception: a percentage of the square, which no token can be (decision 0032). */
+  font-size: calc(var(--overlay-size) * 1cqw);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--overlay-text);
+}
+
+/* The eight places on the square's edge; the centre is not one yet. */
+.avatarOverlay[data-position^='top'] .overlayText { top: calc(var(--overlay-inset-y) * 1cqw); }
+.avatarOverlay[data-position^='bottom'] .overlayText { bottom: calc(var(--overlay-inset-y) * 1cqw); }
+.avatarOverlay[data-position$='left'] .overlayText { left: calc(var(--overlay-inset-x) * 1cqw); }
+.avatarOverlay[data-position$='right'] .overlayText { right: calc(var(--overlay-inset-x) * 1cqw); }
+.avatarOverlay[data-position='top'] .overlayText,
+.avatarOverlay[data-position='bottom'] .overlayText {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.avatarOverlay[data-position='left'] .overlayText,
+.avatarOverlay[data-position='right'] .overlayText {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* The effects: an outline drawn under the fill, a glow lit additively — its reach the style’s glow
+   strength, 1 for fat-g’s own — a chip, or the plain text. */
+.avatarOverlay[data-effect='outline'] .overlayText {
+  /* A thick backing joins around the digits; painting the fill last keeps their centres clear. */
+  -webkit-text-stroke: calc(var(--overlay-size) * 0.25cqw) color-mix(in srgb, var(--overlay-effect) var(--overlay-effect-opacity), transparent);
+  paint-order: stroke fill;
+}
+
+.avatarOverlay[data-effect='glow'] .overlayText {
+  mix-blend-mode: plus-lighter;
+  text-shadow:
+    0 0 calc(var(--overlay-size) * 0.09cqw * var(--overlay-glow)) color-mix(in srgb, var(--overlay-effect) var(--overlay-effect-opacity), transparent),
+    0 0 calc(var(--overlay-size) * 0.22cqw * var(--overlay-glow)) color-mix(in srgb, var(--overlay-effect) var(--overlay-effect-opacity), transparent),
+    0 0 calc(var(--overlay-size) * 0.4cqw * var(--overlay-glow)) color-mix(in srgb, var(--overlay-effect) var(--overlay-effect-opacity), transparent);
+}
+
+.avatarOverlay[data-effect='chip'] .overlayText {
+  padding: 0.12em 0.4em;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--overlay-effect) var(--overlay-effect-opacity), transparent);
+}
+
+/* Small labels sit high in their line box. Shift the ink down while keeping the chip's total padding. */
+.avatar[data-size='capsule'] .avatarOverlay[data-effect='chip'] .overlayText {
+  padding-block: 0.16em 0.08em;
+}
+
+/* The shade (decision 0032): a darkening patch from the text's corner, or a band from its edge. */
+.avatarOverlay[data-backdrop='shade'][data-position='top-left'] { background: radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--overlay-backdrop) var(--overlay-strength), transparent), transparent 60%); }
+.avatarOverlay[data-backdrop='shade'][data-position='top-right'] { background: radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--overlay-backdrop) var(--overlay-strength), transparent), transparent 60%); }
+.avatarOverlay[data-backdrop='shade'][data-position='bottom-left'] { background: radial-gradient(circle at 0% 100%, color-mix(in srgb, var(--overlay-backdrop) var(--overlay-strength), transparent), transparent 60%); }
+.avatarOverlay[data-backdrop='shade'][data-position='bottom-right'] { background: radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--overlay-backdrop) var(--overlay-strength), transparent), transparent 60%); }
+.avatarOverlay[data-backdrop='shade'][data-position='top'] { background: linear-gradient(to bottom, color-mix(in srgb, var(--overlay-backdrop) var(--overlay-strength), transparent), transparent 40%); }
+.avatarOverlay[data-backdrop='shade'][data-position='bottom'] { background: linear-gradient(to top, color-mix(in srgb, var(--overlay-backdrop) var(--overlay-strength), transparent), transparent 40%); }
+.avatarOverlay[data-backdrop='shade'][data-position='left'] { background: linear-gradient(to right, color-mix(in srgb, var(--overlay-backdrop) var(--overlay-strength), transparent), transparent 40%); }
+.avatarOverlay[data-backdrop='shade'][data-position='right'] { background: linear-gradient(to left, color-mix(in srgb, var(--overlay-backdrop) var(--overlay-strength), transparent), transparent 40%); }
+
+/* Where the effort marks stand on the text's edge, the text moves inward by their room: along the top
+   or the bottom, wherever on that edge it is; along a side, where it is centred on it. */
+.avatarOverlay[data-effort-edge='top'][data-position^='top'] .overlayText { top: calc((var(--overlay-inset-y) + var(--effort-room)) * 1cqw); }
+.avatarOverlay[data-effort-edge='bottom'][data-position^='bottom'] .overlayText { bottom: calc((var(--overlay-inset-y) + var(--effort-room)) * 1cqw); }
+.avatarOverlay[data-effort-edge='left'][data-position='left'] .overlayText { left: calc((var(--overlay-inset-x) + var(--effort-room)) * 1cqw); }
+.avatarOverlay[data-effort-edge='right'][data-position='right'] .overlayText { right: calc((var(--overlay-inset-x) + var(--effort-room)) * 1cqw); }
+
+/* Where the fast bolt stands in the text's own place, the text moves aside by its room: along its edge
+   from a corner, inward from a side's middle, down or up from the top's or the bottom's middle. Elsewhere
+   the two may meet, as the family's author places them. */
+.avatarOverlay[data-fast-at='top-left'][data-position='top-left'] .overlayText,
+.avatarOverlay[data-fast-at='bottom-left'][data-position='bottom-left'] .overlayText,
+.avatarOverlay[data-fast-at='left'][data-position='left'] .overlayText { left: calc((var(--overlay-inset-x) + var(--fast-room)) * 1cqw); }
+.avatarOverlay[data-fast-at='top-right'][data-position='top-right'] .overlayText,
+.avatarOverlay[data-fast-at='bottom-right'][data-position='bottom-right'] .overlayText,
+.avatarOverlay[data-fast-at='right'][data-position='right'] .overlayText { right: calc((var(--overlay-inset-x) + var(--fast-room)) * 1cqw); }
+.avatarOverlay[data-fast-at='top'][data-position='top'] .overlayText { top: calc((var(--overlay-inset-y) + var(--fast-room)) * 1cqw); }
+.avatarOverlay[data-fast-at='bottom'][data-position='bottom'] .overlayText { bottom: calc((var(--overlay-inset-y) + var(--fast-room)) * 1cqw); }
+
+/* The effort marks (decision 0032): one to five dots, or Ultra's five starbursts, in a row centred on
+   the top or the bottom edge or a column centred on a side, in the look main resolved and set inline —
+   a size, a gap, three colours and a strength, measured in the square's own width. */
+.effortMarks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.effortRow {
+  position: absolute;
+  display: flex;
+  gap: calc(var(--effort-gap) * 1cqw);
+  color: var(--effort-color);
+}
+
+/* At capsule size, use whole-pixel gaps so tiny dots rasterize evenly. Outlined dots need
+   a little extra room for their rings. */
+.avatar[data-size='capsule'] .effortMarks:has(.effortDot) .effortRow {
+  gap: max(1px, round(nearest, calc(var(--effort-gap) * 1cqw), 1px));
+}
+
+.avatar[data-size='capsule'] .effortMarks[data-effect='outline']:has(.effortDot) .effortRow {
+  gap: calc(max(1px, round(nearest, calc(var(--effort-gap) * 1cqw), 1px)) + 1px);
+}
+
+.effortMarks[data-position='top'] .effortRow,
+.effortMarks[data-position='bottom'] .effortRow {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.effortMarks[data-position='top'] .effortRow { top: 5cqw; }
+.effortMarks[data-position='bottom'] .effortRow { bottom: 5cqw; }
+.effortMarks[data-position='left'] .effortRow,
+.effortMarks[data-position='right'] .effortRow {
+  top: 50%;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+.effortMarks[data-position='left'] .effortRow { left: 5cqw; }
+.effortMarks[data-position='right'] .effortRow { right: 5cqw; }
+
+.effortDot,
+.avatar .effortStar {
+  flex: none;
+  width: calc(var(--effort-size) * 1cqw);
+  height: calc(var(--effort-size) * 1cqw);
+}
+
+/* Ultra's starbursts drawn larger than the dots, whose size the style sets: shrunk to a dot's, their
+   points are lost. The factor is STAR_SCALE in Avatar.tsx, which makes room for them on their edge. */
+.avatar .effortStar {
+  width: calc(var(--effort-size) * 2cqw);
+  height: calc(var(--effort-size) * 2cqw);
+}
+
+.effortDot {
+  /* Whole-pixel diameters keep these tiny circles round in capsules: fractional CSS boxes and
+     their outline rings can otherwise rasterize a pixel taller than they are wide. */
+  width: round(nearest, calc(var(--effort-size) * 1cqw), 1px);
+  height: round(nearest, calc(var(--effort-size) * 1cqw), 1px);
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* The effects: an outline ring, a glow lit additively, or the plain mark. */
+.effortMarks[data-effect='outline'] .effortDot {
+  box-shadow: 0 0 0 max(1px, calc(var(--effort-size) * 0.12cqw)) color-mix(in srgb, var(--effort-effect) var(--effort-effect-opacity), transparent);
+}
+
+.effortMarks[data-effect='outline'] .effortStar path {
+  stroke: color-mix(in srgb, var(--effort-effect) var(--effort-effect-opacity), transparent);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+  paint-order: stroke fill;
+}
+
+.effortMarks[data-effect='glow'] .effortRow {
+  mix-blend-mode: plus-lighter;
+  filter: drop-shadow(0 0 calc(var(--effort-size) * 0.25cqw * var(--effort-glow)) color-mix(in srgb, var(--effort-effect) var(--effort-effect-opacity), transparent)) drop-shadow(0 0 calc(var(--effort-size) * 0.5cqw * var(--effort-glow)) color-mix(in srgb, var(--effort-effect) var(--effort-effect-opacity), transparent));
+}
+
+/* The shade: a darkening band from the marks' edge. */
+.effortMarks[data-backdrop='shade'][data-position='top'] { background: linear-gradient(to bottom, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+.effortMarks[data-backdrop='shade'][data-position='bottom'] { background: linear-gradient(to top, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+.effortMarks[data-backdrop='shade'][data-position='left'] { background: linear-gradient(to right, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+.effortMarks[data-backdrop='shade'][data-position='right'] { background: linear-gradient(to left, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+
+/* The fast bolt (decision 0032): one lightning bolt for a session at the fast speed tier, in the marks'
+   look set inline, at a starburst's size (STAR_SCALE in Avatar.tsx, which makes room for it beside the
+   text), standing as far from its edges as the marks do in one of the eight places the version may take. */
+.fastMark {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.avatar .fastBolt {
+  position: absolute;
+  width: calc(var(--effort-size) * 2cqw);
+  height: calc(var(--effort-size) * 2cqw);
+  color: var(--effort-color);
+}
+
+.fastMark[data-position^='top'] .fastBolt { top: 5cqw; }
+.fastMark[data-position^='bottom'] .fastBolt { bottom: 5cqw; }
+.fastMark[data-position$='left'] .fastBolt { left: 5cqw; }
+.fastMark[data-position$='right'] .fastBolt { right: 5cqw; }
+.fastMark[data-position='top'] .fastBolt,
+.fastMark[data-position='bottom'] .fastBolt {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.fastMark[data-position='left'] .fastBolt,
+.fastMark[data-position='right'] .fastBolt {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* The marks' effects: a starburst's outline, or a glow lit additively. */
+.fastMark[data-effect='outline'] .fastBolt path {
+  stroke: color-mix(in srgb, var(--effort-effect) var(--effort-effect-opacity), transparent);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+  paint-order: stroke fill;
+}
+
+.fastMark[data-effect='glow'] .fastBolt {
+  mix-blend-mode: plus-lighter;
+  filter: drop-shadow(0 0 calc(var(--effort-size) * 0.25cqw * var(--effort-glow)) color-mix(in srgb, var(--effort-effect) var(--effort-effect-opacity), transparent)) drop-shadow(0 0 calc(var(--effort-size) * 0.5cqw * var(--effort-glow)) color-mix(in srgb, var(--effort-effect) var(--effort-effect-opacity), transparent));
+}
+
+/* The shade: a darkening patch from the bolt's corner, or from the middle of its edge. */
+.fastMark[data-backdrop='shade'][data-position='top-left'] { background: radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+.fastMark[data-backdrop='shade'][data-position='top'] { background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+.fastMark[data-backdrop='shade'][data-position='top-right'] { background: radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+.fastMark[data-backdrop='shade'][data-position='left'] { background: radial-gradient(circle at 0% 50%, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+.fastMark[data-backdrop='shade'][data-position='right'] { background: radial-gradient(circle at 100% 50%, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+.fastMark[data-backdrop='shade'][data-position='bottom-left'] { background: radial-gradient(circle at 0% 100%, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+.fastMark[data-backdrop='shade'][data-position='bottom'] { background: radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+.fastMark[data-backdrop='shade'][data-position='bottom-right'] { background: radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--effort-backdrop) var(--effort-strength), transparent), transparent 30%); }
+
+/* The row between the shelf and the completed sessions (C47), Show more and less,
+   and the rows at the column's foot: dim text centred on the grid, with no background and no rule
+   (M100, C27). */
+.toggleRow,
+.moreRow,
+.orphans {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 var(--space-4);
+  min-height: 24px;
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+.toggle,
+.more {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 24px;
+  padding: 0 var(--space-2);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.toggle:hover:enabled,
+.more:hover {
+  color: var(--color-text);
+}
+
+.toggle:disabled {
+  cursor: default;
+}
+
+.problem {
+  margin: 0;
+  padding: var(--space-1) var(--space-4);
+  color: var(--color-critical);
+  font-size: var(--text-12);
+}
+
+/* Where the dragged capsule will land: the room the others made for it, outlined. */
+.gap {
+  position: absolute;
+  right: 0;
+  left: 0;
+  border: 2px dashed var(--color-focus);
+  pointer-events: none;
+  transition: top var(--duration-fast) ease-out;
+}
+
+/* The lifted copy of the capsule that follows the pointer. */
+.lifted {
+  position: fixed;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 var(--space-2);
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+  box-shadow: 0 4px 12px var(--color-backdrop);
+  pointer-events: none;
+}
+
+.lifted[data-thin] {
+  min-height: calc(var(--capsule-height) / 2);
+  font-size: var(--text-12);
+}

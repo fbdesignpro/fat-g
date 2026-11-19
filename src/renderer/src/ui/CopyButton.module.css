@@ -1,0 +1,125 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* A Copy button (M19, C38–C40). Never part of a selection: what is copied by hand is the text
+   beside it, not the word on the button. */
+.copy {
+  display: inline-flex;
+  position: relative;
+  user-select: none;
+}
+
+.button {
+  padding: 0 var(--space-2);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-11);
+  cursor: pointer;
+}
+
+/* As an icon (the maintainer): two overlapping squares, the one behind stopping short of
+   the one in front, drawn by the style sheet alone as Explain this's ring is (chat/Chat.module.css),
+   in its colour. As wide as that ring, and as tall as the space between two messages, where it may
+   stand (chat/Chat.module.css). Its lines are as thick as its check's, a step past the ring's (the
+   maintainer). Chromium draws them to whole device pixels: two at 150 %, one at 100 %;
+   2px would be three at 150 %, heavy beside the ring. For a moment after a press: a check, or a mark
+   that it could not. */
+.icon {
+  position: relative;
+  width: var(--space-4);
+  height: var(--space-3);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.icon::before,
+.icon::after,
+.extraSheets::before {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid currentColor;
+}
+
+.icon::before,
+.extraSheets::before {
+  top: 0;
+  left: 2px;
+  clip-path: polygon(0 0, 100% 0, 100% 2px, 2px 2px, 2px 100%, 0 100%);
+}
+
+.icon::after {
+  top: 3px;
+  left: 5px;
+}
+
+/* Three stepped sheets make a single, tidy stack for the whole conversation. */
+.extraSheets {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.conversation .extraSheets::before {
+  top: 0;
+  left: 1px;
+  width: 8px;
+  height: 8px;
+}
+
+.conversation::before {
+  top: 2px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+}
+
+.conversation::after {
+  top: 4px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+}
+
+.copy[data-copy='copied'] .icon::before {
+  top: 0;
+  left: 6px;
+  width: 5px;
+  height: 9px;
+  border-width: 0 1.5px 1.5px 0;
+  clip-path: none;
+  transform: rotate(45deg);
+}
+
+.copy[data-copy='failed'] .icon::before {
+  content: '!';
+  inset: 0;
+  width: auto;
+  height: auto;
+  border: 0;
+  clip-path: none;
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+  line-height: var(--space-3);
+  text-align: center;
+}
+
+.copy[data-copy='copied'] .icon::after,
+.copy[data-copy='failed'] .icon::after {
+  content: none;
+}
+
+.copy[data-copy='copied'] .extraSheets,
+.copy[data-copy='failed'] .extraSheets {
+  display: none;
+}

@@ -1,0 +1,108 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* A file's tab: the shared bar above the text, which alone scrolls. Its path is the folder
+   button's tooltip. The text can be selected; the controls cannot. */
+.file {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* A line in fat-g's words: that a Markdown file is shown as plain text, that a file could not be
+   shown in its folder, and each state that shows no text. */
+.note,
+.state {
+  flex: none;
+  margin: 0;
+  padding: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}
+
+.note {
+  border-bottom: 1px solid var(--color-rule-soft);
+}
+
+/* The asides asked about this file (M20b, C74): a row of controls under the line above the text,
+   each titled as its tab and cut with an ellipsis; it goes on to a second row, and no further. */
+.asides {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+  max-height: calc(2 * var(--space-6));
+  padding: var(--space-1) var(--space-2);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-rule-soft);
+}
+
+.aside {
+  max-width: 100%;
+  padding: 0 var(--space-2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-highlight);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+/* The text: the one part of a file's tab that scrolls, both ways, by the keyboard too (C53).
+   Markdown and plain text share the chat's type scale, as plan content does. */
+.text {
+  composes: scale from '../../chat/Chat.module.css';
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+  padding: var(--space-3) var(--space-4);
+  user-select: text;
+}
+
+.text:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+/* Plain text: monospace, uncoloured, an element a line. It is as wide as its longest line. */
+.plain {
+  width: max-content;
+  min-width: 100%;
+  font-family: var(--font-mono);
+  font-size: var(--text-13);
+  tab-size: 4;
+}
+
+/* A line is unwrapped up to 2,000 px, and a wider one wraps at that width (C54): a source file's
+   lines stay whole, and a line of data or of a minified file is cut into rows the text scrolls across. */
+.line {
+  max-width: 2000px;
+  min-height: 1lh;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* The line a reference named, its hard-break-separated passage, or the block that holds it (C40).
+   A background alone: an inset edge would paint over the first letters of an unpadded line. */
+.text [data-line-mark] {
+  background: var(--color-highlight);
+}
+.tooltipPath {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.tooltipHint {
+  display: block;
+  margin-top: 2px;
+  font-size: var(--text-11);
+}

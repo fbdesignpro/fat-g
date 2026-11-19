@@ -1,0 +1,6262 @@
+{
+  "_fixture": {
+    "source": "M19 spike m19-k2.mjs, run against the installed CLI on the maintainer's machine, in a scratch configuration folder",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "get_settings documents (key names only)"
+    ],
+    "omitted": [
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"uuid\":281,\"message\":1,\"request\":1,\"mcp-server\":5}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "claude",
+    "version": "2.1.268",
+    "launchKind": "native"
+  },
+  "date": "2020-01-06T22:46:50.026Z",
+  "scenario": {
+    "id": "m19-markdown",
+    "title": "K2: a long Markdown answer with a code block and a table, at a higher effort",
+    "successCondition": "An answer of some length as text deltas, a thinking block before it if the model thinks, and the turn's end: the deltas' sizes and rate"
+  },
+  "run": {
+    "id": "claude-m19-markdown-10",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "p1",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 281,
+    "turnsSpent": 1,
+    "exit": {
+      "code": 0,
+      "ms": 19853
+    },
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 3238,
+      "recorded": [
+        {
+          "name": "claude.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "otherFoldersUnchanged": {
+      "other": true,
+      "third": true,
+      "outside": true
+    },
+    "notes": {
+      "endStatus": "success",
+      "isError": false,
+      "reference": {
+        "arrived": true,
+        "msAfterInit": 1194,
+        "beforeTheFirstTextDelta": true,
+        "msBeforeTheFirstModelAssistantFrame": 13439,
+        "sessionIdOnIt": true,
+        "sameAsInit": true
+      },
+      "replies": [
+        {
+          "alias": "r1",
+          "side": "own",
+          "model": "claude-sonnet-5",
+          "startIndex": 8,
+          "uuidOnEvents": true,
+          "stopReason": "end_turn",
+          "stopped": true,
+          "blocks": [
+            {
+              "index": 0,
+              "type": "text",
+              "deltaTypes": {
+                "text_delta": 267
+              },
+              "text": {
+                "count": 267,
+                "units": {
+                  "count": 267,
+                  "min": 1,
+                  "median": 12,
+                  "p95": 23,
+                  "max": 31,
+                  "total": 3134
+                },
+                "gapMs": {
+                  "count": 266,
+                  "min": 0,
+                  "median": 50,
+                  "p95": 57,
+                  "max": 444,
+                  "total": 13413
+                },
+                "spanMs": 13413,
+                "unitsPerSecond": 233.7,
+                "firstAtMs": 3168,
+                "lastAtMs": 16581
+              },
+              "stopped": true
+            }
+          ],
+          "assistantFrames": [
+            {
+              "index": 277,
+              "ms": 16607,
+              "side": "own",
+              "model": "claude-sonnet-5",
+              "blocks": [
+                "text"
+              ],
+              "textUnits": 3134,
+              "uuid": true,
+              "stop": null,
+              "matchedBlock": 0,
+              "blockTypeMatches": true,
+              "afterTheBlocksLastDelta": true,
+              "beforeTheBlocksStop": true,
+              "msAfterTheLastDelta": 26,
+              "textEqualsTheDeltas": true
+            }
+          ],
+          "framesPerBlock": 1
+        }
+      ],
+      "unmatchedAssistantFrames": [],
+      "ownEventsBeforeAnyStart": 0,
+      "eventsOfUnknownType": {},
+      "streamEvents": {
+        "own": 272,
+        "worker": 0
+      },
+      "init": {
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read"
+        ]
+      },
+      "result": {
+        "subtype": "success",
+        "isError": false,
+        "terminal": "completed",
+        "numTurns": 1
+      },
+      "lifecycle": [
+        {
+          "state": "queued",
+          "namesOurId": true
+        },
+        {
+          "state": "started",
+          "namesOurId": true
+        },
+        {
+          "state": "completed",
+          "namesOurId": true
+        }
+      ],
+      "typeCounts": {
+        "command_lifecycle": 3,
+        "system/init": 1,
+        "system/status": 1,
+        "rate_limit_event": 1,
+        "stream_event": 272,
+        "assistant": 1,
+        "result": 1
+      },
+      "requests": 0,
+      "droppedDeltas": {
+        "requested": true,
+        "dropped": 0,
+        "byType": {},
+        "kept": [
+          "stream_event"
+        ]
+      },
+      "outline": [
+        {
+          "index": 2,
+          "ms": 1944,
+          "send": "user",
+          "uuid": true
+        },
+        {
+          "index": 3,
+          "ms": 1947,
+          "recv": "command_lifecycle",
+          "bytes": 197,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "queued"
+        },
+        {
+          "index": 4,
+          "ms": 1953,
+          "recv": "command_lifecycle",
+          "bytes": 198,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "started"
+        },
+        {
+          "index": 5,
+          "ms": 1974,
+          "recv": "system/init",
+          "bytes": 1570,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-285>__batch",
+            "mcp__<mcp-server-285>__create",
+            "mcp__<mcp-server-285>__delete",
+            "mcp__<mcp-server-285>__export",
+            "mcp__<mcp-server-285>__guide",
+            "mcp__<mcp-server-285>__query",
+            "mcp__<mcp-server-285>__read",
+            "mcp__<mcp-server-285>__update"
+          ]
+        },
+        {
+          "index": 6,
+          "ms": 1977,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 7,
+          "ms": 2590,
+          "recv": "rate_limit_event",
+          "bytes": 434,
+          "session": "s1"
+        },
+        {
+          "index": 277,
+          "ms": 16607,
+          "recv": "assistant",
+          "bytes": 3989,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 3134
+        },
+        {
+          "index": 281,
+          "ms": 16617,
+          "recv": "result",
+          "bytes": 5482,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 1,
+          "resultIndex": 0,
+          "queuedTurnCount": 0,
+          "resultChars": 3134
+        },
+        {
+          "index": 282,
+          "ms": 16617,
+          "recv": "command_lifecycle",
+          "bytes": 200,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "completed"
+        }
+      ],
+      "thinkingBlocks": 0,
+      "deltaFrameBytes": {
+        "count": 272,
+        "min": 179,
+        "median": 248,
+        "p95": 261,
+        "max": 811,
+        "total": 68369
+      }
+    }
+  },
+  "launch": {
+    "args": [
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--input-format",
+      "stream-json",
+      "--setting-sources",
+      "user,project,local",
+      "--permission-mode",
+      "default",
+      "--permission-prompt-tool",
+      "stdio",
+      "--tools",
+      "Read,Glob,Grep,Agent",
+      "--model",
+      "sonnet",
+      "--effort",
+      "high",
+      "--disable-slash-commands",
+      "--include-partial-messages"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "subtype": "initialize"
+    },
+    "replyIndex": 1,
+    "ok": true
+  },
+  "toolPermissions": {
+    "readTools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "scenarioTools": [
+      "Agent"
+    ],
+    "preApproved": [],
+    "permissionMode": "default",
+    "permissionRequestsTo": "the spike (--permission-prompt-tool stdio)",
+    "policy": "every can_use_tool request is denied, as the app will deny it (M16, C22); any other request gets an error reply"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": false
+      }
+    ],
+    "set": [
+      "CLAUDE_CONFIG_DIR",
+      "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "stream_event"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 18,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-1",
+        "request": {
+          "subtype": "initialize"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 432,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-1",
+          "response": {
+            "commands": [],
+            "agents": [
+              {
+                "name": "claude",
+                "description": "Catch-all for any task that doesn't fit a more specific agent. FleetView's default when no agent name is typed."
+              },
+              {
+                "name": "Explore",
+                "description": "Fast read-only search agent for locating code. Use it to find files by pattern (eg. \"src/components/**/*.tsx\"), grep for symbols or keywords (eg. \"API endpoints\"), or answer \"where is X defined / which files reference Y.\" Do NOT use it for code review, design-doc auditing, cross-file consistency checks, or open-ended analysis — it reads excerpts rather than whole files and will miss content past its read window. When calling, specify search breadth: \"quick\" for a single targeted lookup, \"medium\" for moderate exploration, or \"very thorough\" to search across multiple locations and naming conventions.",
+                "model": "inherit"
+              },
+              {
+                "name": "general-purpose",
+                "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you."
+              },
+              {
+                "name": "Plan",
+                "description": "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs.",
+                "model": "inherit"
+              },
+              {
+                "name": "statusline-setup",
+                "description": "Use this agent to configure the user's Claude Code status line setting.",
+                "model": "sonnet"
+              }
+            ],
+            "output_style": "default",
+            "available_output_styles": [
+              "default",
+              "Proactive",
+              "Concise",
+              "Explanatory",
+              "Learning"
+            ],
+            "user_output_styles_dir": "<scratch>\\output-styles",
+            "models": [
+              {
+                "value": "default",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Default (recommended)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "opus[1m]",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Opus (1M context)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "claude-fable-5-1[1m]",
+                "resolvedModel": "claude-fable-5-1",
+                "displayName": "Fable",
+                "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "sonnet",
+                "resolvedModel": "claude-sonnet-5",
+                "displayName": "Sonnet",
+                "description": "Sonnet 5 · Efficient for routine tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "haiku",
+                "resolvedModel": "claude-haiku-4-5-20251001",
+                "displayName": "Haiku",
+                "description": "Haiku 4.5 · Fastest for quick answers"
+              }
+            ],
+            "account": "<account>",
+            "pid": 138020,
+            "current_permission_mode": "default",
+            "analytics_disabled": false,
+            "remote_control_auto_enable": false,
+            "remote_control_available": true,
+            "remote_control_auto_on_by_default": false,
+            "ide_rc_auto_enable_gate": true,
+            "fast_mode_state": "off",
+            "fast_mode_disabled_reason": "sdk_opt_in_required",
+            "session_state": "idle"
+          },
+          "pending_permission_requests": [],
+          "pending_user_dialog_requests": []
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1944,
+      "frame": {
+        "type": "user",
+        "uuid": "<uuid-2>",
+        "message": {
+          "role": "user",
+          "content": "Without using any tool, write about 400 words in Markdown explaining how a tide table is read: use two headings, a bulleted list, a fenced JavaScript code block of about 25 lines that computes the next high tide from a list of times, and a table with at least 10 rows of example times and heights."
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 1947,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "queued",
+        "uuid": "<uuid-3>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 1953,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "started",
+        "uuid": "<uuid-4>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1974,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read",
+          "mcp__<mcp-server-285>__batch",
+          "mcp__<mcp-server-285>__create",
+          "mcp__<mcp-server-285>__delete",
+          "mcp__<mcp-server-285>__export",
+          "mcp__<mcp-server-285>__guide",
+          "mcp__<mcp-server-285>__query",
+          "mcp__<mcp-server-285>__read",
+          "mcp__<mcp-server-285>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-286>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-287>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-288>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-289>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "slash_commands": [],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-5>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 1977,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-6>"
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 2590,
+      "frame": {
+        "type": "rate_limit_event",
+        "rate_limit_info": {
+          "_keys": [
+            "isUsingOverage",
+            "overageDisabledReason",
+            "overageStatus",
+            "rateLimitType",
+            "resetsAt",
+            "status",
+            "unifiedWindows"
+          ]
+        },
+        "uuid": "<uuid-7>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 3168,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-8>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 18142,
+              "cache_read_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 18142
+              },
+              "output_tokens": 1,
+              "service_tier": "standard",
+              "inference_geo": "not_available"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-9>",
+        "ttft_ms": 1184,
+        "user_message_uuid": "<uuid-2>",
+        "user_message_uuids": [
+          "<uuid-2>"
+        ]
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 3168,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "text",
+            "text": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-10>"
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 3168,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "#"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-11>"
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 3612,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " Re"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-12>"
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 3612,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ading a"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-13>"
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 3612,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " Tide"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-14>"
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 3612,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " Table"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-15>"
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 3612,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n\nA"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-16>"
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 3612,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " tide table l"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-17>"
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 3612,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ists the pred"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-18>"
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 3612,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "icted times"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-19>"
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 3644,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " and"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-20>"
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 3695,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " heights of"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-21>"
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 3746,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " success"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-22>"
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 3797,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ive high and low tides for"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-23>"
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 4059,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " a given location"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-24>"
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 4059,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ". Each"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-25>"
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 4059,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " ent"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-26>"
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 4059,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ry is a tim"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-27>"
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 4059,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "estamped"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-28>"
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 4096,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " pr"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-29>"
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 4147,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ediction, us"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-30>"
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 4197,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ually spaced ro"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-31>"
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 4250,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ughly "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-32>"
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 4299,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "6 to"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-33>"
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 4348,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " 12."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-34>"
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 4399,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "5 hours apart,"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-35>"
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 4510,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " because most"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-36>"
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 4510,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " co"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-37>"
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 4551,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "astlines exper"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-38>"
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 4598,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ience two high"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-39>"
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 4648,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " t"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-40>"
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 4700,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ides and two low tides per day"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-41>"
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 4748,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " ("
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-42>"
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 4801,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "a semidiurnal p"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-43>"
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 4851,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "attern). To"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-44>"
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 4899,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " read one"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-45>"
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 4949,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " corre"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-46>"
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 5000,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ctly, pair"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-47>"
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 5050,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " the"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-48>"
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 5100,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " time with its"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-49>"
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 5149,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " t"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-50>"
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 5199,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ide type and"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-51>"
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 5250,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " height,"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-52>"
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 5299,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " and note"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-53>"
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 5348,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " the re"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-54>"
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 5400,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ference dat"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-55>"
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 5448,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "um the"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-56>"
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 5498,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " he"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-57>"
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 5549,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ights are measured against —"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-58>"
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 5598,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " usually"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-59>"
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 5649,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " Mean L"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-60>"
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 5699,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ower Low"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-61>"
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 5749,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " Water (MLLW)"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-62>"
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 5799,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " in the US or"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-63>"
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 5849,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " Chart"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-64>"
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 5901,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " Datum el"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-65>"
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 5959,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "sewhere.\n\n##"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-66>"
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 5999,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " Key Things"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-67>"
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 6054,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " to Check"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-68>"
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 6099,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n\nWhen"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-69>"
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 6150,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " reading any"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-70>"
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 6199,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " tide table, confirm these"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-71>"
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 6256,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " details"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-72>"
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 6300,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " before rel"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-73>"
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 6350,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ying on it:\n\n- **"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-74>"
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 6406,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "Station"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-75>"
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 6452,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " and date** — t"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-76>"
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 6501,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ables are location"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-77>"
+      }
+    },
+    {
+      "index": 77,
+      "dir": "recv",
+      "ms": 6552,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "-specific; a few"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-78>"
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 6600,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " miles of"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-79>"
+      }
+    },
+    {
+      "index": 79,
+      "dir": "recv",
+      "ms": 6650,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " coast"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-80>"
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 6700,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "line can shift times"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-81>"
+      }
+    },
+    {
+      "index": 81,
+      "dir": "recv",
+      "ms": 6750,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " by "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-82>"
+      }
+    },
+    {
+      "index": 82,
+      "dir": "recv",
+      "ms": 6800,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "30+"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-83>"
+      }
+    },
+    {
+      "index": 83,
+      "dir": "recv",
+      "ms": 6851,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " minutes.\n- **"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-84>"
+      }
+    },
+    {
+      "index": 84,
+      "dir": "recv",
+      "ms": 6901,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "Time zone** — check"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-85>"
+      }
+    },
+    {
+      "index": 85,
+      "dir": "recv",
+      "ms": 6952,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " whether times are local,"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-86>"
+      }
+    },
+    {
+      "index": 86,
+      "dir": "recv",
+      "ms": 7002,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " standard, or U"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-87>"
+      }
+    },
+    {
+      "index": 87,
+      "dir": "recv",
+      "ms": 7053,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "TC, and whether dayl"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-88>"
+      }
+    },
+    {
+      "index": 88,
+      "dir": "recv",
+      "ms": 7101,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ight saving is"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-89>"
+      }
+    },
+    {
+      "index": 89,
+      "dir": "recv",
+      "ms": 7153,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " applied.\n- **Dat"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-90>"
+      }
+    },
+    {
+      "index": 90,
+      "dir": "recv",
+      "ms": 7202,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "um** — the"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-91>"
+      }
+    },
+    {
+      "index": 91,
+      "dir": "recv",
+      "ms": 7251,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " z"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-92>"
+      }
+    },
+    {
+      "index": 92,
+      "dir": "recv",
+      "ms": 7307,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ero-height"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-93>"
+      }
+    },
+    {
+      "index": 93,
+      "dir": "recv",
+      "ms": 7352,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " reference point;"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-94>"
+      }
+    },
+    {
+      "index": 94,
+      "dir": "recv",
+      "ms": 7402,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " heights below"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-95>"
+      }
+    },
+    {
+      "index": 95,
+      "dir": "recv",
+      "ms": 7451,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " dat"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-96>"
+      }
+    },
+    {
+      "index": 96,
+      "dir": "recv",
+      "ms": 7501,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "um are sh"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-97>"
+      }
+    },
+    {
+      "index": 97,
+      "dir": "recv",
+      "ms": 7552,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "own as negative.\n- **"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-98>"
+      }
+    },
+    {
+      "index": 98,
+      "dir": "recv",
+      "ms": 7601,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "Tide type** — each"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-99>"
+      }
+    },
+    {
+      "index": 99,
+      "dir": "recv",
+      "ms": 7652,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " row is"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-100>"
+      }
+    },
+    {
+      "index": 100,
+      "dir": "recv",
+      "ms": 7702,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " mar"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-101>"
+      }
+    },
+    {
+      "index": 101,
+      "dir": "recv",
+      "ms": 7753,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ked High ("
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-102>"
+      }
+    },
+    {
+      "index": 102,
+      "dir": "recv",
+      "ms": 7802,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "H) or Low (L)."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-103>"
+      }
+    },
+    {
+      "index": 103,
+      "dir": "recv",
+      "ms": 7853,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n- **Height"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-104>"
+      }
+    },
+    {
+      "index": 104,
+      "dir": "recv",
+      "ms": 7903,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " units"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-105>"
+      }
+    },
+    {
+      "index": 105,
+      "dir": "recv",
+      "ms": 7953,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "** — me"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-106>"
+      }
+    },
+    {
+      "index": 106,
+      "dir": "recv",
+      "ms": 8002,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ters or feet, which changes"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-107>"
+      }
+    },
+    {
+      "index": 107,
+      "dir": "recv",
+      "ms": 8052,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " how"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-108>"
+      }
+    },
+    {
+      "index": 108,
+      "dir": "recv",
+      "ms": 8101,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " you"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-109>"
+      }
+    },
+    {
+      "index": 109,
+      "dir": "recv",
+      "ms": 8152,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " interpret mag"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-110>"
+      }
+    },
+    {
+      "index": 110,
+      "dir": "recv",
+      "ms": 8202,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "nitude.\n- **"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-111>"
+      }
+    },
+    {
+      "index": 111,
+      "dir": "recv",
+      "ms": 8252,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "Range"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-112>"
+      }
+    },
+    {
+      "index": 112,
+      "dir": "recv",
+      "ms": 8301,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "** — the"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-113>"
+      }
+    },
+    {
+      "index": 113,
+      "dir": "recv",
+      "ms": 8351,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " difference between cons"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-114>"
+      }
+    },
+    {
+      "index": 114,
+      "dir": "recv",
+      "ms": 8403,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ecutive high and low heights"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-115>"
+      }
+    },
+    {
+      "index": 115,
+      "dir": "recv",
+      "ms": 8453,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ","
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-116>"
+      }
+    },
+    {
+      "index": 116,
+      "dir": "recv",
+      "ms": 8502,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " use"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-117>"
+      }
+    },
+    {
+      "index": 117,
+      "dir": "recv",
+      "ms": 8552,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ful for bo"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-118>"
+      }
+    },
+    {
+      "index": 118,
+      "dir": "recv",
+      "ms": 8601,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ating"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-119>"
+      }
+    },
+    {
+      "index": 119,
+      "dir": "recv",
+      "ms": 8660,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " cl"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-120>"
+      }
+    },
+    {
+      "index": 120,
+      "dir": "recv",
+      "ms": 8702,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "earance and be"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-121>"
+      }
+    },
+    {
+      "index": 121,
+      "dir": "recv",
+      "ms": 8753,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ach ex"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-122>"
+      }
+    },
+    {
+      "index": 122,
+      "dir": "recv",
+      "ms": 8802,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "posure.\n\n## Computing"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-123>"
+      }
+    },
+    {
+      "index": 123,
+      "dir": "recv",
+      "ms": 8852,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " the Next High"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-124>"
+      }
+    },
+    {
+      "index": 124,
+      "dir": "recv",
+      "ms": 8901,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " Tide\n\nGiven"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-125>"
+      }
+    },
+    {
+      "index": 125,
+      "dir": "recv",
+      "ms": 8953,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " a list of pred"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-126>"
+      }
+    },
+    {
+      "index": 126,
+      "dir": "recv",
+      "ms": 9002,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "icted t"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-127>"
+      }
+    },
+    {
+      "index": 127,
+      "dir": "recv",
+      "ms": 9052,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ide"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-128>"
+      }
+    },
+    {
+      "index": 128,
+      "dir": "recv",
+      "ms": 9102,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " events, you can program"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-129>"
+      }
+    },
+    {
+      "index": 129,
+      "dir": "recv",
+      "ms": 9164,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "matically find the next up"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-130>"
+      }
+    },
+    {
+      "index": 130,
+      "dir": "recv",
+      "ms": 9202,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "coming high tide rel"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-131>"
+      }
+    },
+    {
+      "index": 131,
+      "dir": "recv",
+      "ms": 9251,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ative to the current time:\n\n```"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-132>"
+      }
+    },
+    {
+      "index": 132,
+      "dir": "recv",
+      "ms": 9302,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "javascript\nfunction get"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-133>"
+      }
+    },
+    {
+      "index": 133,
+      "dir": "recv",
+      "ms": 9352,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "NextHighTide(t"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-134>"
+      }
+    },
+    {
+      "index": 134,
+      "dir": "recv",
+      "ms": 9402,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ides, now ="
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-135>"
+      }
+    },
+    {
+      "index": 135,
+      "dir": "recv",
+      "ms": 9452,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " new Date()) {\n  "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-136>"
+      }
+    },
+    {
+      "index": 136,
+      "dir": "recv",
+      "ms": 9502,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "// tides: ["
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-137>"
+      }
+    },
+    {
+      "index": 137,
+      "dir": "recv",
+      "ms": 9552,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "{ time: \"2"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-138>"
+      }
+    },
+    {
+      "index": 138,
+      "dir": "recv",
+      "ms": 9603,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "020"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-139>"
+      }
+    },
+    {
+      "index": 139,
+      "dir": "recv",
+      "ms": 9653,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "-01-06T08"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-140>"
+      }
+    },
+    {
+      "index": 140,
+      "dir": "recv",
+      "ms": 9702,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":14:00Z\", type"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-141>"
+      }
+    },
+    {
+      "index": 141,
+      "dir": "recv",
+      "ms": 9753,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ": \"H\", height: 1"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-142>"
+      }
+    },
+    {
+      "index": 142,
+      "dir": "recv",
+      "ms": 9806,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ".8"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-143>"
+      }
+    },
+    {
+      "index": 143,
+      "dir": "recv",
+      "ms": 9854,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " }, ...]\n  "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-144>"
+      }
+    },
+    {
+      "index": 144,
+      "dir": "recv",
+      "ms": 9911,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "const upcoming = tides"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-145>"
+      }
+    },
+    {
+      "index": 145,
+      "dir": "recv",
+      "ms": 9954,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n    .filter(t"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-146>"
+      }
+    },
+    {
+      "index": 146,
+      "dir": "recv",
+      "ms": 10003,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " => t.type === \"H\")"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-147>"
+      }
+    },
+    {
+      "index": 147,
+      "dir": "recv",
+      "ms": 10055,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n    .map"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-148>"
+      }
+    },
+    {
+      "index": 148,
+      "dir": "recv",
+      "ms": 10108,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "(t => "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-149>"
+      }
+    },
+    {
+      "index": 149,
+      "dir": "recv",
+      "ms": 10155,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "({ "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-150>"
+      }
+    },
+    {
+      "index": 150,
+      "dir": "recv",
+      "ms": 10211,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "...t, time: new Date"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-151>"
+      }
+    },
+    {
+      "index": 151,
+      "dir": "recv",
+      "ms": 10254,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "(t.time) }))"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-152>"
+      }
+    },
+    {
+      "index": 152,
+      "dir": "recv",
+      "ms": 10306,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n    .filter(t => t"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-153>"
+      }
+    },
+    {
+      "index": 153,
+      "dir": "recv",
+      "ms": 10356,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ".time >"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-154>"
+      }
+    },
+    {
+      "index": 154,
+      "dir": "recv",
+      "ms": 10404,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " now)\n    .sort(("
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-155>"
+      }
+    },
+    {
+      "index": 155,
+      "dir": "recv",
+      "ms": 10455,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "a, b) => a.time"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-156>"
+      }
+    },
+    {
+      "index": 156,
+      "dir": "recv",
+      "ms": 10504,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " - b.time);\n\n  if"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-157>"
+      }
+    },
+    {
+      "index": 157,
+      "dir": "recv",
+      "ms": 10553,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " (upcoming.length ==="
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-158>"
+      }
+    },
+    {
+      "index": 158,
+      "dir": "recv",
+      "ms": 10603,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " 0) {\n    return null"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-159>"
+      }
+    },
+    {
+      "index": 159,
+      "dir": "recv",
+      "ms": 10654,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ";\n  }\n\n  return up"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-160>"
+      }
+    },
+    {
+      "index": 160,
+      "dir": "recv",
+      "ms": 10704,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "coming[0];\n}"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-161>"
+      }
+    },
+    {
+      "index": 161,
+      "dir": "recv",
+      "ms": 10760,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n\nconst s"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-162>"
+      }
+    },
+    {
+      "index": 162,
+      "dir": "recv",
+      "ms": 10804,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ampleTides = [\n  "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-163>"
+      }
+    },
+    {
+      "index": 163,
+      "dir": "recv",
+      "ms": 10855,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "{ time: \"2020-01"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-164>"
+      }
+    },
+    {
+      "index": 164,
+      "dir": "recv",
+      "ms": 10905,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "-06T02:10"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-165>"
+      }
+    },
+    {
+      "index": 165,
+      "dir": "recv",
+      "ms": 10953,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":00Z\", type: \""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-166>"
+      }
+    },
+    {
+      "index": 166,
+      "dir": "recv",
+      "ms": 11005,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "L\", height: 0.3"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-167>"
+      }
+    },
+    {
+      "index": 167,
+      "dir": "recv",
+      "ms": 11057,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " },\n  { time: \""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-168>"
+      }
+    },
+    {
+      "index": 168,
+      "dir": "recv",
+      "ms": 11115,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "2020-01-06T08"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-169>"
+      }
+    },
+    {
+      "index": 169,
+      "dir": "recv",
+      "ms": 11154,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":14"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-170>"
+      }
+    },
+    {
+      "index": 170,
+      "dir": "recv",
+      "ms": 11204,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":00Z\", type: \""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-171>"
+      }
+    },
+    {
+      "index": 171,
+      "dir": "recv",
+      "ms": 11254,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "H\", height: 1.8"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-172>"
+      }
+    },
+    {
+      "index": 172,
+      "dir": "recv",
+      "ms": 11304,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " },\n  { time: \""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-173>"
+      }
+    },
+    {
+      "index": 173,
+      "dir": "recv",
+      "ms": 11354,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "2020-01-06T14"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-174>"
+      }
+    },
+    {
+      "index": 174,
+      "dir": "recv",
+      "ms": 11406,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":45:00Z\", type"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-175>"
+      }
+    },
+    {
+      "index": 175,
+      "dir": "recv",
+      "ms": 11455,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ": \"L\", height: 0"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-176>"
+      }
+    },
+    {
+      "index": 176,
+      "dir": "recv",
+      "ms": 11504,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ".4"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-177>"
+      }
+    },
+    {
+      "index": 177,
+      "dir": "recv",
+      "ms": 11555,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " },\n  { time: \""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-178>"
+      }
+    },
+    {
+      "index": 178,
+      "dir": "recv",
+      "ms": 11604,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "2020-01-06T20"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-179>"
+      }
+    },
+    {
+      "index": 179,
+      "dir": "recv",
+      "ms": 11654,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":52"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-180>"
+      }
+    },
+    {
+      "index": 180,
+      "dir": "recv",
+      "ms": 11705,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":00Z\", type: \""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-181>"
+      }
+    },
+    {
+      "index": 181,
+      "dir": "recv",
+      "ms": 11754,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "H\", height: 1.9"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-182>"
+      }
+    },
+    {
+      "index": 182,
+      "dir": "recv",
+      "ms": 11806,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " },\n];\n\nconst next ="
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-183>"
+      }
+    },
+    {
+      "index": 183,
+      "dir": "recv",
+      "ms": 11857,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " getNextHighTide("
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-184>"
+      }
+    },
+    {
+      "index": 184,
+      "dir": "recv",
+      "ms": 11906,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "sampleTides);\nconsole"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-185>"
+      }
+    },
+    {
+      "index": 185,
+      "dir": "recv",
+      "ms": 11955,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ".log(next ? `"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-186>"
+      }
+    },
+    {
+      "index": 186,
+      "dir": "recv",
+      "ms": 12004,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "Next high t"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-187>"
+      }
+    },
+    {
+      "index": 187,
+      "dir": "recv",
+      "ms": 12056,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ide:"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-188>"
+      }
+    },
+    {
+      "index": 188,
+      "dir": "recv",
+      "ms": 12106,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " ${next.time}"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-189>"
+      }
+    },
+    {
+      "index": 189,
+      "dir": "recv",
+      "ms": 12154,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "` : \"No more"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-190>"
+      }
+    },
+    {
+      "index": 190,
+      "dir": "recv",
+      "ms": 12205,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " high tides today"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-191>"
+      }
+    },
+    {
+      "index": 191,
+      "dir": "recv",
+      "ms": 12257,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\");\n```\n\nThis"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-192>"
+      }
+    },
+    {
+      "index": 192,
+      "dir": "recv",
+      "ms": 12306,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " log"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-193>"
+      }
+    },
+    {
+      "index": 193,
+      "dir": "recv",
+      "ms": 12361,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ic fil"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-194>"
+      }
+    },
+    {
+      "index": 194,
+      "dir": "recv",
+      "ms": 12405,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ters for high"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-195>"
+      }
+    },
+    {
+      "index": 195,
+      "dir": "recv",
+      "ms": 12455,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "-tide rows, disc"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-196>"
+      }
+    },
+    {
+      "index": 196,
+      "dir": "recv",
+      "ms": 12506,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ards any"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-197>"
+      }
+    },
+    {
+      "index": 197,
+      "dir": "recv",
+      "ms": 12555,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " already in"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-198>"
+      }
+    },
+    {
+      "index": 198,
+      "dir": "recv",
+      "ms": 12608,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " the past, and s"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-199>"
+      }
+    },
+    {
+      "index": 199,
+      "dir": "recv",
+      "ms": 12657,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "orts ch"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-200>"
+      }
+    },
+    {
+      "index": 200,
+      "dir": "recv",
+      "ms": 12705,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ronologically to return the so"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-201>"
+      }
+    },
+    {
+      "index": 201,
+      "dir": "recv",
+      "ms": 12756,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "onest match"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-202>"
+      }
+    },
+    {
+      "index": 202,
+      "dir": "recv",
+      "ms": 12805,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " — the"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-203>"
+      }
+    },
+    {
+      "index": 203,
+      "dir": "recv",
+      "ms": 12854,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " same appro"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-204>"
+      }
+    },
+    {
+      "index": 204,
+      "dir": "recv",
+      "ms": 12904,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ach a"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-205>"
+      }
+    },
+    {
+      "index": 205,
+      "dir": "recv",
+      "ms": 12956,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " tide app"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-206>"
+      }
+    },
+    {
+      "index": 206,
+      "dir": "recv",
+      "ms": 13004,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " u"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-207>"
+      }
+    },
+    {
+      "index": 207,
+      "dir": "recv",
+      "ms": 13055,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ses under the hood.\n\n##"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-208>"
+      }
+    },
+    {
+      "index": 208,
+      "dir": "recv",
+      "ms": 13106,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " Example Table"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-209>"
+      }
+    },
+    {
+      "index": 209,
+      "dir": "recv",
+      "ms": 13205,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n\n| Date       "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-210>"
+      }
+    },
+    {
+      "index": 210,
+      "dir": "recv",
+      "ms": 13254,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "| Time  "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-211>"
+      }
+    },
+    {
+      "index": 211,
+      "dir": "recv",
+      "ms": 13304,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "| Type | Height ("
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-212>"
+      }
+    },
+    {
+      "index": 212,
+      "dir": "recv",
+      "ms": 13377,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "m) |\n|------------|"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-213>"
+      }
+    },
+    {
+      "index": 213,
+      "dir": "recv",
+      "ms": 13404,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "-------|------|------------|"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-214>"
+      }
+    },
+    {
+      "index": 214,
+      "dir": "recv",
+      "ms": 13455,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n| 2020-01-"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-215>"
+      }
+    },
+    {
+      "index": 215,
+      "dir": "recv",
+      "ms": 13505,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "06 | 02:10 "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-216>"
+      }
+    },
+    {
+      "index": 216,
+      "dir": "recv",
+      "ms": 13555,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "| L    | 0.3"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-217>"
+      }
+    },
+    {
+      "index": 217,
+      "dir": "recv",
+      "ms": 13604,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "        "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-218>"
+      }
+    },
+    {
+      "index": 218,
+      "dir": "recv",
+      "ms": 13655,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "|\n| 2020-01"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-219>"
+      }
+    },
+    {
+      "index": 219,
+      "dir": "recv",
+      "ms": 13704,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "-06 | 08:14"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-220>"
+      }
+    },
+    {
+      "index": 220,
+      "dir": "recv",
+      "ms": 13760,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " | H    | 1."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-221>"
+      }
+    },
+    {
+      "index": 221,
+      "dir": "recv",
+      "ms": 13805,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "8        |\n| 2020"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-222>"
+      }
+    },
+    {
+      "index": 222,
+      "dir": "recv",
+      "ms": 13854,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "-01-06 | 14"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-223>"
+      }
+    },
+    {
+      "index": 223,
+      "dir": "recv",
+      "ms": 13904,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":45 | L    | "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-224>"
+      }
+    },
+    {
+      "index": 224,
+      "dir": "recv",
+      "ms": 13955,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "0.4        |\n| "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-225>"
+      }
+    },
+    {
+      "index": 225,
+      "dir": "recv",
+      "ms": 14005,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "2020-01-06 |"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-226>"
+      }
+    },
+    {
+      "index": 226,
+      "dir": "recv",
+      "ms": 14058,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " 20:52 | H    "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-227>"
+      }
+    },
+    {
+      "index": 227,
+      "dir": "recv",
+      "ms": 14105,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "| 1.9        |"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-228>"
+      }
+    },
+    {
+      "index": 228,
+      "dir": "recv",
+      "ms": 14155,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n| 2020-01-07"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-229>"
+      }
+    },
+    {
+      "index": 229,
+      "dir": "recv",
+      "ms": 14205,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " | 02"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-230>"
+      }
+    },
+    {
+      "index": 230,
+      "dir": "recv",
+      "ms": 14258,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":58 | L    | "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-231>"
+      }
+    },
+    {
+      "index": 231,
+      "dir": "recv",
+      "ms": 14305,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "0.3"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-232>"
+      }
+    },
+    {
+      "index": 232,
+      "dir": "recv",
+      "ms": 14355,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "        |\n| 2020-"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-233>"
+      }
+    },
+    {
+      "index": 233,
+      "dir": "recv",
+      "ms": 14405,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "01-07 | 09:"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-234>"
+      }
+    },
+    {
+      "index": 234,
+      "dir": "recv",
+      "ms": 14456,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "05"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-235>"
+      }
+    },
+    {
+      "index": 235,
+      "dir": "recv",
+      "ms": 14506,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " | H    | 1."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-236>"
+      }
+    },
+    {
+      "index": 236,
+      "dir": "recv",
+      "ms": 14555,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "7        |\n| 2020"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-237>"
+      }
+    },
+    {
+      "index": 237,
+      "dir": "recv",
+      "ms": 14613,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "-01-07 | 15"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-238>"
+      }
+    },
+    {
+      "index": 238,
+      "dir": "recv",
+      "ms": 14656,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":30"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-239>"
+      }
+    },
+    {
+      "index": 239,
+      "dir": "recv",
+      "ms": 14705,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " | L    | 0."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-240>"
+      }
+    },
+    {
+      "index": 240,
+      "dir": "recv",
+      "ms": 14756,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "5        |\n| 2020"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-241>"
+      }
+    },
+    {
+      "index": 241,
+      "dir": "recv",
+      "ms": 14805,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "-01-07 | 21"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-242>"
+      }
+    },
+    {
+      "index": 242,
+      "dir": "recv",
+      "ms": 14857,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":40 | H    | "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-243>"
+      }
+    },
+    {
+      "index": 243,
+      "dir": "recv",
+      "ms": 14905,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "1.8        |\n| "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-244>"
+      }
+    },
+    {
+      "index": 244,
+      "dir": "recv",
+      "ms": 14956,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "2020-01-08 |"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-245>"
+      }
+    },
+    {
+      "index": 245,
+      "dir": "recv",
+      "ms": 15005,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " 03:42 | L    "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-246>"
+      }
+    },
+    {
+      "index": 246,
+      "dir": "recv",
+      "ms": 15056,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "| 0.4        |"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-247>"
+      }
+    },
+    {
+      "index": 247,
+      "dir": "recv",
+      "ms": 15105,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n| 2020-01-08"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-248>"
+      }
+    },
+    {
+      "index": 248,
+      "dir": "recv",
+      "ms": 15159,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " | 09:52"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-249>"
+      }
+    },
+    {
+      "index": 249,
+      "dir": "recv",
+      "ms": 15206,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " | H    | 1."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-250>"
+      }
+    },
+    {
+      "index": 250,
+      "dir": "recv",
+      "ms": 15269,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "6        |\n| 2020"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-251>"
+      }
+    },
+    {
+      "index": 251,
+      "dir": "recv",
+      "ms": 15305,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "-01-08 | 16"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-252>"
+      }
+    },
+    {
+      "index": 252,
+      "dir": "recv",
+      "ms": 15358,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": ":12"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-253>"
+      }
+    },
+    {
+      "index": 253,
+      "dir": "recv",
+      "ms": 15405,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " | L    | 0."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-254>"
+      }
+    },
+    {
+      "index": 254,
+      "dir": "recv",
+      "ms": 15456,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "6        |"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-255>"
+      }
+    },
+    {
+      "index": 255,
+      "dir": "recv",
+      "ms": 15506,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\n\nReading across"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-256>"
+      }
+    },
+    {
+      "index": 256,
+      "dir": "recv",
+      "ms": 15563,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " a"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-257>"
+      }
+    },
+    {
+      "index": 257,
+      "dir": "recv",
+      "ms": 15605,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " row t"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-258>"
+      }
+    },
+    {
+      "index": 258,
+      "dir": "recv",
+      "ms": 15664,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ells you ex"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-259>"
+      }
+    },
+    {
+      "index": 259,
+      "dir": "recv",
+      "ms": 15706,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "actly when and"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-260>"
+      }
+    },
+    {
+      "index": 260,
+      "dir": "recv",
+      "ms": 15756,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " how"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-261>"
+      }
+    },
+    {
+      "index": 261,
+      "dir": "recv",
+      "ms": 15805,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " high the water"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-262>"
+      }
+    },
+    {
+      "index": 262,
+      "dir": "recv",
+      "ms": 15855,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " will r"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-263>"
+      }
+    },
+    {
+      "index": 263,
+      "dir": "recv",
+      "ms": 15906,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ise or"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-264>"
+      }
+    },
+    {
+      "index": 264,
+      "dir": "recv",
+      "ms": 15955,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " fall, while re"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-265>"
+      }
+    },
+    {
+      "index": 265,
+      "dir": "recv",
+      "ms": 16006,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ading down a column re"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-266>"
+      }
+    },
+    {
+      "index": 266,
+      "dir": "recv",
+      "ms": 16057,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "veals the dr"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-267>"
+      }
+    },
+    {
+      "index": 267,
+      "dir": "recv",
+      "ms": 16106,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "if"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-268>"
+      }
+    },
+    {
+      "index": 268,
+      "dir": "recv",
+      "ms": 16155,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ting r"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-269>"
+      }
+    },
+    {
+      "index": 269,
+      "dir": "recv",
+      "ms": 16207,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "hythm of the tide —"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-270>"
+      }
+    },
+    {
+      "index": 270,
+      "dir": "recv",
+      "ms": 16255,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " each day's events"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-271>"
+      }
+    },
+    {
+      "index": 271,
+      "dir": "recv",
+      "ms": 16306,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " shift later"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-272>"
+      }
+    },
+    {
+      "index": 272,
+      "dir": "recv",
+      "ms": 16357,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " by"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-273>"
+      }
+    },
+    {
+      "index": 273,
+      "dir": "recv",
+      "ms": 16405,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " roughly 40"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-274>"
+      }
+    },
+    {
+      "index": 274,
+      "dir": "recv",
+      "ms": 16455,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "–50 minutes due"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-275>"
+      }
+    },
+    {
+      "index": 275,
+      "dir": "recv",
+      "ms": 16506,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " to the lunar c"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-276>"
+      }
+    },
+    {
+      "index": 276,
+      "dir": "recv",
+      "ms": 16581,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ycle."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-277>"
+      }
+    },
+    {
+      "index": 277,
+      "dir": "recv",
+      "ms": 16607,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-8>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "# Reading a Tide Table\n\nA tide table lists the predicted times and heights of successive high and low tides for a given location. Each entry is a timestamped prediction, usually spaced roughly 6 to 12.5 hours apart, because most coastlines experience two high tides and two low tides per day (a semidiurnal pattern). To read one correctly, pair the time with its tide type and height, and note the reference datum the heights are measured against — usually Mean Lower Low Water (MLLW) in the US or Chart Datum elsewhere.\n\n## Key Things to Check\n\nWhen reading any tide table, confirm these details before relying on it:\n\n- **Station and date** — tables are location-specific; a few miles of coastline can shift times by 30+ minutes.\n- **Time zone** — check whether times are local, standard, or UTC, and whether daylight saving is applied.\n- **Datum** — the zero-height reference point; heights below datum are shown as negative.\n- **Tide type** — each row is marked High (H) or Low (L).\n- **Height units** — meters or feet, which changes how you interpret magnitude.\n- **Range** — the difference between consecutive high and low heights, useful for boating clearance and beach exposure.\n\n## Computing the Next High Tide\n\nGiven a list of predicted tide events, you can programmatically find the next upcoming high tide relative to the current time:\n\n```javascript\nfunction getNextHighTide(tides, now = new Date()) {\n  // tides: [{ time: \"2020-01-06T08:14:00Z\", type: \"H\", height: 1.8 }, ...]\n  const upcoming = tides\n    .filter(t => t.type === \"H\")\n    .map(t => ({ ...t, time: new Date(t.time) }))\n    .filter(t => t.time > now)\n    .sort((a, b) => a.time - b.time);\n\n  if (upcoming.length === 0) {\n    return null;\n  }\n\n  return upcoming[0];\n}\n\nconst sampleTides = [\n  { time: \"2020-01-06T02:10:00Z\", type: \"L\", height: 0.3 },\n  { time: \"2020-01-06T08:14:00Z\", type: \"H\", height: 1.8 },\n  { time: \"2020-01-06T14:45:00Z\", type: \"L\", height: 0.4 },\n  { time: \"2020-01-06T20:52:00Z\", type: \"H\", height: 1.9 },\n];\n\nconst next = getNextHighTide(sampleTides);\nconsole.log(next ? `Next high tide: ${next.time}` : \"No more high tides today\");\n```\n\nThis logic filters for high-tide rows, discards any already in the past, and sorts chronologically to return the soonest match — the same approach a tide app uses under the hood.\n\n## Example Table\n\n| Date       | Time  | Type | Height (m) |\n|------------|-------|------|------------|\n| 2020-01-06 | 02:10 | L    | 0.3        |\n| 2020-01-06 | 08:14 | H    | 1.8        |\n| 2020-01-06 | 14:45 | L    | 0.4        |\n| 2020-01-06 | 20:52 | H    | 1.9        |\n| 2020-01-07 | 02:58 | L    | 0.3        |\n| 2020-01-07 | 09:05 | H    | 1.7        |\n| 2020-01-07 | 15:30 | L    | 0.5        |\n| 2020-01-07 | 21:40 | H    | 1.8        |\n| 2020-01-08 | 03:42 | L    | 0.4        |\n| 2020-01-08 | 09:52 | H    | 1.6        |\n| 2020-01-08 | 16:12 | L    | 0.6        |\n\nReading across a row tells you exactly when and how high the water will rise or fall, while reading down a column reveals the drifting rhythm of the tide — each day's events shift later by roughly 40–50 minutes due to the lunar cycle."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 18142,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 18142
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-278>",
+        "timestamp": "2020-01-06T22:46:45.247Z",
+        "request_id": "<request-279>"
+      }
+    },
+    {
+      "index": 278,
+      "dir": "recv",
+      "ms": 16607,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-280>"
+      }
+    },
+    {
+      "index": 279,
+      "dir": "recv",
+      "ms": 16608,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "end_turn",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 18142,
+            "cache_read_input_tokens": 0,
+            "output_tokens": 1283,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 1283,
+                "cache_read_input_tokens": 0,
+                "cache_creation_input_tokens": 18142,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 18142
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-281>"
+      }
+    },
+    {
+      "index": 280,
+      "dir": "recv",
+      "ms": 16608,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-282>"
+      }
+    },
+    {
+      "index": 281,
+      "dir": "recv",
+      "ms": 16617,
+      "frame": {
+        "duration_api_ms": 15269,
+        "stop_reason": "end_turn",
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.086432,
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 18142,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 1283,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 18142,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 1283,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 18142,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 18142
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 965,
+            "outputTokens": 13,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.00103,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 1283,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 18142,
+            "webSearchRequests": 0,
+            "costUSD": 0.08540199999999999,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [],
+        "terminal_reason": "completed",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 0,
+          "requested": {
+            "background": 0,
+            "foreground": 0,
+            "unset": 0
+          },
+          "started_in_background": 0,
+          "max_depth": 0,
+          "spawned_by_subagents": 0,
+          "completed": 0,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {}
+        },
+        "is_error": false,
+        "num_turns": 1,
+        "subtype": "success",
+        "api_error_status": null,
+        "result": "# Reading a Tide Table\n\nA tide table lists the predicted times and heights of successive high and low tides for a given location. Each entry is a timestamped prediction, usually spaced roughly 6 to 12.5 hours apart, because most coastlines experience two high tides and two low tides per day (a semidiurnal pattern). To read one correctly, pair the time with its tide type and height, and note the reference datum the heights are measured against — usually Mean Lower Low Water (MLLW) in the US or Chart Datum elsewhere.\n\n## Key Things to Check\n\nWhen reading any tide table, confirm these details before relying on it:\n\n- **Station and date** — tables are location-specific; a few miles of coastline can shift times by 30+ minutes.\n- **Time zone** — check whether times are local, standard, or UTC, and whether daylight saving is applied.\n- **Datum** — the zero-height reference point; heights below datum are shown as negative.\n- **Tide type** — each row is marked High (H) or Low (L).\n- **Height units** — meters or feet, which changes how you interpret magnitude.\n- **Range** — the difference between consecutive high and low heights, useful for boating clearance and beach exposure.\n\n## Computing the Next High Tide\n\nGiven a list of predicted tide events, you can programmatically find the next upcoming high tide relative to the current time:\n\n```javascript\nfunction getNextHighTide(tides, now = new Date()) {\n  // tides: [{ time: \"2020-01-06T08:14:00Z\", type: \"H\", height: 1.8 }, ...]\n  const upcoming = tides\n    .filter(t => t.type === \"H\")\n    .map(t => ({ ...t, time: new Date(t.time) }))\n    .filter(t => t.time > now)\n    .sort((a, b) => a.time - b.time);\n\n  if (upcoming.length === 0) {\n    return null;\n  }\n\n  return upcoming[0];\n}\n\nconst sampleTides = [\n  { time: \"2020-01-06T02:10:00Z\", type: \"L\", height: 0.3 },\n  { time: \"2020-01-06T08:14:00Z\", type: \"H\", height: 1.8 },\n  { time: \"2020-01-06T14:45:00Z\", type: \"L\", height: 0.4 },\n  { time: \"2020-01-06T20:52:00Z\", type: \"H\", height: 1.9 },\n];\n\nconst next = getNextHighTide(sampleTides);\nconsole.log(next ? `Next high tide: ${next.time}` : \"No more high tides today\");\n```\n\nThis logic filters for high-tide rows, discards any already in the past, and sorts chronologically to return the soonest match — the same approach a tide app uses under the hood.\n\n## Example Table\n\n| Date       | Time  | Type | Height (m) |\n|------------|-------|------|------------|\n| 2020-01-06 | 02:10 | L    | 0.3        |\n| 2020-01-06 | 08:14 | H    | 1.8        |\n| 2020-01-06 | 14:45 | L    | 0.4        |\n| 2020-01-06 | 20:52 | H    | 1.9        |\n| 2020-01-07 | 02:58 | L    | 0.3        |\n| 2020-01-07 | 09:05 | H    | 1.7        |\n| 2020-01-07 | 15:30 | L    | 0.5        |\n| 2020-01-07 | 21:40 | H    | 1.8        |\n| 2020-01-08 | 03:42 | L    | 0.4        |\n| 2020-01-08 | 09:52 | H    | 1.6        |\n| 2020-01-08 | 16:12 | L    | 0.6        |\n\nReading across a row tells you exactly when and how high the water will rise or fall, while reading down a column reveals the drifting rhythm of the tide — each day's events shift later by roughly 40–50 minutes due to the lunar cycle.",
+        "ttft_ms": 14634,
+        "type": "result",
+        "duration_ms": 14661,
+        "uuid": "<uuid-283>",
+        "ttft_stream_ms": 1213,
+        "time_to_request_ms": 29,
+        "first_content_frame_ms": 1213,
+        "user_message_uuid": "<uuid-2>",
+        "user_message_uuids": [
+          "<uuid-2>"
+        ],
+        "request_sent_wall_ms": 1578350790642,
+        "queued_turn_count": 0,
+        "result_index": 0
+      }
+    },
+    {
+      "index": 282,
+      "dir": "recv",
+      "ms": 16617,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "completed",
+        "uuid": "<uuid-284>",
+        "session_id": "<session-1>"
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1584,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1943,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "before-close",
+      "atMs": 19663,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    }
+  ],
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "configuration": {
+    "folder": "a scratch configuration folder (CLAUDE_CONFIG_DIR), signed in by the maintainer",
+    "written": []
+  },
+  "frameSizes": {
+    "largest": [
+      {
+        "type": "result",
+        "bytes": 5482
+      },
+      {
+        "type": "assistant",
+        "bytes": 3989
+      },
+      {
+        "type": "control_response",
+        "bytes": 3831
+      },
+      {
+        "type": "system/init",
+        "bytes": 1570
+      },
+      {
+        "type": "stream_event",
+        "bytes": 811
+      }
+    ],
+    "longStringsCut": []
+  }
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<!--
+SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+SPDX-License-Identifier: MIT
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The Content-Security-Policy is delivered as a response header by the main process
+         (src/main/app/csp.ts), so it cannot be weakened from markup. No inline scripts here. -->
+    <title>fat-g · mini window</title>
+    <!-- Blocking on purpose: the theme is set before the first paint (public/theme-boot.js). -->
+    <script src="/theme-boot.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/pet-entry.tsx"></script>
+  </body>
+</html>

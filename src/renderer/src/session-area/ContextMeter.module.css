@@ -1,0 +1,136 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The context meter (decision 0033), beside the mode control: a black strip of
+   two rows of square cells, filled a column at a time from the left — the top cell, then the one
+   under it — with dots in the provider's colour. The cells from the CLI's compaction line onward
+   stand on a dark red ground. 15 columns of 7 px cells, 1 px apart inside 3 px of ground: 125 × 21 px,
+   about one and a half times "Auto reviewed" in the mode control (82 px, measured at 100 %). */
+.context {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+
+.meter {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, 7px);
+  grid-auto-columns: 7px;
+  gap: 1px;
+  padding: 3px;
+  background: var(--color-context-ground);
+  cursor: default;
+}
+
+.cell {
+  background: var(--color-context-cell);
+}
+
+.cell[data-compact] {
+  background: var(--color-context-compact);
+}
+
+/* Filled cells use the provider's colour edge to edge. */
+.cell[data-filled] {
+  background: var(--bar-color, var(--color-text-muted));
+}
+
+/* Before the first reading, a faint neutral silhouette keeps the meter visibly unavailable. */
+.context[data-unavailable] .meter {
+  background: var(--color-disabled-rule);
+  opacity: 0.4;
+}
+
+.context[data-unavailable] .cell {
+  background: var(--color-on-disabled);
+}
+
+/* The tooltip: a header, the compaction line, one table whose three columns line up across its
+   sections — the label, the count in figures of one width, a bar of the section's largest's share —
+   and the unit's line. */
+.tooltip {
+  max-width: none;
+  width: max-content;
+}
+
+.tip {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin: 0;
+  font-weight: var(--weight-bold);
+}
+
+.line,
+.none {
+  margin: 0;
+}
+
+.table {
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.table th,
+.table td {
+  padding: 0;
+  font-weight: var(--weight-regular);
+  vertical-align: middle;
+}
+
+.table .unit {
+  padding-right: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-10);
+  text-align: right;
+}
+
+.table .section {
+  padding-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-10);
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.table .label {
+  padding-right: var(--space-3);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table .tokens {
+  padding-right: var(--space-2);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.bar {
+  width: 120px;
+}
+
+.track {
+  display: block;
+  height: 8px;
+}
+
+.fill {
+  display: block;
+  width: max(1px, calc(var(--context-share) * 100%));
+  height: 100%;
+  background: var(--bar-color, var(--color-text-muted));
+}
+
+.footer {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-10);
+}

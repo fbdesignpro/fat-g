@@ -1,0 +1,394 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* Design tokens. Every colour and text size in the UI comes from here, so a future "skin"
+   (AGENTS.md: game-inspired presentation) is a token swap, not a rewrite; tests/architecture/
+   styles.test.ts refuses a colour or a font size written anywhere else.
+
+   Black, white and greys in light; layered graphite in dark. One attribute on the root element picks
+   the theme — set before the first paint by public/theme-boot.js, then kept equal to the app state by
+   src/renderer/src/theme/ThemeRoot.tsx — and `color-scheme` follows it, so native controls match.
+   Scrollbars take their own colour from global.css instead, --color-scrollbar. `:root` alone carries
+   the light values: a page without the attribute is light.
+
+   --color-chrome and --color-text equal NATIVE_COLORS in src/shared/contracts/appearance.ts, which the
+   OS paints around the page (the styles test keeps them equal). Colour beyond grey is limited to
+   the status colours, the focus ring, the project colours, the attention and waiting colours and the providers'
+   bar colours and status-bar streams, which come from their descriptors.
+
+   A session that needs attention (M14, C53) shows a block in --color-attention, a bright yellow,
+   with black text on it, which reaches 4.5:1. Pending decisions stay in this pair until resolved,
+   in the capsule and local status bar. Once acknowledged a notification block takes the acknowledged
+   pair — white on light grey, and its mirror in the dark theme — which is below 4.5:1 ON PURPOSE:
+   it should look switched off. Its words stay in the capsule's accessible name. A chat whose plan
+   another chat or its reviewer holds (decision 0029) says what it waits on in --color-waiting, an
+   orange, with black text on it: it waits on that chat, not on the user. The styles test
+   names that pair as its one exception, and its users: the dim attention block, and the status
+   bar's READY and NOT STARTED in the original M100 design (C51). The current status-bar display
+   experiment uses its own black and orange palette. --color-on-avatar is what is drawn on a
+   provider's bar colour: the mark in a placeholder avatar and a running capsule's status block.
+
+   The Main window's body is a grey ground, --color-ground, under a grid in --color-grid with a
+   stronger line every fifth cell in --color-grid-major (M100, C1): the elements are white boxes on
+   it, and the ground between them is what sets them apart. A project's header is --color-on-bar on
+   --color-bar (C2, C22), the hidden-projects row --color-text on --color-bar-quiet, and Done
+   --color-on-done on --color-done inside a --color-done-rule edge: white words, as the reference has
+   them, below 4.5:1 on the light theme's mint on purpose (C72); the button's name is its word. The
+   same button before a turn has run says Cancel in a question card's Decline colours, below. In the
+   corner's toolbar beside it, a To do or To verify toggle that is not set takes --color-shelve under
+   the pointer, its word in --color-text, which does read against that gray (M26, round 2). A question's card
+   (M100b) fills its picked row with --color-picked inside a --color-picked-rule edge, Done's mint to
+   start, its words in --color-text. Its Decline uses --color-question-decline-text for its label
+   and edge, on --color-decline-soft at rest and --color-decline under the pointer. Submit's word
+   matches its --color-done-rule edge at rest. An unavailable Submit is --color-on-disabled on --color-disabled inside
+   a --color-disabled-rule edge, lighter than Shelve's grey (M100b, round 6); an available one under the
+   pointer is --color-on-submit-hover, a green that reads, on --color-submit-hover, a deeper mint,
+   inside a --color-submit-hover-rule edge (round 7). Its Something else field has no edge, and
+   --color-field, a ground a shade off the box's, under the text colour (round 8). Taken from the layout reference
+   (docs/layout-plans/Layout_V2.png) at the visual review. Starting values: the review may change them within
+   that test. */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --color-capsule-divider: #404040;
+  --color-bg: #ffffff;
+  --color-chrome: #ffffff;
+  --color-composer: #ffffff;
+  --color-popup: #ffffff;
+  --color-flag: #000000;
+  --color-on-flag: #ffffff;
+  --color-flag-rule: #000000;
+  --color-flag-unset: #b0b0b0;
+  --color-project-disclosure: #303740;
+  --color-field-focus: #000000;
+  --capsule-selection-outset: calc(2 * var(--grid-cell));
+  --capsule-hover-outset: 4px;
+  --weight-session-title: var(--weight-semibold);
+  --color-tooltip: #f5f5f5;
+  --color-on-tooltip: #000000;
+  --color-tooltip-muted: #595959;
+  --color-text: #000000;
+  --color-title-inactive: #a0a0a0;
+  --color-text-muted: #595959;
+  --color-prompt-hint: #757575;
+  --color-preset-label: #bcbcbc;
+  --color-surface: #f2f2f2;
+  --color-rule: #000000;
+  --color-plan-status-rule: #000000;
+  --color-rule-soft: #c4c4c4;
+  --color-rule-mid: #b0b0b0;
+  --color-model-divider: #000000;
+  /* A scrollbar's thumb (the maintainer), faded in while the pointer is over what
+     scrolls and nothing at rest, its track never drawn. Dim on purpose, below the soft rule, and
+     Chromium darkens it itself under the pointer and in a drag, so there is one value, not three
+     (global.css). */
+  --color-scrollbar: #d0d0d0;
+  --color-backdrop: rgb(0 0 0 / 0.32);
+  --color-focus: #0b57d0;
+  --color-ok: #0a6b2d;
+  --color-warn: #7a5200;
+  --color-critical: #b00020;
+  /* "Not fast" on the effort bar, which is black in both themes (decision 0016). */
+  --color-critical-on-bar: #ff6b6b;
+  --color-on-project: #ffffff;
+  --color-attention: #ffd60a;
+  --color-on-attention: #000000;
+  --color-waiting: #ff8c1a;
+  --color-on-waiting: #000000;
+  --color-acknowledged: #c4c4c4;
+  --color-on-acknowledged: #ffffff;
+  --color-on-avatar: #000000;
+  /* Behind a passage an aside was asked about (M20b, C74): a background alone, under the text's own colour. */
+  --color-highlight: #fff0a0;
+  --color-ground: #ededed;
+  --color-grid: #dfdfdf;
+  --color-grid-major: #d0d0d0;
+  --color-bar: #303740;
+  --color-on-bar: #ffffff;
+  --color-bar-quiet: #ced4db;
+  --color-done: #c3f7c8;
+  --color-done-hover: #b4edba;
+  --color-on-done: #ffffff;
+  --color-done-rule: #55c45f;
+  /* The Done flash's check (Sessions.module.css), a dark green on the mint. */
+  --color-done-mark: #2e7d32;
+  /* The gray under the pointer of a corner toggle that is not set: Cancel's before it took Decline's colours (M26, round 2). */
+  --color-shelve: #d9d9d9;
+  /* A question card's picked row, from Done's mint and its edge, its Decline, and its unavailable Submit (M100b, C10, C53, C57, C58). */
+  --color-picked: #c3f7c8;
+  --color-picked-rule: #55c45f;
+  --color-decline-soft: #fcd3b8;
+  --color-on-decline-soft: #ffffff;
+  --color-decline-rule: #ef9a66;
+  --color-question-decline-text: #5b2409;
+  --color-decline: #ec7f3e;
+  --color-on-decline: #ffffff;
+  --color-disabled: #f7f7f7;
+  --color-on-disabled: #c8c8c8;
+  --color-disabled-rule: #dcdcdc;
+  --color-submit-hover: #a6eeae;
+  --color-on-submit-hover: #0b5d22;
+  --color-submit-hover-rule: #3aa846;
+  --color-field: #f6f6f6;
+  /* A review's findings (M22e, C7, C28): each tier's header a tint of its own, the text colour on it;
+     a row under the pointer a light green, an accepted one a deeper green inside a green edge, and a
+     refused one its negative, an orange inside an orange edge. */
+  --color-tier-1: #fcd5d5;
+  --color-tier-2: #fde2c4;
+  --color-tier-3: #fdf0b8;
+  --color-tier-4: #dbe8fb;
+  --color-tier-5: #e6e6e6;
+  --color-review-hover: #e9fbeb;
+  --color-review-accepted: #c3f7c8;
+  --color-review-accepted-rule: #55c45f;
+  --color-review-refused: #ffd8b0;
+  --color-review-refused-rule: #f0861c;
+  /* A plan's decision panel (the maintainer's reference): Execute a light green, Leave plan
+     mode, keep plan a light pink, a deeper one under the pointer, both under the text colour; Discard
+     plan's trash a red, deeper under the pointer, its glyph black on the light theme and white on the dark.
+     Each one's edge is its own colour, darker; on the dark theme, whose grounds are deep, a lighter tone
+     of it, which a black page does not swallow. */
+  --color-plan-execute: #dff7e1;
+  --color-plan-execute-rule: #1f7a2e;
+  --color-plan-leave: #fde4e4;
+  --color-plan-leave-hover: #f9caca;
+  --color-plan-leave-rule: #a02828;
+  --color-plan-discard: #f06a6a;
+  --color-plan-discard-hover: #e04848;
+  --color-plan-discard-rule: #3f0707;
+  --color-on-plan-discard: #000000;
+  /* The status bar's two ends, the same in both themes: the ground of a bar with no turn running,
+     and its word. The lit ground and the stream's own tones are each provider's, from its module
+     (ProviderStream in src/shared/contracts/catalog.ts), so no provider's colour is declared here. */
+  --color-image-border: #000000;
+  --color-status-black: #000000;
+  --color-status-white: #ffffff;
+  --color-speaker-neutral: #e5e5e5;
+  --color-speaker-ink: #000000;
+  --color-speaker-paper: #ffffff;
+  --color-speaker-info: #1768c5;
+  /* The context meter (decision 0033), the same in both themes: its black ground, a cell not yet
+     filled, and the ground of the cells past the line where the CLI compacts. Its dots are the
+     provider's own colour, from its module. */
+  --color-context-ground: #000000;
+  --color-context-cell: #2a2a2a;
+  --color-context-compact: #741c1c;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* The ground sits behind panels; inputs and popups sit one step above them.
+     Decorative rules stay quiet, while controls and focus keep their own contrast. */
+  --color-capsule-divider: #3b414a;
+  --color-bg: #202328;
+  --color-chrome: #17191c;
+  --color-composer: #272b31;
+  --color-popup: #272b31;
+  --color-flag: #39414d;
+  --color-on-flag: #dde1e7;
+  --color-flag-rule: #788493;
+  --color-flag-unset: #a5adb8;
+  --color-project-disclosure: #a5adb8;
+  --color-field-focus: #8ab4ff;
+  --capsule-selection-outset: 3px;
+  --capsule-hover-outset: 2px;
+  --weight-session-title: var(--weight-medium);
+  --color-tooltip: #272b31;
+  --color-on-tooltip: #dde1e7;
+  --color-tooltip-muted: #a5adb8;
+  --color-text: #dde1e7;
+  --color-title-inactive: #a0a0a0;
+  --color-text-muted: #a5adb8;
+  --color-prompt-hint: #a5adb8;
+  --color-preset-label: #a5adb8;
+  --color-surface: #272b31;
+  --color-rule: #788493;
+  --color-plan-status-rule: #000000;
+  --color-rule-soft: #3b414a;
+  --color-rule-mid: #4b535e;
+  --color-model-divider: #000000;
+  --color-scrollbar: #363c45;
+  --color-backdrop: rgb(0 0 0 / 0.64);
+  --color-focus: #8ab4ff;
+  --color-ok: #5fd38d;
+  --color-warn: #f2c14e;
+  --color-critical: #ff6b6b;
+  /* "Not fast" on the effort bar, which is black in both themes (decision 0016). */
+  --color-critical-on-bar: #ff6b6b;
+  --color-on-project: #ffffff;
+  --color-attention: #ffd60a;
+  --color-on-attention: #000000;
+  --color-waiting: #ff8c1a;
+  --color-on-waiting: #000000;
+  --color-acknowledged: #474747;
+  --color-on-acknowledged: #000000;
+  --color-on-avatar: #000000;
+  --color-highlight: #4a3800;
+  --color-ground: #17191c;
+  --color-grid: #1e2125;
+  --color-grid-major: #25292e;
+  --color-bar: #303740;
+  --color-on-bar: #dde1e7;
+  --color-bar-quiet: #2a3038;
+  --color-done: #123d1d;
+  --color-done-hover: #194b26;
+  --color-on-done: #ffffff;
+  --color-done-rule: #55c45f;
+  /* On the dark theme's dark green, the check is the edge's green. */
+  --color-done-mark: #55c45f;
+  --color-shelve: #343b45;
+  --color-picked: #123d1d;
+  --color-picked-rule: #55c45f;
+  --color-decline-soft: #3a1a0b;
+  --color-on-decline-soft: #ffffff;
+  --color-decline-rule: #e8763a;
+  --color-question-decline-text: #ffffff;
+  --color-decline: #8a3412;
+  --color-on-decline: #ffffff;
+  --color-disabled: #25292e;
+  --color-on-disabled: #737d8b;
+  --color-disabled-rule: #3b414a;
+  --color-submit-hover: #1e5c2c;
+  --color-on-submit-hover: #9cf5ac;
+  --color-submit-hover-rule: #55c45f;
+  --color-field: #272b31;
+  --color-tier-1: #4a1414;
+  --color-tier-2: #4a2a0a;
+  --color-tier-3: #403608;
+  --color-tier-4: #142a4a;
+  --color-tier-5: #303740;
+  --color-review-hover: #0f2a15;
+  --color-review-accepted: #123d1d;
+  --color-review-accepted-rule: #55c45f;
+  --color-review-refused: #47260a;
+  --color-review-refused-rule: #f0861c;
+  --color-plan-execute: #12301a;
+  --color-plan-execute-rule: #4fb35b;
+  --color-plan-leave: #3a1616;
+  --color-plan-leave-hover: #552020;
+  --color-plan-leave-rule: #e08a8a;
+  --color-plan-discard: #b02a2a;
+  --color-plan-discard-hover: #d03a3a;
+  --color-plan-discard-rule: #f59595;
+  --color-on-plan-discard: #ffffff;
+  --color-image-border: #000000;
+  --color-status-black: #000000;
+  --color-status-white: #ffffff;
+  --color-speaker-neutral: #e5e5e5;
+  --color-speaker-ink: #000000;
+  --color-speaker-paper: #ffffff;
+  --color-speaker-info: #1768c5;
+  /* The context meter (decision 0033), the same in both themes: its black ground, a cell not yet
+     filled, and the ground of the cells past the line where the CLI compacts. Its dots are the
+     provider's own colour, from its module. */
+  --color-context-ground: #000000;
+  --color-context-cell: #2a2a2a;
+  --color-context-compact: #741c1c;
+}
+
+/* Everything that does not change with the theme. */
+:root {
+  /* Inter is packaged (fonts.css, decision 0012); scripts it lacks fall back to the OS. */
+  --font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* The type scale. No component uses a size outside it. Body text is 14. */
+  --text-10: 10px;
+  --text-11: 11px;
+  --text-12: 12px;
+  --text-13: 13px;
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-20: 20px;
+  --text-24: 24px;
+  --text-28: 28px;
+  /* A model dialog's question, over Recents, Presets and the chooser. */
+  --text-32: 32px;
+  /* A question card's numerals alone (M100b, C63). */
+  --text-36: 36px;
+  /* The initial new-chat heading and its half-size suffix, scaled locally with available width. */
+  --text-60: 60px;
+  --text-120: 120px;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --radius-sm: 0;
+  --radius-md: 0;
+  /* TRIAL (not settled): a flag's mark — on a capsule, in its menu, and the chat window's flag
+     toggles — drawn as a circle, to tell flags from the square buttons beside them (the maintainer). Set to 0 to go back to squares everywhere. */
+  --radius-flag: 50%;
+  --rule: 1px solid var(--color-rule);
+
+  /* The page grid (src/renderer/src/shell). Keep --title-bar-height in sync with TITLE_BAR_HEIGHT in
+     src/main/windows/chrome.ts: with a title-bar overlay the OS says the height
+     (env(titlebar-area-height)); this is the value without one. */
+  --title-bar-height: 40px;
+  /* How much taller the title strip is than the window buttons' area, so the rule below the strip
+     clears them: at fractional display scaling the OS rounds that area up to whole pixels and
+     covers a rule drawn at its very edge (seen at 150 % in M11's review). */
+  --title-strip-clearance: 2px;
+  --project-column-width: 345px;
+  --avatar-column-width: 176px;
+
+  /* Layout V2 (M100, C1, C3, C51, C54). The body's grid is drawn at --grid-cell, and the elements
+     stand on it as boxes --gap-grid apart. The body's margin is two cells, so the grid still starts at
+     its corner (round 9). --rule-thick is the bar over the status bar, which the avatar beside it
+     stands level with (round 10, C89), and the one under the status bar over the prompt-type row. An active
+     capsule's avatar, and so its body, is --capsule-height square. The chat content — the message
+     list, and under it the avatar and the prompt — is --chat-content-width, centred in the chat
+     window. The status bar is two lines tall in every state, so what is under it never moves. The
+     usage box has room for three bars and an account's label line, --usage-label-height, whether a
+     block shows one or not, so the band never changes its height. The chat window and the artifact
+     pane are two boxes the gap between them resizes (round 8; C79, C80), neither narrower than its
+     least width. */
+  --grid-cell: 10px;
+  --gap-grid: 8px;
+  --rule-thick: 4px;
+  --capsule-height: 60px;
+  --chat-content-width: 820px;
+  --status-bar-height: 44px;
+  --artifact-bar-height: 34px;
+  --usage-box-height: 62px;
+  --usage-label-height: 11px;
+  --split-chat-min: 400px;
+  --split-pane-min: 300px;
+
+  --duration-fast: 120ms;
+  --duration-scene: 320ms;
+
+  /* The project colours (M12, C18, C19): one value in both themes, each dark enough that
+     --color-on-project reaches 4.5:1 on it. The records file stores the id, never a value; the ids
+     are PROJECT_COLORS in src/shared/contracts/projects.ts, and the styles test keeps both lists
+     equal. Starting values: the visual review may change any of them within that test. */
+  --project-red: #c62828;
+  --project-orange: #b45309;
+  --project-green: #2e7d32;
+  --project-teal: #00796b;
+  --project-blue: #1565c0;
+  --project-purple: #6a1b9a;
+  --project-pink: #ad1457;
+  --project-grey: #5f6368;
+}
+
+/* Outside the theme selectors, and the durations are defined only on plain :root, so this holds in
+   both themes. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-scene: 0ms;
+  }
+}

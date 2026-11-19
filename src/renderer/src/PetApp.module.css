@@ -1,0 +1,133 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The Pet's frame: the bar, then its list, at the heights main sizes the window by (PetApp sets them).
+   The list takes its own height, scrolling only where the window stops at the screen's bottom; the bar
+   takes what is left: the DIP or so main adds to make the window whole device pixels (pet-fit.ts). */
+.frame {
+  display: grid;
+  grid-template-rows: minmax(var(--pet-bar), 1fr) auto;
+  height: 100%;
+  border: var(--rule);
+}
+
+/* The Pet's drag strip: it has no OS frame, so this is what moves the window. Chrome, so its text
+   is not selectable; the content below is. */
+.handle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--pet-bar);
+  padding: 0 2px 0 var(--space-2);
+  background: var(--color-surface);
+  border-bottom: var(--rule);
+  font-size: var(--text-11);
+  color: var(--color-text-muted);
+  user-select: none;
+  -webkit-app-region: drag;
+  app-region: drag;
+}
+
+.brand {
+  letter-spacing: 0.06em;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Clickable, so it opts out of the drag region — otherwise the click would move the window. */
+.barButton {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  border: 0;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: var(--text-16);
+  line-height: 1;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+}
+
+.barButton:hover {
+  color: var(--color-bg);
+  background: var(--color-text);
+}
+
+/* The two sizes, a step apart from the ×. Drawn in the bar's gray, as the brand is; the size in use
+   inverted in that gray, and the other ringed in it under the pointer. */
+.sizes {
+  display: flex;
+  gap: 2px;
+  margin-right: var(--space-1);
+}
+
+.sizeButton {
+  composes: barButton;
+  color: var(--color-text-muted);
+}
+
+.sizeButton:hover {
+  color: var(--color-text-muted);
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--color-text-muted);
+}
+
+.sizeButton[aria-pressed='true'] {
+  color: var(--color-surface);
+  background: var(--color-text-muted);
+  box-shadow: none;
+}
+
+.sizeButton[aria-pressed='true']:hover {
+  cursor: default;
+}
+
+.sizeButton:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+/* Past the bottom of the screen the window stops (pet-fit.ts), and the list scrolls in it. */
+.pet {
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+}
+
+.muted {
+  height: var(--pet-empty);
+  margin: 0;
+  padding: 0 var(--space-2);
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  line-height: var(--pet-empty);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emptyButton {
+  composes: muted;
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.emptyButton:hover {
+  background: var(--color-text-muted);
+  color: var(--color-bg);
+}

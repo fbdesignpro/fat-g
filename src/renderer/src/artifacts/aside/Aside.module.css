@@ -1,0 +1,128 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* An explanation's source card uses the answered question's fold. Its full excerpt shares the
+   messages' scroll area; the follow-up uses the chat's input. No scrolling rule of its own. */
+.aside {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* The source link stays visible above the scrolling excerpt and messages. */
+.source {
+  display: block;
+  flex: none;
+  max-width: calc(100% - var(--space-2) * 2);
+  min-width: 0;
+  margin: var(--space-1) var(--space-2);
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+  text-align: left;
+  text-decoration: underline;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.button {
+  flex: none;
+  padding: 0 var(--space-2);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  cursor: pointer;
+}
+
+.button[data-primary] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* A line in fat-g's words, where nothing of the aside can be shown. */
+.state,
+.note {
+  flex: none;
+  margin: 0;
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+}
+
+/* Only the compact header is outlined; the wrapper adds no frame or inset. */
+.passage {
+  min-width: 0;
+  margin: 0 0 var(--space-3);
+}
+
+.passage .excerptHeader[data-foldable] {
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-13);
+}
+
+/* The full saved passage is readable and selectable when unfolded. */
+.excerpt {
+  margin: var(--space-2);
+  padding: 0 0 0 var(--space-2);
+  border-left: 3px solid var(--color-rule-soft);
+  color: var(--color-text-muted);
+  font-size: var(--text-13);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+
+/* The list's place: it fills what is left, and the chat's list scrolls inside it. Its text, and the
+   follow-up's field below, at the chat's own scale (Chat.module.css, .scale). */
+.items {
+  composes: scale from '../../chat/Chat.module.css';
+  display: grid;
+  flex: 1 1 0;
+  grid-template-rows: minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+}
+
+.composer {
+  flex: none;
+  padding: var(--space-2);
+  border-top: var(--rule);
+}
+
+.inputRow {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+
+/* The follow-up's field at the chat's scale, as the chat's own input is: a wrapper that draws no box,
+   since the field's rule takes its font from its parent. Send and Stop keep the pane's size. */
+.field {
+  composes: scale from '../../chat/Chat.module.css';
+  display: contents;
+}
+
+.problem {
+  margin: var(--space-1) 0 0;
+  color: var(--color-critical);
+  font-size: var(--text-13);
+}

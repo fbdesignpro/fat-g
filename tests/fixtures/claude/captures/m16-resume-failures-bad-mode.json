@@ -1,0 +1,467 @@
+{
+  "_fixture": {
+    "source": "M16 spike m16-trace.mjs, run against the installed CLI on the maintainer's machine, in a scratch configuration folder",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "get_settings documents (key names only)"
+    ],
+    "omitted": [
+      "token-level deltas (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":3,\"uuid\":16,\"message\":4,\"tool-use\":1,\"request\":4,\"mcp-server\":5}. Aliases are shared with the other captures of the family \"m16-saved-session\"."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "claude",
+    "version": "2.1.268",
+    "launchKind": "native"
+  },
+  "date": "2020-01-11T16:39:48.681Z",
+  "scenario": {
+    "id": "m16-failures",
+    "title": "K3: a resume of an id that does not exist, one from another folder, and launches that fail otherwise",
+    "successCondition": "Each launch with its exit code, its time and what it wrote to stdout; a prompt only if the resume from another folder stays up"
+  },
+  "run": {
+    "id": "claude-m16-failures-5",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "bad-mode",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": null,
+    "turnsSpent": 1,
+    "exit": {
+      "code": 1,
+      "ms": 157
+    },
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 3158,
+      "recorded": [
+        {
+          "name": "claude.exe",
+          "role": "root"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "otherFoldersUnchanged": {
+      "other": true,
+      "third": true,
+      "outside": true
+    },
+    "notes": {
+      "missingId": {
+        "opened": false,
+        "initializeAnswered": false,
+        "exitCode": 1,
+        "exitMs": 868,
+        "stdoutFrames": [
+          {
+            "type": "result",
+            "keys": [
+              "duration_api_ms",
+              "duration_ms",
+              "errors",
+              "is_error",
+              "modelUsage",
+              "num_turns",
+              "permission_denials",
+              "result_index",
+              "session_id",
+              "stop_reason",
+              "subtype",
+              "total_cost_usd",
+              "type",
+              "usage",
+              "uuid"
+            ]
+          }
+        ],
+        "garbageLines": 0,
+        "stderrBytes": 76,
+        "stayedUp": false
+      },
+      "fromAnotherFolder": {
+        "opened": true,
+        "initializeAnswered": true,
+        "exitCode": null,
+        "exitMs": null,
+        "stdoutFrames": [
+          {
+            "type": "control_response",
+            "keys": [
+              "response",
+              "type"
+            ]
+          }
+        ],
+        "garbageLines": 0,
+        "stderrBytes": 0,
+        "stayedUp": true,
+        "turn": {
+          "endStatus": "success",
+          "isError": false,
+          "initNamesTheResumedId": true,
+          "keptItsContext": true,
+          "outline": [
+            {
+              "index": 2,
+              "ms": 2153,
+              "send": "user",
+              "uuid": false
+            },
+            {
+              "index": 3,
+              "ms": 2204,
+              "recv": "system/init",
+              "bytes": 2518,
+              "session": "s1",
+              "model": "claude-sonnet-5",
+              "permissionMode": "default",
+              "tools": [
+                "Task",
+                "Glob",
+                "Grep",
+                "Read",
+                "mcp__<mcp-server-13>__batch",
+                "mcp__<mcp-server-13>__create",
+                "mcp__<mcp-server-13>__delete",
+                "mcp__<mcp-server-13>__export",
+                "mcp__<mcp-server-13>__guide",
+                "mcp__<mcp-server-13>__query",
+                "mcp__<mcp-server-13>__read",
+                "mcp__<mcp-server-13>__update"
+              ]
+            },
+            {
+              "index": 4,
+              "ms": 3943,
+              "recv": "assistant",
+              "bytes": 773,
+              "session": "s1",
+              "blocks": [
+                "text"
+              ],
+              "stop": null,
+              "textChars": 26
+            },
+            {
+              "index": 5,
+              "ms": 3950,
+              "recv": "rate_limit_event",
+              "bytes": 434,
+              "session": "s1"
+            },
+            {
+              "index": 6,
+              "ms": 3955,
+              "recv": "result",
+              "bytes": 1787,
+              "session": "s1",
+              "subtype": "success",
+              "isError": false,
+              "terminal": "completed",
+              "numTurns": 1,
+              "resultIndex": 0,
+              "queuedTurnCount": 0,
+              "resultChars": 26
+            }
+          ]
+        }
+      },
+      "malformedId": {
+        "opened": false,
+        "initializeAnswered": false,
+        "exitCode": 1,
+        "exitMs": 828,
+        "stdoutFrames": [
+          {
+            "type": "result",
+            "keys": [
+              "duration_api_ms",
+              "duration_ms",
+              "errors",
+              "is_error",
+              "modelUsage",
+              "num_turns",
+              "permission_denials",
+              "result_index",
+              "session_id",
+              "stop_reason",
+              "subtype",
+              "total_cost_usd",
+              "type",
+              "usage",
+              "uuid"
+            ]
+          }
+        ],
+        "garbageLines": 0,
+        "stderrBytes": 217,
+        "stayedUp": false
+      },
+      "unknownPermissionMode": {
+        "opened": false,
+        "initializeAnswered": false,
+        "exitCode": 1,
+        "exitMs": 157,
+        "stdoutFrames": [],
+        "garbageLines": 0,
+        "stderrBytes": 158,
+        "stayedUp": false
+      },
+      "unknownFlag": {
+        "opened": false,
+        "initializeAnswered": false,
+        "exitCode": 1,
+        "exitMs": 162,
+        "stdoutFrames": [],
+        "garbageLines": 0,
+        "stderrBytes": 39,
+        "stayedUp": false
+      },
+      "exitCodes": [
+        1,
+        null,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--input-format",
+      "stream-json",
+      "--setting-sources",
+      "user,project,local",
+      "--permission-mode",
+      "no-such-mode",
+      "--permission-prompt-tool",
+      "stdio",
+      "--tools",
+      "Read,Glob,Grep,Agent",
+      "--model",
+      "sonnet",
+      "--effort",
+      "low"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "subtype": "initialize"
+    },
+    "replyIndex": null,
+    "ok": false
+  },
+  "toolPermissions": {
+    "readTools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "scenarioTools": [
+      "Agent"
+    ],
+    "preApproved": [],
+    "permissionMode": "default",
+    "permissionRequestsTo": "the spike (--permission-prompt-tool stdio)",
+    "policy": "every can_use_tool request is denied, as the app will deny it (M16, C22); any other request gets an error reply"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": false
+      }
+    ],
+    "set": [
+      "CLAUDE_CONFIG_DIR"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {}
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 14,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-1",
+        "request": {
+          "subtype": "initialize"
+        }
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 158,
+    "tail": "error: option '--permission-mode <mode>' argument 'no-such-mode' is invalid. Allowed choices are acceptEdits, auto, bypassPermissions, manual, dontAsk, plan.\n"
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1575,
+      "images": [
+        "claude.exe"
+      ],
+      "alive": 0
+    },
+    {
+      "moment": "before-close",
+      "atMs": 1730,
+      "images": [
+        "claude.exe"
+      ],
+      "alive": 0
+    }
+  ],
+  "family": "m16-saved-session",
+  "sessionIds": [],
+  "configuration": {
+    "folder": "a scratch configuration folder (CLAUDE_CONFIG_DIR), signed in by the maintainer",
+    "written": []
+  },
+  "frameSizes": {
+    "largest": [],
+    "longStringsCut": []
+  }
+}

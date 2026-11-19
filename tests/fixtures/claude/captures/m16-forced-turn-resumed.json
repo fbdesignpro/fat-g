@@ -1,0 +1,1097 @@
+{
+  "_fixture": {
+    "source": "M16 spike m16-trace.mjs, run against the installed CLI on the maintainer's machine, in a scratch configuration folder",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "get_settings documents (key names only)"
+    ],
+    "omitted": [
+      "token-level deltas (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"uuid\":16,\"message\":2,\"request\":2,\"tool-use\":1,\"mcp-server\":5}. Aliases are shared with the other captures of the family \"m16-forced-turn\"."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "claude",
+    "version": "2.1.268",
+    "launchKind": "native"
+  },
+  "date": "2020-01-06T11:33:51.776Z",
+  "scenario": {
+    "id": "m16-chat-forced-turn",
+    "title": "K27: a turn whose process is ended by force at its first tool call, as the app's process layer ends one, then `--resume` of its id with a prompt",
+    "successCondition": "A process ended by force while its turn ran, then whether the resume opens and, if it does, how a turn on it ends and what it holds of the turn that was cut"
+  },
+  "run": {
+    "id": "claude-m16-chat-forced-turn-42",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "resumed",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": null,
+    "turnsSpent": 2,
+    "exit": {
+      "code": 0,
+      "ms": 7726
+    },
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 4028,
+      "recorded": [
+        {
+          "name": "claude.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "otherFoldersUnchanged": {
+      "other": true,
+      "third": true,
+      "outside": true
+    },
+    "notes": {
+      "cut": {
+        "firstTool": "Read",
+        "forcedEnd": {
+          "how": "taskkill /PID <pid> /T /F, with no end of input first",
+          "atMs": 6083,
+          "taskkillOk": true,
+          "exited": true,
+          "exitMs": 8027,
+          "exitCode": 1,
+          "msAfterTheFirstToolCall": 0
+        },
+        "toolCallsBeforeTheProcessWasGone": 1,
+        "framesAfterTheEndWasStarted": [
+          "assistant",
+          "user"
+        ],
+        "resultArrived": false,
+        "init": {
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read"
+          ],
+          "mcpTools": 8,
+          "slashCommands": 0,
+          "skills": 0
+        },
+        "result": null,
+        "lifecycle": [
+          {
+            "index": 3,
+            "state": "queued",
+            "namesOurId": true,
+            "beforeInit": true,
+            "afterResult": null
+          },
+          {
+            "index": 4,
+            "state": "started",
+            "namesOurId": true,
+            "beforeInit": true,
+            "afterResult": null
+          }
+        ],
+        "textWaits": [],
+        "requests": 0
+      },
+      "outlineCut": [
+        {
+          "index": 2,
+          "ms": 2312,
+          "send": "user",
+          "uuid": true
+        },
+        {
+          "index": 3,
+          "ms": 2316,
+          "recv": "command_lifecycle",
+          "bytes": 197,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "queued"
+        },
+        {
+          "index": 4,
+          "ms": 2322,
+          "recv": "command_lifecycle",
+          "bytes": 198,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "started"
+        },
+        {
+          "index": 5,
+          "ms": 2343,
+          "recv": "system/init",
+          "bytes": 1570,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-13>__batch",
+            "mcp__<mcp-server-13>__create",
+            "mcp__<mcp-server-13>__delete",
+            "mcp__<mcp-server-13>__export",
+            "mcp__<mcp-server-13>__guide",
+            "mcp__<mcp-server-13>__query",
+            "mcp__<mcp-server-13>__read",
+            "mcp__<mcp-server-13>__update"
+          ]
+        },
+        {
+          "index": 6,
+          "ms": 2867,
+          "recv": "rate_limit_event",
+          "bytes": 434,
+          "session": "s1"
+        },
+        {
+          "index": 7,
+          "ms": 5313,
+          "recv": "assistant",
+          "bytes": 1353,
+          "session": "s1",
+          "blocks": [
+            "thinking"
+          ],
+          "stop": null
+        },
+        {
+          "index": 8,
+          "ms": 6083,
+          "recv": "assistant",
+          "bytes": 1054,
+          "session": "s1",
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 9,
+          "ms": 6112,
+          "recv": "user",
+          "bytes": 583,
+          "session": "s1",
+          "content": [
+            "tool_result"
+          ]
+        }
+      ],
+      "resume": {
+        "opened": true,
+        "initializeAnswered": true,
+        "stayedUp": true,
+        "spawnToInitializeReplyMs": 469,
+        "exitCode": null,
+        "exitMs": null,
+        "stdoutFrames": [
+          {
+            "type": "control_response",
+            "keys": [
+              "response",
+              "type"
+            ]
+          }
+        ],
+        "garbageLines": 0,
+        "stderrBytes": 0
+      },
+      "resumedAfterAForcedEndDuringATurn": true,
+      "turn": {
+        "endStatus": "success",
+        "isError": false,
+        "initNamesTheResumedId": true,
+        "sessionIdsSeen": 1,
+        "knowsThePromptThatWasCut": true,
+        "toolCalls": 0,
+        "init": {
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read"
+          ],
+          "mcpTools": 8,
+          "slashCommands": 0,
+          "skills": 0
+        },
+        "result": {
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "apiErrorStatus": null,
+          "numTurns": 1,
+          "hasOrigin": false
+        },
+        "lifecycle": [
+          {
+            "index": 3,
+            "state": "queued",
+            "namesOurId": true,
+            "beforeInit": true,
+            "afterResult": false
+          },
+          {
+            "index": 4,
+            "state": "started",
+            "namesOurId": true,
+            "beforeInit": true,
+            "afterResult": false
+          },
+          {
+            "index": 9,
+            "state": "completed",
+            "namesOurId": true,
+            "beforeInit": false,
+            "afterResult": true
+          }
+        ],
+        "textWaits": [
+          {
+            "index": 6,
+            "settledBy": "result",
+            "waitMs": 13
+          }
+        ],
+        "requests": 0
+      },
+      "outlineResumed": [
+        {
+          "index": 2,
+          "ms": 1975,
+          "send": "user",
+          "uuid": true
+        },
+        {
+          "index": 3,
+          "ms": 1976,
+          "recv": "command_lifecycle",
+          "bytes": 197,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "queued"
+        },
+        {
+          "index": 4,
+          "ms": 1979,
+          "recv": "command_lifecycle",
+          "bytes": 198,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "started"
+        },
+        {
+          "index": 5,
+          "ms": 2011,
+          "recv": "system/init",
+          "bytes": 1570,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-13>__batch",
+            "mcp__<mcp-server-13>__create",
+            "mcp__<mcp-server-13>__delete",
+            "mcp__<mcp-server-13>__export",
+            "mcp__<mcp-server-13>__guide",
+            "mcp__<mcp-server-13>__query",
+            "mcp__<mcp-server-13>__read",
+            "mcp__<mcp-server-13>__update"
+          ]
+        },
+        {
+          "index": 6,
+          "ms": 4574,
+          "recv": "assistant",
+          "bytes": 1001,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 133
+        },
+        {
+          "index": 7,
+          "ms": 4581,
+          "recv": "rate_limit_event",
+          "bytes": 434,
+          "session": "s1"
+        },
+        {
+          "index": 8,
+          "ms": 4587,
+          "recv": "result",
+          "bytes": 2052,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 1,
+          "resultIndex": 0,
+          "queuedTurnCount": 0,
+          "resultChars": 133
+        },
+        {
+          "index": 9,
+          "ms": 4588,
+          "recv": "command_lifecycle",
+          "bytes": 200,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "completed"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--input-format",
+      "stream-json",
+      "--setting-sources",
+      "user,project,local",
+      "--permission-mode",
+      "default",
+      "--permission-prompt-tool",
+      "stdio",
+      "--tools",
+      "Read,Glob,Grep,Agent",
+      "--model",
+      "sonnet",
+      "--effort",
+      "low",
+      "--resume",
+      "<session-1>",
+      "--disable-slash-commands"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "subtype": "initialize"
+    },
+    "replyIndex": 1,
+    "ok": true
+  },
+  "toolPermissions": {
+    "readTools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "scenarioTools": [
+      "Agent"
+    ],
+    "preApproved": [],
+    "permissionMode": "default",
+    "permissionRequestsTo": "the spike (--permission-prompt-tool stdio)",
+    "policy": "every can_use_tool request is denied, as the app will deny it (M16, C22); any other request gets an error reply"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": false
+      }
+    ],
+    "set": [
+      "CLAUDE_CONFIG_DIR",
+      "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {}
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 14,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-1",
+        "request": {
+          "subtype": "initialize"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 469,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-1",
+          "response": {
+            "commands": [],
+            "agents": [
+              {
+                "name": "claude",
+                "description": "Catch-all for any task that doesn't fit a more specific agent. FleetView's default when no agent name is typed."
+              },
+              {
+                "name": "Explore",
+                "description": "Fast read-only search agent for locating code. Use it to find files by pattern (eg. \"src/components/**/*.tsx\"), grep for symbols or keywords (eg. \"API endpoints\"), or answer \"where is X defined / which files reference Y.\" Do NOT use it for code review, design-doc auditing, cross-file consistency checks, or open-ended analysis — it reads excerpts rather than whole files and will miss content past its read window. When calling, specify search breadth: \"quick\" for a single targeted lookup, \"medium\" for moderate exploration, or \"very thorough\" to search across multiple locations and naming conventions.",
+                "model": "inherit"
+              },
+              {
+                "name": "general-purpose",
+                "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you."
+              },
+              {
+                "name": "Plan",
+                "description": "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs.",
+                "model": "inherit"
+              },
+              {
+                "name": "statusline-setup",
+                "description": "Use this agent to configure the user's Claude Code status line setting.",
+                "model": "sonnet"
+              }
+            ],
+            "output_style": "default",
+            "available_output_styles": [
+              "default",
+              "Proactive",
+              "Concise",
+              "Explanatory",
+              "Learning"
+            ],
+            "user_output_styles_dir": "<scratch>\\output-styles",
+            "models": [
+              {
+                "value": "default",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Default (recommended)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "opus[1m]",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Opus (1M context)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "claude-fable-5-1[1m]",
+                "resolvedModel": "claude-fable-5-1",
+                "displayName": "Fable",
+                "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "sonnet",
+                "resolvedModel": "claude-sonnet-5",
+                "displayName": "Sonnet",
+                "description": "Sonnet 5 · Efficient for routine tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "haiku",
+                "resolvedModel": "claude-haiku-4-5-20251001",
+                "displayName": "Haiku",
+                "description": "Haiku 4.5 · Fastest for quick answers"
+              }
+            ],
+            "account": "<account>",
+            "pid": 101948,
+            "current_permission_mode": "default",
+            "analytics_disabled": false,
+            "remote_control_auto_enable": false,
+            "remote_control_available": true,
+            "remote_control_auto_on_by_default": false,
+            "ide_rc_auto_enable_gate": true,
+            "fast_mode_state": "off",
+            "fast_mode_disabled_reason": "sdk_opt_in_required",
+            "session_state": "idle"
+          },
+          "pending_permission_requests": [],
+          "pending_user_dialog_requests": []
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1975,
+      "frame": {
+        "type": "user",
+        "uuid": "<uuid-18>",
+        "message": {
+          "role": "user",
+          "content": "Without using any tool, tell me in one sentence which files I asked you to read just before this message, and how many of them you had read."
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 1976,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-18>",
+        "state": "queued",
+        "uuid": "<uuid-19>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 1979,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-18>",
+        "state": "started",
+        "uuid": "<uuid-20>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 2011,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read",
+          "mcp__<mcp-server-13>__batch",
+          "mcp__<mcp-server-13>__create",
+          "mcp__<mcp-server-13>__delete",
+          "mcp__<mcp-server-13>__export",
+          "mcp__<mcp-server-13>__guide",
+          "mcp__<mcp-server-13>__query",
+          "mcp__<mcp-server-13>__read",
+          "mcp__<mcp-server-13>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-14>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-15>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-16>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-17>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "slash_commands": [],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-21>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 4574,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-22>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "You asked me to read notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt, and sample.txt, and I had read only 1 of them (notes-1.txt)."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 267,
+            "cache_read_input_tokens": 18114,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 267
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-23>",
+        "timestamp": "2020-01-06T11:33:46.704Z",
+        "request_id": "<request-24>",
+        "user_message_uuid": "<uuid-18>",
+        "user_message_uuids": [
+          "<uuid-18>"
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 4581,
+      "frame": {
+        "type": "rate_limit_event",
+        "rate_limit_info": {
+          "_keys": [
+            "isUsingOverage",
+            "overageDisabledReason",
+            "overageStatus",
+            "rateLimitType",
+            "resetsAt",
+            "status",
+            "unifiedWindows"
+          ]
+        },
+        "uuid": "<uuid-25>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 4587,
+      "frame": {
+        "duration_api_ms": 2559,
+        "stop_reason": "end_turn",
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.0053548,
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 267,
+          "cache_read_input_tokens": 18114,
+          "output_tokens": 66,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 267,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 66,
+              "cache_read_input_tokens": 18114,
+              "cache_creation_input_tokens": 267,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 267
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 66,
+            "cacheReadInputTokens": 18114,
+            "cacheCreationInputTokens": 267,
+            "webSearchRequests": 0,
+            "costUSD": 0.0053548,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [],
+        "terminal_reason": "completed",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 0,
+          "requested": {
+            "background": 0,
+            "foreground": 0,
+            "unset": 0
+          },
+          "started_in_background": 0,
+          "max_depth": 0,
+          "spawned_by_subagents": 0,
+          "completed": 0,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {}
+        },
+        "is_error": false,
+        "num_turns": 1,
+        "subtype": "success",
+        "api_error_status": null,
+        "result": "You asked me to read notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt, and sample.txt, and I had read only 1 of them (notes-1.txt).",
+        "ttft_ms": 2578,
+        "type": "result",
+        "duration_ms": 2605,
+        "uuid": "<uuid-26>",
+        "ttft_stream_ms": 1650,
+        "time_to_request_ms": 46,
+        "first_content_frame_ms": 1650,
+        "user_message_uuid": "<uuid-18>",
+        "user_message_uuids": [
+          "<uuid-18>"
+        ],
+        "request_sent_wall_ms": 1578310424172,
+        "queued_turn_count": 0,
+        "result_index": 0
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 4588,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-18>",
+        "state": "completed",
+        "uuid": "<uuid-27>",
+        "session_id": "<session-1>"
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1920,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "before-close",
+      "atMs": 7479,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    }
+  ],
+  "family": "m16-forced-turn",
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "configuration": {
+    "folder": "a scratch configuration folder (CLAUDE_CONFIG_DIR), signed in by the maintainer",
+    "written": []
+  },
+  "frameSizes": {
+    "largest": [
+      {
+        "type": "control_response",
+        "bytes": 3831
+      },
+      {
+        "type": "result",
+        "bytes": 2052
+      },
+      {
+        "type": "system/init",
+        "bytes": 1570
+      },
+      {
+        "type": "assistant",
+        "bytes": 1001
+      },
+      {
+        "type": "rate_limit_event",
+        "bytes": 434
+      }
+    ],
+    "longStringsCut": []
+  }
+}

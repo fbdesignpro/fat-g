@@ -1,0 +1,112 @@
+# SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+# SPDX-License-Identifier: MIT
+
+name: CI
+
+# Tiers (scripts/lib/ci-systems.mjs). Lint and typecheck run once, on Linux: they read the same files
+# on every system. Tests, the build and packaging default to Windows and Linux. A push's last commit
+# can choose systems — "[ci macos]", "[ci linux, windows]" — as can a run started by hand
+# (`gh workflow run ci.yml -f systems=macos`). macOS runs only when explicitly named, or with `all`.
+# A push of documents alone runs nothing.
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['docs/**', '*.md']
+  pull_request:
+    paths-ignore: ['docs/**', '*.md']
+  workflow_dispatch:
+    inputs:
+      systems:
+        description: 'Systems to test and package on: windows, linux by default; name macos or all to include macOS'
+        type: string
+        default: 'windows, linux'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  systems:
+    name: Choose systems
+    runs-on: ubuntu-latest
+    outputs:
+      runners: ${{ steps.choose.outputs.runners }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts
+      # The message and the input reach the script through its environment, never the shell's command line.
+      - id: choose
+        run: node scripts/ci-systems.mjs
+        env:
+          EVENT: ${{ github.event_name }}
+          MESSAGE: ${{ github.event.head_commit.message }}
+          REQUESTED: ${{ inputs.systems }}
+
+  lint:
+    name: Lint and typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      # --ignore-scripts skips our `postinstall` (the ~100 MB Electron binary download). Lint,
+      # typecheck, unit tests and the bundle build never launch Electron, so they don't need it.
+      # (Electron 44's installer has no skip env var; this is the supported way.)
+      - run: npm ci --ignore-scripts
+      # Type-aware lint reads every file through the TypeScript service: it needs more than the
+      # heap Node gives itself on this runner (it fails at 1.5 GB and passes at 2 GB).
+      - run: npm run lint
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+      - run: npm run typecheck
+
+  check:
+    name: Test and build (${{ matrix.os }})
+    needs: systems
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # Windows and Linux by default; macOS joins only when explicitly requested.
+        os: ${{ fromJSON(needs.systems.outputs.runners) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: npm run build
+
+  package:
+    # Builds the real installer for the runner's OS (NSIS, dmg or AppImage) and audits the unpacked app
+    # against decision 0007, including the ad hoc Mac bundle signature. Uploads nothing. The tamper test
+    # (`verify-package.mjs --tamper`) launches the app, so it runs locally, not here.
+    name: Package and audit (${{ matrix.os }})
+    needs: systems
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON(needs.systems.outputs.runners) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      # electron-builder downloads its target binary. macOS also copies the license files from
+      # node_modules/electron/dist into the app, so install that distribution for its notice sources.
+      - run: npm ci --ignore-scripts
+      - name: Install Electron notice sources on macOS
+        if: runner.os == 'macOS'
+        run: npm run postinstall
+      - run: npm run package
+      - run: node scripts/verify-package.mjs release

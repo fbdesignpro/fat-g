@@ -1,0 +1,35 @@
+{
+  // Main process, preload, shared contracts, and Node-side tooling/tests.
+  // `src/shared` is compiled by BOTH projects: under this one with Node types, under
+  // tsconfig.web.json without them — so shared code that touches Node APIs fails typecheck.
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "types": ["node", "electron-vite/node"],
+    // Node-side only: makes `process.env['X']` lookups explicit. Not enabled for the renderer,
+    // where it would fight CSS Modules (`styles.panel` is typed through an index signature).
+    "noPropertyAccessFromIndexSignature": true,
+    "outDir": "./node_modules/.cache/tsc/node"
+  },
+  "include": [
+    "electron.vite.config.ts",
+    "vitest.config.ts",
+    "eslint.architecture.d.ts",
+    "scripts/lib/*.d.mts",
+    "src/main/**/*",
+    // Each provider module's catalog defaults, imported as JSON (M13, C20).
+    "src/main/**/*.json",
+    "src/preload/**/*",
+    "src/shared/**/*",
+    "tests/**/*.ts",
+    // What tests read of the Claude replay fake, which is plain JavaScript (M16, C51).
+    "tests/fixtures/claude/*.d.mts",
+    "tests/fixtures/codex/*.d.mts",
+    // And of the long-conversation fixture, which is plain JavaScript too (M19, C52).
+    "tests/fixtures/conversations/*.d.mts",
+    // And of the files the fakes' answers name, which the smoke script and a spike read as well (M19b, C46).
+    "tests/fixtures/*.d.mts",
+    // The fixture summaries, imported as JSON by tests/support/sessions.ts (M14, C30).
+    "tests/fixtures/sessions/*.json"
+  ]
+}

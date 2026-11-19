@@ -1,0 +1,1883 @@
+{
+  "_fixture": {
+    "source": "M22 spike m22-k1.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":1,\"turn\":1,\"item\":3,\"mcp-server\":1}. Aliases are shared with the other captures of the family \"m22-codex-reviewer\"."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-07T01:57:35.192Z",
+  "scenario": {
+    "id": "m22-codex-reviewer-turn",
+    "title": "K4: a thread under workspace-write, on-request and the user as reviewer, its turn/start naming the reviewer with the policy, and one file change outside the working folder, declined (C7, C70)",
+    "successCondition": "Whether turn/start takes `approvalsReviewer` under production's handshake, whether the change's request still comes to the spike, and what the thread reports when resumed afterwards with no policy named"
+  },
+  "run": {
+    "id": "codex-m22-codex-reviewer-turn-37",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 62,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1887,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "readiness": "ready",
+      "thread": {
+        "ok": true,
+        "error": null,
+        "asked": {
+          "sandbox": "workspace-write",
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user"
+        },
+        "reported": {
+          "sandbox": {
+            "type": "workspaceWrite",
+            "keys": [
+              "excludeSlashTmp",
+              "excludeTmpdirEnvVar",
+              "networkAccess",
+              "type",
+              "writableRoots"
+            ],
+            "networkAccess": false,
+            "writableRoots": [],
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "activePermissionProfile": null,
+          "runtimeWorkspaceRoots": [
+            "working folder"
+          ],
+          "cwd": "working folder"
+        },
+        "matchesWhatWasAsked": true
+      },
+      "attempts": [
+        {
+          "label": "the policy, the sandbox and the reviewer, each as the start reply reported it",
+          "named": {
+            "approvalPolicy": "on-request",
+            "sandboxPolicy": {
+              "type": "workspaceWrite",
+              "keys": [
+                "excludeSlashTmp",
+                "excludeTmpdirEnvVar",
+                "networkAccess",
+                "type",
+                "writableRoots"
+              ],
+              "networkAccess": false,
+              "writableRoots": [],
+              "excludeTmpdirEnvVar": false,
+              "excludeSlashTmp": false
+            },
+            "approvalsReviewer": "user"
+          },
+          "taken": true,
+          "error": null
+        }
+      ],
+      "turn": {
+        "requests": [
+          {
+            "index": 19,
+            "method": "item/fileChange/requestApproval",
+            "keys": [
+              "grantRoot",
+              "itemId",
+              "reason",
+              "startedAtMs",
+              "threadId",
+              "turnId"
+            ],
+            "idIsA": "number",
+            "isWhatThePromptDictated": true,
+            "worker": false,
+            "reasonUnits": null,
+            "answer": {
+              "result": {
+                "decision": "decline"
+              },
+              "why": "this scenario accepts nothing",
+              "msAfterTheRequest": 0
+            },
+            "resolved": {
+              "index": 21,
+              "msAfterTheAnswer": 0,
+              "paramKeys": [
+                "requestId",
+                "threadId"
+              ]
+            },
+            "statusWhilePending": [
+              "waitingOnApproval"
+            ],
+            "item": {
+              "type": "fileChange",
+              "status": "declined"
+            },
+            "grantRoot": null,
+            "changes": [
+              {
+                "where": "outside the folder",
+                "kind": "add",
+                "diffUnits": 6
+              }
+            ]
+          }
+        ],
+        "commands": [],
+        "fileChanges": [
+          {
+            "status": "declined",
+            "asked": true,
+            "worker": false,
+            "changes": [
+              {
+                "where": "outside the folder",
+                "kind": "add"
+              }
+            ]
+          }
+        ],
+        "otherItems": [],
+        "settings": [],
+        "statuses": [
+          {
+            "index": 12,
+            "type": "active",
+            "activeFlags": []
+          },
+          {
+            "index": 18,
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          },
+          {
+            "index": 22,
+            "type": "active",
+            "activeFlags": []
+          },
+          {
+            "index": 61,
+            "type": "idle",
+            "activeFlags": null
+          }
+        ],
+        "errors": [],
+        "warnings": [],
+        "end": {
+          "index": 62,
+          "status": "completed",
+          "error": null
+        },
+        "methods": {
+          "thread/started": 1,
+          "mcpServer/startupStatus/updated": 2,
+          "thread/status/changed": 4,
+          "turn/started": 1,
+          "item/started": 3,
+          "item/completed": 3,
+          "item/fileChange/requestApproval": 1,
+          "serverRequest/resolved": 1,
+          "thread/tokenUsage/updated": 2,
+          "account/rateLimits/updated": 2,
+          "turn/completed": 1
+        }
+      },
+      "requestsThatCameToTheSpike": 1,
+      "autoReviewFrames": 0,
+      "fileMade": false,
+      "outline": [
+        {
+          "index": 9,
+          "ms": 2056,
+          "method": "thread/started"
+        },
+        {
+          "index": 12,
+          "ms": 2124,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 13,
+          "ms": 2124,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 15,
+          "ms": 3838,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 16,
+          "ms": 3848,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 17,
+          "ms": 5369,
+          "method": "item/started",
+          "thread": "session",
+          "item": "fileChange",
+          "status": "inProgress"
+        },
+        {
+          "index": 18,
+          "ms": 5370,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 19,
+          "ms": 5370,
+          "method": "item/fileChange/requestApproval",
+          "thread": "session",
+          "request": true
+        },
+        {
+          "index": 21,
+          "ms": 5370,
+          "method": "serverRequest/resolved",
+          "thread": "session"
+        },
+        {
+          "index": 22,
+          "ms": 5370,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 23,
+          "ms": 5377,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "fileChange",
+          "status": "declined"
+        },
+        {
+          "index": 25,
+          "ms": 5392,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 26,
+          "ms": 6309,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 58,
+          "ms": 6512,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 60,
+          "ms": 6548,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 61,
+          "ms": 6558,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 62,
+          "ms": 6558,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ],
+      "resumeWithNoPolicy": {
+        "ok": true,
+        "error": null,
+        "asked": {},
+        "reported": {
+          "sandbox": {
+            "type": "workspaceWrite",
+            "keys": [
+              "excludeSlashTmp",
+              "excludeTmpdirEnvVar",
+              "networkAccess",
+              "type",
+              "writableRoots"
+            ],
+            "networkAccess": false,
+            "writableRoots": [],
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "activePermissionProfile": {
+            "id": ":workspace",
+            "extends": null
+          },
+          "runtimeWorkspaceRoots": [
+            "working folder"
+          ],
+          "cwd": "working folder"
+        },
+        "matchesWhatWasAsked": true
+      }
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "workspace-write",
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "user",
+      "model": "gpt-6-luna"
+    },
+    "replyIndex": 7,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "workspace-write",
+          "reported": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "on-request",
+          "reported": "on-request",
+          "match": true
+        },
+        {
+          "field": "approvalsReviewer",
+          "requested": "user",
+          "reported": "user",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "workspace-write",
+    "approvalPolicy": "on-request",
+    "reviewer": "user",
+    "policy": "an approval request for what the prompt dictated — a command that holds the prompt's own and no other, in a scratch folder, or a file change whose paths are all in scratch folders — is answered as the scenario says; any other is declined, and a request for more permissions is granted nothing"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 967,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 968,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 969,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 974,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 1917,
+      "frame": {
+        "method": "windowsSandbox/readiness",
+        "id": 2
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1929,
+      "frame": {
+        "id": 2,
+        "result": {
+          "status": "ready"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 1929,
+      "frame": {
+        "method": "thread/start",
+        "id": 3,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "workspace-write",
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "model": "gpt-6-luna"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 2055,
+      "frame": {
+        "id": 3,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362242,
+            "updatedAt": 1578362242,
+            "recencyAt": 1578362242,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\06\\rollout-2020-01-06T21-57-22-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "send",
+      "ms": 2055,
+      "frame": {
+        "method": "turn/start",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Use your apply_patch tool, not a shell command, to create this file:\n1. <scratch>\\k1-rt-outside.txt containing the single word alpha.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-2>",
+          "approvalPolicy": "on-request",
+          "sandboxPolicy": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "approvalsReviewer": "user"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 2056,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578362242,
+            "updatedAt": 1578362242,
+            "recencyAt": 1578362242,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\06\\rollout-2020-01-06T21-57-22-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578362242620
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 2056,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-7>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362242620
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 2082,
+      "frame": {
+        "id": 4,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 2124,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578362242688
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 2124,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578362242,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578362242688
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 2493,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-7>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578362243058
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 3838,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Use your apply_patch tool, not a shell command, to create this file:\n1. <scratch>\\k1-rt-outside.txt containing the single word alpha.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578362244402
+        },
+        "emittedAtMs": 1578362244402
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 3848,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Use your apply_patch tool, not a shell command, to create this file:\n1. <scratch>\\k1-rt-outside.txt containing the single word alpha.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578362244402
+        },
+        "emittedAtMs": 1578362244413
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 5369,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "fileChange",
+            "id": "<item-5>",
+            "changes": [
+              {
+                "path": "<scratch>\\k1-rt-outside.txt",
+                "kind": {
+                  "type": "add"
+                },
+                "diff": "alpha\n"
+              }
+            ],
+            "status": "inProgress"
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578362245934
+        },
+        "emittedAtMs": 1578362245934
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 5370,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          }
+        },
+        "emittedAtMs": 1578362245935
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 5370,
+      "frame": {
+        "method": "item/fileChange/requestApproval",
+        "id": 0,
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "startedAtMs": 1578362245935,
+          "reason": null,
+          "grantRoot": null
+        }
+      }
+    },
+    {
+      "index": 20,
+      "dir": "send",
+      "ms": 5370,
+      "frame": {
+        "id": 0,
+        "result": {
+          "decision": "decline"
+        }
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 5370,
+      "frame": {
+        "method": "serverRequest/resolved",
+        "params": {
+          "threadId": "<session-1>",
+          "requestId": 0
+        },
+        "emittedAtMs": 1578362245935
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 5370,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578362245935
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 5377,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "fileChange",
+            "id": "<item-5>",
+            "changes": [
+              {
+                "path": "<scratch>\\k1-rt-outside.txt",
+                "kind": {
+                  "type": "add"
+                },
+                "diff": "alpha\n"
+              }
+            ],
+            "status": "declined"
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578362245935
+        },
+        "emittedAtMs": 1578362245942
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 5392,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 14680,
+              "inputTokens": 14623,
+              "cachedInputTokens": 6912,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 57,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 14680,
+              "inputTokens": 14623,
+              "cachedInputTokens": 6912,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 57,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578362245957
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 5392,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 6309,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-6>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578362246873
+        },
+        "emittedAtMs": 1578362246873
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 6309,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "<scratch>"
+        },
+        "emittedAtMs": 1578362246873
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "\\"
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "k"
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "-"
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 6410,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "rt"
+        },
+        "emittedAtMs": 1578362246975
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 6412,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "-out"
+        },
+        "emittedAtMs": 1578362246977
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 6412,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "side"
+        },
+        "emittedAtMs": 1578362246977
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ".txt"
+        },
+        "emittedAtMs": 1578362247069
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " —"
+        },
+        "emittedAtMs": 1578362247069
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " not"
+        },
+        "emittedAtMs": 1578362247069
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " created"
+        },
+        "emittedAtMs": 1578362247069
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " ("
+        },
+        "emittedAtMs": 1578362247069
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "the"
+        },
+        "emittedAtMs": 1578362247069
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " patch"
+        },
+        "emittedAtMs": 1578362247069
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " was"
+        },
+        "emittedAtMs": 1578362247069
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " rejected"
+        },
+        "emittedAtMs": 1578362247069
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": ")."
+        },
+        "emittedAtMs": 1578362247069
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 6512,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-6>",
+            "text": "<scratch>\\k1-rt-outside.txt — not created (the patch was rejected).",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578362247069
+        },
+        "emittedAtMs": 1578362247077
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 6548,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 29425,
+              "inputTokens": 29333,
+              "cachedInputTokens": 20992,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 92,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 14745,
+              "inputTokens": 14710,
+              "cachedInputTokens": 14080,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 35,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578362247113
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 6548,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 6558,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578362247123
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 6558,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-6>",
+                "text": "<scratch>\\k1-rt-outside.txt — not created (the patch was rejected).",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578362242,
+            "completedAt": 1578362247,
+            "durationMs": 4479
+          }
+        },
+        "emittedAtMs": 1578362247123
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 139,
+    "tail": "\u001b[2m2020-01-07T01:57:25.942398Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_core::tools::router\u001b[0m\u001b[2m:\u001b[0m \u001b[3merror\u001b[0m\u001b[2m=\u001b[0mpatch rejected by user\n"
+  },
+  "requestsAnswered": [
+    {
+      "kind": "item/fileChange/requestApproval",
+      "requestKind": "approval",
+      "answer": "{\"decision\":\"decline\"}"
+    }
+  ],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 967,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1917,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 9022,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "codex-code-mode-host.exe"
+      ],
+      "alive": 5
+    }
+  ],
+  "family": "m22-codex-reviewer",
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1588
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1119
+      },
+      {
+        "method": "item/completed",
+        "item": "userMessage",
+        "bytes": 654
+      },
+      {
+        "method": "item/started",
+        "item": "userMessage",
+        "bytes": 650
+      },
+      {
+        "method": "turn/completed",
+        "item": null,
+        "bytes": 579
+      }
+    ],
+    "longStringsCut": []
+  }
+}

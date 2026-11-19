@@ -1,0 +1,50 @@
+{
+  "_fixture": {
+    "source": "codex app-server `account/rateLimits/read`, codex-cli 0.155.1, captured by spikes/codex-app-server.mjs",
+    "redacted": ["accountId", "rateLimitResetCredits.credits[].id"],
+    "note": "`primary` is the WEEKLY window (10080 min) and `secondary` is null — labels must come from windowDurationMins, never from position."
+  },
+  "ordinaryUsageAllowed": true,
+  "rateLimits": {
+    "limitId": "codex",
+    "limitName": null,
+    "normalModelSlug": null,
+    "primary": { "usedPercent": 91, "windowDurationMins": 10080, "resetsAt": 1580138963 },
+    "secondary": null,
+    "credits": { "hasCredits": false, "unlimited": false, "balance": "0" },
+    "individualLimit": null,
+    "spendControlReached": false,
+    "planType": "prolite",
+    "rateLimitReachedType": null
+  },
+  "rateLimitsByLimitId": {
+    "codex": {
+      "limitId": "codex",
+      "limitName": null,
+      "normalModelSlug": null,
+      "primary": { "usedPercent": 91, "windowDurationMins": 10080, "resetsAt": 1580138963 },
+      "secondary": null,
+      "credits": { "hasCredits": false, "unlimited": false, "balance": "0" },
+      "individualLimit": null,
+      "spendControlReached": false,
+      "planType": "prolite",
+      "rateLimitReachedType": null
+    }
+  },
+  "rateLimitResetCredits": {
+    "availableCount": 1,
+    "credits": [
+      {
+        "id": "RateLimitResetCredit_00000000000000000000000000000000",
+        "resetType": "codexRateLimits",
+        "status": "available",
+        "grantedAt": 1578716603,
+        "expiresAt": 1581308603,
+        "title": "Full reset",
+        "description": "Thanks for using Codex! You've been granted one free rate limit reset."
+      }
+    ]
+  },
+  "accountId": "00000000-0000-0000-0000-000000000000",
+  "rateLimitUpsell": null
+}

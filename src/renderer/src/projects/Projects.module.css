@@ -1,0 +1,280 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The project list (docs/planning/_archive/M12.md, Design 8). It sits in the project column, inside the shell:
+   unselectable (C51), and nothing here scrolls — the column does (M11, C27). The `…` menu opens in
+   a popup of its own (src/renderer/src/ui/Popup.module.css). It stands directly on the grid, with no
+   background and no rule along it, a gap between projects (docs/planning/_archive/M100.md, Design 5; C21). */
+.projects {
+  display: flex;
+  flex-direction: column;
+  /* Keep the headers and capsules aligned with the band actions when the column scrolls.
+     Its scrollbar uses the shell's outer gutter instead of narrowing this list. */
+  width: var(--project-column-width);
+}
+
+.problem {
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-critical);
+  font-size: var(--text-12);
+}
+
+.kept {
+  margin: 0 0 var(--gap-grid);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-rule-soft);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  overflow-wrap: anywhere;
+}
+
+.path {
+  font-family: var(--font-mono);
+}
+
+/* The drop line is placed inside it. */
+.list {
+  position: relative;
+}
+
+.group {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A gap between projects, and between the visible ones, the hidden row and the hidden list (C21). */
+.entry + .entry,
+.group + .hiddenRow,
+.hiddenRow + .group {
+  margin-top: var(--gap-grid);
+}
+
+/* A bar, its name in --color-on-bar on --color-bar (M100, C22); its disclosure can drag it,
+   while the + and actions cannot. The project's colour is drawn nowhere for now (C23): the header keeps it as an attribute,
+   for a later look. */
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 33px;
+  padding: 0 var(--space-1) 0 var(--space-2);
+  background: var(--color-bar);
+  color: var(--color-on-bar);
+  cursor: grab;
+  touch-action: none;
+}
+
+/* The dragged project's own place: its copy follows the pointer, and the place is drawn empty until
+   the others close it by moving out of the way (C86). */
+.entry[data-lifted] {
+  visibility: hidden;
+}
+
+/* While a project is dragged, the others slide aside to open its gap. Only then: a drop's new order
+   is drawn at once. */
+.list[data-dragging] .entry,
+.list[data-dragging] .hiddenRow {
+  transition: transform var(--duration-fast) ease-out;
+}
+
+.unreadable {
+  border: 1px dashed var(--color-text-muted);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: default;
+  touch-action: auto;
+}
+
+/* Cut with an ellipsis; the DOM keeps the whole name, and so does its accessible name (C43). */
+/* Large on purpose (M100, the layout reference): a project's name is what the column is read by. */
+.name {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-size: var(--text-24);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.missing {
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+/* Arrow and full project name form one keyboard stop, and remain the header's drag handle.
+   Extend into the column's 16px left gutter so the arrow sits outside the bar. The name
+   keeps its own ellipsis; the heading must let the arrow and its hit area through. */
+.unreadable .name,
+.lifted .name {
+  overflow: hidden;
+}
+
+.disclosure {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: calc(100% + 16px + var(--space-2));
+  min-height: 33px;
+  margin-left: calc(-16px - var(--space-2));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: grab;
+}
+
+.disclosureName {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--color-on-bar);
+}
+
+.disclosure:focus-visible {
+  outline-color: var(--color-focus);
+  outline-offset: -3px;
+}
+
+.actions {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.actions:hover,
+.actions[aria-expanded='true'] {
+  background: var(--color-on-bar);
+  color: var(--color-bar);
+}
+
+/* The `+` with no provider switched on (M14, C54): in place, dimmed, still focusable; its tooltip
+   says why. */
+.actions[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.actions[aria-disabled='true']:hover {
+  background: transparent;
+  color: inherit;
+}
+
+/* On the bar, the focus ring is the bar's text colour, inside. */
+.header .actions:focus-visible {
+  outline-color: var(--color-on-bar);
+  outline-offset: -3px;
+}
+
+.unreadable .actions:focus-visible {
+  outline-color: var(--color-focus);
+}
+
+.hiddenRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 var(--space-4);
+  border: 0;
+  background: var(--color-bar-quiet);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-13);
+  font-weight: var(--weight-semibold);
+  text-align: left;
+  cursor: pointer;
+}
+
+.hiddenRow:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* The drop target while dragging (C75). */
+.hiddenRow[data-target] {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+  color: var(--color-text);
+}
+
+.chevron {
+  flex: none;
+  color: var(--color-project-disclosure);
+  /* Centre the arrow in the window's two-cell margin, without moving the project name. */
+  transform: translateX(calc(var(--space-2) - var(--grid-cell)));
+}
+
+/* Where the dragged project will land: the room the others made for it, outlined (C86). */
+.gap {
+  position: absolute;
+  right: 0;
+  left: 0;
+  border: 2px dashed var(--color-focus);
+  pointer-events: none;
+  transition: top var(--duration-fast) ease-out;
+}
+
+/* The lifted copy of the header that follows the pointer, in the header's own pair. */
+.lifted {
+  position: fixed;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  min-height: 33px;
+  padding: 0 var(--space-2);
+  background: var(--color-bar);
+  color: var(--color-on-bar);
+  box-shadow: 0 4px 12px var(--color-backdrop);
+  pointer-events: none;
+}
+
+.note {
+  margin: var(--space-3);
+  padding: var(--space-3);
+  border-left: 3px solid var(--color-warn);
+  background: var(--color-surface);
+}
+
+.note p {
+  margin: 0 0 var(--space-2);
+}
+
+.noteActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.noteButton {
+  padding: var(--space-1) var(--space-3);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.noteButton:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}

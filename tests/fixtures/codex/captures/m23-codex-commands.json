@@ -1,0 +1,4169 @@
+{
+  "_fixture": {
+    "source": "M23 spike m23-k1.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":2,\"turn\":2,\"item\":15,\"mcp-server\":1}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.163.0",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-11T21:31:05.190Z",
+  "scenario": {
+    "id": "m23-commands",
+    "title": "K1: a turn whose text is /compact, and one whose text is /review (C63)",
+    "successCondition": "Whether the app-server does anything with the text but hand it to the model: the items, the notifications and the end of each turn"
+  },
+  "run": {
+    "id": "codex-m23-commands-6",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 181,
+    "turnsSpent": 2,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 2725,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "model": {
+        "model": "gpt-5.6-terra",
+        "effort": "low"
+      },
+      "thread": {
+        "ok": true,
+        "error": null,
+        "matchesWhatWasAsked": true
+      },
+      "compact": {
+        "refused": false,
+        "inputTypes": [
+          "text"
+        ],
+        "endIndex": 29,
+        "itemTypes": [
+          "userMessage",
+          "reasoning",
+          "agentMessage"
+        ],
+        "userMessages": [
+          {
+            "keys": [
+              "clientId",
+              "content",
+              "id",
+              "type"
+            ],
+            "parts": [
+              {
+                "type": "text",
+                "units": 8
+              }
+            ]
+          }
+        ],
+        "agentMessages": [
+          {
+            "index": 25,
+            "phase": "final_answer",
+            "delivery": null,
+            "units": 24,
+            "deltaUnits": 24,
+            "questions": null,
+            "holds": {}
+          }
+        ],
+        "otherItems": [],
+        "errors": [],
+        "end": {
+          "index": 29,
+          "status": "completed",
+          "error": null
+        },
+        "anyAgentMessageHolds": {},
+        "methods": {
+          "mcpServer/startupStatus/updated": 2,
+          "thread/status/changed": 2,
+          "turn/started": 1,
+          "item/started": 3,
+          "item/completed": 3,
+          "account/rateLimits/updated": 1,
+          "turn/completed": 1
+        },
+        "outline": [
+          {
+            "index": 11,
+            "ms": 2925,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "active"
+          },
+          {
+            "index": 12,
+            "ms": 2925,
+            "method": "turn/started",
+            "thread": "session",
+            "status": "inProgress"
+          },
+          {
+            "index": 14,
+            "ms": 3732,
+            "method": "item/started",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 15,
+            "ms": 3738,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 16,
+            "ms": 5647,
+            "method": "item/started",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 17,
+            "ms": 5665,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 18,
+            "ms": 5747,
+            "method": "item/started",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 25,
+            "ms": 5956,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 27,
+            "ms": 5979,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 28,
+            "ms": 5999,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "idle"
+          },
+          {
+            "index": 29,
+            "ms": 5999,
+            "method": "turn/completed",
+            "thread": "session",
+            "status": "completed"
+          }
+        ],
+        "signs": {
+          "methods": [],
+          "items": []
+        }
+      },
+      "review": {
+        "refused": false,
+        "inputTypes": [
+          "text"
+        ],
+        "endIndex": 181,
+        "itemTypes": [
+          "userMessage",
+          "reasoning",
+          "agentMessage",
+          "commandExecution",
+          "reasoning",
+          "commandExecution",
+          "reasoning",
+          "commandExecution",
+          "reasoning",
+          "commandExecution",
+          "reasoning",
+          "agentMessage"
+        ],
+        "userMessages": [
+          {
+            "keys": [
+              "clientId",
+              "content",
+              "id",
+              "type"
+            ],
+            "parts": [
+              {
+                "type": "text",
+                "units": 7
+              }
+            ]
+          }
+        ],
+        "agentMessages": [
+          {
+            "index": 59,
+            "phase": "commentary",
+            "delivery": null,
+            "units": 107,
+            "deltaUnits": 107,
+            "questions": null,
+            "holds": {}
+          },
+          {
+            "index": 177,
+            "phase": "final_answer",
+            "delivery": null,
+            "units": 389,
+            "deltaUnits": 389,
+            "questions": null,
+            "holds": {}
+          }
+        ],
+        "otherItems": [
+          {
+            "type": "commandExecution",
+            "status": "failed"
+          },
+          {
+            "type": "commandExecution",
+            "status": "completed"
+          },
+          {
+            "type": "commandExecution",
+            "status": "completed"
+          },
+          {
+            "type": "commandExecution",
+            "status": "completed"
+          }
+        ],
+        "errors": [],
+        "end": {
+          "index": 181,
+          "status": "completed",
+          "error": null
+        },
+        "anyAgentMessageHolds": {},
+        "methods": {
+          "thread/status/changed": 2,
+          "turn/started": 1,
+          "item/started": 12,
+          "item/completed": 12,
+          "account/rateLimits/updated": 5,
+          "turn/completed": 1
+        },
+        "outline": [
+          {
+            "index": 32,
+            "ms": 7550,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "active"
+          },
+          {
+            "index": 33,
+            "ms": 7550,
+            "method": "turn/started",
+            "thread": "session",
+            "status": "inProgress"
+          },
+          {
+            "index": 34,
+            "ms": 7565,
+            "method": "item/started",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 35,
+            "ms": 7574,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "userMessage"
+          },
+          {
+            "index": 36,
+            "ms": 8965,
+            "method": "item/started",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 37,
+            "ms": 8979,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 38,
+            "ms": 9070,
+            "method": "item/started",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "commentary"
+          },
+          {
+            "index": 59,
+            "ms": 9485,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "commentary"
+          },
+          {
+            "index": 60,
+            "ms": 16278,
+            "method": "item/started",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "inProgress"
+          },
+          {
+            "index": 61,
+            "ms": 16363,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "failed"
+          },
+          {
+            "index": 63,
+            "ms": 16384,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 64,
+            "ms": 17542,
+            "method": "item/started",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 65,
+            "ms": 17551,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 66,
+            "ms": 24861,
+            "method": "item/started",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "inProgress"
+          },
+          {
+            "index": 67,
+            "ms": 24948,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "completed"
+          },
+          {
+            "index": 69,
+            "ms": 25021,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 70,
+            "ms": 26325,
+            "method": "item/started",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 71,
+            "ms": 26364,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 72,
+            "ms": 33564,
+            "method": "item/started",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "inProgress"
+          },
+          {
+            "index": 73,
+            "ms": 33678,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "completed"
+          },
+          {
+            "index": 75,
+            "ms": 33696,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 76,
+            "ms": 36037,
+            "method": "item/started",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 77,
+            "ms": 36049,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 78,
+            "ms": 43205,
+            "method": "item/started",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "inProgress"
+          },
+          {
+            "index": 79,
+            "ms": 43320,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "commandExecution",
+            "status": "completed"
+          },
+          {
+            "index": 81,
+            "ms": 43370,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 82,
+            "ms": 51455,
+            "method": "item/started",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 83,
+            "ms": 51470,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "reasoning"
+          },
+          {
+            "index": 84,
+            "ms": 51478,
+            "method": "item/started",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 177,
+            "ms": 53908,
+            "method": "item/completed",
+            "thread": "session",
+            "item": "agentMessage",
+            "phase": "final_answer"
+          },
+          {
+            "index": 179,
+            "ms": 53938,
+            "method": "account/rateLimits/updated"
+          },
+          {
+            "index": 180,
+            "ms": 53954,
+            "method": "thread/status/changed",
+            "thread": "session",
+            "status": "idle"
+          },
+          {
+            "index": 181,
+            "ms": 53954,
+            "method": "turn/completed",
+            "thread": "session",
+            "status": "completed"
+          }
+        ],
+        "signs": {
+          "methods": [],
+          "items": []
+        }
+      },
+      "typeCounts": {
+        "response": 4,
+        "remoteControl/status/changed": 1,
+        "account/updated": 1,
+        "thread/started": 1,
+        "mcpServer/startupStatus/updated": 2,
+        "thread/status/changed": 4,
+        "turn/started": 2,
+        "item/started": 15,
+        "item/completed": 15,
+        "item/agentMessage/delta": 118,
+        "thread/tokenUsage/updated": 6,
+        "account/rateLimits/updated": 6,
+        "turn/completed": 2
+      }
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "model": "gpt-5.6-terra"
+    },
+    "replyIndex": 6,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined; a question asked in a message is answered by a steer in fat-g's words, or by the next prompt"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_STARTUP_FAILURE_RESULTS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1424,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1425,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.163.0 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1425,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 1432,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 1432,
+      "frame": {
+        "method": "account/updated",
+        "params": {
+          "authMode": "chatgpt",
+          "planType": "free"
+        },
+        "emittedAtMs": 1578778208433
+      }
+    },
+    {
+      "index": 5,
+      "dir": "send",
+      "ms": 2825,
+      "frame": {
+        "method": "thread/start",
+        "id": 2,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "model": "gpt-5.6-terra"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2889,
+      "frame": {
+        "id": 2,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-5.6-terra",
+            "reasoningEffort": null,
+            "createdAt": 1578778209,
+            "updatedAt": 1578778209,
+            "recencyAt": 1578778209,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\11\\rollout-2020-01-11T17-30-09-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.163.0",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-5.6-terra",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "disabledPluginIds": [],
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 2889,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-5.6-terra",
+            "reasoningEffort": null,
+            "createdAt": 1578778209,
+            "updatedAt": 1578778209,
+            "recencyAt": 1578778209,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\11\\rollout-2020-01-11T17-30-09-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.163.0",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578778209895
+      }
+    },
+    {
+      "index": 8,
+      "dir": "send",
+      "ms": 2891,
+      "frame": {
+        "method": "turn/start",
+        "id": 3,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "/compact",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-2>"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 2891,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-21>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578778209895
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 2903,
+      "frame": {
+        "id": 3,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 2925,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578778209931
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 2925,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578778209,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578778209931
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 3384,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-21>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578778210390
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 3732,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "/compact",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578778210738
+        },
+        "emittedAtMs": 1578778210738
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 3738,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "/compact",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578778210738
+        },
+        "emittedAtMs": 1578778210745
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 5647,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-5>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578778212653
+        },
+        "emittedAtMs": 1578778212653
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 5665,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-5>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578778212653
+        },
+        "emittedAtMs": 1578778212672
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 5747,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-6>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578778212754
+        },
+        "emittedAtMs": 1578778212754
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 5747,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "Ready"
+        },
+        "emittedAtMs": 1578778212754
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 5848,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " for"
+        },
+        "emittedAtMs": 1578778212854
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 5848,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578778212854
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 5848,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " next"
+        },
+        "emittedAtMs": 1578778212855
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 5848,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": " task"
+        },
+        "emittedAtMs": 1578778212855
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 5850,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578778212857
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 5956,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-6>",
+            "text": "Ready for the next task.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578778212951
+        },
+        "emittedAtMs": 1578778212962
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 5979,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 13266,
+              "inputTokens": 13233,
+              "cachedInputTokens": 9984,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 33,
+              "reasoningOutputTokens": 21
+            },
+            "last": {
+              "totalTokens": 13266,
+              "inputTokens": 13233,
+              "cachedInputTokens": 9984,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 33,
+              "reasoningOutputTokens": 21
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578778212986
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 5979,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 5999,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578778213005
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 5999,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "rootTurnId": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-6>",
+                "text": "Ready for the next task.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578778209,
+            "completedAt": 1578778212,
+            "durationMs": 3084
+          }
+        },
+        "emittedAtMs": 1578778213005
+      }
+    },
+    {
+      "index": 30,
+      "dir": "send",
+      "ms": 7510,
+      "frame": {
+        "method": "turn/start",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "/review",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-7>"
+        }
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 7535,
+      "frame": {
+        "id": 4,
+        "result": {
+          "turn": {
+            "id": "<turn-8>",
+            "rootTurnId": "<turn-8>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 7550,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578778214556
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 7550,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-8>",
+            "rootTurnId": "<turn-8>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578778214,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578778214556
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 7565,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-9>",
+            "clientId": "<client-message-7>",
+            "content": [
+              {
+                "type": "text",
+                "text": "/review",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778214572
+        },
+        "emittedAtMs": 1578778214572
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 7574,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-9>",
+            "clientId": "<client-message-7>",
+            "content": [
+              {
+                "type": "text",
+                "text": "/review",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778214572
+        },
+        "emittedAtMs": 1578778214581
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 8965,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-10>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778215972
+        },
+        "emittedAtMs": 1578778215972
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 8979,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-10>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778215972
+        },
+        "emittedAtMs": 1578778215986
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 9070,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-11>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778216076
+        },
+        "emittedAtMs": 1578778216076
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 9070,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578778216076
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 9070,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": "’ll"
+        },
+        "emittedAtMs": 1578778216076
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 9070,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " inspect"
+        },
+        "emittedAtMs": 1578778216076
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 9070,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578778216076
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 9070,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " current"
+        },
+        "emittedAtMs": 1578778216076
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 9297,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " changes"
+        },
+        "emittedAtMs": 1578778216303
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 9297,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578778216303
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 9297,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " review"
+        },
+        "emittedAtMs": 1578778216303
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 9297,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " them"
+        },
+        "emittedAtMs": 1578778216303
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 9297,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " for"
+        },
+        "emittedAtMs": 1578778216303
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 9297,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " concrete"
+        },
+        "emittedAtMs": 1578778216303
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 9298,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " defects"
+        },
+        "emittedAtMs": 1578778216305
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 9298,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578778216305
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 9299,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " regress"
+        },
+        "emittedAtMs": 1578778216305
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 9299,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": "ions"
+        },
+        "emittedAtMs": 1578778216305
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 9299,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578778216305
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 9299,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578778216305
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 9299,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " missing"
+        },
+        "emittedAtMs": 1578778216305
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 9321,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": " validation"
+        },
+        "emittedAtMs": 1578778216328
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 9321,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-11>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578778216328
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 9485,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-11>",
+            "text": "I’ll inspect the current changes and review them for concrete defects, regressions, and missing validation.",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778216478
+        },
+        "emittedAtMs": 1578778216491
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 16278,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-12>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'git status --short; git diff --stat; git diff --check; git diff'",
+            "cwd": "<scratch>",
+            "processId": "57482",
+            "source": "unifiedExecStartup",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "git status --short; git diff --stat; git diff --check; git diff"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778223283
+        },
+        "emittedAtMs": 1578778223284
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 16363,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-12>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'git status --short; git diff --stat; git diff --check; git diff'",
+            "cwd": "<scratch>",
+            "processId": "57482",
+            "source": "unifiedExecStartup",
+            "status": "failed",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "git status --short; git diff --stat; git diff --check; git diff"
+              }
+            ],
+            "aggregatedOutput": "fatal: not a git repository (or any of the parent directories): .git\nwarning: Not a git repository. Use --no-index to compare two paths outside a working tree\nusage: git diff --no-index [<options>] <path> <path> [<pathspec>...]\n\nDiff output format options\n    -p, --patch           generate patch\n    -s, --no-patch        suppress diff output\n    -u                    generate patch\n    -U, --unified[=<n>]   generate diffs with <n> lines context\n    -W, --[no-]function-context\n                          generate diffs with <n> lines context\n    --raw                 generate the diff in raw format\n    --patch-with-raw      synonym for '-p --raw'\n    --patch-with-stat     synonym for '-p --stat'\n    --numstat             machine friendly --stat\n    --shortstat           output only the last line of --stat\n    -X, --dirstat[=<param1>,<param2>...]\n                          output the distribution of relative amount of changes for each sub-directory\n    --cumulative          synonym for --dirstat=cumulative\n    --dirstat-by-file[=<param1>,<param2>...]\n                          synonym for --dirstat=files,<param1>,<param2>...\n    --check               warn if changes introduce conflict markers or whitespace errors\n    --summary             condensed summary such as creations, renames and mode changes\n    --name-only           show only names of changed files\n    --name-status         show only names and status of changed files\n    --stat[=<width>[,<name-width>[,<count>]]]\n                          generate diffstat\n    --stat-width <width>  generate diffstat with a given width\n    --stat-name-width <width>\n                          generate diffstat with a given name width\n    --stat-graph-width <width>\n                          generate diffstat with a given graph width\n    --stat-count <count>  generate diffstat with limited lines\n    --[no-]compact-summary\n                          generate compact summary in diffstat\n    --binary              output a binary diff that can be applied\n    --[no-]full-index     show full pre- and post-image object names on the \"index\" lines\n    --[no-]color[=<when>] show colored diff\n    --ws-error-highlight <kind>\n                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff\n    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat\n    --[no-]abbrev[=<n>]   use <n> digits to display object names\n    --src-prefix <prefix> show the given source prefix instead of \"a/\"\n    --dst-prefix <prefix> show the given destination prefix instead of \"b/\"\n    --line-prefix <prefix>\n                          prepend an additional prefix to every line of output\n    --no-prefix           do not show any source or destination prefix\n    --default-prefix      use default prefixes a/ and b/\n    --inter-hunk-context <n>\n                          show context between diff hunks up to the specified number of lines\n    --output-indicator-new <char>\n                          specify the character to indicate a new line instead of '+'\n    --output-indicator-old <char>\n                          specify the character to indicate an old line instead of '-'\n    --output-indicator-context <char>\n                          specify the character to indicate a context instead of ' '\n\nDiff rename options\n    -B, --break-rewrites[=<n>[/<m>]]\n                          break complete rewrite changes into pairs of delete and create\n    -M, --find-renames[=<n>]\n                          detect renames\n    -D, --irreversible-delete\n                          omit the preimage for deletes\n    -C, --find-copies[=<n>]\n                          detect copies\n    --[no-]find-copies-harder\n                          use unmodified files as source to find copies\n    --no-renames          disable rename detection\n    --[no-]rename-empty   use empty blobs as rename source\n    --[no-]follow         continue listing the history of a file beyond renames\n    -l <n>                limit to cheap rename/copy detection if the number of rename/copy targets exceeds this value\n\nDiff algorithm options\n    --minimal             produce the smallest possible diff\n    -w, --ignore-all-space\n                          ignore whitespace when comparing lines\n    -b, --ignore-space-change\n                          ignore changes in amount of whitespace\n    --ignore-space-at-eol ignore changes in whitespace at EOL\n    --ignore-cr-at-eol    ignore carrier-return at the end of line\n    --ignore-blank-lines  ignore changes whose lines are all blank\n    -I, --[no-]ignore-matching-lines <regex>\n                          ignore changes whose all lines match <regex>\n    --[no-]indent-heuristic\n                          heuristic to shift diff hunk boundaries for easy reading\n    --patience            generate diff using the \"patience diff\" algorithm\n    --histogram           generate diff using the \"histogram diff\" algorithm\n    --diff-algorithm <algorithm>\n                          choose a diff algorithm\n    --anchored <text>     generate diff using the \"anchored diff\" algorithm\n    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words\n    --word-diff-regex <regex>\n                          use <regex> to decide what a word is\n    --color-words[=<regex>]\n                          equivalent to --word-diff=color --word-diff-regex=<regex>\n    --[no-]color-moved[=<mode>]\n                          moved lines of code are colored differently\n    --[no-]color-moved-ws <mode>\n                          how white spaces are ignored in --color-moved\n\nOther diff options\n    --[no-]relative[=<prefix>]\n                          when run from subdir, exclude changes outside and show relative paths\n    -a, --[no-]text       treat all files as text\n    -R                    swap two inputs, reverse the diff\n    --[no-]exit-code      exit with 1 if there were differences, 0 otherwise\n    --[no-]quiet          disable all output of the program\n    --[no-]ext-diff       allow an external diff helper to be executed\n    --[no-]textconv       run external text conversion filters when comparing binary files\n    --ignore-submodules[=<when>]\n                          ignore changes to submodules in the diff generation\n    --submodule[=<format>]\n                          specify how differences in submodules are shown\n    --ita-invisible-in-index\n                          hide 'git add -N' entries from the index\n    --ita-visible-in-index\n                          treat 'git add -N' entries as real in the index\n    -S <string>           look for differences that change the number of occurrences of the specified string\n    -G <regex>            look for differences that change the number of occurrences of the specified regex\n    --pickaxe-all         show all changes in the changeset with -S or -G\n    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression\n    -O <file>             control the order in which files appear in the output\n    --rotate-to <path>    show the change in the specified path first\n    --skip-to <path>      skip the output to the specified path\n    --find-object <object-id>\n                          look for differences that change the number of occurrences of the specified object\n    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]\n                          select files by diff type\n    --max-depth <depth>   maximum tree depth to recurse\n    --output <file>       output to a specific file\n\nwarning: Not a git repository. Use --no-index to compare two paths outside a working tree\nusage: git diff --no-index [<options>] <path> <path> [<pathspec>...]\n\nDiff output format options\n    -p, --patch           generate patch\n    -s, --no-patch        suppress diff output\n    -u                    generate patch\n    -U, --unified[=<n>]   generate diffs with <n> lines context\n    -W, --[no-]function-context\n                          generate diffs with <n> lines context\n    --raw                 generate the diff in raw format\n    --patch-with-raw      synonym for '-p --raw'\n    --patch-with-stat     synonym for '-p --stat'\n    --numstat             machine friendly --stat\n    --shortstat           output only the last line of --stat\n    -X, --dirstat[=<param1>,<param2>...]\n                          output the distribution of relative amount of changes for each sub-directory\n    --cumulative          synonym for --dirstat=cumulative\n    --dirstat-by-file[=<param1>,<param2>...]\n                          synonym for --dirstat=files,<param1>,<param2>...\n    --check               warn if changes introduce conflict markers or whitespace errors\n    --summary             condensed summary such as creations, renames and mode changes\n    --name-only           show only names of changed files\n    --name-status         show only names and status of changed files\n    --stat[=<width>[,<name-width>[,<count>]]]\n                          generate diffstat\n    --stat-width <width>  generate diffstat with a given width\n    --stat-name-width <width>\n                          generate diffstat with a given name width\n    --stat-graph-width <width>\n                          generate diffstat with a given graph width\n    --stat-count <count>  generate diffstat with limited lines\n    --[no-]compact-summary\n                          generate compact summary in diffstat\n    --binary              output a binary diff that can be applied\n    --[no-]full-index     show full pre- and post-image object names on the \"index\" lines\n    --[no-]color[=<when>] show colored diff\n    --ws-error-highlight <kind>\n                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff\n    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat\n    --[no-]abbrev[=<n>]   use <n> digits to display object names\n    --src-prefix <prefix> show the given source prefix instead of \"a/\"\n    --dst-prefix <prefix> show the given destination prefix instead of \"b/\"\n    --line-prefix <prefix>\n                          prepend an additional prefix to every line of output\n    --no-prefix           do not show any source or destination prefix\n    --default-prefix      use default prefixes a/ and b/\n    --inter-hunk-context <n>\n                          show context between diff hunks up to the specified number of lines\n    --output-indicator-new <char>\n                          specify the character to indicate a new line instead of '+'\n    --output-indicator-old <char>\n                          specify the character to indicate an old line instead of '-'\n    --output-indicator-context <char>\n                          specify the character to indicate a context instead of ' '\n\nDiff rename options\n    -B, --break-rewrites[=<n>[/<m>]]\n                          break complete rewrite changes into pairs of delete and create\n    -M, --find-renames[=<n>]\n                          detect renames\n    -D, --irreversible-delete\n                          omit the preimage for deletes\n    -C, --find-copies[=<n>]\n                          detect copies\n    --[no-]find-copies-harder\n                          use unmodified files as source to find copies\n    --no-renames          disable rename detection\n    --[no-]rename-empty   use empty blobs as rename source\n    --[no-]follow         continue listing the history of a file beyond renames\n    -l <n>                limit to cheap rename/copy detection if the number of rename/copy targets exceeds this value\n\nDiff algorithm options\n    --minimal             produce the smallest possible diff\n    -w, --ignore-all-space\n                          ignore whitespace when comparing lines\n    -b, --ignore-space-change\n                          ignore changes in amount of whitespace\n    --ignore-space-at-eol ignore changes in whitespace at EOL\n    --ignore-cr-at-eol    ignore carrier-return at the end of line\n    --ignore-blank-lines  ignore changes whose lines are all blank\n    -I, --[no-]ignore-matching-lines <regex>\n                          ignore changes whose all lines match <regex>\n    --[no-]indent-heuristic\n                          heuristic to shift diff hunk boundaries for easy reading\n    --patience            generate diff using the \"patience diff\" algorithm\n    --histogram           generate diff using the \"histogram diff\" algorithm\n    --diff-algorithm <algorithm>\n                          choose a diff algorithm\n    --anchored <text>     generate diff using the \"anchored diff\" algorithm\n    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words\n    --word-diff-regex <regex>\n                          use <regex> to decide what a word is\n    --color-words[=<regex>]\n                          equivalent to --word-diff=color --word-diff-regex=<regex>\n    --[no-]color-moved[=<mode>]\n                          moved lines of code are colored differently\n    --[no-]color-moved-ws <mode>\n                          how white spaces are ignored in --color-moved\n\nOther diff options\n    --[no-]relative[=<prefix>]\n                          when run from subdir, exclude changes outside and show relative paths\n    -a, --[no-]text       treat all files as text\n    -R                    swap two inputs, reverse the diff\n    --[no-]exit-code      exit with 1 if there were differences, 0 otherwise\n    --[no-]quiet          disable all output of the program\n    --[no-]ext-diff       allow an external diff helper to be executed\n    --[no-]textconv       run external text conversion filters when comparing binary files\n    --ignore-submodules[=<when>]\n                          ignore changes to submodules in the diff generation\n    --submodule[=<format>]\n                          specify how differences in submodules are shown\n    --ita-invisible-in-index\n                          hide 'git add -N' entries from the index\n    --ita-visible-in-index\n                          treat 'git add -N' entries as real in the index\n    -S <string>           look for differences that change the number of occurrences of the specified string\n    -G <regex>            look for differences that change the number of occurrences of the specified regex\n    --pickaxe-all         show all changes in the changeset with -S or -G\n    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression\n    -O <file>             control the order in which files appear in the output\n    --rotate-to <path>    show the change in the specified path first\n    --skip-to <path>      skip the output to the specified path\n    --find-object <object-id>\n                          look for differences that change the number of occurrences of the specified object\n    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]\n                          select files by diff type\n    --max-depth <depth>   maximum tree depth to recurse\n    --output <file>       output to a specific file\n\nwarning: Not a git repository. Use --no-index to compare two paths outside a working tree\nusage: git diff --no-index [<options>] <path> <path> [<pathspec>...]\n\nDiff output format options\n    -p, --patch           generate patch\n    -s, --no-patch        suppress diff output\n    -u                    generate patch\n    -U, --unified[=<n>]   generate diffs with <n> lines context\n    -W, --[no-]function-context\n                          generate diffs with <n> lines context\n    --raw                 generate the diff in raw format\n    --patch-with-raw      synonym for '-p --raw'\n    --patch-with-stat     synonym for '-p --stat'\n    --numstat             machine friendly --stat\n    --shortstat           output only the last line of --stat\n    -X, --dirstat[=<param1>,<param2>...]\n                          output the distribution of relative amount of changes for each sub-directory\n    --cumulative          synonym for --dirstat=cumulative\n    --dirstat-by-file[=<param1>,<param2>...]\n                          synonym for --dirstat=files,<param1>,<param2>...\n    --check               warn if changes introduce conflict markers or whitespace errors\n    --summary             condensed summary such as creations, renames and mode changes\n    --name-only           show only names of changed files\n    --name-status         show only names and status of changed files\n    --stat[=<width>[,<name-width>[,<count>]]]\n                          generate diffstat\n    --stat-width <width>  generate diffstat with a given width\n    --stat-name-width <width>\n                          generate diffstat with a given name width\n    --stat-graph-width <width>\n                          generate diffstat with a given graph width\n    --stat-count <count>  generate diffstat with limited lines\n    --[no-]compact-summary\n                          generate compact summary in diffstat\n    --binary              output a binary diff that can be applied\n    --[no-]full-index     show full pre- and post-image object names on the \"index\" lines\n    --[no-]color[=<when>] show colored diff\n    --ws-error-highlight <kind>\n                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff\n    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat\n    --[no-]abbrev[=<n>]   use <n> digits to display object names\n    --src-prefix <prefix> show the given source prefix instead of \"a/\"\n    --dst-prefix <prefix> show the given destination prefix instead of \"b/\"\n    --line-prefix <prefix>\n                          prepend an additional prefix to every line of output\n    --no-prefix           do not show any source or destination prefix\n    --default-prefix      use default prefixes a/ and b/\n    --inter-hunk-context <n>\n                          show context between diff hunks up to the specified number of lines\n    --output-indicator-new <char>\n                          specify the character to indicate a new line instead of '+'\n    --output-indicator-old <char>\n                          specify the character to indicate an old line instead of '-'\n    --output-indicator-context <char>\n                          specify the character to indicate a context instead of ' '\n\nDiff rename options\n    -B, --break-rewrites[=<n>[/<m>]]\n                          break complete rewrite changes into pairs of delete and create\n    -M, --find-renames[=<n>]\n                          detect renames\n    -D, --irreversible-delete\n                          omit the preimage for deletes\n    -C, --find-copies[=<n>]\n                          detect copies\n    --[no-]find-copies-harder\n                          use unmodified files as source to find copies\n    --no-renames          disable rename detection\n    --[no-]rename-empty   use empty blobs as rename source\n    --[no-]follow         continue listing the history of a file beyond renames\n    -l <n>                limit to cheap rename/copy detection if the number of rename/copy targets exceeds this value\n\nDiff algorithm options\n    --minimal             produce the smallest possible diff\n    -w, --ignore-all-space\n                          ignore whitespace when comparing lines\n    -b, --ignore-space-change\n                          ignore changes in amount of whitespace\n    --ignore-space-at-eol ignore changes in whitespace at EOL\n    --ignore-cr-at-eol    ignore carrier-return at the end of line\n    --ignore-blank-lines  ignore changes whose lines are all blank\n    -I, --[no-]ignore-matching-lines <regex>\n                          ignore changes whose all lines match <regex>\n    --[no-]indent-heuristic\n                          heuristic to shift diff hunk boundaries for easy reading\n    --patience            generate diff using the \"patience diff\" algorithm\n    --histogram           generate diff using the \"histogram diff\" algorithm\n    --diff-algorithm <algorithm>\n                          choose a diff algorithm\n    --anchored <text>     generate diff using the \"anchored diff\" algorithm\n    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words\n    --word-diff-regex <regex>\n                          use <regex> to decide what a word is\n    --color-words[=<regex>]\n                          equivalent to --word-diff=color --word-diff-regex=<regex>\n    --[no-]color-moved[=<mode>]\n                          moved lines of code are colored differently\n    --[no-]color-moved-ws <mode>\n                          how white spaces are ignored in --color-moved\n\nOther diff options\n    --[no-]relative[=<prefix>]\n                          when run from subdir, exclude changes outside and show relative paths\n    -a, --[no-]text       treat all files as text\n    -R                    swap two inputs, reverse the diff\n    --[no-]exit-code      exit with 1 if there were differences, 0 otherwise\n    --[no-]quiet          disable all output of the program\n    --[no-]ext-diff       allow an external diff helper to be executed\n    --[no-]textconv       run external text conversion filters when comparing binary files\n    --ignore-submodules[=<when>]\n                          ignore changes to submodules in the diff generation\n    --submodule[=<format>]\n                          specify how differences in submodules are shown\n    --ita-invisible-in-index\n                          hide 'git add -N' entries from the index\n    --ita-visible-in-index\n                          treat 'git add -N' entries as real in the index\n    -S <string>           look for differences that change the number of occurrences of the specified string\n    -G <regex>            look for differences that change the number of occurrences of the specified regex\n    --pickaxe-all         show all changes in the changeset with -S or -G\n    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression\n    -O <file>             control the order in which files appear in the output\n    --rotate-to <path>    show the change in the specified path first\n    --skip-to <path>      skip the output to the specified path\n    --find-object <object-id>\n                          look for differences that change the number of occurrences of the specified object\n    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]\n                          select files by diff type\n    --max-depth <depth>   maximum tree depth to recurse\n    --output <file>       output to a specific file\n\n",
+            "exitCode": 1,
+            "durationMs": 75
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778223359
+        },
+        "emittedAtMs": 1578778223369
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 16384,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 26668,
+              "inputTokens": 26507,
+              "cachedInputTokens": 23040,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 161,
+              "reasoningOutputTokens": 40
+            },
+            "last": {
+              "totalTokens": 13402,
+              "inputTokens": 13274,
+              "cachedInputTokens": 13056,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 128,
+              "reasoningOutputTokens": 19
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578778223390
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 16384,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 17542,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-13>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778224548
+        },
+        "emittedAtMs": 1578778224548
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 17551,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-13>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778224548
+        },
+        "emittedAtMs": 1578778224558
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 24861,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-14>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'Get-ChildItem -Force | Select-Object Mode,Length,LastWriteTime,Name; Get-ChildItem -Force -Recurse -Directory -Filter .git | Select-Object -ExpandProperty FullName'",
+            "cwd": "<scratch>",
+            "processId": "44830",
+            "source": "unifiedExecStartup",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "Get-ChildItem -Force | Select-Object Mode,Length,LastWriteTime,Name; Get-ChildItem -Force -Recurse -Directory -Filter .git | Select-Object -ExpandProperty FullName"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778231867
+        },
+        "emittedAtMs": 1578778231867
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 24948,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-14>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'Get-ChildItem -Force | Select-Object Mode,Length,LastWriteTime,Name; Get-ChildItem -Force -Recurse -Directory -Filter .git | Select-Object -ExpandProperty FullName'",
+            "cwd": "<scratch>",
+            "processId": "44830",
+            "source": "unifiedExecStartup",
+            "status": "completed",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "Get-ChildItem -Force | Select-Object Mode,Length,LastWriteTime,Name; Get-ChildItem -Force -Recurse -Directory -Filter .git | Select-Object -ExpandProperty FullName"
+              }
+            ],
+            "aggregatedOutput": "\r\nMode   Length LastWriteTime       Name        \r\n----   ------ -------------       ----        \r\nd-----        2020-01-11 17:30:06 field notes \r\nd-----        2020-01-11 17:30:06 src         \r\n-a---- 143    2020-01-11 17:30:06 .fat-g-spike\r\n-a---- 48     2020-01-11 17:30:06 notes-1.txt \r\n-a---- 53     2020-01-11 17:30:06 notes-2.txt \r\n-a---- 52     2020-01-11 17:30:06 notes-3.txt \r\n-a---- 49     2020-01-11 17:30:06 notes-4.txt \r\n-a---- 541    2020-01-11 17:30:06 README.md   \r\n-a---- 87     2020-01-11 17:30:06 sample.txt  \r\n\r\n\r\n",
+            "exitCode": 0,
+            "durationMs": 63
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778231931
+        },
+        "emittedAtMs": 1578778231955
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 25021,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 45250,
+              "inputTokens": 44971,
+              "cachedInputTokens": 36096,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 279,
+              "reasoningOutputTokens": 49
+            },
+            "last": {
+              "totalTokens": 18582,
+              "inputTokens": 18464,
+              "cachedInputTokens": 13056,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 118,
+              "reasoningOutputTokens": 9
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578778232027
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 25021,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 26325,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-15>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778233332
+        },
+        "emittedAtMs": 1578778233332
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 26364,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-15>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778233332
+        },
+        "emittedAtMs": 1578778233371
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 33564,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-16>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command \"rg --files -g '\"'!*.png'\"' -g '\"'!*.jpg'\"' | ForEach-Object { \\\"--- \"'$_\"; Get-Content -Raw -LiteralPath $_ }'",
+            "cwd": "<scratch>",
+            "processId": "16400",
+            "source": "unifiedExecStartup",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "rg --files -g '!*.png' -g '!*.jpg' | ForEach-Object { \"--- $_\"; Get-Content -Raw -LiteralPath $_ }"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778240571
+        },
+        "emittedAtMs": 1578778240571
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 33678,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-16>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command \"rg --files -g '\"'!*.png'\"' -g '\"'!*.jpg'\"' | ForEach-Object { \\\"--- \"'$_\"; Get-Content -Raw -LiteralPath $_ }'",
+            "cwd": "<scratch>",
+            "processId": "16400",
+            "source": "unifiedExecStartup",
+            "status": "completed",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "rg --files -g '!*.png' -g '!*.jpg' | ForEach-Object { \"--- $_\"; Get-Content -Raw -LiteralPath $_ }"
+              }
+            ],
+            "aggregatedOutput": "--- src\\tides.js\r\n// Tide helpers for the harbour office.\n\nconst MINUTES_IN_DAY = 24 * 60;\n\n/** Parses \"HH:MM\" into minutes after midnight. */\nexport function parseTime(text) {\n  const [hours, minutes] = text.split(':').map(Number);\n  return hours * 60 + minutes;\n}\n\n/** The first high tide at or after `now`, both in minutes after midnight. */\nexport function nextHighTide(times, now) {\n  const sorted = [...times].sort((a, b) => a - b);\n  return sorted.find((time) => time >= now) ?? sorted[0] + MINUTES_IN_DAY;\n}\n\n/** A height in metres, with one decimal. */\nexport function formatHeight(metres) {\n  return `${metres.toFixed(1)} m`;\n}\n\n// marker-source-9e2b: nothing follows this line.\n\r\n--- sample.txt\r\nThe lighthouse keeper's cat is called Biscuit, and it sleeps on the warm lamp housing.\n\r\n--- README.md\r\n# Tide tools\n\nSmall helpers the harbour office uses to read its tide table: they parse the times of the day's tides, find the next high tide and print a height in metres.\n\n## How it is used\n\nThe office's noticeboard script loads the helpers each morning, asks for the next high tide after the present time and prints it beside the ferry's departures.\n\n## Notes\n\nThe keeper writes down unusual tides by hand; those notes are kept with the project and are no part of the code.\n\nThe spare key to the tide gauge hangs behind marker-readme-4c1d.\n\r\n--- notes-4.txt\r\nNote four: the spare bulbs are on the top shelf.\n\r\n--- notes-3.txt\r\nNote three: the logbook is kept in the blue drawer.\n\r\n--- notes-2.txt\r\nNote two: the kettle whistles twice before it boils.\n\r\n--- notes-1.txt\r\nNote one: the tide table is pinned by the door.\n\r\n--- field notes\\harbour-log.md\r\n# Harbour log\n\nUnusual tides, as the keeper wrote them down.\n\n- **3 March**: the morning tide came forty minutes early and reached the second step of the east stair.\n- **19 April**: no high tide was seen before noon; the ferry left from the outer quay.\n\n## To check\n\nThe gauge by the green bell reads ten centimetres low since the storm.\n\nThe chalk mark marker-log-6a7f is on the east stair.\n\r\n",
+            "exitCode": 0,
+            "durationMs": 88
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778240660
+        },
+        "emittedAtMs": 1578778240684
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 33696,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 64185,
+              "inputTokens": 63790,
+              "cachedInputTokens": 54272,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 395,
+              "reasoningOutputTokens": 64
+            },
+            "last": {
+              "totalTokens": 18935,
+              "inputTokens": 18819,
+              "cachedInputTokens": 18176,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 116,
+              "reasoningOutputTokens": 15
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578778240702
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 33696,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 36037,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-17>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778243043
+        },
+        "emittedAtMs": 1578778243044
+      }
+    },
+    {
+      "index": 77,
+      "dir": "recv",
+      "ms": 36049,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-17>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778243044
+        },
+        "emittedAtMs": 1578778243055
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 43205,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-18>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'Get-Content -Raw .fat-g-spike; Get-ChildItem -Force -Recurse | Select-Object FullName,Length'",
+            "cwd": "<scratch>",
+            "processId": "88159",
+            "source": "unifiedExecStartup",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "Get-Content -Raw .fat-g-spike; Get-ChildItem -Force -Recurse | Select-Object FullName,Length"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778250211
+        },
+        "emittedAtMs": 1578778250211
+      }
+    },
+    {
+      "index": 79,
+      "dir": "recv",
+      "ms": 43320,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-18>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -Command 'Get-Content -Raw .fat-g-spike; Get-ChildItem -Force -Recurse | Select-Object FullName,Length'",
+            "cwd": "<scratch>",
+            "processId": "88159",
+            "source": "unifiedExecStartup",
+            "status": "completed",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "Get-Content -Raw .fat-g-spike; Get-ChildItem -Force -Recurse | Select-Object FullName,Length"
+              }
+            ],
+            "aggregatedOutput": "Scratch folder made by fat-g's spikes (spikes/m10, spikes/m15, spikes/m16, spikes/m19, spikes/m19b, spikes/m20a, spikes/m20b). Safe to delete.\n\r\n\r\nFullName                                                                     Length\r\n--------                                                                     ------\r\n<scratch>\\field notes                      \r\n<scratch>\\src                              \r\n<scratch>\\.fat-g-spike               143   \r\n<scratch>\\notes-1.txt                48    \r\n<scratch>\\notes-2.txt                53    \r\n<scratch>\\notes-3.txt                52    \r\n<scratch>\\notes-4.txt                49    \r\n<scratch>\\README.md                  541   \r\n<scratch>\\sample.txt                 87    \r\n<scratch>\\field notes\\harbour-log.md 392   \r\n<scratch>\\src\\tides.js               671   \r\n\r\n\r\n",
+            "exitCode": 0,
+            "durationMs": 68
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778250279
+        },
+        "emittedAtMs": 1578778250326
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 43370,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 83775,
+              "inputTokens": 83266,
+              "cachedInputTokens": 72448,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 509,
+              "reasoningOutputTokens": 85
+            },
+            "last": {
+              "totalTokens": 19590,
+              "inputTokens": 19476,
+              "cachedInputTokens": 18176,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 114,
+              "reasoningOutputTokens": 21
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578778250376
+      }
+    },
+    {
+      "index": 81,
+      "dir": "recv",
+      "ms": 43370,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 82,
+      "dir": "recv",
+      "ms": 51455,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-19>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778258461
+        },
+        "emittedAtMs": 1578778258461
+      }
+    },
+    {
+      "index": 83,
+      "dir": "recv",
+      "ms": 51470,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "reasoning",
+            "id": "<item-19>",
+            "summary": [],
+            "content": []
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778258461
+        },
+        "emittedAtMs": 1578778258477
+      }
+    },
+    {
+      "index": 84,
+      "dir": "recv",
+      "ms": 51478,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-20>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "startedAtMs": 1578778258485
+        },
+        "emittedAtMs": 1578778258485
+      }
+    },
+    {
+      "index": 85,
+      "dir": "recv",
+      "ms": 51478,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "Found"
+        },
+        "emittedAtMs": 1578778258485
+      }
+    },
+    {
+      "index": 86,
+      "dir": "recv",
+      "ms": 51659,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " one"
+        },
+        "emittedAtMs": 1578778258666
+      }
+    },
+    {
+      "index": 87,
+      "dir": "recv",
+      "ms": 51659,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " issue"
+        },
+        "emittedAtMs": 1578778258666
+      }
+    },
+    {
+      "index": 88,
+      "dir": "recv",
+      "ms": 51659,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": ":\n\n"
+        },
+        "emittedAtMs": 1578778258666
+      }
+    },
+    {
+      "index": 89,
+      "dir": "recv",
+      "ms": 51797,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "-"
+        },
+        "emittedAtMs": 1578778258803
+      }
+    },
+    {
+      "index": 90,
+      "dir": "recv",
+      "ms": 51797,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578778258803
+      }
+    },
+    {
+      "index": 91,
+      "dir": "recv",
+      "ms": 51797,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "src"
+        },
+        "emittedAtMs": 1578778258803
+      }
+    },
+    {
+      "index": 92,
+      "dir": "recv",
+      "ms": 51978,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "/t"
+        },
+        "emittedAtMs": 1578778258984
+      }
+    },
+    {
+      "index": 93,
+      "dir": "recv",
+      "ms": 51978,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "ides"
+        },
+        "emittedAtMs": 1578778258984
+      }
+    },
+    {
+      "index": 94,
+      "dir": "recv",
+      "ms": 51978,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": ".js"
+        },
+        "emittedAtMs": 1578778258984
+      }
+    },
+    {
+      "index": 95,
+      "dir": "recv",
+      "ms": 51978,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": ":"
+        },
+        "emittedAtMs": 1578778258984
+      }
+    },
+    {
+      "index": 96,
+      "dir": "recv",
+      "ms": 51978,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "12"
+        },
+        "emittedAtMs": 1578778258984
+      }
+    },
+    {
+      "index": 97,
+      "dir": "recv",
+      "ms": 51978,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578778258984
+      }
+    },
+    {
+      "index": 98,
+      "dir": "recv",
+      "ms": 51978,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " —"
+        },
+        "emittedAtMs": 1578778258984
+      }
+    },
+    {
+      "index": 99,
+      "dir": "recv",
+      "ms": 51978,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578778258984
+      }
+    },
+    {
+      "index": 100,
+      "dir": "recv",
+      "ms": 51978,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "next"
+        },
+        "emittedAtMs": 1578778258985
+      }
+    },
+    {
+      "index": 101,
+      "dir": "recv",
+      "ms": 51979,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "High"
+        },
+        "emittedAtMs": 1578778258985
+      }
+    },
+    {
+      "index": 102,
+      "dir": "recv",
+      "ms": 52000,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "T"
+        },
+        "emittedAtMs": 1578778259007
+      }
+    },
+    {
+      "index": 103,
+      "dir": "recv",
+      "ms": 52000,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "ide"
+        },
+        "emittedAtMs": 1578778259007
+      }
+    },
+    {
+      "index": 104,
+      "dir": "recv",
+      "ms": 52000,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "([],"
+        },
+        "emittedAtMs": 1578778259007
+      }
+    },
+    {
+      "index": 105,
+      "dir": "recv",
+      "ms": 52162,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " now"
+        },
+        "emittedAtMs": 1578778259169
+      }
+    },
+    {
+      "index": 106,
+      "dir": "recv",
+      "ms": 52162,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": ")`"
+        },
+        "emittedAtMs": 1578778259169
+      }
+    },
+    {
+      "index": 107,
+      "dir": "recv",
+      "ms": 52162,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " returns"
+        },
+        "emittedAtMs": 1578778259169
+      }
+    },
+    {
+      "index": 108,
+      "dir": "recv",
+      "ms": 52162,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578778259169
+      }
+    },
+    {
+      "index": 109,
+      "dir": "recv",
+      "ms": 52162,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "Na"
+        },
+        "emittedAtMs": 1578778259169
+      }
+    },
+    {
+      "index": 110,
+      "dir": "recv",
+      "ms": 52162,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "N"
+        },
+        "emittedAtMs": 1578778259169
+      }
+    },
+    {
+      "index": 111,
+      "dir": "recv",
+      "ms": 52163,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578778259170
+      }
+    },
+    {
+      "index": 112,
+      "dir": "recv",
+      "ms": 52163,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " (`"
+        },
+        "emittedAtMs": 1578778259170
+      }
+    },
+    {
+      "index": 113,
+      "dir": "recv",
+      "ms": 52272,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "undefined"
+        },
+        "emittedAtMs": 1578778259279
+      }
+    },
+    {
+      "index": 114,
+      "dir": "recv",
+      "ms": 52272,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " +"
+        },
+        "emittedAtMs": 1578778259279
+      }
+    },
+    {
+      "index": 115,
+      "dir": "recv",
+      "ms": 52272,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " MIN"
+        },
+        "emittedAtMs": 1578778259279
+      }
+    },
+    {
+      "index": 116,
+      "dir": "recv",
+      "ms": 52384,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "UTES"
+        },
+        "emittedAtMs": 1578778259391
+      }
+    },
+    {
+      "index": 117,
+      "dir": "recv",
+      "ms": 52384,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "_IN"
+        },
+        "emittedAtMs": 1578778259391
+      }
+    },
+    {
+      "index": 118,
+      "dir": "recv",
+      "ms": 52384,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "_DAY"
+        },
+        "emittedAtMs": 1578778259391
+      }
+    },
+    {
+      "index": 119,
+      "dir": "recv",
+      "ms": 52384,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "`)"
+        },
+        "emittedAtMs": 1578778259391
+      }
+    },
+    {
+      "index": 120,
+      "dir": "recv",
+      "ms": 52384,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " instead"
+        },
+        "emittedAtMs": 1578778259391
+      }
+    },
+    {
+      "index": 121,
+      "dir": "recv",
+      "ms": 52386,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " of"
+        },
+        "emittedAtMs": 1578778259393
+      }
+    },
+    {
+      "index": 122,
+      "dir": "recv",
+      "ms": 52387,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " a"
+        },
+        "emittedAtMs": 1578778259393
+      }
+    },
+    {
+      "index": 123,
+      "dir": "recv",
+      "ms": 52591,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " usable"
+        },
+        "emittedAtMs": 1578778259598
+      }
+    },
+    {
+      "index": 124,
+      "dir": "recv",
+      "ms": 52591,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " result"
+        },
+        "emittedAtMs": 1578778259598
+      }
+    },
+    {
+      "index": 125,
+      "dir": "recv",
+      "ms": 52591,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " or"
+        },
+        "emittedAtMs": 1578778259598
+      }
+    },
+    {
+      "index": 126,
+      "dir": "recv",
+      "ms": 52591,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " a"
+        },
+        "emittedAtMs": 1578778259598
+      }
+    },
+    {
+      "index": 127,
+      "dir": "recv",
+      "ms": 52591,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " clear"
+        },
+        "emittedAtMs": 1578778259598
+      }
+    },
+    {
+      "index": 128,
+      "dir": "recv",
+      "ms": 52591,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " error"
+        },
+        "emittedAtMs": 1578778259598
+      }
+    },
+    {
+      "index": 129,
+      "dir": "recv",
+      "ms": 52592,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578778259599
+      }
+    },
+    {
+      "index": 130,
+      "dir": "recv",
+      "ms": 52592,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " Validate"
+        },
+        "emittedAtMs": 1578778259599
+      }
+    },
+    {
+      "index": 131,
+      "dir": "recv",
+      "ms": 52593,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " that"
+        },
+        "emittedAtMs": 1578778259599
+      }
+    },
+    {
+      "index": 132,
+      "dir": "recv",
+      "ms": 52693,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578778259700
+      }
+    },
+    {
+      "index": 133,
+      "dir": "recv",
+      "ms": 52693,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "times"
+        },
+        "emittedAtMs": 1578778259700
+      }
+    },
+    {
+      "index": 134,
+      "dir": "recv",
+      "ms": 52693,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578778259700
+      }
+    },
+    {
+      "index": 135,
+      "dir": "recv",
+      "ms": 52693,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " is"
+        },
+        "emittedAtMs": 1578778259700
+      }
+    },
+    {
+      "index": 136,
+      "dir": "recv",
+      "ms": 52695,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " non"
+        },
+        "emittedAtMs": 1578778259701
+      }
+    },
+    {
+      "index": 137,
+      "dir": "recv",
+      "ms": 52695,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "-empty"
+        },
+        "emittedAtMs": 1578778259701
+      }
+    },
+    {
+      "index": 138,
+      "dir": "recv",
+      "ms": 52695,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578778259701
+      }
+    },
+    {
+      "index": 139,
+      "dir": "recv",
+      "ms": 52695,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " throw"
+        },
+        "emittedAtMs": 1578778259701
+      }
+    },
+    {
+      "index": 140,
+      "dir": "recv",
+      "ms": 52887,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " a"
+        },
+        "emittedAtMs": 1578778259894
+      }
+    },
+    {
+      "index": 141,
+      "dir": "recv",
+      "ms": 52889,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " descriptive"
+        },
+        "emittedAtMs": 1578778259895
+      }
+    },
+    {
+      "index": 142,
+      "dir": "recv",
+      "ms": 52889,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " error"
+        },
+        "emittedAtMs": 1578778259896
+      }
+    },
+    {
+      "index": 143,
+      "dir": "recv",
+      "ms": 52889,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578778259896
+      }
+    },
+    {
+      "index": 144,
+      "dir": "recv",
+      "ms": 52889,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " or"
+        },
+        "emittedAtMs": 1578778259896
+      }
+    },
+    {
+      "index": 145,
+      "dir": "recv",
+      "ms": 52889,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " define"
+        },
+        "emittedAtMs": 1578778259896
+      }
+    },
+    {
+      "index": 146,
+      "dir": "recv",
+      "ms": 53088,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " an"
+        },
+        "emittedAtMs": 1578778260095
+      }
+    },
+    {
+      "index": 147,
+      "dir": "recv",
+      "ms": 53224,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " explicit"
+        },
+        "emittedAtMs": 1578778260231
+      }
+    },
+    {
+      "index": 148,
+      "dir": "recv",
+      "ms": 53224,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " empty"
+        },
+        "emittedAtMs": 1578778260231
+      }
+    },
+    {
+      "index": 149,
+      "dir": "recv",
+      "ms": 53224,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "-table"
+        },
+        "emittedAtMs": 1578778260231
+      }
+    },
+    {
+      "index": 150,
+      "dir": "recv",
+      "ms": 53224,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " return"
+        },
+        "emittedAtMs": 1578778260231
+      }
+    },
+    {
+      "index": 151,
+      "dir": "recv",
+      "ms": 53405,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " value"
+        },
+        "emittedAtMs": 1578778260412
+      }
+    },
+    {
+      "index": 152,
+      "dir": "recv",
+      "ms": 53405,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": ".\n\n"
+        },
+        "emittedAtMs": 1578778260412
+      }
+    },
+    {
+      "index": 153,
+      "dir": "recv",
+      "ms": 53405,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "There"
+        },
+        "emittedAtMs": 1578778260412
+      }
+    },
+    {
+      "index": 154,
+      "dir": "recv",
+      "ms": 53579,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " is"
+        },
+        "emittedAtMs": 1578778260585
+      }
+    },
+    {
+      "index": 155,
+      "dir": "recv",
+      "ms": 53579,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " no"
+        },
+        "emittedAtMs": 1578778260585
+      }
+    },
+    {
+      "index": 156,
+      "dir": "recv",
+      "ms": 53579,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " Git"
+        },
+        "emittedAtMs": 1578778260585
+      }
+    },
+    {
+      "index": 157,
+      "dir": "recv",
+      "ms": 53579,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " repository"
+        },
+        "emittedAtMs": 1578778260585
+      }
+    },
+    {
+      "index": 158,
+      "dir": "recv",
+      "ms": 53580,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " or"
+        },
+        "emittedAtMs": 1578778260587
+      }
+    },
+    {
+      "index": 159,
+      "dir": "recv",
+      "ms": 53580,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " diff"
+        },
+        "emittedAtMs": 1578778260587
+      }
+    },
+    {
+      "index": 160,
+      "dir": "recv",
+      "ms": 53733,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " in"
+        },
+        "emittedAtMs": 1578778260739
+      }
+    },
+    {
+      "index": 161,
+      "dir": "recv",
+      "ms": 53733,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " this"
+        },
+        "emittedAtMs": 1578778260739
+      }
+    },
+    {
+      "index": 162,
+      "dir": "recv",
+      "ms": 53733,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " workspace"
+        },
+        "emittedAtMs": 1578778260739
+      }
+    },
+    {
+      "index": 163,
+      "dir": "recv",
+      "ms": 53733,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578778260740
+      }
+    },
+    {
+      "index": 164,
+      "dir": "recv",
+      "ms": 53733,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " so"
+        },
+        "emittedAtMs": 1578778260740
+      }
+    },
+    {
+      "index": 165,
+      "dir": "recv",
+      "ms": 53733,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " this"
+        },
+        "emittedAtMs": 1578778260740
+      }
+    },
+    {
+      "index": 166,
+      "dir": "recv",
+      "ms": 53734,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " review"
+        },
+        "emittedAtMs": 1578778260740
+      }
+    },
+    {
+      "index": 167,
+      "dir": "recv",
+      "ms": 53735,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " covers"
+        },
+        "emittedAtMs": 1578778260741
+      }
+    },
+    {
+      "index": 168,
+      "dir": "recv",
+      "ms": 53848,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578778260854
+      }
+    },
+    {
+      "index": 169,
+      "dir": "recv",
+      "ms": 53848,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " current"
+        },
+        "emittedAtMs": 1578778260854
+      }
+    },
+    {
+      "index": 170,
+      "dir": "recv",
+      "ms": 53848,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " source"
+        },
+        "emittedAtMs": 1578778260854
+      }
+    },
+    {
+      "index": 171,
+      "dir": "recv",
+      "ms": 53849,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " rather"
+        },
+        "emittedAtMs": 1578778260855
+      }
+    },
+    {
+      "index": 172,
+      "dir": "recv",
+      "ms": 53849,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " than"
+        },
+        "emittedAtMs": 1578778260855
+      }
+    },
+    {
+      "index": 173,
+      "dir": "recv",
+      "ms": 53849,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " a"
+        },
+        "emittedAtMs": 1578778260855
+      }
+    },
+    {
+      "index": 174,
+      "dir": "recv",
+      "ms": 53849,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " change"
+        },
+        "emittedAtMs": 1578778260855
+      }
+    },
+    {
+      "index": 175,
+      "dir": "recv",
+      "ms": 53849,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": " set"
+        },
+        "emittedAtMs": 1578778260855
+      }
+    },
+    {
+      "index": 176,
+      "dir": "recv",
+      "ms": 53849,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "itemId": "<item-20>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578778260856
+      }
+    },
+    {
+      "index": 177,
+      "dir": "recv",
+      "ms": 53908,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-20>",
+            "text": "Found one issue:\n\n- `src/tides.js:12` — `nextHighTide([], now)` returns `NaN` (`undefined + MINUTES_IN_DAY`) instead of a usable result or a clear error. Validate that `times` is non-empty and throw a descriptive error, or define an explicit empty-table return value.\n\nThere is no Git repository or diff in this workspace, so this review covers the current source rather than a change set.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "completedAtMs": 1578778260901
+        },
+        "emittedAtMs": 1578778260914
+      }
+    },
+    {
+      "index": 178,
+      "dir": "recv",
+      "ms": 53938,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-8>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 104035,
+              "inputTokens": 103221,
+              "cachedInputTokens": 91648,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 814,
+              "reasoningOutputTokens": 292
+            },
+            "last": {
+              "totalTokens": 20260,
+              "inputTokens": 19955,
+              "cachedInputTokens": 19200,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 305,
+              "reasoningOutputTokens": 207
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578778260944
+      }
+    },
+    {
+      "index": 179,
+      "dir": "recv",
+      "ms": 53938,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 180,
+      "dir": "recv",
+      "ms": 53954,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578778260961
+      }
+    },
+    {
+      "index": 181,
+      "dir": "recv",
+      "ms": 53954,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-8>",
+            "rootTurnId": "<turn-8>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-20>",
+                "text": "Found one issue:\n\n- `src/tides.js:12` — `nextHighTide([], now)` returns `NaN` (`undefined + MINUTES_IN_DAY`) instead of a usable result or a clear error. Validate that `times` is non-empty and throw a descriptive error, or define an explicit empty-table return value.\n\nThere is no Git repository or diff in this workspace, so this review covers the current source rather than a change set.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578778214,
+            "completedAt": 1578778260,
+            "durationMs": 46404
+          }
+        },
+        "emittedAtMs": 1578778260961
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1424,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2825,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 56822,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "codex-code-mode-host.exe",
+        "conhost.exe"
+      ],
+      "alive": 6
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "item/completed",
+        "item": "commandExecution",
+        "bytes": 23601
+      },
+      {
+        "method": "item/completed",
+        "item": "commandExecution",
+        "bytes": 3014
+      },
+      {
+        "method": "item/completed",
+        "item": "commandExecution",
+        "bytes": 2204
+      },
+      {
+        "method": "item/completed",
+        "item": "commandExecution",
+        "bytes": 1538
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1535
+      }
+    ],
+    "longStringsCut": []
+  }
+}

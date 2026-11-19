@@ -1,0 +1,2809 @@
+{
+  "_fixture": {
+    "source": "M19 spike m19-k2.mjs, run against the installed CLI on the maintainer's machine, in a scratch configuration folder",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "get_settings documents (key names only)",
+      "a reply's deltas rewritten as the one text they are, so that a path written across several holds no folder and no name; a delta that lay wholly inside one is left empty"
+    ],
+    "omitted": [
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"uuid\":75,\"message\":3,\"request\":3,\"tool-use\":2,\"worker\":1,\"mcp-server\":5}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "claude",
+    "version": "2.1.268",
+    "launchKind": "native"
+  },
+  "date": "2020-01-06T22:45:18.061Z",
+  "scenario": {
+    "id": "m19-t3",
+    "title": "K2: T3, a sub-agent, with partial messages",
+    "successCondition": "A worker's start and end, and which of its frames came as stream events"
+  },
+  "run": {
+    "id": "claude-m19-t3-6",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "p1",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 75,
+    "turnsSpent": 1,
+    "exit": {
+      "code": 0,
+      "ms": 15304
+    },
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 3296,
+      "recorded": [
+        {
+          "name": "claude.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "otherFoldersUnchanged": {
+      "other": true,
+      "third": true,
+      "outside": true
+    },
+    "notes": {
+      "endStatus": "success",
+      "isError": false,
+      "reference": {
+        "arrived": true,
+        "msAfterInit": 1193,
+        "beforeTheFirstTextDelta": true,
+        "msBeforeTheFirstModelAssistantFrame": 460,
+        "sessionIdOnIt": true,
+        "sameAsInit": true
+      },
+      "replies": [
+        {
+          "alias": "r1",
+          "side": "own",
+          "model": "claude-sonnet-5",
+          "startIndex": 8,
+          "uuidOnEvents": true,
+          "stopReason": "tool_use",
+          "stopped": true,
+          "blocks": [
+            {
+              "index": 0,
+              "type": "text",
+              "deltaTypes": {
+                "text_delta": 7
+              },
+              "text": {
+                "count": 7,
+                "units": {
+                  "count": 7,
+                  "min": 1,
+                  "median": 5,
+                  "p95": 16,
+                  "max": 16,
+                  "total": 49
+                },
+                "gapMs": {
+                  "count": 6,
+                  "min": 0,
+                  "median": 0,
+                  "p95": 445,
+                  "max": 445,
+                  "total": 446
+                },
+                "spanMs": 446,
+                "unitsPerSecond": 109.9,
+                "firstAtMs": 3212,
+                "lastAtMs": 3658
+              },
+              "stopped": true
+            },
+            {
+              "index": 1,
+              "type": "tool_use",
+              "deltaTypes": {
+                "input_json_delta": 28
+              },
+              "text": {
+                "count": 28
+              },
+              "stopped": true
+            }
+          ],
+          "assistantFrames": [
+            {
+              "index": 17,
+              "ms": 3672,
+              "side": "own",
+              "model": "claude-sonnet-5",
+              "blocks": [
+                "text"
+              ],
+              "textUnits": 49,
+              "uuid": true,
+              "stop": null,
+              "matchedBlock": 0,
+              "blockTypeMatches": true,
+              "afterTheBlocksLastDelta": true,
+              "beforeTheBlocksStop": true,
+              "msAfterTheLastDelta": 14,
+              "textEqualsTheDeltas": true
+            },
+            {
+              "index": 48,
+              "ms": 5419,
+              "side": "own",
+              "model": "claude-sonnet-5",
+              "blocks": [
+                "tool_use"
+              ],
+              "textUnits": 0,
+              "uuid": true,
+              "stop": null,
+              "matchedBlock": 1,
+              "blockTypeMatches": true,
+              "afterTheBlocksLastDelta": true,
+              "beforeTheBlocksStop": true,
+              "msAfterTheLastDelta": 1,
+              "textEqualsTheDeltas": null
+            }
+          ],
+          "framesPerBlock": 1
+        },
+        {
+          "alias": "r2",
+          "side": "own",
+          "model": "claude-sonnet-5",
+          "startIndex": 61,
+          "uuidOnEvents": true,
+          "stopReason": "end_turn",
+          "stopped": true,
+          "blocks": [
+            {
+              "index": 0,
+              "type": "text",
+              "deltaTypes": {
+                "text_delta": 8
+              },
+              "text": {
+                "count": 8,
+                "units": {
+                  "count": 8,
+                  "min": 2,
+                  "median": 17,
+                  "p95": 23,
+                  "max": 23,
+                  "total": 100
+                },
+                "gapMs": {
+                  "count": 7,
+                  "min": 0,
+                  "median": 37,
+                  "p95": 238,
+                  "max": 238,
+                  "total": 379
+                },
+                "spanMs": 379,
+                "unitsPerSecond": 263.9,
+                "firstAtMs": 11613,
+                "lastAtMs": 11992
+              },
+              "stopped": true
+            }
+          ],
+          "assistantFrames": [
+            {
+              "index": 71,
+              "ms": 11995,
+              "side": "own",
+              "model": "claude-sonnet-5",
+              "blocks": [
+                "text"
+              ],
+              "textUnits": 100,
+              "uuid": true,
+              "stop": null,
+              "matchedBlock": 0,
+              "blockTypeMatches": true,
+              "afterTheBlocksLastDelta": true,
+              "beforeTheBlocksStop": true,
+              "msAfterTheLastDelta": 3,
+              "textEqualsTheDeltas": true
+            }
+          ],
+          "framesPerBlock": 1
+        }
+      ],
+      "unmatchedAssistantFrames": [
+        {
+          "index": 55,
+          "ms": 8068,
+          "side": "worker",
+          "model": "claude-sonnet-5",
+          "blocks": [
+            "tool_use"
+          ],
+          "textUnits": 0,
+          "uuid": true,
+          "stop": null,
+          "messageIdSeen": true
+        }
+      ],
+      "ownEventsBeforeAnyStart": 0,
+      "eventsOfUnknownType": {},
+      "streamEvents": {
+        "own": 55,
+        "worker": 0
+      },
+      "init": {
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read"
+        ]
+      },
+      "result": {
+        "subtype": "success",
+        "isError": false,
+        "terminal": "completed",
+        "numTurns": 2
+      },
+      "lifecycle": [
+        {
+          "state": "queued",
+          "namesOurId": true
+        },
+        {
+          "state": "started",
+          "namesOurId": true
+        },
+        {
+          "state": "completed",
+          "namesOurId": true
+        }
+      ],
+      "typeCounts": {
+        "command_lifecycle": 3,
+        "system/init": 1,
+        "system/status": 2,
+        "rate_limit_event": 1,
+        "stream_event": 55,
+        "assistant": 4,
+        "system/task_started": 1,
+        "user": 3,
+        "system/task_progress": 1,
+        "system/task_updated": 1,
+        "system/task_notification": 1,
+        "result": 1
+      },
+      "requests": 0,
+      "droppedDeltas": {
+        "requested": true,
+        "dropped": 0,
+        "byType": {},
+        "kept": [
+          "stream_event"
+        ]
+      },
+      "outline": [
+        {
+          "index": 2,
+          "ms": 1988,
+          "send": "user",
+          "uuid": true
+        },
+        {
+          "index": 3,
+          "ms": 1992,
+          "recv": "command_lifecycle",
+          "bytes": 197,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "queued"
+        },
+        {
+          "index": 4,
+          "ms": 1997,
+          "recv": "command_lifecycle",
+          "bytes": 198,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "started"
+        },
+        {
+          "index": 5,
+          "ms": 2019,
+          "recv": "system/init",
+          "bytes": 1570,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-86>__batch",
+            "mcp__<mcp-server-86>__create",
+            "mcp__<mcp-server-86>__delete",
+            "mcp__<mcp-server-86>__export",
+            "mcp__<mcp-server-86>__guide",
+            "mcp__<mcp-server-86>__query",
+            "mcp__<mcp-server-86>__read",
+            "mcp__<mcp-server-86>__update"
+          ]
+        },
+        {
+          "index": 6,
+          "ms": 2021,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 7,
+          "ms": 2540,
+          "recv": "rate_limit_event",
+          "bytes": 434,
+          "session": "s1"
+        },
+        {
+          "index": 17,
+          "ms": 3672,
+          "recv": "assistant",
+          "bytes": 798,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 49
+        },
+        {
+          "index": 48,
+          "ms": 5419,
+          "recv": "assistant",
+          "bytes": 1499,
+          "session": "s1",
+          "blocks": [
+            "tool_use:Agent"
+          ],
+          "stop": null
+        },
+        {
+          "index": 50,
+          "ms": 5429,
+          "recv": "system/task_started",
+          "bytes": 588,
+          "session": "s1",
+          "task": "w1",
+          "backgrounded": false,
+          "taskType": "local_agent",
+          "agent": "general-purpose"
+        },
+        {
+          "index": 51,
+          "ms": 5431,
+          "recv": "user",
+          "bytes": 568,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "text"
+          ]
+        },
+        {
+          "index": 54,
+          "ms": 8057,
+          "recv": "system/task_progress",
+          "bytes": 375,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 55,
+          "ms": 8068,
+          "recv": "assistant",
+          "bytes": 1021,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 56,
+          "ms": 8076,
+          "recv": "user",
+          "bytes": 467,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 57,
+          "ms": 10141,
+          "recv": "system/task_updated",
+          "bytes": 226,
+          "session": "s1",
+          "task": "w1",
+          "status": "completed",
+          "patchKeys": [
+            "end_time",
+            "status"
+          ]
+        },
+        {
+          "index": 58,
+          "ms": 10141,
+          "recv": "system/task_notification",
+          "bytes": 598,
+          "session": "s1",
+          "task": "w1",
+          "status": "completed",
+          "hasSummary": true
+        },
+        {
+          "index": 59,
+          "ms": 10143,
+          "recv": "user",
+          "bytes": 2012,
+          "session": "s1",
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 60,
+          "ms": 10145,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 71,
+          "ms": 11995,
+          "recv": "assistant",
+          "bytes": 849,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 100
+        },
+        {
+          "index": 75,
+          "ms": 12016,
+          "recv": "result",
+          "bytes": 2378,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 2,
+          "resultIndex": 0,
+          "queuedTurnCount": 0,
+          "resultChars": 100
+        },
+        {
+          "index": 76,
+          "ms": 12017,
+          "recv": "command_lifecycle",
+          "bytes": 200,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "completed"
+        }
+      ],
+      "workerEvents": [
+        {
+          "kind": "worker-start",
+          "source": null,
+          "status": null
+        },
+        {
+          "kind": "worker-end",
+          "source": "task_updated",
+          "status": "completed"
+        },
+        {
+          "kind": "worker-end",
+          "source": null,
+          "status": "completed"
+        }
+      ],
+      "ownRepliesWithoutAnAssistantFrame": []
+    }
+  },
+  "launch": {
+    "args": [
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--input-format",
+      "stream-json",
+      "--setting-sources",
+      "user,project,local",
+      "--permission-mode",
+      "default",
+      "--permission-prompt-tool",
+      "stdio",
+      "--tools",
+      "Read,Glob,Grep,Agent",
+      "--model",
+      "sonnet",
+      "--effort",
+      "low",
+      "--disable-slash-commands",
+      "--include-partial-messages"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "subtype": "initialize"
+    },
+    "replyIndex": 1,
+    "ok": true
+  },
+  "toolPermissions": {
+    "readTools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "scenarioTools": [
+      "Agent"
+    ],
+    "preApproved": [],
+    "permissionMode": "default",
+    "permissionRequestsTo": "the spike (--permission-prompt-tool stdio)",
+    "policy": "every can_use_tool request is denied, as the app will deny it (M16, C22); any other request gets an error reply"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": false
+      }
+    ],
+    "set": [
+      "CLAUDE_CONFIG_DIR",
+      "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "stream_event"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 17,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-1",
+        "request": {
+          "subtype": "initialize"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 438,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-1",
+          "response": {
+            "commands": [],
+            "agents": [
+              {
+                "name": "claude",
+                "description": "Catch-all for any task that doesn't fit a more specific agent. FleetView's default when no agent name is typed."
+              },
+              {
+                "name": "Explore",
+                "description": "Fast read-only search agent for locating code. Use it to find files by pattern (eg. \"src/components/**/*.tsx\"), grep for symbols or keywords (eg. \"API endpoints\"), or answer \"where is X defined / which files reference Y.\" Do NOT use it for code review, design-doc auditing, cross-file consistency checks, or open-ended analysis — it reads excerpts rather than whole files and will miss content past its read window. When calling, specify search breadth: \"quick\" for a single targeted lookup, \"medium\" for moderate exploration, or \"very thorough\" to search across multiple locations and naming conventions.",
+                "model": "inherit"
+              },
+              {
+                "name": "general-purpose",
+                "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you."
+              },
+              {
+                "name": "Plan",
+                "description": "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs.",
+                "model": "inherit"
+              },
+              {
+                "name": "statusline-setup",
+                "description": "Use this agent to configure the user's Claude Code status line setting.",
+                "model": "sonnet"
+              }
+            ],
+            "output_style": "default",
+            "available_output_styles": [
+              "default",
+              "Proactive",
+              "Concise",
+              "Explanatory",
+              "Learning"
+            ],
+            "user_output_styles_dir": "<scratch>\\output-styles",
+            "models": [
+              {
+                "value": "default",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Default (recommended)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "opus[1m]",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Opus (1M context)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "claude-fable-5-1[1m]",
+                "resolvedModel": "claude-fable-5-1",
+                "displayName": "Fable",
+                "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "sonnet",
+                "resolvedModel": "claude-sonnet-5",
+                "displayName": "Sonnet",
+                "description": "Sonnet 5 · Efficient for routine tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "haiku",
+                "resolvedModel": "claude-haiku-4-5-20251001",
+                "displayName": "Haiku",
+                "description": "Haiku 4.5 · Fastest for quick answers"
+              }
+            ],
+            "account": "<account>",
+            "pid": 98564,
+            "current_permission_mode": "default",
+            "analytics_disabled": false,
+            "remote_control_auto_enable": false,
+            "remote_control_available": true,
+            "remote_control_auto_on_by_default": false,
+            "ide_rc_auto_enable_gate": true,
+            "fast_mode_state": "off",
+            "fast_mode_disabled_reason": "sdk_opt_in_required",
+            "session_state": "idle"
+          },
+          "pending_permission_requests": [],
+          "pending_user_dialog_requests": []
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1988,
+      "frame": {
+        "type": "user",
+        "uuid": "<uuid-2>",
+        "message": {
+          "role": "user",
+          "content": "Use the Agent tool to hand this small task to a sub-agent: read notes-3.txt and report its contents. Do not read the file yourself. When the sub-agent is done, tell me in one sentence what it found."
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 1992,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "queued",
+        "uuid": "<uuid-3>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 1997,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "started",
+        "uuid": "<uuid-4>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 2019,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read",
+          "mcp__<mcp-server-86>__batch",
+          "mcp__<mcp-server-86>__create",
+          "mcp__<mcp-server-86>__delete",
+          "mcp__<mcp-server-86>__export",
+          "mcp__<mcp-server-86>__guide",
+          "mcp__<mcp-server-86>__query",
+          "mcp__<mcp-server-86>__read",
+          "mcp__<mcp-server-86>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-87>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-88>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-89>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-90>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "slash_commands": [],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-5>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2021,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-6>"
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 2540,
+      "frame": {
+        "type": "rate_limit_event",
+        "rate_limit_info": {
+          "_keys": [
+            "isUsingOverage",
+            "overageDisabledReason",
+            "overageStatus",
+            "rateLimitType",
+            "resetsAt",
+            "status",
+            "unifiedWindows"
+          ]
+        },
+        "uuid": "<uuid-7>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 3212,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-8>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 2029,
+              "cache_read_input_tokens": 16090,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 2029
+              },
+              "output_tokens": 3,
+              "service_tier": "standard",
+              "inference_geo": "not_available"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-9>",
+        "ttft_ms": 1183,
+        "user_message_uuid": "<uuid-2>",
+        "user_message_uuids": [
+          "<uuid-2>"
+        ]
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 3212,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "text",
+            "text": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-10>"
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 3212,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "I'll"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-11>"
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 3657,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " have"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-12>"
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 3657,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " an"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-13>"
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 3657,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " agent read"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-14>"
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 3658,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " the file"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-15>"
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 3658,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " and report back"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-16>"
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 3658,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-17>"
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 3672,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-8>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "I'll have an agent read the file and report back."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 2029,
+            "cache_read_input_tokens": 16090,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2029
+            },
+            "output_tokens": 3,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-18>",
+        "timestamp": "2020-01-06T22:45:04.896Z",
+        "request_id": "<request-19>"
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 3672,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-20>"
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 3672,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 1,
+          "content_block": {
+            "type": "tool_use",
+            "id": "<tool-use-21>",
+            "name": "Agent",
+            "input": {},
+            "caller": {
+              "type": "direct"
+            }
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-22>"
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 3672,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-23>"
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 3772,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "{\"description\": \"Read notes-"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-24>"
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 3826,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "3.txt contents"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-25>"
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 4109,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\", \"subagent_type\": \"general"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-26>"
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 4109,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "-"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-27>"
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 4109,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "purpose"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-28>"
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 4232,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\", \"prompt\": \"Read the file not"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-29>"
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 4283,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "es-3.txt located in"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-30>"
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 4337,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " the working directory <scratch>"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-31>"
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 4383,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-32>"
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 4431,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-33>"
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 4606,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-34>"
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 4606,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-35>"
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 4606,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-36>"
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 4630,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-37>"
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 4683,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-38>"
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 4729,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-39>"
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 4780,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-40>"
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 4828,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-41>"
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 4878,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " (try"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-42>"
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 4928,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " that"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-43>"
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 4977,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " path directly,"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-44>"
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 5028,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " or search"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-45>"
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 5418,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " for it if not"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-46>"
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 5418,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " found there"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-47>"
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 5418,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "). Report back its"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-48>"
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 5418,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " full contents verbatim."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-49>"
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 5418,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\"}"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-50>"
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 5419,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-8>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-21>",
+              "name": "Agent",
+              "input": {
+                "description": "Read notes-3.txt contents",
+                "subagent_type": "general-purpose",
+                "prompt": "Read the file notes-3.txt located in the working directory <scratch> (try that path directly, or search for it if not found there). Report back its full contents verbatim."
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 2029,
+            "cache_read_input_tokens": 16090,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2029
+            },
+            "output_tokens": 3,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-51>",
+        "timestamp": "2020-01-06T22:45:06.656Z",
+        "request_id": "<request-19>",
+        "wire_tool_inputs": {
+          "<tool-use-21>": {
+            "description": "Read notes-3.txt contents",
+            "subagent_type": "general-purpose",
+            "prompt": "Read the file notes-3.txt located in the working directory <scratch> (try that path directly, or search for it if not found there). Report back its full contents verbatim."
+          }
+        }
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 5426,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 1
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-52>"
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 5429,
+      "frame": {
+        "type": "system",
+        "subtype": "task_started",
+        "task_id": "<worker-53>",
+        "tool_use_id": "<tool-use-21>",
+        "description": "Read notes-3.txt contents",
+        "subagent_type": "general-purpose",
+        "is_backgrounded": false,
+        "spawn_depth": 1,
+        "task_type": "local_agent",
+        "prompt": "Read the file notes-3.txt located in the working directory <scratch> (try that path directly, or search for it if not found there). Report back its full contents verbatim.",
+        "uuid": "<uuid-54>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 5431,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Read the file notes-3.txt located in the working directory <scratch> (try that path directly, or search for it if not found there). Report back its full contents verbatim."
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-21>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-55>",
+        "timestamp": "2020-01-06T22:45:06.662Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes-3.txt contents"
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 5437,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "tool_use",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 2029,
+            "cache_read_input_tokens": 16090,
+            "output_tokens": 200,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 200,
+                "cache_read_input_tokens": 16090,
+                "cache_creation_input_tokens": 2029,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 2029
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-56>"
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 5437,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-57>"
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 8057,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-53>",
+        "tool_use_id": "<tool-use-21>",
+        "description": "Reading notes-3.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 8911,
+          "tool_uses": 1,
+          "duration_ms": 2635
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-58>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 8068,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-59>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-60>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\notes-3.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 8886,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 8886,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 17,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-21>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-61>",
+        "timestamp": "2020-01-06T22:45:09.294Z",
+        "request_id": "<request-62>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes-3.txt contents"
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 8076,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-60>",
+              "type": "tool_result",
+              "content": "1\tNote three: the logbook is kept in the blue drawer.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-21>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-63>",
+        "timestamp": "2020-01-06T22:45:09.313Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes-3.txt contents"
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 10141,
+      "frame": {
+        "type": "system",
+        "subtype": "task_updated",
+        "task_id": "<worker-53>",
+        "patch": {
+          "status": "completed",
+          "end_time": 1578350711378
+        },
+        "uuid": "<uuid-64>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 10141,
+      "frame": {
+        "type": "system",
+        "subtype": "task_notification",
+        "task_id": "<worker-53>",
+        "tool_use_id": "<tool-use-21>",
+        "status": "completed",
+        "output_file": "<path>\\AppData\\Local\\Temp\\claude\\<scratch>\\<session-1>\\tasks\\<worker-53>.output",
+        "summary": "The contents of notes-3.txt:\n\n```\nNote three: the logbook is kept in the blue drawer.\n```",
+        "usage": {
+          "total_tokens": 10501,
+          "tool_uses": 1,
+          "duration_ms": 4718
+        },
+        "uuid": "<uuid-65>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 10143,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-21>",
+              "type": "tool_result",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "The contents of notes-3.txt:\n\n```\nNote three: the logbook is kept in the blue drawer.\n```"
+                },
+                {
+                  "type": "text",
+                  "text": "agentId: <worker-53> (use SendMessage with to: '<worker-53>', summary: '<5-10 word recap>' to continue this agent)\n<usage>subagent_tokens: 10499\ntool_uses: 1\nduration_ms: 4719</usage>"
+                }
+              ]
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-66>",
+        "timestamp": "2020-01-06T22:45:11.380Z",
+        "tool_use_result": {
+          "status": "completed",
+          "prompt": "Read the file notes-3.txt located in the working directory <scratch> (try that path directly, or search for it if not found there). Report back its full contents verbatim.",
+          "agentId": "<worker-53>",
+          "agentType": "general-purpose",
+          "harnessNoteCount": 0,
+          "harnessTailCount": 0,
+          "harnessSectionHash": "741ec1911ff04202",
+          "content": [
+            {
+              "type": "text",
+              "text": "The contents of notes-3.txt:\n\n```\nNote three: the logbook is kept in the blue drawer.\n```"
+            }
+          ],
+          "resolvedModel": "claude-sonnet-5",
+          "totalDurationMs": 4719,
+          "totalTokens": 10499,
+          "totalToolUseCount": 1,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 1573,
+            "cache_read_input_tokens": 8886,
+            "output_tokens": 38,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 1573
+            },
+            "inference_geo": "not_available",
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 38,
+                "cache_read_input_tokens": 8886,
+                "cache_creation_input_tokens": 1573,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 1573,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "type": "message"
+              }
+            ],
+            "speed": "standard"
+          },
+          "toolStats": {
+            "readCount": 1,
+            "searchCount": 0,
+            "bashCount": 0,
+            "editFileCount": 0,
+            "linesAdded": 0,
+            "linesRemoved": 0,
+            "otherToolCount": 0
+          }
+        }
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 10145,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-67>"
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 11613,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-68>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 378,
+              "cache_read_input_tokens": 18119,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 378
+              },
+              "output_tokens": 1,
+              "service_tier": "standard",
+              "inference_geo": "not_available"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-69>",
+        "ttft_ms": 1464
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 11613,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "text",
+            "text": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-70>"
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 11613,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "The"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-71>"
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 11851,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " s"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-72>"
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 11851,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ub-agent found that"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-73>"
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 11851,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " notes-3.txt cont"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-74>"
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 11851,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ains:"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-75>"
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 11903,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " \"Note three: the logb"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-76>"
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 11955,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ook is kept in the blue"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-77>"
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 11992,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " drawer.\""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-78>"
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 11995,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-68>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "The sub-agent found that notes-3.txt contains: \"Note three: the logbook is kept in the blue drawer.\""
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 378,
+            "cache_read_input_tokens": 18119,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 378
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-79>",
+        "timestamp": "2020-01-06T22:45:13.232Z",
+        "request_id": "<request-80>"
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 11995,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-81>"
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 12004,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "end_turn",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 378,
+            "cache_read_input_tokens": 18119,
+            "output_tokens": 40,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 40,
+                "cache_read_input_tokens": 18119,
+                "cache_creation_input_tokens": 378,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 378
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-82>"
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 12004,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-83>"
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 12016,
+      "frame": {
+        "duration_api_ms": 10511,
+        "stop_reason": "end_turn",
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.0490675,
+        "usage": {
+          "input_tokens": 4,
+          "cache_creation_input_tokens": 2407,
+          "cache_read_input_tokens": 34209,
+          "output_tokens": 240,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 2407,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 40,
+              "cache_read_input_tokens": 18119,
+              "cache_creation_input_tokens": 378,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 378
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 942,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0010170000000000001,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 8,
+            "outputTokens": 364,
+            "cacheReadInputTokens": 43095,
+            "cacheCreationInputTokens": 12866,
+            "webSearchRequests": 0,
+            "costUSD": 0.048050499999999996,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [],
+        "terminal_reason": "completed",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 1,
+          "requested": {
+            "background": 0,
+            "foreground": 0,
+            "unset": 1
+          },
+          "started_in_background": 0,
+          "max_depth": 1,
+          "spawned_by_subagents": 0,
+          "completed": 1,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {
+            "general-purpose": 1
+          }
+        },
+        "is_error": false,
+        "num_turns": 2,
+        "subtype": "success",
+        "api_error_status": null,
+        "result": "The sub-agent found that notes-3.txt contains: \"Note three: the logbook is kept in the blue drawer.\"",
+        "ttft_ms": 1659,
+        "type": "result",
+        "duration_ms": 10016,
+        "uuid": "<uuid-84>",
+        "ttft_stream_ms": 1212,
+        "time_to_request_ms": 29,
+        "first_content_frame_ms": 1212,
+        "user_message_uuid": "<uuid-2>",
+        "user_message_uuids": [
+          "<uuid-2>"
+        ],
+        "request_sent_wall_ms": 1578350703266,
+        "queued_turn_count": 0,
+        "result_index": 0
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 12017,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "completed",
+        "uuid": "<uuid-85>",
+        "session_id": "<session-1>"
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1600,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1987,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "before-close",
+      "atMs": 15040,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    }
+  ],
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "configuration": {
+    "folder": "a scratch configuration folder (CLAUDE_CONFIG_DIR), signed in by the maintainer",
+    "written": []
+  },
+  "frameSizes": {
+    "largest": [
+      {
+        "type": "control_response",
+        "bytes": 3830
+      },
+      {
+        "type": "result",
+        "bytes": 2378
+      },
+      {
+        "type": "user",
+        "bytes": 2012
+      },
+      {
+        "type": "system/init",
+        "bytes": 1570
+      },
+      {
+        "type": "assistant",
+        "bytes": 1499
+      }
+    ],
+    "longStringsCut": []
+  }
+}

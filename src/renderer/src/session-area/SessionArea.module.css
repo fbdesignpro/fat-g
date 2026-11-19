@@ -1,0 +1,490 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The session area: the separate model block at the left of the prompt area, the status bar over
+   the input, the mode control alongside the prompt actions (above the status for decision panels), and Done. All
+   inside the shell: unselectable (M14, C64). Nothing here scrolls: the agent list and the grants are
+   the pane's Sub-agents tab (src/renderer/src/artifacts/agents). The mode control's menu (M22, C82)
+   adds none: it is as wide as it needs to be for a row a mode. */
+
+/* A portrait and two centred labels, with no frame joining them to the prompt column. */
+.modelBlock {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.modelId,
+.effort {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+  padding: 0 var(--space-2);
+  border: 0;
+  font: inherit;
+  font-size: var(--text-12);
+  font-weight: var(--weight-bold);
+  text-align: center;
+}
+
+.modelId {
+  height: 18px;
+  background: var(--bar-color, var(--color-text-muted));
+  color: var(--color-on-avatar);
+  /* No top edge: the portrait's mortar above is the joint, one 2px line as on its other sides. */
+  box-shadow: inset 2px 0 0 var(--color-status-black), inset -2px 0 0 var(--color-status-black), inset 0 -2px 0 var(--color-status-black);
+}
+
+.effort {
+  height: 22px;
+  position: relative;
+  padding-inline: var(--space-6);
+  background: var(--color-status-black);
+  color: var(--color-status-white);
+  cursor: pointer;
+}
+
+.effort .chevron {
+  position: absolute;
+  right: var(--space-1);
+}
+
+/* The account's label, for a provider with more than one (M14b, C47), under the effort bar. */
+.account {
+  display: flex;
+  flex: none;
+  min-width: 0;
+  padding: var(--space-1) var(--space-2) 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+.effort:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.effort:focus-visible {
+  outline-offset: -2px;
+}
+
+.menuText {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chevron {
+  flex: none;
+}
+
+.problem {
+  flex: none;
+  margin: 0;
+  padding: var(--space-1) var(--space-2) 0;
+  color: var(--color-critical);
+  font-size: var(--text-12);
+}
+
+/* The session's buttons (the maintainer): a column of square buttons, each an icon, at the
+   chat window's top left, the window's first child (Shell.module.css), beside the chat and never
+   over it — Done or Cancel, then the way to and from the shelf, then, a little apart, the flags:
+   Starred, To do and To verify. Done keeps the layout reference's mint (C50, C92), its check in the text colour, and Cancel a
+   question card's Decline colours. A refusal's words stand beside the column for a moment, over the
+   chat's edge. */
+.done {
+  position: relative;
+  flex: none;
+  padding: var(--space-2);
+}
+
+.rail,
+.railFlags {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+/* The flags' toggles, smaller than the buttons above them, so they weigh less, and centred under them. */
+.railFlags {
+  align-items: center;
+  margin-top: var(--space-2);
+}
+
+.railButton {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.railButton:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.railButton:focus-visible {
+  outline-offset: 2px;
+}
+
+.railButton[data-done=''] {
+  border-color: var(--color-done-rule);
+  background: var(--color-done);
+}
+
+.railButton[data-done='cancel'] {
+  border-color: var(--color-decline-rule);
+  background: var(--color-decline-soft);
+}
+
+.railButton[data-done='']:hover {
+  background: var(--color-done-hover);
+  color: var(--color-on-done);
+}
+
+.railButton[data-done='cancel']:hover {
+  background: var(--color-decline);
+  color: var(--color-on-decline);
+}
+
+/* The flags: toggles (the maintainer) — while not set, their icon and their edge
+   gray on the box's ground; once set, the flag pair fills them, as it does a capsule's marks.
+   Dark uses a slate fill and light ink. Their icons' lines are lighter than elsewhere, a filled box
+   weighing more. Under the pointer one not set takes the gray ground, its icon darkening to the muted
+   gray, and a set one stays as it is. */
+.railButton[aria-pressed] {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-flag);
+}
+
+.railButton[aria-pressed] path {
+  stroke-width: 1.75;
+}
+
+.railButton[aria-pressed='false'] {
+  border-color: var(--color-rule-mid);
+  color: var(--color-flag-unset);
+}
+
+.railButton[aria-pressed='true'],
+.railButton[aria-pressed='true']:hover {
+  border-color: var(--color-flag-rule);
+  background: var(--color-flag);
+  color: var(--color-on-flag);
+}
+
+.railButton[aria-pressed='false']:hover {
+  background: var(--color-shelve);
+  color: var(--color-text-muted);
+}
+
+.railButton[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* A button that cannot be used now, as Shelve while a turn runs: grayed, and the pointer does not light it. */
+.railButton[data-unavailable],
+.railButton[data-unavailable]:hover {
+  border-color: var(--color-rule-mid);
+  background: var(--color-bg);
+  color: var(--color-text);
+  opacity: 0.35;
+}
+
+/* Done's tooltip: what it does, then a line for the flags it clears and one for those it keeps, each
+   flag by its mark — a capsule's, smaller — and its word. */
+.doneTip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tipFlagWord {
+  white-space: nowrap;
+}
+
+.tipFlag {
+  display: inline-grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  margin-right: 3px;
+  border-radius: var(--radius-flag);
+  background: var(--color-flag);
+  color: var(--color-on-flag);
+  vertical-align: -3px;
+}
+
+/* A refusal's words, beside the column, until the next press. */
+.doneNotice {
+  position: absolute;
+  top: var(--space-2);
+  left: 100%;
+  z-index: 2;
+  width: max-content;
+  max-width: 320px;
+  margin: 0;
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule);
+  background: var(--color-bg);
+  font-size: var(--text-12);
+}
+
+/* Display experiment: a bar that says nothing is black, with its word in white and no field behind it.
+   A turn lights it: the ground stays black, the word turns black, and the provider's stream
+   comes in from the left (useLightStream.ts holds it there and gathers its speed; a bar opened on a turn
+   under way joins the window's one stream where it stands, so it never starts over). The fixed height
+   keeps the prompt below it in place in every state, and the bar clips each rectangle at its own edges.
+
+   StatusBar.tsx sets --stream-ground and --stream-1..6 from the provider's descriptor and marks the bar
+   data-stream. Each provider can supply its own glow image in place of the six tones. A provider that
+   declares none — one this build does not have, above all — leaves them unset, so the two rules below
+   that want the attribute never match and its running bar stays black with its word in white. */
+.statusBar {
+  display: flex;
+  align-items: center;
+  height: var(--status-bar-height);
+  padding: 0 var(--space-2);
+  background: var(--color-status-black);
+  color: var(--color-status-white);
+  /* Leaving a turn, the word goes white at once, while the ground is still lit under it. */
+  transition: background-color var(--light-fade) ease, color 250ms ease;
+}
+
+/* A one-pixel black line inside the bar's top and bottom edges, drawn over the stream in every state. */
+.statusBar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-block: 1px solid var(--color-status-black);
+  pointer-events: none;
+}
+
+/* Two pixels while a plan is ready (the maintainer). */
+.statusBar[data-attention='plan']::after {
+  border-block-width: 2px;
+}
+
+/* The ground stays black: the glow image's black surround comes in with each light and covers whatever
+   ground is under it (the field's mask draws it as a group of its own, so the lights add onto nothing),
+   and the maintainer kept that look over a provider ground that showed only until the stream arrived.
+   The words fade with the speed ramp: black during work, white over the narrow waiting beams. */
+.statusBar[data-state='running'][data-stream] {
+  color: var(--color-status-black);
+  transition: background-color var(--light-fade) ease, color 1000ms ease-in-out;
+}
+
+.statusBar[data-state='running'][data-stream]:has([data-status-stream][data-waiting]) {
+  color: var(--color-status-white);
+}
+
+/* A decision stays yellow until resolved, even after visiting. Switch immediately so a departing
+   provider stream cannot fade over the attention field or compromise its text contrast. */
+.statusBar:is([data-attention='question'], [data-attention='approval'], [data-attention='plan'], [data-attention='review']) {
+  background: var(--color-attention);
+  color: var(--color-on-attention);
+  transition: none;
+}
+
+/* A plan held in another chat (decision 0029): what this one waits on, in the waiting pair, switched as a decision is. */
+.statusBar[data-state='waiting'] {
+  background: var(--color-waiting);
+  color: var(--color-on-waiting);
+  transition: none;
+}
+.statusWords {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* The status in bold sentence case, the time at the line's right end. */
+.statusLine {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.statusText,
+.statusTime,
+.statusOne {
+  font-size: var(--text-24);
+  font-weight: var(--weight-bold);
+}
+
+/* A turn's status and time sit a step smaller than the idle and attention words. */
+.statusText,
+.statusTime {
+  font-size: var(--text-20);
+}
+
+.statusText {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.statusTime {
+  flex: none;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Idle and attention states, centred both ways. */
+.statusOne {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statusBar,
+  .statusBar[data-state='running'][data-stream] {
+    transition: none;
+  }
+}
+
+/* The mode control (M22, C82): the saved mode's name alongside the prompt actions, or above the
+   status bar when a decision panel or block replaces it — a box with all four sides, one pixel clear
+   of that bar (the maintainer). Where the column is narrow
+   its word is cut, and whole in its accessible name. A refusal stands under it, over the prompt area. */
+.mode {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.modeButton {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+  min-height: 22px;
+  padding: 0 var(--space-1);
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  cursor: pointer;
+}
+
+.modeButton:hover,
+.modeButton[aria-expanded='true'] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Why a change was not taken: under the button, over the top of the prompt area below it. */
+.modeProblem {
+  position: absolute;
+  top: 100%;
+  right: var(--space-2);
+  z-index: 5;
+  width: max-content;
+  max-width: min(480px, calc(100vw - 2 * var(--space-4)));
+  margin: var(--space-1) 0 0;
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-critical);
+  font-size: var(--text-12);
+}
+
+/* The mode menu (M22, C82, C87): one row a mode — its name, then its description and what else is
+   said of it — wide enough that five of them stand under the header at the minimum window size.
+   The mark of the saved one stands before its name, as in every menu of choices. */
+.modeMenu {
+  width: min(760px, calc(100vw - 2 * var(--space-4)));
+  line-height: 1.3;
+}
+
+.modeMenuTitle {
+  margin: 0;
+  padding: var(--space-2) var(--space-3) var(--space-3);
+  font-size: var(--text-20);
+  font-weight: var(--weight-bold);
+}
+
+.modeMenu .modeItem {
+  display: grid;
+  grid-template-columns: var(--space-4) 148px minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: var(--space-2);
+  padding: 3px var(--space-3);
+}
+
+.modeItemName {
+  grid-column: 2;
+  overflow-wrap: anywhere;
+}
+
+.modeItemBody {
+  grid-column: 3;
+  min-width: 0;
+  font-size: var(--text-12);
+  font-weight: var(--weight-regular);
+}
+
+.modeItemText,
+.modeItemNotes {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+/* What a change does, and why a mode cannot be used: words, set apart by weight, in one paragraph. */
+.modeItemNotes {
+  font-weight: var(--weight-medium);
+}
+
+/* A mode that cannot be chosen now is still read: its name and description are dimmed, its reason is not. */
+.modeMenu .modeItem[aria-disabled='true'] {
+  cursor: default;
+}
+
+.modeItem[aria-disabled='true'] .modeItemName,
+.modeItem[aria-disabled='true'] .modeItemText {
+  opacity: 0.6;
+}
+
+.modeItem[data-mode-setup] .modeItemBody {
+  text-decoration: underline;
+}
+
+.modeMenuNote {
+  margin: 0;
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+/* "Not fast" in the tier's place on the effort bar (decision 0016): red that reads on the bar's black. */
+.notFast {
+  color: var(--color-critical-on-bar);
+}

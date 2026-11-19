@@ -1,0 +1,467 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The Main window's page grid (docs/planning/_archive/M100.md, Design 2; Layout V2):
+
+     title strip — the app's name, the menu and the gear ─────────────────────
+     body, on a faint grid:
+       [+ Add project]  │  session names              [usage box]
+                        │  [Done]
+       project list     │  ┌ chat window ─────────┐ // tabs
+       (left, or right  │  │   message list       │ ┌ pane ┐
+        by preference)  │  │ avatar │ prompt      │ │      │
+                        │  └──────────────────────┘ └──────┘
+
+   The elements are boxes with gaps between them through which the grid shows. The page never
+   scrolls; of the regions, only the project list does (M11, C27, C58) — and, inside the chat, its
+   message list (M15, C61), and inside the artifact pane its rows of tabs, a file's text (M19b, C13)
+   and the Sub-agents tab (M100, round 8). Nothing in the shell is selectable (C30) but the chat's
+   messages (M15, C60) and a shown file's text and path (M19b, C13, C36). */
+/* One column, the window's width and no wider: the body's content never widens the page. */
+.shell {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* The window's title bar, drawn by the page (decision 0008). With a title-bar overlay (Windows,
+   macOS — src/main/windows/chrome.ts) the OS draws the window buttons over the page, and the
+   titlebar-area-* values are the part of this row they leave free; dragging the row moves the
+   window. Under a native frame (Linux) the fallbacks apply and it is an ordinary header. It stays
+   plain: its colour is the one the OS-drawn buttons match, and the grid starts under it. */
+.titleStrip {
+  height: calc(env(titlebar-area-height, var(--title-bar-height)) + var(--title-strip-clearance));
+  -webkit-app-region: drag;
+  app-region: drag;
+}
+
+/* Only the title and its controls dim; menus retain their usual text colours. */
+.titleStrip[data-focused='false'] {
+  --color-title-text: var(--color-title-inactive);
+}
+
+/* Centred on the window buttons, not on the strip with its clearance. */
+.titleArea {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: env(titlebar-area-width, 100%);
+  height: env(titlebar-area-height, var(--title-bar-height));
+  margin-left: env(titlebar-area-x, 0);
+  padding: 0 var(--space-4);
+}
+
+.appName {
+  margin: 0;
+  color: var(--color-title-text, var(--color-text));
+  font-size: var(--text-13);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.04em;
+}
+
+/* The menu and the gear after the name (M100, C19): outside the strip's drag region, as the Pet's
+   own button is, so a press on them is theirs and not the window's. */
+.controls {
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+}
+
+/* Everything below the title strip: two rows — the top band, then the main row — and two columns,
+   the project column on the side its preference names (C9), the left by default (C91). DOM order is
+   visual order, so the keyboard follows either side. The grid is drawn on the grey ground by gradients from tokens, and no
+   image (C1): a line every cell, and a stronger one every fifth. The white boxes on it need few rules
+   of their own: the ground between them sets them apart. The bottom margin is one cell, the others two:
+   the grid starts
+   at its padding's corner, so the usage box's top and the session window's left edge — and, with the
+   62 px box and the gap, the session window's top — stand on grid lines; the right and bottom edges
+   do when the window's size is a multiple of the cell. */
+.body {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-columns: var(--project-column-width) minmax(0, 1fr);
+  grid-template-areas:
+    'projectBand band'
+    'projects work';
+  gap: var(--gap-grid);
+  min-width: 0;
+  min-height: 0;
+  padding: calc(2 * var(--grid-cell)) calc(2 * var(--grid-cell)) var(--grid-cell);
+  border-top: var(--rule);
+  background-color: var(--color-ground);
+  background-image:
+    linear-gradient(to right, var(--color-grid-major) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid-major) 1px, transparent 1px),
+    linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
+  background-size:
+    calc(5 * var(--grid-cell)) calc(5 * var(--grid-cell)),
+    calc(5 * var(--grid-cell)) calc(5 * var(--grid-cell)),
+    var(--grid-cell) var(--grid-cell),
+    var(--grid-cell) var(--grid-cell);
+}
+
+.body[data-project-column='right'] {
+  grid-template-columns: minmax(0, 1fr) var(--project-column-width);
+  grid-template-areas:
+    'band projectBand'
+    'work projects';
+}
+
+/* The top band's work cell (C10, C14, C54, C92): the session's names at the left — Done left them
+   for the session window's own corner (the maintainer) — the usage box at the right, sized for up to three enabled accounts — blocks of 291 px and 19 px
+   between them, the arrows' 19 px on each side when more accounts exist, the box's padding and its 1 px
+   rules (control-bar/UsageBlock.module.css, UsageStrip.module.css). It takes at most 60% of the
+   work column, which spans the chat and its artifacts; the strip's arrows reveal accounts that
+   no longer fit. Everything in it stands on the
+   band's foot, which is the line Add project stands on across the window (C92); the band is as tall
+   as the usage box, the names fitted inside it, and the box's top is on a grid line (C73). The usage
+   note stands above the box, in the body's margin. */
+.band {
+  --usage-box-width: calc(var(--usage-account-count) * 291px + (var(--usage-account-count) - 1) * 19px + var(--usage-arrow-space) + 2 * 6px + 2px);
+
+  grid-area: band;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) min(60%, var(--usage-box-width));
+  column-gap: var(--gap-grid);
+  align-items: end;
+  min-width: 0;
+}
+
+/* The new-chat heading stands below the band, leaving its full width for usage. The empty names
+   column needs no gap: even at the full width, the box stays inside the session area's edges. */
+.band[data-new-chat] {
+  grid-template-columns: minmax(0, 1fr) min(100%, var(--usage-box-width));
+  column-gap: 0;
+}
+
+/* The band's left column (C92): the names alone now, at its top, level with the usage box's top
+   (the maintainer). It is never shorter than the usage box, and holds nothing else —
+   Done went into the session window — and the names are fitted inside its height, so no name moves
+   the band's height or the session window's top: a session going moves neither. */
+.bandStart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  min-width: 0;
+  min-height: var(--usage-box-height);
+}
+
+/* The session's names, directly on the grid (C14; round 10, C87): the project's name, the // and
+   the session's name in a box of its own, fitted to at most two lines and the usage box's height. */
+.sessionNames {
+  min-width: 0;
+}
+
+/* At 36 px, all three parts (the maintainer, trying it after 28 px);
+   before that they stood at 22.3 px — delete --text-28 here for 28 px. At a line height of 1.1
+   one line is 39.6 px. The row is the usage box's height at most, and the session's name is fitted
+   inside it (ui/useFittedTitle.ts), so no name grows the band (the maintainer).
+
+   The three parts stand in a row (the maintainer): the project's name alone on the left,
+   then the //, then the session's name in a box of its own, so a long name wraps under itself at the
+   // instead of running back under the project's name. They stand on one baseline, the first line's
+   of the session's name, which a smaller name keeps (the maintainer). */
+.names {
+  --text-28: 36px;
+  display: flex;
+  align-items: baseline;
+  min-width: 0;
+  max-height: var(--usage-box-height);
+  font-size: var(--text-28);
+  line-height: 1.1;
+}
+
+.projectName,
+.nameSeparator {
+  font-weight: var(--weight-bold);
+}
+
+/* Alone on the left, whole where the cell holds it and cut with an ellipsis where it does not.
+   Inter's letters are taller than a line of 1.1: the padding keeps a g's tail inside the clip, and
+   the margin takes it back out of the layout. */
+.projectName {
+  flex: 0 1 auto;
+  overflow: hidden;
+  min-width: 0;
+  padding-block: 0.1em;
+  margin-block: -0.1em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Its spaces are the space between the three parts, so no gap is set: a flex item drops the spaces
+   at its own edges, and pre keeps them. */
+.nameSeparator {
+  flex: none;
+  white-space: pre;
+}
+
+/* Keep the available width independent of the fitted title's font size. */
+.sessionTitleBox {
+  /* It asks for 8em and takes what is left over: the project's name keeps its own width while the
+     cell holds both, and the two give way together where it does not. */
+  flex: 1 1 8em;
+  min-width: 0;
+}
+
+/* At the normal size where it fits the row, then reduced until it does, on at most two lines
+   (ui/useFittedTitle.ts). The clamp is a fallback; the padding keeps the last line's tails inside
+   it, as the project's name's does. */
+.sessionName {
+  display: -webkit-box;
+  overflow: hidden;
+  min-width: 0;
+  margin: 0 0 -0.1em;
+  padding-bottom: 0.1em;
+  font-size: var(--text-28);
+  font-weight: var(--weight-regular);
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* The usage box (C54; round 10): a 1 px rule in the mid rule colour, the usage strip at a fixed height, the same with an account's label or
+   without, so the band never moves; the strip fills it as it filled the control bar.
+   Its sizes are four fifths of what they were (the maintainer: it read better at 80 %
+   zoom) but its height, 62 px for 57.6, the nearest that keeps the session window's top on a grid
+   line (C73). Its words have sizes of their own, the type scale redeclared for the box alone as the
+   chat area does (chat/Chat.module.css), measured at 100 % scale: four fifths of 10 and 11 px are 8
+   and 8.8, both in the band where these words' capitals and figures stand 7 px tall (7.6–9.3), and
+   8 is near its foot, where they read narrow — "5d23h" 25 wide over 7 against 28 over 7 at 9.3, the
+   band's top, near its 4.24 per unit of height at 40 px. Both take 9.3, so the bars' words and a
+   status stand at one height, as at 10 and 11, which share a band too. The rollover panel is
+   portaled outside the box and keeps the page's sizes. Delete the two sizes here to go back to them. */
+.usage {
+  --text-10: 9.3px;
+  --text-11: 9.3px;
+  position: relative;
+  display: flex;
+  min-width: 0;
+  height: var(--usage-box-height);
+  padding: 0 6px;
+  border: 1px solid var(--color-rule-mid);
+  background: var(--color-bg);
+}
+
+/* "Usage remaining" (C17): outside the box, above its top-right corner. */
+.usageNote {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 2px);
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-10);
+  font-weight: var(--weight-bold);
+  line-height: var(--usage-label-height);
+  white-space: nowrap;
+}
+
+/* The project actions share the full column width. */
+.addProjectCell {
+  /* Keep the three action labels in the same compact Inter ink-height band. */
+  --text-12: 11.1px;
+  grid-area: projectBand;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.addProjectCell > button {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+  padding-inline: var(--space-1);
+}
+
+.addProject {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 24px;
+  padding: 0 var(--space-2);
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.addProject:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.addProject[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.addProject[aria-disabled='true']:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* The scroll viewport includes selection's two-cell extensions on both sides.
+   Matching padding keeps headers and capsules in place. */
+.projectColumn {
+  position: relative;
+  grid-area: projects;
+  min-height: 0;
+  margin: 0 calc(-2 * var(--grid-cell)) 0 calc(-2 * var(--grid-cell));
+  padding: 0 calc(2 * var(--grid-cell));
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+}
+
+/* The session window (C29, C43; round 8, C79, C80): the main row's work cell, holding the chat
+   window's box and, while a tab is open, the artifact pane's box beside it, --gap-grid apart, the
+   grid showing between them. The gap is the handle that shares the width out (SplitHandle.tsx): it
+   writes each box's share, and neither goes under its least width. Chat 60%, pane 40% until moved. */
+.sessionWindow {
+  grid-area: work;
+  /* The session display covers a capsule marking wherever the two meet, on either column side. */
+  z-index: 1;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sessionWindow[data-split] {
+  grid-template-columns: minmax(var(--split-chat-min), var(--chat-share, 0.6fr)) var(--gap-grid) minmax(var(--split-pane-min), var(--pane-share, 0.4fr));
+}
+
+/* The chat window: a box, at its left the session's buttons — Done and the rest, a column at its top
+   left (SessionArea.module.css; the maintainer) — and the chat content centred in the rest
+   (C32, C50), so the buttons are never over the chat. A chat without a session has no buttons. Its
+   width is what the prompt area asks before it draws a rule of its own on its right (Chat.module.css). */
+.chatWindow {
+  position: relative;
+  display: flex;
+  container-type: inline-size;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid var(--color-rule-mid);
+  background: var(--color-bg);
+}
+
+/* A new chat's first send (the maintainer; Settings → Appearance → Creation animation):
+   the chat window shows left of a thick line in the ink colour sweeping from the left edge to the
+   right. Over --duration-scene, so reduced motion shows it at once (V18). */
+@keyframes chat-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0); }
+}
+
+/* Visibility steps only at the end: the line shows throughout, and hides once it has crossed. */
+@keyframes chat-wipe {
+  from { left: 0; }
+  to { left: 100%; visibility: hidden; }
+}
+
+.chatWindow[data-reveal] {
+  animation: chat-reveal calc(var(--duration-scene) * 1.5) ease-in-out;
+}
+
+.chatWindow[data-reveal]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  width: 12px;
+  /* Its right side rides the clip's edge, keeping the line inside the box. */
+  transform: translateX(-100%);
+  background: var(--color-text);
+  pointer-events: none;
+  animation: chat-wipe calc(var(--duration-scene) * 1.5) ease-in-out forwards;
+}
+
+/* Nothing shown: no box at all, the grid alone in the window (the maintainer) — where a
+   session marked Done leaves it. The box stays in the page, holding the chat's landmark, and draws
+   nothing of itself. */
+.chatWindow[data-empty] {
+  border-color: transparent;
+  background: none;
+}
+
+/* The chat content (C32; round 8, C76): --chat-content-width wide and no wider than the chat window —
+   the message list across it, then the prompt area with the avatar at its left. A chat without a
+   session (C44) is the same width: its list, and its foot. */
+.content {
+  /* Centred in the room the buttons leave: its margins take what is left either side. */
+  margin-inline: auto;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+  width: min(100%, var(--chat-content-width));
+  min-width: 0;
+  min-height: 0;
+}
+
+/* It does not scroll: the message list inside it does (M15, C61; src/renderer/src/chat). */
+.chat {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* The gap between the two boxes, and the handle that resizes them (C80): it reaches a little over
+   each box's rule, so the edge is easy to take; a faint line shows it under the pointer and while it
+   is dragged. */
+.splitHandle {
+  position: relative;
+  z-index: 1;
+  margin: 0 -3px;
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.splitHandle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+  background: var(--color-text-muted);
+  opacity: 0;
+}
+
+.splitHandle:hover::after,
+.splitHandle[data-dragging]::after {
+  opacity: 1;
+}
+
+.splitHandle:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+/* The artifact region, while a tab is open (C43, C79). Its tabs stand directly on the grid;
+   ArtifactPane frames only the body below them. It does not scroll: the rows and what a tab's
+   kind draws do (M19b, C13; src/renderer/src/artifacts). */
+.artifacts {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}

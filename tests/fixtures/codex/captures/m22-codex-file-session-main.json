@@ -1,0 +1,4700 @@
+{
+  "_fixture": {
+    "source": "M22 spike m22-k1.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":2,\"turn\":2,\"item\":9,\"mcp-server\":1}. Aliases are shared with the other captures of the family \"m22-codex-file-session\"."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-11T14:49:57.791Z",
+  "scenario": {
+    "id": "m22-codex-file-session",
+    "title": "K1: a file change answered acceptForSession, then changes in the next turn, and one after the process was closed and the thread resumed (C21)",
+    "successCondition": "Whether the later changes ask: in the folder and outside it in the same process, and after the resume"
+  },
+  "run": {
+    "id": "codex-m22-codex-file-session-18",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 82,
+    "turnsSpent": 3,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1669,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": false,
+      "added": [
+        "k1-fs-1.txt",
+        "k1-fs-2.txt",
+        "k1-fs-3.txt"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": false,
+      "added": [
+        "k1-fs-outside.txt"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "thread": {
+        "ok": true,
+        "error": null,
+        "asked": {
+          "sandbox": "workspace-write",
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user"
+        },
+        "reported": {
+          "sandbox": {
+            "type": "readOnly",
+            "keys": [
+              "networkAccess",
+              "type"
+            ],
+            "networkAccess": false,
+            "writableRoots": null,
+            "excludeTmpdirEnvVar": null,
+            "excludeSlashTmp": null
+          },
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "activePermissionProfile": null,
+          "runtimeWorkspaceRoots": [
+            "working folder"
+          ],
+          "cwd": "working folder"
+        },
+        "matchesWhatWasAsked": false
+      },
+      "first": {
+        "requests": [
+          {
+            "index": 37,
+            "method": "item/fileChange/requestApproval",
+            "keys": [
+              "grantRoot",
+              "itemId",
+              "reason",
+              "startedAtMs",
+              "threadId",
+              "turnId"
+            ],
+            "idIsA": "number",
+            "isWhatThePromptDictated": true,
+            "worker": false,
+            "reasonUnits": null,
+            "answer": {
+              "result": {
+                "decision": "acceptForSession"
+              },
+              "why": null,
+              "msAfterTheRequest": 1
+            },
+            "resolved": {
+              "index": 39,
+              "msAfterTheAnswer": 0,
+              "paramKeys": [
+                "requestId",
+                "threadId"
+              ]
+            },
+            "statusWhilePending": [
+              "waitingOnApproval"
+            ],
+            "item": {
+              "type": "fileChange",
+              "status": "completed"
+            },
+            "grantRoot": null,
+            "changes": [
+              {
+                "where": "working folder",
+                "kind": "add",
+                "diffUnits": 6
+              }
+            ]
+          }
+        ],
+        "commands": [],
+        "fileChanges": [
+          {
+            "status": "completed",
+            "asked": true,
+            "worker": false,
+            "changes": [
+              {
+                "where": "working folder",
+                "kind": "add"
+              }
+            ]
+          }
+        ],
+        "otherItems": [],
+        "settings": [],
+        "statuses": [
+          {
+            "index": 10,
+            "type": "active",
+            "activeFlags": []
+          },
+          {
+            "index": 36,
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          },
+          {
+            "index": 40,
+            "type": "active",
+            "activeFlags": []
+          },
+          {
+            "index": 80,
+            "type": "idle",
+            "activeFlags": null
+          }
+        ],
+        "errors": [],
+        "warnings": [],
+        "end": {
+          "index": 81,
+          "status": "completed",
+          "error": null
+        },
+        "methods": {
+          "thread/started": 1,
+          "mcpServer/startupStatus/updated": 2,
+          "thread/status/changed": 4,
+          "turn/started": 1,
+          "item/started": 4,
+          "item/completed": 4,
+          "item/fileChange/requestApproval": 1,
+          "serverRequest/resolved": 1,
+          "turn/diff/updated": 3,
+          "thread/tokenUsage/updated": 2,
+          "account/rateLimits/updated": 2,
+          "turn/completed": 1
+        }
+      },
+      "outlineFirst": [
+        {
+          "index": 7,
+          "ms": 1723,
+          "method": "thread/started"
+        },
+        {
+          "index": 10,
+          "ms": 1772,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 11,
+          "ms": 1772,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 13,
+          "ms": 3119,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 14,
+          "ms": 3129,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 15,
+          "ms": 4087,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 34,
+          "ms": 4277,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 35,
+          "ms": 4732,
+          "method": "item/started",
+          "thread": "session",
+          "item": "fileChange",
+          "status": "inProgress"
+        },
+        {
+          "index": 36,
+          "ms": 4733,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 37,
+          "ms": 4733,
+          "method": "item/fileChange/requestApproval",
+          "thread": "session",
+          "request": true
+        },
+        {
+          "index": 39,
+          "ms": 4734,
+          "method": "serverRequest/resolved",
+          "thread": "session"
+        },
+        {
+          "index": 40,
+          "ms": 4734,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 41,
+          "ms": 4992,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "fileChange",
+          "status": "completed"
+        },
+        {
+          "index": 42,
+          "ms": 4992,
+          "method": "turn/diff/updated",
+          "thread": "session"
+        },
+        {
+          "index": 44,
+          "ms": 5016,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 45,
+          "ms": 5016,
+          "method": "turn/diff/updated",
+          "thread": "session"
+        },
+        {
+          "index": 46,
+          "ms": 6347,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 76,
+          "ms": 10111,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 78,
+          "ms": 10153,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 79,
+          "ms": 10153,
+          "method": "turn/diff/updated",
+          "thread": "session"
+        },
+        {
+          "index": 80,
+          "ms": 10164,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 81,
+          "ms": 10164,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ],
+      "second": {
+        "requests": [
+          {
+            "index": 112,
+            "method": "item/fileChange/requestApproval",
+            "keys": [
+              "grantRoot",
+              "itemId",
+              "reason",
+              "startedAtMs",
+              "threadId",
+              "turnId"
+            ],
+            "idIsA": "number",
+            "isWhatThePromptDictated": true,
+            "worker": false,
+            "reasonUnits": null,
+            "answer": {
+              "result": {
+                "decision": "accept"
+              },
+              "why": null,
+              "msAfterTheRequest": 0
+            },
+            "resolved": {
+              "index": 114,
+              "msAfterTheAnswer": 0,
+              "paramKeys": [
+                "requestId",
+                "threadId"
+              ]
+            },
+            "statusWhilePending": [
+              "waitingOnApproval"
+            ],
+            "item": {
+              "type": "fileChange",
+              "status": "completed"
+            },
+            "grantRoot": null,
+            "changes": [
+              {
+                "where": "working folder",
+                "kind": "add",
+                "diffUnits": 5
+              }
+            ]
+          },
+          {
+            "index": 120,
+            "method": "item/fileChange/requestApproval",
+            "keys": [
+              "grantRoot",
+              "itemId",
+              "reason",
+              "startedAtMs",
+              "threadId",
+              "turnId"
+            ],
+            "idIsA": "number",
+            "isWhatThePromptDictated": true,
+            "worker": false,
+            "reasonUnits": null,
+            "answer": {
+              "result": {
+                "decision": "accept"
+              },
+              "why": null,
+              "msAfterTheRequest": 0
+            },
+            "resolved": {
+              "index": 122,
+              "msAfterTheAnswer": 0,
+              "paramKeys": [
+                "requestId",
+                "threadId"
+              ]
+            },
+            "statusWhilePending": [
+              "waitingOnApproval"
+            ],
+            "item": {
+              "type": "fileChange",
+              "status": "completed"
+            },
+            "grantRoot": null,
+            "changes": [
+              {
+                "where": "outside the folder",
+                "kind": "add",
+                "diffUnits": 6
+              }
+            ]
+          }
+        ],
+        "commands": [],
+        "fileChanges": [
+          {
+            "status": "completed",
+            "asked": true,
+            "worker": false,
+            "changes": [
+              {
+                "where": "working folder",
+                "kind": "add"
+              }
+            ]
+          },
+          {
+            "status": "completed",
+            "asked": true,
+            "worker": false,
+            "changes": [
+              {
+                "where": "outside the folder",
+                "kind": "add"
+              }
+            ]
+          }
+        ],
+        "otherItems": [],
+        "settings": [],
+        "statuses": [
+          {
+            "index": 84,
+            "type": "active",
+            "activeFlags": []
+          },
+          {
+            "index": 111,
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          },
+          {
+            "index": 115,
+            "type": "active",
+            "activeFlags": []
+          },
+          {
+            "index": 119,
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          },
+          {
+            "index": 123,
+            "type": "active",
+            "activeFlags": []
+          },
+          {
+            "index": 193,
+            "type": "idle",
+            "activeFlags": null
+          }
+        ],
+        "errors": [],
+        "warnings": [],
+        "end": {
+          "index": 194,
+          "status": "completed",
+          "error": null
+        },
+        "methods": {
+          "thread/status/changed": 6,
+          "turn/started": 1,
+          "item/started": 5,
+          "item/completed": 5,
+          "item/fileChange/requestApproval": 2,
+          "serverRequest/resolved": 2,
+          "turn/diff/updated": 2,
+          "thread/tokenUsage/updated": 2,
+          "account/rateLimits/updated": 2,
+          "turn/completed": 1
+        }
+      },
+      "askedInTheNextTurn": [
+        [
+          "working folder"
+        ],
+        [
+          "outside the folder"
+        ]
+      ],
+      "outlineSecond": [
+        {
+          "index": 84,
+          "ms": 11706,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 85,
+          "ms": 11706,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 86,
+          "ms": 11737,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 87,
+          "ms": 11747,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 88,
+          "ms": 12596,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 109,
+          "ms": 12743,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 110,
+          "ms": 13620,
+          "method": "item/started",
+          "thread": "session",
+          "item": "fileChange",
+          "status": "inProgress"
+        },
+        {
+          "index": 111,
+          "ms": 13621,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 112,
+          "ms": 13621,
+          "method": "item/fileChange/requestApproval",
+          "thread": "session",
+          "request": true
+        },
+        {
+          "index": 114,
+          "ms": 13621,
+          "method": "serverRequest/resolved",
+          "thread": "session"
+        },
+        {
+          "index": 115,
+          "ms": 13621,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 116,
+          "ms": 13795,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "fileChange",
+          "status": "completed"
+        },
+        {
+          "index": 117,
+          "ms": 13795,
+          "method": "turn/diff/updated",
+          "thread": "session"
+        },
+        {
+          "index": 118,
+          "ms": 13799,
+          "method": "item/started",
+          "thread": "session",
+          "item": "fileChange",
+          "status": "inProgress"
+        },
+        {
+          "index": 119,
+          "ms": 13801,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 120,
+          "ms": 13801,
+          "method": "item/fileChange/requestApproval",
+          "thread": "session",
+          "request": true
+        },
+        {
+          "index": 122,
+          "ms": 13801,
+          "method": "serverRequest/resolved",
+          "thread": "session"
+        },
+        {
+          "index": 123,
+          "ms": 13801,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 124,
+          "ms": 13822,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "fileChange",
+          "status": "completed"
+        },
+        {
+          "index": 125,
+          "ms": 13822,
+          "method": "turn/diff/updated",
+          "thread": "session"
+        },
+        {
+          "index": 127,
+          "ms": 13843,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 128,
+          "ms": 14459,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 190,
+          "ms": 14816,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 192,
+          "ms": 14845,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 193,
+          "ms": 14853,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 194,
+          "ms": 14853,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ],
+      "resume": {
+        "ok": true,
+        "error": null,
+        "asked": {
+          "sandbox": "workspace-write",
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user"
+        },
+        "reported": {
+          "sandbox": {
+            "type": "readOnly",
+            "keys": [
+              "networkAccess",
+              "type"
+            ],
+            "networkAccess": false,
+            "writableRoots": null,
+            "excludeTmpdirEnvVar": null,
+            "excludeSlashTmp": null
+          },
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "activePermissionProfile": null,
+          "runtimeWorkspaceRoots": [
+            "working folder"
+          ],
+          "cwd": "working folder"
+        },
+        "matchesWhatWasAsked": false
+      },
+      "third": {
+        "requests": [
+          {
+            "index": 38,
+            "method": "item/fileChange/requestApproval",
+            "keys": [
+              "grantRoot",
+              "itemId",
+              "reason",
+              "startedAtMs",
+              "threadId",
+              "turnId"
+            ],
+            "idIsA": "number",
+            "isWhatThePromptDictated": true,
+            "worker": false,
+            "reasonUnits": null,
+            "answer": {
+              "result": {
+                "decision": "accept"
+              },
+              "why": null,
+              "msAfterTheRequest": 0
+            },
+            "resolved": {
+              "index": 40,
+              "msAfterTheAnswer": 1,
+              "paramKeys": [
+                "requestId",
+                "threadId"
+              ]
+            },
+            "statusWhilePending": [
+              "waitingOnApproval"
+            ],
+            "item": {
+              "type": "fileChange",
+              "status": "completed"
+            },
+            "grantRoot": null,
+            "changes": [
+              {
+                "where": "working folder",
+                "kind": "add",
+                "diffUnits": 6
+              }
+            ]
+          }
+        ],
+        "commands": [],
+        "fileChanges": [
+          {
+            "status": "completed",
+            "asked": true,
+            "worker": false,
+            "changes": [
+              {
+                "where": "working folder",
+                "kind": "add"
+              }
+            ]
+          }
+        ],
+        "otherItems": [],
+        "settings": [],
+        "statuses": [
+          {
+            "index": 12,
+            "type": "active",
+            "activeFlags": []
+          },
+          {
+            "index": 37,
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          },
+          {
+            "index": 41,
+            "type": "active",
+            "activeFlags": []
+          },
+          {
+            "index": 81,
+            "type": "idle",
+            "activeFlags": null
+          }
+        ],
+        "errors": [],
+        "warnings": [],
+        "end": {
+          "index": 82,
+          "status": "completed",
+          "error": null
+        },
+        "methods": {
+          "thread/goal/cleared": 1,
+          "thread/status/changed": 4,
+          "turn/started": 1,
+          "mcpServer/startupStatus/updated": 1,
+          "item/started": 4,
+          "item/completed": 4,
+          "item/fileChange/requestApproval": 1,
+          "serverRequest/resolved": 1,
+          "turn/diff/updated": 3,
+          "thread/tokenUsage/updated": 2,
+          "account/rateLimits/updated": 2,
+          "turn/completed": 1
+        }
+      },
+      "askedAfterTheResume": true,
+      "files": {
+        "k1-fs-1.txt": true,
+        "k1-fs-2.txt": true,
+        "k1-fs-3.txt": true,
+        "k1-fs-outside.txt (outside)": true
+      },
+      "outlineThird": [
+        {
+          "index": 10,
+          "ms": 1747,
+          "method": "thread/goal/cleared",
+          "thread": "session"
+        },
+        {
+          "index": 12,
+          "ms": 1794,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 13,
+          "ms": 1794,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 15,
+          "ms": 2678,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 16,
+          "ms": 2686,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 17,
+          "ms": 4445,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 35,
+          "ms": 4581,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 36,
+          "ms": 5030,
+          "method": "item/started",
+          "thread": "session",
+          "item": "fileChange",
+          "status": "inProgress"
+        },
+        {
+          "index": 37,
+          "ms": 5031,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 38,
+          "ms": 5031,
+          "method": "item/fileChange/requestApproval",
+          "thread": "session",
+          "request": true
+        },
+        {
+          "index": 40,
+          "ms": 5032,
+          "method": "serverRequest/resolved",
+          "thread": "session"
+        },
+        {
+          "index": 41,
+          "ms": 5032,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 42,
+          "ms": 5236,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "fileChange",
+          "status": "completed"
+        },
+        {
+          "index": 43,
+          "ms": 5236,
+          "method": "turn/diff/updated",
+          "thread": "session"
+        },
+        {
+          "index": 45,
+          "ms": 5252,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 46,
+          "ms": 5252,
+          "method": "turn/diff/updated",
+          "thread": "session"
+        },
+        {
+          "index": 47,
+          "ms": 5761,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 77,
+          "ms": 5920,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 79,
+          "ms": 5956,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 80,
+          "ms": 5956,
+          "method": "turn/diff/updated",
+          "thread": "session"
+        },
+        {
+          "index": 81,
+          "ms": 5964,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 82,
+          "ms": 5964,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "workspace-write",
+      "approvalPolicy": "untrusted",
+      "approvalsReviewer": "user",
+      "model": "gpt-6-luna"
+    },
+    "replyIndex": 5,
+    "ok": true,
+    "check": {
+      "passed": false,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "workspace-write",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": false
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "untrusted",
+          "reported": "untrusted",
+          "match": true
+        },
+        {
+          "field": "approvalsReviewer",
+          "requested": "user",
+          "reported": "user",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "workspace-write",
+    "approvalPolicy": "untrusted",
+    "reviewer": "user",
+    "policy": "an approval request for what the prompt dictated — a command that holds the prompt's own and no other, in a scratch folder, or a file change whose paths are all in scratch folders — is answered as the scenario says; any other is declined, and a request for more permissions is granted nothing"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 811,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 813,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 813,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 819,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 1652,
+      "frame": {
+        "method": "thread/start",
+        "id": 2,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "workspace-write",
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "model": "gpt-6-luna"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1722,
+      "frame": {
+        "id": 2,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578754170,
+            "updatedAt": 1578754170,
+            "recencyAt": 1578754170,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\11\\rollout-2020-01-11T10-49-30-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "untrusted",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 1723,
+      "frame": {
+        "method": "turn/start",
+        "id": 3,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Use your apply_patch tool, not a shell command, to create this file:\n1. <scratch>\\k1-fs-1.txt containing the single word alpha.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-2>"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 1723,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578754170,
+            "updatedAt": 1578754170,
+            "recencyAt": 1578754170,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\11\\rollout-2020-01-11T10-49-30-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578754170971
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 1723,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-15>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578754170971
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 1744,
+      "frame": {
+        "id": 3,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 1772,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578754171021
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 1772,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578754170,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578754171021
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 2171,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-15>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578754171420
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 3119,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Use your apply_patch tool, not a shell command, to create this file:\n1. <scratch>\\k1-fs-1.txt containing the single word alpha.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578754172368
+        },
+        "emittedAtMs": 1578754172368
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 3129,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Use your apply_patch tool, not a shell command, to create this file:\n1. <scratch>\\k1-fs-1.txt containing the single word alpha.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578754172368
+        },
+        "emittedAtMs": 1578754172378
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 4087,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578754173336
+        },
+        "emittedAtMs": 1578754173336
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 4087,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578754173336
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 4087,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "’ll"
+        },
+        "emittedAtMs": 1578754173336
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 4087,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " try"
+        },
+        "emittedAtMs": 1578754173336
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 4221,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " to"
+        },
+        "emittedAtMs": 1578754173470
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 4221,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " create"
+        },
+        "emittedAtMs": 1578754173470
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 4224,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578754173473
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 4224,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " requested"
+        },
+        "emittedAtMs": 1578754173473
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 4224,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578754173473
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 4224,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " with"
+        },
+        "emittedAtMs": 1578754173473
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 4224,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578754173473
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 4224,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "apply"
+        },
+        "emittedAtMs": 1578754173473
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 4224,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "_patch"
+        },
+        "emittedAtMs": 1578754173473
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 4225,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578754173474
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 4225,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578754173474
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 4225,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " report"
+        },
+        "emittedAtMs": 1578754173474
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 4225,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578754173474
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 4262,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " result"
+        },
+        "emittedAtMs": 1578754173511
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 4268,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578754173517
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 4277,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "I’ll try to create the requested file with `apply_patch` and report the result.",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578754173517
+        },
+        "emittedAtMs": 1578754173526
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 4732,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "fileChange",
+            "id": "<item-6>",
+            "changes": [
+              {
+                "path": "<scratch>\\k1-fs-1.txt",
+                "kind": {
+                  "type": "add"
+                },
+                "diff": "alpha\n"
+              }
+            ],
+            "status": "inProgress"
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578754173980
+        },
+        "emittedAtMs": 1578754173981
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 4733,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          }
+        },
+        "emittedAtMs": 1578754173982
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 4733,
+      "frame": {
+        "method": "item/fileChange/requestApproval",
+        "id": 0,
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-6>",
+          "startedAtMs": 1578754173982,
+          "reason": null,
+          "grantRoot": null
+        }
+      }
+    },
+    {
+      "index": 38,
+      "dir": "send",
+      "ms": 4734,
+      "frame": {
+        "id": 0,
+        "result": {
+          "decision": "acceptForSession"
+        }
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 4734,
+      "frame": {
+        "method": "serverRequest/resolved",
+        "params": {
+          "threadId": "<session-1>",
+          "requestId": 0
+        },
+        "emittedAtMs": 1578754173983
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 4734,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578754173983
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 4992,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "fileChange",
+            "id": "<item-6>",
+            "changes": [
+              {
+                "path": "<scratch>\\k1-fs-1.txt",
+                "kind": {
+                  "type": "add"
+                },
+                "diff": "alpha\n"
+              }
+            ],
+            "status": "completed"
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578754174230
+        },
+        "emittedAtMs": 1578754174240
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 4992,
+      "frame": {
+        "method": "turn/diff/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "diff": "diff --git a/k1-fs-1.txt b/k1-fs-1.txt\nnew file mode 100644\nindex <blob>..<blob>\n--- <path>\n+++ b/k1-fs-1.txt\n@@ -0,0 +1 @@\n+alpha\n"
+        },
+        "emittedAtMs": 1578754174240
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 5016,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 13850,
+              "inputTokens": 13761,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 89,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 13850,
+              "inputTokens": 13761,
+              "cachedInputTokens": 0,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 89,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578754174264
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 5016,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 5016,
+      "frame": {
+        "method": "turn/diff/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "diff": "diff --git a/k1-fs-1.txt b/k1-fs-1.txt\nnew file mode 100644\nindex <blob>..<blob>\n--- <path>\n+++ b/k1-fs-1.txt\n@@ -0,0 +1 @@\n+alpha\n"
+        },
+        "emittedAtMs": 1578754174264
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 6347,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-7>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578754175596
+        },
+        "emittedAtMs": 1578754175596
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 6347,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "<scratch>"
+        },
+        "emittedAtMs": 1578754175596
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 6475,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175724
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 6475,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175724
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 6475,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175724
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 6476,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175725
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 6476,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175725
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 6476,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175725
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 6476,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175725
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 6477,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175726
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175753
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175753
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175753
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175753
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175753
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175753
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175753
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175753
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754175753
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "\\"
+        },
+        "emittedAtMs": 1578754175753
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 6504,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "k"
+        },
+        "emittedAtMs": 1578754175753
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 10102,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578754179351
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 10102,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "-f"
+        },
+        "emittedAtMs": 1578754179351
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 10102,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "s"
+        },
+        "emittedAtMs": 1578754179351
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 10102,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "-"
+        },
+        "emittedAtMs": 1578754179351
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 10102,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578754179351
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 10102,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": ".txt"
+        },
+        "emittedAtMs": 1578754179351
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 10103,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " —"
+        },
+        "emittedAtMs": 1578754179351
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 10103,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": " created"
+        },
+        "emittedAtMs": 1578754179351
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 10103,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-7>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578754179351
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 10111,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-7>",
+            "text": "<scratch>\\k1-fs-1.txt — created.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578754179351
+        },
+        "emittedAtMs": 1578754179360
+      }
+    },
+    {
+      "index": 77,
+      "dir": "recv",
+      "ms": 10153,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 27757,
+              "inputTokens": 27635,
+              "cachedInputTokens": 13056,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 122,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 13907,
+              "inputTokens": 13874,
+              "cachedInputTokens": 13056,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 33,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578754179402
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 10153,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 79,
+      "dir": "recv",
+      "ms": 10153,
+      "frame": {
+        "method": "turn/diff/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "diff": "diff --git a/k1-fs-1.txt b/k1-fs-1.txt\nnew file mode 100644\nindex <blob>..<blob>\n--- <path>\n+++ b/k1-fs-1.txt\n@@ -0,0 +1 @@\n+alpha\n"
+        },
+        "emittedAtMs": 1578754179402
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 10164,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578754179413
+      }
+    },
+    {
+      "index": 81,
+      "dir": "recv",
+      "ms": 10164,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-7>",
+                "text": "<scratch>\\k1-fs-1.txt — created.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578754170,
+            "completedAt": 1578754179,
+            "durationMs": 8425
+          }
+        },
+        "emittedAtMs": 1578754179413
+      }
+    },
+    {
+      "index": 82,
+      "dir": "send",
+      "ms": 11680,
+      "frame": {
+        "method": "turn/start",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Use your apply_patch tool, not a shell command, to create these files, one patch each, in this order; if one is refused or fails, say so and go on to the next:\n1. <scratch>\\k1-fs-2.txt containing the single word beta.\n2. <scratch>\\k1-fs-outside.txt containing the single word gamma.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-8>"
+        }
+      }
+    },
+    {
+      "index": 83,
+      "dir": "recv",
+      "ms": 11696,
+      "frame": {
+        "id": 4,
+        "result": {
+          "turn": {
+            "id": "<turn-9>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 84,
+      "dir": "recv",
+      "ms": 11706,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578754180955
+      }
+    },
+    {
+      "index": 85,
+      "dir": "recv",
+      "ms": 11706,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-9>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578754180,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578754180955
+      }
+    },
+    {
+      "index": 86,
+      "dir": "recv",
+      "ms": 11737,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-10>",
+            "clientId": "<client-message-8>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Use your apply_patch tool, not a shell command, to create these files, one patch each, in this order; if one is refused or fails, say so and go on to the next:\n1. <scratch>\\k1-fs-2.txt containing the single word beta.\n2. <scratch>\\k1-fs-outside.txt containing the single word gamma.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "startedAtMs": 1578754180986
+        },
+        "emittedAtMs": 1578754180986
+      }
+    },
+    {
+      "index": 87,
+      "dir": "recv",
+      "ms": 11747,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-10>",
+            "clientId": "<client-message-8>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Use your apply_patch tool, not a shell command, to create these files, one patch each, in this order; if one is refused or fails, say so and go on to the next:\n1. <scratch>\\k1-fs-2.txt containing the single word beta.\n2. <scratch>\\k1-fs-outside.txt containing the single word gamma.\nThen tell me in one line per file whether it was created. Do not try another way for a file that is refused.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "completedAtMs": 1578754180986
+        },
+        "emittedAtMs": 1578754180996
+      }
+    },
+    {
+      "index": 88,
+      "dir": "recv",
+      "ms": 12596,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-11>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "startedAtMs": 1578754181845
+        },
+        "emittedAtMs": 1578754181845
+      }
+    },
+    {
+      "index": 89,
+      "dir": "recv",
+      "ms": 12597,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578754181846
+      }
+    },
+    {
+      "index": 90,
+      "dir": "recv",
+      "ms": 12597,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": "’ll"
+        },
+        "emittedAtMs": 1578754181846
+      }
+    },
+    {
+      "index": 91,
+      "dir": "recv",
+      "ms": 12721,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " submit"
+        },
+        "emittedAtMs": 1578754181970
+      }
+    },
+    {
+      "index": 92,
+      "dir": "recv",
+      "ms": 12721,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " one"
+        },
+        "emittedAtMs": 1578754181970
+      }
+    },
+    {
+      "index": 93,
+      "dir": "recv",
+      "ms": 12721,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578754181970
+      }
+    },
+    {
+      "index": 94,
+      "dir": "recv",
+      "ms": 12721,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": "apply"
+        },
+        "emittedAtMs": 1578754181970
+      }
+    },
+    {
+      "index": 95,
+      "dir": "recv",
+      "ms": 12721,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": "_patch"
+        },
+        "emittedAtMs": 1578754181970
+      }
+    },
+    {
+      "index": 96,
+      "dir": "recv",
+      "ms": 12721,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578754181971
+      }
+    },
+    {
+      "index": 97,
+      "dir": "recv",
+      "ms": 12721,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " per"
+        },
+        "emittedAtMs": 1578754181971
+      }
+    },
+    {
+      "index": 98,
+      "dir": "recv",
+      "ms": 12721,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " file"
+        },
+        "emittedAtMs": 1578754181971
+      }
+    },
+    {
+      "index": 99,
+      "dir": "recv",
+      "ms": 12722,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " in"
+        },
+        "emittedAtMs": 1578754181971
+      }
+    },
+    {
+      "index": 100,
+      "dir": "recv",
+      "ms": 12732,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578754181981
+      }
+    },
+    {
+      "index": 101,
+      "dir": "recv",
+      "ms": 12732,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " requested"
+        },
+        "emittedAtMs": 1578754181981
+      }
+    },
+    {
+      "index": 102,
+      "dir": "recv",
+      "ms": 12732,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " order"
+        },
+        "emittedAtMs": 1578754181981
+      }
+    },
+    {
+      "index": 103,
+      "dir": "recv",
+      "ms": 12735,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578754181984
+      }
+    },
+    {
+      "index": 104,
+      "dir": "recv",
+      "ms": 12735,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " then"
+        },
+        "emittedAtMs": 1578754181984
+      }
+    },
+    {
+      "index": 105,
+      "dir": "recv",
+      "ms": 12735,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " report"
+        },
+        "emittedAtMs": 1578754181984
+      }
+    },
+    {
+      "index": 106,
+      "dir": "recv",
+      "ms": 12735,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " each"
+        },
+        "emittedAtMs": 1578754181984
+      }
+    },
+    {
+      "index": 107,
+      "dir": "recv",
+      "ms": 12735,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": " result"
+        },
+        "emittedAtMs": 1578754181984
+      }
+    },
+    {
+      "index": 108,
+      "dir": "recv",
+      "ms": 12735,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-11>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578754181984
+      }
+    },
+    {
+      "index": 109,
+      "dir": "recv",
+      "ms": 12743,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-11>",
+            "text": "I’ll submit one `apply_patch` per file in the requested order, then report each result.",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "completedAtMs": 1578754181984
+        },
+        "emittedAtMs": 1578754181992
+      }
+    },
+    {
+      "index": 110,
+      "dir": "recv",
+      "ms": 13620,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "fileChange",
+            "id": "<item-12>",
+            "changes": [
+              {
+                "path": "<scratch>\\k1-fs-2.txt",
+                "kind": {
+                  "type": "add"
+                },
+                "diff": "beta\n"
+              }
+            ],
+            "status": "inProgress"
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "startedAtMs": 1578754182869
+        },
+        "emittedAtMs": 1578754182869
+      }
+    },
+    {
+      "index": 111,
+      "dir": "recv",
+      "ms": 13621,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          }
+        },
+        "emittedAtMs": 1578754182870
+      }
+    },
+    {
+      "index": 112,
+      "dir": "recv",
+      "ms": 13621,
+      "frame": {
+        "method": "item/fileChange/requestApproval",
+        "id": 1,
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-12>",
+          "startedAtMs": 1578754182870,
+          "reason": null,
+          "grantRoot": null
+        }
+      }
+    },
+    {
+      "index": 113,
+      "dir": "send",
+      "ms": 13621,
+      "frame": {
+        "id": 1,
+        "result": {
+          "decision": "accept"
+        }
+      }
+    },
+    {
+      "index": 114,
+      "dir": "recv",
+      "ms": 13621,
+      "frame": {
+        "method": "serverRequest/resolved",
+        "params": {
+          "threadId": "<session-1>",
+          "requestId": 1
+        },
+        "emittedAtMs": 1578754182870
+      }
+    },
+    {
+      "index": 115,
+      "dir": "recv",
+      "ms": 13621,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578754182870
+      }
+    },
+    {
+      "index": 116,
+      "dir": "recv",
+      "ms": 13795,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "fileChange",
+            "id": "<item-12>",
+            "changes": [
+              {
+                "path": "<scratch>\\k1-fs-2.txt",
+                "kind": {
+                  "type": "add"
+                },
+                "diff": "beta\n"
+              }
+            ],
+            "status": "completed"
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "completedAtMs": 1578754183034
+        },
+        "emittedAtMs": 1578754183044
+      }
+    },
+    {
+      "index": 117,
+      "dir": "recv",
+      "ms": 13795,
+      "frame": {
+        "method": "turn/diff/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "diff": "diff --git a/k1-fs-2.txt b/k1-fs-2.txt\nnew file mode 100644\nindex <blob>..<blob>\n--- <path>\n+++ b/k1-fs-2.txt\n@@ -0,0 +1 @@\n+beta\n"
+        },
+        "emittedAtMs": 1578754183044
+      }
+    },
+    {
+      "index": 118,
+      "dir": "recv",
+      "ms": 13799,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "fileChange",
+            "id": "<item-13>",
+            "changes": [
+              {
+                "path": "<scratch>\\k1-fs-outside.txt",
+                "kind": {
+                  "type": "add"
+                },
+                "diff": "gamma\n"
+              }
+            ],
+            "status": "inProgress"
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "startedAtMs": 1578754183048
+        },
+        "emittedAtMs": 1578754183048
+      }
+    },
+    {
+      "index": 119,
+      "dir": "recv",
+      "ms": 13801,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": [
+              "waitingOnApproval"
+            ]
+          }
+        },
+        "emittedAtMs": 1578754183050
+      }
+    },
+    {
+      "index": 120,
+      "dir": "recv",
+      "ms": 13801,
+      "frame": {
+        "method": "item/fileChange/requestApproval",
+        "id": 2,
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-13>",
+          "startedAtMs": 1578754183050,
+          "reason": null,
+          "grantRoot": null
+        }
+      }
+    },
+    {
+      "index": 121,
+      "dir": "send",
+      "ms": 13801,
+      "frame": {
+        "id": 2,
+        "result": {
+          "decision": "accept"
+        }
+      }
+    },
+    {
+      "index": 122,
+      "dir": "recv",
+      "ms": 13801,
+      "frame": {
+        "method": "serverRequest/resolved",
+        "params": {
+          "threadId": "<session-1>",
+          "requestId": 2
+        },
+        "emittedAtMs": 1578754183050
+      }
+    },
+    {
+      "index": 123,
+      "dir": "recv",
+      "ms": 13801,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578754183050
+      }
+    },
+    {
+      "index": 124,
+      "dir": "recv",
+      "ms": 13822,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "fileChange",
+            "id": "<item-13>",
+            "changes": [
+              {
+                "path": "<scratch>\\k1-fs-outside.txt",
+                "kind": {
+                  "type": "add"
+                },
+                "diff": "gamma\n"
+              }
+            ],
+            "status": "completed"
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "completedAtMs": 1578754183064
+        },
+        "emittedAtMs": 1578754183071
+      }
+    },
+    {
+      "index": 125,
+      "dir": "recv",
+      "ms": 13822,
+      "frame": {
+        "method": "turn/diff/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "diff": ""
+        },
+        "emittedAtMs": 1578754183071
+      }
+    },
+    {
+      "index": 126,
+      "dir": "recv",
+      "ms": 13843,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 41956,
+              "inputTokens": 41683,
+              "cachedInputTokens": 26112,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 273,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 14199,
+              "inputTokens": 14048,
+              "cachedInputTokens": 13056,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 151,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578754183092
+      }
+    },
+    {
+      "index": 127,
+      "dir": "recv",
+      "ms": 13843,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 128,
+      "dir": "recv",
+      "ms": 14459,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-14>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "startedAtMs": 1578754183708
+        },
+        "emittedAtMs": 1578754183708
+      }
+    },
+    {
+      "index": 129,
+      "dir": "recv",
+      "ms": 14474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "<scratch>"
+        },
+        "emittedAtMs": 1578754183723
+      }
+    },
+    {
+      "index": 130,
+      "dir": "recv",
+      "ms": 14474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183723
+      }
+    },
+    {
+      "index": 131,
+      "dir": "recv",
+      "ms": 14474,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183723
+      }
+    },
+    {
+      "index": 132,
+      "dir": "recv",
+      "ms": 14560,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183809
+      }
+    },
+    {
+      "index": 133,
+      "dir": "recv",
+      "ms": 14560,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183809
+      }
+    },
+    {
+      "index": 134,
+      "dir": "recv",
+      "ms": 14560,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183809
+      }
+    },
+    {
+      "index": 135,
+      "dir": "recv",
+      "ms": 14560,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183809
+      }
+    },
+    {
+      "index": 136,
+      "dir": "recv",
+      "ms": 14560,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183809
+      }
+    },
+    {
+      "index": 137,
+      "dir": "recv",
+      "ms": 14560,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183809
+      }
+    },
+    {
+      "index": 138,
+      "dir": "recv",
+      "ms": 14560,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183809
+      }
+    },
+    {
+      "index": 139,
+      "dir": "recv",
+      "ms": 14560,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183809
+      }
+    },
+    {
+      "index": 140,
+      "dir": "recv",
+      "ms": 14561,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183810
+      }
+    },
+    {
+      "index": 141,
+      "dir": "recv",
+      "ms": 14562,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183811
+      }
+    },
+    {
+      "index": 142,
+      "dir": "recv",
+      "ms": 14562,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183811
+      }
+    },
+    {
+      "index": 143,
+      "dir": "recv",
+      "ms": 14562,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183811
+      }
+    },
+    {
+      "index": 144,
+      "dir": "recv",
+      "ms": 14562,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183811
+      }
+    },
+    {
+      "index": 145,
+      "dir": "recv",
+      "ms": 14562,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183811
+      }
+    },
+    {
+      "index": 146,
+      "dir": "recv",
+      "ms": 14562,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183811
+      }
+    },
+    {
+      "index": 147,
+      "dir": "recv",
+      "ms": 14562,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "\\"
+        },
+        "emittedAtMs": 1578754183811
+      }
+    },
+    {
+      "index": 148,
+      "dir": "recv",
+      "ms": 14562,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "k"
+        },
+        "emittedAtMs": 1578754183811
+      }
+    },
+    {
+      "index": 149,
+      "dir": "recv",
+      "ms": 14562,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578754183811
+      }
+    },
+    {
+      "index": 150,
+      "dir": "recv",
+      "ms": 14562,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "-f"
+        },
+        "emittedAtMs": 1578754183811
+      }
+    },
+    {
+      "index": 151,
+      "dir": "recv",
+      "ms": 14565,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "s"
+        },
+        "emittedAtMs": 1578754183814
+      }
+    },
+    {
+      "index": 152,
+      "dir": "recv",
+      "ms": 14678,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "-"
+        },
+        "emittedAtMs": 1578754183927
+      }
+    },
+    {
+      "index": 153,
+      "dir": "recv",
+      "ms": 14678,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "2"
+        },
+        "emittedAtMs": 1578754183927
+      }
+    },
+    {
+      "index": 154,
+      "dir": "recv",
+      "ms": 14679,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ".txt"
+        },
+        "emittedAtMs": 1578754183928
+      }
+    },
+    {
+      "index": 155,
+      "dir": "recv",
+      "ms": 14679,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " —"
+        },
+        "emittedAtMs": 1578754183928
+      }
+    },
+    {
+      "index": 156,
+      "dir": "recv",
+      "ms": 14681,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " created"
+        },
+        "emittedAtMs": 1578754183930
+      }
+    },
+    {
+      "index": 157,
+      "dir": "recv",
+      "ms": 14681,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578754183930
+      }
+    },
+    {
+      "index": 158,
+      "dir": "recv",
+      "ms": 14681,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "  \n"
+        },
+        "emittedAtMs": 1578754183930
+      }
+    },
+    {
+      "index": 159,
+      "dir": "recv",
+      "ms": 14681,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "<scratch>"
+        },
+        "emittedAtMs": 1578754183930
+      }
+    },
+    {
+      "index": 160,
+      "dir": "recv",
+      "ms": 14681,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183930
+      }
+    },
+    {
+      "index": 161,
+      "dir": "recv",
+      "ms": 14681,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183930
+      }
+    },
+    {
+      "index": 162,
+      "dir": "recv",
+      "ms": 14681,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183930
+      }
+    },
+    {
+      "index": 163,
+      "dir": "recv",
+      "ms": 14681,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183930
+      }
+    },
+    {
+      "index": 164,
+      "dir": "recv",
+      "ms": 14681,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183930
+      }
+    },
+    {
+      "index": 165,
+      "dir": "recv",
+      "ms": 14681,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183930
+      }
+    },
+    {
+      "index": 166,
+      "dir": "recv",
+      "ms": 14681,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183931
+      }
+    },
+    {
+      "index": 167,
+      "dir": "recv",
+      "ms": 14682,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183931
+      }
+    },
+    {
+      "index": 168,
+      "dir": "recv",
+      "ms": 14682,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183931
+      }
+    },
+    {
+      "index": 169,
+      "dir": "recv",
+      "ms": 14749,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183998
+      }
+    },
+    {
+      "index": 170,
+      "dir": "recv",
+      "ms": 14749,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183998
+      }
+    },
+    {
+      "index": 171,
+      "dir": "recv",
+      "ms": 14749,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183998
+      }
+    },
+    {
+      "index": 172,
+      "dir": "recv",
+      "ms": 14749,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754183998
+      }
+    },
+    {
+      "index": 173,
+      "dir": "recv",
+      "ms": 14751,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754184000
+      }
+    },
+    {
+      "index": 174,
+      "dir": "recv",
+      "ms": 14751,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754184000
+      }
+    },
+    {
+      "index": 175,
+      "dir": "recv",
+      "ms": 14751,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754184000
+      }
+    },
+    {
+      "index": 176,
+      "dir": "recv",
+      "ms": 14751,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754184000
+      }
+    },
+    {
+      "index": 177,
+      "dir": "recv",
+      "ms": 14751,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754184000
+      }
+    },
+    {
+      "index": 178,
+      "dir": "recv",
+      "ms": 14751,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ""
+        },
+        "emittedAtMs": 1578754184000
+      }
+    },
+    {
+      "index": 179,
+      "dir": "recv",
+      "ms": 14751,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "\\"
+        },
+        "emittedAtMs": 1578754184000
+      }
+    },
+    {
+      "index": 180,
+      "dir": "recv",
+      "ms": 14751,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "k"
+        },
+        "emittedAtMs": 1578754184000
+      }
+    },
+    {
+      "index": 181,
+      "dir": "recv",
+      "ms": 14751,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578754184000
+      }
+    },
+    {
+      "index": 182,
+      "dir": "recv",
+      "ms": 14753,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "-f"
+        },
+        "emittedAtMs": 1578754184002
+      }
+    },
+    {
+      "index": 183,
+      "dir": "recv",
+      "ms": 14753,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "s"
+        },
+        "emittedAtMs": 1578754184002
+      }
+    },
+    {
+      "index": 184,
+      "dir": "recv",
+      "ms": 14753,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "-out"
+        },
+        "emittedAtMs": 1578754184002
+      }
+    },
+    {
+      "index": 185,
+      "dir": "recv",
+      "ms": 14753,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "side"
+        },
+        "emittedAtMs": 1578754184002
+      }
+    },
+    {
+      "index": 186,
+      "dir": "recv",
+      "ms": 14753,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ".txt"
+        },
+        "emittedAtMs": 1578754184002
+      }
+    },
+    {
+      "index": 187,
+      "dir": "recv",
+      "ms": 14753,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " —"
+        },
+        "emittedAtMs": 1578754184002
+      }
+    },
+    {
+      "index": 188,
+      "dir": "recv",
+      "ms": 14753,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " created"
+        },
+        "emittedAtMs": 1578754184002
+      }
+    },
+    {
+      "index": 189,
+      "dir": "recv",
+      "ms": 14766,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578754184015
+      }
+    },
+    {
+      "index": 190,
+      "dir": "recv",
+      "ms": 14816,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-14>",
+            "text": "<scratch>\\k1-fs-2.txt — created.  \n<scratch>\\k1-fs-outside.txt — created.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "completedAtMs": 1578754184055
+        },
+        "emittedAtMs": 1578754184065
+      }
+    },
+    {
+      "index": 191,
+      "dir": "recv",
+      "ms": 14845,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-9>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 56245,
+              "inputTokens": 55907,
+              "cachedInputTokens": 39168,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 338,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 14289,
+              "inputTokens": 14224,
+              "cachedInputTokens": 13056,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 65,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578754184094
+      }
+    },
+    {
+      "index": 192,
+      "dir": "recv",
+      "ms": 14845,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 193,
+      "dir": "recv",
+      "ms": 14853,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578754184102
+      }
+    },
+    {
+      "index": 194,
+      "dir": "recv",
+      "ms": 14853,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-9>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-14>",
+                "text": "<scratch>\\k1-fs-2.txt — created.  \n<scratch>\\k1-fs-outside.txt — created.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578754180,
+            "completedAt": 1578754184,
+            "durationMs": 3151
+          }
+        },
+        "emittedAtMs": 1578754184102
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [
+    {
+      "kind": "item/fileChange/requestApproval",
+      "requestKind": "approval",
+      "answer": "{\"decision\":\"acceptForSession\"}"
+    },
+    {
+      "kind": "item/fileChange/requestApproval",
+      "requestKind": "approval",
+      "answer": "{\"decision\":\"accept\"}"
+    },
+    {
+      "kind": "item/fileChange/requestApproval",
+      "requestKind": "approval",
+      "answer": "{\"decision\":\"accept\"}"
+    }
+  ],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 811,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1651,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 17190,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "codex-code-mode-host.exe"
+      ],
+      "alive": 5
+    }
+  ],
+  "family": "m22-codex-file-session",
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1525
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1134
+      },
+      {
+        "method": "item/completed",
+        "item": "userMessage",
+        "bytes": 871
+      },
+      {
+        "method": "item/started",
+        "item": "userMessage",
+        "bytes": 867
+      },
+      {
+        "method": "item/completed",
+        "item": "userMessage",
+        "bytes": 660
+      }
+    ],
+    "longStringsCut": []
+  }
+}

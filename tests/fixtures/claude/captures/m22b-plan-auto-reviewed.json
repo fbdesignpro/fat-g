@@ -1,0 +1,5272 @@
+{
+  "_fixture": {
+    "source": "M22b spike m22b-k1.mjs, run against the installed CLI on the maintainer's machine, in a scratch configuration folder",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "get_settings documents (key names only)"
+    ],
+    "omitted": [
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"uuid\":149,\"message\":7,\"request\":9,\"tool-use\":6,\"mcp-server\":5}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "claude",
+    "version": "2.1.268",
+    "launchKind": "native"
+  },
+  "date": "2020-01-10T20:38:22.413Z",
+  "scenario": {
+    "id": "m22b-auto-reviewed",
+    "title": "K1: a plan turn under Auto-reviewed: feedback, then Execute (C5, C11)",
+    "successCondition": "Whether the model calls ExitPlanMode, where the plan's text comes, what each answer brings, and the mode the frames report before and after"
+  },
+  "run": {
+    "id": "claude-m22b-auto-reviewed-6",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "p1",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 155,
+    "turnsSpent": 1,
+    "exit": {
+      "code": 0,
+      "ms": 18648
+    },
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 3178,
+      "recorded": [
+        {
+          "name": "claude.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": false,
+      "added": [],
+      "removed": [],
+      "changed": [
+        "notes-1.txt"
+      ]
+    },
+    "otherFoldersUnchanged": {
+      "other": true,
+      "third": true,
+      "outside": true
+    },
+    "notes": {
+      "mode": "auto-reviewed",
+      "launchedWith": "auto",
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Agent",
+        "AskUserQuestion",
+        "Bash",
+        "Write",
+        "Edit",
+        "ExitPlanMode"
+      ],
+      "answersPlanned": [
+        "feedback",
+        "execute"
+      ],
+      "initialize": {
+        "currentPermissionMode": "auto",
+        "pendingPermissionRequests": "absent"
+      },
+      "setPlan": {
+        "asked": "plan",
+        "ok": true,
+        "ms": 2,
+        "replyKeys": [
+          "mode"
+        ],
+        "replyMode": "plan",
+        "error": null,
+        "framesAfter": [
+          {
+            "type": "system/status",
+            "permissionMode": "plan"
+          }
+        ]
+      },
+      "endStatus": "success",
+      "isError": false,
+      "terminal": "completed",
+      "init": {
+        "permissionMode": "plan",
+        "model": "claude-sonnet-5",
+        "tools": [
+          "Task",
+          "AskUserQuestion",
+          "Bash",
+          "Edit",
+          "ExitPlanMode",
+          "Glob",
+          "Grep",
+          "Read",
+          "Write"
+        ],
+        "planToolListed": true,
+        "enterPlanToolListed": false
+      },
+      "planRequests": [
+        {
+          "index": 61,
+          "requestKeys": [
+            "display_name",
+            "input",
+            "requires_user_interaction",
+            "subtype",
+            "tool_name",
+            "tool_use_id"
+          ],
+          "inputKeys": [
+            "plan",
+            "planFilePath"
+          ],
+          "planInInput": {
+            "units": 247,
+            "lines": 8,
+            "opensWithAHeading": true
+          },
+          "otherInput": {
+            "planFilePath": "plans folder"
+          },
+          "suggestions": "absent",
+          "blockedPath": null,
+          "decisionReason": null,
+          "worker": false,
+          "answer": {
+            "label": "feedback",
+            "behavior": "deny",
+            "interrupt": false
+          },
+          "toolResult": {
+            "index": 64,
+            "msAfterTheAnswer": 2,
+            "isError": true,
+            "contentUnits": 71,
+            "words": "Add a final step that reads the file back to confirm the line is there.",
+            "holdsThePlan": false,
+            "toolUseResult": {
+              "string": true,
+              "units": 78
+            }
+          }
+        },
+        {
+          "index": 98,
+          "requestKeys": [
+            "display_name",
+            "input",
+            "requires_user_interaction",
+            "subtype",
+            "tool_name",
+            "tool_use_id"
+          ],
+          "inputKeys": [
+            "plan",
+            "planFilePath"
+          ],
+          "planInInput": {
+            "units": 264,
+            "lines": 8,
+            "opensWithAHeading": true
+          },
+          "otherInput": {
+            "planFilePath": "plans folder"
+          },
+          "suggestions": "absent",
+          "blockedPath": null,
+          "decisionReason": null,
+          "worker": false,
+          "answer": {
+            "label": "execute",
+            "behavior": "allow",
+            "interrupt": false
+          },
+          "toolResult": {
+            "index": 102,
+            "msAfterTheAnswer": 7,
+            "isError": false,
+            "contentUnits": 583,
+            "words": null,
+            "holdsThePlan": true,
+            "toolUseResult": {
+              "keys": [
+                "filePath",
+                "isAgent",
+                "plan"
+              ],
+              "plan": {
+                "units": 264,
+                "isThePlan": true
+              },
+              "isAgent": false,
+              "filePath": "plans folder"
+            }
+          }
+        }
+      ],
+      "otherRequests": [],
+      "toolCalls": [
+        {
+          "tool": "Write",
+          "file": "plans folder",
+          "asked": false,
+          "result": "ok"
+        },
+        {
+          "tool": "ExitPlanMode",
+          "file": null,
+          "asked": true,
+          "result": "error"
+        },
+        {
+          "tool": "Edit",
+          "file": "plans folder",
+          "asked": false,
+          "result": "ok"
+        },
+        {
+          "tool": "ExitPlanMode",
+          "file": null,
+          "asked": true,
+          "result": "ok"
+        },
+        {
+          "tool": "Read",
+          "file": "scratch project",
+          "asked": false,
+          "result": "ok"
+        },
+        {
+          "tool": "Edit",
+          "file": "scratch project",
+          "asked": false,
+          "result": "ok"
+        }
+      ],
+      "modeFrames": [
+        {
+          "index": 8,
+          "type": "system/init",
+          "permissionMode": "plan"
+        },
+        {
+          "index": 101,
+          "type": "system/status",
+          "permissionMode": "auto"
+        }
+      ],
+      "permissionDenied": [],
+      "cancels": 0,
+      "result": {
+        "subtype": "success",
+        "isError": false,
+        "terminal": "completed",
+        "numTurns": 7,
+        "permissionDenials": [
+          "ExitPlanMode"
+        ],
+        "permissionModeNamed": "absent"
+      },
+      "plansFolder": {
+        "where": "the scratch configuration folder",
+        "filesAdded": 1,
+        "removedAfterTheRun": true
+      },
+      "theChangeMade": true,
+      "setBack": {
+        "asked": "auto",
+        "ok": true,
+        "ms": 2,
+        "replyKeys": [
+          "mode"
+        ],
+        "replyMode": "auto",
+        "error": null,
+        "framesAfter": []
+      },
+      "sessionId": "<session-1>",
+      "typeCounts": {
+        "command_lifecycle": 3,
+        "system/init": 1,
+        "system/status": 8,
+        "rate_limit_event": 1,
+        "stream_event": 119,
+        "assistant": 8,
+        "user": 6,
+        "control_request/can_use_tool": 2,
+        "result": 1,
+        "control_response": 1
+      },
+      "outline": [
+        {
+          "index": 5,
+          "ms": 2727,
+          "send": "user",
+          "uuid": true
+        },
+        {
+          "index": 6,
+          "ms": 2731,
+          "recv": "command_lifecycle",
+          "bytes": 197,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "queued"
+        },
+        {
+          "index": 7,
+          "ms": 2737,
+          "recv": "command_lifecycle",
+          "bytes": 198,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "started"
+        },
+        {
+          "index": 8,
+          "ms": 2763,
+          "recv": "system/init",
+          "bytes": 2558,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "plan",
+          "tools": [
+            "Task",
+            "AskUserQuestion",
+            "Bash",
+            "Edit",
+            "ExitPlanMode",
+            "Glob",
+            "Grep",
+            "Read",
+            "Write",
+            "mcp__<mcp-server-173>__batch",
+            "mcp__<mcp-server-173>__create",
+            "mcp__<mcp-server-173>__delete",
+            "mcp__<mcp-server-173>__export",
+            "mcp__<mcp-server-173>__guide",
+            "mcp__<mcp-server-173>__query",
+            "mcp__<mcp-server-173>__read",
+            "mcp__<mcp-server-173>__update"
+          ]
+        },
+        {
+          "index": 9,
+          "ms": 2765,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 10,
+          "ms": 3463,
+          "recv": "rate_limit_event",
+          "bytes": 434,
+          "session": "s1"
+        },
+        {
+          "index": 19,
+          "ms": 3895,
+          "recv": "assistant",
+          "bytes": 821,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 60
+        },
+        {
+          "index": 51,
+          "ms": 5496,
+          "recv": "assistant",
+          "bytes": 1709,
+          "session": "s1",
+          "blocks": [
+            "tool_use:Write"
+          ],
+          "stop": null
+        },
+        {
+          "index": 55,
+          "ms": 5565,
+          "recv": "user",
+          "bytes": 1014,
+          "session": "s1",
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 56,
+          "ms": 5567,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 60,
+          "ms": 6361,
+          "recv": "assistant",
+          "bytes": 1312,
+          "session": "s1",
+          "blocks": [
+            "tool_use:ExitPlanMode"
+          ],
+          "stop": null
+        },
+        {
+          "index": 61,
+          "ms": 6363,
+          "recv": "control_request/can_use_tool",
+          "bytes": 666,
+          "tool": "ExitPlanMode",
+          "worker": false,
+          "keys": [
+            "display_name",
+            "input",
+            "requires_user_interaction",
+            "subtype",
+            "tool_name",
+            "tool_use_id"
+          ]
+        },
+        {
+          "index": 62,
+          "ms": 6363,
+          "send": "control_response"
+        },
+        {
+          "index": 64,
+          "ms": 6365,
+          "recv": "user",
+          "bytes": 585,
+          "session": "s1",
+          "content": [
+            "tool_result:error"
+          ]
+        },
+        {
+          "index": 67,
+          "ms": 6384,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 88,
+          "ms": 8242,
+          "recv": "assistant",
+          "bytes": 1463,
+          "session": "s1",
+          "blocks": [
+            "tool_use:Edit"
+          ],
+          "stop": null
+        },
+        {
+          "index": 92,
+          "ms": 8292,
+          "recv": "user",
+          "bytes": 1479,
+          "session": "s1",
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 93,
+          "ms": 8295,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 97,
+          "ms": 9050,
+          "recv": "assistant",
+          "bytes": 1329,
+          "session": "s1",
+          "blocks": [
+            "tool_use:ExitPlanMode"
+          ],
+          "stop": null
+        },
+        {
+          "index": 98,
+          "ms": 9051,
+          "recv": "control_request/can_use_tool",
+          "bytes": 683,
+          "tool": "ExitPlanMode",
+          "worker": false,
+          "keys": [
+            "display_name",
+            "input",
+            "requires_user_interaction",
+            "subtype",
+            "tool_name",
+            "tool_use_id"
+          ]
+        },
+        {
+          "index": 99,
+          "ms": 9051,
+          "send": "control_response"
+        },
+        {
+          "index": 101,
+          "ms": 9054,
+          "recv": "system/status",
+          "bytes": 172,
+          "session": "s1",
+          "keys": [
+            "permissionMode",
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ]
+        },
+        {
+          "index": 102,
+          "ms": 9058,
+          "recv": "user",
+          "bytes": 1363,
+          "session": "s1",
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 105,
+          "ms": 9077,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 116,
+          "ms": 11930,
+          "recv": "assistant",
+          "bytes": 1065,
+          "session": "s1",
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 120,
+          "ms": 11974,
+          "recv": "user",
+          "bytes": 583,
+          "session": "s1",
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 121,
+          "ms": 11990,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 138,
+          "ms": 13591,
+          "recv": "assistant",
+          "bytes": 1357,
+          "session": "s1",
+          "blocks": [
+            "tool_use:Edit"
+          ],
+          "stop": null
+        },
+        {
+          "index": 142,
+          "ms": 13630,
+          "recv": "user",
+          "bytes": 965,
+          "session": "s1",
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 143,
+          "ms": 13632,
+          "recv": "system/status",
+          "bytes": 156,
+          "session": "s1",
+          "keys": [
+            "session_id",
+            "status",
+            "subtype",
+            "type",
+            "uuid"
+          ],
+          "status": "requesting"
+        },
+        {
+          "index": 151,
+          "ms": 14586,
+          "recv": "assistant",
+          "bytes": 816,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 53
+        },
+        {
+          "index": 155,
+          "ms": 14604,
+          "recv": "result",
+          "bytes": 2788,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 7,
+          "resultIndex": 0,
+          "queuedTurnCount": 0,
+          "resultChars": 53
+        },
+        {
+          "index": 156,
+          "ms": 14606,
+          "recv": "command_lifecycle",
+          "bytes": 200,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "completed"
+        },
+        {
+          "index": 157,
+          "ms": 16125,
+          "send": "control_request/set_permission_mode"
+        },
+        {
+          "index": 158,
+          "ms": 16127,
+          "recv": "control_response",
+          "bytes": 108,
+          "ok": true
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--input-format",
+      "stream-json",
+      "--setting-sources",
+      "user,project,local",
+      "--permission-mode",
+      "auto",
+      "--permission-prompt-tool",
+      "stdio",
+      "--tools",
+      "Read,Glob,Grep,Agent,AskUserQuestion,Bash,Write,Edit,ExitPlanMode",
+      "--model",
+      "sonnet",
+      "--effort",
+      "low",
+      "--include-partial-messages"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "subtype": "initialize"
+    },
+    "replyIndex": 1,
+    "ok": true
+  },
+  "toolPermissions": {
+    "readTools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "scenarioTools": [
+      "Agent",
+      "AskUserQuestion",
+      "Bash",
+      "Write",
+      "Edit",
+      "ExitPlanMode"
+    ],
+    "preApproved": [],
+    "permissionMode": "auto",
+    "permissionRequestsTo": "the spike (--permission-prompt-tool stdio)",
+    "policy": "ExitPlanMode answered as the scenario says (feedback: deny with the spike's words; Execute: a plain allow; Cancel: deny with interrupt and fat-g's words; or held for a Stop); a Write of the plan file inside the scratch configuration's plans folder, and a Write or an Edit in the scratch project, allowed; any other request denied"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_STARTUP_FAILURE_RESULTS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": false
+      }
+    ],
+    "set": [
+      "CLAUDE_CONFIG_DIR",
+      "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "stream_event"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 34,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-1",
+        "request": {
+          "subtype": "initialize"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 522,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-1",
+          "response": {
+            "commands": [
+              {
+                "name": "deep-research",
+                "description": "Deep research harness — fan-out web searches, fetch sources, adversarially verify claims, synthesize a cited report. (dynamic workflow)",
+                "argumentHint": ""
+              },
+              {
+                "name": "design",
+                "description": "Grant or revoke Claude agent access to your Design projects",
+                "argumentHint": "consent | revoke"
+              },
+              {
+                "name": "design-sync",
+                "description": "Push a React design system to claude.ai/design. This runs a converter that bundles the real component code (from Storybook or a bare package) and uploads it. Use when the user runs /design-sync or says \"sync my design system to Claude Design\".",
+                "argumentHint": "[<project hint, e.g. \"Acme DS\">]"
+              },
+              {
+                "name": "dataviz",
+                "description": "Use this skill whenever you are about to create ANY chart, graph, plot, dashboard, or data visualization, in ANY output medium — an HTML or React artifact, inline SVG, plotting code in any library (matplotlib, plotly, d3, Recharts, …), an image/PNG you will render and upload, or a chart shared into Slack. Read it BEFORE writing the first line of chart code, choosing chart colors, building a stat tile / meter / KPI row, or laying out a dashboard. When the destination is a first-party document connector (host-designated, never self-described) that renders live charts, hand it the rows (inline, or as an uploaded data file the chart cites) rather than a rendered PNG/SVG — a picture of a chart loses hover, data inspection and per-value comments. Produces visualizations that read as one system — elegant, accessible, consistent in light and dark — using a brand-neutral placeholder palette you swap for your own. Teaches a design-system-agnostic method: a form heuristic, a color formula with a runnable validator, mark specs, and interaction rules. A validated default palette is documented in `references/palette.md` — swap that file's values for your brand's. Triggers on: \"chart\", \"graph\", \"plot\", \"data viz\", \"visualization\", \"dashboard\", \"analytics\", \"visualize data\", \"categorical colors\", \"sequential / diverging palette\", \"stat tile\", \"sparkline\", \"heatmap\", \"legend\", \"axis\", \"tooltip\", \"chart colors\", \"color by series\".",
+                "argumentHint": ""
+              },
+              {
+                "name": "update-config",
+                "description": "Use this skill to configure the Claude Code harness via settings.json. Automated behaviors (\"from now on when X\", \"each time X\", \"whenever X\", \"before/after X\") require hooks configured in settings.json - the harness executes these, not Claude, so memory/preferences cannot fulfill them. Also use for: permissions (\"allow X\", \"add permission\", \"move permission to\"), env vars (\"set X=Y\"), hook troubleshooting, or any changes to settings.json/settings.local.json files. Examples: \"allow npm commands\", \"add bq permission to global settings\", \"move permission to user settings\", \"set DEBUG=true\", \"when claude stops show X\". For simple settings like theme/model, suggest the /config command.",
+                "argumentHint": ""
+              },
+              {
+                "name": "verify",
+                "description": "Verify that a code change actually does what it's supposed to by exercising it end-to-end and observing behavior — drive the affected flow, not just tests or typecheck. Run before committing nontrivial changes; bootstraps this repo's project verify skill if none exists yet. Don't invoke it on a diff that only touches tests, docs, or other code with no runtime surface to drive (a change to product source always has one) — there's nothing to observe.",
+                "argumentHint": ""
+              },
+              {
+                "name": "debug",
+                "description": "Enable debug logging for this session and help diagnose issues",
+                "argumentHint": "[issue description]"
+              },
+              {
+                "name": "code-review",
+                "description": "Review the current diff, or a PR number/branch/path target, for correctness bugs and reuse/simplification/efficiency cleanups at the given effort level (low/medium: fewer, high-confidence findings; high→max: broader coverage, may include uncertain findings; ultra: deep multi-agent review in the cloud); with no level given, it reuses the level you typed last. Pass --comment to post findings as inline PR comments, or --fix to apply the findings to the working tree after the review. For ultra on a GitHub.com PR target, --post asks to post the finished review’s findings to the PR as a single comment from the user’s GitHub account (not a review; the launch dialog still confirms in interactive sessions, while non-interactive mode posts on the flag alone) and --no-post hides that option.",
+                "argumentHint": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [<pr#>|<branch>|<path>]",
+                "aliases": [
+                  "review"
+                ]
+              },
+              {
+                "name": "simplify",
+                "description": "Review the changed code for reuse, simplification, efficiency, and altitude cleanups, then apply the fixes. Quality only — it does not hunt for bugs; use /code-review for that.",
+                "argumentHint": "[<target>]"
+              },
+              {
+                "name": "batch",
+                "description": "Research and plan a large-scale change, then execute it in parallel across 5–30 isolated worktree agents that each open a PR.",
+                "argumentHint": "<instruction>"
+              },
+              {
+                "name": "fewer-permission-prompts",
+                "description": "Scan your transcripts for common read-only Bash and MCP tool calls, then add a prioritized allowlist to project .claude/settings.json to reduce permission prompts.",
+                "argumentHint": ""
+              },
+              {
+                "name": "doctor",
+                "description": "Health-check the user's Claude Code setup and fix issues: diagnose installation health — what the `claude doctor` terminal diagnostics cover — from local data (duplicate or leftover installs, PATH, unparseable settings files, broken or colliding agent definitions, skills whose frontmatter fails to parse); find unused skills, MCP servers, and plugins versus their context cost and disable dead weight; deduplicate local CLAUDE.md files against checked-in ones; trim checked-in CLAUDE.md files by cutting content a session could derive from the codebase (directory layouts, tech-stack lists, architecture overviews) while keeping gotchas, rationale, and non-standard conventions; migrate always-loaded CLAUDE.md guidance into lazy skills and nested CLAUDE.md files; flag slow hooks and context-heavy extensions; check the installed version is current; make auto mode the default permission mode; and pre-approve frequently denied read-only commands. Use when the user asks for a doctor run, checkup, audit, tune-up, or cleanup of their Claude Code setup or configuration.",
+                "argumentHint": "",
+                "aliases": [
+                  "checkup"
+                ]
+              },
+              {
+                "name": "loop",
+                "description": "Run a prompt or slash command on a recurring interval (e.g. /loop 5m /foo). Omit the interval to let the model self-pace.",
+                "argumentHint": "[interval] [prompt]",
+                "aliases": [
+                  "proactive"
+                ]
+              },
+              {
+                "name": "schedule",
+                "description": "Create, update, list, or run scheduled cloud agents (routines) that execute on a cron schedule.",
+                "argumentHint": "",
+                "aliases": [
+                  "routines"
+                ]
+              },
+              {
+                "name": "claude-api",
+                "description": "Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.\nTRIGGER — read BEFORE opening the target file; don't skip because it \"looks like a one-liner\" — whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) — never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens).\nSKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named — don't Read the file).",
+                "argumentHint": ""
+              },
+              {
+                "name": "workflow-authoring",
+                "description": "Reference for writing a Workflow tool script (script API and gotchas, resume, quality patterns, worked examples). Load before authoring a script for a workflow the user already opted into; it does not itself authorize running one.",
+                "argumentHint": ""
+              },
+              {
+                "name": "run",
+                "description": "Launch and drive this project's app to see a change working. Use when asked to run, start, or screenshot the app, or to confirm a change works in the real app (not just tests). First looks for a project skill that already covers launching the app; otherwise falls back to built-in patterns per project type (CLI, server, TUI, Electron, browser-driven, library).",
+                "argumentHint": ""
+              },
+              {
+                "name": "run-skill-generator",
+                "description": "Author or improve the run-<unit> skill - a per-project skill that tells agents how to build, launch, and drive this project's app. Use when the user asks to set up the project, get it running, write run instructions, or verify build/run steps work from a clean environment.",
+                "argumentHint": ""
+              },
+              {
+                "name": "advisor",
+                "description": "Let Claude consult a stronger model at key moments",
+                "argumentHint": "[fable|opus|sonnet|off]"
+              },
+              {
+                "name": "agents",
+                "description": "(removed) Ask Claude to create/manage subagents, or edit .claude/agents/",
+                "argumentHint": ""
+              },
+              {
+                "name": "auto-mode-setup",
+                "description": "Teach auto mode about your environment, plus optional rule tweaks",
+                "argumentHint": "[--request-id <uuid>] (--wizard posture=… scope=… depth=… --propose | --expect-sha256 <64-hex> --apply-file <path>)"
+              },
+              {
+                "name": "autocompact",
+                "description": "Configure the auto-compact window size",
+                "argumentHint": "[auto|<tokens>]"
+              },
+              {
+                "name": "clear",
+                "description": "Start a new session with empty context; previous session stays on disk (resumable with /resume)",
+                "argumentHint": "[name]",
+                "aliases": [
+                  "reset",
+                  "new"
+                ]
+              },
+              {
+                "name": "color",
+                "description": "Set the prompt bar color for this session",
+                "argumentHint": "[red|blue|green|yellow|purple|orange|pink|cyan|default]"
+              },
+              {
+                "name": "compact",
+                "description": "Free up context by summarizing the conversation so far",
+                "argumentHint": "<optional custom summarization instructions>"
+              },
+              {
+                "name": "config",
+                "description": "Set a setting by key",
+                "argumentHint": "key=value",
+                "aliases": [
+                  "settings"
+                ]
+              },
+              {
+                "name": "context",
+                "description": "Show current context usage",
+                "argumentHint": ""
+              },
+              {
+                "name": "effort",
+                "description": "Set effort level for model usage",
+                "argumentHint": "<low|medium|high|xhigh|max|ultracode|auto>"
+              },
+              {
+                "name": "fast",
+                "description": "Toggle fast mode (Opus 5)",
+                "argumentHint": "[on|off]"
+              },
+              {
+                "name": "heapdump",
+                "description": "Dump the JS heap to ~/Desktop",
+                "argumentHint": ""
+              },
+              {
+                "name": "init",
+                "description": "Initialize a new CLAUDE.md file with codebase documentation",
+                "argumentHint": ""
+              },
+              {
+                "name": "mcp",
+                "description": "Manage MCP servers",
+                "argumentHint": "[reconnect|enable|disable [<server>|all]]"
+              },
+              {
+                "name": "import",
+                "description": "Import config from another AI coding agent",
+                "argumentHint": ""
+              },
+              {
+                "name": "model",
+                "description": "Set the AI model for Claude Code",
+                "argumentHint": "<model>"
+              },
+              {
+                "name": "__remote-workflow",
+                "description": "Run the workflow script delivered in this session environment (server-launched sessions only)",
+                "argumentHint": ""
+              },
+              {
+                "name": "workflow-launch-exec",
+                "description": "Execute a server-launched workflow handoff (workflow_launch event sessions only)",
+                "argumentHint": ""
+              },
+              {
+                "name": "reload-plugins",
+                "description": "Activate pending plugin changes in the current session",
+                "argumentHint": "[--force]"
+              },
+              {
+                "name": "reload-skills",
+                "description": "Pick up skills added or changed on disk during this session",
+                "argumentHint": ""
+              },
+              {
+                "name": "rename",
+                "description": "Rename the current conversation",
+                "argumentHint": "[name]",
+                "aliases": [
+                  "name"
+                ]
+              },
+              {
+                "name": "ultrareview",
+                "description": "Start a cloud agent that finds and verifies bugs in your branch (~15-25 min, $5-$25 USD) · Runs in Claude Code on the web. See https://code.claude.com/docs/en/claude-code-on-the-web",
+                "argumentHint": ""
+              },
+              {
+                "name": "security-review",
+                "description": "Complete a security review of the pending changes on the current branch",
+                "argumentHint": ""
+              },
+              {
+                "name": "usage-credits",
+                "description": "Configure usage credits or request them from your admin when you hit a limit",
+                "argumentHint": ""
+              },
+              {
+                "name": "extra-usage",
+                "description": "Renamed to /usage-credits",
+                "argumentHint": ""
+              },
+              {
+                "name": "usage",
+                "description": "Show session cost, plan usage, and what's contributing to your limits",
+                "argumentHint": "",
+                "aliases": [
+                  "cost",
+                  "stats"
+                ]
+              },
+              {
+                "name": "insights",
+                "description": "Generate a report analyzing your Claude Code sessions",
+                "argumentHint": ""
+              },
+              {
+                "name": "recap",
+                "description": "Generate a one-line session recap now",
+                "argumentHint": ""
+              },
+              {
+                "name": "skill-doctor",
+                "description": "Show which loaded skills are unused and costing context",
+                "argumentHint": ""
+              },
+              {
+                "name": "goal",
+                "description": "Set a goal — keep working until the condition is met",
+                "argumentHint": ""
+              },
+              {
+                "name": "design-consent",
+                "description": "Grant Claude agent access to your Design projects",
+                "argumentHint": ""
+              },
+              {
+                "name": "design-revoke",
+                "description": "Revoke Claude agent access to your Design projects",
+                "argumentHint": ""
+              },
+              {
+                "name": "list-agents",
+                "description": "List subagents, teammates, and other Claude sessions you can message",
+                "argumentHint": "",
+                "aliases": [
+                  "peers"
+                ]
+              },
+              {
+                "name": "team-onboarding",
+                "description": "Help teammates ramp on Claude Code with a guide from your usage",
+                "argumentHint": ""
+              }
+            ],
+            "agents": [
+              {
+                "name": "claude",
+                "description": "Catch-all for any task that doesn't fit a more specific agent. FleetView's default when no agent name is typed."
+              },
+              {
+                "name": "Explore",
+                "description": "Fast read-only search agent for locating code. Use it to find files by pattern (eg. \"src/components/**/*.tsx\"), grep for symbols or keywords (eg. \"API endpoints\"), or answer \"where is X defined / which files reference Y.\" Do NOT use it for code review, design-doc auditing, cross-file consistency checks, or open-ended analysis — it reads excerpts rather than whole files and will miss content past its read window. When calling, specify search breadth: \"quick\" for a single targeted lookup, \"medium\" for moderate exploration, or \"very thorough\" to search across multiple locations and naming conventions.",
+                "model": "inherit"
+              },
+              {
+                "name": "general-purpose",
+                "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you."
+              },
+              {
+                "name": "Plan",
+                "description": "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs.",
+                "model": "inherit"
+              },
+              {
+                "name": "statusline-setup",
+                "description": "Use this agent to configure the user's Claude Code status line setting.",
+                "model": "sonnet"
+              }
+            ],
+            "output_style": "default",
+            "available_output_styles": [
+              "default",
+              "Proactive",
+              "Concise",
+              "Explanatory",
+              "Learning"
+            ],
+            "user_output_styles_dir": "<scratch>\\output-styles",
+            "models": [
+              {
+                "value": "default",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Default (recommended)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "opus[1m]",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Opus (1M context)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "claude-fable-5-1[1m]",
+                "resolvedModel": "claude-fable-5-1",
+                "displayName": "Fable",
+                "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "sonnet",
+                "resolvedModel": "claude-sonnet-5",
+                "displayName": "Sonnet",
+                "description": "Sonnet 5 · Efficient for routine tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "haiku",
+                "resolvedModel": "claude-haiku-4-5-20251001",
+                "displayName": "Haiku",
+                "description": "Haiku 4.5 · Fastest for quick answers"
+              }
+            ],
+            "account": "<account>",
+            "pid": 60532,
+            "current_permission_mode": "auto",
+            "analytics_disabled": false,
+            "remote_control_auto_enable": false,
+            "remote_control_available": true,
+            "remote_control_auto_on_by_default": false,
+            "ide_rc_auto_enable_gate": true,
+            "fast_mode_state": "off",
+            "fast_mode_disabled_reason": "sdk_opt_in_required",
+            "session_state": "idle"
+          },
+          "pending_permission_requests": [],
+          "pending_user_dialog_requests": []
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 2009,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-2",
+        "request": {
+          "subtype": "set_permission_mode",
+          "mode": "plan"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 2011,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-2",
+          "response": {
+            "mode": "plan"
+          }
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 2011,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": null,
+        "permissionMode": "plan",
+        "uuid": "<uuid-2>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 5,
+      "dir": "send",
+      "ms": 2727,
+      "frame": {
+        "type": "user",
+        "uuid": "<uuid-3>",
+        "message": {
+          "role": "user",
+          "content": "Make a short plan, three steps at most, for this change to the project in the current folder: append the line \"reviewed\" to the end of notes-1.txt. Do not ask me any question."
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2731,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-3>",
+        "state": "queued",
+        "uuid": "<uuid-4>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 2737,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-3>",
+        "state": "started",
+        "uuid": "<uuid-5>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 2763,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "AskUserQuestion",
+          "Bash",
+          "Edit",
+          "ExitPlanMode",
+          "Glob",
+          "Grep",
+          "Read",
+          "Write",
+          "mcp__<mcp-server-173>__batch",
+          "mcp__<mcp-server-173>__create",
+          "mcp__<mcp-server-173>__delete",
+          "mcp__<mcp-server-173>__export",
+          "mcp__<mcp-server-173>__guide",
+          "mcp__<mcp-server-173>__query",
+          "mcp__<mcp-server-173>__read",
+          "mcp__<mcp-server-173>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-174>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-175>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-176>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-177>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "plan",
+        "slash_commands": [
+          "deep-research",
+          "design",
+          "design-sync",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "schedule",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator",
+          "advisor",
+          "agents",
+          "auto-mode-setup",
+          "autocompact",
+          "clear",
+          "color",
+          "compact",
+          "config",
+          "context",
+          "effort",
+          "fast",
+          "heapdump",
+          "init",
+          "mcp",
+          "import",
+          "model",
+          "__remote-workflow",
+          "workflow-launch-exec",
+          "reload-plugins",
+          "reload-skills",
+          "rename",
+          "ultrareview",
+          "security-review",
+          "usage-credits",
+          "extra-usage",
+          "usage",
+          "insights",
+          "recap",
+          "skill-doctor",
+          "goal",
+          "design-consent",
+          "design-revoke",
+          "list-agents",
+          "team-onboarding"
+        ],
+        "terminal_slash_commands": [
+          "doctor",
+          "color",
+          "reload-plugins"
+        ],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [
+          "deep-research",
+          "design",
+          "design-sync",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "schedule",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator"
+        ],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-6>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 2765,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-7>"
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 3463,
+      "frame": {
+        "type": "rate_limit_event",
+        "rate_limit_info": {
+          "_keys": [
+            "isUsingOverage",
+            "overageDisabledReason",
+            "overageStatus",
+            "rateLimitType",
+            "resetsAt",
+            "status",
+            "unifiedWindows"
+          ]
+        },
+        "uuid": "<uuid-8>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 3474,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-9>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 3958,
+              "cache_read_input_tokens": 23203,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 3958
+              },
+              "output_tokens": 1,
+              "service_tier": "standard",
+              "inference_geo": "global",
+              "speed": "standard"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-10>",
+        "ttft_ms": 700,
+        "user_message_uuid": "<uuid-3>",
+        "user_message_uuids": [
+          "<uuid-3>"
+        ]
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 3475,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "text",
+            "text": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-11>"
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 3475,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "This"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-12>"
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 3557,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " is a trivial single"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-13>"
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 3618,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "-file"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-14>"
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 3659,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " append, no"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-15>"
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 3702,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " ex"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-16>"
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 3757,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "ploration needed."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-17>"
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 3895,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-9>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "This is a trivial single-file append, no exploration needed."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 3958,
+            "cache_read_input_tokens": 23203,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3958
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "global",
+            "speed": "standard"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-18>",
+        "timestamp": "2020-01-10T20:38:06.218Z",
+        "request_id": "<request-19>"
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 3895,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-20>"
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 3896,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 1,
+          "content_block": {
+            "type": "tool_use",
+            "id": "<tool-use-21>",
+            "name": "Write",
+            "input": {},
+            "caller": {
+              "type": "direct"
+            }
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-22>"
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 3896,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-23>"
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 3966,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "{\"file_path\": \"<scratch>"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-24>"
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 4013,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-25>"
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 4079,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-26>"
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 4114,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-27>"
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 4165,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\\\"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-28>"
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 4214,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "plans\\\\make-a-short"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-29>"
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 4263,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "-plan-dynamic"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-30>"
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 4314,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "-stallman.md"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-31>"
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 4514,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\", \"content\": \"# Context"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-32>"
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 4562,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\nAppend"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-33>"
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 4616,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " the"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-34>"
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 4664,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " word \\\"reviewed\\\" to"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-35>"
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 4713,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " the end of notes-1."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-36>"
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 4762,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "txt.\\n\\n# Plan"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-37>"
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 4813,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\n1. Read"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-38>"
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 4868,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " notes-1.txt in"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-39>"
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 4919,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " the current direct"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-40>"
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 4962,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ory to see"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-41>"
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 5014,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " its current contents.\\n2."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-42>"
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 5066,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " Append a"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-43>"
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 5112,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " new"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-44>"
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 5163,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " line \\\""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-45>"
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 5212,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "reviewed\\\" to the end"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-46>"
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 5262,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " of the file.\\n3."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-47>"
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 5314,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " Verify the file now "
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-48>"
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 5362,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ends with \\\"reviewed\\\"."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-49>"
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 5412,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\n"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-50>"
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 5494,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\"}"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-51>"
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 5496,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-9>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-21>",
+              "name": "Write",
+              "input": {
+                "file_path": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md",
+                "content": "# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Verify the file now ends with \"reviewed\".\n"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 3958,
+            "cache_read_input_tokens": 23203,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3958
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "global",
+            "speed": "standard"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-52>",
+        "timestamp": "2020-01-10T20:38:07.852Z",
+        "request_id": "<request-19>",
+        "wire_tool_inputs": {
+          "<tool-use-21>": {
+            "file_path": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md",
+            "content": "# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Verify the file now ends with \"reviewed\".\n"
+          }
+        }
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 5499,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 1
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-53>"
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 5516,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "tool_use",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 3958,
+            "cache_read_input_tokens": 23203,
+            "output_tokens": 241,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 241,
+                "cache_read_input_tokens": 23203,
+                "cache_creation_input_tokens": 3958,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 3958
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-54>"
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 5517,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-55>"
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 5565,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-21>",
+              "type": "tool_result",
+              "content": "File created successfully at: <scratch>\\plans\\make-a-short-plan-dynamic-stallman.md (file state is current in your context — no need to Read it back)"
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-56>",
+        "timestamp": "2020-01-10T20:38:07.921Z",
+        "tool_use_result": {
+          "type": "create",
+          "filePath": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md",
+          "content": "# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Verify the file now ends with \"reviewed\".\n",
+          "structuredPatch": [],
+          "originalFile": null,
+          "userModified": false
+        }
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 5567,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-57>"
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 6314,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-58>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 370,
+              "cache_read_input_tokens": 27161,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 370
+              },
+              "output_tokens": 24,
+              "service_tier": "standard",
+              "inference_geo": "global",
+              "speed": "standard"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-59>",
+        "ttft_ms": 738
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 6314,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "tool_use",
+            "id": "<tool-use-60>",
+            "name": "ExitPlanMode",
+            "input": {},
+            "caller": {
+              "type": "direct"
+            }
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-61>"
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 6314,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-62>"
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 6361,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-58>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-60>",
+              "name": "ExitPlanMode",
+              "input": {
+                "plan": "# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Verify the file now ends with \"reviewed\".\n",
+                "planFilePath": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 370,
+            "cache_read_input_tokens": 27161,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 370
+            },
+            "output_tokens": 24,
+            "service_tier": "standard",
+            "inference_geo": "global",
+            "speed": "standard"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-63>",
+        "timestamp": "2020-01-10T20:38:08.717Z",
+        "request_id": "<request-64>",
+        "wire_tool_inputs": {
+          "<tool-use-60>": {}
+        }
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 6363,
+      "frame": {
+        "type": "control_request",
+        "request_id": "<request-65>",
+        "request": {
+          "subtype": "can_use_tool",
+          "tool_name": "ExitPlanMode",
+          "display_name": "ExitPlanMode",
+          "input": {
+            "plan": "# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Verify the file now ends with \"reviewed\".\n",
+            "planFilePath": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md"
+          },
+          "tool_use_id": "<tool-use-60>",
+          "requires_user_interaction": true
+        }
+      }
+    },
+    {
+      "index": 62,
+      "dir": "send",
+      "ms": 6363,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "<request-65>",
+          "response": {
+            "behavior": "deny",
+            "message": "Add a final step that reads the file back to confirm the line is there."
+          }
+        }
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 6363,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-66>"
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 6365,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "content": "Add a final step that reads the file back to confirm the line is there.",
+              "is_error": true,
+              "tool_use_id": "<tool-use-60>"
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-67>",
+        "timestamp": "2020-01-10T20:38:08.721Z",
+        "tool_use_result": "Error: Add a final step that reads the file back to confirm the line is there.",
+        "tool_result_meta": [
+          {
+            "id": "<tool-use-60>",
+            "non_execution_kind": "permission-rule"
+          }
+        ]
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 6372,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "tool_use",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 370,
+            "cache_read_input_tokens": 27161,
+            "output_tokens": 31,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 31,
+                "cache_read_input_tokens": 27161,
+                "cache_creation_input_tokens": 370,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 370
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-68>"
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 6372,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-69>"
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 6384,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-70>"
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 7047,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-71>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 102,
+              "cache_read_input_tokens": 27531,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 102
+              },
+              "output_tokens": 16,
+              "service_tier": "standard",
+              "inference_geo": "global",
+              "speed": "standard"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-72>",
+        "ttft_ms": 654
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 7047,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "tool_use",
+            "id": "<tool-use-73>",
+            "name": "Edit",
+            "input": {},
+            "caller": {
+              "type": "direct"
+            }
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-74>"
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 7047,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-75>"
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 7288,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "{\"file_path\": \"<scratch>"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-76>"
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 7289,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-77>"
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 7289,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-78>"
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 7290,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-79>"
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 7340,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-80>"
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 7392,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\\\"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-81>"
+      }
+    },
+    {
+      "index": 77,
+      "dir": "recv",
+      "ms": 7442,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "plans\\\\make-a-short"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-82>"
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 7492,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "-plan-dynamic"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-83>"
+      }
+    },
+    {
+      "index": 79,
+      "dir": "recv",
+      "ms": 7542,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "-stallman.md"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-84>"
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 7741,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\", \"old_string\": \"3. Verify the file"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-85>"
+      }
+    },
+    {
+      "index": 81,
+      "dir": "recv",
+      "ms": 7791,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " now ends with \\\"review"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-86>"
+      }
+    },
+    {
+      "index": 82,
+      "dir": "recv",
+      "ms": 7842,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ed\\\"."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-87>"
+      }
+    },
+    {
+      "index": 83,
+      "dir": "recv",
+      "ms": 7991,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\", \"new_string\": \"3. Read"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-88>"
+      }
+    },
+    {
+      "index": 84,
+      "dir": "recv",
+      "ms": 8040,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " the file back to confirm it"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-89>"
+      }
+    },
+    {
+      "index": 85,
+      "dir": "recv",
+      "ms": 8092,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " now ends with \\\"review"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-90>"
+      }
+    },
+    {
+      "index": 86,
+      "dir": "recv",
+      "ms": 8142,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ed\\\"."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-91>"
+      }
+    },
+    {
+      "index": 87,
+      "dir": "recv",
+      "ms": 8238,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\"}"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-92>"
+      }
+    },
+    {
+      "index": 88,
+      "dir": "recv",
+      "ms": 8242,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-71>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-73>",
+              "name": "Edit",
+              "input": {
+                "replace_all": false,
+                "file_path": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md",
+                "old_string": "3. Verify the file now ends with \"reviewed\".",
+                "new_string": "3. Read the file back to confirm it now ends with \"reviewed\"."
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 102,
+            "cache_read_input_tokens": 27531,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 102
+            },
+            "output_tokens": 16,
+            "service_tier": "standard",
+            "inference_geo": "global",
+            "speed": "standard"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-93>",
+        "timestamp": "2020-01-10T20:38:10.599Z",
+        "request_id": "<request-94>",
+        "wire_tool_inputs": {
+          "<tool-use-73>": {
+            "file_path": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md",
+            "old_string": "3. Verify the file now ends with \"reviewed\".",
+            "new_string": "3. Read the file back to confirm it now ends with \"reviewed\"."
+          }
+        }
+      }
+    },
+    {
+      "index": 89,
+      "dir": "recv",
+      "ms": 8244,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-95>"
+      }
+    },
+    {
+      "index": 90,
+      "dir": "recv",
+      "ms": 8261,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "tool_use",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 102,
+            "cache_read_input_tokens": 27531,
+            "output_tokens": 191,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 191,
+                "cache_read_input_tokens": 27531,
+                "cache_creation_input_tokens": 102,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 102
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-96>"
+      }
+    },
+    {
+      "index": 91,
+      "dir": "recv",
+      "ms": 8261,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-97>"
+      }
+    },
+    {
+      "index": 92,
+      "dir": "recv",
+      "ms": 8292,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-73>",
+              "type": "tool_result",
+              "content": "The file <scratch>\\plans\\make-a-short-plan-dynamic-stallman.md has been updated successfully. (file state is current in your context — no need to Read it back)"
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-98>",
+        "timestamp": "2020-01-10T20:38:10.649Z",
+        "tool_use_result": {
+          "filePath": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md",
+          "oldString": "3. Verify the file now ends with \"reviewed\".",
+          "newString": "3. Read the file back to confirm it now ends with \"reviewed\".",
+          "originalFile": "# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Verify the file now ends with \"reviewed\".\n",
+          "structuredPatch": [
+            {
+              "oldStart": 4,
+              "oldLines": 4,
+              "newStart": 4,
+              "newLines": 4,
+              "lines": [
+                " # Plan",
+                " 1. Read notes-1.txt in the current directory to see its current contents.",
+                " 2. Append a new line \"reviewed\" to the end of the file.",
+                "-3. Verify the file now ends with \"reviewed\".",
+                "+3. Read the file back to confirm it now ends with \"reviewed\"."
+              ]
+            }
+          ],
+          "userModified": false,
+          "replaceAll": false
+        }
+      }
+    },
+    {
+      "index": 93,
+      "dir": "recv",
+      "ms": 8295,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-99>"
+      }
+    },
+    {
+      "index": 94,
+      "dir": "recv",
+      "ms": 9011,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-100>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 323,
+              "cache_read_input_tokens": 27633,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 323
+              },
+              "output_tokens": 24,
+              "service_tier": "standard",
+              "inference_geo": "global",
+              "speed": "standard"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-101>",
+        "ttft_ms": 705
+      }
+    },
+    {
+      "index": 95,
+      "dir": "recv",
+      "ms": 9012,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "tool_use",
+            "id": "<tool-use-102>",
+            "name": "ExitPlanMode",
+            "input": {},
+            "caller": {
+              "type": "direct"
+            }
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-103>"
+      }
+    },
+    {
+      "index": 96,
+      "dir": "recv",
+      "ms": 9012,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-104>"
+      }
+    },
+    {
+      "index": 97,
+      "dir": "recv",
+      "ms": 9050,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-100>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-102>",
+              "name": "ExitPlanMode",
+              "input": {
+                "plan": "# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Read the file back to confirm it now ends with \"reviewed\".\n",
+                "planFilePath": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 323,
+            "cache_read_input_tokens": 27633,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 323
+            },
+            "output_tokens": 24,
+            "service_tier": "standard",
+            "inference_geo": "global",
+            "speed": "standard"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-105>",
+        "timestamp": "2020-01-10T20:38:11.407Z",
+        "request_id": "<request-106>",
+        "wire_tool_inputs": {
+          "<tool-use-102>": {}
+        }
+      }
+    },
+    {
+      "index": 98,
+      "dir": "recv",
+      "ms": 9051,
+      "frame": {
+        "type": "control_request",
+        "request_id": "<request-107>",
+        "request": {
+          "subtype": "can_use_tool",
+          "tool_name": "ExitPlanMode",
+          "display_name": "ExitPlanMode",
+          "input": {
+            "plan": "# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Read the file back to confirm it now ends with \"reviewed\".\n",
+            "planFilePath": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md"
+          },
+          "tool_use_id": "<tool-use-102>",
+          "requires_user_interaction": true
+        }
+      }
+    },
+    {
+      "index": 99,
+      "dir": "send",
+      "ms": 9051,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "<request-107>",
+          "response": {
+            "behavior": "allow",
+            "updatedInput": {
+              "plan": "# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Read the file back to confirm it now ends with \"reviewed\".\n",
+              "planFilePath": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md"
+            }
+          }
+        }
+      }
+    },
+    {
+      "index": 100,
+      "dir": "recv",
+      "ms": 9051,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-108>"
+      }
+    },
+    {
+      "index": 101,
+      "dir": "recv",
+      "ms": 9054,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": null,
+        "permissionMode": "auto",
+        "uuid": "<uuid-109>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 102,
+      "dir": "recv",
+      "ms": 9058,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "content": "User has approved your plan. You can now start coding. Start with updating your todo list if applicable\n\nYour plan has been saved to: <scratch>\\plans\\make-a-short-plan-dynamic-stallman.md\nYou can refer back to it if needed during implementation.\n\n## Approved Plan:\n# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Read the file back to confirm it now ends with \"reviewed\".\n",
+              "tool_use_id": "<tool-use-102>"
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-110>",
+        "timestamp": "2020-01-10T20:38:11.412Z",
+        "tool_use_result": {
+          "plan": "# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Read the file back to confirm it now ends with \"reviewed\".\n",
+          "isAgent": false,
+          "filePath": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md"
+        }
+      }
+    },
+    {
+      "index": 103,
+      "dir": "recv",
+      "ms": 9071,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "tool_use",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 323,
+            "cache_read_input_tokens": 27633,
+            "output_tokens": 31,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 31,
+                "cache_read_input_tokens": 27633,
+                "cache_creation_input_tokens": 323,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 323
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-111>"
+      }
+    },
+    {
+      "index": 104,
+      "dir": "recv",
+      "ms": 9071,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-112>"
+      }
+    },
+    {
+      "index": 105,
+      "dir": "recv",
+      "ms": 9077,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-113>"
+      }
+    },
+    {
+      "index": 106,
+      "dir": "recv",
+      "ms": 11464,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-114>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 754,
+              "cache_read_input_tokens": 27956,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 754
+              },
+              "output_tokens": 16,
+              "service_tier": "standard",
+              "inference_geo": "global",
+              "speed": "standard"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-115>",
+        "ttft_ms": 2374
+      }
+    },
+    {
+      "index": 107,
+      "dir": "recv",
+      "ms": 11464,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "tool_use",
+            "id": "<tool-use-116>",
+            "name": "Read",
+            "input": {},
+            "caller": {
+              "type": "direct"
+            }
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-117>"
+      }
+    },
+    {
+      "index": 108,
+      "dir": "recv",
+      "ms": 11464,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-118>"
+      }
+    },
+    {
+      "index": 109,
+      "dir": "recv",
+      "ms": 11621,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "{\"file_path\": \"<scratch>"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-119>"
+      }
+    },
+    {
+      "index": 110,
+      "dir": "recv",
+      "ms": 11621,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-120>"
+      }
+    },
+    {
+      "index": 111,
+      "dir": "recv",
+      "ms": 11662,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-121>"
+      }
+    },
+    {
+      "index": 112,
+      "dir": "recv",
+      "ms": 11712,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-122>"
+      }
+    },
+    {
+      "index": 113,
+      "dir": "recv",
+      "ms": 11762,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\\\notes-1"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-123>"
+      }
+    },
+    {
+      "index": 114,
+      "dir": "recv",
+      "ms": 11812,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ".txt"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-124>"
+      }
+    },
+    {
+      "index": 115,
+      "dir": "recv",
+      "ms": 11928,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\"}"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-125>"
+      }
+    },
+    {
+      "index": 116,
+      "dir": "recv",
+      "ms": 11930,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-114>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-116>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\notes-1.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 754,
+            "cache_read_input_tokens": 27956,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 754
+            },
+            "output_tokens": 16,
+            "service_tier": "standard",
+            "inference_geo": "global",
+            "speed": "standard"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-126>",
+        "timestamp": "2020-01-10T20:38:14.285Z",
+        "request_id": "<request-127>",
+        "wire_tool_inputs": {
+          "<tool-use-116>": {
+            "file_path": "<scratch>\\notes-1.txt"
+          }
+        }
+      }
+    },
+    {
+      "index": 117,
+      "dir": "recv",
+      "ms": 11961,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-128>"
+      }
+    },
+    {
+      "index": 118,
+      "dir": "recv",
+      "ms": 11962,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "tool_use",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 754,
+            "cache_read_input_tokens": 27956,
+            "output_tokens": 86,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 86,
+                "cache_read_input_tokens": 27956,
+                "cache_creation_input_tokens": 754,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 754
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-129>"
+      }
+    },
+    {
+      "index": 119,
+      "dir": "recv",
+      "ms": 11962,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-130>"
+      }
+    },
+    {
+      "index": 120,
+      "dir": "recv",
+      "ms": 11974,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-116>",
+              "type": "tool_result",
+              "content": "1\tNote one: the tide table is pinned by the door.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-131>",
+        "timestamp": "2020-01-10T20:38:14.330Z",
+        "tool_use_result": {
+          "type": "text",
+          "file": {
+            "filePath": "<scratch>\\notes-1.txt",
+            "content": "Note one: the tide table is pinned by the door.\n",
+            "numLines": 2,
+            "startLine": 1,
+            "totalLines": 2
+          }
+        }
+      }
+    },
+    {
+      "index": 121,
+      "dir": "recv",
+      "ms": 11990,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-132>"
+      }
+    },
+    {
+      "index": 122,
+      "dir": "recv",
+      "ms": 12639,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-133>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 152,
+              "cache_read_input_tokens": 28710,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 152
+              },
+              "output_tokens": 16,
+              "service_tier": "standard",
+              "inference_geo": "global",
+              "speed": "standard"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-134>",
+        "ttft_ms": 640
+      }
+    },
+    {
+      "index": 123,
+      "dir": "recv",
+      "ms": 12639,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "tool_use",
+            "id": "<tool-use-135>",
+            "name": "Edit",
+            "input": {},
+            "caller": {
+              "type": "direct"
+            }
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-136>"
+      }
+    },
+    {
+      "index": 124,
+      "dir": "recv",
+      "ms": 12639,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-137>"
+      }
+    },
+    {
+      "index": 125,
+      "dir": "recv",
+      "ms": 12794,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "{\"file_path\": \"<scratch>"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-138>"
+      }
+    },
+    {
+      "index": 126,
+      "dir": "recv",
+      "ms": 12795,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-139>"
+      }
+    },
+    {
+      "index": 127,
+      "dir": "recv",
+      "ms": 12838,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-140>"
+      }
+    },
+    {
+      "index": 128,
+      "dir": "recv",
+      "ms": 12886,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-141>"
+      }
+    },
+    {
+      "index": 129,
+      "dir": "recv",
+      "ms": 12944,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\\\notes-"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-142>"
+      }
+    },
+    {
+      "index": 130,
+      "dir": "recv",
+      "ms": 12987,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "1.txt"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-143>"
+      }
+    },
+    {
+      "index": 131,
+      "dir": "recv",
+      "ms": 13137,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\", \"old_string\": \"Note one: the t"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-144>"
+      }
+    },
+    {
+      "index": 132,
+      "dir": "recv",
+      "ms": 13188,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "ide table is pinned by the"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-145>"
+      }
+    },
+    {
+      "index": 133,
+      "dir": "recv",
+      "ms": 13260,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " door."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-146>"
+      }
+    },
+    {
+      "index": 134,
+      "dir": "recv",
+      "ms": 13386,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\", \"new_string\": \"Note one: the tide table"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-147>"
+      }
+    },
+    {
+      "index": 135,
+      "dir": "recv",
+      "ms": 13437,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": " is pinned by the door."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-148>"
+      }
+    },
+    {
+      "index": 136,
+      "dir": "recv",
+      "ms": 13487,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\\nreviewed"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-149>"
+      }
+    },
+    {
+      "index": 137,
+      "dir": "recv",
+      "ms": 13588,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "\"}"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-150>"
+      }
+    },
+    {
+      "index": 138,
+      "dir": "recv",
+      "ms": 13591,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-133>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-135>",
+              "name": "Edit",
+              "input": {
+                "replace_all": false,
+                "file_path": "<scratch>\\notes-1.txt",
+                "old_string": "Note one: the tide table is pinned by the door.",
+                "new_string": "Note one: the tide table is pinned by the door.\nreviewed"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 152,
+            "cache_read_input_tokens": 28710,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 152
+            },
+            "output_tokens": 16,
+            "service_tier": "standard",
+            "inference_geo": "global",
+            "speed": "standard"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-151>",
+        "timestamp": "2020-01-10T20:38:15.948Z",
+        "request_id": "<request-152>",
+        "wire_tool_inputs": {
+          "<tool-use-135>": {
+            "file_path": "<scratch>\\notes-1.txt",
+            "old_string": "Note one: the tide table is pinned by the door.",
+            "new_string": "Note one: the tide table is pinned by the door.\nreviewed"
+          }
+        }
+      }
+    },
+    {
+      "index": 139,
+      "dir": "recv",
+      "ms": 13592,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-153>"
+      }
+    },
+    {
+      "index": 140,
+      "dir": "recv",
+      "ms": 13610,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "tool_use",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 152,
+            "cache_read_input_tokens": 28710,
+            "output_tokens": 168,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 168,
+                "cache_read_input_tokens": 28710,
+                "cache_creation_input_tokens": 152,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 152
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-154>"
+      }
+    },
+    {
+      "index": 141,
+      "dir": "recv",
+      "ms": 13610,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-155>"
+      }
+    },
+    {
+      "index": 142,
+      "dir": "recv",
+      "ms": 13630,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-135>",
+              "type": "tool_result",
+              "content": "The file <scratch>\\notes-1.txt has been updated successfully. (file state is current in your context — no need to Read it back)"
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-156>",
+        "timestamp": "2020-01-10T20:38:15.987Z",
+        "tool_use_result": {
+          "filePath": "<scratch>\\notes-1.txt",
+          "oldString": "Note one: the tide table is pinned by the door.",
+          "newString": "Note one: the tide table is pinned by the door.\nreviewed",
+          "originalFile": "Note one: the tide table is pinned by the door.\n",
+          "structuredPatch": [
+            {
+              "oldStart": 1,
+              "oldLines": 1,
+              "newStart": 1,
+              "newLines": 2,
+              "lines": [
+                " Note one: the tide table is pinned by the door.",
+                "+reviewed"
+              ]
+            }
+          ],
+          "userModified": false,
+          "replaceAll": false
+        }
+      }
+    },
+    {
+      "index": 143,
+      "dir": "recv",
+      "ms": 13632,
+      "frame": {
+        "type": "system",
+        "subtype": "status",
+        "status": "requesting",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-157>"
+      }
+    },
+    {
+      "index": 144,
+      "dir": "recv",
+      "ms": 14362,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_start",
+          "message": {
+            "model": "claude-sonnet-5",
+            "id": "<message-158>",
+            "type": "message",
+            "role": "assistant",
+            "content": [],
+            "container": null,
+            "stop_reason": null,
+            "stop_sequence": null,
+            "stop_details": null,
+            "usage": {
+              "input_tokens": 2,
+              "cache_creation_input_tokens": 279,
+              "cache_read_input_tokens": 28862,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 279
+              },
+              "output_tokens": 2,
+              "service_tier": "standard",
+              "inference_geo": "global",
+              "speed": "standard"
+            },
+            "diagnostics": null,
+            "context_management": null
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-159>",
+        "ttft_ms": 726
+      }
+    },
+    {
+      "index": 145,
+      "dir": "recv",
+      "ms": 14363,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "text",
+            "text": ""
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-160>"
+      }
+    },
+    {
+      "index": 146,
+      "dir": "recv",
+      "ms": 14363,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "Done"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-161>"
+      }
+    },
+    {
+      "index": 147,
+      "dir": "recv",
+      "ms": 14441,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " — appended \"reviewed"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-162>"
+      }
+    },
+    {
+      "index": 148,
+      "dir": "recv",
+      "ms": 14487,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "\" to the"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-163>"
+      }
+    },
+    {
+      "index": 149,
+      "dir": "recv",
+      "ms": 14543,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " end of notes-1.tx"
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-164>"
+      }
+    },
+    {
+      "index": 150,
+      "dir": "recv",
+      "ms": 14572,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "t."
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-165>"
+      }
+    },
+    {
+      "index": 151,
+      "dir": "recv",
+      "ms": 14586,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-158>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Done — appended \"reviewed\" to the end of notes-1.txt."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 279,
+            "cache_read_input_tokens": 28862,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 279
+            },
+            "output_tokens": 2,
+            "service_tier": "standard",
+            "inference_geo": "global",
+            "speed": "standard"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-166>",
+        "timestamp": "2020-01-10T20:38:16.933Z",
+        "request_id": "<request-167>"
+      }
+    },
+    {
+      "index": 152,
+      "dir": "recv",
+      "ms": 14586,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "content_block_stop",
+          "index": 0
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-168>"
+      }
+    },
+    {
+      "index": 153,
+      "dir": "recv",
+      "ms": 14588,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "end_turn",
+            "stop_sequence": null,
+            "stop_details": null,
+            "container": null
+          },
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 279,
+            "cache_read_input_tokens": 28862,
+            "output_tokens": 25,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 25,
+                "cache_read_input_tokens": 28862,
+                "cache_creation_input_tokens": 279,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 279
+                },
+                "type": "message"
+              }
+            ]
+          },
+          "context_management": {
+            "applied_edits": []
+          }
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-169>"
+      }
+    },
+    {
+      "index": 154,
+      "dir": "recv",
+      "ms": 14588,
+      "frame": {
+        "type": "stream_event",
+        "event": {
+          "type": "message_stop"
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-170>"
+      }
+    },
+    {
+      "index": 155,
+      "dir": "recv",
+      "ms": 14604,
+      "frame": {
+        "duration_api_ms": 12375,
+        "stop_reason": "end_turn",
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.0707422,
+        "usage": {
+          "input_tokens": 14,
+          "cache_creation_input_tokens": 5938,
+          "cache_read_input_tokens": 191056,
+          "output_tokens": 773,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 5938,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 25,
+              "cache_read_input_tokens": 28862,
+              "cache_creation_input_tokens": 279,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 279
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 936,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001021,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 14,
+            "outputTokens": 773,
+            "cacheReadInputTokens": 191056,
+            "cacheCreationInputTokens": 5938,
+            "webSearchRequests": 0,
+            "costUSD": 0.06972120000000001,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [
+          {
+            "tool_name": "ExitPlanMode",
+            "tool_use_id": "<tool-use-60>",
+            "tool_input": {
+              "plan": "# Context\nAppend the word \"reviewed\" to the end of notes-1.txt.\n\n# Plan\n1. Read notes-1.txt in the current directory to see its current contents.\n2. Append a new line \"reviewed\" to the end of the file.\n3. Verify the file now ends with \"reviewed\".\n",
+              "planFilePath": "<scratch>\\plans\\make-a-short-plan-dynamic-stallman.md"
+            }
+          }
+        ],
+        "terminal_reason": "completed",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 0,
+          "requested": {
+            "background": 0,
+            "foreground": 0,
+            "unset": 0
+          },
+          "started_in_background": 0,
+          "max_depth": 0,
+          "spawned_by_subagents": 0,
+          "completed": 0,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {}
+        },
+        "is_error": false,
+        "num_turns": 7,
+        "subtype": "success",
+        "api_error_status": null,
+        "result": "Done — appended \"reviewed\" to the end of notes-1.txt.",
+        "ttft_ms": 1121,
+        "type": "result",
+        "duration_ms": 11860,
+        "uuid": "<uuid-171>",
+        "ttft_stream_ms": 735,
+        "time_to_request_ms": 35,
+        "first_content_frame_ms": 735,
+        "user_message_uuid": "<uuid-3>",
+        "user_message_uuids": [
+          "<uuid-3>"
+        ],
+        "request_sent_wall_ms": 1578688685131,
+        "queued_turn_count": 0,
+        "result_index": 0
+      }
+    },
+    {
+      "index": 156,
+      "dir": "recv",
+      "ms": 14606,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-3>",
+        "state": "completed",
+        "uuid": "<uuid-172>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 157,
+      "dir": "send",
+      "ms": 16125,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-3",
+        "request": {
+          "subtype": "set_permission_mode",
+          "mode": "auto"
+        }
+      }
+    },
+    {
+      "index": 158,
+      "dir": "recv",
+      "ms": 16127,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-3",
+          "response": {
+            "mode": "auto"
+          }
+        }
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [
+    {
+      "kind": "can_use_tool",
+      "tool": "ExitPlanMode",
+      "worker": false,
+      "answer": "feedback"
+    },
+    {
+      "kind": "can_use_tool",
+      "tool": "ExitPlanMode",
+      "worker": false,
+      "answer": "execute"
+    }
+  ],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1457,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2009,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "before-close",
+      "atMs": 18442,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    }
+  ],
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "configuration": {
+    "folder": "a scratch configuration folder (CLAUDE_CONFIG_DIR), signed in by the maintainer",
+    "written": [
+      "plans\\make-a-short-plan-dynamic-stallman.md"
+    ]
+  },
+  "frameSizes": {
+    "largest": [
+      {
+        "type": "control_response",
+        "bytes": 17066
+      },
+      {
+        "type": "result",
+        "bytes": 2788
+      },
+      {
+        "type": "system/init",
+        "bytes": 2558
+      },
+      {
+        "type": "assistant",
+        "bytes": 1709
+      },
+      {
+        "type": "user",
+        "bytes": 1479
+      }
+    ],
+    "longStringsCut": []
+  }
+}

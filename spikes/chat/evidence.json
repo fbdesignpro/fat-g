@@ -1,0 +1,1025 @@
+{
+  "format": "fat-g.chat-protocol-evidence/1",
+  "inspectedAt": "2020-01-11T01:48:13.759Z",
+  "versions": {
+    "codex": "codex-cli 0.159.2",
+    "claude": "2.1.268 (Claude Code)",
+    "claudeSdkTypes": "0.3.278 (read only; newer than installed CLI)"
+  },
+  "platform": "Windows x64",
+  "submittedInputs": 18,
+  "schemaHashes": {
+    "plain/ClientRequest.json": "1c7fec8758deb95ffe967060130e8d1ddb7a0a5a437ee9b64086dddbed8f5831",
+    "experimental/ClientRequest.json": "4a6fc883c2e84c4721bfabd6756ca5bb6e99675a8938768d8bc9cc67ff984700",
+    "plain/v2/ThreadItemsListResponse.json": "bc8a8dcb9a48d9ca38b0a5faa89b80ec2fd57398cd3a8dcc15097776153f6c74"
+  },
+  "runs": [
+    {
+      "run": "codex-stream-1",
+      "cli": "codex",
+      "scenario": "stream",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "6a986a750cae5935c3baec6c9e65966d6e759bc59a278926f02250ef643b3699",
+      "terminal": [
+        {
+          "status": "completed",
+          "durationMs": 15779
+        }
+      ],
+      "historyOk": true,
+      "itemPaging": true,
+      "deltaFinalMatches": [
+        {
+          "phase": "commentary",
+          "hasDeltas": true,
+          "matches": true
+        },
+        {
+          "phase": "final_answer",
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "historyItemTypes": [
+        "userMessage",
+        "agentMessage",
+        "commandExecution"
+      ],
+      "questionRequests": [],
+      "asyncQuestionItems": 0,
+      "resolvedRequests": 0,
+      "itemTimestamps": true,
+      "lastUsage": {
+        "totalTokens": 17336,
+        "inputTokens": 17285,
+        "cachedInputTokens": 17024,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 51,
+        "reasoningOutputTokens": 0
+      },
+      "partialDeltaCharacters": 190,
+      "completedAssistantItems": 2
+    },
+    {
+      "run": "codex-followup-2",
+      "cli": "codex",
+      "scenario": "followup",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "d174e273014c97f9661e638d4c8e91531fccd0c66e0cfd3e4c8778aa8be76d7a",
+      "terminal": [
+        {
+          "status": "completed",
+          "durationMs": 5243
+        }
+      ],
+      "resumeTurnCount": 1,
+      "historyOk": true,
+      "itemPaging": true,
+      "deltaFinalMatches": [
+        {
+          "phase": "final_answer",
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "historyItemTypes": [
+        "userMessage",
+        "agentMessage",
+        "commandExecution"
+      ],
+      "questionRequests": [],
+      "asyncQuestionItems": 0,
+      "resolvedRequests": 0,
+      "itemTimestamps": true,
+      "lastUsage": {
+        "totalTokens": 17374,
+        "inputTokens": 17363,
+        "cachedInputTokens": 17152,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 11,
+        "reasoningOutputTokens": 0
+      },
+      "partialDeltaCharacters": 24,
+      "completedAssistantItems": 1
+    },
+    {
+      "run": "codex-fork-3",
+      "cli": "codex",
+      "scenario": "fork",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "ba2951885a2af48695529f6c2c4372ceaa56984a46703a0cfc7f24be3e1c1e49",
+      "terminal": [
+        {
+          "status": "completed",
+          "durationMs": 3740
+        }
+      ],
+      "forkAccepted": true,
+      "forkTurns": 1,
+      "historyOk": true,
+      "itemPaging": true,
+      "deltaFinalMatches": [
+        {
+          "phase": "final_answer",
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "historyItemTypes": [
+        "userMessage",
+        "agentMessage",
+        "commandExecution"
+      ],
+      "questionRequests": [],
+      "asyncQuestionItems": 0,
+      "resolvedRequests": 0,
+      "itemTimestamps": true,
+      "lastUsage": {
+        "totalTokens": 17385,
+        "inputTokens": 17373,
+        "cachedInputTokens": 13440,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 12,
+        "reasoningOutputTokens": 0
+      },
+      "partialDeltaCharacters": 25,
+      "completedAssistantItems": 1,
+      "forkMarkerCheck": {
+        "firstPresent": true,
+        "secondAbsent": true
+      }
+    },
+    {
+      "run": "codex-question-4",
+      "cli": "codex",
+      "scenario": "question",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "20ccf74b56e042baa463db85fe5b7faf6e07f42c09d52ae8dd44f7e76cbc5caf",
+      "terminal": [
+        {
+          "status": "completed",
+          "durationMs": 13537
+        }
+      ],
+      "historyOk": true,
+      "itemPaging": true,
+      "questionRoute": "item/tool/requestUserInput",
+      "deltaFinalMatches": [
+        {
+          "phase": "final_answer",
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "historyItemTypes": [
+        "userMessage",
+        "agentMessage"
+      ],
+      "questionRequests": [
+        {
+          "isBlocking": true,
+          "autoResolutionMs": null,
+          "count": 1
+        }
+      ],
+      "asyncQuestionItems": 0,
+      "resolvedRequests": 1,
+      "itemTimestamps": true,
+      "lastUsage": {
+        "totalTokens": 18814,
+        "inputTokens": 18809,
+        "cachedInputTokens": 18560,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 5,
+        "reasoningOutputTokens": 0
+      },
+      "partialDeltaCharacters": 5,
+      "completedAssistantItems": 1
+    },
+    {
+      "run": "codex-async-5",
+      "cli": "codex",
+      "scenario": "async",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "9d169b181966511e2512ca0b7d790d808c241e50ae3e265892b4dbf414d925b8",
+      "terminal": [
+        {
+          "status": "interrupted",
+          "durationMs": 3679
+        }
+      ],
+      "historyOk": true,
+      "itemPaging": true,
+      "questionRoute": "item/completed",
+      "deltaFinalMatches": [
+        {
+          "phase": "final_answer",
+          "hasDeltas": false,
+          "matches": false
+        }
+      ],
+      "historyItemTypes": [
+        "userMessage",
+        "agentMessage"
+      ],
+      "questionRequests": [],
+      "asyncQuestionItems": 1,
+      "resolvedRequests": 0,
+      "itemTimestamps": true,
+      "partialDeltaCharacters": 0,
+      "completedAssistantItems": 1
+    },
+    {
+      "run": "claude-stream-6",
+      "cli": "claude",
+      "scenario": "stream",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "e915d790c667e2b59f0abd81a6c4a20899c748356a4b18530ddccd8f3c3be8f0",
+      "terminal": [
+        {
+          "status": "success",
+          "durationMs": 7446,
+          "apiDurationMs": 7371
+        }
+      ],
+      "streamTextMatches": [
+        {
+          "hasDeltas": true,
+          "matches": true
+        },
+        {
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "streamEventKinds": [
+        "message_start",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_stop",
+        "message_delta",
+        "message_stop"
+      ],
+      "blockTypes": [
+        "text",
+        "image",
+        "tool_use",
+        "tool_result"
+      ],
+      "assistantTimestamps": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "cancelledRequests": 0,
+      "resultReasons": [
+        "completed"
+      ],
+      "pendingArraysPresent": [
+        "pending_permission_requests",
+        "pending_user_dialog_requests"
+      ],
+      "lastUsage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 5258,
+        "cache_read_input_tokens": 9499,
+        "output_tokens": 575,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5258,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 118,
+            "cache_read_input_tokens": 4925,
+            "cache_creation_input_tokens": 333,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 333
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "permissionDecisions": []
+    },
+    {
+      "run": "claude-followup-7",
+      "cli": "claude",
+      "scenario": "followup",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "f96a6f31ca56e0b9908a77a16500a3f5d75b06581a875b70685386bdfb4d52d2",
+      "terminal": [
+        {
+          "status": "success",
+          "durationMs": 1071,
+          "apiDurationMs": 1043
+        }
+      ],
+      "streamTextMatches": [
+        {
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "streamEventKinds": [
+        "message_start",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_stop",
+        "message_delta",
+        "message_stop"
+      ],
+      "blockTypes": [
+        "text"
+      ],
+      "assistantTimestamps": [
+        true
+      ],
+      "cancelledRequests": 0,
+      "resultReasons": [
+        "completed"
+      ],
+      "pendingArraysPresent": [
+        "pending_permission_requests",
+        "pending_user_dialog_requests"
+      ],
+      "lastUsage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 229,
+        "cache_read_input_tokens": 5258,
+        "output_tokens": 47,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 229,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 47,
+            "cache_read_input_tokens": 5258,
+            "cache_creation_input_tokens": 229,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 229
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "permissionDecisions": []
+    },
+    {
+      "run": "claude-fork-8",
+      "cli": "claude",
+      "scenario": "fork",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "d4285a9346ac68cb285b7817726e1a5f31be14f94a0fa68912a8c5c34919d123",
+      "terminal": [
+        {
+          "status": "success",
+          "durationMs": 2456,
+          "apiDurationMs": 2424
+        }
+      ],
+      "streamTextMatches": [
+        {
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "streamEventKinds": [
+        "message_start",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_stop",
+        "message_delta",
+        "message_stop"
+      ],
+      "blockTypes": [
+        "text"
+      ],
+      "assistantTimestamps": [
+        true
+      ],
+      "cancelledRequests": 0,
+      "resultReasons": [
+        "completed"
+      ],
+      "pendingArraysPresent": [
+        "pending_permission_requests",
+        "pending_user_dialog_requests"
+      ],
+      "lastUsage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 121,
+        "cache_read_input_tokens": 5376,
+        "output_tokens": 90,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 121,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 90,
+            "cache_read_input_tokens": 5376,
+            "cache_creation_input_tokens": 121,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 121
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "permissionDecisions": [],
+      "forkMarkerCheck": {
+        "firstPresent": true,
+        "secondAbsent": true
+      }
+    },
+    {
+      "run": "claude-question-9",
+      "cli": "claude",
+      "scenario": "question",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "8354c8354e55b7f2cbbb58edb03cca9116f36060860dac44578126125b3cf436",
+      "terminal": [
+        {
+          "status": "success",
+          "durationMs": 3435,
+          "apiDurationMs": 3401
+        }
+      ],
+      "questionRoute": "can_use_tool",
+      "streamTextMatches": [
+        {
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "streamEventKinds": [
+        "message_start",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_stop",
+        "message_delta",
+        "message_stop"
+      ],
+      "blockTypes": [
+        "tool_use",
+        "tool_result",
+        "text"
+      ],
+      "assistantTimestamps": [
+        true,
+        true
+      ],
+      "cancelledRequests": 0,
+      "resultReasons": [
+        "completed"
+      ],
+      "pendingArraysPresent": [
+        "pending_permission_requests",
+        "pending_user_dialog_requests"
+      ],
+      "lastUsage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 5598,
+        "cache_read_input_tokens": 5395,
+        "output_tokens": 141,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5598,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5,
+            "cache_read_input_tokens": 5395,
+            "cache_creation_input_tokens": 203,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 203
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "permissionDecisions": [
+        {
+          "tool": "AskUserQuestion",
+          "answer": "allow"
+        }
+      ]
+    },
+    {
+      "run": "claude-steer-10",
+      "cli": "claude",
+      "scenario": "steer",
+      "inputs": 2,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "46d4e6de124461ec1da1e75b9dd28af55e65e153f5b6423641399f7975f003b6",
+      "terminal": [
+        {
+          "status": "success",
+          "durationMs": 5200,
+          "apiDurationMs": 5154
+        }
+      ],
+      "midTurnInputWritten": true,
+      "secondResult": false,
+      "streamTextMatches": [
+        {
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "streamEventKinds": [
+        "message_start",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_stop",
+        "message_delta",
+        "message_stop"
+      ],
+      "blockTypes": [
+        "thinking",
+        "tool_use",
+        "tool_result",
+        "text"
+      ],
+      "assistantTimestamps": [
+        true,
+        true,
+        true
+      ],
+      "cancelledRequests": 0,
+      "resultReasons": [
+        "completed"
+      ],
+      "pendingArraysPresent": [
+        "pending_permission_requests",
+        "pending_user_dialog_requests"
+      ],
+      "lastUsage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 5693,
+        "cache_read_input_tokens": 5303,
+        "output_tokens": 273,
+        "output_tokens_details": {
+          "thinking_tokens": 106
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5693,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 31,
+            "cache_read_input_tokens": 5303,
+            "cache_creation_input_tokens": 390,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 390
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "permissionDecisions": [
+        {
+          "tool": "Bash",
+          "answer": "deny"
+        }
+      ],
+      "steeredMarkerPresent": true
+    },
+    {
+      "run": "claude-interrupt-11",
+      "cli": "claude",
+      "scenario": "interrupt",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "dcb6a1ccd408e4f522a88ca267d2b9058806d135b640a149b13b30817a2e3b84",
+      "terminal": [
+        {
+          "status": "error_during_execution",
+          "durationMs": 1020,
+          "apiDurationMs": 0
+        }
+      ],
+      "interruptAccepted": true,
+      "streamTextMatches": [
+        {
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "streamEventKinds": [
+        "message_start",
+        "content_block_start",
+        "content_block_delta"
+      ],
+      "blockTypes": [
+        "text"
+      ],
+      "assistantTimestamps": [
+        true
+      ],
+      "cancelledRequests": 0,
+      "resultReasons": [
+        "aborted_streaming"
+      ],
+      "pendingArraysPresent": [
+        "pending_permission_requests",
+        "pending_user_dialog_requests"
+      ],
+      "lastUsage": {
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 0,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "permissionDecisions": []
+    },
+    {
+      "run": "claude-inspect-12",
+      "cli": "claude",
+      "scenario": "inspect",
+      "inputs": 0,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "6e2414d9a8335ae351e0c04b586c9f94313b40c2dc3ed66c675c40e11e619b08",
+      "terminal": [],
+      "idleHistoryMessage": false,
+      "streamTextMatches": [],
+      "streamEventKinds": [],
+      "blockTypes": [],
+      "assistantTimestamps": [],
+      "cancelledRequests": 0,
+      "resultReasons": [],
+      "pendingArraysPresent": [
+        "pending_permission_requests",
+        "pending_user_dialog_requests"
+      ],
+      "permissionDecisions": []
+    },
+    {
+      "run": "codex-steer-13",
+      "cli": "codex",
+      "scenario": "steer",
+      "inputs": 2,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "68941d16ac50f87b9bb1d7898ab072113ab2d6b26801eff97fc90e6f64d486a7",
+      "terminal": [
+        {
+          "status": "completed",
+          "durationMs": 16234
+        }
+      ],
+      "historyOk": true,
+      "itemPaging": true,
+      "steerAccepted": true,
+      "deltaFinalMatches": [
+        {
+          "phase": "commentary",
+          "hasDeltas": true,
+          "matches": true
+        },
+        {
+          "phase": "final_answer",
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "historyItemTypes": [
+        "userMessage",
+        "agentMessage",
+        "commandExecution"
+      ],
+      "questionRequests": [],
+      "asyncQuestionItems": 0,
+      "resolvedRequests": 0,
+      "itemTimestamps": true,
+      "lastUsage": {
+        "totalTokens": 17215,
+        "inputTokens": 17206,
+        "cachedInputTokens": 16896,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 9,
+        "reasoningOutputTokens": 0
+      },
+      "partialDeltaCharacters": 62,
+      "completedAssistantItems": 2,
+      "steeredMarkerPresent": true
+    },
+    {
+      "run": "codex-interrupt-14",
+      "cli": "codex",
+      "scenario": "interrupt",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "a0502a5aff4850dca5f51914d363eb6d4fc529812d74a6fdf95860caa2130ad7",
+      "terminal": [
+        {
+          "status": "interrupted",
+          "durationMs": 4014
+        }
+      ],
+      "historyOk": true,
+      "itemPaging": true,
+      "interruptAccepted": true,
+      "deltaFinalMatches": [],
+      "historyItemTypes": [
+        "userMessage",
+        "reasoning"
+      ],
+      "questionRequests": [],
+      "asyncQuestionItems": 0,
+      "resolvedRequests": 0,
+      "itemTimestamps": true,
+      "partialDeltaCharacters": 13,
+      "completedAssistantItems": 0
+    },
+    {
+      "run": "codex-async-answer-15",
+      "cli": "codex",
+      "scenario": "async-answer",
+      "inputs": 2,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "50b3e511a512fb91d98f07e2c150a46362c78d132e42ccd60b385f60c4d9c5c1",
+      "terminal": [
+        {
+          "status": "completed",
+          "durationMs": 7901
+        },
+        {
+          "status": "completed",
+          "durationMs": 2332
+        }
+      ],
+      "historyOk": true,
+      "itemPaging": true,
+      "questionRoute": "item/completed",
+      "asyncAnsweredWithNewTurn": true,
+      "deltaFinalMatches": [
+        {
+          "phase": "final_answer",
+          "hasDeltas": false,
+          "matches": false
+        },
+        {
+          "phase": "final_answer",
+          "hasDeltas": false,
+          "matches": false
+        },
+        {
+          "phase": "final_answer",
+          "hasDeltas": true,
+          "matches": true
+        }
+      ],
+      "historyItemTypes": [
+        "userMessage",
+        "agentMessage",
+        "reasoning"
+      ],
+      "questionRequests": [],
+      "asyncQuestionItems": 1,
+      "resolvedRequests": 0,
+      "itemTimestamps": true,
+      "lastUsage": {
+        "totalTokens": 17214,
+        "inputTokens": 17209,
+        "cachedInputTokens": 17024,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 5,
+        "reasoningOutputTokens": 0
+      },
+      "partialDeltaCharacters": 4,
+      "completedAssistantItems": 3,
+      "answerIsBlue": true
+    },
+    {
+      "run": "claude-question-cancel-16",
+      "cli": "claude",
+      "scenario": "question-cancel",
+      "inputs": 1,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "91fae38aeb69247eaac8d565a1d7d2b4d35f060edcb2d79ec8fd88c596f1a295",
+      "terminal": [
+        {
+          "status": "error_during_execution",
+          "durationMs": 2213,
+          "apiDurationMs": 2181
+        }
+      ],
+      "questionInterruptAccepted": true,
+      "questionRoute": "can_use_tool",
+      "streamTextMatches": [],
+      "streamEventKinds": [
+        "message_start",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_stop",
+        "message_delta",
+        "message_stop"
+      ],
+      "blockTypes": [
+        "tool_use",
+        "tool_result",
+        "text"
+      ],
+      "assistantTimestamps": [
+        true
+      ],
+      "cancelledRequests": 1,
+      "resultReasons": [
+        "aborted_tools"
+      ],
+      "pendingArraysPresent": [
+        "pending_permission_requests",
+        "pending_user_dialog_requests"
+      ],
+      "lastUsage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 5395,
+        "output_tokens": 137,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 137,
+            "cache_read_input_tokens": 5395,
+            "cache_creation_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "permissionDecisions": [
+        {
+          "tool": "AskUserQuestion",
+          "held": true
+        }
+      ]
+    },
+    {
+      "run": "codex-cleanup-17",
+      "cli": "codex",
+      "scenario": "cleanup",
+      "inputs": 0,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "ef8b2e92787f1d8285ebda860cfec23476b5706a3ccd30b181c809536ee8b0c1",
+      "terminal": [],
+      "deleted": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "deltaFinalMatches": [],
+      "historyItemTypes": [],
+      "questionRequests": [],
+      "asyncQuestionItems": 0,
+      "resolvedRequests": 0,
+      "itemTimestamps": false,
+      "partialDeltaCharacters": 0,
+      "completedAssistantItems": 0
+    },
+    {
+      "run": "codex-cleanup-18",
+      "cli": "codex",
+      "scenario": "cleanup",
+      "inputs": 0,
+      "result": "observed",
+      "cleanupConfirmed": true,
+      "captureSha256": "b9a0c9d781c5848f58c290cb772137da0a3ad536ddcea009a8b75222b60810ac",
+      "terminal": [],
+      "deleted": [
+        true
+      ],
+      "deltaFinalMatches": [],
+      "historyItemTypes": [],
+      "questionRequests": [],
+      "asyncQuestionItems": 0,
+      "resolvedRequests": 0,
+      "itemTimestamps": false,
+      "partialDeltaCharacters": 0,
+      "completedAssistantItems": 0
+    }
+  ]
+}

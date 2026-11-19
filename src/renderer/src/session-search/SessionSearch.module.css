@@ -1,0 +1,154 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+.dialog {
+  /* Inter's 13px rung starts a taller ink band. Just below it the letters keep their width but
+     lose the extra height, as in the chat's local scale (chat/Chat.module.css). Keep the small
+     metadata and the semibold dialog heading at their existing sizes. */
+  --text-13: 12.9px;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 24px;
+  padding: 0 var(--space-2);
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.trigger:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.dialog {
+  /* 14.5px widens the input's inherited 14px text within the same ink-height band. Resolve the
+     body size here: changing a token alone cannot resize a font computed outside the dialog. */
+  --text-14: 14.5px;
+  font-size: var(--text-14);
+  width: min(820px, calc(100vw - 2 * var(--space-3)));
+}
+
+.dialog[open] {
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+}
+
+.controls {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--rule);
+}
+
+.input,
+.filters select {
+  min-width: 0;
+  padding: var(--space-2);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-field);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  margin-top: var(--space-3);
+  font-size: var(--text-13);
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.filters .check {
+  flex-direction: row;
+  align-items: center;
+  align-self: end;
+  padding: var(--space-2) 0;
+}
+
+.notice,
+.meta {
+  color: var(--color-text-muted);
+  font-size: var(--text-11);
+}
+
+.controls .notice {
+  margin: var(--space-2) 0 0;
+}
+
+.results {
+  min-height: 160px;
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+  padding: var(--space-2);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: calc(var(--capsule-height) / 2) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+}
+
+.row:hover {
+  background: var(--color-surface);
+}
+
+.row[aria-selected='true'] {
+  outline: 2px solid var(--color-text);
+  outline-offset: -2px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.25;
+}
+
+.name,
+.excerpt {
+  font-size: var(--text-13);
+}
+
+.excerpt {
+  line-height: 1.35;
+}
+
+.row[aria-current='true'] .name {
+  font-weight: var(--weight-semibold);
+}
+
+.text mark {
+  background: var(--color-attention);
+  color: var(--color-on-attention);
+}
+
+.empty {
+  padding: var(--space-3);
+  color: var(--color-text-muted);
+}

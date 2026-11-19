@@ -1,0 +1,58 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+.bar {
+  --speaker-fill: var(--color-speaker-neutral);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(var(--capsule-height) / 2 - 4px);
+  box-sizing: border-box;
+  /* Leave room for the portrait's overhang without moving the message below it. */
+  margin: 0 0 var(--space-3);
+  border: 2px solid var(--color-speaker-ink);
+  background: var(--speaker-fill);
+  color: var(--color-speaker-ink);
+  gap: var(--space-2);
+}
+
+.avatar {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: calc(var(--capsule-height) / 2 - 4px);
+  height: calc(var(--capsule-height) / 2 - 4px);
+  box-sizing: content-box;
+  margin-right: var(--space-2);
+  border: 2px solid var(--color-speaker-ink);
+  background: var(--color-speaker-ink);
+  overflow: hidden;
+  transform: rotate(-6deg) scale(1.3);
+  pointer-events: none;
+  user-select: none;
+}
+
+.avatar > [data-avatar][data-size] { width: 100%; height: 100%; }
+/* Keep the provider's blue from showing through the transformed image's antialiased edge. */
+.avatar > [data-avatar][data-size]:has(> img) { background: var(--color-speaker-ink); }
+/* Ellipsis clips vertically too: leave room for Inter's ascenders and descenders. */
+.name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--text-16); font-weight: var(--weight-semibold); line-height: 1.4; }
+.counter { flex: none; margin-left: auto; padding-right: var(--space-2); font-size: var(--text-16); font-weight: var(--weight-semibold); line-height: 1.4; font-variant-numeric: tabular-nums; }
+.speed { flex: none; white-space: nowrap; font-size: var(--text-16); line-height: 1.4; }
+.bar[data-speaker-role='user'] { justify-content: flex-end; padding: 0 var(--space-2); margin-bottom: var(--space-2); }
+/* Inset the portrait and name deliberately, leaving the provider colour visible at the left. */
+.bar[data-speaker-role='assistant'] { margin-top: var(--space-4); padding-left: var(--space-4); }
+.notice { display: inline-flex; align-items: center; gap: var(--space-1); max-width: 100%; margin: 0 0 var(--space-2); color: var(--color-text); }
+.notice .name { font-size: var(--text-16); }
+.info { display: grid; place-items: center; flex: none; width: 20px; height: 20px; box-sizing: border-box; border: 1px solid var(--color-speaker-ink); background: var(--color-speaker-info); color: var(--color-speaker-paper); font-size: var(--text-16); font-weight: var(--weight-semibold); line-height: 1; }
+.progress { display: flex; gap: 3px; margin: var(--space-4) 0 var(--space-3); width: max-content; }
+.progress > span { width: 6px; height: 6px; box-sizing: border-box; border: 1px solid var(--color-speaker-ink); background: var(--color-speaker-paper); animation: step 900ms step-end infinite; }
+.progress > span:nth-child(2) { animation-delay: -600ms; }
+.progress > span:nth-child(3) { animation-delay: -300ms; }
+@keyframes step { 0%, 100% { background: var(--color-speaker-ink); } 33.333333% { background: var(--color-speaker-paper); } }
+@media (prefers-reduced-motion: reduce) {
+  .progress > span { animation: none; }
+  .progress > span:first-child { background: var(--color-speaker-ink); }
+}

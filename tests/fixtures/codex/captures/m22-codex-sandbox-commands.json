@@ -1,0 +1,2166 @@
+{
+  "_fixture": {
+    "source": "M22 spike m22-k1.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"client-message\":1,\"turn\":1,\"item\":5,\"mcp-server\":1}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-06T22:47:29.671Z",
+  "scenario": {
+    "id": "m22-codex-sandbox-commands",
+    "title": "K1, with the sandbox set up: two commands under workspace-write and on-request — one that writes in the working folder, one that writes outside it (declined if asked) (C4)",
+    "successCondition": "Whether each runs with no request, what the one outside brings, and which files are made"
+  },
+  "run": {
+    "id": "codex-m22-codex-sandbox-commands-34",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 83,
+    "turnsSpent": 1,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1819,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex-code-mode-host.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": false,
+      "added": [
+        "k1-sbc-inside.txt"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "readiness": "ready",
+      "thread": {
+        "ok": true,
+        "error": null,
+        "asked": {
+          "sandbox": "workspace-write",
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user"
+        },
+        "reported": {
+          "sandbox": {
+            "type": "workspaceWrite",
+            "keys": [
+              "excludeSlashTmp",
+              "excludeTmpdirEnvVar",
+              "networkAccess",
+              "type",
+              "writableRoots"
+            ],
+            "networkAccess": false,
+            "writableRoots": [],
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "activePermissionProfile": null,
+          "runtimeWorkspaceRoots": [
+            "working folder"
+          ],
+          "cwd": "working folder"
+        },
+        "matchesWhatWasAsked": true
+      },
+      "turn": {
+        "requests": [],
+        "commands": [
+          {
+            "status": "completed",
+            "exitCode": 0,
+            "asked": false,
+            "worker": false,
+            "cwd": "working folder",
+            "isThePromptsOwn": true,
+            "actions": [
+              "unknown"
+            ],
+            "outputUnits": null
+          },
+          {
+            "status": "failed",
+            "exitCode": 1,
+            "asked": false,
+            "worker": false,
+            "cwd": "working folder",
+            "isThePromptsOwn": false,
+            "actions": [
+              "unknown"
+            ],
+            "outputUnits": 462
+          }
+        ],
+        "fileChanges": [],
+        "otherItems": [],
+        "settings": [],
+        "statuses": [
+          {
+            "index": 12,
+            "type": "active",
+            "activeFlags": []
+          },
+          {
+            "index": 82,
+            "type": "idle",
+            "activeFlags": null
+          }
+        ],
+        "errors": [],
+        "warnings": [],
+        "end": {
+          "index": 83,
+          "status": "completed",
+          "error": null
+        },
+        "methods": {
+          "mcpServer/startupStatus/updated": 2,
+          "thread/status/changed": 2,
+          "turn/started": 1,
+          "item/started": 5,
+          "item/completed": 5,
+          "thread/tokenUsage/updated": 3,
+          "account/rateLimits/updated": 3,
+          "turn/completed": 1
+        }
+      },
+      "requestsLandIn": [],
+      "outline": [
+        {
+          "index": 12,
+          "ms": 2013,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "active"
+        },
+        {
+          "index": 13,
+          "ms": 2013,
+          "method": "turn/started",
+          "thread": "session",
+          "status": "inProgress"
+        },
+        {
+          "index": 15,
+          "ms": 2879,
+          "method": "item/started",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 16,
+          "ms": 2888,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "userMessage"
+        },
+        {
+          "index": 17,
+          "ms": 3724,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 36,
+          "ms": 4038,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "commentary"
+        },
+        {
+          "index": 37,
+          "ms": 8773,
+          "method": "item/started",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "inProgress"
+        },
+        {
+          "index": 38,
+          "ms": 8801,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "completed"
+        },
+        {
+          "index": 40,
+          "ms": 8817,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 41,
+          "ms": 14191,
+          "method": "item/started",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "inProgress"
+        },
+        {
+          "index": 42,
+          "ms": 14346,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "commandExecution",
+          "status": "failed"
+        },
+        {
+          "index": 44,
+          "ms": 14403,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 45,
+          "ms": 14976,
+          "method": "item/started",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 79,
+          "ms": 15233,
+          "method": "item/completed",
+          "thread": "session",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 81,
+          "ms": 15331,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 82,
+          "ms": 15350,
+          "method": "thread/status/changed",
+          "thread": "session",
+          "status": "idle"
+        },
+        {
+          "index": 83,
+          "ms": 15350,
+          "method": "turn/completed",
+          "thread": "session",
+          "status": "completed"
+        }
+      ],
+      "files": {
+        "inside": true,
+        "outsideDeclined": false
+      }
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "cwd": "<scratch>",
+      "sandbox": "workspace-write",
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "user",
+      "model": "gpt-6-luna"
+    },
+    "replyIndex": 7,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "workspace-write",
+          "reported": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "on-request",
+          "reported": "on-request",
+          "match": true
+        },
+        {
+          "field": "approvalsReviewer",
+          "requested": "user",
+          "reported": "user",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "workspace-write",
+    "approvalPolicy": "on-request",
+    "reviewer": "user",
+    "policy": "an approval request for what the prompt dictated — a command that holds the prompt's own and no other, in a scratch folder, or a file change whose paths are all in scratch folders — is answered as the scenario says; any other is declined, and a request for more permissions is granted nothing"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": [
+      "CODEX_HOME"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 923,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 924,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<scratch>",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 924,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 930,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 1891,
+      "frame": {
+        "method": "windowsSandbox/readiness",
+        "id": 2
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1891,
+      "frame": {
+        "id": 2,
+        "result": {
+          "status": "ready"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 1891,
+      "frame": {
+        "method": "thread/start",
+        "id": 3,
+        "params": {
+          "cwd": "<scratch>",
+          "sandbox": "workspace-write",
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "model": "gpt-6-luna"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 1958,
+      "frame": {
+        "id": 3,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578350832,
+            "updatedAt": 1578350832,
+            "recencyAt": 1578350832,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\06\\rollout-2020-01-06T18-47-12-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-luna",
+          "modelProvider": "openai",
+          "serviceTier": null,
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "on-request",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "workspaceWrite",
+            "writableRoots": [],
+            "networkAccess": false,
+            "excludeTmpdirEnvVar": false,
+            "excludeSlashTmp": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": null,
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 1958,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-luna",
+            "reasoningEffort": null,
+            "createdAt": 1578350832,
+            "updatedAt": 1578350832,
+            "recencyAt": 1578350832,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<scratch>\\sessions\\2020\\01\\06\\rollout-2020-01-06T18-47-12-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578350832950
+      }
+    },
+    {
+      "index": 9,
+      "dir": "send",
+      "ms": 1959,
+      "frame": {
+        "method": "turn/start",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Do these two steps in this order, and go on to the second whatever the first does. Do not change a command. If one is blocked you may ask, once, for approval to run that same command; if that is refused, say so and go on.\n1. Run exactly this shell command, once: echo k1 > k1-sbc-inside.txt\n2. Run exactly this shell command, once: echo k1 > <scratch>\\k1-sbc-outside.txt\nThen tell me in one line per step whether it worked.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-luna",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-2>"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 1959,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578350832950
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 1986,
+      "frame": {
+        "id": 4,
+        "result": {
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 2013,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578350833006
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 2013,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578350832,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578350833006
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 2338,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-9>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578350833330
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 2879,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Do these two steps in this order, and go on to the second whatever the first does. Do not change a command. If one is blocked you may ask, once, for approval to run that same command; if that is refused, say so and go on.\n1. Run exactly this shell command, once: echo k1 > k1-sbc-inside.txt\n2. Run exactly this shell command, once: echo k1 > <scratch>\\k1-sbc-outside.txt\nThen tell me in one line per step whether it worked.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578350833871
+        },
+        "emittedAtMs": 1578350833871
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 2888,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-4>",
+            "clientId": "<client-message-2>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Do these two steps in this order, and go on to the second whatever the first does. Do not change a command. If one is blocked you may ask, once, for approval to run that same command; if that is refused, say so and go on.\n1. Run exactly this shell command, once: echo k1 > k1-sbc-inside.txt\n2. Run exactly this shell command, once: echo k1 > <scratch>\\k1-sbc-outside.txt\nThen tell me in one line per step whether it worked.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578350833871
+        },
+        "emittedAtMs": 1578350833881
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 3724,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578350834717
+        },
+        "emittedAtMs": 1578350834717
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 3725,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "I"
+        },
+        "emittedAtMs": 1578350834717
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "’ll"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " run"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " two"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " commands"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " exactly"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " as"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " written"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " once"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " each"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " in"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " requested"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": " order"
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 4032,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-5>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578350835024
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 4038,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-5>",
+            "text": "I’ll run the two commands exactly as written, once each, in the requested order.",
+            "phase": "commentary",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578350835024
+        },
+        "emittedAtMs": 1578350835031
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 8773,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-6>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -NoProfile -Command 'echo k1 > k1-sbc-inside.txt'",
+            "cwd": "<scratch>",
+            "processId": "45661",
+            "source": "unifiedExecStartup",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "echo k1 > k1-sbc-inside.txt"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578350839765
+        },
+        "emittedAtMs": 1578350839766
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 8801,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-6>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -NoProfile -Command 'echo k1 > k1-sbc-inside.txt'",
+            "cwd": "<scratch>",
+            "processId": "45661",
+            "source": "unifiedExecStartup",
+            "status": "completed",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "echo k1 > k1-sbc-inside.txt"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": 0,
+            "durationMs": 18
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578350839784
+        },
+        "emittedAtMs": 1578350839793
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 8817,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 14760,
+              "inputTokens": 14677,
+              "cachedInputTokens": 1792,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 83,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 14760,
+              "inputTokens": 14677,
+              "cachedInputTokens": 1792,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 83,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578350839809
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 8817,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 14191,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-7>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -NoProfile -Command \"echo k1 > <scratch>\\\\k1-sbc-outside.txt\"",
+            "cwd": "<scratch>",
+            "processId": "61679",
+            "source": "unifiedExecStartup",
+            "status": "inProgress",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "echo k1 > <scratch>\\k1-sbc-outside.txt"
+              }
+            ],
+            "aggregatedOutput": null,
+            "exitCode": null,
+            "durationMs": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578350845183
+        },
+        "emittedAtMs": 1578350845183
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 14346,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "commandExecution",
+            "id": "<item-7>",
+            "pluginId": null,
+            "scriptPath": null,
+            "command": "\"<path>\" -NoProfile -Command \"echo k1 > <scratch>\\\\k1-sbc-outside.txt\"",
+            "cwd": "<scratch>",
+            "processId": "61679",
+            "source": "unifiedExecStartup",
+            "status": "failed",
+            "commandActions": [
+              {
+                "type": "unknown",
+                "command": "echo k1 > <scratch>\\k1-sbc-outside.txt"
+              }
+            ],
+            "aggregatedOutput": "out-file : L'accès au chemin d'accès '<scratch>\\k1-sbc-outside.txt' est refusé.\r\nAu caractère Ligne:2 : 1\r\n+ echo k1 > <scratch>\\k1-sbc-outside.txt\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OpenError: (:) [Out-File], UnauthorizedAccessException\r\n    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand\r\n \r\n",
+            "exitCode": 1,
+            "durationMs": 121
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578350845305
+        },
+        "emittedAtMs": 1578350845339
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 14402,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 29651,
+              "inputTokens": 29494,
+              "cachedInputTokens": 15872,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 157,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 14891,
+              "inputTokens": 14817,
+              "cachedInputTokens": 14080,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 74,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578350845395
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 14403,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 14976,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-8>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "startedAtMs": 1578350845968
+        },
+        "emittedAtMs": 1578350845968
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 14981,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "Step"
+        },
+        "emittedAtMs": 1578350845973
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 15089,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " "
+        },
+        "emittedAtMs": 1578350846081
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 15089,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578350846081
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 15089,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": ":"
+        },
+        "emittedAtMs": 1578350846081
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 15089,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " Worked"
+        },
+        "emittedAtMs": 1578350846081
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 15089,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " ("
+        },
+        "emittedAtMs": 1578350846081
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 15089,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "exit"
+        },
+        "emittedAtMs": 1578350846081
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " code"
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " "
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "0"
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": ")."
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "  \n"
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "Step"
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " "
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "2"
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": ":"
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " Did"
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " not"
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " work"
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 15092,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": ";"
+        },
+        "emittedAtMs": 1578350846084
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 15197,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " access"
+        },
+        "emittedAtMs": 1578350846190
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 15198,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " to"
+        },
+        "emittedAtMs": 1578350846191
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 15198,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578350846191
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 15198,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " destination"
+        },
+        "emittedAtMs": 1578350846191
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 15199,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " path"
+        },
+        "emittedAtMs": 1578350846191
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 15199,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " was"
+        },
+        "emittedAtMs": 1578350846191
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 15199,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " denied"
+        },
+        "emittedAtMs": 1578350846191
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 15200,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " ("
+        },
+        "emittedAtMs": 1578350846192
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 15200,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "exit"
+        },
+        "emittedAtMs": 1578350846192
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 15200,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " code"
+        },
+        "emittedAtMs": 1578350846192
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 15200,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": " "
+        },
+        "emittedAtMs": 1578350846192
+      }
+    },
+    {
+      "index": 77,
+      "dir": "recv",
+      "ms": 15200,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578350846192
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 15200,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "itemId": "<item-8>",
+          "delta": ")."
+        },
+        "emittedAtMs": 1578350846192
+      }
+    },
+    {
+      "index": 79,
+      "dir": "recv",
+      "ms": 15233,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-8>",
+            "text": "Step 1: Worked (exit code 0).  \nStep 2: Did not work; access to the destination path was denied (exit code 1).",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "completedAtMs": 1578350846192
+        },
+        "emittedAtMs": 1578350846226
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 15331,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-3>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 44767,
+              "inputTokens": 44573,
+              "cachedInputTokens": 29952,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 194,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 15116,
+              "inputTokens": 15079,
+              "cachedInputTokens": 14080,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 37,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578350846323
+      }
+    },
+    {
+      "index": 81,
+      "dir": "recv",
+      "ms": 15331,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 82,
+      "dir": "recv",
+      "ms": 15350,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578350846343
+      }
+    },
+    {
+      "index": 83,
+      "dir": "recv",
+      "ms": 15350,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<session-1>",
+          "turn": {
+            "id": "<turn-3>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-8>",
+                "text": "Step 1: Worked (exit code 0).  \nStep 2: Did not work; access to the destination path was denied (exit code 1).",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578350832,
+            "completedAt": 1578350846,
+            "durationMs": 13359
+          }
+        },
+        "emittedAtMs": 1578350846343
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 923,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1891,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 17758,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "codex-code-mode-host.exe"
+      ],
+      "alive": 5
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1588
+      },
+      {
+        "method": "item/completed",
+        "item": "commandExecution",
+        "bytes": 1307
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1119
+      },
+      {
+        "method": "item/completed",
+        "item": "userMessage",
+        "bytes": 836
+      },
+      {
+        "method": "item/started",
+        "item": "userMessage",
+        "bytes": 832
+      }
+    ],
+    "longStringsCut": []
+  }
+}

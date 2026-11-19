@@ -1,0 +1,3102 @@
+{
+  "_fixture": {
+    "source": "M20b spike m20b-k3.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"cursor\":2,\"turn\":3,\"worker\":2,\"client-message\":2,\"item\":4,\"mcp-server\":4,\"uuid\":1}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-09T19:13:11.311Z",
+  "scenario": {
+    "id": "m20b-fork-two",
+    "title": "K3: two asides at once, each on a child of its own, the second's turn interrupted at its first delta",
+    "successCondition": "Both children's frames apart on the one connection; the second's turn ending interrupted, the first's completing"
+  },
+  "run": {
+    "id": "codex-m20b-fork-two-19",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "main",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 113,
+    "turnsSpent": 2,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1635,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-15>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-15>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-15>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-15>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-15>.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "<mcp-server-15>.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "forkA": {
+        "ok": true,
+        "ms": 126,
+        "withLastTurnId": true,
+        "errorCode": null,
+        "errorText": null,
+        "replyKeys": [
+          "activePermissionProfile",
+          "approvalPolicy",
+          "approvalsReviewer",
+          "cwd",
+          "instructionSources",
+          "model",
+          "modelProvider",
+          "multiAgentMode",
+          "reasoningEffort",
+          "runtimeWorkspaceRoots",
+          "sandbox",
+          "serviceTier",
+          "thread"
+        ],
+        "threadKeys": [
+          "agentNickname",
+          "agentRole",
+          "canAcceptDirectInput",
+          "cliVersion",
+          "createdAt",
+          "cwd",
+          "daybreakEnabled",
+          "environments",
+          "ephemeral",
+          "extra",
+          "forkedFromId",
+          "gitInfo",
+          "historyMode",
+          "id",
+          "model",
+          "modelProvider",
+          "name",
+          "originator",
+          "parentThreadId",
+          "path",
+          "preview",
+          "projectId",
+          "reasoningEffort",
+          "recencyAt",
+          "section",
+          "sectionEnteredAt",
+          "sessionId",
+          "source",
+          "status",
+          "threadSource",
+          "turns",
+          "updatedAt"
+        ],
+        "turnsInReply": 0,
+        "check": {
+          "passed": true,
+          "rows": [
+            {
+              "field": "sandbox",
+              "requested": "read-only",
+              "reported": {
+                "type": "readOnly",
+                "networkAccess": false
+              },
+              "match": true
+            },
+            {
+              "field": "approvalPolicy",
+              "requested": "never",
+              "reported": "never",
+              "match": true
+            }
+          ]
+        },
+        "cwdReported": true,
+        "modelReported": "gpt-6-astra",
+        "effortReported": "xhigh",
+        "childIsNew": true
+      },
+      "forkB": {
+        "ok": true,
+        "ms": 108,
+        "withLastTurnId": true,
+        "errorCode": null,
+        "errorText": null,
+        "replyKeys": [
+          "activePermissionProfile",
+          "approvalPolicy",
+          "approvalsReviewer",
+          "cwd",
+          "instructionSources",
+          "model",
+          "modelProvider",
+          "multiAgentMode",
+          "reasoningEffort",
+          "runtimeWorkspaceRoots",
+          "sandbox",
+          "serviceTier",
+          "thread"
+        ],
+        "threadKeys": [
+          "agentNickname",
+          "agentRole",
+          "canAcceptDirectInput",
+          "cliVersion",
+          "createdAt",
+          "cwd",
+          "daybreakEnabled",
+          "environments",
+          "ephemeral",
+          "extra",
+          "forkedFromId",
+          "gitInfo",
+          "historyMode",
+          "id",
+          "model",
+          "modelProvider",
+          "name",
+          "originator",
+          "parentThreadId",
+          "path",
+          "preview",
+          "projectId",
+          "reasoningEffort",
+          "recencyAt",
+          "section",
+          "sectionEnteredAt",
+          "sessionId",
+          "source",
+          "status",
+          "threadSource",
+          "turns",
+          "updatedAt"
+        ],
+        "turnsInReply": 0,
+        "check": {
+          "passed": true,
+          "rows": [
+            {
+              "field": "sandbox",
+              "requested": "read-only",
+              "reported": {
+                "type": "readOnly",
+                "networkAccess": false
+              },
+              "match": true
+            },
+            {
+              "field": "approvalPolicy",
+              "requested": "never",
+              "reported": "never",
+              "match": true
+            }
+          ]
+        },
+        "cwdReported": true,
+        "modelReported": "gpt-6-astra",
+        "effortReported": "xhigh",
+        "childIsNew": true
+      },
+      "childrenDistinct": true,
+      "first": {
+        "frames": 57,
+        "methods": {
+          "thread/status/changed": 2,
+          "turn/started": 1,
+          "mcpServer/startupStatus/updated": 1,
+          "item/started": 2,
+          "item/completed": 2,
+          "item/agentMessage/delta": 47,
+          "thread/tokenUsage/updated": 1,
+          "turn/completed": 1
+        },
+        "itemsStarted": [
+          "userMessage",
+          "agentMessage"
+        ],
+        "commands": [],
+        "fileChanges": 0,
+        "answers": [
+          {
+            "phase": "final_answer",
+            "units": 182
+          }
+        ],
+        "deltas": 47,
+        "firstDeltaMs": 5693,
+        "mcpStartups": 1,
+        "threadStartedSeen": false,
+        "end": {
+          "ms": 6685,
+          "index": 113,
+          "status": "completed",
+          "error": null
+        },
+        "ended": true,
+        "answerLooksRight": true
+      },
+      "second": {
+        "frames": 21,
+        "methods": {
+          "mcpServer/startupStatus/updated": 7,
+          "thread/status/changed": 2,
+          "turn/started": 1,
+          "item/started": 2,
+          "item/completed": 1,
+          "item/agentMessage/delta": 6,
+          "thread/tokenUsage/updated": 1,
+          "turn/completed": 1
+        },
+        "itemsStarted": [
+          "userMessage",
+          "agentMessage"
+        ],
+        "commands": [],
+        "fileChanges": 0,
+        "answers": [],
+        "deltas": 6,
+        "firstDeltaMs": 5672,
+        "mcpStartups": 7,
+        "threadStartedSeen": false,
+        "end": {
+          "ms": 5675,
+          "index": 60,
+          "status": "interrupted",
+          "error": null
+        },
+        "ended": true,
+        "interrupted": {
+          "sent": true,
+          "accepted": true,
+          "msAfterItsFirstDelta": 0,
+          "endMsAfterTheInterrupt": 3,
+          "framesAfterTheInterrupt": [
+            "thread/tokenUsage/updated",
+            "thread/status/changed",
+            "turn/completed"
+          ]
+        }
+      },
+      "framesNamingNeither": 0,
+      "outline": [
+        {
+          "index": 14,
+          "ms": 1731,
+          "method": "thread/tokenUsage/updated",
+          "thread": "session"
+        },
+        {
+          "index": 15,
+          "ms": 1731,
+          "method": "thread/goal/cleared",
+          "thread": "session"
+        },
+        {
+          "index": 18,
+          "ms": 1857,
+          "method": "thread/started"
+        },
+        {
+          "index": 19,
+          "ms": 1857,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 20,
+          "ms": 1857,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 21,
+          "ms": 1857,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 22,
+          "ms": 1857,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 23,
+          "ms": 1862,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 24,
+          "ms": 1911,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 28,
+          "ms": 1968,
+          "method": "thread/started"
+        },
+        {
+          "index": 29,
+          "ms": 1968,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-2"
+        },
+        {
+          "index": 30,
+          "ms": 1968,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-2"
+        },
+        {
+          "index": 31,
+          "ms": 1968,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-2"
+        },
+        {
+          "index": 32,
+          "ms": 1968,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-2"
+        },
+        {
+          "index": 33,
+          "ms": 1969,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-2"
+        },
+        {
+          "index": 35,
+          "ms": 1976,
+          "method": "thread/status/changed",
+          "thread": "worker-1",
+          "status": "active"
+        },
+        {
+          "index": 36,
+          "ms": 1976,
+          "method": "turn/started",
+          "thread": "worker-1",
+          "status": "inProgress"
+        },
+        {
+          "index": 38,
+          "ms": 1977,
+          "method": "thread/status/changed",
+          "thread": "worker-2",
+          "status": "active"
+        },
+        {
+          "index": 39,
+          "ms": 1977,
+          "method": "turn/started",
+          "thread": "worker-2",
+          "status": "inProgress"
+        },
+        {
+          "index": 40,
+          "ms": 2019,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-2"
+        },
+        {
+          "index": 41,
+          "ms": 2395,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "session"
+        },
+        {
+          "index": 42,
+          "ms": 2545,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 43,
+          "ms": 2645,
+          "method": "mcpServer/startupStatus/updated",
+          "thread": "worker-2"
+        },
+        {
+          "index": 44,
+          "ms": 3628,
+          "method": "item/started",
+          "thread": "worker-1",
+          "item": "userMessage"
+        },
+        {
+          "index": 45,
+          "ms": 3628,
+          "method": "item/completed",
+          "thread": "worker-1",
+          "item": "userMessage"
+        },
+        {
+          "index": 46,
+          "ms": 3943,
+          "method": "item/started",
+          "thread": "worker-2",
+          "item": "userMessage"
+        },
+        {
+          "index": 47,
+          "ms": 3943,
+          "method": "item/completed",
+          "thread": "worker-2",
+          "item": "userMessage"
+        },
+        {
+          "index": 48,
+          "ms": 5672,
+          "method": "item/started",
+          "thread": "worker-2",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 56,
+          "ms": 5673,
+          "method": "thread/tokenUsage/updated",
+          "thread": "worker-2"
+        },
+        {
+          "index": 57,
+          "ms": 5673,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 59,
+          "ms": 5675,
+          "method": "thread/status/changed",
+          "thread": "worker-2",
+          "status": "idle"
+        },
+        {
+          "index": 60,
+          "ms": 5675,
+          "method": "turn/completed",
+          "thread": "worker-2",
+          "status": "interrupted"
+        },
+        {
+          "index": 61,
+          "ms": 5692,
+          "method": "item/started",
+          "thread": "worker-1",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 109,
+          "ms": 6569,
+          "method": "item/completed",
+          "thread": "worker-1",
+          "item": "agentMessage",
+          "phase": "final_answer"
+        },
+        {
+          "index": 110,
+          "ms": 6677,
+          "method": "thread/tokenUsage/updated",
+          "thread": "worker-1"
+        },
+        {
+          "index": 111,
+          "ms": 6677,
+          "method": "account/rateLimits/updated"
+        },
+        {
+          "index": 112,
+          "ms": 6685,
+          "method": "thread/status/changed",
+          "thread": "worker-1",
+          "status": "idle"
+        },
+        {
+          "index": 113,
+          "ms": 6685,
+          "method": "turn/completed",
+          "thread": "worker-1",
+          "status": "completed"
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "threadId": "<session-1>",
+      "cwd": "<scratch>",
+      "sandbox": "read-only",
+      "approvalPolicy": "never",
+      "excludeTurns": true
+    },
+    "replyIndex": 12,
+    "ok": true,
+    "check": {
+      "passed": true,
+      "rows": [
+        {
+          "field": "sandbox",
+          "requested": "read-only",
+          "reported": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "match": true
+        },
+        {
+          "field": "approvalPolicy",
+          "requested": "never",
+          "reported": "never",
+          "match": true
+        }
+      ]
+    }
+  },
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 769,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 770,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 771,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 776,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 1569,
+      "frame": {
+        "method": "thread/resume",
+        "id": 2,
+        "params": {
+          "threadId": "<session-1>",
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "excludeTurns": true
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1728,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-16>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182700
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 1728,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-17>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182700
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 1728,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-15>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182700
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 1728,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-18>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182700
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 1728,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-15>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182700
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 1729,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<session-1>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578597182701
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 1729,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-17>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182701
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 1731,
+      "frame": {
+        "id": 2,
+        "result": {
+          "thread": {
+            "id": "<session-1>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<session-1>",
+            "forkedFromId": null,
+            "parentThreadId": null,
+            "preview": "Read README.md, src/tides.js and the Markdown file in the folder called field notes, then tell me in two sentences what this project is for and what nextHighTide returns.",
+            "ephemeral": false,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "low",
+            "createdAt": 1578597051,
+            "updatedAt": 1578597182,
+            "recencyAt": 1578597139,
+            "status": {
+              "type": "idle"
+            },
+            "path": "<path>\\.codex\\sessions\\2020\\01\\09\\rollout-2020-01-09T15-10-51-<session-1>.jsonl",
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-astra",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": "low",
+          "multiAgentMode": "explicitRequestOnly",
+          "initialTurnsPage": null,
+          "turnsBackwardsCursor": "<cursor-2>",
+          "itemsBackwardsCursor": "<cursor-3>"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "dir": "send",
+      "ms": 1731,
+      "frame": {
+        "method": "thread/fork",
+        "id": 3,
+        "params": {
+          "threadId": "<session-1>",
+          "lastTurnId": "<uuid-19>",
+          "ephemeral": true,
+          "excludeTurns": true,
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "developerInstructions": "You are answering a question asked beside a conversation, not continuing it. Answer briefly from what the conversation already holds. Take no action: run no command and change no file. Reading a file to answer is acceptable.",
+          "model": "gpt-6-astra"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 1731,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "turnId": "<turn-4>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 123737,
+              "inputTokens": 123333,
+              "cachedInputTokens": 117504,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 404,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 18072,
+              "inputTokens": 18033,
+              "cachedInputTokens": 17792,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 39,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578597182703
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 1731,
+      "frame": {
+        "method": "thread/goal/cleared",
+        "params": {
+          "threadId": "<session-1>"
+        },
+        "emittedAtMs": 1578597182703
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 1857,
+      "frame": {
+        "id": 3,
+        "result": {
+          "thread": {
+            "id": "<worker-5>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-5>",
+            "forkedFromId": "<session-1>",
+            "parentThreadId": null,
+            "preview": "Read README.md, src/tides.js and the Markdown file in the folder called field notes, then tell me in two sentences what this project is for and what nextHighTide returns.",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "xhigh",
+            "createdAt": 1578597182,
+            "updatedAt": 1578597182,
+            "recencyAt": 1578597182,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-astra",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": "xhigh",
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 17,
+      "dir": "send",
+      "ms": 1857,
+      "frame": {
+        "method": "thread/fork",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "lastTurnId": "<uuid-19>",
+          "ephemeral": true,
+          "excludeTurns": true,
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "developerInstructions": "You are answering a question asked beside a conversation, not continuing it. Answer briefly from what the conversation already holds. Take no action: run no command and change no file. Reading a file to answer is acceptable.",
+          "model": "gpt-6-astra"
+        }
+      }
+    },
+    {
+      "index": 18,
+      "dir": "recv",
+      "ms": 1857,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-5>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-5>",
+            "forkedFromId": "<session-1>",
+            "parentThreadId": null,
+            "preview": "Read README.md, src/tides.js and the Markdown file in the folder called field notes, then tell me in two sentences what this project is for and what nextHighTide returns.",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "xhigh",
+            "createdAt": 1578597182,
+            "updatedAt": 1578597182,
+            "recencyAt": 1578597182,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578597182829
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 1857,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-5>",
+          "name": "<mcp-server-16>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182829
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 1857,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-5>",
+          "name": "<mcp-server-15>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182829
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 1857,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-5>",
+          "name": "<mcp-server-18>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182829
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 1857,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-5>",
+          "name": "<mcp-server-17>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182829
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 1862,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-5>",
+          "name": "<mcp-server-15>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182834
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 1911,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-5>",
+          "name": "<mcp-server-17>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182883
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 1965,
+      "frame": {
+        "id": 4,
+        "result": {
+          "thread": {
+            "id": "<worker-6>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-6>",
+            "forkedFromId": "<session-1>",
+            "parentThreadId": null,
+            "preview": "Read README.md, src/tides.js and the Markdown file in the folder called field notes, then tell me in two sentences what this project is for and what nextHighTide returns.",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "xhigh",
+            "createdAt": 1578597182,
+            "updatedAt": 1578597182,
+            "recencyAt": 1578597182,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          },
+          "model": "gpt-6-astra",
+          "modelProvider": "openai",
+          "serviceTier": "default",
+          "cwd": "<scratch>",
+          "runtimeWorkspaceRoots": [
+            "<scratch>"
+          ],
+          "instructionSources": [],
+          "approvalPolicy": "never",
+          "approvalsReviewer": "user",
+          "sandbox": {
+            "type": "readOnly",
+            "networkAccess": false
+          },
+          "activePermissionProfile": null,
+          "reasoningEffort": "xhigh",
+          "multiAgentMode": "explicitRequestOnly"
+        }
+      }
+    },
+    {
+      "index": 26,
+      "dir": "send",
+      "ms": 1967,
+      "frame": {
+        "method": "turn/start",
+        "id": 5,
+        "params": {
+          "threadId": "<worker-5>",
+          "input": [
+            {
+              "type": "text",
+              "text": "From what this conversation already holds, and without using any tool: what is the function in src/tides.js called and what does it return? One sentence.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-astra",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-7>"
+        }
+      }
+    },
+    {
+      "index": 27,
+      "dir": "send",
+      "ms": 1968,
+      "frame": {
+        "method": "turn/start",
+        "id": 6,
+        "params": {
+          "threadId": "<worker-6>",
+          "input": [
+            {
+              "type": "text",
+              "text": "Without using any tool, write 40 numbered sentences about lighthouses, one per line.",
+              "text_elements": []
+            }
+          ],
+          "model": "gpt-6-astra",
+          "effort": "low",
+          "clientUserMessageId": "<client-message-8>"
+        }
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 1968,
+      "frame": {
+        "method": "thread/started",
+        "params": {
+          "thread": {
+            "id": "<worker-6>",
+            "environments": [
+              {
+                "environmentId": "local",
+                "cwd": "<scratch>",
+                "runtimeWorkspaceRoots": [
+                  "<scratch>"
+                ]
+              }
+            ],
+            "extra": null,
+            "sessionId": "<worker-6>",
+            "forkedFromId": "<session-1>",
+            "parentThreadId": null,
+            "preview": "Read README.md, src/tides.js and the Markdown file in the folder called field notes, then tell me in two sentences what this project is for and what nextHighTide returns.",
+            "ephemeral": true,
+            "section": null,
+            "sectionEnteredAt": null,
+            "projectId": null,
+            "historyMode": "paginated",
+            "modelProvider": "openai",
+            "model": "gpt-6-astra",
+            "reasoningEffort": "xhigh",
+            "createdAt": 1578597182,
+            "updatedAt": 1578597182,
+            "recencyAt": 1578597182,
+            "status": {
+              "type": "idle"
+            },
+            "path": null,
+            "cwd": "<scratch>",
+            "cliVersion": "0.155.1",
+            "originator": "fat_g",
+            "source": "vscode",
+            "canAcceptDirectInput": true,
+            "threadSource": null,
+            "agentNickname": null,
+            "agentRole": null,
+            "gitInfo": null,
+            "name": null,
+            "daybreakEnabled": null,
+            "turns": []
+          }
+        },
+        "emittedAtMs": 1578597182937
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 1968,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-6>",
+          "name": "<mcp-server-15>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182937
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 1968,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-6>",
+          "name": "<mcp-server-16>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182937
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 1968,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-6>",
+          "name": "<mcp-server-18>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182937
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 1968,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-6>",
+          "name": "<mcp-server-17>",
+          "status": "starting",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182937
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 1969,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-6>",
+          "name": "<mcp-server-15>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182941
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 1976,
+      "frame": {
+        "id": 5,
+        "result": {
+          "turn": {
+            "id": "<turn-9>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 1976,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<worker-5>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578597182948
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 1976,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<worker-5>",
+          "turn": {
+            "id": "<turn-9>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578597182,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578597182948
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 1977,
+      "frame": {
+        "id": 6,
+        "result": {
+          "turn": {
+            "id": "<turn-10>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": null,
+            "completedAt": null,
+            "durationMs": null
+          }
+        }
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 1977,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<worker-6>",
+          "status": {
+            "type": "active",
+            "activeFlags": []
+          }
+        },
+        "emittedAtMs": 1578597182949
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 1977,
+      "frame": {
+        "method": "turn/started",
+        "params": {
+          "threadId": "<worker-6>",
+          "turn": {
+            "id": "<turn-10>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "inProgress",
+            "error": null,
+            "startedAt": 1578597182,
+            "completedAt": null,
+            "durationMs": null
+          }
+        },
+        "emittedAtMs": 1578597182949
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 2019,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-6>",
+          "name": "<mcp-server-17>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597182991
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 2395,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-16>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597183367
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 2545,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-5>",
+          "name": "<mcp-server-16>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597183517
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 2645,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-6>",
+          "name": "<mcp-server-16>",
+          "status": "ready",
+          "error": null,
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597183617
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 3628,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-11>",
+            "clientId": "<client-message-7>",
+            "content": [
+              {
+                "type": "text",
+                "text": "From what this conversation already holds, and without using any tool: what is the function in src/tides.js called and what does it return? One sentence.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "startedAtMs": 1578597184600
+        },
+        "emittedAtMs": 1578597184600
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 3628,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-11>",
+            "clientId": "<client-message-7>",
+            "content": [
+              {
+                "type": "text",
+                "text": "From what this conversation already holds, and without using any tool: what is the function in src/tides.js called and what does it return? One sentence.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "completedAtMs": 1578597184600
+        },
+        "emittedAtMs": 1578597184600
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 3943,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-12>",
+            "clientId": "<client-message-8>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Without using any tool, write 40 numbered sentences about lighthouses, one per line.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<worker-6>",
+          "turnId": "<turn-10>",
+          "startedAtMs": 1578597184916
+        },
+        "emittedAtMs": 1578597184916
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 3943,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "userMessage",
+            "id": "<item-12>",
+            "clientId": "<client-message-8>",
+            "content": [
+              {
+                "type": "text",
+                "text": "Without using any tool, write 40 numbered sentences about lighthouses, one per line.",
+                "text_elements": []
+              }
+            ]
+          },
+          "threadId": "<worker-6>",
+          "turnId": "<turn-10>",
+          "completedAtMs": 1578597184916
+        },
+        "emittedAtMs": 1578597184916
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 5672,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-13>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<worker-6>",
+          "turnId": "<turn-10>",
+          "startedAtMs": 1578597186644
+        },
+        "emittedAtMs": 1578597186644
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 5672,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-6>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578597186644
+      }
+    },
+    {
+      "index": 50,
+      "dir": "send",
+      "ms": 5672,
+      "frame": {
+        "method": "turn/interrupt",
+        "id": 7,
+        "params": {
+          "threadId": "<worker-6>",
+          "turnId": "<turn-10>"
+        }
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 5672,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-6>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578597186644
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 5672,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-6>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": " L"
+        },
+        "emittedAtMs": 1578597186644
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 5672,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-6>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": "ighth"
+        },
+        "emittedAtMs": 1578597186644
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 5672,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-6>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": "ouses"
+        },
+        "emittedAtMs": 1578597186644
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 5672,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-6>",
+          "turnId": "<turn-10>",
+          "itemId": "<item-13>",
+          "delta": " help"
+        },
+        "emittedAtMs": 1578597186644
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 5673,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<worker-6>",
+          "turnId": "<turn-10>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 34440,
+              "inputTokens": 34240,
+              "cachedInputTokens": 29824,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 200,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 17539,
+              "inputTokens": 17446,
+              "cachedInputTokens": 16640,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 93,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578597186645
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 5673,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 5675,
+      "frame": {
+        "id": 7,
+        "result": {}
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 5675,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<worker-6>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578597186647
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 5675,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<worker-6>",
+          "turn": {
+            "id": "<turn-10>",
+            "items": [],
+            "itemsView": "notLoaded",
+            "status": "interrupted",
+            "error": null,
+            "startedAt": 1578597182,
+            "completedAt": 1578597186,
+            "durationMs": 3697
+          }
+        },
+        "emittedAtMs": 1578597186647
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 5692,
+      "frame": {
+        "method": "item/started",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-14>",
+            "text": "",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "startedAtMs": 1578597186664
+        },
+        "emittedAtMs": 1578597186664
+      }
+    },
+    {
+      "index": 62,
+      "dir": "recv",
+      "ms": 5693,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578597186666
+      }
+    },
+    {
+      "index": 63,
+      "dir": "recv",
+      "ms": 5693,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "next"
+        },
+        "emittedAtMs": 1578597186666
+      }
+    },
+    {
+      "index": 64,
+      "dir": "recv",
+      "ms": 5693,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "High"
+        },
+        "emittedAtMs": 1578597186666
+      }
+    },
+    {
+      "index": 65,
+      "dir": "recv",
+      "ms": 5694,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "T"
+        },
+        "emittedAtMs": 1578597186666
+      }
+    },
+    {
+      "index": 66,
+      "dir": "recv",
+      "ms": 5694,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "ide"
+        },
+        "emittedAtMs": 1578597186666
+      }
+    },
+    {
+      "index": 67,
+      "dir": "recv",
+      "ms": 5694,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "(times"
+        },
+        "emittedAtMs": 1578597186666
+      }
+    },
+    {
+      "index": 68,
+      "dir": "recv",
+      "ms": 5934,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578597186906
+      }
+    },
+    {
+      "index": 69,
+      "dir": "recv",
+      "ms": 5934,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " now"
+        },
+        "emittedAtMs": 1578597186906
+      }
+    },
+    {
+      "index": 70,
+      "dir": "recv",
+      "ms": 5934,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ")`"
+        },
+        "emittedAtMs": 1578597186906
+      }
+    },
+    {
+      "index": 71,
+      "dir": "recv",
+      "ms": 5934,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " returns"
+        },
+        "emittedAtMs": 1578597186906
+      }
+    },
+    {
+      "index": 72,
+      "dir": "recv",
+      "ms": 5934,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578597186906
+      }
+    },
+    {
+      "index": 73,
+      "dir": "recv",
+      "ms": 5934,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " earliest"
+        },
+        "emittedAtMs": 1578597186906
+      }
+    },
+    {
+      "index": 74,
+      "dir": "recv",
+      "ms": 5934,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " supplied"
+        },
+        "emittedAtMs": 1578597186906
+      }
+    },
+    {
+      "index": 75,
+      "dir": "recv",
+      "ms": 6086,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " tide"
+        },
+        "emittedAtMs": 1578597187058
+      }
+    },
+    {
+      "index": 76,
+      "dir": "recv",
+      "ms": 6086,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " time"
+        },
+        "emittedAtMs": 1578597187058
+      }
+    },
+    {
+      "index": 77,
+      "dir": "recv",
+      "ms": 6086,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " at"
+        },
+        "emittedAtMs": 1578597187058
+      }
+    },
+    {
+      "index": 78,
+      "dir": "recv",
+      "ms": 6086,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " or"
+        },
+        "emittedAtMs": 1578597187058
+      }
+    },
+    {
+      "index": 79,
+      "dir": "recv",
+      "ms": 6086,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " after"
+        },
+        "emittedAtMs": 1578597187058
+      }
+    },
+    {
+      "index": 80,
+      "dir": "recv",
+      "ms": 6086,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578597187058
+      }
+    },
+    {
+      "index": 81,
+      "dir": "recv",
+      "ms": 6086,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "now"
+        },
+        "emittedAtMs": 1578597187058
+      }
+    },
+    {
+      "index": 82,
+      "dir": "recv",
+      "ms": 6086,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "`,"
+        },
+        "emittedAtMs": 1578597187058
+      }
+    },
+    {
+      "index": 83,
+      "dir": "recv",
+      "ms": 6221,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " or"
+        },
+        "emittedAtMs": 1578597187193
+      }
+    },
+    {
+      "index": 84,
+      "dir": "recv",
+      "ms": 6221,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " the"
+        },
+        "emittedAtMs": 1578597187193
+      }
+    },
+    {
+      "index": 85,
+      "dir": "recv",
+      "ms": 6221,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " earliest"
+        },
+        "emittedAtMs": 1578597187193
+      }
+    },
+    {
+      "index": 86,
+      "dir": "recv",
+      "ms": 6221,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " time"
+        },
+        "emittedAtMs": 1578597187193
+      }
+    },
+    {
+      "index": 87,
+      "dir": "recv",
+      "ms": 6221,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " plus"
+        },
+        "emittedAtMs": 1578597187193
+      }
+    },
+    {
+      "index": 88,
+      "dir": "recv",
+      "ms": 6221,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " "
+        },
+        "emittedAtMs": 1578597187193
+      }
+    },
+    {
+      "index": 89,
+      "dir": "recv",
+      "ms": 6221,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "1"
+        },
+        "emittedAtMs": 1578597187193
+      }
+    },
+    {
+      "index": 90,
+      "dir": "recv",
+      "ms": 6221,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578597187193
+      }
+    },
+    {
+      "index": 91,
+      "dir": "recv",
+      "ms": 6366,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "440"
+        },
+        "emittedAtMs": 1578597187338
+      }
+    },
+    {
+      "index": 92,
+      "dir": "recv",
+      "ms": 6366,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " minutes"
+        },
+        "emittedAtMs": 1578597187338
+      }
+    },
+    {
+      "index": 93,
+      "dir": "recv",
+      "ms": 6366,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " if"
+        },
+        "emittedAtMs": 1578597187338
+      }
+    },
+    {
+      "index": 94,
+      "dir": "recv",
+      "ms": 6530,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " all"
+        },
+        "emittedAtMs": 1578597187502
+      }
+    },
+    {
+      "index": 95,
+      "dir": "recv",
+      "ms": 6530,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " have"
+        },
+        "emittedAtMs": 1578597187502
+      }
+    },
+    {
+      "index": 96,
+      "dir": "recv",
+      "ms": 6531,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " passed"
+        },
+        "emittedAtMs": 1578597187503
+      }
+    },
+    {
+      "index": 97,
+      "dir": "recv",
+      "ms": 6531,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": ","
+        },
+        "emittedAtMs": 1578597187503
+      }
+    },
+    {
+      "index": 98,
+      "dir": "recv",
+      "ms": 6531,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " and"
+        },
+        "emittedAtMs": 1578597187503
+      }
+    },
+    {
+      "index": 99,
+      "dir": "recv",
+      "ms": 6531,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " returns"
+        },
+        "emittedAtMs": 1578597187503
+      }
+    },
+    {
+      "index": 100,
+      "dir": "recv",
+      "ms": 6531,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " `"
+        },
+        "emittedAtMs": 1578597187503
+      }
+    },
+    {
+      "index": 101,
+      "dir": "recv",
+      "ms": 6531,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "Na"
+        },
+        "emittedAtMs": 1578597187503
+      }
+    },
+    {
+      "index": 102,
+      "dir": "recv",
+      "ms": 6569,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "N"
+        },
+        "emittedAtMs": 1578597187541
+      }
+    },
+    {
+      "index": 103,
+      "dir": "recv",
+      "ms": 6569,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "`"
+        },
+        "emittedAtMs": 1578597187541
+      }
+    },
+    {
+      "index": 104,
+      "dir": "recv",
+      "ms": 6569,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " for"
+        },
+        "emittedAtMs": 1578597187541
+      }
+    },
+    {
+      "index": 105,
+      "dir": "recv",
+      "ms": 6569,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " an"
+        },
+        "emittedAtMs": 1578597187541
+      }
+    },
+    {
+      "index": 106,
+      "dir": "recv",
+      "ms": 6569,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " empty"
+        },
+        "emittedAtMs": 1578597187541
+      }
+    },
+    {
+      "index": 107,
+      "dir": "recv",
+      "ms": 6569,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": " list"
+        },
+        "emittedAtMs": 1578597187541
+      }
+    },
+    {
+      "index": 108,
+      "dir": "recv",
+      "ms": 6569,
+      "frame": {
+        "method": "item/agentMessage/delta",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "itemId": "<item-14>",
+          "delta": "."
+        },
+        "emittedAtMs": 1578597187541
+      }
+    },
+    {
+      "index": 109,
+      "dir": "recv",
+      "ms": 6569,
+      "frame": {
+        "method": "item/completed",
+        "params": {
+          "item": {
+            "type": "agentMessage",
+            "id": "<item-14>",
+            "text": "`nextHighTide(times, now)` returns the earliest supplied tide time at or after `now`, or the earliest time plus 1,440 minutes if all have passed, and returns `NaN` for an empty list.",
+            "phase": "final_answer",
+            "memoryCitation": null,
+            "delivery": null,
+            "questions": null
+          },
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "completedAtMs": 1578597187541
+        },
+        "emittedAtMs": 1578597187541
+      }
+    },
+    {
+      "index": 110,
+      "dir": "recv",
+      "ms": 6677,
+      "frame": {
+        "method": "thread/tokenUsage/updated",
+        "params": {
+          "threadId": "<worker-5>",
+          "turnId": "<turn-9>",
+          "tokenUsage": {
+            "total": {
+              "totalTokens": 51452,
+              "inputTokens": 51201,
+              "cachedInputTokens": 42496,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 251,
+              "reasoningOutputTokens": 0
+            },
+            "last": {
+              "totalTokens": 17012,
+              "inputTokens": 16961,
+              "cachedInputTokens": 12672,
+              "cacheWriteInputTokens": 0,
+              "outputTokens": 51,
+              "reasoningOutputTokens": 0
+            },
+            "modelContextWindow": 258400
+          }
+        },
+        "emittedAtMs": 1578597187649
+      }
+    },
+    {
+      "index": 111,
+      "dir": "recv",
+      "ms": 6677,
+      "frame": {
+        "method": "account/rateLimits/updated",
+        "params": {
+          "_keys": [
+            "rateLimits"
+          ]
+        }
+      }
+    },
+    {
+      "index": 112,
+      "dir": "recv",
+      "ms": 6685,
+      "frame": {
+        "method": "thread/status/changed",
+        "params": {
+          "threadId": "<worker-5>",
+          "status": {
+            "type": "idle"
+          }
+        },
+        "emittedAtMs": 1578597187657
+      }
+    },
+    {
+      "index": 113,
+      "dir": "recv",
+      "ms": 6685,
+      "frame": {
+        "method": "turn/completed",
+        "params": {
+          "threadId": "<worker-5>",
+          "turn": {
+            "id": "<turn-9>",
+            "items": [
+              {
+                "type": "agentMessage",
+                "id": "<item-14>",
+                "text": "`nextHighTide(times, now)` returns the earliest supplied tide time at or after `now`, or the earliest time plus 1,440 minutes if all have passed, and returns `NaN` for an empty list.",
+                "phase": "final_answer",
+                "memoryCitation": null,
+                "delivery": null,
+                "questions": null
+              }
+            ],
+            "itemsView": "summary",
+            "status": "completed",
+            "error": null,
+            "startedAt": 1578597182,
+            "completedAt": 1578597187,
+            "durationMs": 4709
+          }
+        },
+        "emittedAtMs": 1578597187657
+      }
+    },
+    {
+      "index": 114,
+      "dir": "recv",
+      "ms": 9037,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<session-1>",
+          "name": "<mcp-server-18>",
+          "status": "failed",
+          "error": "MCP client for `<mcp-server-18>` failed to start: MCP startup failed: handshaking with MCP server failed: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request",
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597190009
+      }
+    },
+    {
+      "index": 115,
+      "dir": "recv",
+      "ms": 9177,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-5>",
+          "name": "<mcp-server-18>",
+          "status": "failed",
+          "error": "MCP client for `<mcp-server-18>` failed to start: MCP startup failed: handshaking with MCP server failed: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request",
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597190150
+      }
+    },
+    {
+      "index": 116,
+      "dir": "recv",
+      "ms": 9316,
+      "frame": {
+        "method": "mcpServer/startupStatus/updated",
+        "params": {
+          "threadId": "<worker-6>",
+          "name": "<mcp-server-18>",
+          "status": "failed",
+          "error": "MCP client for `<mcp-server-18>` failed to start: MCP startup failed: handshaking with MCP server failed: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request: Send message error Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (http://127.0.0.1:4040/mcp), when send initialize request",
+          "failureReason": null
+        },
+        "emittedAtMs": 1578597190288
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 2358,
+    "tail": "\u001b[2m2020-01-09T19:13:04.674126Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T19:13:04.842410Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T19:13:04.966237Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T19:13:06.964834Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T19:13:07.119008Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T19:13:07.255080Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T19:13:10.009709Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T19:13:10.149884Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n\u001b[2m2020-01-09T19:13:10.288831Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mrmcp::transport::worker\u001b[0m\u001b[2m:\u001b[0m worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (http://127.0.0.1:4040/mcp)\")))\n"
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 769,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1569,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 9519,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe",
+        "node.exe",
+        "<mcp-server-15>.exe",
+        "<mcp-server-15>.exe",
+        "<mcp-server-15>.exe",
+        "node.exe",
+        "<mcp-server-15>.exe",
+        "<mcp-server-15>.exe",
+        "node.exe",
+        "<mcp-server-15>.exe"
+      ],
+      "alive": 13
+    }
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 2037
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1582
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1582
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1186
+      },
+      {
+        "method": "thread/started",
+        "item": null,
+        "bytes": 1186
+      }
+    ],
+    "longStringsCut": []
+  }
+}

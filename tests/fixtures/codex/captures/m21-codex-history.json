@@ -1,0 +1,824 @@
+{
+  "_fixture": {
+    "source": "M21 spike m21-k2.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "the ten delta kinds the handshake opts out of (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"turn\":5,\"item\":13,\"client-message\":5,\"cursor\":1}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-10T10:26:03.181Z",
+  "scenario": {
+    "id": "m21-history",
+    "title": "K2: the thread's turns read from a second process that never resumed it, as the app's history check reads them (C28)",
+    "successCondition": "Whether the async message keeps its questions, and whether anything of the blocking request is in the read"
+  },
+  "run": {
+    "id": "codex-m21-history-12",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "history",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 5,
+    "turnsSpent": 0,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 1611,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "experimentalApiAskedFor": false,
+      "turns": 5,
+      "replyKeys": [
+        "backwardsCursor",
+        "data",
+        "nextCursor"
+      ],
+      "perTurn": [
+        {
+          "keys": [
+            "completedAt",
+            "durationMs",
+            "error",
+            "id",
+            "items",
+            "itemsView",
+            "startedAt",
+            "status"
+          ],
+          "status": "completed",
+          "itemTypes": [
+            "userMessage",
+            "agentMessage:final_answer",
+            "agentMessage:final_answer"
+          ],
+          "agentMessages": [
+            {
+              "keys": [
+                "delivery",
+                "id",
+                "memoryCitation",
+                "phase",
+                "questions",
+                "text",
+                "type"
+              ],
+              "questions": 2,
+              "delivery": "async"
+            },
+            {
+              "keys": [
+                "delivery",
+                "id",
+                "memoryCitation",
+                "phase",
+                "questions",
+                "text",
+                "type"
+              ],
+              "questions": "null",
+              "delivery": null
+            }
+          ],
+          "questionLikeItems": [],
+          "userMessages": 1
+        },
+        {
+          "keys": [
+            "completedAt",
+            "durationMs",
+            "error",
+            "id",
+            "items",
+            "itemsView",
+            "startedAt",
+            "status"
+          ],
+          "status": "completed",
+          "itemTypes": [
+            "userMessage",
+            "agentMessage:commentary",
+            "commandExecution",
+            "agentMessage:final_answer"
+          ],
+          "agentMessages": [
+            {
+              "keys": [
+                "delivery",
+                "id",
+                "memoryCitation",
+                "phase",
+                "questions",
+                "text",
+                "type"
+              ],
+              "questions": "null",
+              "delivery": null
+            },
+            {
+              "keys": [
+                "delivery",
+                "id",
+                "memoryCitation",
+                "phase",
+                "questions",
+                "text",
+                "type"
+              ],
+              "questions": "null",
+              "delivery": null
+            }
+          ],
+          "questionLikeItems": [],
+          "userMessages": 1
+        },
+        {
+          "keys": [
+            "completedAt",
+            "durationMs",
+            "error",
+            "id",
+            "items",
+            "itemsView",
+            "startedAt",
+            "status"
+          ],
+          "status": "completed",
+          "itemTypes": [
+            "userMessage",
+            "agentMessage:final_answer",
+            "agentMessage:final_answer"
+          ],
+          "agentMessages": [
+            {
+              "keys": [
+                "delivery",
+                "id",
+                "memoryCitation",
+                "phase",
+                "questions",
+                "text",
+                "type"
+              ],
+              "questions": 1,
+              "delivery": "async"
+            },
+            {
+              "keys": [
+                "delivery",
+                "id",
+                "memoryCitation",
+                "phase",
+                "questions",
+                "text",
+                "type"
+              ],
+              "questions": "null",
+              "delivery": null
+            }
+          ],
+          "questionLikeItems": [],
+          "userMessages": 1
+        },
+        {
+          "keys": [
+            "completedAt",
+            "durationMs",
+            "error",
+            "id",
+            "items",
+            "itemsView",
+            "startedAt",
+            "status"
+          ],
+          "status": "interrupted",
+          "itemTypes": [
+            "userMessage"
+          ],
+          "agentMessages": [],
+          "questionLikeItems": [],
+          "userMessages": 1
+        },
+        {
+          "keys": [
+            "completedAt",
+            "durationMs",
+            "error",
+            "id",
+            "items",
+            "itemsView",
+            "startedAt",
+            "status"
+          ],
+          "status": "completed",
+          "itemTypes": [
+            "userMessage",
+            "plan"
+          ],
+          "agentMessages": [],
+          "questionLikeItems": [],
+          "userMessages": 1
+        }
+      ],
+      "typeCounts": {
+        "response": 1
+      },
+      "outline": []
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": null,
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_AUTOUPDATER_DISABLED_BY_HOST",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SIMPLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_USER_EMAIL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": true,
+    "dropped": 0,
+    "byType": {},
+    "kept": [
+      "item/agentMessage/delta"
+    ],
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 855,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 856,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) unknown (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 856,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 859,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 1655,
+      "frame": {
+        "method": "thread/turns/list",
+        "id": 2,
+        "params": {
+          "threadId": "<session-1>",
+          "limit": 20,
+          "itemsView": "full"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 1681,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "<turn-2>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-3>",
+                  "clientId": "<client-message-4>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Ask me two questions at once, each with its options: which of notes-1.txt and notes-2.txt I want read, and whether I want it quoted or summarised. Do not read anything until I have answered: end your turn right after asking, without waiting.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-5>",
+                  "text": "Which file do you want me to read?\n- notes-1.txt\n- notes-2.txt\n\nWould you like it quoted or summarised?\n- Quoted\n- Summarised",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": "async",
+                  "questions": [
+                    {
+                      "title": "Which file do you want me to read?",
+                      "options": [
+                        "notes-1.txt",
+                        "notes-2.txt"
+                      ]
+                    },
+                    {
+                      "title": "Would you like it quoted or summarised?",
+                      "options": [
+                        "Quoted",
+                        "Summarised"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-6>",
+                  "text": "",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578651941,
+              "completedAt": 1578651953,
+              "durationMs": 11894
+            },
+            {
+              "id": "<turn-7>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-8>",
+                  "clientId": "<client-message-9>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Which file do you want me to read?\nnotes-2.txt",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-10>",
+                  "text": "I’ll read notes-2.txt.",
+                  "phase": "commentary",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                },
+                {
+                  "type": "commandExecution",
+                  "id": "<item-11>",
+                  "pluginId": null,
+                  "scriptPath": null,
+                  "command": "\"<path>\" -Command 'Get-Content -LiteralPath notes-2.txt'",
+                  "cwd": "<scratch>",
+                  "processId": "17882",
+                  "source": "unifiedExecStartup",
+                  "status": "completed",
+                  "commandActions": [
+                    {
+                      "type": "read",
+                      "command": "Get-Content -LiteralPath notes-2.txt",
+                      "name": "notes-2.txt",
+                      "path": "<scratch>\\notes-2.txt"
+                    }
+                  ],
+                  "aggregatedOutput": null,
+                  "exitCode": 0,
+                  "durationMs": 10
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-12>",
+                  "text": "notes-2.txt reads:\n\n> Note two: the kettle whistles twice before it boils.",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578651914,
+              "completedAt": 1578651932,
+              "durationMs": 17886
+            },
+            {
+              "id": "<turn-13>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-14>",
+                  "clientId": "<client-message-15>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Ask me which of notes-1.txt and notes-2.txt I want read, offering those two as options, and do not read anything until I have answered: end your turn right after asking, without waiting.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-16>",
+                  "text": "Which file do you want me to read?\n- notes-1.txt\n- notes-2.txt",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": "async",
+                  "questions": [
+                    {
+                      "title": "Which file do you want me to read?",
+                      "options": [
+                        "notes-1.txt",
+                        "notes-2.txt"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "agentMessage",
+                  "id": "<item-17>",
+                  "text": "",
+                  "phase": "final_answer",
+                  "memoryCitation": null,
+                  "delivery": null,
+                  "questions": null
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578651906,
+              "completedAt": 1578651913,
+              "durationMs": 6473
+            },
+            {
+              "id": "<turn-18>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-19>",
+                  "clientId": "<client-message-20>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Before you plan anything, ask me with your request_user_input tool which of notes-1.txt and notes-2.txt the plan should be about, offering those two as the options, and wait for my answer. Then write a two-line plan for summarising the file I pick.",
+                      "text_elements": []
+                    }
+                  ]
+                }
+              ],
+              "itemsView": "full",
+              "status": "interrupted",
+              "error": null,
+              "startedAt": 1578651878,
+              "completedAt": 1578651885,
+              "durationMs": 7248
+            },
+            {
+              "id": "<turn-21>",
+              "items": [
+                {
+                  "type": "userMessage",
+                  "id": "<item-22>",
+                  "clientId": "<client-message-23>",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Before you plan anything, ask me with your request_user_input tool which of notes-1.txt and notes-2.txt the plan should be about, offering those two as the options, and wait for my answer. Then write a two-line plan for summarising the file I pick.",
+                      "text_elements": []
+                    }
+                  ]
+                },
+                {
+                  "type": "plan",
+                  "id": "<item-24>",
+                  "text": "1. Read notes-2.txt and identify its main points.\n2. Write a concise summary preserving key details and conclusions.\n"
+                }
+              ],
+              "itemsView": "full",
+              "status": "completed",
+              "error": null,
+              "startedAt": 1578651858,
+              "completedAt": 1578651868,
+              "durationMs": 10416
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-25>"
+        }
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 854,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 1655,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 2478,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    }
+  ],
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 5303
+      },
+      {
+        "method": "remoteControl/status/changed",
+        "item": null,
+        "bytes": 201
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 188
+      }
+    ],
+    "longStringsCut": []
+  }
+}

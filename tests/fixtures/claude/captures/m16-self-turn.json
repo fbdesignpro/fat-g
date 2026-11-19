@@ -1,0 +1,4035 @@
+{
+  "_fixture": {
+    "source": "M16 spike m16-trace.mjs, run against the installed CLI on the maintainer's machine, in a scratch configuration folder",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "get_settings documents (key names only)"
+    ],
+    "omitted": [
+      "token-level deltas (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"uuid\":58,\"message\":7,\"tool-use\":11,\"request\":7,\"worker\":1,\"mcp-server\":5}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "claude",
+    "version": "2.1.268",
+    "launchKind": "native"
+  },
+  "date": "2020-01-11T16:51:37.096Z",
+  "scenario": {
+    "id": "m16-self-turn",
+    "title": "K17: what marks a turn the CLI starts by itself, with `--replay-user-messages` and a prompt written meanwhile",
+    "successCondition": "A background worker, a prompt written while it runs, then the frames of whatever the CLI starts once the worker ends"
+  },
+  "run": {
+    "id": "claude-m16-self-turn-23",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "p1",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 37,
+    "turnsSpent": 2,
+    "exit": {
+      "code": 0,
+      "ms": 25507
+    },
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 3464,
+      "recorded": [
+        {
+          "name": "claude.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "otherFoldersUnchanged": {
+      "other": true,
+      "third": true,
+      "outside": true
+    },
+    "notes": {
+      "workerEnded": true,
+      "workerClosedDuringOurSecondTurn": false,
+      "aTurnTheCliStartedByItself": true,
+      "ourPromptsAtIndex": [
+        2,
+        18
+      ],
+      "inits": [
+        {
+          "index": 5,
+          "ms": 2071,
+          "sameSession": true
+        },
+        {
+          "index": 22,
+          "ms": 9234,
+          "sameSession": true
+        },
+        {
+          "index": 59,
+          "ms": 17166,
+          "sameSession": true
+        }
+      ],
+      "results": [
+        {
+          "index": 17,
+          "ms": 9127,
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 2,
+          "resultIndex": 0,
+          "queuedTurnCount": 0
+        },
+        {
+          "index": 37,
+          "ms": 10791,
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 1,
+          "resultIndex": 1,
+          "queuedTurnCount": 0
+        },
+        {
+          "index": 61,
+          "ms": 19630,
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 1,
+          "resultIndex": 2,
+          "queuedTurnCount": 0
+        }
+      ],
+      "closingFrames": [
+        {
+          "index": 57,
+          "type": "system/task_updated",
+          "status": "completed"
+        },
+        {
+          "index": 58,
+          "type": "system/task_notification",
+          "status": "completed"
+        }
+      ],
+      "userFramesOfTheSession": [
+        {
+          "index": 7,
+          "ours": "first",
+          "isReplay": true,
+          "isSynthetic": null,
+          "content": "text",
+          "keys": [
+            "isReplay",
+            "message",
+            "parent_tool_use_id",
+            "session_id",
+            "timestamp",
+            "type",
+            "uuid"
+          ]
+        },
+        {
+          "index": 11,
+          "ours": null,
+          "isReplay": null,
+          "isSynthetic": null,
+          "content": [
+            "tool_result"
+          ],
+          "keys": [
+            "message",
+            "parent_tool_use_id",
+            "session_id",
+            "timestamp",
+            "tool_use_result",
+            "type",
+            "uuid"
+          ]
+        },
+        {
+          "index": 35,
+          "ours": "second",
+          "isReplay": true,
+          "isSynthetic": null,
+          "content": "text",
+          "keys": [
+            "isReplay",
+            "message",
+            "parent_tool_use_id",
+            "session_id",
+            "timestamp",
+            "type",
+            "uuid"
+          ]
+        }
+      ],
+      "resultKeys": [
+        "api_error_status",
+        "duration_api_ms",
+        "duration_ms",
+        "fast_mode_disabled_reason",
+        "fast_mode_state",
+        "first_content_frame_ms",
+        "is_error",
+        "modelUsage",
+        "num_turns",
+        "origin",
+        "permission_denials",
+        "queued_turn_count",
+        "result",
+        "result_index",
+        "session_id",
+        "stop_reason",
+        "subagent_stats",
+        "subtype",
+        "terminal_reason",
+        "time_to_request_ms",
+        "total_cost_usd",
+        "ttft_ms",
+        "ttft_stream_ms",
+        "type",
+        "usage",
+        "uuid"
+      ],
+      "textWaits": [
+        {
+          "index": 16,
+          "settledBy": "result",
+          "waitMs": 10
+        },
+        {
+          "index": 36,
+          "settledBy": "result",
+          "waitMs": 18
+        },
+        {
+          "index": 60,
+          "settledBy": "result",
+          "waitMs": 25
+        }
+      ],
+      "outline": [
+        {
+          "index": 2,
+          "ms": 2030,
+          "send": "user",
+          "uuid": true
+        },
+        {
+          "index": 3,
+          "ms": 2034,
+          "recv": "command_lifecycle",
+          "bytes": 197,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "queued"
+        },
+        {
+          "index": 4,
+          "ms": 2040,
+          "recv": "command_lifecycle",
+          "bytes": 198,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "started"
+        },
+        {
+          "index": 5,
+          "ms": 2071,
+          "recv": "system/init",
+          "bytes": 2506,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-86>__batch",
+            "mcp__<mcp-server-86>__create",
+            "mcp__<mcp-server-86>__delete",
+            "mcp__<mcp-server-86>__export",
+            "mcp__<mcp-server-86>__guide",
+            "mcp__<mcp-server-86>__query",
+            "mcp__<mcp-server-86>__read",
+            "mcp__<mcp-server-86>__update"
+          ]
+        },
+        {
+          "index": 6,
+          "ms": 2730,
+          "recv": "rate_limit_event",
+          "bytes": 431,
+          "session": "s1"
+        },
+        {
+          "index": 7,
+          "ms": 6580,
+          "recv": "user",
+          "bytes": 691,
+          "session": "s1",
+          "content": "text",
+          "isReplay": true,
+          "ours": true
+        },
+        {
+          "index": 8,
+          "ms": 6581,
+          "recv": "assistant",
+          "bytes": 2469,
+          "session": "s1",
+          "blocks": [
+            "tool_use:Agent"
+          ],
+          "stop": null
+        },
+        {
+          "index": 9,
+          "ms": 6587,
+          "recv": "system/background_tasks_changed",
+          "bytes": 288,
+          "session": "s1"
+        },
+        {
+          "index": 10,
+          "ms": 6588,
+          "recv": "system/task_started",
+          "bytes": 989,
+          "session": "s1",
+          "task": "w1",
+          "backgrounded": true,
+          "taskType": "local_agent",
+          "agent": "general-purpose"
+        },
+        {
+          "index": 11,
+          "ms": 6592,
+          "recv": "user",
+          "bytes": 2453,
+          "session": "s1",
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 12,
+          "ms": 8313,
+          "recv": "assistant",
+          "bytes": 1396,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "thinking"
+          ],
+          "stop": null
+        },
+        {
+          "index": 13,
+          "ms": 8814,
+          "recv": "assistant",
+          "bytes": 1047,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 14,
+          "ms": 8815,
+          "recv": "system/task_progress",
+          "bytes": 375,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 15,
+          "ms": 8834,
+          "recv": "user",
+          "bytes": 489,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 16,
+          "ms": 9117,
+          "recv": "assistant",
+          "bytes": 843,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 96
+        },
+        {
+          "index": 17,
+          "ms": 9127,
+          "recv": "result",
+          "bytes": 2354,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 2,
+          "resultIndex": 0,
+          "queuedTurnCount": 0,
+          "resultChars": 96
+        },
+        {
+          "index": 18,
+          "ms": 9128,
+          "send": "user",
+          "uuid": true
+        },
+        {
+          "index": 19,
+          "ms": 9128,
+          "recv": "command_lifecycle",
+          "bytes": 200,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "completed"
+        },
+        {
+          "index": 20,
+          "ms": 9129,
+          "recv": "command_lifecycle",
+          "bytes": 197,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "queued"
+        },
+        {
+          "index": 21,
+          "ms": 9229,
+          "recv": "command_lifecycle",
+          "bytes": 198,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "started"
+        },
+        {
+          "index": 22,
+          "ms": 9234,
+          "recv": "system/init",
+          "bytes": 2506,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-86>__batch",
+            "mcp__<mcp-server-86>__create",
+            "mcp__<mcp-server-86>__delete",
+            "mcp__<mcp-server-86>__export",
+            "mcp__<mcp-server-86>__guide",
+            "mcp__<mcp-server-86>__query",
+            "mcp__<mcp-server-86>__read",
+            "mcp__<mcp-server-86>__update"
+          ]
+        },
+        {
+          "index": 23,
+          "ms": 9269,
+          "recv": "assistant",
+          "bytes": 1047,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 24,
+          "ms": 9269,
+          "recv": "system/task_progress",
+          "bytes": 375,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 25,
+          "ms": 9279,
+          "recv": "user",
+          "bytes": 494,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 26,
+          "ms": 9726,
+          "recv": "assistant",
+          "bytes": 1047,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 27,
+          "ms": 9727,
+          "recv": "system/task_progress",
+          "bytes": 375,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 28,
+          "ms": 9736,
+          "recv": "user",
+          "bytes": 493,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 29,
+          "ms": 10225,
+          "recv": "assistant",
+          "bytes": 1047,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 30,
+          "ms": 10225,
+          "recv": "system/task_progress",
+          "bytes": 375,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 31,
+          "ms": 10244,
+          "recv": "user",
+          "bytes": 490,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 32,
+          "ms": 10595,
+          "recv": "assistant",
+          "bytes": 1046,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 33,
+          "ms": 10595,
+          "recv": "system/task_progress",
+          "bytes": 374,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 34,
+          "ms": 10603,
+          "recv": "user",
+          "bytes": 528,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 35,
+          "ms": 10772,
+          "recv": "user",
+          "bytes": 277,
+          "session": "s1",
+          "content": "text",
+          "isReplay": true,
+          "ours": true
+        },
+        {
+          "index": 36,
+          "ms": 10773,
+          "recv": "assistant",
+          "bytes": 868,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 2
+        },
+        {
+          "index": 37,
+          "ms": 10791,
+          "recv": "result",
+          "bytes": 2255,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 1,
+          "resultIndex": 1,
+          "queuedTurnCount": 0,
+          "resultChars": 2
+        },
+        {
+          "index": 38,
+          "ms": 10791,
+          "recv": "command_lifecycle",
+          "bytes": 200,
+          "session": "s1",
+          "keys": [
+            "command_uuid",
+            "session_id",
+            "state",
+            "type",
+            "uuid"
+          ],
+          "state": "completed"
+        },
+        {
+          "index": 39,
+          "ms": 12169,
+          "recv": "assistant",
+          "bytes": 931,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 48
+        },
+        {
+          "index": 40,
+          "ms": 12468,
+          "recv": "assistant",
+          "bytes": 1049,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 41,
+          "ms": 12468,
+          "recv": "system/task_progress",
+          "bytes": 376,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 42,
+          "ms": 12476,
+          "recv": "user",
+          "bytes": 489,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 43,
+          "ms": 12922,
+          "recv": "assistant",
+          "bytes": 1049,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 44,
+          "ms": 12922,
+          "recv": "system/task_progress",
+          "bytes": 376,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 45,
+          "ms": 12930,
+          "recv": "user",
+          "bytes": 494,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 46,
+          "ms": 13422,
+          "recv": "assistant",
+          "bytes": 1049,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 47,
+          "ms": 13423,
+          "recv": "system/task_progress",
+          "bytes": 376,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 48,
+          "ms": 13431,
+          "recv": "user",
+          "bytes": 493,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 49,
+          "ms": 13880,
+          "recv": "assistant",
+          "bytes": 1049,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 50,
+          "ms": 13880,
+          "recv": "system/task_progress",
+          "bytes": 376,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 51,
+          "ms": 13891,
+          "recv": "user",
+          "bytes": 490,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 52,
+          "ms": 14320,
+          "recv": "assistant",
+          "bytes": 1048,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "tool_use:Read"
+          ],
+          "stop": null
+        },
+        {
+          "index": 53,
+          "ms": 14320,
+          "recv": "system/task_progress",
+          "bytes": 376,
+          "session": "s1",
+          "task": "w1",
+          "agent": "general-purpose",
+          "lastTool": "Read"
+        },
+        {
+          "index": 54,
+          "ms": 14330,
+          "recv": "user",
+          "bytes": 528,
+          "session": "s1",
+          "worker": true,
+          "content": [
+            "tool_result"
+          ]
+        },
+        {
+          "index": 55,
+          "ms": 17096,
+          "recv": "assistant",
+          "bytes": 1548,
+          "session": "s1",
+          "worker": true,
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 648
+        },
+        {
+          "index": 56,
+          "ms": 17128,
+          "recv": "system/background_tasks_changed",
+          "bytes": 163,
+          "session": "s1"
+        },
+        {
+          "index": 57,
+          "ms": 17128,
+          "recv": "system/task_updated",
+          "bytes": 226,
+          "session": "s1",
+          "task": "w1",
+          "status": "completed",
+          "patchKeys": [
+            "end_time",
+            "status"
+          ]
+        },
+        {
+          "index": 58,
+          "ms": 17128,
+          "recv": "system/task_notification",
+          "bytes": 1173,
+          "session": "s1",
+          "task": "w1",
+          "status": "completed",
+          "hasSummary": true
+        },
+        {
+          "index": 59,
+          "ms": 17166,
+          "recv": "system/init",
+          "bytes": 2506,
+          "session": "s1",
+          "model": "claude-sonnet-5",
+          "permissionMode": "default",
+          "tools": [
+            "Task",
+            "Glob",
+            "Grep",
+            "Read",
+            "mcp__<mcp-server-86>__batch",
+            "mcp__<mcp-server-86>__create",
+            "mcp__<mcp-server-86>__delete",
+            "mcp__<mcp-server-86>__export",
+            "mcp__<mcp-server-86>__guide",
+            "mcp__<mcp-server-86>__query",
+            "mcp__<mcp-server-86>__read",
+            "mcp__<mcp-server-86>__update"
+          ]
+        },
+        {
+          "index": 60,
+          "ms": 19605,
+          "recv": "assistant",
+          "bytes": 1254,
+          "session": "s1",
+          "blocks": [
+            "text"
+          ],
+          "stop": null,
+          "textChars": 489
+        },
+        {
+          "index": 61,
+          "ms": 19630,
+          "recv": "result",
+          "bytes": 2650,
+          "session": "s1",
+          "subtype": "success",
+          "isError": false,
+          "terminal": "completed",
+          "numTurns": 1,
+          "resultIndex": 2,
+          "queuedTurnCount": 0,
+          "resultChars": 489
+        }
+      ]
+    }
+  },
+  "launch": {
+    "args": [
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--input-format",
+      "stream-json",
+      "--setting-sources",
+      "user,project,local",
+      "--permission-mode",
+      "default",
+      "--permission-prompt-tool",
+      "stdio",
+      "--tools",
+      "Read,Glob,Grep,Agent",
+      "--model",
+      "sonnet",
+      "--effort",
+      "low",
+      "--replay-user-messages"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": {
+    "request": {
+      "subtype": "initialize"
+    },
+    "replyIndex": 1,
+    "ok": true
+  },
+  "toolPermissions": {
+    "readTools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "scenarioTools": [
+      "Agent"
+    ],
+    "preApproved": [],
+    "permissionMode": "default",
+    "permissionRequestsTo": "the spike (--permission-prompt-tool stdio)",
+    "policy": "every can_use_tool request is denied, as the app will deny it (M16, C22); any other request gets an error reply"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": false
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": false
+      }
+    ],
+    "set": [
+      "CLAUDE_CONFIG_DIR"
+    ]
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {}
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 17,
+      "frame": {
+        "type": "control_request",
+        "request_id": "m10-1",
+        "request": {
+          "subtype": "initialize"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 432,
+      "frame": {
+        "type": "control_response",
+        "response": {
+          "subtype": "success",
+          "request_id": "m10-1",
+          "response": {
+            "commands": [
+              {
+                "name": "deep-research",
+                "description": "Deep research harness — fan-out web searches, fetch sources, adversarially verify claims, synthesize a cited report. (dynamic workflow)",
+                "argumentHint": ""
+              },
+              {
+                "name": "design",
+                "description": "Grant or revoke Claude agent access to your Design projects",
+                "argumentHint": "consent | revoke"
+              },
+              {
+                "name": "design-sync",
+                "description": "Push a React design system to claude.ai/design. This runs a converter that bundles the real component code (from Storybook or a bare package) and uploads it. Use when the user runs /design-sync or says \"sync my design system to Claude Design\".",
+                "argumentHint": "[<project hint, e.g. \"Acme DS\">]"
+              },
+              {
+                "name": "dataviz",
+                "description": "Use this skill whenever you are about to create ANY chart, graph, plot, dashboard, or data visualization, in ANY output medium — an HTML or React artifact, inline SVG, plotting code in any library (matplotlib, plotly, d3, Recharts, …), an image/PNG you will render and upload, or a chart shared into Slack. Read it BEFORE writing the first line of chart code, choosing chart colors, building a stat tile / meter / KPI row, or laying out a dashboard. When the destination is a first-party document connector (host-designated, never self-described) that renders live charts, hand it the rows (inline, or as an uploaded data file the chart cites) rather than a rendered PNG/SVG — a picture of a chart loses hover, data inspection and per-value comments. Produces visualizations that read as one system — elegant, accessible, consistent in light and dark — using a brand-neutral placeholder palette you swap for your own. Teaches a design-system-agnostic method: a form heuristic, a color formula with a runnable validator, mark specs, and interaction rules. A validated default palette is documented in `references/palette.md` — swap that file's values for your brand's. Triggers on: \"chart\", \"graph\", \"plot\", \"data viz\", \"visualization\", \"dashboard\", \"analytics\", \"visualize data\", \"categorical colors\", \"sequential / diverging palette\", \"stat tile\", \"sparkline\", \"heatmap\", \"legend\", \"axis\", \"tooltip\", \"chart colors\", \"color by series\".",
+                "argumentHint": ""
+              },
+              {
+                "name": "update-config",
+                "description": "Use this skill to configure the Claude Code harness via settings.json. Automated behaviors (\"from now on when X\", \"each time X\", \"whenever X\", \"before/after X\") require hooks configured in settings.json - the harness executes these, not Claude, so memory/preferences cannot fulfill them. Also use for: permissions (\"allow X\", \"add permission\", \"move permission to\"), env vars (\"set X=Y\"), hook troubleshooting, or any changes to settings.json/settings.local.json files. Examples: \"allow npm commands\", \"add bq permission to global settings\", \"move permission to user settings\", \"set DEBUG=true\", \"when claude stops show X\". For simple settings like theme/model, suggest the /config command.",
+                "argumentHint": ""
+              },
+              {
+                "name": "verify",
+                "description": "Verify that a code change actually does what it's supposed to by exercising it end-to-end and observing behavior — drive the affected flow, not just tests or typecheck. Run before committing nontrivial changes; bootstraps this repo's project verify skill if none exists yet. Don't invoke it on a diff that only touches tests, docs, or other code with no runtime surface to drive (a change to product source always has one) — there's nothing to observe.",
+                "argumentHint": ""
+              },
+              {
+                "name": "debug",
+                "description": "Enable debug logging for this session and help diagnose issues",
+                "argumentHint": "[issue description]"
+              },
+              {
+                "name": "code-review",
+                "description": "Review the current diff, or a PR number/branch/path target, for correctness bugs and reuse/simplification/efficiency cleanups at the given effort level (low/medium: fewer, high-confidence findings; high→max: broader coverage, may include uncertain findings; ultra: deep multi-agent review in the cloud); with no level given, it reuses the level you typed last. Pass --comment to post findings as inline PR comments, or --fix to apply the findings to the working tree after the review. For ultra on a GitHub.com PR target, --post asks to post the finished review’s findings to the PR as a single comment from the user’s GitHub account (not a review; the launch dialog still confirms in interactive sessions, while non-interactive mode posts on the flag alone) and --no-post hides that option.",
+                "argumentHint": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [<pr#>|<branch>|<path>]",
+                "aliases": [
+                  "review"
+                ]
+              },
+              {
+                "name": "simplify",
+                "description": "Review the changed code for reuse, simplification, efficiency, and altitude cleanups, then apply the fixes. Quality only — it does not hunt for bugs; use /code-review for that.",
+                "argumentHint": "[<target>]"
+              },
+              {
+                "name": "batch",
+                "description": "Research and plan a large-scale change, then execute it in parallel across 5–30 isolated worktree agents that each open a PR.",
+                "argumentHint": "<instruction>"
+              },
+              {
+                "name": "fewer-permission-prompts",
+                "description": "Scan your transcripts for common read-only Bash and MCP tool calls, then add a prioritized allowlist to project .claude/settings.json to reduce permission prompts.",
+                "argumentHint": ""
+              },
+              {
+                "name": "doctor",
+                "description": "Health-check the user's Claude Code setup and fix issues: diagnose installation health — what the `claude doctor` terminal diagnostics cover — from local data (duplicate or leftover installs, PATH, unparseable settings files, broken or colliding agent definitions, skills whose frontmatter fails to parse); find unused skills, MCP servers, and plugins versus their context cost and disable dead weight; deduplicate local CLAUDE.md files against checked-in ones; trim checked-in CLAUDE.md files by cutting content a session could derive from the codebase (directory layouts, tech-stack lists, architecture overviews) while keeping gotchas, rationale, and non-standard conventions; migrate always-loaded CLAUDE.md guidance into lazy skills and nested CLAUDE.md files; flag slow hooks and context-heavy extensions; check the installed version is current; make auto mode the default permission mode; and pre-approve frequently denied read-only commands. Use when the user asks for a doctor run, checkup, audit, tune-up, or cleanup of their Claude Code setup or configuration.",
+                "argumentHint": "",
+                "aliases": [
+                  "checkup"
+                ]
+              },
+              {
+                "name": "loop",
+                "description": "Run a prompt or slash command on a recurring interval (e.g. /loop 5m /foo). Omit the interval to let the model self-pace.",
+                "argumentHint": "[interval] [prompt]",
+                "aliases": [
+                  "proactive"
+                ]
+              },
+              {
+                "name": "schedule",
+                "description": "Create, update, list, or run scheduled cloud agents (routines) that execute on a cron schedule.",
+                "argumentHint": "",
+                "aliases": [
+                  "routines"
+                ]
+              },
+              {
+                "name": "claude-api",
+                "description": "Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.\nTRIGGER — read BEFORE opening the target file; don't skip because it \"looks like a one-liner\" — whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) — never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens).\nSKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named — don't Read the file).",
+                "argumentHint": ""
+              },
+              {
+                "name": "workflow-authoring",
+                "description": "Reference for writing a Workflow tool script (script API and gotchas, resume, quality patterns, worked examples). Load before authoring a script for a workflow the user already opted into; it does not itself authorize running one.",
+                "argumentHint": ""
+              },
+              {
+                "name": "run",
+                "description": "Launch and drive this project's app to see a change working. Use when asked to run, start, or screenshot the app, or to confirm a change works in the real app (not just tests). First looks for a project skill that already covers launching the app; otherwise falls back to built-in patterns per project type (CLI, server, TUI, Electron, browser-driven, library).",
+                "argumentHint": ""
+              },
+              {
+                "name": "run-skill-generator",
+                "description": "Author or improve the run-<unit> skill - a per-project skill that tells agents how to build, launch, and drive this project's app. Use when the user asks to set up the project, get it running, write run instructions, or verify build/run steps work from a clean environment.",
+                "argumentHint": ""
+              },
+              {
+                "name": "advisor",
+                "description": "Let Claude consult a stronger model at key moments",
+                "argumentHint": "[fable|opus|sonnet|off]"
+              },
+              {
+                "name": "agents",
+                "description": "(removed) Ask Claude to create/manage subagents, or edit .claude/agents/",
+                "argumentHint": ""
+              },
+              {
+                "name": "auto-mode-setup",
+                "description": "Teach auto mode about your environment, plus optional rule tweaks",
+                "argumentHint": "[--request-id <uuid>] (--wizard posture=… scope=… depth=… --propose | --expect-sha256 <64-hex> --apply-file <path>)"
+              },
+              {
+                "name": "autocompact",
+                "description": "Configure the auto-compact window size",
+                "argumentHint": "[auto|<tokens>]"
+              },
+              {
+                "name": "clear",
+                "description": "Start a new session with empty context; previous session stays on disk (resumable with /resume)",
+                "argumentHint": "[name]",
+                "aliases": [
+                  "reset",
+                  "new"
+                ]
+              },
+              {
+                "name": "color",
+                "description": "Set the prompt bar color for this session",
+                "argumentHint": "[red|blue|green|yellow|purple|orange|pink|cyan|default]"
+              },
+              {
+                "name": "compact",
+                "description": "Free up context by summarizing the conversation so far",
+                "argumentHint": "<optional custom summarization instructions>"
+              },
+              {
+                "name": "config",
+                "description": "Set a setting by key",
+                "argumentHint": "key=value",
+                "aliases": [
+                  "settings"
+                ]
+              },
+              {
+                "name": "context",
+                "description": "Show current context usage",
+                "argumentHint": ""
+              },
+              {
+                "name": "effort",
+                "description": "Set effort level for model usage",
+                "argumentHint": "<low|medium|high|xhigh|max|ultracode|auto>"
+              },
+              {
+                "name": "fast",
+                "description": "Toggle fast mode (Opus 5)",
+                "argumentHint": "[on|off]"
+              },
+              {
+                "name": "heapdump",
+                "description": "Dump the JS heap to ~/Desktop",
+                "argumentHint": ""
+              },
+              {
+                "name": "init",
+                "description": "Initialize a new CLAUDE.md file with codebase documentation",
+                "argumentHint": ""
+              },
+              {
+                "name": "mcp",
+                "description": "Manage MCP servers",
+                "argumentHint": "[reconnect|enable|disable [<server>|all]]"
+              },
+              {
+                "name": "import",
+                "description": "Import config from another AI coding agent",
+                "argumentHint": ""
+              },
+              {
+                "name": "model",
+                "description": "Set the AI model for Claude Code",
+                "argumentHint": "<model>"
+              },
+              {
+                "name": "__remote-workflow",
+                "description": "Run the workflow script delivered in this session environment (server-launched sessions only)",
+                "argumentHint": ""
+              },
+              {
+                "name": "workflow-launch-exec",
+                "description": "Execute a server-launched workflow handoff (workflow_launch event sessions only)",
+                "argumentHint": ""
+              },
+              {
+                "name": "reload-plugins",
+                "description": "Activate pending plugin changes in the current session",
+                "argumentHint": "[--force]"
+              },
+              {
+                "name": "reload-skills",
+                "description": "Pick up skills added or changed on disk during this session",
+                "argumentHint": ""
+              },
+              {
+                "name": "rename",
+                "description": "Rename the current conversation",
+                "argumentHint": "[name]",
+                "aliases": [
+                  "name"
+                ]
+              },
+              {
+                "name": "ultrareview",
+                "description": "Start a cloud agent that finds and verifies bugs in your branch (~15-25 min, $5-$25 USD) · Runs in Claude Code on the web. See https://code.claude.com/docs/en/claude-code-on-the-web",
+                "argumentHint": ""
+              },
+              {
+                "name": "security-review",
+                "description": "Complete a security review of the pending changes on the current branch",
+                "argumentHint": ""
+              },
+              {
+                "name": "usage-credits",
+                "description": "Configure usage credits or request them from your admin when you hit a limit",
+                "argumentHint": ""
+              },
+              {
+                "name": "extra-usage",
+                "description": "Renamed to /usage-credits",
+                "argumentHint": ""
+              },
+              {
+                "name": "usage",
+                "description": "Show session cost, plan usage, and what's contributing to your limits",
+                "argumentHint": "",
+                "aliases": [
+                  "cost",
+                  "stats"
+                ]
+              },
+              {
+                "name": "insights",
+                "description": "Generate a report analyzing your Claude Code sessions",
+                "argumentHint": ""
+              },
+              {
+                "name": "recap",
+                "description": "Generate a one-line session recap now",
+                "argumentHint": ""
+              },
+              {
+                "name": "skill-doctor",
+                "description": "Show which loaded skills are unused and costing context",
+                "argumentHint": ""
+              },
+              {
+                "name": "goal",
+                "description": "Set a goal — keep working until the condition is met",
+                "argumentHint": ""
+              },
+              {
+                "name": "design-consent",
+                "description": "Grant Claude agent access to your Design projects",
+                "argumentHint": ""
+              },
+              {
+                "name": "design-revoke",
+                "description": "Revoke Claude agent access to your Design projects",
+                "argumentHint": ""
+              },
+              {
+                "name": "list-agents",
+                "description": "List subagents, teammates, and other Claude sessions you can message",
+                "argumentHint": "",
+                "aliases": [
+                  "peers"
+                ]
+              },
+              {
+                "name": "team-onboarding",
+                "description": "Help teammates ramp on Claude Code with a guide from your usage",
+                "argumentHint": ""
+              }
+            ],
+            "agents": [
+              {
+                "name": "claude",
+                "description": "Catch-all for any task that doesn't fit a more specific agent. FleetView's default when no agent name is typed."
+              },
+              {
+                "name": "Explore",
+                "description": "Fast read-only search agent for locating code. Use it to find files by pattern (eg. \"src/components/**/*.tsx\"), grep for symbols or keywords (eg. \"API endpoints\"), or answer \"where is X defined / which files reference Y.\" Do NOT use it for code review, design-doc auditing, cross-file consistency checks, or open-ended analysis — it reads excerpts rather than whole files and will miss content past its read window. When calling, specify search breadth: \"quick\" for a single targeted lookup, \"medium\" for moderate exploration, or \"very thorough\" to search across multiple locations and naming conventions.",
+                "model": "inherit"
+              },
+              {
+                "name": "general-purpose",
+                "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you."
+              },
+              {
+                "name": "Plan",
+                "description": "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs.",
+                "model": "inherit"
+              },
+              {
+                "name": "statusline-setup",
+                "description": "Use this agent to configure the user's Claude Code status line setting.",
+                "model": "sonnet"
+              }
+            ],
+            "output_style": "default",
+            "available_output_styles": [
+              "default",
+              "Proactive",
+              "Concise",
+              "Explanatory",
+              "Learning"
+            ],
+            "user_output_styles_dir": "<scratch>\\output-styles",
+            "models": [
+              {
+                "value": "default",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Default (recommended)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "opus[1m]",
+                "resolvedModel": "claude-opus-5[1m]",
+                "displayName": "Opus (1M context)",
+                "description": "Opus 5 with 1M context · Best for everyday, complex tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsFastMode": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "claude-fable-5-1[1m]",
+                "resolvedModel": "claude-fable-5-1",
+                "displayName": "Fable",
+                "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "sonnet",
+                "resolvedModel": "claude-sonnet-5",
+                "displayName": "Sonnet",
+                "description": "Sonnet 5 · Efficient for routine tasks",
+                "supportsEffort": true,
+                "supportedEffortLevels": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "supportsAdaptiveThinking": true,
+                "supportsAutoMode": true
+              },
+              {
+                "value": "haiku",
+                "resolvedModel": "claude-haiku-4-5-20251001",
+                "displayName": "Haiku",
+                "description": "Haiku 4.5 · Fastest for quick answers"
+              }
+            ],
+            "account": "<account>",
+            "pid": 117952,
+            "current_permission_mode": "default",
+            "analytics_disabled": false,
+            "remote_control_auto_enable": false,
+            "remote_control_available": true,
+            "remote_control_auto_on_by_default": false,
+            "ide_rc_auto_enable_gate": true,
+            "fast_mode_state": "off",
+            "fast_mode_disabled_reason": "sdk_opt_in_required",
+            "session_state": "idle"
+          },
+          "pending_permission_requests": [],
+          "pending_user_dialog_requests": []
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 2030,
+      "frame": {
+        "type": "user",
+        "uuid": "<uuid-2>",
+        "message": {
+          "role": "user",
+          "content": "Use the Agent tool with run_in_background set to true to start a sub-agent on this task: read notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt and sample.txt one at a time, in that order, then read each of the five a second time in the same order, then report every sentence found. Do not wait for the sub-agent and do not read the files yourself: as soon as it has started, end your turn by telling me in one sentence that it is working in the background."
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 2034,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "queued",
+        "uuid": "<uuid-3>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 4,
+      "dir": "recv",
+      "ms": 2040,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "started",
+        "uuid": "<uuid-4>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 2071,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read",
+          "mcp__<mcp-server-86>__batch",
+          "mcp__<mcp-server-86>__create",
+          "mcp__<mcp-server-86>__delete",
+          "mcp__<mcp-server-86>__export",
+          "mcp__<mcp-server-86>__guide",
+          "mcp__<mcp-server-86>__query",
+          "mcp__<mcp-server-86>__read",
+          "mcp__<mcp-server-86>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-87>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-88>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-89>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-90>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "slash_commands": [
+          "deep-research",
+          "design",
+          "design-sync",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "schedule",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator",
+          "advisor",
+          "agents",
+          "auto-mode-setup",
+          "autocompact",
+          "clear",
+          "color",
+          "compact",
+          "config",
+          "context",
+          "effort",
+          "fast",
+          "heapdump",
+          "init",
+          "mcp",
+          "import",
+          "model",
+          "__remote-workflow",
+          "workflow-launch-exec",
+          "reload-plugins",
+          "reload-skills",
+          "rename",
+          "ultrareview",
+          "security-review",
+          "usage-credits",
+          "extra-usage",
+          "usage",
+          "insights",
+          "recap",
+          "skill-doctor",
+          "goal",
+          "design-consent",
+          "design-revoke",
+          "list-agents",
+          "team-onboarding"
+        ],
+        "terminal_slash_commands": [
+          "doctor",
+          "color",
+          "reload-plugins"
+        ],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [
+          "deep-research",
+          "design",
+          "design-sync",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "schedule",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator"
+        ],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-5>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 6,
+      "dir": "recv",
+      "ms": 2730,
+      "frame": {
+        "type": "rate_limit_event",
+        "rate_limit_info": {
+          "_keys": [
+            "isUsingOverage",
+            "overageDisabledReason",
+            "overageStatus",
+            "rateLimitType",
+            "resetsAt",
+            "status",
+            "unifiedWindows"
+          ]
+        },
+        "uuid": "<uuid-6>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 6580,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "Use the Agent tool with run_in_background set to true to start a sub-agent on this task: read notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt and sample.txt one at a time, in that order, then read each of the five a second time in the same order, then report every sentence found. Do not wait for the sub-agent and do not read the files yourself: as soon as it has started, end your turn by telling me in one sentence that it is working in the background."
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-2>",
+        "timestamp": "2020-01-11T16:51:12.039Z",
+        "isReplay": true
+      }
+    },
+    {
+      "index": 8,
+      "dir": "recv",
+      "ms": 6581,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-7>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-8>",
+              "name": "Agent",
+              "input": {
+                "description": "Read notes and sample files twice, report sentences",
+                "prompt": "In the current working directory, read these files one at a time, in this exact order: notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt, sample.txt. After reading all five once in that order, read each of the five a second time, again in the same order (notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt, sample.txt). Use the Read tool for each individual read (ten Read calls total, five files times two passes). After completing all reads, report every sentence found across these files (list them out, noting which file each came from). Report back with the full list of sentences found.",
+                "subagent_type": "general-purpose",
+                "run_in_background": true
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 18874,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 16,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-9>",
+        "timestamp": "2020-01-11T16:51:16.565Z",
+        "request_id": "<request-10>",
+        "wire_tool_inputs": {
+          "<tool-use-8>": {
+            "description": "Read notes and sample files twice, report sentences",
+            "prompt": "In the current working directory, read these files one at a time, in this exact order: notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt, sample.txt. After reading all five once in that order, read each of the five a second time, again in the same order (notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt, sample.txt). Use the Read tool for each individual read (ten Read calls total, five files times two passes). After completing all reads, report every sentence found across these files (list them out, noting which file each came from). Report back with the full list of sentences found.",
+            "subagent_type": "general-purpose",
+            "run_in_background": true
+          }
+        },
+        "user_message_uuid": "<uuid-2>",
+        "user_message_uuids": [
+          "<uuid-2>"
+        ]
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 6587,
+      "frame": {
+        "type": "system",
+        "subtype": "background_tasks_changed",
+        "tasks": [
+          {
+            "task_id": "<worker-11>",
+            "task_type": "local_agent",
+            "description": "Read notes and sample files twice, report sentences"
+          }
+        ],
+        "uuid": "<uuid-12>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 10,
+      "dir": "recv",
+      "ms": 6588,
+      "frame": {
+        "type": "system",
+        "subtype": "task_started",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "description": "Read notes and sample files twice, report sentences",
+        "subagent_type": "general-purpose",
+        "is_backgrounded": true,
+        "spawn_depth": 1,
+        "task_type": "local_agent",
+        "prompt": "In the current working directory, read these files one at a time, in this exact order: notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt, sample.txt. After reading all five once in that order, read each of the five a second time, again in the same order (notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt, sample.txt). Use the Read tool for each individual read (ten Read calls total, five files times two passes). After completing all reads, report every sentence found across these files (list them out, noting which file each came from). Report back with the full list of sentences found.",
+        "uuid": "<uuid-13>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 11,
+      "dir": "recv",
+      "ms": 6592,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-8>",
+              "type": "tool_result",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Async agent launched successfully. (This tool result is internal metadata — never quote or paste any part of it, including the agentId below, into a user-facing reply.)\nagentId: <worker-11> (internal ID - do not mention to user. Use SendMessage with to: '<worker-11>', summary: '<5-10 word recap>' to continue this agent.)\nThe agent is working in the background. You will be notified automatically when it completes. You know nothing about its results until that notification arrives — do not report, assume, or predict them; continue other work or respond to the user in the meantime.\nDo not duplicate this agent's work — avoid working with the same files or topics it is using.\noutput_file: <path>\\AppData\\Local\\Temp\\claude\\<scratch>\\<session-1>\\tasks\\<worker-11>.output\nDo NOT Read or tail this file via the shell tool — it is the full subagent JSONL transcript and reading it will overflow your context. If the user asks for progress, say the agent is still running; you'll get a completion notification."
+                }
+              ]
+            }
+          ]
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-14>",
+        "timestamp": "2020-01-11T16:51:16.575Z",
+        "tool_use_result": {
+          "isAsync": true,
+          "status": "async_launched",
+          "agentId": "<worker-11>",
+          "description": "Read notes and sample files twice, report sentences",
+          "resolvedModel": "claude-sonnet-5",
+          "prompt": "In the current working directory, read these files one at a time, in this exact order: notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt, sample.txt. After reading all five once in that order, read each of the five a second time, again in the same order (notes-1.txt, notes-2.txt, notes-3.txt, notes-4.txt, sample.txt). Use the Read tool for each individual read (ten Read calls total, five files times two passes). After completing all reads, report every sentence found across these files (list them out, noting which file each came from). Report back with the full list of sentences found.",
+          "outputFile": "<path>\\AppData\\Local\\Temp\\claude\\<scratch>\\<session-1>\\tasks\\<worker-11>.output",
+          "canReadOutputFile": true
+        }
+      }
+    },
+    {
+      "index": 12,
+      "dir": "recv",
+      "ms": 8313,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-15>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "thinking",
+              "thinking": "",
+              "signature": "<signature>"
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 696,
+            "cache_read_input_tokens": 8979,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 696,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 2,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-16>",
+        "timestamp": "2020-01-11T16:51:18.297Z",
+        "request_id": "<request-17>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 13,
+      "dir": "recv",
+      "ms": 8814,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-15>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-18>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\notes-1.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 696,
+            "cache_read_input_tokens": 8979,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 696,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 2,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-19>",
+        "timestamp": "2020-01-11T16:51:18.799Z",
+        "request_id": "<request-17>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 14,
+      "dir": "recv",
+      "ms": 8815,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "description": "Reading notes-1.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 9795,
+          "tool_uses": 1,
+          "duration_ms": 2232
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-20>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 15,
+      "dir": "recv",
+      "ms": 8834,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-18>",
+              "type": "tool_result",
+              "content": "1\tNote one: the tide table is pinned by the door.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-21>",
+        "timestamp": "2020-01-11T16:51:18.818Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 16,
+      "dir": "recv",
+      "ms": 9117,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-22>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "The sub-agent is now working in the background on reading the files and compiling the sentences."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 780,
+            "cache_read_input_tokens": 18874,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 780
+            },
+            "output_tokens": 1,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-23>",
+        "timestamp": "2020-01-11T16:51:19.088Z",
+        "request_id": "<request-24>"
+      }
+    },
+    {
+      "index": 17,
+      "dir": "recv",
+      "ms": 9127,
+      "frame": {
+        "duration_api_ms": 7729,
+        "stop_reason": "end_turn",
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.015334599999999999,
+        "usage": {
+          "input_tokens": 4,
+          "cache_creation_input_tokens": 780,
+          "cache_read_input_tokens": 37748,
+          "output_tokens": 357,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 780,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 28,
+              "cache_read_input_tokens": 18874,
+              "cache_creation_input_tokens": 780,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 780
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1012,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001087,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 4,
+            "outputTokens": 357,
+            "cacheReadInputTokens": 37748,
+            "cacheCreationInputTokens": 780,
+            "webSearchRequests": 0,
+            "costUSD": 0.0142476,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [],
+        "terminal_reason": "completed",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 1,
+          "requested": {
+            "background": 1,
+            "foreground": 0,
+            "unset": 0
+          },
+          "started_in_background": 1,
+          "max_depth": 1,
+          "spawned_by_subagents": 0,
+          "completed": 0,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {
+            "general-purpose": 1
+          }
+        },
+        "is_error": false,
+        "num_turns": 2,
+        "subtype": "success",
+        "api_error_status": null,
+        "result": "The sub-agent is now working in the background on reading the files and compiling the sentences.",
+        "ttft_ms": 4538,
+        "type": "result",
+        "duration_ms": 7084,
+        "uuid": "<uuid-25>",
+        "ttft_stream_ms": 1799,
+        "time_to_request_ms": 40,
+        "first_content_frame_ms": 1799,
+        "user_message_uuid": "<uuid-2>",
+        "user_message_uuids": [
+          "<uuid-2>"
+        ],
+        "request_sent_wall_ms": 1578761472067,
+        "queued_turn_count": 0,
+        "result_index": 0
+      }
+    },
+    {
+      "index": 18,
+      "dir": "send",
+      "ms": 9128,
+      "frame": {
+        "type": "user",
+        "uuid": "<uuid-26>",
+        "message": {
+          "role": "user",
+          "content": "Reply with the single word ok. Use no tools."
+        },
+        "parent_tool_use_id": null,
+        "session_id": ""
+      }
+    },
+    {
+      "index": 19,
+      "dir": "recv",
+      "ms": 9128,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-2>",
+        "state": "completed",
+        "uuid": "<uuid-27>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 20,
+      "dir": "recv",
+      "ms": 9129,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-26>",
+        "state": "queued",
+        "uuid": "<uuid-28>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 21,
+      "dir": "recv",
+      "ms": 9229,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-26>",
+        "state": "started",
+        "uuid": "<uuid-29>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 22,
+      "dir": "recv",
+      "ms": 9234,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read",
+          "mcp__<mcp-server-86>__batch",
+          "mcp__<mcp-server-86>__create",
+          "mcp__<mcp-server-86>__delete",
+          "mcp__<mcp-server-86>__export",
+          "mcp__<mcp-server-86>__guide",
+          "mcp__<mcp-server-86>__query",
+          "mcp__<mcp-server-86>__read",
+          "mcp__<mcp-server-86>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-87>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-88>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-89>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-90>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "slash_commands": [
+          "deep-research",
+          "design",
+          "design-sync",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "schedule",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator",
+          "advisor",
+          "agents",
+          "auto-mode-setup",
+          "autocompact",
+          "clear",
+          "color",
+          "compact",
+          "config",
+          "context",
+          "effort",
+          "fast",
+          "heapdump",
+          "init",
+          "mcp",
+          "import",
+          "model",
+          "__remote-workflow",
+          "workflow-launch-exec",
+          "reload-plugins",
+          "reload-skills",
+          "rename",
+          "ultrareview",
+          "security-review",
+          "usage-credits",
+          "extra-usage",
+          "usage",
+          "insights",
+          "recap",
+          "skill-doctor",
+          "goal",
+          "design-consent",
+          "design-revoke",
+          "list-agents",
+          "team-onboarding"
+        ],
+        "terminal_slash_commands": [
+          "doctor",
+          "color",
+          "reload-plugins"
+        ],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [
+          "deep-research",
+          "design",
+          "design-sync",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "schedule",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator"
+        ],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-30>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 23,
+      "dir": "recv",
+      "ms": 9269,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-15>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-31>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\notes-2.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 696,
+            "cache_read_input_tokens": 8979,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 696,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 2,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-32>",
+        "timestamp": "2020-01-11T16:51:19.254Z",
+        "request_id": "<request-17>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 24,
+      "dir": "recv",
+      "ms": 9269,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "description": "Reading notes-2.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 9797,
+          "tool_uses": 2,
+          "duration_ms": 2686
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-33>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 25,
+      "dir": "recv",
+      "ms": 9279,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-31>",
+              "type": "tool_result",
+              "content": "1\tNote two: the kettle whistles twice before it boils.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-34>",
+        "timestamp": "2020-01-11T16:51:19.264Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 26,
+      "dir": "recv",
+      "ms": 9726,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-15>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-35>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\notes-3.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 696,
+            "cache_read_input_tokens": 8979,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 696,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 2,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-36>",
+        "timestamp": "2020-01-11T16:51:19.711Z",
+        "request_id": "<request-17>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 27,
+      "dir": "recv",
+      "ms": 9727,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "description": "Reading notes-3.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 9826,
+          "tool_uses": 3,
+          "duration_ms": 3144
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-37>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 28,
+      "dir": "recv",
+      "ms": 9736,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-35>",
+              "type": "tool_result",
+              "content": "1\tNote three: the logbook is kept in the blue drawer.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-38>",
+        "timestamp": "2020-01-11T16:51:19.720Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 29,
+      "dir": "recv",
+      "ms": 10225,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-15>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-39>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\notes-4.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 696,
+            "cache_read_input_tokens": 8979,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 696,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 2,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-40>",
+        "timestamp": "2020-01-11T16:51:20.210Z",
+        "request_id": "<request-17>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 30,
+      "dir": "recv",
+      "ms": 10225,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "description": "Reading notes-4.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 9852,
+          "tool_uses": 4,
+          "duration_ms": 3642
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-41>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 31,
+      "dir": "recv",
+      "ms": 10244,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-39>",
+              "type": "tool_result",
+              "content": "1\tNote four: the spare bulbs are on the top shelf.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-42>",
+        "timestamp": "2020-01-11T16:51:20.229Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 32,
+      "dir": "recv",
+      "ms": 10595,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-15>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-43>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\sample.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 696,
+            "cache_read_input_tokens": 8979,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 696,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 2,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-44>",
+        "timestamp": "2020-01-11T16:51:20.579Z",
+        "request_id": "<request-17>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 33,
+      "dir": "recv",
+      "ms": 10595,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "description": "Reading sample.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 9877,
+          "tool_uses": 5,
+          "duration_ms": 4012
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-45>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 34,
+      "dir": "recv",
+      "ms": 10603,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-43>",
+              "type": "tool_result",
+              "content": "1\tThe lighthouse keeper's cat is called Biscuit, and it sleeps on the warm lamp housing.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-46>",
+        "timestamp": "2020-01-11T16:51:20.588Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 35,
+      "dir": "recv",
+      "ms": 10772,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "Reply with the single word ok. Use no tools."
+        },
+        "session_id": "<session-1>",
+        "parent_tool_use_id": null,
+        "uuid": "<uuid-26>",
+        "timestamp": "2020-01-11T16:51:19.216Z",
+        "isReplay": true
+      }
+    },
+    {
+      "index": 36,
+      "dir": "recv",
+      "ms": 10773,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-47>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "ok"
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 86,
+            "cache_read_input_tokens": 19654,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 86
+            },
+            "output_tokens": 4,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-48>",
+        "timestamp": "2020-01-11T16:51:20.757Z",
+        "request_id": "<request-49>",
+        "user_message_uuid": "<uuid-26>",
+        "user_message_uuids": [
+          "<uuid-26>"
+        ]
+      }
+    },
+    {
+      "index": 37,
+      "dir": "recv",
+      "ms": 10791,
+      "frame": {
+        "duration_api_ms": 13305,
+        "stop_reason": "end_turn",
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.0278232,
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 86,
+          "cache_read_input_tokens": 19654,
+          "output_tokens": 4,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 86,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 4,
+              "cache_read_input_tokens": 19654,
+              "cache_creation_input_tokens": 86,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 86
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1012,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001087,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 8,
+            "outputTokens": 824,
+            "cacheReadInputTokens": 66381,
+            "cacheCreationInputTokens": 1562,
+            "webSearchRequests": 0,
+            "costUSD": 0.026736199999999998,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 45,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [],
+        "terminal_reason": "completed",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "subagent_stats": {
+          "spawned": 1,
+          "requested": {
+            "background": 1,
+            "foreground": 0,
+            "unset": 0
+          },
+          "started_in_background": 1,
+          "max_depth": 1,
+          "spawned_by_subagents": 0,
+          "completed": 0,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {
+            "general-purpose": 1
+          }
+        },
+        "is_error": false,
+        "num_turns": 1,
+        "subtype": "success",
+        "api_error_status": null,
+        "result": "ok",
+        "ttft_ms": 1543,
+        "type": "result",
+        "duration_ms": 1561,
+        "uuid": "<uuid-50>",
+        "ttft_stream_ms": 1542,
+        "time_to_request_ms": 9,
+        "first_content_frame_ms": 1543,
+        "user_message_uuid": "<uuid-26>",
+        "user_message_uuids": [
+          "<uuid-26>"
+        ],
+        "request_sent_wall_ms": 1578761479223,
+        "queued_turn_count": 0,
+        "result_index": 1
+      }
+    },
+    {
+      "index": 38,
+      "dir": "recv",
+      "ms": 10791,
+      "frame": {
+        "type": "command_lifecycle",
+        "command_uuid": "<uuid-26>",
+        "state": "completed",
+        "uuid": "<uuid-51>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 39,
+      "dir": "recv",
+      "ms": 12169,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-52>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Now reading each file a second time, same order."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 2179,
+            "cache_read_input_tokens": 9675,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 2179,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 8,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-53>",
+        "timestamp": "2020-01-11T16:51:22.154Z",
+        "request_id": "<request-54>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 40,
+      "dir": "recv",
+      "ms": 12468,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-52>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-55>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\notes-1.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 2179,
+            "cache_read_input_tokens": 9675,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 2179,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 8,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-56>",
+        "timestamp": "2020-01-11T16:51:22.452Z",
+        "request_id": "<request-54>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 41,
+      "dir": "recv",
+      "ms": 12468,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "description": "Reading notes-1.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 11917,
+          "tool_uses": 6,
+          "duration_ms": 5885
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-57>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 42,
+      "dir": "recv",
+      "ms": 12476,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-55>",
+              "type": "tool_result",
+              "content": "1\tNote one: the tide table is pinned by the door.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-58>",
+        "timestamp": "2020-01-11T16:51:22.461Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 43,
+      "dir": "recv",
+      "ms": 12922,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-52>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-59>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\notes-2.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 2179,
+            "cache_read_input_tokens": 9675,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 2179,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 8,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-60>",
+        "timestamp": "2020-01-11T16:51:22.907Z",
+        "request_id": "<request-54>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 44,
+      "dir": "recv",
+      "ms": 12922,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "description": "Reading notes-2.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 11925,
+          "tool_uses": 7,
+          "duration_ms": 6339
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-61>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 45,
+      "dir": "recv",
+      "ms": 12930,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-59>",
+              "type": "tool_result",
+              "content": "1\tNote two: the kettle whistles twice before it boils.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-62>",
+        "timestamp": "2020-01-11T16:51:22.915Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 46,
+      "dir": "recv",
+      "ms": 13422,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-52>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-63>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\notes-3.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 2179,
+            "cache_read_input_tokens": 9675,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 2179,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 8,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-64>",
+        "timestamp": "2020-01-11T16:51:23.407Z",
+        "request_id": "<request-54>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 47,
+      "dir": "recv",
+      "ms": 13423,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "description": "Reading notes-3.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 11958,
+          "tool_uses": 8,
+          "duration_ms": 6839
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-65>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 48,
+      "dir": "recv",
+      "ms": 13431,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-63>",
+              "type": "tool_result",
+              "content": "1\tNote three: the logbook is kept in the blue drawer.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-66>",
+        "timestamp": "2020-01-11T16:51:23.416Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 49,
+      "dir": "recv",
+      "ms": 13880,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-52>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-67>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\notes-4.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 2179,
+            "cache_read_input_tokens": 9675,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 2179,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 8,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-68>",
+        "timestamp": "2020-01-11T16:51:23.865Z",
+        "request_id": "<request-54>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 50,
+      "dir": "recv",
+      "ms": 13880,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "description": "Reading notes-4.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 11990,
+          "tool_uses": 9,
+          "duration_ms": 7297
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-69>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 51,
+      "dir": "recv",
+      "ms": 13891,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-67>",
+              "type": "tool_result",
+              "content": "1\tNote four: the spare bulbs are on the top shelf.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-70>",
+        "timestamp": "2020-01-11T16:51:23.876Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 52,
+      "dir": "recv",
+      "ms": 14320,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-52>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "tool_use",
+              "id": "<tool-use-71>",
+              "name": "Read",
+              "input": {
+                "file_path": "<scratch>\\sample.txt"
+              },
+              "caller": {
+                "type": "direct"
+              }
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 2179,
+            "cache_read_input_tokens": 9675,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 2179,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 8,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-72>",
+        "timestamp": "2020-01-11T16:51:24.304Z",
+        "request_id": "<request-54>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 53,
+      "dir": "recv",
+      "ms": 14320,
+      "frame": {
+        "type": "system",
+        "subtype": "task_progress",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "description": "Reading sample.txt",
+        "subagent_type": "general-purpose",
+        "usage": {
+          "total_tokens": 12026,
+          "tool_uses": 10,
+          "duration_ms": 7737
+        },
+        "last_tool_name": "Read",
+        "uuid": "<uuid-73>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 54,
+      "dir": "recv",
+      "ms": 14330,
+      "frame": {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "tool_use_id": "<tool-use-71>",
+              "type": "tool_result",
+              "content": "1\tThe lighthouse keeper's cat is called Biscuit, and it sleeps on the warm lamp housing.\n2\t"
+            }
+          ]
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-74>",
+        "timestamp": "2020-01-11T16:51:24.315Z",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 55,
+      "dir": "recv",
+      "ms": 17096,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-75>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "All ten reads (five files, two passes each) are complete. Here is the full list of sentences found:\n\n1. **notes-1.txt**: \"Note one: the tide table is pinned by the door.\"\n2. **notes-2.txt**: \"Note two: the kettle whistles twice before it boils.\"\n3. **notes-3.txt**: \"Note three: the logbook is kept in the blue drawer.\"\n4. **notes-4.txt**: \"Note four: the spare bulbs are on the top shelf.\"\n5. **sample.txt**: \"The lighthouse keeper's cat is called Biscuit, and it sleeps on the warm lamp housing.\"\n\nEach file contains exactly one sentence, and the content was identical between the first and second read passes (no changes occurred between reads)."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 729,
+            "cache_read_input_tokens": 11854,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 729,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 8,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": "<tool-use-8>",
+        "session_id": "<session-1>",
+        "uuid": "<uuid-76>",
+        "timestamp": "2020-01-11T16:51:27.081Z",
+        "request_id": "<request-77>",
+        "subagent_type": "general-purpose",
+        "task_description": "Read notes and sample files twice, report sentences"
+      }
+    },
+    {
+      "index": 56,
+      "dir": "recv",
+      "ms": 17128,
+      "frame": {
+        "type": "system",
+        "subtype": "background_tasks_changed",
+        "tasks": [],
+        "uuid": "<uuid-78>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 57,
+      "dir": "recv",
+      "ms": 17128,
+      "frame": {
+        "type": "system",
+        "subtype": "task_updated",
+        "task_id": "<worker-11>",
+        "patch": {
+          "status": "completed",
+          "end_time": 1578761487112
+        },
+        "uuid": "<uuid-79>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 58,
+      "dir": "recv",
+      "ms": 17128,
+      "frame": {
+        "type": "system",
+        "subtype": "task_notification",
+        "task_id": "<worker-11>",
+        "tool_use_id": "<tool-use-8>",
+        "status": "completed",
+        "output_file": "<path>\\AppData\\Local\\Temp\\claude\\<scratch>\\<session-1>\\tasks\\<worker-11>.output",
+        "summary": "All ten reads (five files, two passes each) are complete. Here is the full list of sentences found:\n\n1. **notes-1.txt**: \"Note one: the tide table is pinned by the door.\"\n2. **notes-2.txt**: \"Note two: the kettle whistles twice before it boils.\"\n3. **notes-3.txt**: \"Note three: the logbook is kept in the blue drawer.\"\n4. **notes-4.txt**: \"Note four: the spare bulbs are on the top shelf.\"\n5. **sample.txt**: \"The lighthouse keeper's cat is called Biscuit, and it sleeps on the warm lamp housing.\"\n\nEach file contains exactly one sentence, and the content was identical between the first and second read passes (no changes occurred between reads).",
+        "usage": {
+          "total_tokens": 12815,
+          "tool_uses": 10,
+          "duration_ms": 10544
+        },
+        "uuid": "<uuid-80>",
+        "session_id": "<session-1>"
+      }
+    },
+    {
+      "index": 59,
+      "dir": "recv",
+      "ms": 17166,
+      "frame": {
+        "type": "system",
+        "subtype": "init",
+        "cwd": "<scratch>",
+        "session_id": "<session-1>",
+        "tools": [
+          "Task",
+          "Glob",
+          "Grep",
+          "Read",
+          "mcp__<mcp-server-86>__batch",
+          "mcp__<mcp-server-86>__create",
+          "mcp__<mcp-server-86>__delete",
+          "mcp__<mcp-server-86>__export",
+          "mcp__<mcp-server-86>__guide",
+          "mcp__<mcp-server-86>__query",
+          "mcp__<mcp-server-86>__read",
+          "mcp__<mcp-server-86>__update"
+        ],
+        "mcp_servers": [
+          {
+            "name": "<mcp-server-87>",
+            "status": "connected"
+          },
+          {
+            "name": "<mcp-server-88>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-89>",
+            "status": "needs-auth"
+          },
+          {
+            "name": "<mcp-server-90>",
+            "status": "needs-auth"
+          }
+        ],
+        "model": "claude-sonnet-5",
+        "permissionMode": "default",
+        "slash_commands": [
+          "deep-research",
+          "design",
+          "design-sync",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "schedule",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator",
+          "advisor",
+          "agents",
+          "auto-mode-setup",
+          "autocompact",
+          "clear",
+          "color",
+          "compact",
+          "config",
+          "context",
+          "effort",
+          "fast",
+          "heapdump",
+          "init",
+          "mcp",
+          "import",
+          "model",
+          "__remote-workflow",
+          "workflow-launch-exec",
+          "reload-plugins",
+          "reload-skills",
+          "rename",
+          "ultrareview",
+          "security-review",
+          "usage-credits",
+          "extra-usage",
+          "usage",
+          "insights",
+          "recap",
+          "skill-doctor",
+          "goal",
+          "design-consent",
+          "design-revoke",
+          "list-agents",
+          "team-onboarding"
+        ],
+        "terminal_slash_commands": [
+          "doctor",
+          "color",
+          "reload-plugins"
+        ],
+        "apiKeySource": "none",
+        "claude_code_version": "2.1.268",
+        "output_style": "default",
+        "agents": [
+          "claude",
+          "Explore",
+          "general-purpose",
+          "Plan",
+          "statusline-setup"
+        ],
+        "skills": [
+          "deep-research",
+          "design",
+          "design-sync",
+          "dataviz",
+          "update-config",
+          "verify",
+          "debug",
+          "code-review",
+          "simplify",
+          "batch",
+          "fewer-permission-prompts",
+          "doctor",
+          "loop",
+          "schedule",
+          "claude-api",
+          "workflow-authoring",
+          "run",
+          "run-skill-generator"
+        ],
+        "plugins": [],
+        "capabilities": [
+          "interrupt_receipt_v1",
+          "interrupt_cancel_queued_v1",
+          "msg_lifecycle_v1"
+        ],
+        "analytics_disabled": false,
+        "product_feedback_disabled": false,
+        "uuid": "<uuid-81>",
+        "memory_paths": {
+          "auto": "<scratch>\\projects\\<scratch>\\memory\\"
+        },
+        "messaging_socket_path": "<socket>",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "powershell_path": "<path>"
+      }
+    },
+    {
+      "index": 60,
+      "dir": "recv",
+      "ms": 19605,
+      "frame": {
+        "type": "assistant",
+        "message": {
+          "model": "claude-sonnet-5",
+          "id": "<message-82>",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "The background agent finished. It found one sentence per file:\n\n1. notes-1.txt: \"Note one: the tide table is pinned by the door.\"\n2. notes-2.txt: \"Note two: the kettle whistles twice before it boils.\"\n3. notes-3.txt: \"Note three: the logbook is kept in the blue drawer.\"\n4. notes-4.txt: \"Note four: the spare bulbs are on the top shelf.\"\n5. sample.txt: \"The lighthouse keeper's cat is called Biscuit, and it sleeps on the warm lamp housing.\"\n\nContent was identical across both read passes."
+            }
+          ],
+          "container": null,
+          "stop_reason": null,
+          "stop_sequence": null,
+          "stop_details": null,
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 771,
+            "cache_read_input_tokens": 19740,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 771
+            },
+            "output_tokens": 7,
+            "service_tier": "standard",
+            "inference_geo": "not_available"
+          },
+          "diagnostics": null,
+          "context_management": null
+        },
+        "parent_tool_use_id": null,
+        "session_id": "<session-1>",
+        "uuid": "<uuid-83>",
+        "timestamp": "2020-01-11T16:51:29.589Z",
+        "request_id": "<request-84>"
+      }
+    },
+    {
+      "index": 61,
+      "dir": "recv",
+      "ms": 19630,
+      "frame": {
+        "duration_api_ms": 22213,
+        "stop_reason": "end_turn",
+        "session_id": "<session-1>",
+        "total_cost_usd": 0.055173,
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 771,
+          "cache_read_input_tokens": 19740,
+          "output_tokens": 196,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 771,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 196,
+              "cache_read_input_tokens": 19740,
+              "cache_creation_input_tokens": 771,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 771
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1012,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001087,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 14,
+            "outputTokens": 1697,
+            "cacheReadInputTokens": 107650,
+            "cacheCreationInputTokens": 5241,
+            "webSearchRequests": 0,
+            "costUSD": 0.054085999999999995,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "thinkingTokens": 45,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permission_denials": [],
+        "terminal_reason": "completed",
+        "fast_mode_state": "off",
+        "fast_mode_disabled_reason": "sdk_opt_in_required",
+        "origin": {
+          "kind": "task-notification"
+        },
+        "subagent_stats": {
+          "spawned": 1,
+          "requested": {
+            "background": 1,
+            "foreground": 0,
+            "unset": 0
+          },
+          "started_in_background": 1,
+          "max_depth": 1,
+          "spawned_by_subagents": 0,
+          "completed": 1,
+          "failed": 0,
+          "killed": {
+            "parent": 0,
+            "user": 0,
+            "system": 0
+          },
+          "refused": {
+            "depth_limit": 0,
+            "concurrency_limit": 0,
+            "budget": 0
+          },
+          "by_type": {
+            "general-purpose": 1
+          }
+        },
+        "is_error": false,
+        "num_turns": 1,
+        "subtype": "success",
+        "api_error_status": null,
+        "result": "The background agent finished. It found one sentence per file:\n\n1. notes-1.txt: \"Note one: the tide table is pinned by the door.\"\n2. notes-2.txt: \"Note two: the kettle whistles twice before it boils.\"\n3. notes-3.txt: \"Note three: the logbook is kept in the blue drawer.\"\n4. notes-4.txt: \"Note four: the spare bulbs are on the top shelf.\"\n5. sample.txt: \"The lighthouse keeper's cat is called Biscuit, and it sleeps on the warm lamp housing.\"\n\nContent was identical across both read passes.",
+        "ttft_ms": 2441,
+        "type": "result",
+        "duration_ms": 2466,
+        "uuid": "<uuid-85>",
+        "ttft_stream_ms": 1224,
+        "time_to_request_ms": 7,
+        "first_content_frame_ms": 1224,
+        "queued_turn_count": 0,
+        "result_index": 2
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1707,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2029,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    },
+    {
+      "moment": "before-close",
+      "atMs": 25297,
+      "images": [
+        "claude.exe",
+        "conhost.exe"
+      ],
+      "alive": 2
+    }
+  ],
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "configuration": {
+    "folder": "a scratch configuration folder (CLAUDE_CONFIG_DIR), signed in by the maintainer",
+    "written": []
+  },
+  "frameSizes": {
+    "largest": [
+      {
+        "type": "control_response",
+        "bytes": 17070
+      },
+      {
+        "type": "result",
+        "bytes": 2650
+      },
+      {
+        "type": "system/init",
+        "bytes": 2506
+      },
+      {
+        "type": "system/init",
+        "bytes": 2506
+      },
+      {
+        "type": "system/init",
+        "bytes": 2506
+      }
+    ],
+    "longStringsCut": []
+  }
+}

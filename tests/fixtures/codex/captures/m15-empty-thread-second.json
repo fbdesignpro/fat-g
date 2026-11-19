@@ -1,0 +1,577 @@
+{
+  "_fixture": {
+    "source": "M15 spike m15-resume.mjs, run against the installed CLI on the maintainer's machine",
+    "redacted": [
+      "ids replaced by aliases, stable per id",
+      "account objects",
+      "signatures and encrypted reasoning",
+      "the scratch folder (<scratch>)",
+      "every other absolute path (<path>)",
+      "emails, the user name, unregistered UUIDs",
+      "configured-item names not shipped with the CLI",
+      "usage readings (rate-limit frames keep key names only)",
+      "config/read replies (two levels of key names, C53)"
+    ],
+    "omitted": [
+      "token-level deltas (counted only)",
+      "usage readings"
+    ],
+    "note": "Redacted by spikes/m10/publish.mjs and leak-checked. Aliases: {\"session\":1,\"worker\":1,\"cursor\":1}."
+  },
+  "format": "fat-g.capture/1",
+  "cli": {
+    "name": "codex",
+    "version": "0.155.1",
+    "launchKind": "shim"
+  },
+  "date": "2020-01-10T20:32:30.990Z",
+  "scenario": {
+    "id": "m15-empty",
+    "title": "A saved thread started and given no turn",
+    "successCondition": "The thread started, its process ended, and a second process asked whether Codex lists it (C123)"
+  },
+  "run": {
+    "id": "codex-m15-empty-5",
+    "number": 1,
+    "attempt": 1,
+    "variant": "default",
+    "process": "second",
+    "outcome": "happened",
+    "expiredWait": null,
+    "successIndex": 9,
+    "turnsSpent": 0,
+    "cleanup": {
+      "confirmed": true,
+      "graceful": true,
+      "forced": false,
+      "ms": 2697,
+      "recorded": [
+        {
+          "name": "cmd.exe",
+          "role": "root"
+        },
+        {
+          "name": "conhost.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "node.exe",
+          "role": "descendant"
+        },
+        {
+          "name": "codex.exe",
+          "role": "descendant"
+        }
+      ]
+    },
+    "scratchUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "outsideUnchanged": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "notes": {
+      "ephemeral": false,
+      "whileItsProcessRuns": {
+        "default": false,
+        "everySource": false
+      },
+      "afterItsProcessEnded": {
+        "default": false,
+        "everySource": false
+      },
+      "threadWithTurns": {
+        "default": true,
+        "everySource": true
+      },
+      "listed": {
+        "default": 1,
+        "everySource": 1
+      },
+      "resumeOfIt": {
+        "ok": false,
+        "error": {
+          "code": -32600,
+          "hasMessage": true,
+          "messageChars": 67,
+          "hasData": false
+        }
+      }
+    }
+  },
+  "launch": {
+    "args": [
+      "app-server"
+    ],
+    "cwd": "<scratch>"
+  },
+  "sessionStart": null,
+  "toolPermissions": {
+    "readTools": "reads inside the read-only sandbox",
+    "scenarioTools": [],
+    "preApproved": [],
+    "sandbox": "read-only",
+    "approvalPolicy": "never",
+    "reviewer": null,
+    "policy": "every request from the CLI is declined"
+  },
+  "environment": {
+    "removed": [
+      {
+        "name": "ANTHROPIC_BASE_URL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_AGENT_SDK_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ACCOUNT_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_CHILD_SESSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_CRON",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EAGER_FLUSH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ENTRYPOINT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_EXECPATH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_HOST_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_SOCKET",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_OAUTH_SCOPES",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_ORGANIZATION_UUID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_REPORT_FINDINGS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ATTENDED",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_SESSION_ID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_EFFORT",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PID",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+        "appWouldHaveKept": true
+      },
+      {
+        "name": "CLAUDECODE",
+        "appWouldHaveKept": true
+      }
+    ],
+    "set": []
+  },
+  "deadlines": {
+    "startup": 30000,
+    "request": 15000,
+    "scenario": 240000,
+    "shutdown": 20000
+  },
+  "deltas": {
+    "requested": false,
+    "dropped": 0,
+    "byType": {},
+    "optedOut": [
+      "command/exec/outputDelta",
+      "item/agentMessage/delta",
+      "item/commandExecution/outputDelta",
+      "item/fileChange/outputDelta",
+      "item/plan/delta",
+      "item/reasoning/summaryTextDelta",
+      "item/reasoning/textDelta",
+      "process/outputDelta",
+      "thread/realtime/item/transcript/delta",
+      "thread/realtime/outputAudio/delta",
+      "thread/realtime/transcript/delta"
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "dir": "send",
+      "ms": 1378,
+      "frame": {
+        "method": "initialize",
+        "id": 1,
+        "params": {
+          "clientInfo": {
+            "name": "fat_g",
+            "title": "fat-g M10 spike",
+            "version": "0.0.0"
+          },
+          "capabilities": {
+            "optOutNotificationMethods": [
+              "command/exec/outputDelta",
+              "item/agentMessage/delta",
+              "item/commandExecution/outputDelta",
+              "item/fileChange/outputDelta",
+              "item/plan/delta",
+              "item/reasoning/summaryTextDelta",
+              "item/reasoning/textDelta",
+              "process/outputDelta",
+              "thread/realtime/item/transcript/delta",
+              "thread/realtime/outputAudio/delta",
+              "thread/realtime/transcript/delta"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "dir": "recv",
+      "ms": 1379,
+      "frame": {
+        "id": 1,
+        "result": {
+          "userAgent": "fat_g/0.155.1 (Windows 10.0.26200; x86_64) xterm-256color (fat_g; 0.0.0)",
+          "codexHome": "<path>\\.codex",
+          "platformFamily": "windows",
+          "platformOs": "windows"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "dir": "send",
+      "ms": 1379,
+      "frame": {
+        "method": "initialized"
+      }
+    },
+    {
+      "index": 3,
+      "dir": "recv",
+      "ms": 1385,
+      "frame": {
+        "method": "remoteControl/status/changed",
+        "params": {
+          "status": "disabled",
+          "_keys": [
+            "environmentId",
+            "installationId",
+            "serverName",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "dir": "send",
+      "ms": 2767,
+      "frame": {
+        "method": "thread/list",
+        "id": 2,
+        "params": {
+          "limit": 100,
+          "cwd": [
+            "<scratch>"
+          ]
+        }
+      }
+    },
+    {
+      "index": 5,
+      "dir": "recv",
+      "ms": 4179,
+      "frame": {
+        "id": 2,
+        "result": {
+          "data": [
+            {
+              "id": "<worker-2>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-2>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-astra",
+              "reasoningEffort": "low",
+              "createdAt": 1578688241,
+              "updatedAt": 1578688300,
+              "recencyAt": 1578688269,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<path>\\.codex\\sessions\\2020\\01\\10\\rollout-2020-01-10T16-30-41-<worker-2>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-3>"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "dir": "send",
+      "ms": 4179,
+      "frame": {
+        "method": "thread/list",
+        "id": 3,
+        "params": {
+          "limit": 100,
+          "cwd": [
+            "<scratch>"
+          ],
+          "sourceKinds": [
+            "cli",
+            "vscode",
+            "exec",
+            "appServer",
+            "subAgent",
+            "subAgentReview",
+            "subAgentCompact",
+            "subAgentThreadSpawn",
+            "subAgentOther",
+            "unknown"
+          ]
+        }
+      }
+    },
+    {
+      "index": 7,
+      "dir": "recv",
+      "ms": 5644,
+      "frame": {
+        "id": 3,
+        "result": {
+          "data": [
+            {
+              "id": "<worker-2>",
+              "environments": null,
+              "extra": null,
+              "sessionId": "<worker-2>",
+              "forkedFromId": null,
+              "parentThreadId": null,
+              "preview": "Read the file sample.txt in the current folder, then tell me in one sentence where the cat sleeps.",
+              "ephemeral": false,
+              "section": null,
+              "sectionEnteredAt": null,
+              "projectId": null,
+              "historyMode": "paginated",
+              "modelProvider": "openai",
+              "model": "gpt-6-astra",
+              "reasoningEffort": "low",
+              "createdAt": 1578688241,
+              "updatedAt": 1578688300,
+              "recencyAt": 1578688269,
+              "status": {
+                "type": "notLoaded"
+              },
+              "path": "<path>\\.codex\\sessions\\2020\\01\\10\\rollout-2020-01-10T16-30-41-<worker-2>.jsonl",
+              "cwd": "<scratch>",
+              "cliVersion": "0.155.1",
+              "originator": "fat_g",
+              "source": "vscode",
+              "canAcceptDirectInput": null,
+              "threadSource": null,
+              "agentNickname": null,
+              "agentRole": null,
+              "gitInfo": null,
+              "name": null,
+              "daybreakEnabled": null,
+              "turns": []
+            }
+          ],
+          "nextCursor": null,
+          "backwardsCursor": "<cursor-3>"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "dir": "send",
+      "ms": 5645,
+      "frame": {
+        "method": "thread/resume",
+        "id": 4,
+        "params": {
+          "threadId": "<session-1>",
+          "cwd": "<scratch>",
+          "sandbox": "read-only",
+          "approvalPolicy": "never",
+          "excludeTurns": true
+        }
+      }
+    },
+    {
+      "index": 9,
+      "dir": "recv",
+      "ms": 5722,
+      "frame": {
+        "error": {
+          "code": -32600,
+          "message": "no rollout found for thread id <session-1>"
+        },
+        "id": 4
+      }
+    }
+  ],
+  "garbageLines": 0,
+  "stderr": {
+    "bytes": 0,
+    "tail": ""
+  },
+  "requestsAnswered": [],
+  "treeRecordings": [
+    {
+      "moment": "after-spawn",
+      "atMs": 1378,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "after-handshake",
+      "atMs": 2767,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    },
+    {
+      "moment": "before-close",
+      "atMs": 7057,
+      "images": [
+        "cmd.exe",
+        "conhost.exe",
+        "node.exe",
+        "codex.exe"
+      ],
+      "alive": 4
+    }
+  ],
+  "sessionIds": [
+    "<session-1>"
+  ],
+  "frameSizes": {
+    "largest": [
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1047
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 1047
+      },
+      {
+        "method": "remoteControl/status/changed",
+        "item": null,
+        "bytes": 201
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 195
+      },
+      {
+        "method": "response",
+        "item": null,
+        "bytes": 112
+      }
+    ],
+    "longStringsCut": []
+  }
+}

@@ -1,0 +1,1743 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Francois Bertrand and the fat-g contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+/* The Settings dialog (decision 0008; M11 Design 6). It takes the window below the title strip less a
+   small margin, up to 1200 × 880 on a large window, so at the minimum window size (1120 × 640) it
+   gives up only that margin (M13, C86); it scrolls inside itself. Unlike the shell around it, its text
+   can be selected and copied (C30). Its spacing is compact: one line per fact (M13, C87).
+
+   The window's chrome is not the page's to dim: the OS draws the window buttons over the title strip
+   in the overlay's colours (src/main/windows/chrome.ts), or on macOS in its own, whatever the page
+   does. So the backdrop starts below the strip, leaving the strip and the buttons alike, and the
+   dialog is centred in what it dims. The same height as .titleStrip (src/renderer/src/shell).
+
+   It holds its most height whatever tab it shows (M101, C12), so the row of tabs stays where it is
+   between a short tab and a long one. */
+.dialog {
+  composes: scale from '../ui/ControlTypography.module.css';
+  top: calc(env(titlebar-area-height, var(--title-bar-height)) + var(--title-strip-clearance));
+  width: min(1200px, calc(100vw - 2 * var(--space-3)));
+  max-width: none;
+  height: min(880px, calc(100vh - var(--title-bar-height) - var(--title-strip-clearance) - 2 * var(--space-2)));
+  max-height: min(880px, calc(100vh - var(--title-bar-height) - var(--title-strip-clearance) - 2 * var(--space-2)));
+  padding: 0;
+  border: var(--rule);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.35;
+  user-select: text;
+}
+
+.dialog[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.dialog::backdrop {
+  top: calc(env(titlebar-area-height, var(--title-bar-height)) + var(--title-strip-clearance));
+  background: var(--color-backdrop);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-1) var(--space-1) var(--space-1) var(--space-4);
+  border-bottom: var(--rule);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-16);
+  font-weight: var(--weight-semibold);
+}
+
+.closeButton {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Under the header: the notes, the row of tabs and the shown tab's panel, which alone scrolls
+   (docs/planning/_archive/M101-spec-sheet.md; C1, C4, C12). */
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Shown whatever tab is open (C4); with none to show it takes no room. */
+.notes {
+  flex: none;
+  padding: var(--space-2) var(--space-4) 0;
+}
+
+.notes:empty {
+  display: none;
+}
+
+/* The tabs on one row at the minimum window, never scrolling or wrapping (C12), under a rule as
+   the header is (C10). */
+.tabs {
+  display: flex;
+  flex: none;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
+  border-bottom: var(--rule);
+}
+
+/* Settings tabs: a soft rule round each, muted, the shown one on the surface
+   in the text colour with the plain rule. */
+.tab {
+  flex: none;
+  height: 24px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-rule-soft);
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-13);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab[aria-selected='true'] {
+  border-color: var(--color-rule);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.avatarTabDot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-inline-end: var(--space-1);
+  border-radius: 50%;
+  background: var(--color-focus);
+  vertical-align: middle;
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+.panel {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+}
+
+/* Inside its edge: the panel's own scrolling would cut a ring drawn outside it. */
+.panel:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Keep labels and controls close, with enough room at the minimum window size. */
+.compactPanel {
+  box-sizing: border-box;
+  width: min(100%, max(50%, 32rem));
+  padding: var(--space-3);
+  border: 1px solid var(--color-rule-soft);
+  background: var(--color-surface);
+}
+
+.compactPanel .field {
+  flex-wrap: wrap;
+}
+
+.compactPanel .inlineActions {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.compactPanel select {
+  max-width: 100%;
+}
+
+.storageSections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.storageGroup,
+.storageEntry {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.storageTitle {
+  margin: 0;
+  font-size: var(--text-16);
+  font-weight: var(--weight-bold);
+}
+
+.storageGroup p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.storageEntry {
+  align-self: stretch;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-rule-soft);
+}
+
+.username {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.usernameTitle {
+  margin: 0;
+  font-size: var(--text-24);
+  font-weight: var(--weight-bold);
+}
+
+.username input {
+  box-sizing: border-box;
+  width: min(100%, 24rem);
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--text-20);
+  font-weight: var(--weight-bold);
+}
+
+.generalOptionsTitle {
+  margin: var(--space-4) 0 var(--space-1);
+  font-size: var(--text-16);
+  font-weight: var(--weight-semibold);
+}
+
+.choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.choice legend {
+  float: left;
+  width: 160px;
+  padding: 0;
+}
+
+.radio,
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.checkbox,
+.field {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.checkbox {
+  align-items: flex-start;
+}
+
+.checkbox input {
+  margin-top: 2px;
+}
+
+.subOption {
+  margin-inline-start: var(--space-6);
+}
+
+.field {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox span,
+.field > span {
+  display: flex;
+  flex-direction: column;
+}
+
+.sentenceSetting {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sentenceField {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.field > .withUnit,
+.sentenceField > .withUnit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.withUnit input,
+.pathField input {
+  padding: 2px var(--space-2);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: var(--text-13);
+}
+
+.withUnit input {
+  width: 6em;
+}
+
+.dialog input:disabled,
+.dialog button:disabled {
+  opacity: 0.5;
+}
+
+.muted {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.note {
+  margin: 0 0 var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-left: 3px solid var(--color-warn);
+  background: var(--color-surface);
+}
+
+/* Diagnostics keeps natural-height lines and explicit gaps between its groups. */
+.diagnostics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.diagnostics > .catalogNote {
+  margin: 0;
+}
+
+.recentModels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.recentModels p {
+  margin: 0;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 var(--space-4);
+  margin: 0;
+}
+
+.facts dt {
+  color: var(--color-text-muted);
+}
+
+.facts dd {
+  margin: 0;
+  font-family: var(--font-mono);
+}
+
+.ok {
+  color: var(--color-ok);
+}
+
+.critical {
+  color: var(--color-critical);
+}
+
+.violations {
+  margin: var(--space-2) 0 0;
+  padding-left: var(--space-4);
+  color: var(--color-critical);
+  font-size: var(--text-12);
+}
+
+.providerList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.provider {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.providerHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.providerName {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: var(--text-20);
+  font-weight: var(--weight-bold);
+  color: var(--bar-color, var(--color-text));
+}
+
+.providerChoices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--space-3);
+}
+
+.providerChoices > .providerChoiceBox {
+  max-width: 100%;
+}
+
+.providerChoices > .providerTitleBox {
+  flex: 0 1 25%;
+  min-width: min(16rem, 100%);
+}
+
+.providerChoiceBox {
+  min-width: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--color-rule-soft);
+  background: var(--color-surface);
+}
+
+.providerChoiceBox .modeChoice {
+  margin: 0;
+}
+
+.providerChoiceBox .modeLegend {
+  white-space: nowrap;
+}
+
+.providerChoiceBox .modeName {
+  font-weight: var(--weight-regular);
+}
+
+.titleModelChoice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.providerChoiceBox > .field {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.providerChoiceBox select {
+  max-width: 100%;
+}
+
+.providerLogo {
+  display: block;
+  width: 49px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.providerNameAccessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.statusRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+}
+
+.statusLine {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+.detail {
+  margin: var(--space-1) 0 0;
+}
+
+.actions,
+.command {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.login {
+  margin-top: var(--space-1);
+}
+
+.loginSteps {
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+.loginSteps > li + li {
+  margin-top: var(--space-2);
+}
+
+.loginNote {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-muted);
+}
+
+.loginFallback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.loginFallback .command {
+  margin-top: 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.loginStep {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+}
+
+.loginStep .command {
+  margin-top: 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.command {
+  width: fit-content;
+  padding: 2px 2px 2px var(--space-2);
+  border: var(--rule);
+  font-family: var(--font-mono);
+}
+
+.actions button,
+.command button,
+.inlineActions button {
+  padding: 2px var(--space-2);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.actions button:hover:enabled,
+.command button:hover:enabled,
+.inlineActions button:hover:enabled {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Buttons that sit on a line with what they act on. */
+.inlineActions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+/* Unavailable but keeping the focus (Appearance's zoom at an end): dimmed as a disabled button is,
+   and no answer to the pointer. */
+.inlineActions button[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.inlineActions button[aria-disabled='true']:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Zoom's legend on its buttons' line: their border and padding above their text. */
+.zoomChoice legend {
+  padding-top: 3px;
+}
+
+/* The zoom between its − and +, one width for every percent. */
+.zoomValue {
+  align-self: center;
+  min-width: 5ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Detection choices at the left, with each choice's controls in the column to its right. */
+.cliChoice {
+  margin: var(--space-2) 0 0;
+}
+
+.cliOptions {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+}
+
+.cliOption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cliOption input {
+  flex: none;
+  margin: 0;
+}
+
+.cliDetectionRow {
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cliDetection {
+  color: var(--color-text-muted);
+  font-size: var(--text-10);
+  overflow-wrap: anywhere;
+}
+
+.cliManualFields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-1) var(--space-2);
+  min-width: 0;
+}
+
+.pathField {
+  display: flex;
+  flex: 1 1 320px;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pathField input {
+  width: 100%;
+}
+
+.noteLine {
+  margin: 0 0 var(--space-1);
+}
+
+.path {
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+/* The user's catalog.json, once above the providers (M13, C85). The warning edge is only for a file
+   that is ignored; applied or absent, it is plain information. */
+.calm {
+  border-left-color: var(--color-rule-soft);
+}
+
+.catalogLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+}
+
+.catalogPath {
+  margin: 2px 0 0;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-12);
+  overflow-wrap: anywhere;
+}
+
+.feedback {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-muted);
+}
+
+/* A provider's models (M13, C82–C84): a line saying where they came from, then one row per model. */
+.models {
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-rule-soft);
+  overflow-x: auto;
+  transition: scrollbar-color var(--duration-scene) linear;
+}
+
+.modelsSummary {
+  cursor: pointer;
+  font-weight: var(--weight-semibold);
+}
+
+.models[open] > .modelsSummary {
+  margin-bottom: var(--space-2);
+}
+
+.modelsLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--space-3);
+  margin: 0;
+  font-size: var(--text-12);
+}
+
+.modelsTitle {
+  font-weight: var(--weight-semibold);
+}
+
+.modelTable {
+  width: 100%;
+  margin-top: var(--space-1);
+  border-collapse: collapse;
+  font-size: var(--text-12);
+}
+
+.modelTable th {
+  padding: 2px var(--space-2) 2px 0;
+  border-bottom: 1px solid var(--color-rule-soft);
+  color: var(--color-text-muted);
+  font-weight: var(--weight-medium);
+  text-align: left;
+}
+
+.modelTable td {
+  padding: 2px var(--space-2) 2px 0;
+  vertical-align: top;
+}
+
+.modelTable code {
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+/* Hidden models are also marked "Hidden" in words (C61): the muted text is not the only sign. */
+/* A level's warning, under the levels of its model's row (decision 0013). */
+.effortWarning {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+.hiddenModel {
+  color: var(--color-text-muted);
+}
+
+/* A provider's accounts (M14b, C33, C34): one row each once there is more than one, with what its
+   status calls for and its own models under it. */
+.instances {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-1);
+  gap: var(--space-3);
+}
+
+.instance {
+  padding: var(--space-3);
+  border: var(--rule);
+  background: var(--color-surface);
+}
+
+.instanceHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+}
+
+.instanceName {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.instanceLabel {
+  margin: 0;
+  font-size: var(--text-14);
+  font-weight: var(--weight-semibold);
+}
+
+.inlineActions .renameButton {
+  padding: 1px var(--space-1);
+  font-size: var(--text-12);
+  line-height: 1.2;
+}
+
+/* The switch, Refresh and the menu button, at the row's end. */
+.instanceActions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+  margin-left: auto;
+}
+
+.instanceFolder {
+  margin: 2px 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+.renameField {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Adding an account: a name, a folder, Save and Cancel on one line when they fit. */
+.addAccount {
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule);
+}
+
+.addAccountHelp {
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-muted);
+}
+
+.addFields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-1) var(--space-3);
+}
+
+.addField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.addFolder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.addFolder button {
+  padding: 2px var(--space-2);
+  border: var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.addFolder button:hover:enabled {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* What a field refuses, in words beside it: the colour is not the only sign. */
+.fieldProblem {
+  margin: var(--space-1) 0 0;
+  color: var(--color-critical);
+}
+
+/* A choice among a provider's modes (M22, C40, C87): a row a mode, its description beside its name,
+   and under the list the provider's one line on the user's own configuration. Drawn in a provider's
+   part here, and in the project dialog. */
+.modeChoice {
+  min-width: 0;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.modeLegend {
+  padding: 0;
+  font-weight: var(--weight-semibold);
+}
+
+.modeOption {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.modeOption input {
+  flex: none;
+}
+
+.modeName {
+  font-weight: var(--weight-medium);
+}
+
+.modeDescription,
+.modeInherited {
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+.modeInherited {
+  margin: var(--space-1) 0 0;
+}
+
+/* The Avatars tab (decisions 0031, 0032): two sections — the family assignment, a button a provider,
+   and the families, a row a family — each under its heading. */
+.avatarRoot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.avatarRootTitle {
+  margin: 0;
+  font-size: var(--text-24);
+  font-weight: var(--weight-bold);
+}
+
+/* Provider assignment rows share the same family boxes as the catalog below. */
+.providerAvatarsTitle {
+  margin: var(--space-2) 0 var(--space-1);
+  font-size: var(--text-24);
+  font-weight: var(--weight-bold);
+}
+
+.providerAvatarRows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.providerAvatarRow {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.providerAvatarName {
+  margin: 0;
+  color: var(--bar-color, var(--color-text));
+  font-size: var(--text-24);
+  font-weight: var(--weight-bold);
+  overflow-wrap: anywhere;
+}
+
+/* A family's row: its name and its line, then its avatars as capsules side by side. */
+.familyRows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* A group of families' heading: Custom, then Built-in. */
+.familyGroupTitle {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+}
+
+.familyRow {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.familyRow:hover:has(.familyOpen:enabled),
+button.familyRow:hover {
+  background: color-mix(in srgb, var(--color-surface) 80%, var(--color-text));
+}
+
+.familyRow:has(.familyOpen:focus-visible),
+button.familyRow:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+.familyAssignmentTitle {
+  margin: 0;
+  font-size: var(--text-24);
+  font-weight: var(--weight-semibold);
+}
+
+.familyRow[data-selected='true'] {
+  outline: 4px solid var(--color-text);
+  outline-offset: -4px;
+}
+
+.familyRow[data-selected]:has(.familyOpen:focus-visible) {
+  outline: 4px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.familyRowHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+}
+
+.familyOpen {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Cover positioned avatar artwork too; Edit stays above the card's selection target. */
+.familyOpen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.familyOpen:focus-visible {
+  outline: none;
+}
+
+.familyOpen:disabled {
+  cursor: default;
+}
+
+.familyEdit {
+  position: relative;
+  z-index: 2;
+  flex: none;
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-12);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.familyEdit:hover {
+  background: var(--color-bar);
+}
+
+.familyStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.familyCapsule {
+  display: flex;
+}
+
+.avatarFamilyName {
+  margin: 0;
+  font-size: var(--text-14);
+  font-weight: var(--weight-semibold);
+  overflow-wrap: anywhere;
+}
+
+.avatarName {
+  font-weight: var(--weight-medium);
+  overflow-wrap: anywhere;
+}
+
+.assignmentModels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+/* The family assignment popup's two parts: each heading close over its first line, the second part
+   set apart from the first. */
+.assignmentModels > .assignmentHeading {
+  margin-bottom: calc(-1 * var(--space-1));
+}
+
+.assignmentModels > .assignmentSecondHeading {
+  margin-top: var(--space-4);
+}
+
+.assignmentList {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--color-rule-soft);
+  list-style: none;
+}
+
+.assignmentRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  height: calc(var(--capsule-height) / 2);
+  padding-right: var(--space-2);
+  cursor: pointer;
+}
+
+.assignmentRow:hover {
+  background: var(--color-surface);
+}
+
+/* The frame is drawn after the row's content, so it lies over the thumbnail, which an outline would
+   pass under. */
+.assignmentRow[aria-selected='true']::after,
+.assignmentRow:focus-visible::after {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--color-text);
+  content: '';
+  pointer-events: none;
+}
+
+.assignmentRow:focus-visible {
+  outline: none;
+}
+
+.assignmentRow:focus-visible::after {
+  border-color: var(--color-focus);
+}
+
+/* A key no account lists now, and a listed default another row stands for (C19). */
+.assignmentRow[data-greyed],
+.assignmentRow[aria-disabled='true'] {
+  color: var(--color-text-muted);
+}
+
+.assignmentRow[aria-disabled='true'] {
+  cursor: default;
+}
+
+/* A model with no avatar (C20): an empty box of the thumbnail's size, in a dashed rule. */
+.assignmentEmpty {
+  flex: none;
+  box-sizing: border-box;
+  width: calc(var(--capsule-height) / 2);
+  height: calc(var(--capsule-height) / 2);
+  border: 1px dashed var(--color-rule-mid);
+}
+
+.assignmentName {
+  flex: none;
+  max-width: 50%;
+  overflow: hidden;
+  font-weight: var(--weight-medium);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.assignmentWords {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* A model's row: its thumbnail, its name, and what it draws and why in one column down the list. */
+.assignmentRow[data-assignment-row] {
+  display: grid;
+  grid-template-columns: calc(var(--capsule-height) / 2) minmax(0, 16em) minmax(0, 1fr);
+}
+
+.assignmentRow[data-assignment-row] .assignmentName {
+  max-width: none;
+}
+
+/* Over the models: their heading, right under the line above it, then Assign avatar and Clear. */
+.assignmentBar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  margin-top: calc(-1 * var(--space-2));
+}
+
+.assignmentModelsTitle {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+}
+
+.assignmentControls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+}
+
+/* Assign avatar's popup (C25): a group a family, headed by its name and origin, its avatars in the
+   screen's rows. */
+.assignChoices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.assignGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.assignGroupTitle {
+  margin: 0 0 var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+}
+
+/* A label beside its select, as the assignment screen's Family and Assign by are. */
+.familyControl {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.styleControls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.styleControl {
+  display: grid;
+  grid-template-columns: 14em auto auto;
+  align-items: center;
+  justify-items: start;
+  gap: var(--space-3);
+  /* Room for an override's highlight, kept on every row so none moves when one is highlighted. */
+  padding: 2px var(--space-1);
+}
+
+.stylePreview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+/* An avatar's two images (decision 0036): each described at its left, the words centred on it, and
+   the image lit while a drag of files is over it. */
+.imageRows {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.imageLabel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.imageName {
+  font-weight: var(--weight-medium);
+}
+
+/* The image and, in the room the main image's width leaves beside a smaller one, its note. */
+.imageSide {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.imageCell {
+  display: flex;
+  flex: none;
+  padding: 3px;
+  border: 1px dashed transparent;
+}
+
+.imageNote {
+  width: 6.5rem;
+}
+
+/* The model and the effort the images are drawn with: one line, under a rule that parts it from them,
+   the model's select giving up width before anything wraps. */
+.previewChoice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+  width: 100%;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-rule-soft);
+  white-space: nowrap;
+}
+
+.previewChoice > span {
+  margin-left: calc(-1 * var(--space-2) + 1px);
+}
+
+.previewModel {
+  min-width: 0;
+}
+
+.previewModel select {
+  min-width: 4em;
+  flex: 0 1 auto;
+}
+
+.imageCell[data-dropping] {
+  border-color: var(--color-text);
+  background: var(--color-surface);
+}
+
+/* Its words above its two sizes, side by side, and no wider than they are. */
+.fallbackPreview {
+  display: grid;
+  grid-template-columns: min-content;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule);
+}
+
+.fallbackSizes {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.fallbackWords {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.fallbackWords .familyGroupTitle {
+  margin: 0;
+}
+
+/* The eight places as a 3 × 3 grid, its centre empty; the chosen one filled. */
+.positionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 22px);
+  grid-template-rows: repeat(3, 22px);
+  gap: 2px;
+}
+
+.positionCell {
+  padding: 0;
+  border: 1px solid var(--color-rule-mid);
+  background: transparent;
+  cursor: pointer;
+}
+
+.positionCell:hover {
+  border-color: var(--color-text);
+}
+
+.positionCell[aria-checked='true'] {
+  background: var(--color-text);
+}
+
+/* The family editor (decisions 0031, 0032): a note where it cannot be saved, then at the left the
+   Family default's row and the avatars, the chosen row's detail under them, and at the right its
+   style. */
+.familyEditor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.copyFamilyButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.copyFamilyButton:disabled {
+  cursor: progress;
+}
+
+.editorNote {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule);
+  background: var(--color-surface);
+}
+
+/* The family editor's three columns (decision 0036): its avatars, the one chosen, and its style. In a
+   narrow window — a zoomed one — the style goes under the other two. */
+.familyEditorColumns {
+  display: grid;
+  grid-template-columns: minmax(14rem, 20rem) minmax(0, 1fr) max-content;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+@media (width < 1100px) {
+  .familyEditorColumns {
+    grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr);
+  }
+
+  .familyStylePanel {
+    grid-column: 1 / -1;
+  }
+}
+
+.familyStylePanel,
+.familyListPanel,
+.familyDetailPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+/* Add avatar's drop zone, under the list: a dashed box the width of the column, on a faint wash of the
+   attention yellow that draws the eye to it, lit while a drag of files is over it. */
+.avatarDropTarget {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatarDropZone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-2);
+  border: 1px dashed var(--color-rule-mid);
+  background: color-mix(in srgb, var(--color-attention) 8%, var(--color-bg));
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.avatarDropZone:hover:not(:disabled),
+.avatarDropZone[data-dropping] {
+  border-color: var(--color-text);
+  background: color-mix(in srgb, var(--color-attention) 20%, var(--color-bg));
+}
+
+.avatarDropZone:disabled {
+  background: none;
+}
+
+.avatarDropZone:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+.avatarDropZone:disabled {
+  color: var(--color-text-muted);
+  cursor: default;
+}
+
+.avatarDropZone[aria-busy='true'] {
+  cursor: progress;
+}
+
+/* Add avatar's popup: its images, its name and its matches. */
+.addAvatarBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.addAvatarImages {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-4);
+}
+
+.addAvatarFigure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+.addAvatarPortrait {
+  width: 128px;
+  height: 128px;
+  border: var(--rule);
+}
+
+.addAvatarSmall {
+  width: 32px;
+  height: 32px;
+  border: var(--rule);
+}
+
+.familyContentActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+/* Open content folder and Technical details side by side in the list column: closer padding, one line each. */
+.familyContentActions > button {
+  padding-inline: var(--space-2);
+  white-space: nowrap;
+}
+
+.editorHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  font-size: var(--text-14);
+  font-weight: var(--weight-semibold);
+}
+
+.editorHeading h3,
+.editorHeading h4 {
+  margin: 0;
+  font-size: var(--text-14);
+}
+
+.familyDetail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule);
+}
+
+/* A group of controls under its legend: the version's, the marks', the matches, the faces. */
+.styleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-rule-soft);
+}
+
+/* The style's rows share one set of columns, so every control and every ↺ stands in line. */
+/* Both groups' rows in the same three columns — a label, its control, the way back to the default —
+   so the effort marks' controls stand under the version's. A fieldset cannot be a subgrid of the
+   panel, so the widths are set: the widest control, Name / Version, measures 11.2em; the labels' 12em
+   holds all but Outline, glow or chip colour (13em) on one line, which takes two, so the family
+   editor's middle column has room for its preview line (decision 0036). */
+.styleRows {
+  display: grid;
+  grid-template-columns: 12em 12em auto;
+  column-gap: var(--space-3);
+  /* Rows close together, each with its own 2px of room for a highlight: the panel fits the editor's height. */
+  row-gap: 0;
+  padding-top: var(--space-1);
+}
+
+/* Its colour swatches and its places as compact as its selects. */
+.styleRows input[type='color'] {
+  block-size: 22px;
+  inline-size: 44px;
+  padding: 1px 2px;
+}
+
+.styleRows .positionGrid {
+  grid-template-columns: repeat(3, 18px);
+  grid-template-rows: repeat(3, 18px);
+}
+
+.styleRows > .styleControl {
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+}
+
+/* A control with a note under it, where a field of the Default style does not reach the Family default. */
+.styleStack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.styleHint {
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+}
+
+/* The version's preset, above its group: inset by the group's padding and border, so that its label
+   and its select stand in the columns of the rows under it. */
+.presetRows {
+  padding: 0 calc(var(--space-3) + 1px);
+}
+
+.styleGroup legend {
+  padding: 0 var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+}
+
+/* An avatar's override of a field: its whole row in the attention yellow, with the button that gives
+   it the default again; the note beside Reset customizations says so in the same yellow. */
+.styleControl[data-style-own],
+.highlightNote {
+  background: var(--color-attention);
+  color: var(--color-on-attention);
+}
+
+/* An avatar with overrides, in the editor's list: a small tag in the same yellow. */
+.customizedTag {
+  flex: none;
+  padding: 0 var(--space-1);
+  background: var(--color-attention);
+  color: var(--color-on-attention);
+  font-size: var(--text-11);
+  font-weight: var(--weight-semibold);
+}
+
+.overrideBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+}
+
+/* Room kept for what another row of the family editor shows there, so its height does not change. */
+.reservedRoom {
+  visibility: hidden;
+}
+
+.highlightNote {
+  padding: 1px var(--space-2);
+  font-size: var(--text-12);
+  font-weight: var(--weight-semibold);
+}
+
+.styleDefault {
+  padding: 0 var(--space-1);
+  border: 1px solid var(--color-rule-soft);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.styleDefault:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* A match entry: its pattern, its provider and Remove on one line, what is wrong with it under them. */
+.matchRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+}
+
+.matchRow input {
+  flex: 1 1 10em;
+  min-width: 10em;
+  font-family: var(--font-mono);
+}
+
+.matchRow input[aria-invalid='true'] {
+  outline: 1px solid var(--color-critical);
+}
+
+.matchRow small {
+  flex-basis: 100%;
+}
+
+/* Audio keeps the manual Done action apart from the Ready notification. */
+.audioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-2) 0 0;
+  border: 0;
+  min-width: 0;
+}
+
+.audioGroup legend {
+  padding: 0;
+  font-weight: var(--weight-semibold);
+}
