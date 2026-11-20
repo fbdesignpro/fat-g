@@ -41,7 +41,7 @@ export const CHECK_AREAS = {
     smoke: ['session-search'],
   },
   tooling: {
-    paths: ['scripts/', 'do-check.bat', 'package.json', 'package-lock.json', 'vitest.config.ts', 'eslint', 'tsconfig', '.github/workflows/'],
+    paths: ['scripts/', 'do/do-check.bat', 'package.json', 'package-lock.json', 'vitest.config.ts', 'eslint', 'tsconfig', '.github/workflows/'],
     tests: ['scripts/', 'tests/ci/', 'tests/architecture/boundaries.test.', 'tests/architecture/runtime-dependencies.test.', 'tests/architecture/smoke-gating.test.'],
     smoke: [],
   },
@@ -58,7 +58,7 @@ export const CHECK_AREAS = {
   // The stored formats' baselines (decision 0014): a change to a format's module, its writer or a baseline runs the check that this build still reads every baseline.
   baselines: {
     paths: [
-      'tests/baselines/', 'tests/fixtures/baselines/', 'do-record-baselines.bat', 'src/main/storage/envelope.ts', 'src/main/storage/json-file.ts', 'src/main/storage/provider-discovery-history.ts', 'src/main/app/data-reset.ts',
+      'tests/baselines/', 'tests/fixtures/baselines/', 'do/do-record-baselines.bat', 'src/main/storage/envelope.ts', 'src/main/storage/json-file.ts', 'src/main/storage/provider-discovery-history.ts', 'src/main/app/data-reset.ts',
       'src/main/prefs/', 'src/shared/contracts/prefs.ts', 'src/main/records/', 'src/main/conversations/format.ts', 'src/main/conversations/open.ts', 'src/main/conversations/store.ts', 'src/main/conversations/composer-rows.ts',
       'src/main/plans/format.ts', 'src/main/plans/review-format.ts', 'src/main/catalog/override.ts', 'src/shared/contracts/catalog.ts', 'src/main/avatars/authoring.ts', 'src/main/avatars/manifest.ts', 'src/shared/contracts/avatars.ts',
     ],

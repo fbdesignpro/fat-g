@@ -5,7 +5,7 @@ rem SPDX-License-Identifier: MIT
 rem Builds the release package (npm run package): the unsigned installer and the unpacked app, both
 rem in release\release\, or release\NAME\ with --output NAME. Starts and installs nothing.
 setlocal
-cd /d "%~dp0"
+cd /d "%~dp0.."
 
 rem npm is not always on PATH (a shell opened before Node was installed, for one): try the default install.
 where npm >nul 2>nul
@@ -18,7 +18,7 @@ if errorlevel 1 (
 )
 
 if not exist node_modules (
-  echo The dependencies are not installed. Run "npm install" in this folder first.
+  echo The dependencies are not installed. Run "npm install" in the repository folder first.
   pause
   exit /b 1
 )

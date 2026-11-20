@@ -4,13 +4,13 @@ This is the source of truth for choosing verification. Ordinary work finishes wi
 
 ## Everyday checks
 
-Use [`do-check.bat`](../do-check.bat) on Windows. Elsewhere, `npm run check:focused -- <options>` runs the same selector. It uses explicit area mappings and adjacent/module tests, without following the entire import graph.
+Use [`do-check.bat`](../do/do-check.bat) on Windows. Elsewhere, `npm run check:focused -- <options>` runs the same selector. It uses explicit area mappings and adjacent/module tests, without following the entire import graph.
 
 ```bat
-do-check.bat list
-do-check.bat focused
-do-check.bat list --files src/renderer/src/sessions/Capsule.tsx
-do-check.bat focused --files src/renderer/src/sessions/Capsule.tsx --area drafts
+do\do-check.bat list
+do\do-check.bat focused
+do\do-check.bat list --files src/renderer/src/sessions/Capsule.tsx
+do\do-check.bat focused --files src/renderer/src/sessions/Capsule.tsx --area drafts
 ```
 
 - With no file arguments, selection includes staged, unstaged and untracked changes against `HEAD`. Deleted and renamed files still select tests; missing files are omitted from lint. Use `--since <ref>` to include committed changes since a ref as well.

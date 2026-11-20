@@ -55,7 +55,7 @@ rem                      unknown
 rem Under Read only each asking word is refused, as a real request is. A change of mode closes the
 rem session's process, and ends the grant with it.
 setlocal
-cd /d "%~dp0"
+cd /d "%~dp0.."
 
 rem npm is not always on PATH (a shell opened before Node was installed, for one): try the default install.
 where npm >nul 2>nul
@@ -68,13 +68,13 @@ if errorlevel 1 (
 )
 
 if not exist node_modules (
-  echo The dependencies are not installed. Run "npm install" in this folder first.
+  echo The dependencies are not installed. Run "npm install" in the repository folder first.
   pause
   exit /b 1
 )
 
 set "FATG_DEMO_SESSIONS=stream"
-set "FATG_DEMO_FIXTURE=%~dp0tests\fixtures\conversations\long-conversation.mjs"
+set "FATG_DEMO_FIXTURE=%~dp0..\tests\fixtures\conversations\long-conversation.mjs"
 
 if /i "%~1"=="packaged" goto packaged
 

@@ -4,7 +4,7 @@ rem SPDX-License-Identifier: MIT
 
 rem Records the stored formats' baselines this build has none of, into tests\fixtures\baselines\ (decision 0014).
 setlocal
-cd /d "%~dp0"
+cd /d "%~dp0.."
 where npm >nul 2>nul
 if errorlevel 1 if exist "%ProgramFiles%\nodejs\npm.cmd" set "PATH=%ProgramFiles%\nodejs;%PATH%"
 where npm >nul 2>nul
@@ -14,7 +14,7 @@ if errorlevel 1 (
   exit /b 1
 )
 if not exist node_modules (
-  echo The dependencies are not installed. Run "npm install" in this folder first.
+  echo The dependencies are not installed. Run "npm install" in the repository folder first.
   pause
   exit /b 1
 )

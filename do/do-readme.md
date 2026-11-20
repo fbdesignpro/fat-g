@@ -1,17 +1,17 @@
 # Running fat-g on Windows: the `do-` batch files
 
-Double-click one in Explorer, or run it from a terminal in this folder. Each finds npm by itself and stops with a message if Node.js or the dependencies are missing (`npm install` once, first).
+Double-click one in Explorer, or run it from a terminal in this folder. Each finds npm by itself and stops with a message if Node.js or the dependencies are missing (`npm install` once in the repository folder, first).
 
 | File | What it does | Data folder |
 |---|---|---|
-| [`do-check.bat`](do-check.bat) | Targeted checks by changed files or area; `list` previews the selection, `full` runs pre-push checks, and `smoke new-chat`, `smoke session-search`, `smoke avatar-family` or the two-launch `smoke data-reset` runs one Electron scenario. See [testing](docs/testing.md). | Checks use no app data; smoke scenarios use `fatg-smoke-new-chat` or `fatg-smoke-session-search` or `fatg-smoke-avatar-family` or `fatg-smoke-data-reset` in `%TEMP%`, separate from full smoke |
-| [`do-record-baselines.bat`](do-record-baselines.bat) | Records the stored formats' baselines this build has none of into `tests/fixtures/baselines/` ([decision 0014](docs/decisions/0014-format-compatibility-starts-at-first-release.md#baselines-091)), replacing none: synthetic documents written under a fixed clock, nothing of anyone's data. Run it after a format's version is raised, then `do-check.bat focused --area baselines`. | None; scratch folders in `%TEMP%`, removed; writes `tests/fixtures/baselines/` in this checkout |
-| [`do-spike-m105.bat`](do-spike-m105.bat) | Research-only CLI lifecycle trace: `--cli claude` or `codex`, `--scenario check`, `tools` or `workers`; no prompt without `--confirm-turns 1`. Uses prepared scratch accounts and enforces M105's six-prompt total. See [spike instructions](spikes/README.md#m105--tool-lifetimes-and-waiting). | Disposable `fat-g-spike-m105-*` projects in `%TEMP%`; raw output and ledger in ignored `spikes/output/m105/`; sanitized projections in `tests/fixtures/m105/` |
-| [`do-spike-codex-mcp.bat`](do-spike-codex-mcp.bat) | Research-only Codex MCP approval trace: `--list` shows six scenarios; `--scenario <name> --confirm-turns 1` runs one prompt against the spike's own MCP server using the prepared scratch account. See [spike instructions](spikes/README.md#codex-mcp-approvals-spikescodex-mcp). | Disposable scratch projects; raw output, server files and ledger in ignored `spikes/output/codex-mcp/` |
+| [`do-check.bat`](do-check.bat) | Targeted checks by changed files or area; `list` previews the selection, `full` runs pre-push checks, and `smoke new-chat`, `smoke session-search`, `smoke avatar-family` or the two-launch `smoke data-reset` runs one Electron scenario. See [testing](../docs/testing.md). | Checks use no app data; smoke scenarios use `fatg-smoke-new-chat` or `fatg-smoke-session-search` or `fatg-smoke-avatar-family` or `fatg-smoke-data-reset` in `%TEMP%`, separate from full smoke |
+| [`do-record-baselines.bat`](do-record-baselines.bat) | Records the stored formats' baselines this build has none of into `tests/fixtures/baselines/` ([decision 0014](../docs/decisions/0014-format-compatibility-starts-at-first-release.md#baselines-091)), replacing none: synthetic documents written under a fixed clock, nothing of anyone's data. Run it after a format's version is raised, then `do-check.bat focused --area baselines`. | None; scratch folders in `%TEMP%`, removed; writes `tests/fixtures/baselines/` in this checkout |
+| [`do-spike-m105.bat`](do-spike-m105.bat) | Research-only CLI lifecycle trace: `--cli claude` or `codex`, `--scenario check`, `tools` or `workers`; no prompt without `--confirm-turns 1`. Uses prepared scratch accounts and enforces M105's six-prompt total. See [spike instructions](../spikes/README.md#m105--tool-lifetimes-and-waiting). | Disposable `fat-g-spike-m105-*` projects in `%TEMP%`; raw output and ledger in ignored `spikes/output/m105/`; sanitized projections in `tests/fixtures/m105/` |
+| [`do-spike-codex-mcp.bat`](do-spike-codex-mcp.bat) | Research-only Codex MCP approval trace: `--list` shows six scenarios; `--scenario <name> --confirm-turns 1` runs one prompt against the spike's own MCP server using the prepared scratch account. See [spike instructions](../spikes/README.md#codex-mcp-approvals-spikescodex-mcp). | Disposable scratch projects; raw output, server files and ledger in ignored `spikes/output/codex-mcp/` |
 | [`do-generate-audio.bat`](do-generate-audio.bat) | Regenerates the nine remaining quiet original WAV effects from `scripts/generate-audio.mjs`, with no external samples or dependencies. Leaves imported sounds and the license notices untouched. | None; writes `assets/audio/` in this checkout |
 | [`do-generate-icons.bat`](do-generate-icons.bat) | Regenerates the application icons from the design in `scripts/generate-app-icons.mjs`. Requires the installed dependencies. Starts only a hidden rendering window. | `node_modules/.cache/icon-generator` |
 | [`do-run-dev.bat`](do-run-dev.bat) | Starts the development build (`npm run dev`): from source, with hot reload. The everyday way to run while working on the code. | `%APPDATA%\fat-g-dev` |
-| [`do-dev-setup.bat`](do-dev-setup.bat) | Screenshot starting points: `save` freezes closed dev data; `run` starts each take from a fresh, isolated copy. An optional name keeps several setups. See [instructions](docs/dev-setups.md). | `%APPDATA%\fat-g-dev-setups\snapshots\<name>` and `runs\<name>`; default name `screenshots` |
+| [`do-dev-setup.bat`](do-dev-setup.bat) | Screenshot starting points: `save` freezes closed dev data; `run` starts each take from a fresh, isolated copy. An optional name keeps several setups. See [instructions](../docs/dev-setups.md). | `%APPDATA%\fat-g-dev-setups\snapshots\<name>` and `runs\<name>`; default name `screenshots` |
 | [`do-dev-screenshot-save.bat`](do-dev-screenshot-save.bat) | Double-click to freeze a closed window's setup. Choose Screenshot window or Everyday dev when both exist; the same dialog confirms replacement of an existing snapshot. Keeps the result visible. | `%APPDATA%\fat-g-dev-setups\snapshots\screenshots` |
 | [`do-dev-screenshot-run.bat`](do-dev-screenshot-run.bat) | Double-click for each take: restores a fresh copy of the default screenshot setup and starts dev with `--window-size=1920x1080`. Close it between takes. | `%APPDATA%\fat-g-dev-setups\runs\screenshots` |
 | [`do-run-demo.bat`](do-run-demo.bat) | The development build with the demo source on: a script drives the sessions already there, so the list shows every state. It starts no CLI and spends no turn. `do-run-demo.bat seed` also adds three sessions to each project that has none. | `%APPDATA%\fat-g-dev` |
@@ -27,7 +27,7 @@ Every build replaces its selected output folder: after `do-package-and-run.bat`,
 
 ## The data folders
 
-fat-g writes only into its data folder; [PRIVACY.md](PRIVACY.md) lists every file in it.
+fat-g writes only into its data folder; [PRIVACY.md](../PRIVACY.md) lists every file in it.
 
 | Folder | Used by |
 |---|---|
@@ -55,8 +55,8 @@ Running the installer:
 
 Uninstalling (Windows Settings → Apps) removes the program and keeps `%APPDATA%\fat-g`; delete that folder too if you want the data gone.
 
-The settings behind this are in [`electron-builder.yml`](electron-builder.yml); the development guide's [Build a package](docs/development.md#build-a-package) section covers packaging and the audit of what a package contains.
+The settings behind this are in [`electron-builder.yml`](../electron-builder.yml); the development guide's [Build a package](../docs/development.md#build-a-package) section covers packaging and the audit of what a package contains.
 
 ## Other systems
 
-These files are for Windows. On macOS and Linux, run the npm scripts they wrap: `npm run dev`, `npm run package`, `npm run package:dir`. The data folders are named in [PRIVACY.md](PRIVACY.md#the-data-folder).
+These files are for Windows. On macOS and Linux, run the npm scripts they wrap: `npm run dev`, `npm run package`, `npm run package:dir`. The data folders are named in [PRIVACY.md](../PRIVACY.md#the-data-folder).

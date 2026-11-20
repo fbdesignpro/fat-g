@@ -24,10 +24,10 @@ If you downloaded a source archive, extract it and run `npm ci` from the folder 
 
 ## Run the development app
 
-On Windows, double-click [do-run-dev.bat](../do-run-dev.bat), or run it from PowerShell in the repository folder:
+On Windows, double-click [do-run-dev.bat](../do/do-run-dev.bat), or run it from PowerShell in the repository folder:
 
 ```powershell
-.\do-run-dev.bat
+.\do\do-run-dev.bat
 ```
 
 On macOS or Linux:
@@ -38,7 +38,7 @@ npm run dev
 
 The development app reloads as you work on the interface. It uses your installed provider CLIs, so sending a real prompt uses your provider account as usual.
 
-For interface work without live agents, Windows also has [do-run-stream.bat](../do-run-stream.bat), which opens synthetic conversations in an isolated temporary data folder and starts no CLI. See the [Windows script reference](../do-readme.md) for its example prompts and other development shortcuts.
+For interface work without live agents, Windows also has [do-run-stream.bat](../do/do-run-stream.bat), which opens synthetic conversations in an isolated temporary data folder and starts no CLI. See the [Windows script reference](../do/do-readme.md) for its example prompts and other development shortcuts.
 
 ## Development data
 
@@ -60,7 +60,7 @@ Development runs can also save changes to built-in avatar family manifests in th
 Build on the operating system you want to package for. On Windows:
 
 ```powershell
-.\do-package.bat
+.\do\do-package.bat
 ```
 
 This builds the unsigned installer and unpacked app into `release/release/`. It does not launch, install, or publish them. Run the resulting `fat-g-<version>-x64-setup.exe` to install it. The per-user wizard offers an installation folder and a **Run fat-g** checkbox on its final page, checked by default; choose a folder your Windows account can write to.
@@ -68,7 +68,7 @@ This builds the unsigned installer and unpacked app into `release/release/`. It 
 If that packaged copy is running, build and audit a separate output folder:
 
 ```powershell
-.\do-package.bat --output candidate-0.9.0
+.\do\do-package.bat --output candidate-0.9.0
 node scripts/verify-package.mjs release --output candidate-0.9.0
 ```
 
@@ -77,10 +77,10 @@ The output is `release/candidate-0.9.0/`; `--output` takes a folder name, not a 
 To try the packaged app without installing it:
 
 ```powershell
-.\do-package-and-run.bat
+.\do\do-package-and-run.bat
 ```
 
-That builds the unpacked app and launches it using the regular `fat-g` data folder. Use [do-run-packaged.bat](../do-run-packaged.bat) to launch the same build again without rebuilding. Each package build replaces the previous output; run `do-package.bat` again if you need an installer after an unpacked-only build.
+That builds the unpacked app and launches it using the regular `fat-g` data folder. Use [do-run-packaged.bat](../do/do-run-packaged.bat) to launch the same build again without rebuilding. Each package build replaces the previous output; run `do-package.bat` again if you need an installer after an unpacked-only build.
 
 On macOS or Linux, the equivalent package commands are:
 
@@ -114,8 +114,8 @@ Read the [project guidelines](../AGENTS.md) and relevant entries in the [decisio
 On Windows, preview and run the checks selected for your changes:
 
 ```powershell
-.\do-check.bat list
-.\do-check.bat focused
+.\do\do-check.bat list
+.\do\do-check.bat focused
 ```
 
 On macOS or Linux:

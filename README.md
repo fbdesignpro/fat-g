@@ -107,7 +107,7 @@ fat-g stands for **Fun Agent Team – Go!** It started as a tool for my own dail
 ## Documentation & useful scripts
 
 - [Development guide](docs/development.md): set up the source, run the app, and build packages.
-- [Windows scripts](do-readme.md): the full reference for the `do-*.bat` shortcuts.
+- [Windows scripts](do/do-readme.md): the full reference for the `do-*.bat` shortcuts.
 - [Custom avatars](docs/avatars.md): low-level info on the system.
 - [Privacy](PRIVACY.md): your data, accounts, and project files.
 - [Architecture and project guidelines](AGENTS.md) and [design decisions](docs/decisions/README.md): how the project fits together.

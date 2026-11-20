@@ -10,7 +10,7 @@ rem
 rem   do-run-demo.bat         drives the sessions the dev records already hold (FATG_DEMO_SESSIONS=1)
 rem   do-run-demo.bat seed    also adds three sessions to each project that has none (=seed)
 setlocal
-cd /d "%~dp0"
+cd /d "%~dp0.."
 
 rem npm is not always on PATH (a shell opened before Node was installed, for one): try the default install.
 where npm >nul 2>nul
@@ -23,7 +23,7 @@ if errorlevel 1 (
 )
 
 if not exist node_modules (
-  echo The dependencies are not installed. Run "npm install" in this folder first.
+  echo The dependencies are not installed. Run "npm install" in the repository folder first.
   pause
   exit /b 1
 )

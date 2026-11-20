@@ -19,7 +19,7 @@ Everything comes from the same tagged checkout, with Node 24 (`.nvmrc`). The com
 **Windows,** in PowerShell:
 
 ```powershell
-.\do-package.bat --output release-0.9.1
+.\do\do-package.bat --output release-0.9.1
 node scripts/verify-package.mjs release --output release-0.9.1 --tamper
 Get-FileHash .\release\release-0.9.1\fat-g-0.9.1-x64-setup.exe -Algorithm SHA256
 ```
