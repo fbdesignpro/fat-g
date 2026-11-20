@@ -61,9 +61,9 @@ Once installation finishes, open **fat-g** from the Start menu. **No administrat
 
 ### Mac
 
-**[Download fat-g for Mac (.dmg)](https://github.com/fbdesignpro/fat-g/releases/latest)** for your Mac's architecture, open the disk image, and drag **fat-g** into **Applications**.
+**[Download fat-g for Mac (.dmg)](https://github.com/fbdesignpro/fat-g/releases/latest)**, open the disk image, and drag **fat-g** into **Applications**. The Mac download is for Apple Silicon; on an Intel Mac, run from source using the instructions below.
 
-Note: The app is not yet signed or notarized, so macOS may say the **developer cannot be verified** when you first open it. To move forward, dismiss the alert, open **System Settings → Privacy & Security**, scroll to **Security**, and select **Open Anyway** for fat-g. Confirm with **Open** when prompted (I plan to add signing and notarization if there's enough demand for the project). You can run from source using the instructions below.
+Note: The app is not yet signed or notarized, so when you first open it macOS may say **Apple could not verify "fat-g" is free of malware** (on older versions: the **developer cannot be verified**). Choose **Done**, not Move to Trash. Then open **System Settings → Privacy & Security**, scroll to **Security**, select **Open Anyway** for fat-g, and confirm with your password (I plan to add signing and notarization if there's enough demand for the project). You can run from source using the instructions below.
 
 Once installation finishes, open **fat-g** from **Applications**.
 
